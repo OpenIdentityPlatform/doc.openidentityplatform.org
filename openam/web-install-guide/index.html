@@ -1,0 +1,2045 @@
+---
+layout: 'null'
+---
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+   /*
+* The contents of this file are subject to the terms of the Common Development and
+* Distribution License (the License). You may not use this file except in compliance with the
+* License.
+*
+* You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+* specific language governing permission and limitations under the License.
+*
+* When distributing Covered Software, include this CDDL Header Notice in each file and include
+* the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+* Header, with the fields enclosed by brackets [] replaced by your own identifying
+* information: "Portions copyright [year] [name of copyright owner]".
+*
+* Copyright 2015 ForgeRock AS.
+* Portions copyright 2024 3A Systems LLC.
+*/
+
+/***********************************/
+/* Imported Styles
+/***********************************/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css);
+@import url(http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css);
+/* @import url(http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css); */
+@import url(http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/example1/colorbox.css);
+
+/***********************************/
+/* General Styles
+/***********************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Dark Grey */
+
+    color: #2a2f32;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+
+a {
+    /* Sea Green */
+    color: #519387;
+}
+
+a.link[href^="http"] {
+    background-image: url("includes/logos/Icon_External_Link.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    margin-right: 2px;
+}
+
+a.self-link, a.self-link:hover, a.self-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href].self-link:hover::after
+{
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e144";
+    color: #519387;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-size: 75%;
+    font-style: normal;
+    line-height: 1;
+    padding-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: decimal !important
+}
+
+.section,
+.chapter,
+.preface,
+.glossary,
+.refentry,
+.reference,
+.appendix,
+.index,
+.titlepage h2,
+.titlepage h3,
+.titlepage h4,
+.titlepage h5 {
+    padding-top: 60px;
+    margin-top: -50px;
+}
+
+.left-shape-content {
+    background: url("includes/logos/left-shape-4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 566px;
+    position: fixed;
+    width: 57px;
+    top: 60%;
+    z-index: -1;
+}
+
+/***********************************/
+/* Bootstrap Override Styles
+/***********************************/
+
+/* Button Styles */
+
+.btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+
+.btn-default {
+    background-color: #A1A8AD;
+    border-color: #8a9298;
+    color: #ffffff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-color: #3f4b54;
+    border-color: #1B2025;
+    color: #ffffff;
+}
+
+/* Tooltip Styles */
+
+.tooltip.in {
+    opacity: 0.95;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #519387;
+}
+
+.tooltip-inner {
+    background-color: #519387;
+}
+
+/* List Styles */
+
+.dl-horizontal dt {
+    white-space: normal;
+    padding: 0 3px 0 0;
+    width: 200px;
+}
+
+.dl-horizontal dd {
+    border-bottom: 1px dotted rgb(125, 179, 168);
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin-bottom: 18px;
+    margin-left: 210px;
+}
+
+.dl-horizontal {
+    border-top: 1px dotted rgb(125, 179, 168);
+    border-top: 1px dotted rgba(125, 179, 168, 0.9);
+    padding-top: 10px;
+}
+
+.variablelist dt {
+    margin: 18px 0 5px 15px;
+}
+
+.variablelist dd {
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin: 5px 0 5px 30px;
+}
+
+.variablelist > dl {
+    border-top: 1px dotted rgba(125, 179, 168, 0.8);
+}
+
+
+/***********************************/
+/* Redirect Page Styles
+/***********************************/
+
+.index-redirect,
+.index-redirect body {
+    height: 100%;
+    background-color: #333;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+.index-redirect body {
+    color: #fff;
+    text-align: center;
+}
+.index-redirect .container {
+    display: table;
+    vertical-align: middle;
+    height: 100%;
+}
+.index-redirect .btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+.index-redirect .cover-heading {
+    font-weight: 400 !important;
+}
+.index-redirect .vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/***********************************/
+/* Header Styles
+/***********************************/
+
+.navbar-brand {
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand > img {
+    height: 100%;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    box-shadow: 0 0 10px 2px #111;
+}
+.nav > li > a {
+    font-weight: 200;
+}
+
+/***********************************/
+/* Banner Styles
+/***********************************/
+
+.jumbotron {
+    /* Sea Green */
+    background: url("includes/logos/hero-bg-01.png") no-repeat scroll left top #519387;
+    color: white;
+    box-shadow: 0 0 10px 2px grey;
+    margin-top: 50px;
+    padding: 0 0 10px;
+}
+.jumbotron small {
+    color: white;
+}
+.jumbotron p {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.jumbotron h1 {
+    font-size: 23px !important;
+    font-weight: 300 !important;
+}
+
+/***********************************/
+/* Table of Contents Styles
+/***********************************/
+
+#sidebar .nav>li>a {
+    /* Light Grey */
+
+    color: #777;
+    border-left: 4px solid transparent;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+/* nested links */
+
+#sidebar .nav .nav>li>a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+/* nested nested links */
+
+#sidebar .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 50px;
+    padding-top: 4px;
+}
+/* nested nested nested links */
+
+#sidebar .nav .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 70px;
+    padding-top: 4px;
+}
+/* active and hover links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.locked-active>a,
+#sidebar .nav>li>a:hover,
+#sidebar .nav>li>a:focus {
+    text-decoration: none;
+    /*
+    background-color: rgb(125, 179, 168, 0.8);
+    background-color: rgba(125, 179, 168, 0.8);
+    border-color: rgb(45, 52, 55, 0.8);
+    border-color: rgba(45, 52, 55, 0.8);
+    color: white;
+    */
+    /* Bright Yellow */
+
+    background-color: #eeea07;
+    border-color: #eeea07;
+    /* Grey */
+
+    color: #2a2f32;
+}
+/* all active links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.active:hover>a,
+#sidebar .nav>.active:focus>a {
+    font-weight: 600;
+}
+/* nested active links */
+
+#sidebar .nav .nav>.active>a,
+#sidebar .nav .nav>.active:hover>a,
+#sidebar .nav .nav>.active:focus>a {
+    font-weight: 400;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* hide all (inactive) nested list */
+
+#sidebar .nav ul.nav {
+    display: none;
+}
+/* show active nested list */
+
+#sidebar .nav>.active>ul.nav {
+    display: block;
+}
+#sidebar.affix {
+    top: 66px;
+    position: fixed;
+    bottom: 30px;
+    height: auto;
+    overflow-y: scroll;
+}
+#sidebar.affix-bottom {
+    position: absolute;
+}
+
+/***********************************/
+/* Content Styles
+/***********************************/
+
+/* Main Content Styles */
+
+h1 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+
+h1 span {
+    margin-right: .3em;
+}
+
+#doc-content h1,
+#doc-content .h1 {
+    /* Sea Green */
+    border-bottom: 2px solid #70ab9b;
+    font-size: 36px;
+    margin-top: 24px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+h5, .h5 {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    padding-bottom: 4px;
+    font-style: italic;
+}
+
+.anchorjs-link .anchorjs-icon {
+    color: #A1A8AD;
+    text-decoration: none;
+}
+.anchorjs-link:hover .anchorjs-icon {
+    color: #519387;
+    text-decoration: none;
+}
+
+h1:hover > .anchorjs-link,
+h2:hover > .anchorjs-link,
+h3:hover > .anchorjs-link,
+h4:hover > .anchorjs-link,
+h5:hover > .anchorjs-link,
+.anchorjs-link:focus {
+    opacity: 1 !important;
+    transition: color 0.16s linear 0s;
+    text-decoration: none;
+}
+
+.chapter > p:first-of-type,
+.preface > p:first-of-type {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+#doc-content {
+    padding: 0 20px 85px 10px;
+}
+
+div.procedure, div.table {
+    margin-top:-50px;
+    padding-top: 60px;
+}
+
+div.procedure-title, div.table-title {
+    margin: 6px 0 8px;
+}
+
+div.procedure-inner {
+    border-color: lightslategray;
+    border-left: 6px solid lightslategray;
+    border-style: dotted dotted dotted solid;
+    border-width: 1px 1px 1px 6px;
+    margin: 15px 0 10px;
+    padding: 10px 15px 10px 10px;
+}
+
+.author {
+    display: inline;
+}
+
+.table {
+    font-size: 14px;
+}
+
+div.simplelist {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Title Styles */
+
+.procedure-title > a, .procedure-title > a:hover {
+    color: lightslategray;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.itemizedlist-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+.figure-title {
+    font-weight: bold;
+    margin: 16px 0 4px;
+    text-align: center;
+}
+
+.table-title {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.variablelist-title {
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+/* Code Styles */
+
+.btn-copy-cmdline,
+.btn-copy-codelisting {
+    /* White */
+
+    background-color: #fff;
+    /* Light Grey */
+
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px;
+    color: #777;
+    display: block;
+    font-size: 12px;
+    padding: 5px 8px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+
+pre.prettyprint {
+    border: 1px solid #ccc;
+    padding: 9.5px;
+    font-size: 12px;
+}
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+.zeroclipboard-is-hover {
+    /* Light Sea Green */
+
+    background-color: #6faa9b;
+    border-color: #6faa9b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ui-effects-transfer {
+    border: 1px dotted black;
+    background-color: yellow;
+    opacity: 0.4;
+}
+
+/* Modal Dialog Styles */
+
+#doc-content .modal h1.title {
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    margin: 14px 0 5px;
+}
+#doc-content .modal h2.subtitle {
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    margin-bottom: 26px;
+}
+#doc-content .modal h3.author {
+    font-size: 14px !important;
+    font-style: italic;
+    font-weight: 100 !important;
+    margin: 4px 0 5px 18px;
+}
+#doc-content .modal .affiliation .orgname {
+    display: block;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    margin: 20px 0 0 0;
+}
+#doc-content .modal .affiliation .address p {
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    margin: 4px 0;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .abstract .abstract-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+#doc-content .modal .abstract > p {
+    margin: 10px 0 5px 20px;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+}
+
+/* Image Styles */
+
+.fancybox > img {
+    cursor: zoom-in;
+}
+a.fancybox {
+    text-decoration: none;
+}
+
+#cboxTitle {
+    color: #519387;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#cboxOverlay{
+    background: none repeat scroll 0 0 rgba(66, 130, 116, 0.6);
+}
+
+img.img-responsive {
+    margin-bottom: 20px;
+}
+
+/* Index Styles */
+
+.indexdiv > h3 {
+    border-bottom: 2px dotted lightgrey;
+    padding-bottom: 5px;
+}
+.indexdiv > dl {
+    margin-left: 30px;
+}
+.indexdiv dl {
+    margin-bottom: 5px;
+}
+.indexdiv dt {
+    margin: 5px 0 2px;
+}
+.indexdiv dd {
+    margin-left: 35px;
+}
+.indexdiv .indexterm {
+    font-weight: 200;
+}
+
+/* Reference Styles */
+
+.refnamediv h2 {
+    display: none;
+}
+
+.refsect1 h2,
+.refsynopsisdiv h2 {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.refnamediv p {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+/***********************************/
+/* Footer Styles
+/***********************************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    display: none;
+    z-index: 15;
+}
+
+#footer {
+    display: none;
+}
+
+.footer {
+    /* Light Grey */
+    background-color: #f5f5f5;
+
+    /* Medium Grey */
+    border-top: 1px solid #ACB5BD;
+    bottom: 0;
+    font-size: 12px;
+    height: 30px;
+    padding-top: 4px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer h3 {
+    margin: 0;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer-item {
+    line-height: 22px;
+    margin-left: 10px;
+}
+
+.footer-item.highlighted {
+    /* Orange */
+    color: #f7a540;
+}
+
+.footer-item.highlighted:hover {
+    /* Dark Orange */
+    color: #c97208;
+}
+
+.footer span {
+    /* Grey */
+    color: #2a2f32;
+    margin-bottom: 0;
+}
+
+.footer .footer-left {
+    float: left;
+}
+
+.footer .footer-right {
+    float: right;
+}
+
+/***********************************/
+
+  </style><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenAM Web Policy Agent Installation Guide</title><script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script><script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script><script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Guide to installing OpenAM web policy agents. OpenAM provides open source Authentication, Authorization, Entitlement and Federation software."><script type="text/javascript">
+     /*
+ * The contents of this file are subject to the terms of the Common Development and
+ * Distribution License (the License). You may not use this file except in compliance with the
+ * License.
+ *
+ * You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ * specific language governing permission and limitations under the License.
+ *
+ * When distributing Covered Software, include this CDDL Header Notice in each file and include
+ * the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ * Header, with the fields enclosed by brackets [] replaced by your own identifying
+ * information: "Portions copyright [year] [name of copyright owner]".
+ *
+ * Copyright 2015 ForgeRock AS.
+ */
+
+//
+
+var loadJavaScriptsFN = function () {
+    $.ajaxSetup({ cache: true });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js", function () { prettyPrint() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function () {enableZeroClipboardFN() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox-min.js", function () { enableColorboxFN() });
+};
+
+var wrapConfigurablesFn = function () {
+    $('*:contains("https://openam.example.com:8443")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("https://openam.example.com:8443", 'g'),'<span class="exampleUrl">https://openam.example.com:8443</span>')
+            )
+    });
+    $('*:contains("amadmin")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("amadmin", 'g'),'<span class="exampleAdmin">amadmin</span>')
+            )
+    });
+    $('*:contains("iPlanetDirectoryPro")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("iPlanetDirectoryPro", 'g'),'<span class="exampleSsoCookieName">iPlanetDirectoryPro</span>')
+            )
+    });
+};
+
+var btnClickHandler = function () {
+    $("button#applyDocUpdate").click(function(){
+
+        $('span.exampleUrl').fadeOut("slow", function(){
+            $('span.exampleUrl').text($("input#exampleUrl").val());
+            $('span.exampleUrl').fadeIn("slow");
+        });
+
+        $('span.exampleAdmin').fadeOut("slow", function(){
+            $('span.exampleAdmin').text($("input#exampleAdmin").val());
+            $('span.exampleAdmin').fadeIn("slow");
+        });
+
+        $('span.exampleSsoCookieName').fadeOut("slow", function(){
+            $('span.exampleSsoCookieName').text($("input#exampleSsoCookieName").val());
+            $('span.exampleSsoCookieName').fadeIn("slow");
+        });
+
+        $('#docConfig').modal('hide');
+    });
+};
+
+
+var addCopyButtonFN = function () {
+    $( ".cmdline" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-cmdline"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> command to clipboard</span></span></div>');
+    });
+
+    $( ".codelisting" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-codelisting"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> code to clipboard</span></span></div>');
+    });
+};
+var enableScrollSpyFN = function () {
+    $('body').scrollspy({
+        target: '#sidebar',
+        offset: 16
+    });
+};
+
+var enableToolTipFN = function () {
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip({placement: 'bottom'});
+    });
+};
+
+var enableBackToTopFadeInFN = function () {
+    var offset = 220;
+    var duration = 500;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            $('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+};
+
+var enableClampedWidthsFN = function () {
+
+    /*
+     * Clamped-width.
+     * Usage:
+     *  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+     *
+     * Author: LV
+     */
+    $('[data-clampedwidth]').each(function () {
+        var elem = $(this);
+        var parentPanel = elem.data('clampedwidth');
+        var resizeFn = function () {
+            var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+            elem.css('width', sideBarNavWidth);
+        };
+
+        resizeFn();
+        $(window).resize(resizeFn);
+    });
+};
+
+var affixToCFN = function() {
+    $('#sidebar').affix({
+        offset: {
+            top: function () {
+                return (this.top = $('.jumbotron').outerHeight(true)-66)
+            }
+        }
+    });
+};
+
+var attachAnchorsToHeadings = function() {
+    //addAnchors('h1.title, h2.title, h3.title, h4.title, h5.title');
+
+
+    $('h1.title, h2.title, h3.title, h4.title, h5.title, .procedure-title, .table-title').each(function () {
+
+        var href = $(this).closest("div[id]").attr("id");
+
+        if (href === undefined || href === "") { // Unable to locate ID of parent element.
+            return;
+        }
+
+        $(this).wrapInner('<a class=\"self-link" href=\"#' + href + '\"></a>');
+
+    });
+};
+
+var addZeroClipboardToCmdlineButtonsFN = function () {
+    var copycmdline = new ZeroClipboard( $('.btn-copy-cmdline') );
+
+    copycmdline.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        copycmdline.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next().find("strong").each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycmdline.on( 'aftercopy', function(event) {
+            // console.log('Copied to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next().find("strong").each(function(index) {
+                $(this).effect("transfer", { to: $(event.target)}, 750);
+            });
+        });
+    });
+
+    copycmdline.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var addZeroClipboardToCodeButtonsFN = function () {
+    var copycodelisting = new ZeroClipboard( $('.btn-copy-codelisting') );
+
+    copycodelisting.on( 'ready', function(event) {
+        //console.log( 'movie is loaded' );
+
+        copycodelisting.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next(".codelisting.linenums").children().contents().each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            if(wrappedText == "") {
+                wrappedText = $(event.target).parent().next(".codelisting").contents().text();
+            };
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycodelisting.on( 'aftercopy', function(event) {
+            // console.log('Copied code to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next(".codelisting").first().effect("transfer", { to: $(event.target)}, 750);
+        });
+    });
+
+    copycodelisting.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var enableColorboxFN = function () {
+    $(".fancybox").colorbox({
+        title: function() {
+            return $(this).children('img').attr('alt');
+        },
+        opacity: 1,
+        transition:"elastic",
+        initialWidth: 0,
+        initialHeight: 0,
+        maxWidth:"95%",
+        maxHeight: "95%",
+        scalePhotos: true,
+        fixed: true
+    });
+};
+
+var trackPageViewsFN = function () {
+
+    $("a").click(function() {
+        var href = $(this).attr('href');
+        if(href) {
+            var titleText =  $(this).text();
+            if(href.charAt(0) === '#') {
+                ga('send', {
+                    'hitType': 'pageview',
+                    'page': location.pathname + location.search + href,
+                    'title': titleText
+                });
+            };
+            if(href.charAt(0) === '.') {
+                var lastHashPos = href.lastIndexOf('#');
+                var cleanHref = href.slice(3,lastHashPos);
+                var cleanFrag = href.slice(lastHashPos);
+                if(window.location.href.search(cleanHref) > -1)
+                {
+                    ga('send', {
+                        'hitType': 'pageview',
+                        'page': location.pathname + location.search + cleanFrag,
+                        'title': titleText
+                    });
+                }
+            };
+        }
+    });
+};
+
+var enableZeroClipboardFN = function () {
+    ZeroClipboard.config({
+            swfPath:  "includes/swf/ZeroClipboard.swf",
+            trustedDomains: ["*"],
+            forceEnhancedClipboard: false,
+            forceHandCursor: true,
+            debug: false}
+    );
+    addCopyButtonFN();
+    addZeroClipboardToCmdlineButtonsFN();
+    addZeroClipboardToCodeButtonsFN();
+};
+
+$(document).ready(function() {
+    //wrapConfigurablesFn();
+    btnClickHandler();
+    enableToolTipFN();
+    enableBackToTopFadeInFN();
+    enableClampedWidthsFN();
+    enableScrollSpyFN();
+    affixToCFN();
+    attachAnchorsToHeadings();
+    trackPageViewsFN();
+    loadJavaScriptsFN();
+});
+
+//
+
+    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link"></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenAM Web Policy Agent  Installation Guide<span></span><small></small></h1><p>Guide to installing OpenAM web policy agents. OpenAM provides open source
+   Authentication, Authorization, Entitlement and Federation software.</p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenAM Web Policy Agent  Installation Guide<br><small class="toc-subtitle"></small></h4><ul class="nav nav-stacked"><li><a href="#preface">Preface</a><ul class="nav nav-stacked"><li><a href="#d13186e122">1. Who Should Use this Guide</a></li><li><a href="#formatting-conventions">2. Formatting Conventions</a></li><li><a href="#accessing-doc-online">3. Accessing Documentation Online</a></li><li><a href="#joining-the-community">4. Joining the Open Identity Platform Community</a></li></ul></li><li><a href="#chap-about-web-agents">1. About OpenAM Web Policy Agents</a><ul class="nav nav-stacked"><li><a href="#example-agent-interaction">1.1. How the User, Web Policy Agent, &amp; OpenAM Interact</a></li><li><a href="#web-agent-configuration">1.2. How Web Policy Agents are Configured</a></li></ul></li><li><a href="#chap-apache-22">2. Installing the Apache 2.2 Policy Agent</a><ul class="nav nav-stacked"><li><a href="#before-apache22-agent-install">2.1. Before You Install</a></li><li><a href="#install-apache22-web-agent">2.2. Installing Apache 2.2 Web Policy Agent</a></li><li><a href="#custom-apache22-agent-installation">2.3. Custom Apache 2.2 Web Policy Agent Installation</a></li><li><a href="#uninstall-apache22-agent">2.4. Remove Apache 2.2 Web Policy Agent Software</a></li></ul></li><li><a href="#chap-apache-24">3. Installing the Apache 2.4 Policy Agent</a><ul class="nav nav-stacked"><li><a href="#before-apache24-agent-install">3.1. Before You Install</a></li><li><a href="#install-apache24-web-agent">3.2. Installing Apache 2.4 Web Policy Agent</a></li><li><a href="#custom-apache24-agent-installation">3.3. Custom Apache 2.4 Web Policy Agent Installation</a></li><li><a href="#uninstall-apache24-agent">3.4. Remove Apache 2.4 Web Policy Agent Software</a></li></ul></li><li><a href="#chap-msiis-6">4. Installing the Microsoft IIS 6 Policy Agent</a><ul class="nav nav-stacked"><li><a href="#before-iis6-agent-install">4.1. Before You Install</a></li><li><a href="#install-iis6-web-agent">4.2. Installing IIS 6 Web Policy Agent</a></li><li><a href="#custom-iis6-agent-installation">4.3. Custom IIS 6 Web Policy Agent Installation</a></li><li><a href="#uninstall-iis6-agent">4.4. Remove IIS 6 Web Policy Agent Software</a></li></ul></li><li><a href="#chap-msiis-7">5. Installing the Microsoft IIS 7 Policy Agent</a><ul class="nav nav-stacked"><li><a href="#before-iis7-agent-install">5.1. Before You Install</a></li><li><a href="#install-iis7-web-agent">5.2. Installing IIS 7 Web Policy Agent</a></li><li><a href="#custom-iis7-agent-installation">5.3. Custom IIS 7 Web Policy Agent Installation</a></li><li><a href="#iis7-enable-basic-auth">5.4. Enable IIS 7 Basic Authentication &amp; Password Replay Support</a></li><li><a href="#uninstall-iis7-agent">5.5. Remove IIS 7 Web Policy Agent Software</a></li></ul></li><li><a href="#chap-sun-websvr">6. Installing the Oracle iPlanet/Sun Web Server Policy Agent</a><ul class="nav nav-stacked"><li><a href="#before-sjsws-agent-install">6.1. Before You Install</a></li><li><a href="#install-sjsws-web-agent">6.2. Installing Oracle iPlanet Web Server Web Policy Agent</a></li><li><a href="#custom-sjsws-agent-installation">6.3. Custom Oracle iPlanet Web Policy Agent Installation</a></li><li><a href="#uninstall-sjsws-agent">6.4. Remove Oracle iPlanet Web Policy Agent Software</a></li></ul></li><li><a href="#chap-varnish">7. Installing the Varnish Policy Agent</a><ul class="nav nav-stacked"><li><a href="#before-varnish-agent-install">7.1. Before You Install</a></li><li><a href="#install-varnish-web-agent">7.2. Installing Varnish Web Policy Agent</a></li><li><a href="#custom-varnish-agent-installation">7.3. Custom Varnish Web Policy Agent Installation</a></li><li><a href="#uninstall-varnish-agent">7.4. Remove Varnish Web Policy Agent Software</a></li></ul></li><li><a href="#chap-troubleshooting">8. Troubleshooting</a></li><li><a href="#d13186e2766">Index</a></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenAM Web Policy Agent  Installation Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark</span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Vanessa</span> <span class="surname">Richie</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Jang</span></h3></div></div></div><div><p class="releaseinfo"></p></div><div><p class="copyright">Copyright &copy; 2011-2013 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">Publication date: July&nbsp;05,&nbsp;2024</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>Guide to installing OpenAM web policy agents. OpenAM provides open source
+   Authentication, Authorization, Entitlement and Federation software.</p></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div><div lang="en" class="preface" id="preface"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>This guide shows you how to install OpenAM web server policy agents, as well as 
+ how to integrate with other access management software. Read the 
+ <em class="citetitle">Release Notes</em> before you get started.</p><div class="section" id="d13186e122"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.&nbsp;Who Should Use this Guide</h2></div></div></div><p>This guide is written for anyone installing OpenAM policy agents to 
+  interface with supported web servers application containers.</p><p>This guide covers procedures that you theoretically perform only
+  once per version. This guide aims to provide you with at least some idea
+  of what happens behind the scenes when you perform the steps.</p><p>You do not need to be an OpenAM wizard to learn something from
+  this guide, though a background in access management and maintaining
+  web application software can help. You do need some background in
+  managing services on your operating systems and in your application
+  servers. You can nevertheless get started with this guide, and then
+  learn more as you go along.</p></div><div lang="en" class="section" id="formatting-conventions"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.&nbsp;Formatting Conventions</h2></div></div></div><p>
+  Most examples in the documentation are created in GNU/Linux or Mac OS X
+  operating environments.
+
+  If distinctions are necessary between operating environments,
+  examples are labeled with the operating environment name in parentheses.
+
+  To avoid repetition file system directory names are often given
+  only in UNIX format as in <code class="filename">/path/to/server</code>,
+  even if the text applies to <code class="filename">C:\path\to\server</code> as well.
+ </p><p>
+  Absolute path names usually begin with the placeholder
+  <code class="filename">/path/to/</code>.
+
+  This path might translate to <code class="filename">/opt/</code>,
+  <code class="filename">C:\Program Files\</code>, or somewhere else on your system.
+ </p><p>
+  Command line, terminal sessions are formatted as follows:
+ </p><pre class="cmdline prettyprint">$ <strong>echo $JAVA_HOME</strong>
+<em>/path/to/jdk</em></pre><p>
+  Command output is sometimes formatted for narrower, more readable output
+  even though formatting parameters are not shown in the command.
+  In the following example,
+  the query string parameter <code class="literal">_prettyPrint=true</code> is omitted
+  and some of the output is replaced with an ellipsis (<code class="literal">...</code>):
+ </p><pre class="cmdline prettyprint">
+$ <strong>curl https://bjensen:hifalutin@opendj.example.com:8443/users/newuser</strong>
+<em>{
+  "_rev" : "000000005b337348",
+  "_id" : "newuser",
+  ...
+}</em>
+ </pre><p>
+  Program listings are formatted as follows:
+ </p><pre class="codelisting prettyprint linenums lang-java">
+class Test {
+    public static void main(String [] args)  {
+        System.out.println("This is a program listing.");
+    }
+}
+ </pre></div><div lang="en" class="section" id="accessing-doc-online"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.&nbsp;Accessing Documentation Online</h2></div></div></div><p>
+  Open Identity Platform core documentation, such as this document, aims to be
+  technically accurate and complete with respect to the software documented.
+ </p><div class="itemizedlist"><p>
+   Core documentation therefore follows a three-phase review process
+   designed to eliminate errors:
+  </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Product managers and software architects review project documentation design
+    with respect to the readers' software lifecycle needs.
+   </p></li><li class="listitem"><p>
+    Subject matter experts review proposed documentation changes for
+    technical accuracy and completeness
+    with respect to the corresponding software.
+   </p></li><li class="listitem"><p>
+    Quality experts validate implemented documentation changes
+    for technical accuracy, completeness in scope,
+    and usability for the readership.
+   </p></li></ul></div><p>
+  The review process helps to ensure that documentation published for
+  a ForgeRock release is technically accurate and complete.
+ </p><p>
+  Fully reviewed, published core documentation is available at
+  <a class="link" href="https://www.openidentityplatform.org/" target="_blank">https://www.openidentityplatform.org/</a>.
+  Use this documentation when working with a ForgeRock Enterprise release.
+ </p><p>
+  You can find pre-release draft documentation at the online
+  <a class="link" href="https://github.com/OpenIdentityPlatform" target="_blank">community resource center</a>.
+  Use this documentation when trying a nightly build.
+ </p></div><div lang="en" class="section" id="joining-the-community"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.&nbsp;Joining the Open Identity Platform Community</h2></div></div></div><p>
+  Visit the
+  <a class="link" href="https://github.com/OpenIdentityPlatform" target="_blank">community resource center</a>
+  where you can find information about each project,
+  download nightly builds, browse the resource catalog,
+  ask and answer questions on the forums, find community events near you,
+  and of course get the source code as well.
+ </p></div></div><div lang="en" class="chapter" id="chap-about-web-agents"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;1.&nbsp;About OpenAM Web Policy Agents</h1></div></div></div><p>OpenAM web policy agents provide light touch integration for web
+ applications running on supported web servers. This chapter covers what web
+ policy agents do and how they work.</p><p>A <em class="firstterm">policy agent</em> enforces policy for OpenAM. A
+ <em class="firstterm">web policy agent</em> installed in a web server intercepts
+ requests from users trying to access a protected web resource, and denies
+ access until the user has authorization from OpenAM to access the
+ resource.</p><div class="section" id="example-agent-interaction"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.1.&nbsp;How the User, Web Policy Agent, &amp; OpenAM Interact</h2></div></div></div><p>Imagine that a user attempts to access a protected resource before
+  having authenticated by pointing her browser to a web page. Assume that you
+  have configured OpenAM to protect the web page. Then the web policy agent
+  intercepting her browser's request finds no session token in the request,
+  and so redirects the user's browser to the OpenAM login page for
+  authentication. After the user has successfully authenticated, OpenAM
+  sets a session token in a browser cookie, and redirects her browser back to
+  the page she tried to access initially.</p><p>When the user's browser reiterates the request, the policy agent again
+  checks that the request has a session token, finds a session token this
+  time, and validates the session token with OpenAM. Given the valid session
+  token, the policy agent gets a policy decision from OpenAM concerning whether
+  the user can access the page. If OpenAM's Policy Service determines that
+  the user is allowed to access the page, OpenAM responds to the policy agent
+  that access should be granted. The web policy agent then permits the web
+  page to be returned to the user's browser.</p><p>The following diagram shows how the pieces fit together when a web
+  client accesses a web page protected by a policy agent. This diagram is
+  simplified to show only the essential principals rather than to describe
+  every possible case.</p><div class="mediaobject" align="center" id="figure-web-pa-overview"><a class="fancybox" href="images/web-pa-overview.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_web-pa-overview.png" align="middle" alt="Diagram of web policy agent use" title="The interaction happens as described in the following list."></a></div><div class="orderedlist"><p>A web policy agent is a library installed in the web server and
+   configured to be called by the web server when a client requests access
+   to a protected resource in a web site.</p><ol class="orderedlist" type="1"><li class="listitem"><p>The web client requests access to a protected resource.</p></li><li class="listitem"><p>The web server runs the request through the policy agent that
+    protects the resource according to OpenAM policy. The policy agent
+    acts to enforce policy, whereas the policy configuration and
+    decisions are handled by OpenAM.</p></li><li class="listitem"><p>The policy agent communicates with OpenAM to get the policy
+    decision to enforce.</p></li><li class="listitem"><p>For a resource to which OpenAM approves access, the policy agent
+    allows access.</p></li><li class="listitem"><p>The web server returns the requested access to the web client.</p></li></ol></div></div><div class="section" id="web-agent-configuration"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.2.&nbsp;How Web Policy Agents are Configured</h2></div></div></div><p>You install web policy agents in the web servers holding web resources
+  that you want to protect. By default, the web policy agent has only enough
+  configuration at installation time to connect to OpenAM in order to get the
+  rest of its configuration from the OpenAM configuration store. With nearly
+  all configuration stored centrally, you can manage policy agents centrally
+  from the OpenAM console.</p><p>You can opt to store the agent configuration locally if necessary.
+  If you store the configuration locally, then avoid issues with the
+  configuration by making sure you provide valid values for configuration
+  properties ending in the following.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">.cookie.name</code></p></li><li class="listitem"><p><code class="literal">.fqdn.default</code></p></li><li class="listitem"><p><code class="literal">.agenturi.prefix</code></p></li><li class="listitem"><p><code class="literal">.naming.url</code></p></li><li class="listitem"><p><code class="literal">.login.url</code></p></li><li class="listitem"><p><code class="literal">.instance.name</code></p></li><li class="listitem"><p><code class="literal">.username</code></p></li><li class="listitem"><p><code class="literal">.password</code></p></li><li class="listitem"><p><code class="literal">.connection_timeout</code></p></li><li class="listitem"><p><code class="literal">.policy_clock_skew</code></p></li></ul></div><p>You configure web policy agents per realm. Thus to access centralized
+  configuration, you select Access Control &gt; <em class="replaceable"><code>Realm
+  Name</code></em> &gt; Agents &gt; Web &gt; <em class="replaceable"><code>Agent
+  Name</code></em>. Web policy agent configuration is distinct from
+  policy configuration. The only policy-like configuration that you apply to
+  web policy agents is indicating which URLs in the web server can be
+  ignored (<em class="firstterm">not enforced URLs</em>) and which client IP
+  address are exempt from policy enforcement (<em class="firstterm">not enforced
+  IPs</em>).</p><p>For each aspect of web policy agent configuration, you can configure
+  the policy agent through the OpenAM console during testing, and then
+  export the resulting configuration in order to script configuration in
+  your production environment.</p></div></div><div lang="en" class="chapter" id="chap-apache-22"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;2.&nbsp;Installing the Apache 2.2 Policy Agent</h1></div></div></div><a class="indexterm" name="d13186e339"></a><p>This chapter covers installation of the policy agent for Apache
+ HTTP Server 2.2.x.</p><div class="section" id="before-apache22-agent-install"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.1.&nbsp;Before You Install</h2></div></div></div><p>Make sure OpenAM is installed, running, that you can contact OpenAM
+  from the system running the policy agent. Next, create a profile for your
+  policy agent as described in the <em class="citetitle">Administration Guide</em>
+  section on <a href="../admin-guide/index.html#create-agent-profiles" class="link"><em class="citetitle">Creating Agent
+  Profiles</em></a>. To protect resources with the agent also create
+  at least one policy as described in the section on <a href="../admin-guide/index.html#configure-authz-policy" class="link"><em class="citetitle">Configuring
+  Policies</em></a>. Consider creating a simple policy, such as a
+  policy that allows only authenticated users to access your resources, in order
+  to test your policy agent after installation.</p><p>You must install Apache HTTP Server before you install the policy
+  agent, and you must stop the server during installation.</p><p>You must install a supported version of the Java runtime environment.
+         Please review the <a href="../release-notes/index.html#java-requirements" class="link">
+         <em class="citetitle">OpenAM Release Notes</em></a> for the currently supported version
+         of Java, and set the <code class="literal">JAVA_HOME</code> environment
+         variable accordingly. The policy agent installer requires Java.</p><pre class="cmdline prettyprint">$ echo $JAVA_HOME
+/path/to/java
+$ which java
+/usr/bin/java</pre><p>Go to <a href="../install-guide/index.html#download-openam-software" class="link"><em class="citetitle">Obtaining OpenAM Software</em></a>
+  to determine which version of the agent to download and download the agent.
+  Also verify the checksum of the file you download against the checksum
+  posted on the download page.</p><p>Unzip the file in the directory where you plan to install the web
+  policy agent. The agent you install stores its configuration and logs
+  under this directory.</p><div class="variablelist"><p>When you unzip the policy agent .zip download, you find the following
+   directories under the <code class="filename">web_agents/apache22_agent</code>
+   directory.</p><dl class="variablelist"><dt><span class="term"><code class="filename">bin</code></span></dt><dd><p>Contains the installation and configuration program,
+     <span class="command"><strong>agentadmin</strong></span>; the certificate management tool
+     <span class="command"><strong>certutil</strong></span> and the password hashing tool
+     <span class="command"><strong>crypt_util</strong></span>.</p></dd><dt><span class="term"><code class="filename">config</code></span></dt><dd><p>Configuration templates used by the <span class="command"><strong>agentadmin</strong></span>
+     command during installation</p></dd><dt><span class="term"><code class="filename">data</code></span></dt><dd><p>Not used</p></dd><dt><span class="term"><code class="filename">etc</code></span></dt><dd><p>Apache configuration template used during installation</p></dd><dt><span class="term"><code class="filename">installer-logs</code></span></dt><dd><p>Location for log files written during installation</p></dd><dt><span class="term"><code class="filename">lib</code></span></dt><dd><p>Shared libraries used by the web policy agent</p></dd><dt><span class="term"><code class="filename">locale</code></span></dt><dd><p>Property files used by the installation program</p></dd></dl></div></div><div class="section" id="install-apache22-web-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.2.&nbsp;Installing Apache 2.2 Web Policy Agent</h2></div></div></div><p>Complete the following procedures to install the policy agent.</p><div class="procedure" id="create-apache22-agent-profile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;2.1.&nbsp;To Create the Apache 2.2 Web Agent Profile</div><p>Regardless of whether you store configurations centrally in OpenAM
+   or locally with your agents, the agent requires a profile so that it can
+   connect to and communicate with OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>In the OpenAM console, browse to Access Control &gt;
+    <em class="replaceable"><code>Realm Name</code></em>&gt; Agents &gt; Web,
+    and then click the New... button in the Agent table.</p></li><li class="step"><p>Complete the web form using the following hints.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Name</span></dt><dd><p>The name for the agent profile used when you install the
+       agent</p></dd><dt><span class="term">Password</span></dt><dd><p>Password the agent uses to authenticate to OpenAM</p></dd><dt><span class="term">Configuration</span></dt><dd><p>Centralized configurations are stored in the OpenAM configuration
+       store. You can manage the centralized configuration through the OpenAM
+       console. Local configurations are stored in a file alongside the
+       agent.</p></dd><dt><span class="term">Server URL</span></dt><dd><p>The full URL to an OpenAM instance, or if OpenAM is deployed in
+       a site configuration (behind a load balancer) then the site URL</p><p>In centralized configuration mode, the Server URL is used to
+       populate the agent profile for services such as Login, Logout, Naming,
+       and Cross Domain SSO.</p></dd><dt><span class="term">Agent URL</span></dt><dd><p>The web server URL that the agent protects</p><p>In centralized configuration mode, the Agent URL is used to
+       populate the Agent Profile for services such as notifications.</p></dd></dl></div></li></ol></div></div><div class="procedure" id="create-apache22-agent-pwdfile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;2.2.&nbsp;To Create the Password File</div><ol class="procedure" type="1"><li class="step"><p>Create a text file containing only the password.</p><pre class="cmdline prettyprint">$ echo password &gt; /tmp/pwd.txt</pre></li><li class="step"><p>Protect the password file you create as appropriate for your
+    operating system.</p><pre class="cmdline prettyprint">$ chmod 400 /tmp/pwd.txt</pre></li></ol></div></div><div class="procedure" id="install-agent-into-apache22"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;2.3.&nbsp;To Install the Policy Agent into Apache 2.2</div><ol class="procedure" type="1"><li class="step"><p>Shut down the Apache 2.2 server where you plan to install the
+    agent.</p><pre class="cmdline prettyprint">$ /path/to/apache22/bin/apachectl -k stop</pre></li><li class="step"><p>Make sure OpenAM is running.</p></li><li class="step"><p>Run <span class="command"><strong>./agentadmin --install</strong></span> to install the agent.</p><pre class="cmdline prettyprint">$ cd /path/to/web_agents/apache22_agent/bin/
+$ ./agentadmin --install
+...
+-----------------------------------------------
+SUMMARY OF YOUR RESPONSES
+-----------------------------------------------
+Apache Server Config Directory : /path/to/apache22/conf 
+OpenAM server URL : http://openam.example.com:8080/openam 
+Agent URL : http://www.example.com:80
+Agent Profile name : Apache Web Agent 
+Agent Profile Password file name : /tmp/pwd.txt 
+
+...
+SUMMARY OF AGENT INSTALLATION
+-----------------------------
+Agent instance name: Agent_001
+Agent Bootstrap file location:
+/path/to/web_agents/apache22_agent/Agent_001/config/
+ 
+Agent Configuration Tag file location
+/path/to/web_agents/apache22_agent/Agent_001/config/
+ 
+Agent Audit directory location:
+/path/to/web_agents/apache22_agent/Agent_001/logs/audit
+Agent Debug directory location:
+/path/to/web_agents/apache22_agent/Agent_001/logs/debug
+
+
+Install log file location:
+/path/to/web_agents/apache22_agent/installer-logs/audit/install.log
+...</pre><p>Upon successful completion, the installer has added the agent as
+    a module to the Apache 2.2 configuration, and also set up configuration
+    and log directories for the agent.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>If the agent is in a different domain than the server, refer to <em class="citetitle">Administration Guide</em> procedure, <a href="../admin-guide/index.html#chap-cdsso" class="link"><em class="citetitle">Configuring Cross-Domain
+   Single Sign On</em></a>.</p></div></div></li><li class="step"><p>Take note of the configuration files and log locations.</p><p>Each agent instance that you install on the system has its own
+    numbered configuration and logs directory. The first agent's configuration
+    and logs are thus located under the directory
+    <code class="filename">web_agents/apache22_agent/Agent_001/</code>.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">config/</code></span></dt><dd><p>Used to bootstrap the web policy agent, allowing the agent to
+       connect to OpenAM and download its configuration</p></dd><dt><span class="term"><code class="filename">config/</code></span></dt><dd><p>Only used if you configured the web policy agent to use local
+       configuration</p></dd><dt><span class="term"><code class="filename">logs/audit/</code></span></dt><dd><p>Operational audit log directory, only used if remote logging
+       to OpenAM is disabled</p></dd><dt><span class="term"><code class="filename">logs/debug/</code></span></dt><dd><p>Debug directory where the <code class="filename">amAgent</code> debug file
+       resides. Useful in troubleshooting policy agent issues.</p></dd></dl></div></li><li class="step"><p>If your policy agent configuration is not in the top-level realm (/),
+       then you must edit config/ to identify
+       the sub-realm that has your policy agent configuration.
+       Find com.sun.identity.agents.config.organization.name and change
+       the / to the path to your policy agent profile. This allows the policy agent
+       to properly identify itself to the OpenAM server. </p></li><li class="step"><p>Start the Apache 2.2 server where you installed the agent.</p><pre class="cmdline prettyprint">$ /path/to/apache22/bin/apachectl -k start</pre></li></ol></div></div><div class="procedure" id="check-apache22-agent-installation"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;2.4.&nbsp;To Check the Policy Agent Installation</div><ol class="procedure" type="1"><li class="step"><p>Check the Apache 2.2 error log after you start the server to make
+    sure startup completed successfully.</p><pre class="cmdline prettyprint">$ tail -n 2 /path/to/apache22/logs/error_log
+[Sat Sep 03 13:28:16 2011] [notice] Policy web agent shared memory conf...
+[Sat Sep 03 13:28:16 2011] [notice] Apache/2.2.19 (Unix) DSAME/3.0 configured
+ -- resuming normal operations</pre></li><li class="step"><p>Check the <code class="filename">amAgent</code> debug log to verify that
+    no errors occurred on startup.</p><pre class="cmdline prettyprint">$ tail /path/to/web_agents/apache22_agent/Agent_001/logs/debug/amAgent
+2011-09-03 13:28:16.971    -1 32686:9daae60 all: ==============...=====
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Version: ...
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: 
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Build Date: ...
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Build Machine: ..forgerock.com
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: ==============...=====</pre></li><li class="step"><p>If you have a policy configured, you can test your policy agent.
+    For example, try to browse to a resource that your policy agent protects.
+    You should be redirected to OpenAM to authenticate, for example as user
+    <code class="literal">demo</code>, password <code class="literal">changeit</code>. After
+    you authenticate, OpenAM then redirects you back to the resource you tried
+    to access.</p></li></ol></div></div></div><div class="section" id="custom-apache22-agent-installation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.3.&nbsp;Custom Apache 2.2 Web Policy Agent Installation</h2></div></div></div><p>When running multiple Apache 2.2 servers on the same host, use
+  <span class="command"><strong>./agentadmin --custom-install</strong></span>.</p><p>When performing a scripted, silent installation, use
+  <span class="command"><strong>./agentadmin --install --saveResponse
+  <em class="replaceable"><code>response-file</code></em></strong></span>
+  to create a response file for scripted installation. Then install silently
+  using <span class="command"><strong>./agentadmin --install --useResponse
+  <em class="replaceable"><code>response-file</code></em></strong></span>.</p><p>With <span class="command"><strong>./agentadmin --custom-install</strong></span>, you can opt to
+  create the policy agent profile during installation. The OpenAM administrator
+  must first create an agent administrator user, as described in <a href="../admin-guide/index.html#delegate-agent-profile-creation" class="link"><em class="citetitle">Delegating Agent
+  Profile Creation</em></a>, and provide you with the agent
+  administrator user name and password. Before running the
+  <span class="command"><strong>./agentadmin --custom-install</strong></span> command, put the password
+  alone in a read-only file only the user installing can access, as for the
+  agent password. When the <span class="command"><strong>agentadmin</strong></span> command prompts you to
+  create the profile during installation, enter <code class="literal">true</code>, and
+  then respond to the <span class="command"><strong>agentadmin</strong></span> prompts for the agent
+  administrator user name and password file.</p></div><div class="section" id="uninstall-apache22-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.4.&nbsp;Remove Apache 2.2 Web Policy Agent Software</h2></div></div></div><p>Shut down the Apache 2.2 server before you uninstall the
+    policy agent.</p><pre class="cmdline prettyprint">$ /path/to/apache22/bin/apachectl -k stop</pre><p>To remove the web policy agent, use <span class="command"><strong>./agentadmin
+  --uninstall</strong></span>.</p><pre class="cmdline prettyprint">$ ./agentadmin --uninstall
+...
+-----------------------------------------------
+SUMMARY OF YOUR RESPONSES
+-----------------------------------------------
+Apache Server Config Directory : /path/to/apache22/conf 
+
+...
+Deleting the config directory
+/path/to/web_agents/apache22_agent/Agent_001/config
+...DONE.
+
+Removing Agent parameters from /path/to/apache22/conf/httpd.conf file
+...DONE.
+
+
+Uninstall log file location:
+/path/to/web_agents/apache22_agent/installer-logs/audit/uninstall.log
+...</pre></div></div><div lang="en" class="chapter" id="chap-apache-24"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;3.&nbsp;Installing the Apache 2.4 Policy Agent</h1></div></div></div><a class="indexterm" name="d13186e679"></a><p>This chapter covers installation of the policy agent for Apache
+ HTTP Server 2.4.x.</p><div class="section" id="before-apache24-agent-install"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.1.&nbsp;Before You Install</h2></div></div></div><p>Make sure OpenAM is installed, running, that you can contact OpenAM
+  from the system running the policy agent. Next, create a profile for your
+  policy agent as described in the <em class="citetitle">Administration Guide</em>
+  section on <a href="../admin-guide/index.html#create-agent-profiles" class="link"><em class="citetitle">Creating Agent
+  Profiles</em></a>. To protect resources with the agent also create
+  at least one policy as described in the section on <a href="../admin-guide/index.html#configure-authz-policy" class="link"><em class="citetitle">Configuring
+  Policies</em></a>. Consider creating a simple policy, such as a
+  policy that allows only authenticated users to access your resources, in order
+  to test your policy agent after installation.</p><p>You must install Apache HTTP Server before you install the policy
+  agent, and you must stop the server during installation.</p><p>You must install a supported version of the Java runtime environment.
+         Please review the <a href="../release-notes/index.html#java-requirements" class="link">
+             <em class="citetitle">OpenAM Release Notes</em></a> for the currently supported version
+         of Java, and set the <code class="literal">JAVA_HOME</code> environment
+         variable accordingly. The policy agent installer requires Java.</p><p>Go to <a href="../install-guide/index.html#download-openam-software" class="link"><em class="citetitle">Obtaining OpenAM Software</em></a>
+  to determine which version of the agent to download and download the agent.
+  Also verify the checksum of the file you download against the checksum
+  posted on the download page.</p><p>Unzip the file in the directory where you plan to install the web
+  policy agent. The agent you install stores its configuration and logs
+  under this directory.</p><div class="variablelist"><p>When you unzip the policy agent .zip download, you find the following
+   directories under the <code class="filename">web_agents/apache24_agent</code>
+   directory.</p><dl class="variablelist"><dt><span class="term"><code class="filename">bin</code></span></dt><dd><p>Contains the installation and configuration program,
+     <span class="command"><strong>agentadmin</strong></span>; the certificate management tool
+     <span class="command"><strong>certutil</strong></span> and the password hashing tool
+     <span class="command"><strong>crypt_util</strong></span>.</p></dd><dt><span class="term"><code class="filename">config</code></span></dt><dd><p>Configuration templates used by the <span class="command"><strong>agentadmin</strong></span>
+     command during installation</p></dd><dt><span class="term"><code class="filename">data</code></span></dt><dd><p>Not used</p></dd><dt><span class="term"><code class="filename">etc</code></span></dt><dd><p>Apache configuration template used during installation</p></dd><dt><span class="term"><code class="filename">installer-logs</code></span></dt><dd><p>Location for log files written during installation</p></dd><dt><span class="term"><code class="filename">lib</code></span></dt><dd><p>Shared libraries used by the web policy agent</p></dd><dt><span class="term"><code class="filename">locale</code></span></dt><dd><p>Property files used by the installation program</p></dd></dl></div></div><div class="section" id="install-apache24-web-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.2.&nbsp;Installing Apache 2.4 Web Policy Agent</h2></div></div></div><p>Complete the following procedures to install the policy agent.</p><div class="procedure" id="create-apache24-agent-profile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;3.1.&nbsp;To Create the Apache 2.4 Web Agent Profile</div><p>Regardless of whether you store configurations centrally in OpenAM
+   or locally with your agents, the agent requires a profile so that it can
+   connect to and communicate with OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>In the OpenAM console, browse to Access Control &gt;
+    <em class="replaceable"><code>Realm Name</code></em>&gt; Agents &gt; Web,
+    and then click the New... button in the Agent table.</p></li><li class="step"><p>Complete the web form using the following hints.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Name</span></dt><dd><p>The name for the agent profile used when you install the
+       agent</p></dd><dt><span class="term">Password</span></dt><dd><p>Password the agent uses to authenticate to OpenAM</p></dd><dt><span class="term">Configuration</span></dt><dd><p>Centralized configurations are stored in the OpenAM configuration
+       store. You can manage the centralized configuration through the OpenAM
+       console. Local configurations are stored in a file alongside the
+       agent.</p></dd><dt><span class="term">Server URL</span></dt><dd><p>The full URL to an OpenAM instance, or if OpenAM is deployed in
+       a site configuration (behind a load balancer) then the site URL</p><p>In centralized configuration mode, the Server URL is used to
+       populate the agent profile for services such as Login, Logout, Naming,
+       and Cross Domain SSO.</p></dd><dt><span class="term">Agent URL</span></dt><dd><p>The web server URL that the agent protects</p><p>In centralized configuration mode, the Agent URL is used to
+       populate the Agent Profile for services such as notifications.</p></dd></dl></div></li></ol></div></div><div class="procedure" id="create-apache24-agent-pwdfile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;3.2.&nbsp;To Create the Password File</div><ol class="procedure" type="1"><li class="step"><p>Create a text file containing only the password.</p><pre class="cmdline prettyprint">$ echo password &gt; /tmp/pwd.txt</pre></li><li class="step"><p>Protect the password file you create as appropriate for your
+    operating system.</p><pre class="cmdline prettyprint">$ chmod 400 /tmp/pwd.txt</pre></li></ol></div></div><div class="procedure" id="install-agent-into-apache24"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;3.3.&nbsp;To Install the Policy Agent into Apache 2.4</div><ol class="procedure" type="1"><li class="step"><p>Shut down the Apache 2.4 server where you plan to install the
+    agent.</p><pre class="cmdline prettyprint">$ /path/to/apache24/bin/apachectl -k stop</pre></li><li class="step"><p>Make sure OpenAM is running.</p></li><li class="step"><p>Run <span class="command"><strong>./agentadmin --install</strong></span> to install the
+    agent.</p><pre class="cmdline prettyprint">$ cd /path/to/web_agents/apache24_agent/bin/
+$ ./agentadmin --install
+...
+-----------------------------------------------
+SUMMARY OF YOUR RESPONSES
+-----------------------------------------------
+Apache Server Config Directory : /path/to/apache24/conf 
+OpenAM server URL : http://openam.example.com:8080/openam 
+Agent URL : http://www.example.com:80
+Agent Profile name : Apache Web Agent 
+Agent Profile Password file name : /tmp/pwd.txt 
+
+...
+SUMMARY OF AGENT INSTALLATION
+-----------------------------
+Agent instance name: Agent_001
+Agent Bootstrap file location:
+/path/to/web_agents/apache24_agent/Agent_001/config/
+ OpenSSOAgentBootstrap.properties
+Agent Configuration Tag file location
+/path/to/web_agents/apache24_agent/Agent_001/config/
+ OpenSSOAgentConfiguration.properties
+Agent Audit directory location:
+/path/to/web_agents/apache24_agent/Agent_001/logs/audit
+Agent Debug directory location:
+/path/to/web_agents/apache24_agent/Agent_001/logs/debug
+
+
+Install log file location:
+/path/to/web_agents/apache24_agent/installer-logs/audit/install.log
+...</pre><p>Upon successful completion, the installer has added the agent as
+    a module to the Apache 2.4 configuration, and also set up configuration
+    and log directories for the agent. You can find a backup Apache HTTPD
+    configuration file, <code class="filename">http.conf-preAmAgent-*</code>,
+    in the Apache HTTPD configuration directory.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>If the agent is in a different domain than the OpenAM server,
+     refer to the <em class="citetitle">Administration Guide</em> procedure,
+     <a href="../admin-guide/index.html#chap-cdsso" class="link"><em class="citetitle">Configuring
+     Cross-Domain Single Sign On</em></a>.</p></div></div></li><li class="step"><p>Take note of the configuration files and log locations.</p><p>Each agent instance that you install on the system has its own
+    numbered configuration and logs directory. The first agent's configuration
+    and logs are thus located under the directory
+    <code class="filename">web_agents/apache24_agent/Agent_001/</code>.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">config/OpenSSOAgentBootstrap.properties</code></span></dt><dd><p>Used to bootstrap the web policy agent, allowing the agent to
+       connect to OpenAM and download its configuration</p></dd><dt><span class="term"><code class="filename">config/OpenSSOAgentConfiguration.properties</code></span></dt><dd><p>Only used if you configured the web policy agent to use local
+       configuration</p></dd><dt><span class="term"><code class="filename">logs/audit/</code></span></dt><dd><p>Operational audit log directory, only used if remote logging
+       to OpenAM is disabled</p></dd><dt><span class="term"><code class="filename">logs/debug/</code></span></dt><dd><p>Debug directory where the <code class="filename">amAgent</code> debug file
+       resides. Useful in troubleshooting policy agent issues.</p></dd></dl></div></li><li class="step"><p>If your policy agent configuration is not in the top-level realm (/),
+       then you must edit
+       <code class="filename">config/OpenSSOAgentBootstrap.properties</code> to
+       indentify the sub-realm that has your policy agent configuration.
+       Find com.sun.identity.agents.config.organization.name and change
+       the / to the path to your policy agent profile. This allows the
+       policy agent to properly identify itself to the OpenAM server.</p></li><li class="step"><p>Start the Apache 2.4 server where you installed the agent.</p><pre class="cmdline prettyprint">$ /path/to/apache24/bin/apachectl -k start</pre></li></ol></div></div><div class="procedure" id="check-apache24-agent-installation"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;3.4.&nbsp;To Check the Policy Agent Installation</div><ol class="procedure" type="1"><li class="step"><p>Check the Apache 2.4 error log after you start the server to make
+    sure startup completed successfully.</p><pre class="cmdline prettyprint">$ tail -n 2 /path/to/apache24/logs/error_log
+[Fri Sep 14 12:48:55.765192 2012] [dsame:notice] [pid 18991:tid 3075335872]
+ Policy web agent shared memory configuration: notif_shm_size[2099200],
+ pdp_shm_size[3213312], max_pid_count[256], max_pdp_count[256]
+[Fri Sep 14 12:48:55.774790 2012] [mpm_event:notice] [pid 18991:tid 3075335872]
+ AH00489: Apache/2.4.3 (Unix) DSAME/3.0 configured
+ -- resuming normal operations</pre></li><li class="step"><p>Check the <code class="filename">amAgent</code> debug log to verify that
+    no errors occurred on startup.</p><pre class="cmdline prettyprint">$ tail /path/to/web_agents/apache24_agent/Agent_001/logs/debug/amAgent
+2012-09-14 12:48:55.613      -1 18991:85fdd48 all: ==============...=====
+2012-09-14 12:48:55.614      -1 18991:85fdd48 all: Version: ...
+2012-09-14 12:48:55.614      -1 18991:85fdd48 all: Revision: ...
+2012-09-14 12:48:55.614      -1 18991:85fdd48 all: Build Date: ...
+2012-09-14 12:48:55.614      -1 18991:85fdd48 all: Build Machine: ...
+2012-09-14 12:48:55.614      -1 18991:85fdd48 all: ==============...=====</pre></li><li class="step"><p>If you have a policy configured, you can test your policy agent.
+    For example, try to browse to a resource that your policy agent protects.
+    You should be redirected to OpenAM to authenticate, for example as user
+    <code class="literal">demo</code>, password <code class="literal">changeit</code>. After
+    you authenticate, OpenAM then redirects you back to the resource you tried
+    to access.</p></li></ol></div></div></div><div class="section" id="custom-apache24-agent-installation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.3.&nbsp;Custom Apache 2.4 Web Policy Agent Installation</h2></div></div></div><p>When running multiple Apache 2.4 servers on the same host, use
+  <span class="command"><strong>./agentadmin --custom-install</strong></span>.</p><p>When performing a scripted, silent installation, use
+  <span class="command"><strong>./agentadmin --install --saveResponse
+  <em class="replaceable"><code>response-file</code></em></strong></span>
+  to create a response file for scripted installation. Then install silently
+  using <span class="command"><strong>./agentadmin --install --useResponse
+  <em class="replaceable"><code>response-file</code></em></strong></span>.</p><p>With <span class="command"><strong>./agentadmin --custom-install</strong></span>, you can opt to
+  create the policy agent profile during installation. The OpenAM administrator
+  must first create an agent administrator user, as described in <a href="../admin-guide/index.html#delegate-agent-profile-creation" class="link"><em class="citetitle">Delegating Agent
+  Profile Creation</em></a>, and provide you with the agent
+  administrator user name and password. Before running the
+  <span class="command"><strong>./agentadmin --custom-install</strong></span> command, put the password
+  alone in a read-only file only the user installing can access, as for the
+  agent password. When the <span class="command"><strong>agentadmin</strong></span> command prompts you to
+  create the profile during installation, enter <code class="literal">true</code>, and
+  then respond to the <span class="command"><strong>agentadmin</strong></span> prompts for the agent
+  administrator user name and password file.</p></div><div class="section" id="uninstall-apache24-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.4.&nbsp;Remove Apache 2.4 Web Policy Agent Software</h2></div></div></div><p>Shut down the Apache 2.4 server before you uninstall the
+    policy agent.</p><pre class="cmdline prettyprint">$ /path/to/apache24/bin/apachectl -k stop</pre><p>To remove the web policy agent, use <span class="command"><strong>./agentadmin
+  --uninstall</strong></span>.</p><pre class="cmdline prettyprint">$ ./agentadmin --uninstall
+...
+-----------------------------------------------
+SUMMARY OF YOUR RESPONSES
+-----------------------------------------------
+Apache Server Config Directory : /path/to/apache24/conf 
+
+...
+Deleting the config directory
+/path/to/web_agents/apache24_agent/Agent_001/config
+...DONE.
+
+Removing Agent parameters from /path/to/apache24/conf/httpd.conf file
+...DONE.
+
+
+Uninstall log file location:
+/path/to/web_agents/apache24_agent/installer-logs/audit/uninstall.log
+...</pre></div></div><div lang="en" class="chapter" id="chap-msiis-6"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;4.&nbsp;Installing the Microsoft IIS 6 Policy Agent</h1></div></div></div><a class="indexterm" name="d13186e1024"></a><p>This chapter covers installation of the policy agent for Microsoft 
+ Internet Information Services 6.</p><div class="section" id="before-iis6-agent-install"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.1.&nbsp;Before You Install</h2></div></div></div><p>Make sure OpenAM is installed, running, that you can contact OpenAM
+  from the system running the policy agent. Next, create a profile for your
+  policy agent as described in the <em class="citetitle">Administration Guide</em>
+  section on <a href="../admin-guide/index.html#create-agent-profiles" class="link"><em class="citetitle">Creating Agent
+  Profiles</em></a>. To protect resources with the agent also create
+  at least one policy as described in the section on <a href="../admin-guide/index.html#configure-authz-policy" class="link"><em class="citetitle">Configuring
+  Policies</em></a>. Consider creating a simple policy, such as a
+  policy that allows only authenticated users to access your resources, in order
+  to test your policy agent after installation.</p><p>You must install Microsoft IIS 6 before you install the policy agent,
+  and make sure that IIS 6 allows anonymous authentication. Make sure that IIS
+  6 listens on the URL used during the web policy agent installation, such as
+  <code class="literal">http://win2003.example.com:80/</code>. Furthermore, you
+  must reset IIS 6 after installing the policy agent.</p><p>Go to <a href="../install-guide/index.html#download-openam-software" class="link"><em class="citetitle">Obtaining OpenAM Software</em></a>
+  to determine which version of the agent to download and download the agent.
+  Also verify the checksum of the file you download against the checksum
+  posted on the download page.</p><p>Unpack the file in the directory where you plan to install the web
+  policy agent. The agent you install stores its configuration and logs
+  under this directory.</p><div class="variablelist"><p>When you unpack the policy agent you download, you find the following
+   directories under the <code class="filename">web_agents\iis6_agent\</code>
+   directory.</p><dl class="variablelist"><dt><span class="term"><code class="filename">bin</code></span></dt><dd><p>Contains the configuration creation script,
+     <span class="command"><strong>IIS6CreateConfig.vbs</strong></span>; the agent administration and
+     installation script, <span class="command"><strong>IIS6Admin.vbs</strong></span>; the certificate
+     management tool <span class="command"><strong>certutil.exe</strong></span>; the password hashing tool
+     <span class="command"><strong>cryptit.exe</strong></span>; additional .dll and support files.</p></dd><dt><span class="term"><code class="filename">config</code></span></dt><dd><p>Configuration templates used by the scripts during configuration
+     and installation</p></dd></dl></div></div><div class="section" id="install-iis6-web-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.2.&nbsp;Installing IIS 6 Web Policy Agent</h2></div></div></div><p>Complete the following procedures to install the policy agent.</p><div class="procedure" id="create-iis6-agent-profile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;4.1.&nbsp;To Create the IIS 6 Web Agent Profile</div><p>Regardless of whether you store configurations centrally in OpenAM
+   or locally with your agents, the agent requires a profile so that it can
+   connect to and communicate with OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>In the OpenAM console, browse to Access Control &gt;
+    <em class="replaceable"><code>Realm Name</code></em>&gt; Agents &gt; Web,
+    and then click the New... button in the Agent table.</p></li><li class="step"><p>Complete the web form using the following hints.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Name</span></dt><dd><p>The name for the agent profile used when you install the
+       agent</p></dd><dt><span class="term">Password</span></dt><dd><p>Password the agent uses to authenticate to OpenAM</p></dd><dt><span class="term">Configuration</span></dt><dd><p>Centralized configurations are stored in the OpenAM configuration
+       store. You can manage the centralized configuration through the OpenAM
+       console. Local configurations are stored in a file alongside the
+       agent.</p></dd><dt><span class="term">Server URL</span></dt><dd><p>The full URL to an OpenAM instance, or if OpenAM is deployed in
+       a site configuration (behind a load balancer) then the site URL</p><p>In centralized configuration mode, the Server URL is used to
+       populate the agent profile for services such as Login, Logout, Naming,
+       and Cross Domain SSO.</p></dd><dt><span class="term">Agent URL</span></dt><dd><p>The web server URL that the agent protects</p><p>In centralized configuration mode, the Agent URL is used to
+       populate the Agent Profile for services such as notifications.</p></dd></dl></div></li></ol></div></div><div class="procedure" id="create-iis6-agent-pwdfile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;4.2.&nbsp;To Create the Password File</div><ol class="procedure" type="1"><li class="step"><p>Protect the password file you will create as appropriate.</p></li><li class="step"><p>Create a text file containing only the password.</p><pre class="cmdline prettyprint">C:\&gt;notepad C:\Windows\Temp\pwd.txt</pre></li></ol></div></div><div class="procedure" id="configure-iis6-agent-install"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;4.3.&nbsp;To Configure Policy Agent Installation</div><ol class="procedure" type="1"><li class="step"><p>Log on as a user with Administrator privileges.</p></li><li class="step"><p>Change to the directory where you unpacked the agent download.</p><pre class="cmdline prettyprint">C:\&gt;cd web_agents\iis6_agent\bin</pre></li><li class="step"><p>Create a configuration file using the
+    <span class="command"><strong>IIS6CreateConfig.vbs</strong></span> script.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>The Web Site Identifier is the value of <code class="literal">id</code>,
+     not the site name.</p></div></div><pre class="cmdline prettyprint">C:\web_agents\iis6_agent\bin&gt;cscript IIS6CreateConfig.vbs config.txt
+...
+Enter the Agent Resource File Name [IIS6Resource.en] :
+
+Enter the Agent URL (Example: http://agent.example.com:80) :
+<strong>http://windows2003.example.com:80</strong>
+
+Displaying the list of Web Sites and its corresponding Identifiers
+Site Name (Site Id)
+Default Web Site (1)
+
+Web Site Identifier :
+<strong>1</strong>
+...
+Enter the URL where the OpenAM server is running...:
+<strong>http://openam.example.com:8080/openam</strong>
+
+Please enter the Agent Profile name :
+<strong>IIS 6 Web Agent</strong>
+
+Enter the Agent profile password file :
+<strong>C:\Windows\Temp\pwd.txt</strong>
+
+-----------------------------------------------------
+Agent Configuration file created : config.txt
+-----------------------------------------------------</pre></li></ol></div></div><div class="procedure" id="install-agent-into-iis6"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;4.4.&nbsp;To Install the Policy Agent into IIS 6</div><ol class="procedure" type="1"><li class="step"><p>Log on as a user with Administrator privileges.</p></li><li class="step"><p>Make sure OpenAM is running.</p></li><li class="step"><p>Run <span class="command"><strong>IIS6Admin.vbs</strong></span> to install the agent.</p><pre class="cmdline prettyprint">C:\web_agents\iis6_agent\bin&gt;cscript IIS6Admin.vbs -config config.txt
+...
+Enter the Agent Resource File Name [IIS6Resource.en] :
+
+Creating the Agent Config Directory
+Creating the  and
+  File
+Updating the Windows Product Registry
+Loading the IIS 6.0 Agent
+Completed Configuring the IIS 6.0 Agent</pre></li><li class="step"><p>Restart IIS 6.</p><pre class="cmdline prettyprint">C:\web_agents\iis6_agent\bin&gt;iisreset
+
+Attempting stop...
+Internet services successfully stopped
+Attempting start...
+Internet services successfully restarted</pre><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>If the agent is in a different domain than the server, refer to <em class="citetitle">Administration Guide</em> procedure, <a href="../admin-guide/index.html#chap-cdsso" class="link"><em class="citetitle">Configuring Cross-Domain
+   Single Sign On</em></a>.</p></div></div></li><li class="step"><p>Take note of the configuration files and log locations.</p><p>Each agent instance that you install on the system has its own
+    configuration and logs directory. The agent protecting the Default Web
+    Site (1) shown in the examples above has configuration and logs located
+    under the directory
+    <code class="filename">web_agents\iis6_agent\Identifier_1</code>.
+    The number in the path to the agent configuration reflects the IIS site ID,
+    unlike the other agents for which the number in the path is a counter.
+    The number in the path therefore remains the same when you uninstall and
+    then reinstall an agent to protect the same site.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">config\</code></span></dt><dd><p>Used to bootstrap the web policy agent, allowing the agent to
+       connect to OpenAM and download its configuration</p></dd><dt><span class="term"><code class="filename">config\</code></span></dt><dd><p>Only used if you configured the web policy agent to use local
+       configuration</p></dd><dt><span class="term"><code class="filename">audit\</code></span></dt><dd><p>Operational audit log directory, only used if remote logging
+       to OpenAM is disabled</p></dd><dt><span class="term"><code class="filename">debug\</code></span></dt><dd><p>Debug directory where the <code class="filename">amAgent</code> debug file
+       resides. Useful in troubleshooting policy agent issues.</p></dd></dl></div></li><li class="step"><p>If your policy agent configuration is not in the top-level realm (/),
+       then you must edit config\ to identify
+       the sub-realm that has your policy agent configuration.
+       Find com.sun.identity.agents.config.organization.name and change
+       the / to the path to your policy agent profile. This allows the policy agent
+       to properly identify itself to the OpenAM server. </p></li><li class="step"><p>If the web policy agent performs naming URL validation, which you
+     can configure by setting the
+     <code class="literal">com.forgerock.agents.ext.url.validation.level</code> property
+     in <code class="filename">config\OpenSSOAgentBootstrap.properties</code>, then
+     make sure the <code class="literal">IUSR_<em class="replaceable"><code>MachineName</code></em></code>
+     user has read-write access to <code class="filename">C:\Windows\Temp\</code> before
+     you start IIS.</p></li><li class="step"><p>If you have a policy configured, you can test your policy agent.
+     For example, try to browse to a resource that your policy agent protects.
+     You should be redirected to OpenAM to authenticate, for example as user
+     <code class="literal">demo</code>, password <code class="literal">changeit</code>. After
+     you authenticate, OpenAM then redirects you back to the resource you tried
+     to access.</p></li></ol></div></div></div><div class="section" id="custom-iis6-agent-installation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.3.&nbsp;Custom IIS 6 Web Policy Agent Installation</h2></div></div></div><p>When protecting multiple IIS 6 websites on the same host, use different
+  configuration files for each site.</p><p>When preparing a scripted, silent installation, notice that the
+  configuration file generated using <span class="command"><strong>IIS6CreateConfig.vbs</strong></span>
+  is a text file containing all of the configuration information in clear text
+  plus the encrypted password retrieved originally from the password
+  file. Encrypt passwords using <span class="command"><strong>cryptit.exe</strong></span>.</p><pre class="cmdline prettyprint">C:\web_agents\iis6_agent\bin&gt;cryptit.exe <em><strong>pwd-file</strong></em> <em><strong>encryption-key</strong></em></pre><p>The <span class="command"><strong>cryptit.exe</strong></span> command uses its own implementation of the
+  Rivest Cipher 5 (RC5) encryption algorithm.</p></div><div class="section" id="uninstall-iis6-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.4.&nbsp;Remove IIS 6 Web Policy Agent Software</h2></div></div></div><p>To remove the web policy agent, log on as a user with Administrator
+  privileges, run <span class="command"><strong>cscript IIS6Admin.vbs -unconfig config.txt</strong></span>,
+  and then run <span class="command"><strong>iisreset</strong></span>.</p></div></div><div lang="en" class="chapter" id="chap-msiis-7"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;5.&nbsp;Installing the Microsoft IIS 7 Policy Agent</h1></div></div></div><a class="indexterm" name="d13186e1336"></a><p>This chapter covers installation of the policy agent for Microsoft 
+ Internet Information Services 7.</p><div class="section" id="before-iis7-agent-install"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.1.&nbsp;Before You Install</h2></div></div></div><p>Make sure OpenAM is installed, running, that you can contact OpenAM
+  from the system running the policy agent. Next, create a profile for your
+  policy agent as described in the <em class="citetitle">Administration Guide</em>
+  section on <a href="../admin-guide/index.html#create-agent-profiles" class="link"><em class="citetitle">Creating Agent
+  Profiles</em></a>. To protect resources with the agent also create
+  at least one policy as described in the section on <a href="../admin-guide/index.html#configure-authz-policy" class="link"><em class="citetitle">Configuring
+  Policies</em></a>. Consider creating a simple policy, such as a
+  policy that allows only authenticated users to access your resources, in order
+  to test your policy agent after installation.</p><p>You must install Microsoft IIS 7 before you install the policy agent,
+  and make sure that IIS 7 allows anonymous authentication. Make sure that IIS
+  7 listens on the URL used during the web policy agent installation, such as
+  <code class="literal">http://windows7.example.com:80/</code>. Furthermore, you
+  must reset IIS 7 after installing the policy agent.</p><p>Go to <a href="../install-guide/index.html#download-openam-software" class="link"><em class="citetitle">Obtaining OpenAM Software</em></a>
+  to determine which version of the agent to download and download the agent.
+  Also verify the checksum of the file you download against the checksum
+  posted on the download page.</p><p>Unpack the file in the directory where you plan to install the web
+  policy agent. The agent you install stores its configuration and logs
+  under this directory.</p><div class="variablelist"><p>When you unpack the policy agent you download, you find the following
+   directories under the <code class="filename">web_agents\iis7_agent\</code>
+   directory.</p><dl class="variablelist"><dt><span class="term"><code class="filename">bin</code></span></dt><dd><p>Contains the configuration creation script,
+     <span class="command"><strong>IIS7CreateConfig.vbs</strong></span>; the agent administration and
+     installation script, <span class="command"><strong>IIS7Admin.vbs</strong></span>; the certificate
+     management tool <span class="command"><strong>certutil.exe</strong></span>; the password hashing tool
+     <span class="command"><strong>cryptit.exe</strong></span>; additional .dll and support files.</p></dd><dt><span class="term"><code class="filename">config</code></span></dt><dd><p>Configuration templates used by the scripts during configuration
+     and installation</p></dd></dl></div></div><div class="section" id="install-iis7-web-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.2.&nbsp;Installing IIS 7 Web Policy Agent</h2></div></div></div><p>Complete the following procedures to install the policy agent.</p><div class="procedure" id="create-iis7-agent-profile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.1.&nbsp;To Create the IIS 7 Web Agent Profile</div><p>Regardless of whether you store configurations centrally in OpenAM
+   or locally with your agents, the agent requires a profile so that it can
+   connect to and communicate with OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>In the OpenAM console, browse to Access Control &gt;
+    <em class="replaceable"><code>Realm Name</code></em>&gt; Agents &gt; Web,
+    and then click the New... button in the Agent table.</p></li><li class="step"><p>Complete the web form using the following hints.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Name</span></dt><dd><p>The name for the agent profile used when you install the
+       agent</p></dd><dt><span class="term">Password</span></dt><dd><p>Password the agent uses to authenticate to OpenAM</p></dd><dt><span class="term">Configuration</span></dt><dd><p>Centralized configurations are stored in the OpenAM configuration
+       store. You can manage the centralized configuration through the OpenAM
+       console. Local configurations are stored in a file alongside the
+       agent.</p></dd><dt><span class="term">Server URL</span></dt><dd><p>The full URL to an OpenAM instance, or if OpenAM is deployed in
+       a site configuration (behind a load balancer) then the site URL</p><p>In centralized configuration mode, the Server URL is used to
+       populate the agent profile for services such as Login, Logout, Naming,
+       and Cross Domain SSO.</p></dd><dt><span class="term">Agent URL</span></dt><dd><p>The web server URL that the agent protects</p><p>In centralized configuration mode, the Agent URL is used to
+       populate the Agent Profile for services such as notifications.</p></dd></dl></div></li></ol></div></div><div class="procedure" id="create-iis7-agent-pwdfile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.2.&nbsp;To Create the Password File</div><ol class="procedure" type="1"><li class="step"><p>Protect the password file you will create as appropriate.</p></li><li class="step"><p>Create a text file containing only the password.</p><pre class="cmdline prettyprint">C:\&gt;notepad C:\Windows\Temp\pwd.txt</pre></li></ol></div></div><div class="procedure" id="configure-iis7-agent-install"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.3.&nbsp;To Configure Policy Agent Installation</div><ol class="procedure" type="1"><li class="step"><p>Log on as a user with Administrator privileges.</p></li><li class="step"><p>Change to the directory where you unpacked the agent download.</p><pre class="cmdline prettyprint">C:\&gt;cd web_agents\iis7_agent\bin</pre></li><li class="step"><p>Create a configuration file using the
+    <span class="command"><strong>IIS7CreateConfig.vbs</strong></span> script.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>The Web Site Identifier is the value of <code class="literal">id</code>,
+     not the site name.</p></div></div><pre class="cmdline prettyprint">C:\web_agents\iis7_agent\bin&gt;cscript IIS7CreateConfig.vbs config.txt
+...
+Enter the Agent Resource File Name [IIS7Resource.en] :
+
+Enter the Agent URL (Example: http://agent.example.com:80) :
+<strong>http://windows7.example.com:80</strong>
+
+Displaying the list of Web Sites and its corresponding Identifiers (id)
+
+SITE "Default Web Site" (id:1,bindings:http/*:80:,state:Started)
+
+Web Site Identifier :
+<strong>1</strong>
+...
+Enter the URL where the OpenAM server is running...:
+<strong>http://openam.example.com:8080/openam</strong>
+
+Please enter the Agent Profile name :
+<strong>IIS 7 Web Agent</strong>
+
+Enter the Agent profile password file :
+<strong>C:\Windows\Temp\pwd.txt</strong>
+
+-----------------------------------------------------
+Agent Configuration file created : config.txt
+-----------------------------------------------------</pre></li></ol></div></div><div class="procedure" id="install-agent-into-iis7"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.4.&nbsp;To Install the Policy Agent into IIS 7</div><ol class="procedure" type="1"><li class="step"><p>Log on as a user with Administrator privileges.</p></li><li class="step"><p>Make sure OpenAM is running.</p></li><li class="step"><p>Run <span class="command"><strong>IIS7Admin.vbs</strong></span> to install the agent.</p><pre class="cmdline prettyprint">C:\web_agents\iis7_agent\bin&gt;cscript IIS7Admin.vbs -config config.txt
+...
+Enter the Agent Resource File Name [IIS7Resource.en] :
+
+Creating the Agent Config Directory
+Creating the  and
+  File
+Updating the Windows Product Registry
+Installing policy web agent module in IIS (status: 0)
+Adding policy web agent module to "Default Web Site" (status: 0)
+Completed Configuring the IIS 7.0 Agent</pre></li><li class="step"><p>Make sure the authentication method for IIS 7 is set to
+    anonymous.</p></li><li class="step"><p>Restart IIS 7.</p><pre class="cmdline prettyprint">C:\web_agents\iis7_agent\bin&gt;iisreset
+
+Attempting stop...
+Internet services successfully stopped
+Attempting start...
+Internet services successfully restarted</pre><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>If the agent is in a different domain than the server, refer to <em class="citetitle">Administration Guide</em> procedure, <a href="../admin-guide/index.html#chap-cdsso" class="link"><em class="citetitle">Configuring Cross-Domain
+   Single Sign On</em></a>.</p></div></div></li><li class="step"><p>Take note of the configuration files and log locations.</p><p>Each agent instance that you install on the system has its own
+    configuration and logs directory. The agent protecting the Default Web
+    Site (id: 1) shown in the examples above has configuration and logs located
+    under the directory
+    <code class="filename">web_agents\iis7_agent\Identifier_1</code>.
+    The number in the path to the agent configuration reflects the IIS site ID,
+    unlike the other agents for which the number in the path is a counter.
+    The number in the path therefore remains the same when you uninstall and
+    then reinstall an agent to protect the same site.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">config\</code></span></dt><dd><p>Used to bootstrap the web policy agent, allowing the agent to
+       connect to OpenAM and download its configuration</p></dd><dt><span class="term"><code class="filename">config\</code></span></dt><dd><p>Only used if you configured the web policy agent to use local
+       configuration</p></dd><dt><span class="term"><code class="filename">audit\</code></span></dt><dd><p>Operational audit log directory, only used if remote logging
+       to OpenAM is disabled</p></dd><dt><span class="term"><code class="filename">debug\</code></span></dt><dd><p>Debug directory where the <code class="filename">amAgent</code> debug file
+       resides. Useful in troubleshooting policy agent issues.</p></dd></dl></div></li><li class="step"><p>If your policy agent configuration is not in the top-level realm (/),
+       then you must edit config\ to identify
+       the sub-realm that has your policy agent configuration.
+       Find com.sun.identity.agents.config.organization.name and change
+       the / to the path to your policy agent profile. This allows the policy agent
+       to properly identify itself to the OpenAM server. </p></li><li class="step"><p>If you have a policy configured, you can test your policy agent.
+     For example, try to browse to a resource that your policy agent protects.
+     You should be redirected to OpenAM to authenticate, for example as user
+     <code class="literal">demo</code>, password <code class="literal">changeit</code>. After
+     you authenticate, OpenAM then redirects you back to the resource you tried
+     to access.</p></li></ol></div></div></div><div class="section" id="custom-iis7-agent-installation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.3.&nbsp;Custom IIS 7 Web Policy Agent Installation</h2></div></div></div><p>When protecting multiple IIS 7 websites on the same host, use different
+  configuration files for each site.</p><p>When preparing a scripted, silent installation, notice that the
+  configuration file generated using <span class="command"><strong>IIS7CreateConfig.vbs</strong></span>
+  is a text file containing all of the configuration information in clear text
+  plus the encrypted password retrieved originally from the password
+  file. Encrypt passwords using <span class="command"><strong>cryptit.exe</strong></span>.</p><pre class="cmdline prettyprint">C:\web_agents\iis7_agent\bin&gt;cryptit.exe <em><strong>pwd-file</strong></em> <em><strong>encryption-key</strong></em></pre></div><div class="section" id="iis7-enable-basic-auth"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.4.&nbsp;Enable IIS 7 Basic Authentication &amp; Password Replay Support</h2></div></div></div><div class="itemizedlist"><p>The IIS 7 web policy agent now supports IIS 7 basic authentication and
+   password replay. You must use the appropriate software versions.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>For Microsoft Office integration, you must use Microsoft Office 2007
+    SP2 or later.</p></li><li class="listitem"><p>For Microsoft SharePoint integration, you must use Microsoft
+    SharePoint Server 2007 SP2 or later.</p></li></ul></div><div class="variablelist"><p>You must also apply workarounds as described for the following
+   Microsoft issues.</p><dl class="variablelist"><dt><span class="term">Microsoft Support Issue: 841215</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/841215" target="_blank">http://support.microsoft.com/kb/841215</a></p><p>Description: Error message when you try to connect to a Windows
+     SharePoint document library: "System error 5 has occurred"</p><p>Summary: Enable Basic Authentication on the client computer.</p></dd><dt><span class="term">Microsoft Support Issue: 870853</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/870853" target="_blank">http://support.microsoft.com/kb/870853</a></p><p>Description: Office 2003 and 2007 Office documents open read-only
+     in Internet Explorer</p><p>Summary: Add registry keys as described in Microsoft's support
+     document.</p></dd><dt><span class="term">Microsoft Support Issue: 928692</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/928692" target="_blank">http://support.microsoft.com/kb/928692</a></p><p>Description: Error message when you open a Web site by using Basic
+     authentication in Expression Web on a computer that is running Windows
+     Vista: "The folder name is not valid"</p><p>Summary: Edit the registry as described in Microsoft's support
+     document.</p></dd><dt><span class="term">Microsoft Support Issue: 932118</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/932118" target="_blank">http://support.microsoft.com/kb/932118</a></p><p>Description: Persistent cookies are not shared between Internet
+     Explorer and Office applications</p><p>Summary: Add the web site the list of trusted sites.</p></dd><dt><span class="term">Microsoft Support Issue: 943280</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/943280" target="_blank">http://support.microsoft.com/kb/943280</a></p><p>Description: Prompt for Credentials When Accessing FQDN Sites From a
+     Windows Vista or Windows 7 Computer</p><p>Summary: Edit the registry as described in Microsoft's support
+     document.</p></dd><dt><span class="term">Microsoft Support Issue: 968851</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/968851" target="_blank">http://support.microsoft.com/kb/968851</a></p><p>Description: SharePoint Server 2007 Cumulative Update Server
+     Hotfix Package (MOSS server-package): April 30, 2009</p><p>Summary: Apply the fix from Microsoft if you use SharePoint.</p></dd><dt><span class="term">Microsoft Support Issue: 2123563</span></dt><dd><p>Link: <a class="link" href="http://support.microsoft.com/kb/2123563" target="_blank">http://support.microsoft.com/kb/2123563</a></p><p>Description: You cannot open Office file types directly from a
+     server that supports only Basic authentication over a non-SSL
+     connection</p><p>Summary: Enable SSL encryption on the web server.</p></dd></dl></div><div class="procedure" id="configure-ii7-basic-auth"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.5.&nbsp;To Configure IIS 7 Basic Authentication &amp; Password Replay Support</div><p>Follow these steps.</p><ol class="procedure" type="1"><li class="step"><p>Generate and store an encryption key.</p><ol type="a" class="substeps"><li class="step"><p>Generate the key using
+      <code class="literal">com.sun.identity.common.DESGenKey</code> using the .jars
+      where you deployed OpenAM, as in the following example.</p><pre class="cmdline prettyprint">$ cd /path/to/tomcat/webapps/openam/WEB-INF/lib
+$ java -cp openam-core-.jar:openam-shared-.jar
+ com.sun.identity.common.DESGenKey
+Key ==&gt; sxVoaDRAN0o=</pre></li><li class="step"><p>Store the key in the agent configuration on the property in the
+      OpenAM console under Access Control &gt;
+      <em class="replaceable"><code>realm-name</code></em> &gt; Agents &gt; Web &gt;
+      <em class="replaceable"><code>agent-name</code></em> &gt; Advanced &gt; Microsoft IIS
+      Server &gt; Replay Password Key (property name:
+      <code class="literal">com.sun.identity.agents.config.replaypasswd.key</code>),
+      and then Save your work.</p></li><li class="step"><p>Store the key in the server configuration in the OpenAM console
+      under Configuration &gt; Servers and Sites &gt;
+      <em class="replaceable"><code>server-name</code></em> &gt; Advanced &gt; Add... to add
+      the property <code class="literal">com.sun.am.replaypasswd.key</code> with the
+      key you generated as the value, and then Save your work.</p></li></ol></li><li class="step"><p>In the OpenAM console under Access Control &gt;
+      <em class="replaceable"><code>realm-name</code></em> &gt; Authentication &gt; All Core
+      Settings... &gt; Authentication Post Processing Classes, add the class
+      <code class="literal">com.sun.identity.authentication.spi.ReplayPasswd</code>,
+      and then Save your work.</p></li><li class="step"><p>If you require Windows logon, or you need to use basic authentication
+    with SharePoint or OWA, then you must configure Active Directory as a
+    user date store, and you must configure the IIS 7 policy agent profile
+    User ID Parameter and User ID Parameter Type so that the policy agent
+    requests OpenAM to provide the appropriate account information from
+    Active Directory in its policy response.</p><p>Skip this step if you do not use SharePoint or OWA and no Windows
+    logon is required.</p><p>Make sure OpenAM data store is configured to use Active Directory as
+    the user data store.</p><p>In the OpenAM console under Access Control &gt;
+    <em class="replaceable"><code>realm-name</code></em> &gt; Agents &gt; Web &gt;
+    <em class="replaceable"><code>agent-name</code></em> &gt; OpenAM Services &gt; Policy
+    Client Service, set User ID Parameter and User ID Parameter Type, and then
+    Save your work. For example if the real username for Windows domain logon
+    in Active Directory is stored on the <code class="literal">samaccountname</code>
+    attribute, then set the User ID Parameter to
+    <code class="literal">samaccountname</code>, and the User ID Parameter Type to
+    <code class="literal">LDAP</code>.</p><p>Setting the User ID Parameter Type to <code class="literal">LDAP</code> causes
+    the policy agent to request that OpenAM get the value of the User ID
+    Parameter attribute from the data store, in this case Active Directory.
+    Given that information, the policy agent can set the HTTP headers
+    <code class="literal">remote_user</code>, <code class="literal">auth_user</code>, or
+    <code class="literal">logon_user</code> and <code class="literal">user_password</code> with
+    Active Directory attribute values suitable for Windows logon, setting the
+    remote user, and so forth.</p></li><li class="step"><p>To set the encrypted password in the AUTH_PASSWORD header, in the
+    OpenAM console under Access Control &gt;
+    <em class="replaceable"><code>realm-name</code></em> &gt; Agents &gt; Web &gt;
+    <em class="replaceable"><code>agent-name</code></em> &gt; Advanced &gt; Custom Properties, 
+    add <code class="literal">com.sun.identity.agents.config.iis.password.header=true</code>.</p></li><li class="step"><p>To have the agent perform Windows logon (for user token
+    impersonation), in the OpenAM console under Access Control &gt;
+    <em class="replaceable"><code>realm-name</code></em> &gt; Agents &gt; Web &gt;
+    <em class="replaceable"><code>agent-name</code></em> &gt; Advanced &gt; Custom Properties, 
+    add <code class="literal">com.sun.identity.agents.config.iis.logonuser=true</code>.</p></li><li class="step"><p>In the OpenAM console under Access Control &gt;
+    <em class="replaceable"><code>realm-name</code></em> &gt; Agents &gt; Web &gt;
+    <em class="replaceable"><code>agent-name</code></em> &gt; Advanced &gt; Microsoft IIS
+    Server, set Authentication Type to basic, and then Save your work.</p></li><li class="step"><p>To use the agent with SharePoint or Microsoft Office, configure
+    OpenAM to support the <code class="literal">iPlanetDirectoryPro</code> as a persistent
+    cookie.</p><p>In the OpenAM console under Access Control &gt;
+      <em class="replaceable"><code>realm-name</code></em> &gt; Authentication &gt; All Core
+      Settings... &gt; Persistent Cookie Mode, select Enabled, and then Save
+      your work.</p></li></ol></div></div></div><div class="section" id="uninstall-iis7-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.5.&nbsp;Remove IIS 7 Web Policy Agent Software</h2></div></div></div><p>To remove the web policy agent, log on as a user with Administrator
+  privileges, run <span class="command"><strong>cscript IIS7Admin.vbs -unconfig config.txt</strong></span>,
+  and then run <span class="command"><strong>iisreset</strong></span>.</p></div></div><div lang="en" class="chapter" id="chap-sun-websvr"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;6.&nbsp;Installing the Oracle iPlanet/Sun Web Server Policy Agent</h1></div></div></div><a class="indexterm" name="d13186e1857"></a><a class="indexterm" name="d13186e1860"></a><p>This chapter covers installation of the policy agent for Oracle iPlanet
+ Web Server, formerly known as Sun Web Server.</p><div class="section" id="before-sjsws-agent-install"><div class="titlepage"><div><div><h2 class="title" style="clear: both">6.1.&nbsp;Before You Install</h2></div></div></div><p>Make sure OpenAM is installed, running, that you can contact OpenAM
+  from the system running the policy agent. Next, create a profile for your
+  policy agent as described in the <em class="citetitle">Administration Guide</em>
+  section on <a href="../admin-guide/index.html#create-agent-profiles" class="link"><em class="citetitle">Creating Agent
+  Profiles</em></a>. To protect resources with the agent also create
+  at least one policy as described in the section on <a href="../admin-guide/index.html#configure-authz-policy" class="link"><em class="citetitle">Configuring
+  Policies</em></a>. Consider creating a simple policy, such as a
+  policy that allows only authenticated users to access your resources, in order
+  to test your policy agent after installation.</p><p>You must install Apache HTTP Server before you install the policy
+  agent, and you must stop the server during installation.</p><p>You must install a supported version of the Java runtime environment.
+         Please review the <a href="../release-notes/index.html#java-requirements" class="link">
+             <em class="citetitle">OpenAM Release Notes</em></a> for the currently supported version
+         of Java, and set the <code class="literal">JAVA_HOME</code> environment
+         variable accordingly. The policy agent installer requires Java.</p><pre class="cmdline prettyprint">$ echo $JAVA_HOME
+/path/to/java
+$ which java
+/usr/bin/java</pre><p>Go to <a href="../install-guide/index.html#download-openam-software" class="link"><em class="citetitle">Obtaining OpenAM Software</em></a>
+  to determine which version of the agent to download and download the agent.
+  Also verify the checksum of the file you download against the checksum
+  posted on the download page.</p><p>Unzip the file in the directory where you plan to install the web
+  policy agent. The agent you install stores its configuration and logs
+  under this directory.</p><div class="variablelist"><p>When you unzip the policy agent .zip download, you find the following
+   directories under the <code class="filename">web_agents/sjsws_agent</code>
+   directory.</p><dl class="variablelist"><dt><span class="term"><code class="filename">bin</code></span></dt><dd><p>Contains the installation and configuration program,
+     <span class="command"><strong>agentadmin</strong></span>; the certificate management tool
+     <span class="command"><strong>certutil</strong></span> and the password hashing tool
+     <span class="command"><strong>crypt_util</strong></span>.</p></dd><dt><span class="term"><code class="filename">config</code></span></dt><dd><p>Configuration templates used by the <span class="command"><strong>agentadmin</strong></span>
+     command during installation</p></dd><dt><span class="term"><code class="filename">data</code></span></dt><dd><p>Not used</p></dd><dt><span class="term"><code class="filename">etc</code></span></dt><dd><p>Not used</p></dd><dt><span class="term"><code class="filename">installer-logs</code></span></dt><dd><p>Location for log files written during installation</p></dd><dt><span class="term"><code class="filename">lib</code></span></dt><dd><p>Shared libraries used by the web policy agent</p></dd><dt><span class="term"><code class="filename">locale</code></span></dt><dd><p>Property files used by the installation program</p></dd></dl></div></div><div class="section" id="install-sjsws-web-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">6.2.&nbsp;Installing Oracle iPlanet Web Server Web Policy Agent</h2></div></div></div><p>Complete the following procedures to install the policy agent.</p><div class="procedure" id="create-sjsws-agent-profile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;6.1.&nbsp;To Create the Oracle iPlanet Web Server Web Agent Profile</div><p>Regardless of whether you store configurations centrally in OpenAM
+   or locally with your agents, the agent requires a profile so that it can
+   connect to and communicate with OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>In the OpenAM console, browse to Access Control &gt;
+    <em class="replaceable"><code>Realm Name</code></em>&gt; Agents &gt; Web,
+    and then click the New... button in the Agent table.</p></li><li class="step"><p>Complete the web form using the following hints.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Name</span></dt><dd><p>The name for the agent profile used when you install the
+       agent</p></dd><dt><span class="term">Password</span></dt><dd><p>Password the agent uses to authenticate to OpenAM</p></dd><dt><span class="term">Configuration</span></dt><dd><p>Centralized configurations are stored in the OpenAM configuration
+       store. You can manage the centralized configuration through the OpenAM
+       console. Local configurations are stored in a file alongside the
+       agent.</p></dd><dt><span class="term">Server URL</span></dt><dd><p>The full URL to an OpenAM instance, or if OpenAM is deployed in
+       a site configuration (behind a load balancer) then the site URL</p><p>In centralized configuration mode, the Server URL is used to
+       populate the agent profile for services such as Login, Logout, Naming,
+       and Cross Domain SSO.</p></dd><dt><span class="term">Agent URL</span></dt><dd><p>The web server URL that the agent protects</p><p>In centralized configuration mode, the Agent URL is used to
+       populate the Agent Profile for services such as notifications.</p></dd></dl></div></li></ol></div></div><div class="procedure" id="create-sjsws-agent-pwdfile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;6.2.&nbsp;To Create the Password File</div><ol class="procedure" type="1"><li class="step"><p>Create a text file containing only the password.</p><pre class="cmdline prettyprint">$ echo password &gt; /tmp/pwd.txt</pre></li><li class="step"><p>Protect the password file you create as appropriate for your
+    operating system.</p><pre class="cmdline prettyprint">$ chmod 400 /tmp/pwd.txt</pre></li></ol></div></div><div class="procedure" id="install-agent-into-sjsws"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;6.3.&nbsp;To Install the Policy Agent into Oracle iPlanet Web Server</div><ol class="procedure" type="1"><li class="step"><p>Shut down Oracle iPlanet Web Server instance where you plan to install
+    the agent.</p></li><li class="step"><p>Make sure OpenAM is running.</p></li><li class="step"><p>Run <span class="command"><strong>agentadmin --install</strong></span> to install the
+    agent.</p><pre class="cmdline prettyprint">$ /path/to/web_agents/sjsws_agent/bin/agentadmin --install
+...
+-----------------------------------------------
+SUMMARY OF YOUR RESPONSES
+-----------------------------------------------
+Sun Java System Web Server Config Directory :
+/path/to/webserver7/https-www.example.com/config/
+OpenAM server URL : http://openam.example.com:8080/openam
+Agent URL : http://www.example.com:8080
+Agent Profile name : Sun Web Server Agent
+Agent Profile Password file name : /tmp/pwd.txt
+
+...
+SUMMARY OF AGENT INSTALLATION
+-----------------------------
+Agent instance name: Agent_001
+Agent Bootstrap file location:
+/path/to/web_agents/sjsws_agent/Agent_001/config/
+ 
+Agent Configuration Tag file location
+/path/to/web_agents/sjsws_agent/Agent_001/config/
+ 
+Agent Audit directory location:
+/path/to/web_agents/sjsws_agent/Agent_001/logs/audit
+Agent Debug directory location:
+/path/to/web_agents/sjsws_agent/Agent_001/logs/debug
+
+
+Install log file location:
+/path/to/web_agents/sjsws_agent/installer-logs/audit/install.log
+...</pre><p>Upon successful completion, the installer has backed up and updated
+    the Oracle iPlanet Web Server instance configuration, and has also set up
+    configuration and log directories for the agent.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>If the agent is in a different domain than the server, refer to <em class="citetitle">Administration Guide</em> procedure, <a href="../admin-guide/index.html#chap-cdsso" class="link"><em class="citetitle">Configuring Cross-Domain
+   Single Sign On</em></a>.</p></div></div></li><li class="step"><p>Take note of the configuration files and log locations.</p><p>Each agent instance that you install on the system has its own
+    numbered configuration and logs directory. The first agent's configuration
+    and logs are thus located under the directory
+    <code class="filename">web_agents/sjsws_agent/Agent_001/</code>.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">config/</code></span></dt><dd><p>Used to bootstrap the web policy agent, allowing the agent to
+       connect to OpenAM and download its configuration</p></dd><dt><span class="term"><code class="filename">config/</code></span></dt><dd><p>Only used if you configured the web policy agent to use local
+       configuration</p></dd><dt><span class="term"><code class="filename">logs/audit/</code></span></dt><dd><p>Operational audit log directory, only used if remote logging
+       to OpenAM is disabled</p></dd><dt><span class="term"><code class="filename">logs/debug/</code></span></dt><dd><p>Debug log directory. Useful in troubleshooting policy agent
+       issues.</p></dd></dl></div></li><li class="step"><p>If your policy agent configuration is not in the top-level realm (/),
+       then you must edit config/ to identify
+       the sub-realm that has your policy agent configuration.
+       Find com.sun.identity.agents.config.organization.name and change
+       the / to the path to your policy agent profile. This allows the policy agent
+       to properly identify itself to the OpenAM server. </p></li><li class="step"><p>Set up ownership of the log directory. The default is to run as a 
+    webservd user instead of root. To post its logs, the agent needs permission to 
+    add the files to the directory.</p><pre class="cmdline prettyprint">chown -R webservd:webservd /opt/web_agents/sjsws_agent/Agent_<em><strong>number</strong></em>/logs</pre></li><li class="step"><p>Restart the Oracle iPlanet Web Server instance where you installed the
+    agent.</p></li><li class="step"><p>Check that the agent protects the web site.</p><p>If you have not yet configured any policies to allow access, then
+    you should receive an HTTP 403 Forbidden error. In the above example, when
+    accessing <code class="literal">http://www.example.com:8080/</code>, the content of
+    the page returned appears in the browser as follows.</p><div class="literallayout"><p><span class="strong"><strong>Forbidden</strong></span><br>
+<br>
+Your&nbsp;client&nbsp;is&nbsp;not&nbsp;allowed&nbsp;to&nbsp;access&nbsp;the&nbsp;requested&nbsp;object.</p></div><p>If it appears the protection is inadequate, complete one of the 
+    following steps.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>A potential cause for the protection failing is updates to the 
+       <code class="filename">server.xml</code> file for the <code class="literal">object-file</code>
+       property. A <code class="literal">object-file</code> property refers to the 
+       <code class="literal">obj.conf</code> file created during the web server installation.
+       Multiple servers create their own <code class="literal">obj.conf</code> files, which can
+       cause problems with protection. Also, admin changes can update the
+       <code class="literal">obj.conf</code> file. For more information, checkout the <a class="link" href="http://docs.oracle.com/cd/E19146-01/821-1827/abvag/index.html" target="_blank">
+       <em class="citetitle">Syntax and Use of obj.conf</em></a>.</p></div></div><ul class="stepalternatives">
+     <li class="step"><p>This step removes the <code class="filename">obj.conf</code> file if it is 
+      not needed.</p><p>Open the <code class="filename">server.xml</code> and remove the <code class="literal">object-file</code>
+      property. The web server will use the default <code class="filename">obj.conf</code>
+      configuration.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>Do not change the original file.</p></div></div><pre class="cmdline prettyprint">$ vi /path/to/webserver7/config/server.xml
+ &lt;virtual-server&gt;
+  &lt;name&gt;virtual.example.com&lt;/name&gt;
+  &lt;http-listener-name&gt;http-listener-1&lt;/http-listenername&gt;
+  &lt;host&gt;virtual.example.com&lt;/host&gt;
+  -  &lt;object-file&gt;virtual.example.com-obj.conf&lt;/object-file&gt;
+  &lt;document-root&gt;/path/to/webserver7/htdocs&lt;/document-root&gt;
+  &lt;name&gt;virtual.example.com&lt;/name&gt;
+ &lt;/virtual-server&gt;</pre></li>
+     <li class="step"><p>This step updates the <code class="filename">obj.conf</code> file if it 
+      is needed.</p><p>Open the <code class="filename">server.xml</code> and manually update the 
+      <code class="literal">object-file</code> property to validate the location of
+      the <code class="filename">obj.conf</code> file.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>Do not change the original file.</p></div></div><pre class="cmdline prettyprint">$ vi /path/to/webserver7/config/server.xml
+ &lt;Object path="*/dummypost/sunpostpreserve*"&gt;
+ Service type=text/* method=(GET) fn=append_post_data
+ &lt;/Object&gt;
+ &lt;Object path="*/UpdateAgentCacheServlet*"&gt;
+ Service type=text/* method=(POST) fn=process_notification
+ &lt;/Object&gt;</pre></li>
+    </ul></li><li class="step"><p>Save the file and restart the Oracle iPlanet Web Server.</p></li></ol></div></div></div><div class="section" id="custom-sjsws-agent-installation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">6.3.&nbsp;Custom Oracle iPlanet Web Policy Agent Installation</h2></div></div></div><p>For alternative installations, use <span class="command"><strong>agentadmin
+  --custom-install</strong></span>.</p><p>When performing a scripted, silent installation, use
+  <span class="command"><strong>agentadmin --install --saveResponse
+  <em class="replaceable"><code>response-file</code></em></strong></span>
+  to create a response file for scripted installation. Then install silently
+  using <span class="command"><strong>agentadmin --install --useResponse
+  <em class="replaceable"><code>response-file</code></em></strong></span>.</p><p>With <span class="command"><strong>./agentadmin --custom-install</strong></span>, you can opt to
+  create the policy agent profile during installation. The OpenAM administrator
+  must first create an agent administrator user, as described in <a href="../admin-guide/index.html#delegate-agent-profile-creation" class="link"><em class="citetitle">Delegating Agent
+  Profile Creation</em></a>, and provide you with the agent
+  administrator user name and password. Before running the
+  <span class="command"><strong>./agentadmin --custom-install</strong></span> command, put the password
+  alone in a read-only file only the user installing can access, as for the
+  agent password. When the <span class="command"><strong>agentadmin</strong></span> command prompts you to
+  create the profile during installation, enter <code class="literal">true</code>, and
+  then respond to the <span class="command"><strong>agentadmin</strong></span> prompts for the agent
+  administrator user name and password file.</p></div><div class="section" id="uninstall-sjsws-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">6.4.&nbsp;Remove Oracle iPlanet Web Policy Agent Software</h2></div></div></div><p>Shut down the Oracle iPlanet Web Server before you uninstall the
+    policy agent.</p><p>To remove the web policy agent, use <span class="command"><strong>agentadmin
+  --uninstall</strong></span>.</p></div></div><div lang="en" class="chapter" id="chap-varnish"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;7.&nbsp;Installing the Varnish Policy Agent</h1></div></div></div><a class="indexterm" name="d13186e2263"></a><p>This chapter covers installation of the policy agent for Varnish
+ HTTP Accelerator 3.0.3.</p><p>Varnish is unlike the other policy agents supported for OpenAM. It does
+ not require the Java environment necessary for the other policy agents, and it has
+ a unique set of instructions for the agentadmin command. Varnish uses a directory
+ called vmods. This is the location where you will need to handle any required
+ installation or Varnish updates, and it requires the user to have administrative 
+ rights to update this directory for changes to take effect. You can also configure
+ your Varnish instance using the Varnish Configuration Language (VCL) file.</p><div class="section" id="before-varnish-agent-install"><div class="titlepage"><div><div><h2 class="title" style="clear: both">7.1.&nbsp;Before You Install</h2></div></div></div><p>You need to setup your container and OpenAM before installing 
+    the web agent.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Install the server.</p></li><li class="listitem"><p>Create and delegating an agent profile.</p></li><li class="listitem"><p>Download and prepare the policy agent for installation.</p></li></ul></div><div class="procedure" id="varnish-server"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;7.1.&nbsp;Installing the server</div><ol class="procedure" type="1"><li class="step"><p>Make sure OpenAM is installed and running.</p></li><li class="step"><p>Contact OpenAM from the system running the policy agent.</p></li><li class="step"><p>Install the Varnish HTTP Accelerator.</p></li></ol></div></div><div class="procedure" id="create-varnish-agent-profile1f"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;7.2.&nbsp;Creating a Policy Agent Profile</div><a class="indexterm" name="d13186e2300"></a><p>To create a new web agent profile, you need a name and password, and the 
+     URLs to OpenAM and the application to protect. The agent requires a profile 
+     so that it can connect to and communicate with OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>In the OpenAM console, browse to Access Control &gt;
+       <em class="replaceable"><code>Realm Name</code></em>&gt; Agents &gt; Web,
+       and then click the New... button in the Agent table.</p></li><li class="step"><p>Complete the web form.</p><div class="mediaobject" align="center" id="figure-new-web-agent"><a class="fancybox" href="images/new-web-agent.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_new-web-agent.png" align="middle" alt="Diagram of web policy agent use" title="The page for new web agents."></a></div><p>Use the following information to help you with the form.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Name</span></dt><dd><p>The name for the agent profile used when you install the
+         agent</p></dd><dt><span class="term">Password</span></dt><dd><p>Password the agent uses to authenticate to OpenAM</p></dd><dt><span class="term">Configuration</span></dt><dd><p>Centralized configurations are stored in the OpenAM configuration
+         store. You can manage the centralized configuration through the OpenAM
+         console. Local configurations are stored in a file alongside the
+         agent.</p></dd><dt><span class="term">Server URL</span></dt><dd><p>The full URL to an OpenAM instance, or if OpenAM is deployed in
+         a site configuration (behind a load balancer) then the site URL</p><p>In centralized configuration mode, the Server URL is used to
+         populate the agent profile for services such as Login, Logout, Naming,
+         and Cross Domain SSO.</p></dd><dt><span class="term">Agent URL</span></dt><dd><p>The web server URL that the agent protects</p><p>In centralized configuration mode, the Agent URL is used to
+         populate the Agent Profile for services such as notifications.</p></dd></dl></div></li><li class="step"><p>After creating the agent profile, you can click the link to the
+       new profile to adjust and export the configuration.</p></li></ol></div></div><div class="procedure" id="create-varnish-agent-pwdfile"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;7.3.&nbsp;To Create the Password File for Customized Installations</div><ol class="procedure" type="1"><li class="step"><p>Create a text file containing only the password.</p><pre class="cmdline prettyprint">$ echo password &gt; /tmp/pwd.txt</pre></li><li class="step"><p>Protect the password file you create as appropriate for your
+      operating system.</p><pre class="cmdline prettyprint">$ chmod 400 /tmp/pwd.txt</pre></li></ol></div></div><div class="procedure" id="prepare-web-policy-agent"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;7.4.&nbsp;Preparing the Agent for Installation</div><ol class="procedure" type="1"><li class="step"><p>Go to <a href="../install-guide/index.html#download-openam-software" class="link"><em class="citetitle">Obtaining OpenAM Software</em></a>
+      to determine which version of the agent to download and download the agent.</p></li><li class="step"><p>Verify the checksum of the file you download against the checksum
+      posted on the download page.</p></li><li class="step"><p>Unzip the file in the directory where you plan to install the 
+      policy agent. The agent you install stores its configuration and logs
+      under this directory.</p></li></ol></div></div></div><div class="section" id="install-varnish-web-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">7.2.&nbsp;Installing Varnish Web Policy Agent</h2></div></div></div><p>Complete the following procedure to install the policy agent.</p><div class="procedure" id="install-agent-into-varnish"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;7.5.&nbsp;To Install the Varnish Policy Agent</div><ol class="procedure" type="1"><li class="step"><p>Stop Varnish.</p><pre class="cmdline prettyprint">$ sudo service varnish stop</pre></li><li class="step"><p>Make sure OpenAM is running.</p></li><li class="step"><p>Run <span class="command"><strong>./agentadmin</strong></span> to install the agent.</p><pre class="cmdline prettyprint">$ cd /path/to/web_agents/varnish/bin/
+$ ./agentadmin</pre><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>If the agent is in a different domain than the server, refer to the <em class="citetitle">Administration Guide</em> chapter, <a href="../admin-guide/index.html#chap-cdsso" class="link"><em class="citetitle">Configuring Cross-Domain
+     Single Sign On</em></a>.</p></div></div></li><li class="step"><p>Accept the ForgeRock Web Policy Agent License. Select Configure Varnish
+    Web Policy Agent instance from the subsequent window.</p></li><li class="step"><p>Click on Configure Varnish Web Policy Agent instance and enter the 
+    following information for each consecutive screen.</p><p>Press F3 to move to the next field, or F2 to return to the previous 
+    field to make a correction. Be careful as you make your entires, backspace will
+    erase the entire entry, not just the last character.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>URL where the OpenAM server runs</p><pre class="cmdline prettyprint">Enter URL where the OpenAM server is running:
+   http://openam.example.com:8080/openam</pre></li><li class="listitem"><p>Agent URL that protects the web container</p><pre class="cmdline prettyprint">Enter URL where Agent is protecting the Web Container:
+   http://www.website.example.com:80</pre></li><li class="listitem"><p>Profile ID and password</p><pre class="cmdline prettyprint">Enter the Agent profile attributes in the OpenAM server:
+   Profile ID: webagent
+   Password: cangetin</pre></li><li class="listitem"><p>Path to Varnish modules directory</p><pre class="cmdline prettyprint">Enter the path to Varnish modules directory    
+   /usr/lib/varnish/vmods</pre></li></ul></div><p>Once you have configured your agent, you will get a page displaying
+    the agent configuration results. Verify the information. Click F4 when you
+    are done.</p><pre class="cmdline prettyprint">Agent configuration results:
+ OpenAM URL: http://openam.example.com:8080/openam
+  Agent URL: http://website.example.com
+    Profile: webagent
+ WebServer configuration:
+  /opt/webagent/web_agents/varnish/bin/instances/agent_1/config/am.vcl</pre></li><li class="step"><p>Encrypt the password if you want additional security.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>The new agent appears as <code class="literal">agent_1</code>. You can return
+     to this screen at any time by running <code class="literal">/path/to/web_agents/varnish/bin/agentadmin</code>
+     to remove it.</p></div></div></li><li class="step"><p>Exit the screen.</p></li><li class="step"><p>Take note of the configuration files and log locations.</p><p>Each agent instance that you install on the system has its own
+    numbered configuration and logs directory. The first agent's configuration
+    and logs are thus located under the directory
+    <code class="filename">/path/to/web_agents/varnish/instances/agent_1/</code>.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">config/OpenAMAgentBootstrap.properties</code></span></dt><dd><p>Used to bootstrap the web policy agent, allowing the agent to
+       connect to OpenAM and download its configuration</p></dd><dt><span class="term"><code class="filename">config/OpenAMAgentConfiguration.properties</code></span></dt><dd><p>Only used if you configured the web policy agent to use local
+       configuration</p></dd><dt><span class="term"><code class="filename">logs/audit/</code></span></dt><dd><p>Operational audit log directory, only used if remote logging
+       to OpenAM is disabled</p></dd><dt><span class="term"><code class="filename">logs/debug/</code></span></dt><dd><p>Debug directory where the <code class="filename">amAgent</code> debug file
+       resides. Useful in troubleshooting policy agent issues.</p></dd></dl></div></li><li class="step"><p>If your policy agent configuration is not in the top-level realm (/),
+       then you must edit config/OpenAMAgentBootstrap.properties to identify
+       the sub-realm that has your policy agent configuration.
+       Find com.sun.identity.agents.config.organization.name and change
+       the / to the path to your policy agent profile. This allows the policy agent
+       to properly identify itself to the OpenAM server. </p></li><li class="step"><p>Setup the backend by updating the following lines in the VLC script.
+     Make sure port and host are set correctly.</p><pre class="cmdline prettyprint">$ vi /path/to/web_agents/varnish/instances/agent_1/config/am.vcl
+ import am;
+ backend default {
+ .host = "127.0.0.1";
+ .port = "8080";
+ }</pre></li><li class="step"><p>Start Varnish with the following command. It will also load the 
+     VLC script.</p><pre class="cmdline prettyprint">varnishd -u root -F -T localhost:8080 -f
+  /path/to/web_agents/varnish/instances/agent_1/config/am.vcl -a :80 -s malloc,50M</pre></li></ol></div></div><div class="procedure" id="check-varnish-agent-installation"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;7.6.&nbsp;To Check the Policy Agent Installation</div><ol class="procedure" type="1"><li class="step"><p>Check the Varnish error log after you start the server to make
+    sure startup completed successfully.</p></li><li class="step"><p>Check the <code class="filename">amAgent</code> debug log to verify that
+    no errors occurred on startup.</p><pre class="cmdline prettyprint">$ tail /path/to/web_agents/varnish/instances/agent_1/logs/debug/amAgent
+2011-09-03 13:28:16.971    -1 32686:9daae60 all: ==============...=====
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Version: ...
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Revision: ...
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Build Date: ...
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: Build Machine: ..forgerock.com
+2011-09-03 13:28:16.972    -1 32686:9daae60 all: ==============...=====</pre></li><li class="step"><p>If you have a policy configured, you can test your policy agent.
+    For example, try to browse to a resource that your policy agent protects.
+    You should be redirected to OpenAM to authenticate, for example as user
+    <code class="literal">demo</code>, password <code class="literal">changeit</code>. After
+    you authenticate, OpenAM then redirects you back to the resource you tried
+    to access.</p></li></ol></div></div></div><div class="section" id="custom-varnish-agent-installation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">7.3.&nbsp;Custom Varnish Web Policy Agent Installation</h2></div></div></div><p>Varnish is unique because modifications are done in Command Line Mode
+  where you can use it to create a new server configuration template/vcl file, 
+  such as instance/agent_1/config. This file is then used to start Varnish to 
+  create the file or directory links to the Varnish vmods, where it will be 
+  properly loaded when Varnish is started.</p><div class="itemizedlist"><p>You can use the following commands for customizing your Varnish policy
+   agent.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">agentadmin -l</code></p><p>Lists all of the agent instances</p></li><li class="listitem"><p><code class="literal">agentadmin -r agent_1</code></p><p>Removes the agent_1 instance create in the example</p></li><li class="listitem"><p><code class="literal">agentadmin -e password</code></p><p>Encrypts the password using an base64 output for the encoded password
+    and encryption key</p></li><li class="listitem"><p><code class="literal">agentadmin -o openamurl -a agenturl -i agent_profile_id
+    -p /path/to/passwordfile -c /usr/lib/varnish/vmods</code></p><p>Creates the agent instance with the configuration parameters. Based on 
+    the examples in the procedures, you would get the following:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>openamurl for the OpenAM server at <code class="literal">http://openam.example.com:80/openam</code></p></li><li class="listitem"><p>agenturl of the Agent server url is <code class="literal">http://www.website.example.com:80</code></p></li><li class="listitem"><p>agent_profile is the agent profile name shown in OpenAM</p></li><li class="listitem"><p>/path/to/passwordfile is the path where you saved the agent profile
+       password file</p></li><li class="listitem"><p>/path/to/varnish/vmod is the path to the Varnish vmods directory
+       <code class="literal">/usr/lib/varnish/vmods</code></p></li></ul></div></li><li class="listitem"><p><code class="literal">agentadmin -v</code></p><p>View the version</p></li><li class="listitem"><p><code class="literal">agentadmin -?</code></p><p>Displays a list of all possible options supported by Varnish</p></li></ul></div></div><div class="section" id="uninstall-varnish-agent"><div class="titlepage"><div><div><h2 class="title" style="clear: both">7.4.&nbsp;Remove Varnish Web Policy Agent Software</h2></div></div></div><p>Shut down the Varnish server before you uninstall the
+  policy agent.</p><pre class="cmdline prettyprint">$ sudo service varnish stop</pre><p>To remove the web policy agent, use <span class="command"><strong>./agentadmin</strong></span>.</p><pre class="cmdline prettyprint">$ cd /path/to/web_agents/varnish/bin/
+$ ./agentadmin</pre><p>Scroll down and select Remove <em class="replaceable"><code>'agent'</code></em> instance.</p></div></div><div lang="en" class="chapter" id="chap-troubleshooting"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;8.&nbsp;Troubleshooting</h1></div></div></div><a class="indexterm" name="d13186e2642"></a><p>This chapter offers solutions to issues during installation of OpenAM
+  policy agents.</p><div class="qandaset" id="solutions-to-common-issues"><h2 class="title">Solutions to Common Issues</h2><p>This section offers solutions to common problems when installing 
+   OpenAM policy agents.</p><table border="0" style="width: 100%;"><colgroup><col align="left" width="1%"><col></colgroup><tbody><tr class="question" id="cannot-install-over-https"><td align="left" valign="top" id="d13186e2653"><p><b>Q:</b></p></td><td align="left" valign="top"><p>I am trying to install a policy agent, connecting to OpenAM over
+    HTTPS, and seeing the following error.</p><pre class="cmdline prettyprint">OpenAM server URL: https://openam.example.com:8443/openam
+
+WARNING: Unable to connect to OpenAM server URL. Please specify the
+correct OpenAM server URL by hitting the Back button (&lt;) or if the OpenAM
+server URL is not started and you want to start it later, please proceed with
+the installation.
+If OpenAM server is SSL enabled and the root CA certificate for the OpenAM
+server certificate has been not imported into installer JVMs key store (see
+installer-logs/debug/Agent.log for detailed exception), import the root
+CA certificate and restart the installer; or continue installation without
+verifying OpenAM server URL.</pre><p>What should I do?</p></td></tr><tr class="answer"><td align="left" valign="top"><p><b>A:</b></p></td><td align="left" valign="top"><p>The Java platform includes certificates from many Certificate
+    Authorities (CAs). If however you run your own CA, or you use self-signed
+    certificates for HTTPS on the container where you run OpenAM, then the
+    <span class="command"><strong>agentadmin</strong></span> command cannot trust the certificate
+    presented during connection to OpenAM, and so cannot complete installation
+    correctly.</p><p>After setting up the container where you run OpenAM to use HTTPS,
+    get the certificate to trust in a certificate file. The certificate you
+    want is the that of the CA who signed the container certificate, or the
+    certificate itself if the container certificate is self-signed.</p><p>Copy the certificate file to the system where you plan to install the
+    policy agent. Import the certificate into a trust store that you will use
+    during policy agent installation. If you import the certificate into the
+    default trust store for the Java platform, then the
+    <span class="command"><strong>agentadmin</strong></span> command can recognize it without additional
+    configuration.</p><p>Export and import of self-signed certificates is demonstrated in the
+    <em class="citetitle">Administration Guide</em> chapter on <a href="../admin-guide/index.html#chap-certs-keystores" class="link"><em class="citetitle">Managing
+    Certificates</em></a>.</p></td></tr><tr class="question" id="debug-file-and-SELinux"><td align="left" valign="top" id="d13186e2683"><p><b>Q:</b></p></td><td align="left" valign="top"><p>I am trying to install the policy agent on SELinux and I am getting error messages
+  after installation. What happened?</p></td></tr><tr class="answer"><td align="left" valign="top"><p><b>A:</b></p></td><td align="left" valign="top"><p>SELinux must be properly configured to connect the web policy agent and OpenAM
+  nodes. Either re-configure SELinux or disable it, then reinstall the policy agent.</p></td></tr><tr class="question" id="apache-defaults-to-port-80"><td align="left" valign="top" id="d13186e2690"><p><b>Q:</b></p></td><td align="left" valign="top"><p>My Apache HTTPD server is not using port 80. But when I install the
+    web policy agent it defaults to port 80. How do I fix this?</p></td></tr><tr class="answer"><td align="left" valign="top"><p><b>A:</b></p></td><td align="left" valign="top"><p>You probably set <code class="literal">ServerName</code> in Apache HTTPD's
+    configuration to the host name, but did not specify the port number.</p><p>Instead you must set both the host name and port number for
+    <code class="literal">ServerName</code> in Apache HTTPD's configuration. For
+    example, if you have Apache HTTPD configured to listen on port 8080, then
+    set <code class="literal">ServerName</code> appropriately as in the following
+    excerpt.</p><pre class="codelisting prettyprint">&lt;VirtualHost *:8080&gt;
+ServerName www.localhost.example:8080</pre></td></tr><tr class="question" id="web-agent-cannot-rotate-logs"><td align="left" valign="top" id="d13186e2710"><p><b>Q:</b></p></td><td align="left" valign="top"><p>My web server and web policy agent are installed as root, and the
+    agent cannot rotate logs. I am seeing this error.</p><pre class="literallayout">Could not rotate log file ... (error: 13)</pre><p>What should I do?</p></td></tr><tr class="answer"><td align="left" valign="top"><p><b>A:</b></p></td><td align="left" valign="top"><p>First, avoid installing the web server (and therefore also the web
+    policy agent) as root, but instead create a web server user and install
+    as that user.</p><p>If however you cannot avoid installing the web server and policy agent
+    as root, the you must give all users read and write permissions to the
+    <code class="filename">logs/</code> and <code class="filename">logs/debug</code> directories
+    under the agent instance directory (
+    <code class="filename">/path/to/web_agents/<em class="replaceable"><code>type</code></em>/Agent_<em class="replaceable"><code>number</code></em>/logs/</code>).
+    Otherwise the web policy agent fails to rotate log files with the error
+    you observed.</p></td></tr><tr class="question" id="install-multiple-agents"><td align="left" valign="top" id="d13186e2738"><p><b>Q:</b></p></td><td align="left" valign="top"><p>I have multiple web servers on a single system, and want to protect each of them with a policy agent.</p></td></tr><tr class="answer"><td align="left" valign="top"><p><b>A:</b></p></td><td align="left" valign="top"><p>Once both web policy agents are installed, navigate to the <code class="filename">/path/to/Agent_00x</code>
+       directory, and then open the <code class="filename">OpenSSOAgentBootstrap.properties</code> file. Near the
+       end of the file, you should see the following attribute:</p><pre class="cmdline prettyprint">com.forgerock.agents.instance.id=</pre><p>Set that attribute to an appropriate unique value such as <code class="literal">1</code> or
+       <code class="literal">2</code>. Restart the web service that is being protected by the agent.
+       If successful, you should see related shared memory files, with time stamps updated for
+       the restarted web services. On a Linux system, you may see these files in the
+       <code class="filename">/dev/shm</code> directory. On a Solaris system, you may see these files
+       in the <code class="filename">/tmp</code> directory.</p></td></tr></tbody></table></div></div><div class="index" id="d13186e2766"><div class="titlepage"><div><div><h1 class="title">Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>A</h3><dl><dt id="ientry-d13186e339">Apache HTTP Server, <a class="indexterm" href="#chap-apache-22">Installing the Apache 2.2 Policy Agent</a>, <a class="indexterm" href="#chap-apache-24">Installing the Apache 2.4 Policy Agent</a></dt></dl></div><div class="indexdiv"><h3>M</h3><dl><dt id="ientry-d13186e1024">Microsoft IIS, <a class="indexterm" href="#chap-msiis-6">Installing the Microsoft IIS 6 Policy Agent</a>, <a class="indexterm" href="#chap-msiis-7">Installing the Microsoft IIS 7 Policy Agent</a></dt></dl></div><div class="indexdiv"><h3>O</h3><dl><dt id="ientry-d13186e1857">Oracle iPlanet Web Server, <a class="indexterm" href="#chap-sun-websvr">Installing the Oracle iPlanet/Sun Web Server Policy Agent</a></dt></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d13186e2300">Policy agents</dt><dd><dl><dt>Creating profiles, <a class="indexterm" href="#before-varnish-agent-install">Before You Install</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-d13186e1860">Sun Web Server, <a class="indexterm" href="#chap-sun-websvr">Installing the Oracle iPlanet/Sun Web Server Policy Agent</a></dt></dl></div><div class="indexdiv"><h3>T</h3><dl><dt id="ientry-d13186e2642">Troubleshooting, <a class="indexterm" href="#chap-troubleshooting">Troubleshooting</a></dt></dl></div><div class="indexdiv"><h3>V</h3><dl><dt id="ientry-d13186e2263">Varnish HTTP Accelerator, <a class="indexterm" href="#chap-varnish">Installing the Varnish Policy Agent</a></dt></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
+              2011-2013&nbsp;
+              ForgeRock AS;&nbsp;
+              &nbsp;
+              &nbsp;
+          </span></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
