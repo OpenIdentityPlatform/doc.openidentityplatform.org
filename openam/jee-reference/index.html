@@ -1,0 +1,1799 @@
+---
+layout: 'null'
+---
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+   /*
+* The contents of this file are subject to the terms of the Common Development and
+* Distribution License (the License). You may not use this file except in compliance with the
+* License.
+*
+* You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+* specific language governing permission and limitations under the License.
+*
+* When distributing Covered Software, include this CDDL Header Notice in each file and include
+* the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+* Header, with the fields enclosed by brackets [] replaced by your own identifying
+* information: "Portions copyright [year] [name of copyright owner]".
+*
+* Copyright 2015 ForgeRock AS.
+* Portions copyright 2024 3A Systems LLC.
+*/
+
+/***********************************/
+/* Imported Styles
+/***********************************/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css);
+@import url(http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css);
+/* @import url(http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css); */
+@import url(http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/example1/colorbox.css);
+
+/***********************************/
+/* General Styles
+/***********************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Dark Grey */
+
+    color: #2a2f32;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+
+a {
+    /* Sea Green */
+    color: #519387;
+}
+
+a.link[href^="http"] {
+    background-image: url("includes/logos/Icon_External_Link.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    margin-right: 2px;
+}
+
+a.self-link, a.self-link:hover, a.self-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href].self-link:hover::after
+{
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e144";
+    color: #519387;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-size: 75%;
+    font-style: normal;
+    line-height: 1;
+    padding-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: decimal !important
+}
+
+.section,
+.chapter,
+.preface,
+.glossary,
+.refentry,
+.reference,
+.appendix,
+.index,
+.titlepage h2,
+.titlepage h3,
+.titlepage h4,
+.titlepage h5 {
+    padding-top: 60px;
+    margin-top: -50px;
+}
+
+.left-shape-content {
+    background: url("includes/logos/left-shape-4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 566px;
+    position: fixed;
+    width: 57px;
+    top: 60%;
+    z-index: -1;
+}
+
+/***********************************/
+/* Bootstrap Override Styles
+/***********************************/
+
+/* Button Styles */
+
+.btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+
+.btn-default {
+    background-color: #A1A8AD;
+    border-color: #8a9298;
+    color: #ffffff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-color: #3f4b54;
+    border-color: #1B2025;
+    color: #ffffff;
+}
+
+/* Tooltip Styles */
+
+.tooltip.in {
+    opacity: 0.95;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #519387;
+}
+
+.tooltip-inner {
+    background-color: #519387;
+}
+
+/* List Styles */
+
+.dl-horizontal dt {
+    white-space: normal;
+    padding: 0 3px 0 0;
+    width: 200px;
+}
+
+.dl-horizontal dd {
+    border-bottom: 1px dotted rgb(125, 179, 168);
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin-bottom: 18px;
+    margin-left: 210px;
+}
+
+.dl-horizontal {
+    border-top: 1px dotted rgb(125, 179, 168);
+    border-top: 1px dotted rgba(125, 179, 168, 0.9);
+    padding-top: 10px;
+}
+
+.variablelist dt {
+    margin: 18px 0 5px 15px;
+}
+
+.variablelist dd {
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin: 5px 0 5px 30px;
+}
+
+.variablelist > dl {
+    border-top: 1px dotted rgba(125, 179, 168, 0.8);
+}
+
+
+/***********************************/
+/* Redirect Page Styles
+/***********************************/
+
+.index-redirect,
+.index-redirect body {
+    height: 100%;
+    background-color: #333;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+.index-redirect body {
+    color: #fff;
+    text-align: center;
+}
+.index-redirect .container {
+    display: table;
+    vertical-align: middle;
+    height: 100%;
+}
+.index-redirect .btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+.index-redirect .cover-heading {
+    font-weight: 400 !important;
+}
+.index-redirect .vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/***********************************/
+/* Header Styles
+/***********************************/
+
+.navbar-brand {
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand > img {
+    height: 100%;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    box-shadow: 0 0 10px 2px #111;
+}
+.nav > li > a {
+    font-weight: 200;
+}
+
+/***********************************/
+/* Banner Styles
+/***********************************/
+
+.jumbotron {
+    /* Sea Green */
+    background: url("includes/logos/hero-bg-01.png") no-repeat scroll left top #519387;
+    color: white;
+    box-shadow: 0 0 10px 2px grey;
+    margin-top: 50px;
+    padding: 0 0 10px;
+}
+.jumbotron small {
+    color: white;
+}
+.jumbotron p {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.jumbotron h1 {
+    font-size: 23px !important;
+    font-weight: 300 !important;
+}
+
+/***********************************/
+/* Table of Contents Styles
+/***********************************/
+
+#sidebar .nav>li>a {
+    /* Light Grey */
+
+    color: #777;
+    border-left: 4px solid transparent;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+/* nested links */
+
+#sidebar .nav .nav>li>a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+/* nested nested links */
+
+#sidebar .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 50px;
+    padding-top: 4px;
+}
+/* nested nested nested links */
+
+#sidebar .nav .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 70px;
+    padding-top: 4px;
+}
+/* active and hover links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.locked-active>a,
+#sidebar .nav>li>a:hover,
+#sidebar .nav>li>a:focus {
+    text-decoration: none;
+    /*
+    background-color: rgb(125, 179, 168, 0.8);
+    background-color: rgba(125, 179, 168, 0.8);
+    border-color: rgb(45, 52, 55, 0.8);
+    border-color: rgba(45, 52, 55, 0.8);
+    color: white;
+    */
+    /* Bright Yellow */
+
+    background-color: #eeea07;
+    border-color: #eeea07;
+    /* Grey */
+
+    color: #2a2f32;
+}
+/* all active links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.active:hover>a,
+#sidebar .nav>.active:focus>a {
+    font-weight: 600;
+}
+/* nested active links */
+
+#sidebar .nav .nav>.active>a,
+#sidebar .nav .nav>.active:hover>a,
+#sidebar .nav .nav>.active:focus>a {
+    font-weight: 400;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* hide all (inactive) nested list */
+
+#sidebar .nav ul.nav {
+    display: none;
+}
+/* show active nested list */
+
+#sidebar .nav>.active>ul.nav {
+    display: block;
+}
+#sidebar.affix {
+    top: 66px;
+    position: fixed;
+    bottom: 30px;
+    height: auto;
+    overflow-y: scroll;
+}
+#sidebar.affix-bottom {
+    position: absolute;
+}
+
+/***********************************/
+/* Content Styles
+/***********************************/
+
+/* Main Content Styles */
+
+h1 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+
+h1 span {
+    margin-right: .3em;
+}
+
+#doc-content h1,
+#doc-content .h1 {
+    /* Sea Green */
+    border-bottom: 2px solid #70ab9b;
+    font-size: 36px;
+    margin-top: 24px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+h5, .h5 {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    padding-bottom: 4px;
+    font-style: italic;
+}
+
+.anchorjs-link .anchorjs-icon {
+    color: #A1A8AD;
+    text-decoration: none;
+}
+.anchorjs-link:hover .anchorjs-icon {
+    color: #519387;
+    text-decoration: none;
+}
+
+h1:hover > .anchorjs-link,
+h2:hover > .anchorjs-link,
+h3:hover > .anchorjs-link,
+h4:hover > .anchorjs-link,
+h5:hover > .anchorjs-link,
+.anchorjs-link:focus {
+    opacity: 1 !important;
+    transition: color 0.16s linear 0s;
+    text-decoration: none;
+}
+
+.chapter > p:first-of-type,
+.preface > p:first-of-type {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+#doc-content {
+    padding: 0 20px 85px 10px;
+}
+
+div.procedure, div.table {
+    margin-top:-50px;
+    padding-top: 60px;
+}
+
+div.procedure-title, div.table-title {
+    margin: 6px 0 8px;
+}
+
+div.procedure-inner {
+    border-color: lightslategray;
+    border-left: 6px solid lightslategray;
+    border-style: dotted dotted dotted solid;
+    border-width: 1px 1px 1px 6px;
+    margin: 15px 0 10px;
+    padding: 10px 15px 10px 10px;
+}
+
+.author {
+    display: inline;
+}
+
+.table {
+    font-size: 14px;
+}
+
+div.simplelist {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Title Styles */
+
+.procedure-title > a, .procedure-title > a:hover {
+    color: lightslategray;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.itemizedlist-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+.figure-title {
+    font-weight: bold;
+    margin: 16px 0 4px;
+    text-align: center;
+}
+
+.table-title {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.variablelist-title {
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+/* Code Styles */
+
+.btn-copy-cmdline,
+.btn-copy-codelisting {
+    /* White */
+
+    background-color: #fff;
+    /* Light Grey */
+
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px;
+    color: #777;
+    display: block;
+    font-size: 12px;
+    padding: 5px 8px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+
+pre.prettyprint {
+    border: 1px solid #ccc;
+    padding: 9.5px;
+    font-size: 12px;
+}
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+.zeroclipboard-is-hover {
+    /* Light Sea Green */
+
+    background-color: #6faa9b;
+    border-color: #6faa9b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ui-effects-transfer {
+    border: 1px dotted black;
+    background-color: yellow;
+    opacity: 0.4;
+}
+
+/* Modal Dialog Styles */
+
+#doc-content .modal h1.title {
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    margin: 14px 0 5px;
+}
+#doc-content .modal h2.subtitle {
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    margin-bottom: 26px;
+}
+#doc-content .modal h3.author {
+    font-size: 14px !important;
+    font-style: italic;
+    font-weight: 100 !important;
+    margin: 4px 0 5px 18px;
+}
+#doc-content .modal .affiliation .orgname {
+    display: block;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    margin: 20px 0 0 0;
+}
+#doc-content .modal .affiliation .address p {
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    margin: 4px 0;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .abstract .abstract-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+#doc-content .modal .abstract > p {
+    margin: 10px 0 5px 20px;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+}
+
+/* Image Styles */
+
+.fancybox > img {
+    cursor: zoom-in;
+}
+a.fancybox {
+    text-decoration: none;
+}
+
+#cboxTitle {
+    color: #519387;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#cboxOverlay{
+    background: none repeat scroll 0 0 rgba(66, 130, 116, 0.6);
+}
+
+img.img-responsive {
+    margin-bottom: 20px;
+}
+
+/* Index Styles */
+
+.indexdiv > h3 {
+    border-bottom: 2px dotted lightgrey;
+    padding-bottom: 5px;
+}
+.indexdiv > dl {
+    margin-left: 30px;
+}
+.indexdiv dl {
+    margin-bottom: 5px;
+}
+.indexdiv dt {
+    margin: 5px 0 2px;
+}
+.indexdiv dd {
+    margin-left: 35px;
+}
+.indexdiv .indexterm {
+    font-weight: 200;
+}
+
+/* Reference Styles */
+
+.refnamediv h2 {
+    display: none;
+}
+
+.refsect1 h2,
+.refsynopsisdiv h2 {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.refnamediv p {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+/***********************************/
+/* Footer Styles
+/***********************************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    display: none;
+    z-index: 15;
+}
+
+#footer {
+    display: none;
+}
+
+.footer {
+    /* Light Grey */
+    background-color: #f5f5f5;
+
+    /* Medium Grey */
+    border-top: 1px solid #ACB5BD;
+    bottom: 0;
+    font-size: 12px;
+    height: 30px;
+    padding-top: 4px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer h3 {
+    margin: 0;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer-item {
+    line-height: 22px;
+    margin-left: 10px;
+}
+
+.footer-item.highlighted {
+    /* Orange */
+    color: #f7a540;
+}
+
+.footer-item.highlighted:hover {
+    /* Dark Orange */
+    color: #c97208;
+}
+
+.footer span {
+    /* Grey */
+    color: #2a2f32;
+    margin-bottom: 0;
+}
+
+.footer .footer-left {
+    float: left;
+}
+
+.footer .footer-right {
+    float: right;
+}
+
+/***********************************/
+
+  </style><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenAM Java EE Policy Agent Reference</title><script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script><script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script><script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Guide to installing OpenAM Java EE policy agents. OpenAM provides open source Authentication, Authorization, Entitlement and Federation software."><script type="text/javascript">
+     /*
+ * The contents of this file are subject to the terms of the Common Development and
+ * Distribution License (the License). You may not use this file except in compliance with the
+ * License.
+ *
+ * You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ * specific language governing permission and limitations under the License.
+ *
+ * When distributing Covered Software, include this CDDL Header Notice in each file and include
+ * the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ * Header, with the fields enclosed by brackets [] replaced by your own identifying
+ * information: "Portions copyright [year] [name of copyright owner]".
+ *
+ * Copyright 2015 ForgeRock AS.
+ */
+
+//
+
+var loadJavaScriptsFN = function () {
+    $.ajaxSetup({ cache: true });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js", function () { prettyPrint() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function () {enableZeroClipboardFN() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox-min.js", function () { enableColorboxFN() });
+};
+
+var wrapConfigurablesFn = function () {
+    $('*:contains("https://openam.example.com:8443")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("https://openam.example.com:8443", 'g'),'<span class="exampleUrl">https://openam.example.com:8443</span>')
+            )
+    });
+    $('*:contains("amadmin")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("amadmin", 'g'),'<span class="exampleAdmin">amadmin</span>')
+            )
+    });
+    $('*:contains("iPlanetDirectoryPro")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("iPlanetDirectoryPro", 'g'),'<span class="exampleSsoCookieName">iPlanetDirectoryPro</span>')
+            )
+    });
+};
+
+var btnClickHandler = function () {
+    $("button#applyDocUpdate").click(function(){
+
+        $('span.exampleUrl').fadeOut("slow", function(){
+            $('span.exampleUrl').text($("input#exampleUrl").val());
+            $('span.exampleUrl').fadeIn("slow");
+        });
+
+        $('span.exampleAdmin').fadeOut("slow", function(){
+            $('span.exampleAdmin').text($("input#exampleAdmin").val());
+            $('span.exampleAdmin').fadeIn("slow");
+        });
+
+        $('span.exampleSsoCookieName').fadeOut("slow", function(){
+            $('span.exampleSsoCookieName').text($("input#exampleSsoCookieName").val());
+            $('span.exampleSsoCookieName').fadeIn("slow");
+        });
+
+        $('#docConfig').modal('hide');
+    });
+};
+
+
+var addCopyButtonFN = function () {
+    $( ".cmdline" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-cmdline"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> command to clipboard</span></span></div>');
+    });
+
+    $( ".codelisting" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-codelisting"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> code to clipboard</span></span></div>');
+    });
+};
+var enableScrollSpyFN = function () {
+    $('body').scrollspy({
+        target: '#sidebar',
+        offset: 16
+    });
+};
+
+var enableToolTipFN = function () {
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip({placement: 'bottom'});
+    });
+};
+
+var enableBackToTopFadeInFN = function () {
+    var offset = 220;
+    var duration = 500;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            $('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+};
+
+var enableClampedWidthsFN = function () {
+
+    /*
+     * Clamped-width.
+     * Usage:
+     *  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+     *
+     * Author: LV
+     */
+    $('[data-clampedwidth]').each(function () {
+        var elem = $(this);
+        var parentPanel = elem.data('clampedwidth');
+        var resizeFn = function () {
+            var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+            elem.css('width', sideBarNavWidth);
+        };
+
+        resizeFn();
+        $(window).resize(resizeFn);
+    });
+};
+
+var affixToCFN = function() {
+    $('#sidebar').affix({
+        offset: {
+            top: function () {
+                return (this.top = $('.jumbotron').outerHeight(true)-66)
+            }
+        }
+    });
+};
+
+var attachAnchorsToHeadings = function() {
+    //addAnchors('h1.title, h2.title, h3.title, h4.title, h5.title');
+
+
+    $('h1.title, h2.title, h3.title, h4.title, h5.title, .procedure-title, .table-title').each(function () {
+
+        var href = $(this).closest("div[id]").attr("id");
+
+        if (href === undefined || href === "") { // Unable to locate ID of parent element.
+            return;
+        }
+
+        $(this).wrapInner('<a class=\"self-link" href=\"#' + href + '\"></a>');
+
+    });
+};
+
+var addZeroClipboardToCmdlineButtonsFN = function () {
+    var copycmdline = new ZeroClipboard( $('.btn-copy-cmdline') );
+
+    copycmdline.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        copycmdline.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next().find("strong").each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycmdline.on( 'aftercopy', function(event) {
+            // console.log('Copied to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next().find("strong").each(function(index) {
+                $(this).effect("transfer", { to: $(event.target)}, 750);
+            });
+        });
+    });
+
+    copycmdline.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var addZeroClipboardToCodeButtonsFN = function () {
+    var copycodelisting = new ZeroClipboard( $('.btn-copy-codelisting') );
+
+    copycodelisting.on( 'ready', function(event) {
+        //console.log( 'movie is loaded' );
+
+        copycodelisting.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next(".codelisting.linenums").children().contents().each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            if(wrappedText == "") {
+                wrappedText = $(event.target).parent().next(".codelisting").contents().text();
+            };
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycodelisting.on( 'aftercopy', function(event) {
+            // console.log('Copied code to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next(".codelisting").first().effect("transfer", { to: $(event.target)}, 750);
+        });
+    });
+
+    copycodelisting.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var enableColorboxFN = function () {
+    $(".fancybox").colorbox({
+        title: function() {
+            return $(this).children('img').attr('alt');
+        },
+        opacity: 1,
+        transition:"elastic",
+        initialWidth: 0,
+        initialHeight: 0,
+        maxWidth:"95%",
+        maxHeight: "95%",
+        scalePhotos: true,
+        fixed: true
+    });
+};
+
+var trackPageViewsFN = function () {
+
+    $("a").click(function() {
+        var href = $(this).attr('href');
+        if(href) {
+            var titleText =  $(this).text();
+            if(href.charAt(0) === '#') {
+                ga('send', {
+                    'hitType': 'pageview',
+                    'page': location.pathname + location.search + href,
+                    'title': titleText
+                });
+            };
+            if(href.charAt(0) === '.') {
+                var lastHashPos = href.lastIndexOf('#');
+                var cleanHref = href.slice(3,lastHashPos);
+                var cleanFrag = href.slice(lastHashPos);
+                if(window.location.href.search(cleanHref) > -1)
+                {
+                    ga('send', {
+                        'hitType': 'pageview',
+                        'page': location.pathname + location.search + cleanFrag,
+                        'title': titleText
+                    });
+                }
+            };
+        }
+    });
+};
+
+var enableZeroClipboardFN = function () {
+    ZeroClipboard.config({
+            swfPath:  "includes/swf/ZeroClipboard.swf",
+            trustedDomains: ["*"],
+            forceEnhancedClipboard: false,
+            forceHandCursor: true,
+            debug: false}
+    );
+    addCopyButtonFN();
+    addZeroClipboardToCmdlineButtonsFN();
+    addZeroClipboardToCodeButtonsFN();
+};
+
+$(document).ready(function() {
+    //wrapConfigurablesFn();
+    btnClickHandler();
+    enableToolTipFN();
+    enableBackToTopFadeInFN();
+    enableClampedWidthsFN();
+    enableScrollSpyFN();
+    affixToCFN();
+    attachAnchorsToHeadings();
+    trackPageViewsFN();
+    loadJavaScriptsFN();
+});
+
+//
+
+    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link"></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenAM Java EE Policy Agent  Reference<span></span><small></small></h1><p>Guide to installing OpenAM Java EE policy agents. OpenAM provides open source
+   Authentication, Authorization, Entitlement and Federation software.</p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenAM Java EE Policy Agent  Reference<br><small class="toc-subtitle"></small></h4><ul class="nav nav-stacked"><li><a href="#chap-jee-config-properties">1. Java EE Agent Configuration Properties</a><ul class="nav nav-stacked"><li><a href="#jee-bootstrap-configuration-properties">1.1. Bootstrap Configuration Properties</a></li><li><a href="#jee-agent-configuration-properties">1.2. Agent Configuration Properties</a></li></ul></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenAM Java EE Policy Agent  Reference</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark</span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Vanessa</span> <span class="surname">Richie</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Jang</span></h3></div></div></div><div><p class="releaseinfo"></p></div><div><p class="copyright">Copyright &copy; 2011-2013 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">Publication date: July&nbsp;05,&nbsp;2024</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>Guide to installing OpenAM Java EE policy agents. OpenAM provides open source
+   Authentication, Authorization, Entitlement and Federation software.</p></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div><div lang="en" class="chapter" id="chap-jee-config-properties"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;1.&nbsp;Java EE Agent Configuration Properties</h1></div></div></div><p>Java EE Agents use the following configuration properties. Bootstrap
+ properties are always configured locally, whereas other agent configuration
+ properties are either configured centrally in OpenAM or locally using the
+ agent properties file.</p><div class="section" id="jee-bootstrap-configuration-properties"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.1.&nbsp;Bootstrap Configuration Properties</h2></div></div></div><p>These properties are set in
+  <code class="filename">config/</code>.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">am.encryption.pwd</code></span></dt><dd><p>When using an encrypted password, set this to the encryption key
+     used to encrypt the agent profile password.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.naming.url</code></span></dt><dd><p>Set this to the naming service URL(s) used for naming lookups in
+     OpenAM. Separate multiple URLs with single space characters.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.service.secret</code></span></dt><dd><p>When using a plain text password, set this to the password for
+     the agent profile, and leave <code class="literal">am.encryption.pwd</code>
+     blank.</p><p>When using an encrypted password, set this to the encrypted version
+     of the password for the agent profile. Use the command
+     <span class="command"><strong>./agentadmin --encrypt <em class="replaceable"><code>agentInstance</code></em>
+     <em class="replaceable"><code>passwordFile</code></em></strong></span> to get the encrypted
+     version.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.services.deploymentDescriptor</code></span></dt><dd><p>Set this to the URI under which OpenAM is deployed, such as
+     <code class="literal">/openam</code>.</p></dd><dt><span class="term"><code class="literal">com.iplanet.services.debug.directory</code></span></dt><dd><p>Set this to the full path of the agent's debug log directory
+     where the agent writes debug log files.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.app.username</code></span></dt><dd><p>Set this to the agent profile name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.local.logfile</code></span></dt><dd><p>Set this to the full path for agent's audit log file.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.lock.enable</code></span></dt><dd><p>Set this to <code class="literal">true</code> to require an agent restart to
+     allow agent configuration changes, even for hot-swappable parameters.
+     Default is <code class="literal">false</code>.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.organization.name</code></span></dt><dd><p>Set this to the realm name where the agent authenticates to
+     OpenAM.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.profilename</code></span></dt><dd><p>Set this to the profile name used to fetch agent configuration data.
+     Unless multiple agents use the same credentials to authenticate, this is
+     the same as <code class="literal">com.sun.identity.agents.app.username</code>.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.service.resolver</code></span></dt><dd><p>Set this to the class name of the service resolver used by the
+     agent.</p></dd><dt><span class="term"><code class="literal">com.sun.services.debug.mergeall</code></span></dt><dd><p>When set to <code class="literal">on</code>, the default, the agent writes all
+     debug messages to a single file under
+     <code class="literal">com.iplanet.services.debug.directory</code>.</p></dd></dl></div></div><div class="section" id="jee-agent-configuration-properties"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.2.&nbsp;Agent Configuration Properties</h2></div></div></div><p>These properties are set in
+  <code class="filename">config/</code> if your
+  agent uses local configuration. If your agent uses centralized configuration,
+  the properties are set in OpenAM.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">com.iplanet.am.cookie.name</code></span></dt><dd><p>Name of the SSO Token cookie used between the OpenAM server and
+     the agent. Default: <code class="literal">iPlanetDirectoryPro</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; Cookie
+     Name.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.sdk.remote.pollingTime</code></span></dt><dd><p>If notifications are not enabled and set to a value other than zero,
+     specifies the time in minutes after which the agent polls to update
+     cached user management data. Default: 1</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     User Data Cache Polling Time.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.server.host</code></span></dt><dd><p>Specifies the OpenAM authentication service host name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     OpenAM Authentication Service Host Name.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.server.port</code></span></dt><dd><p>Specifies the OpenAM authentication service port number.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     OpenAM Authentication Service Port.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.server.protocol</code></span></dt><dd><p>Specifies the protocol used by the OpenAM authentication
+     service.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     OpenAM Authentication Service Protocol.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.session.client.polling.enable</code></span></dt><dd><p>When enabled, the session client polls to update the session cache
+     rather than relying on notifications from OpenAM.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Enable Client Polling.</p></dd><dt><span class="term"><code class="literal">com.iplanet.am.session.client.polling.period</code></span></dt><dd><p>Specifies the time in seconds after which the session client
+     requests an update from OpenAM for cached session information. Default:
+     180</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Client Polling Period.</p></dd><dt><span class="term"><code class="literal">com.iplanet.security.encryptor</code></span></dt><dd><p>Specifies the agent's encryption provider class.</p><p>Default: <code class="literal">com.iplanet.services.util.JCEEncryption</code></p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Encryption Provider.</p></dd><dt><span class="term"><code class="literal">com.iplanet.services.debug.level</code></span></dt><dd><p>Default is <code class="literal">Error</code>. Increase to
+     <code class="literal">Message</code> or even <code class="literal">All</code> for
+     fine-grained detail.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; Agent
+     Debug Level.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.access.denied.uri</code></span></dt><dd><p>Specifies the URIs of custom pages to return when access is denied.
+     The key is the web application name. The value is the custom URI.</p><p>To set a global custom access denied URI for applications without
+     other custom access denied URIs defined, leave the key empty and set the
+     value to the global custom access denied URI,
+     <code class="literal">/sample/accessdenied.html</code>.</p><p>To set a custom access denied URI for a specific application, set
+     the key to the name of the application, and the value to the application
+     access denied URI, such as <code class="literal">/myApp/accessdenied.html</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Resource Access Denied URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.agent.host</code></span></dt><dd><p>Specifies the host name of the agent protected server to show to
+     client browsers, rather than the actual host name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Alternative Agent Host Name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.agent.port</code></span></dt><dd><p>Specifies the port number of the agent protected server to show to
+     client browsers, rather than the actual port number.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Alternative Agent Port Name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.agent.protocol</code></span></dt><dd><p>Specifies the protocol used to contact the agent from the browser
+     client browsers, rather than the actual protocol used by the server.
+     Either <code class="literal">http</code> or <code class="literal">https</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Alternative Agent Protocol.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.amsso.cache.enable</code></span></dt><dd><p>When enabled, the agent exposes SSO Cache through the agent SDK
+     APIs.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; SSO Cache
+     Enable.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.attribute.cookie.encode</code></span></dt><dd><p>When enabled, attribute values are URL encoded before being set as
+     a cookie.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Attribute Cookie Encode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.attribute.cookie.separator</code></span></dt><dd><p>Specifies the separator for multiple values of the same attribute
+     when it is set as a cookie. Default: <code class="literal">|</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Cookie Separator Character.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.attribute.date.format</code></span></dt><dd><p>Specifies the <code class="literal">java.text.SimpleDateFormat</code> of date
+     attribute values used when an attribute is set in an HTTP header. Default:
+     <code class="literal">EEE, d MMM yyyy hh:mm:ss z</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Fetch Attribute Date Format.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.audit.accesstype</code></span></dt><dd><p>Types of messages to log based on user URL access attempts.</p><p>Valid values for the configuration file property include
+     <code class="literal">LOG_NONE</code>, <code class="literal">LOG_ALLOW</code>,
+     <code class="literal">LOG_DENY</code>, and <code class="literal">LOG_BOTH</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; Audit
+     Access Types.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.auth.handler</code></span></dt><dd><p>Specifies custom authentication handler classes for users
+     authenticated with the application server. The key is the web application
+     name and the value is the authentication handler class name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Custom Authentication Handler.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.bypass.principal</code></span></dt><dd><p>Specifies a list of principals the agent bypasses for
+     authentication and search purposes, such as <code class="literal">guest</code>
+     or <code class="literal">testuser</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Bypass Principal List.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.cdcservlet.url</code></span></dt><dd><p>List of URLs of the available CDSSO controllers that the agent can
+      use for CDSSO processing. For example,
+     <code class="literal">http://openam.example.com:8080/openam/cdcservlet</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; CDSSO
+     Servlet URL.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.clock.skew</code></span></dt><dd><p>When set to a value other than zero, specifies the clock skew in
+     seconds that the agent accepts when determining the validity of the CDSSO
+     authentication response assertion.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; CDSSO Clock
+     Skew.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.domain</code></span></dt><dd><p>List of domains, such as <code class="literal">.example.com</code>, in which
+     cookies have to be set in CDSSO.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cross Domain
+     SSO.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.enable</code></span></dt><dd><p>Enables Cross Domain Single Sign On.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cross Domain
+     SSO.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.redirect.uri</code></span></dt><dd><p>Specifies a URI the agent uses to process CDSSO requests.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; CDSSO
+     Redirect URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.secure.enable</code></span></dt><dd><p>When enabled, the agent marks the SSO Token cookie as secure, thus
+     the cookie is only transmitted over secure connections.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cross Domain
+     SSO.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cdsso.trusted.id.provider</code></span></dt><dd><p>Specifies the list of OpenAM servers or identity providers the
+     agent trusts when evaluating CDC Liberty Responses.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; CDSSO
+     Trusted ID Provider.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.change.notification.enable</code></span></dt><dd><p>Enable agent to receive notification messages from OpenAM server for
+     configuration changes.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Profile.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.client.hostname.header</code></span></dt><dd><p>If the agent is behind a proxy or load balancer, then the agent can
+     get client IP and host name values from the proxy or load balancer. For
+     proxies and load balancer that support providing the client IP and host
+     name in HTTP headers, you can use the following properties.</p><p>When multiple proxies are load balancers sit in the request path,
+     the header values can include a comma-separated list of values with the
+     first value representing the client, as in
+     <code class="literal">client,next-proxy,first-proxy</code>.</p><p>HTTP header name that holds the hostname of the client.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt; Client
+     Hostname Header.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.client.ip.header</code></span></dt><dd><p>Similar to
+     <code class="literal">com.sun.identity.agents.config.client.hostname.header</code>,
+     HTTP header name that holds the IP address of the client.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt; Client
+     IP Address Header.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.conditional.login.url</code></span></dt><dd><p>
+  To conditionally redirect users based on the incoming request URL,
+  set this property.
+ </p><p>
+  This takes the incoming request domain to match,
+  a vertical bar ( <code class="literal">|</code> ),
+  and then a comma-separated list of URLs to which to redirect incoming users.
+ </p><p>
+  If the domain before the vertical bar matches an incoming request URL,
+  then the policy agent uses the list of URLs
+  to determine how to redirect the user-agent.
+
+  If the global property FQDN Check
+  (<code class="literal">com.sun.identity.agents.config.fqdn.check.enable</code>)
+  is enabled for the policy agent,
+  then the policy agent iterates through the list
+  until it finds an appropriate redirect URL that matches the FQDN check.
+
+  Otherwise, the policy agent redirects the user-agent
+  to the first URL in the list.
+ </p><p>
+  Property: <code class="literal">com.sun.identity.agents.config.conditional.login.url</code>
+ </p><p>
+  Examples:
+
+  <code class="literal">com.sun.identity.agents.config.conditional.login.url[0]=
+  login.example.com|http://openam1.example.com/openam/UI/Login,
+  http://openam2.example.com/openam/UI/Login</code>,
+
+  <code class="literal">com.sun.identity.agents.config.conditional.login.url[1]=
+  signin.example.com|http://openam3.example.com/openam/UI/Login,
+  http://openam4.example.com/openam/UI/Login</code>
+ </p><p>
+  If CDSSO is enabled for the policy agent,
+  then this property takes CDSSO Servlet URLs for its values
+  (<code class="literal">com.sun.identity.agents.config.cdsso.cdcservlet.url</code>),
+  rather than OpenAM login URLs.
+ </p><p>
+  CDSSO examples:
+
+  <code class="literal">com.sun.identity.agents.config.conditional.login.url[0]=
+  login.example.com|http://openam1.example.com/openam/cdcservlet,
+  http://openam2.example.com/openam/cdcservlet</code>,
+
+  <code class="literal">com.sun.identity.agents.config.conditional.login.url[1]=
+  signin.example.com|http://openam3.example.com/openam/cdcservlet,
+  http://openam4.example.com/openam/cdcservlet</code>
+ </p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.conditional.logout.url</code></span></dt><dd><p>
+      The values take the incoming request URL to match
+      and a comma-separated list of URLs to which to redirect users logging out.
+     </p><p>
+      Example:
+      <code class="literal">com.sun.identity.agents.config.conditional.logout.url[0]=
+      logout.example.com|http://openam1.example.com/openam/UI/Logout,
+      http://openam2.example.com/openam/UI/Logout</code>
+     </p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cookie.reset.domain</code></span></dt><dd><p>Specifies how names from
+     <code class="literal">com.sun.identity.agents.config.cookie.reset.name</code>
+     correspond to cookie domain values when the cookie is reset.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cookie Reset
+     Domain Map.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cookie.reset.enable</code></span></dt><dd><p>When enabled, agent resets cookies in the response before
+     redirecting to authentication.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cookie Reset.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cookie.reset.name</code></span></dt><dd><p>List of cookies to reset if
+     <code class="literal">com.sun.identity.agents.config.cookie.reset.enable</code> is
+     enabled.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cookie Reset
+     Name List.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.cookie.reset.path</code></span></dt><dd><p>Specifies how names from the
+     <code class="literal">com.sun.identity.agents.config.cookie.reset.name</code>
+     correspond to cookie paths when the cookie is reset.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; SSO &gt; Cookie Reset
+     Path Map.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.default.privileged.attribute</code></span></dt><dd><p>Specifies the list of privileged attributes granted to all users
+      with a valid OpenAM session, such as
+      <code class="literal">AUTHENTICATED_USERS</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Default Privileged Attribute.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.filter.mode</code></span></dt><dd><p>Specifies how the agent filters requests to protected web
+      applications. The global value functions as a default, and applies for
+      protected applications that do not have their own filter settings.
+      Valid settings include the following.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">ALL</code></span></dt><dd><p>Enforce both the J2EE policy defined for the web container where
+         the protected application runs, and also OpenAM policies.</p><p>When setting the filter mode to <code class="literal">ALL</code>, set the
+         Map Key, but do not set any Corresponding Map Value.</p></dd><dt><span class="term"><code class="literal">J2EE_POLICY</code></span></dt><dd><p>Enforce only the J2EE policy defined for the web container where
+         the protected application runs.</p></dd><dt><span class="term"><code class="literal">NONE</code></span></dt><dd><p>Do not enforce policies to protect resources. In other words,
+         turn off access management. Not for use in production.</p></dd><dt><span class="term"><code class="literal">SSO_ONLY</code></span></dt><dd><p>Enforce only authentication, not policies.</p></dd><dt><span class="term"><code class="literal">URL_POLICY</code></span></dt><dd><p>Enforce only OpenAM, URL resource based policies.</p><p>When setting the filter mode to <code class="literal">URL_POLICY</code>,
+         set the Map Key to the application name and the Corresponding Map
+         Value to <code class="literal">URL_POLICY</code>.</p></dd></dl></div><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; Agent
+     Filter Mode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.fqdn.check.enable</code></span></dt><dd><p>Enables checking of FQDN default value and FQDN map values.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; FQDN
+     Check.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.fqdn.default</code></span></dt><dd><p>Fully qualified domain name that the users should use in order to
+     access resources.</p><p>This property ensures that when users access protected resources
+     on the web server without specifying the FQDN, the agent can redirect
+     the users to URLs containing the correct FQDN.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; FQDN
+     Default.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.fqdn.mapping</code></span></dt><dd><p>Enables virtual hosts, partial hostname and IP address to access
+     protected resources. Maps invalid or virtual name keys to valid FQDN
+     values so the agent can properly redirect users and the agents receive
+     cookies belonging to the domain.</p><p>To map <code class="literal">myserver</code> to
+     <code class="literal">myserver.mydomain.example</code>, enter
+     <code class="literal">myserver</code> in the Map Key field, and enter
+     <code class="literal">myserver.mydomain.example</code> in the Corresponding Map Value
+     field. This corresponds to
+     <code class="literal">com.sun.identity.agents.config.fqdn.mapping[myserver]= myserver.mydomain.example</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; FQDN
+     Virtual Host Map.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.httpsession.binding</code></span></dt><dd><p>When enabled the agent invalidates the HTTP session upon login
+     failure, when the user has no SSO session, or when the principal user
+     name does not match the SSO user name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; HTTP
+     Session Binding.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.ignore.path.info</code></span></dt><dd><p>When enabled, strip path info from the request URL while doing the
+     Not Enforced List check, and URL policy evaluation. This is designed
+     to prevent a user from accessing a URI by appending the matching pattern
+     in the policy or not enforced list.</p><p>For example, if the not enforced list includes
+     <code class="literal">/*.gif</code>, then stripping path info from the request URL
+     prevents access to <code class="literal">http://host/index.html</code> by using
+     <code class="literal">http://host/index.html?hack.gif</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Ignore Path Info in Request URL.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.jboss.webauth.available</code></span></dt><dd><p>When enabled, allow programmatic authentication with the JBoss
+     container using the WebAuthentication feature. This feature works only with
+     JBoss 4.2.2 to 7 when the <code class="literal">J2EE_POLICY</code> or
+     <code class="literal">ALL</code> filter mode is in use.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     JBoss Application Server.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.legacy.redirect.uri</code></span></dt><dd><p>Specifies a URI the agent uses to redirect legacy user agent
+     requests.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Legacy User Agent Redirect URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.legacy.support.enable</code></span></dt><dd><p>When enabled, provide support for legacy browsers.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Legacy User Agent Support Enable.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.legacy.user.agent</code></span></dt><dd><p>List of header values that identify legacy browsers. Entries can
+     use the wildcard character, <code class="literal">*</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Legacy User Agent List.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.load.interval</code></span></dt><dd><p>Interval in seconds to fetch agent configuration from OpenAM. Used
+     if notifications are disabled. Default: 0</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Configuration Reload Interval.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.local.log.rotate</code></span></dt><dd><p>When enabled, audit log files are rotated when reaching the
+     specified size.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Rotate Local Audit Log.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.local.log.size</code></span></dt><dd><p>Beyond this size limit in bytes the agent rotates the local audit
+     log file if rotation is enabled. Default: 50 MB</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Local Audit Log Rotation Size.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.locale.country</code></span></dt><dd><p>The default country for the agent.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Locale Country.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.locale.language</code></span></dt><dd><p>The default language for the agent.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Locale Language.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.log.disposition</code></span></dt><dd><p>Specifies where audit messages are logged. By default, audit
+     messages are logged remotely.</p><p>Valid values for the configuration file property include
+     <code class="literal">REMOTE</code>, <code class="literal">LOCAL</code>, and
+     <code class="literal">ALL</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; Audit
+     Log Location.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.attempt.limit</code></span></dt><dd><p>When set to a value other than zero, this defines the maximum
+     number of failed login attempts allowed during a single browser session,
+     after which the agent blocks requests from the user.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt; Login
+     Attempt Limit.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.content.file</code></span></dt><dd><p>Full path name to the file containing custom login content when
+     Use Internal Login is enabled.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Login Content File Name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.error.uri</code></span></dt><dd><p>Specifies the list of absolute URIs corresponding to a protected
+     application's <code class="filename">web.xml</code>
+     <code class="literal">form-error-page</code> element, such as
+     <code class="literal">/myApp/jsp/error.jsp</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Login Error URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.form</code></span></dt><dd><p>Specifies the list of absolute URIs corresponding to a protected
+     application's <code class="filename">web.xml</code>
+     <code class="literal">form-login-page</code> element, such as
+     <code class="literal">/myApp/jsp/login.jsp</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Login Form URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.url.prioritized</code></span></dt><dd><p>When enabled, OpenAM uses the priority defined in the OpenAM Login
+     URL list as the priority for Login and CDSSO URLs when handling
+     failover.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Login URL Prioritized.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.url.probe.enabled</code></span></dt><dd><p>When enabled, OpenAM checks the availability of OpenAM Login URLs
+     before redirecting to them.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Login URL Probe.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.url.probe.timeout</code></span></dt><dd><p>Timeout period in milliseconds for OpenAM to determine whether
+     to failover between Login URLs when Login URL Probe is enabled. Default:
+     2000</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Login URL Probe Timeout.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.url</code></span></dt><dd><p>OpenAM login page URL, such as
+     <code class="literal">http://openam.example.com:8080/openam/UI/Login</code>, to
+     which the agent redirects incoming users without sufficient credentials
+     so then can authenticate.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     OpenAM Login URL.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.login.use.internal</code></span></dt><dd><p>When enabled, the agent uses the internal default content file
+      for the login.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Use Internal Login.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.application.handler</code></span></dt><dd><p>Specifies how logout handlers map to specific applications. The key
+     is the web application name. The value is the logout handler class.</p><p>To set a global logout handler for applications without other
+     logout handlers defined, leave the key empty and set the value to the
+     global logout handler class name,
+     <code class="literal">GlobalApplicationLogoutHandler</code>.</p><p>To set a logout handler for a specific application, set the key
+     to the name of the application, and the value to the logout handler class
+     name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Application Logout Handler.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.entry.uri</code></span></dt><dd><p>Specifies the URIs to return after successful logout and subsequent
+     authentication. The key is the web application name. The value is the
+     URI to return.</p><p>To set a global logout entry URI for applications without other
+     logout entry URIs defined, leave the key empty and set the value to the
+     global logout entry URI, <code class="literal">/welcome.html</code>.</p><p>To set a logout entry URI for a specific application, set the key
+     to the name of the application, and the value to the application
+     logout entry URI, such as <code class="literal">/myApp/welcome.html</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Logout Entry URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.handler</code></span></dt><dd><p>Specifies custom logout handler classes to log users out of the
+     application server. The key is the web application name and the value is
+     the logout handler class name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Custom Logout Handler.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.introspect.enabled</code></span></dt><dd><p>When enabled, the agent checks the HTTP request body to locate the
+      Logout Request Parameter you set.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Logout Introspect Enabled.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.request.param</code></span></dt><dd><p>Specifies parameters in the HTTP request that indicate logout
+     events. The key is the web application name. The value is the logout
+     request parameter.</p><p>To set a global logout request parameter for applications without
+     other logout request parameters defined, leave the key empty and set the
+     value to the global logout request parameter,
+     <code class="literal">logoutparam</code>.</p><p>To set a logout request parameter for a specific application, set
+     the key to the name of the application, and the value to the application
+     logout request parameter, such as <code class="literal">logoutparam</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Logout Request Parameter.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.uri</code></span></dt><dd><p>Specifies request URIs that indicate logout events. The key is the
+     web application name. The value is the application logout URI.</p><p>To set a global logout URI for applications without other logout
+     URIs defined, leave the key empty and set the value to the global logout
+     URI, <code class="literal">/logout.jsp</code>.</p><p>To set a logout URI for a specific application, set the key to the
+     name of the application, and the value to the application logout
+     page.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Application Logout URI.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.url.prioritized</code></span></dt><dd><p>When enabled, OpenAM uses the priority defined in the OpenAM Logout
+     URL list as the priority for Logout URLs when handling failover.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Logout URL Prioritized.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.url.probe.enabled</code></span></dt><dd><p>When enabled, OpenAM checks the availability of OpenAM Logout URLs
+     before redirecting to them.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Logout URL Probe.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.url.probe.timeout</code></span></dt><dd><p>Timeout period in milliseconds for OpenAM to determine whether
+     to failover between Logout URLs when Logout URL Probe is enabled. Default:
+     2000</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Logout URL Probe Timeout.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.logout.url</code></span></dt><dd><p>OpenAM logout page URLs, such as
+     <code class="literal">http://openam.example.com:8080/openam/UI/Logout</code>. The
+     user is logged out of the OpenAM session when accessing these URLs.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     OpenAM Logout URL.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.ip.cache.enable</code></span></dt><dd><p>When enabled, the agent caches evaluation of the not enforced IP
+     list.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced IP Cache Flag.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.ip.cache.size</code></span></dt><dd><p>When caching is enabled, this limits the number of not enforced
+     addresses cached. Default: 1000</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced IP Cache Size.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.ip.invert</code></span></dt><dd><p>Only enforce the not enforced list of IP addresses. In other words,
+     enforce policy only for those client addresses and patterns specified in
+     the list.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced IP Invert List.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.ip</code></span></dt><dd><p>No authentication and authorization are required for the requests
+     coming from these client IP addresses.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced Client IP List.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.refresh.session.idletime</code></span></dt><dd><p>When enabled, the agent reset the session idle time when granting
+     access to a not enforced URI, prolonging the time before the user must
+     authenticate again.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Refresh Session Idle Time.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.uri.cache.enable</code></span></dt><dd><p>When enabled, the agent caches evaluation of the not enforced URI
+     list.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced URIs Cache Enabled.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.uri.cache.size</code></span></dt><dd><p>When caching is enabled, this limits the number of not enforced
+     URIs cached.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced URIs Cache Size.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.uri.invert</code></span></dt><dd><p>Only enforce not enforced list of URIs. In other words, enforce
+     policy only for those URIs and patterns specified in the list.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Invert Not Enforced URIs.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.notenforced.uri</code></span></dt><dd><p>List of URIs for which no authentication is required, and the agent
+     does not protect access. You can use wildcards to define a pattern for a
+     URI.</p><p>The <code class="literal">*</code> wildcard matches all characters except
+     question mark (<code class="literal">?</code>), cannot be escaped, and spans
+     multiple levels in a URI. Multiple forward slashes do not match a
+     single forward slash, so <code class="literal">*</code> matches
+     <code class="literal">mult/iple/dirs</code>, yet <code class="literal">mult/*/dirs</code>
+     does not match <code class="literal">mult/dirs</code>.</p><p>The <code class="literal">-*-</code> wildcard matches all characters except
+     forward slash (<code class="literal">/</code>) or question mark
+     (<code class="literal">?</code>), and cannot be escaped. As it does not match
+     <code class="literal">/</code>, <code class="literal">-*-</code> does not span multiple
+     levels in a URI.</p><p>OpenAM does not let you mix <code class="literal">*</code> and
+     <code class="literal">-*-</code> in the same URI.</p><p>Examples include <code class="literal">/logout.html</code>,
+     <code class="literal">/images/*</code>, <code class="literal">/css/-*-</code>, and
+     <code class="literal">/*.jsp?locale=*</code>.</p><p>Trailing forward slashes are not recognized as part of a resource
+     name. Therefore <code class="literal">/images//</code> and
+     <code class="literal">/images</code> are equivalent.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Not Enforced URIs.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.policy.advice.use.redirect</code></span></dt><dd><p>When enabled, the remote policy client is configured to use
+     HTTP-Redirect instead of HTTP-POST for composite advice.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Policy Client Service.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.policy.env.get.param</code></span></dt><dd><p>Specifies the list of HTTP GET request parameters whose names and
+     values the agents sets in the environment map for URL policy evaluation
+     by the OpenAM server.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     URL Policy Env GET Parameters.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.policy.env.jsession.param</code></span></dt><dd><p>Specifies the list of HTTP session attributes whose names and
+     values the agents sets in the environment map for URL policy evaluation
+     by the OpenAM server.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     URL Policy Env jsession Parameters.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.policy.env.post.param</code></span></dt><dd><p>Specifies the list of HTTP POST request parameters whose names and
+     values the agents sets in the environment map for URL policy evaluation
+     by the OpenAM server.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     URL Policy Env POST Parameters.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.port.check.enable</code></span></dt><dd><p>When enabled, activate port checking, correcting requests on the
+     wrong port.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Port Check Enable.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.port.check.file</code></span></dt><dd><p>Specifies the name of the file containing the content to handle
+     requests on the wrong port when port checking is enabled.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Port Check File.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.port.check.setting</code></span></dt><dd><p>Specifies which ports correspond to which protocols. The agent uses
+     the map when handling requests with invalid port numbers during port
+     checking.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Port Check Setting.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.postdata.preserve.cache.entry.ttl</code></span></dt><dd><p>POST data storage lifetime in milliseconds. Default: 300000.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Post Data Preservation.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.postdata.preserve.cache.noentry.url</code></span></dt><dd><p>Specifies a list of application-specific URIs if the referenced
+      Post Data Preservation entry cannot be found in the local cache because
+      it has exceeded its POST entry TTL. Either the agent redirects to a
+      URI in this list, or it shows an HTTP 403 Forbidden error.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Post Data Preservation.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.postdata.preserve.enable</code></span></dt><dd><p>Enables HTTP POST data preservation, storing POST data before
+      redirecting the browser to the login screen, and then autosubmitting
+      the same POST after successful authentication to the original URL.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Post Data Preservation.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.postdata.preserve.stickysession.mode</code></span></dt><dd><p>Specifies whether to create a cookie, or to append a query string to
+      the URL to assist with sticky load balancing.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Post Data Preservation.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.postdata.preserve.stickysession.value</code></span></dt><dd><p>Specifies the key-value pair for stickysession mode. For example,
+      a setting of <code class="literal">lb=myserver</code> either sets an
+      <code class="literal">lb</code> cookie with <code class="literal">myserver</code> value, or
+      adds <code class="literal">lb=myserver</code> to the URL query string.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Post Data Preservation.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.privileged.attribute.mapping.enable</code></span></dt><dd><p>When enabled, lets you use Privileged Attribute Mapping.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Enable Privileged Attribute Mapping.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.privileged.attribute.mapping</code></span></dt><dd><p>Maps OpenAM UUIDs to principal names specified in your web
+     application's deployment descriptor, such as
+     <code class="literal">com.sun.identity.agents.config.privileged.attribute.mapping
+     [id\=manager,ou\=group,o\=openam] = am_manager_role</code>
+     or <code class="literal">com.sun.identity.agents.config.privileged.attribute.mapping
+     [id\=employee,ou\=group,o\=openam] = am_employee_role</code></p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     0Privileged Attribute Mapping.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.privileged.attribute.tolowercase</code></span></dt><dd><p>Specifies how privileged attribute types should be converted to
+     lower case.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Privileged Attributes To Lower Case.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.privileged.attribute.type</code></span></dt><dd><p>Specifies the list of privileged attribute types fetched for each
+     user.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Privileged Attribute Type.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.privileged.session.attribute</code></span></dt><dd><p>Specifies the list of session property names, such as
+     <code class="literal">UserToken</code> which hold privileged attributes for
+     authenticated users.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Privileged Session Attribute.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.profile.attribute.fetch.mode</code></span></dt><dd><p>When set to <code class="literal">HTTP_COOKIE</code> or
+     <code class="literal">HTTP_HEADER</code>, profile attributes are introduced into
+     the cookie or the headers, respectively.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Profile Attribute Fetch Mode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.profile.attribute.mapping</code></span></dt><dd><p>Maps the profile attributes to HTTP headers for the currently
+     authenticated user. Map Keys are LDAP attribute names, and Map Values
+     are HTTP header names.</p><p>To populate the value of profile attribute CN under
+     <code class="literal">CUSTOM-Common-Name</code>: enter CN in the Map Key field,
+     and enter <code class="literal">CUSTOM-Common-Name</code> in the Corresponding
+     Map Value field. This corresponds to
+     <code class="literal">com.sun.identity.agents.config.profile.attribute.mapping[cn]=CUSTOM-Common-Name</code>.</p><p>In most cases, in a destination application where an HTTP header
+     name shows up as a request header, it is prefixed by
+     <code class="literal">HTTP_</code>, lower case letters become upper case, and
+     hyphens (<code class="literal">-</code>) become underscores (<code class="literal">_</code>).
+     For example, <code class="literal">common-name</code> becomes
+     <code class="literal">HTTP_COMMON_NAME</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Profile Attribute Mapping.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.redirect.attempt.limit</code></span></dt><dd><p>When set to a value other than zero, this defines the maximum number
+     of redirects allowed for a single browser session, after which the agent
+     blocks the request.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Redirect Attempt Limit.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.redirect.param</code></span></dt><dd><p>Property used only when CDSSO is enabled. Only change the default
+     value, <code class="literal">goto</code> when the login URL has a landing page
+     specified such as,
+     <code class="literal">com.sun.identity.agents.config.cdsso.cdcservlet.url
+     = http://openam.example.com:8080/openam/cdcservlet?goto=
+     http://www.example.com/landing.jsp</code>.
+     The agent uses this parameter to append the original request URL
+     to this cdcserlet URL. The landing page consumes this parameter to
+     redirect to the original URL.</p><p>As an example, if you set this value to <code class="literal">goto2</code>,
+     then the complete URL sent for authentication is
+     <code class="literal">http://openam.example.com:8080/openam/cdcservlet?goto=
+     http://www.example.com/landing.jsp?goto2=http://www.example.com/original.jsp</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Miscellaneous &gt;
+     Goto Parameter Name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.remote.logfile</code></span></dt><dd><p>Name of file stored on OpenAM server that contains agent audit
+     messages if log location is remote or all.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Remote Log Filename.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.repository.location</code></span></dt><dd><p>Whether the agent's configuration is managed centrally through OpenAM
+     (<code class="literal">centralized</code>) or locally in the policy agent
+     configuration file (<code class="literal">local</code>).</p><p>Default: <code class="literal">centralized</code></p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.response.attribute.fetch.mode</code></span></dt><dd><p>When set to <code class="literal">HTTP_COOKIE</code> or
+     <code class="literal">HTTP_HEADER</code>, response attributes are introduced into
+     the cookie or the headers, respectively. When set to
+     <code class="literal">REQUEST_ATTRIBUTE</code>, response attributes are part
+     of the HTTP response.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Response Attribute Fetch Mode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.response.attribute.mapping</code></span></dt><dd><p>Maps the policy response attributes to HTTP headers for the
+     currently authenticated user. The response attribute is
+     the attribute in the policy response to be fetched.</p><p>To populate the value of response attribute <code class="literal">uid</code>
+     under <code class="literal">CUSTOM-User-Name</code>: enter <code class="literal">uid</code>
+     in the Map Key field, and enter <code class="literal">CUSTOM-User-Name</code> in
+     the Corresponding Map Value field. This corresponds to
+     <code class="literal">com.sun.identity.agents.config.response.attribute.mapping[uid]=Custom-User-Name</code>.</p><p>In most cases, in a destination application where an HTTP header
+     name shows up as a request header, it is prefixed by
+     <code class="literal">HTTP_</code>, lower case letters become upper case, and
+     hyphens (<code class="literal">-</code>) become underscores (<code class="literal">_</code>).
+     For example, <code class="literal">response-attr-one</code> becomes
+     <code class="literal">HTTP_RESPONSE_ATTR_ONE</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Response Attribute Map.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.response.header</code></span></dt><dd><p>Specifies the custom headers the agent sets for the client. The
+     key is the header name. The value is the header value.</p><p>For example,
+     <code class="literal">com.sun.identity.agents.config.response.header[Cache-Control]=no-cache</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Custom Response Header.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.session.attribute.fetch.mode</code></span></dt><dd><p>When set to <code class="literal">HTTP_COOKIE</code> or
+     <code class="literal">HTTP_HEADER</code>, session attributes are introduced into the
+     cookie or the headers, respectively. When set to
+     <code class="literal">REQUEST_ATTRIBUTE</code>, session attributes are part
+     of the HTTP response.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Session Attribute Fetch Mode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.session.attribute.mapping</code></span></dt><dd><p>Maps session attributes to HTTP headers for the currently
+     authenticated user. The session attribute is the attribute in the session
+     to be fetched.</p><p>To populate the value of session attribute
+     <code class="literal">UserToken</code> under <code class="literal">CUSTOM-userid</code>:
+     enter <code class="literal">UserToken</code> in the Map Key field, and enter
+     <code class="literal">CUSTOM-userid</code> in
+     the Corresponding Map Value field. This corresponds to
+     <code class="literal">com.sun.identity.agents.config.session.attribute.mapping[UserToken]=CUSTOM-userid</code>.</p><p>In most cases, in a destination application where an HTTP header
+     name shows up as a request header, it is prefixed by
+     <code class="literal">HTTP_</code>, lower case letters become upper case, and
+     hyphens (<code class="literal">-</code>) become underscores (<code class="literal">_</code>).
+     For example, <code class="literal">success-url</code> becomes
+     <code class="literal">HTTP_SUCCESS_URL</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Session Attribute Map.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.user.attribute.name</code></span></dt><dd><p>Specifies the data store attribute that contains the user ID.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     User Attribute Name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.user.mapping.mode</code></span></dt><dd><p>Specifies the mechanism used to determine the user ID.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     User Mapping Mode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.user.principal</code></span></dt><dd><p>When enabled, OpenAM uses both the principal user name and also the
+     user ID for authentication.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     User Principal Flag.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.user.token</code></span></dt><dd><p>Specifies the session property name for the authenticated user's
+     ID. Default: <code class="literal">UserToken</code>.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     User Token Name.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.verification.handler</code></span></dt><dd><p>Specifies custom verification classes to validate user credentials
+     with the local user repository. The key is the web application name and
+     the value is the validation handler class name.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Application &gt;
+     Custom Verification Handler.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.authenticator</code></span></dt><dd><p>Specifies an implementation class of interface
+     <code class="literal">com.sun.identity.agents.filter.IWebServiceAuthenticator</code>
+     that can be used to authenticate web-service requests.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service Authenticator.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.autherror.content</code></span></dt><dd><p>Specifies a file the agent uses to generate an authorization error
+     fault for the client application.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service Authorization Error Content File.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.enable</code></span></dt><dd><p>Enable web service processing.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service Enable.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.endpoint</code></span></dt><dd><p>Specifies a list of web application end points that represent web
+     services.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service End Points.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.internalerror.content</code></span></dt><dd><p>Specifies a file the agent uses to generate an internal error fault
+     for the client application.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service Internal Error Content File.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.process.get.enable</code></span></dt><dd><p>When enabled, the agent processes HTTP GET requests for web service
+     endpoints.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service Process GET Enable.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.webservice.responseprocessor</code></span></dt><dd><p>Specifies a class implementing
+     <code class="literal">com.sun.identity.agents.filter.IWebServiceResponseProcessor</code>,
+     used to process web service reponses.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Web Service Response Processor.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.xss.code.elements</code></span></dt><dd><p>Specifies strings that, when found in the request, cause the agent
+     to redirect the client to an error page.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Cross Site Scripting Detection.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.config.xss.redirect.uri</code></span></dt><dd><p>Maps applications to URIs of customized pages to which to redirect
+     clients upon detection of XSS code elements.</p><p>For example, to redirect clients of MyApp to
+     <code class="literal">/myapp/error.html</code>, use MyApp as the key and
+     <code class="literal">/myapp/error.html</code> as the corresponding value.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Advanced &gt;
+     Cross Site Scripting Detection.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.notification.enabled</code></span></dt><dd><p>When enabled, OpenAM sends notification about changes to policy.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Enable Policy Notifications.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.agents.polling.interval</code></span></dt><dd><p>Specifies the time in minutes after which the policy cache is
+     refreshed. Default: 3</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Policy Client Polling Interval.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.client.notification.url</code></span></dt><dd><p>URL used by agent to register notification listeners.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; Global &gt;
+     Agent Notification URL.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.idm.remote.notification.enabled</code></span></dt><dd><p>When enabled, receive notification from OpenAM to update user
+     management data caches.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Enable Notification of User Data Caches.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.policy.client.booleanActionValues</code></span></dt><dd><p>Specifies the values, such as <code class="literal">allow</code> and
+     <code class="literal">deny</code>, that are associated with boolean policy
+     decisions.</p><p>Default: <code class="literal">iPlanetAMWebAgentService|GET|allow|deny:iPlanetAMWebAgentService|POST|allow|deny</code></p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Policy Client Boolean Action Values.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.policy.client.cacheMode</code></span></dt><dd><p>Set to cache mode <code class="literal">subtree</code> when only a small number
+     of policy rules are defined. For large numbers of policy rules, set to
+     <code class="literal">self</code>.</p><p>Default: <code class="literal">self</code></p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Policy Client Cache Mode.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.policy.client.clockSkew</code></span></dt><dd><p>Time in seconds used adjust time difference between agent system
+     and OpenAM. Clock skew in seconds = AgentTime - OpenAMServerTime.</p><p>Default: 10.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Policy Client Clock Skew.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.policy.client.resourceComparators</code></span></dt><dd><p>Specifies the comparators used for service names in policy.</p><p>Default: <code class="literal">serviceType=iPlanetAMWebAgentService|
+     class=com.sun.identity.policy.plugins.HttpURLResourceName|wildcard=*|
+     delimiter=/|caseSensitive=false</code></p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Policy Client Resource Comparators.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.sm.cacheTime</code></span></dt><dd><p>If notifications are not enabled and set to a value other than zero,
+     specifies the time in minutes after which the agent polls to update
+     cached service configuration data. Default: 1</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Service Data Cache Time.</p></dd><dt><span class="term"><code class="literal">com.sun.identity.sm.notification.enabled</code></span></dt><dd><p>When enabled, receive notification from OpenAM to update service
+     configuration data caches.</p><p>For centralized configurations this property is configured under
+     Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Agents &gt;
+     J2EE &gt; <em class="replaceable"><code>Agent Name</code></em> &gt; OpenAM Services &gt;
+     Enable Notification of Service Data Caches.</p></dd></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
+              2011-2013&nbsp;
+              ForgeRock AS;&nbsp;
+              &nbsp;
+              &nbsp;
+          </span></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
