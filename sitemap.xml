@@ -22,4 +22,12 @@ layout: null
        </url>
        {% endif %}
   {% endfor %}
+
+  {% for file in site.static_files %}
+    {% if file.name == "index.html"%}
+      <url>
+        <loc>{{ site.url }}{{ file.path | remove: "index.html" | remove: ".html" }}</loc>
+       </url>
+    {% endif %}
+  {% endfor %}
 </urlset>
