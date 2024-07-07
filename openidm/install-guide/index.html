@@ -1,0 +1,2853 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+   /*
+* The contents of this file are subject to the terms of the Common Development and
+* Distribution License (the License). You may not use this file except in compliance with the
+* License.
+*
+* You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+* specific language governing permission and limitations under the License.
+*
+* When distributing Covered Software, include this CDDL Header Notice in each file and include
+* the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+* Header, with the fields enclosed by brackets [] replaced by your own identifying
+* information: "Portions copyright [year] [name of copyright owner]".
+*
+* Copyright 2015 ForgeRock AS.
+* Portions copyright 2024 3A Systems LLC.
+*/
+
+/***********************************/
+/* Imported Styles
+/***********************************/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css);
+/* @import url(https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css); */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/example1/colorbox.css);
+
+/***********************************/
+/* General Styles
+/***********************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Dark Grey */
+
+    color: #2a2f32;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+
+a {
+    /* Sea Green */
+    color: #519387;
+}
+
+a.link[href^="http"] {
+    background-image: url("includes/logos/Icon_External_Link.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    margin-right: 2px;
+}
+
+a.self-link, a.self-link:hover, a.self-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href].self-link:hover::after
+{
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e144";
+    color: #519387;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-size: 75%;
+    font-style: normal;
+    line-height: 1;
+    padding-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: decimal !important
+}
+
+.section,
+.chapter,
+.preface,
+.glossary,
+.refentry,
+.reference,
+.appendix,
+.index,
+.titlepage h2,
+.titlepage h3,
+.titlepage h4,
+.titlepage h5 {
+    padding-top: 60px;
+    margin-top: -50px;
+}
+
+.left-shape-content {
+    background: url("includes/logos/left-shape-4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 566px;
+    position: fixed;
+    width: 57px;
+    top: 60%;
+    z-index: -1;
+}
+
+/***********************************/
+/* Bootstrap Override Styles
+/***********************************/
+
+/* Button Styles */
+
+.btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+
+.btn-default {
+    background-color: #A1A8AD;
+    border-color: #8a9298;
+    color: #ffffff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-color: #3f4b54;
+    border-color: #1B2025;
+    color: #ffffff;
+}
+
+/* Tooltip Styles */
+
+.tooltip.in {
+    opacity: 0.95;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #519387;
+}
+
+.tooltip-inner {
+    background-color: #519387;
+}
+
+/* List Styles */
+
+.dl-horizontal dt {
+    white-space: normal;
+    padding: 0 3px 0 0;
+    width: 200px;
+}
+
+.dl-horizontal dd {
+    border-bottom: 1px dotted rgb(125, 179, 168);
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin-bottom: 18px;
+    margin-left: 210px;
+}
+
+.dl-horizontal {
+    border-top: 1px dotted rgb(125, 179, 168);
+    border-top: 1px dotted rgba(125, 179, 168, 0.9);
+    padding-top: 10px;
+}
+
+.variablelist dt {
+    margin: 18px 0 5px 15px;
+}
+
+.variablelist dd {
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin: 5px 0 5px 30px;
+}
+
+.variablelist > dl {
+    border-top: 1px dotted rgba(125, 179, 168, 0.8);
+}
+
+
+/***********************************/
+/* Redirect Page Styles
+/***********************************/
+
+.index-redirect,
+.index-redirect body {
+    height: 100%;
+    background-color: #333;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+.index-redirect body {
+    color: #fff;
+    text-align: center;
+}
+.index-redirect .container {
+    display: table;
+    vertical-align: middle;
+    height: 100%;
+}
+.index-redirect .btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+.index-redirect .cover-heading {
+    font-weight: 400 !important;
+}
+.index-redirect .vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/***********************************/
+/* Header Styles
+/***********************************/
+
+.navbar-brand {
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand > img {
+    height: 100%;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    box-shadow: 0 0 10px 2px #111;
+}
+.nav > li > a {
+    font-weight: 200;
+}
+
+/***********************************/
+/* Banner Styles
+/***********************************/
+
+.jumbotron {
+    /* Sea Green */
+    background: url("includes/logos/hero-bg-01.png") no-repeat scroll left top #519387;
+    color: white;
+    box-shadow: 0 0 10px 2px grey;
+    margin-top: 50px;
+    padding: 0 0 10px;
+}
+.jumbotron small {
+    color: white;
+}
+.jumbotron p {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.jumbotron h1 {
+    font-size: 23px !important;
+    font-weight: 300 !important;
+}
+
+/***********************************/
+/* Table of Contents Styles
+/***********************************/
+
+#sidebar .nav>li>a {
+    /* Light Grey */
+
+    color: #777;
+    border-left: 4px solid transparent;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+/* nested links */
+
+#sidebar .nav .nav>li>a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+/* nested nested links */
+
+#sidebar .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 50px;
+    padding-top: 4px;
+}
+/* nested nested nested links */
+
+#sidebar .nav .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 70px;
+    padding-top: 4px;
+}
+/* active and hover links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.locked-active>a,
+#sidebar .nav>li>a:hover,
+#sidebar .nav>li>a:focus {
+    text-decoration: none;
+    /*
+    background-color: rgb(125, 179, 168, 0.8);
+    background-color: rgba(125, 179, 168, 0.8);
+    border-color: rgb(45, 52, 55, 0.8);
+    border-color: rgba(45, 52, 55, 0.8);
+    color: white;
+    */
+    /* Bright Yellow */
+
+    background-color: #eeea07;
+    border-color: #eeea07;
+    /* Grey */
+
+    color: #2a2f32;
+}
+/* all active links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.active:hover>a,
+#sidebar .nav>.active:focus>a {
+    font-weight: 600;
+}
+/* nested active links */
+
+#sidebar .nav .nav>.active>a,
+#sidebar .nav .nav>.active:hover>a,
+#sidebar .nav .nav>.active:focus>a {
+    font-weight: 400;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* hide all (inactive) nested list */
+
+#sidebar .nav ul.nav {
+    display: none;
+}
+/* show active nested list */
+
+#sidebar .nav>.active>ul.nav {
+    display: block;
+}
+#sidebar.affix {
+    top: 66px;
+    position: fixed;
+    bottom: 30px;
+    height: auto;
+    overflow-y: scroll;
+}
+#sidebar.affix-bottom {
+    position: absolute;
+}
+
+/***********************************/
+/* Content Styles
+/***********************************/
+
+/* Main Content Styles */
+
+h1 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+
+h1 span {
+    margin-right: .3em;
+}
+
+#doc-content h1,
+#doc-content .h1 {
+    /* Sea Green */
+    border-bottom: 2px solid #70ab9b;
+    font-size: 36px;
+    margin-top: 24px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+h5, .h5 {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    padding-bottom: 4px;
+    font-style: italic;
+}
+
+.anchorjs-link .anchorjs-icon {
+    color: #A1A8AD;
+    text-decoration: none;
+}
+.anchorjs-link:hover .anchorjs-icon {
+    color: #519387;
+    text-decoration: none;
+}
+
+h1:hover > .anchorjs-link,
+h2:hover > .anchorjs-link,
+h3:hover > .anchorjs-link,
+h4:hover > .anchorjs-link,
+h5:hover > .anchorjs-link,
+.anchorjs-link:focus {
+    opacity: 1 !important;
+    transition: color 0.16s linear 0s;
+    text-decoration: none;
+}
+
+.chapter > p:first-of-type,
+.preface > p:first-of-type {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+#doc-content {
+    padding: 0 20px 85px 10px;
+}
+
+div.procedure, div.table {
+    margin-top:-50px;
+    padding-top: 60px;
+}
+
+div.procedure-title, div.table-title {
+    margin: 6px 0 8px;
+}
+
+div.procedure-inner {
+    border-color: lightslategray;
+    border-left: 6px solid lightslategray;
+    border-style: dotted dotted dotted solid;
+    border-width: 1px 1px 1px 6px;
+    margin: 15px 0 10px;
+    padding: 10px 15px 10px 10px;
+}
+
+.author {
+    display: inline;
+}
+
+.table {
+    font-size: 14px;
+}
+
+div.simplelist {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Title Styles */
+
+.procedure-title > a, .procedure-title > a:hover {
+    color: lightslategray;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.itemizedlist-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+.figure-title {
+    font-weight: bold;
+    margin: 16px 0 4px;
+    text-align: center;
+}
+
+.table-title {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.variablelist-title {
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+/* Code Styles */
+
+.btn-copy-cmdline,
+.btn-copy-codelisting {
+    /* White */
+
+    background-color: #fff;
+    /* Light Grey */
+
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px;
+    color: #777;
+    display: block;
+    font-size: 12px;
+    padding: 5px 8px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+
+pre.prettyprint {
+    border: 1px solid #ccc;
+    padding: 9.5px;
+    font-size: 12px;
+}
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+.zeroclipboard-is-hover {
+    /* Light Sea Green */
+
+    background-color: #6faa9b;
+    border-color: #6faa9b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ui-effects-transfer {
+    border: 1px dotted black;
+    background-color: yellow;
+    opacity: 0.4;
+}
+
+/* Modal Dialog Styles */
+
+#doc-content .modal h1.title {
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    margin: 14px 0 5px;
+}
+#doc-content .modal h2.subtitle {
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    margin-bottom: 26px;
+}
+#doc-content .modal h3.author {
+    font-size: 14px !important;
+    font-style: italic;
+    font-weight: 100 !important;
+    margin: 4px 0 5px 18px;
+}
+#doc-content .modal .affiliation .orgname {
+    display: block;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    margin: 20px 0 0 0;
+}
+#doc-content .modal .affiliation .address p {
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    margin: 4px 0;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .abstract .abstract-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+#doc-content .modal .abstract > p {
+    margin: 10px 0 5px 20px;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+}
+
+/* Image Styles */
+
+.fancybox > img {
+    cursor: zoom-in;
+}
+a.fancybox {
+    text-decoration: none;
+}
+
+#cboxTitle {
+    color: #519387;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#cboxOverlay{
+    background: none repeat scroll 0 0 rgba(66, 130, 116, 0.6);
+}
+
+img.img-responsive {
+    margin-bottom: 20px;
+}
+
+/* Index Styles */
+
+.indexdiv > h3 {
+    border-bottom: 2px dotted lightgrey;
+    padding-bottom: 5px;
+}
+.indexdiv > dl {
+    margin-left: 30px;
+}
+.indexdiv dl {
+    margin-bottom: 5px;
+}
+.indexdiv dt {
+    margin: 5px 0 2px;
+}
+.indexdiv dd {
+    margin-left: 35px;
+}
+.indexdiv .indexterm {
+    font-weight: 200;
+}
+
+/* Reference Styles */
+
+.refnamediv h2 {
+    display: none;
+}
+
+.refsect1 h2,
+.refsynopsisdiv h2 {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.refnamediv p {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+/***********************************/
+/* Footer Styles
+/***********************************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    display: none;
+    z-index: 15;
+}
+
+#footer {
+    display: none;
+}
+
+.footer {
+    /* Light Grey */
+    background-color: #f5f5f5;
+
+    /* Medium Grey */
+    border-top: 1px solid #ACB5BD;
+    bottom: 0;
+    font-size: 12px;
+    height: 30px;
+    padding-top: 4px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer h3 {
+    margin: 0;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer-item {
+    line-height: 22px;
+    margin-left: 10px;
+}
+
+.footer-item.highlighted {
+    /* Orange */
+    color: #f7a540;
+}
+
+.footer-item.highlighted:hover {
+    /* Dark Orange */
+    color: #c97208;
+}
+
+.footer span {
+    /* Grey */
+    color: #2a2f32;
+    margin-bottom: 0;
+}
+
+.footer .footer-left {
+    float: left;
+}
+
+.footer .footer-right {
+    float: right;
+}
+
+/***********************************/
+
+  </style><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenIDM Installation Guide</title><script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script><script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Guide to installing and evaluating OpenIDM. The OpenIDM project offers flexible, open source services for automating management of the identity life cycle."><script type="text/javascript">
+     /*
+ * The contents of this file are subject to the terms of the Common Development and
+ * Distribution License (the License). You may not use this file except in compliance with the
+ * License.
+ *
+ * You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ * specific language governing permission and limitations under the License.
+ *
+ * When distributing Covered Software, include this CDDL Header Notice in each file and include
+ * the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ * Header, with the fields enclosed by brackets [] replaced by your own identifying
+ * information: "Portions copyright [year] [name of copyright owner]".
+ *
+ * Copyright 2015 ForgeRock AS.
+ */
+
+//
+
+var loadJavaScriptsFN = function () {
+    $.ajaxSetup({ cache: true });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js", function () { prettyPrint() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function () {enableZeroClipboardFN() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox-min.js", function () { enableColorboxFN() });
+};
+
+var wrapConfigurablesFn = function () {
+    $('*:contains("https://openam.example.com:8443")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("https://openam.example.com:8443", 'g'),'<span class="exampleUrl">https://openam.example.com:8443</span>')
+            )
+    });
+    $('*:contains("amadmin")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("amadmin", 'g'),'<span class="exampleAdmin">amadmin</span>')
+            )
+    });
+    $('*:contains("iPlanetDirectoryPro")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("iPlanetDirectoryPro", 'g'),'<span class="exampleSsoCookieName">iPlanetDirectoryPro</span>')
+            )
+    });
+};
+
+var btnClickHandler = function () {
+    $("button#applyDocUpdate").click(function(){
+
+        $('span.exampleUrl').fadeOut("slow", function(){
+            $('span.exampleUrl').text($("input#exampleUrl").val());
+            $('span.exampleUrl').fadeIn("slow");
+        });
+
+        $('span.exampleAdmin').fadeOut("slow", function(){
+            $('span.exampleAdmin').text($("input#exampleAdmin").val());
+            $('span.exampleAdmin').fadeIn("slow");
+        });
+
+        $('span.exampleSsoCookieName').fadeOut("slow", function(){
+            $('span.exampleSsoCookieName').text($("input#exampleSsoCookieName").val());
+            $('span.exampleSsoCookieName').fadeIn("slow");
+        });
+
+        $('#docConfig').modal('hide');
+    });
+};
+
+
+var addCopyButtonFN = function () {
+    $( ".cmdline" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-cmdline"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> command to clipboard</span></span></div>');
+    });
+
+    $( ".codelisting" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-codelisting"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> code to clipboard</span></span></div>');
+    });
+};
+var enableScrollSpyFN = function () {
+    $('body').scrollspy({
+        target: '#sidebar',
+        offset: 16
+    });
+};
+
+var enableToolTipFN = function () {
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip({placement: 'bottom'});
+    });
+};
+
+var enableBackToTopFadeInFN = function () {
+    var offset = 220;
+    var duration = 500;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            $('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+};
+
+var enableClampedWidthsFN = function () {
+
+    /*
+     * Clamped-width.
+     * Usage:
+     *  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+     *
+     * Author: LV
+     */
+    $('[data-clampedwidth]').each(function () {
+        var elem = $(this);
+        var parentPanel = elem.data('clampedwidth');
+        var resizeFn = function () {
+            var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+            elem.css('width', sideBarNavWidth);
+        };
+
+        resizeFn();
+        $(window).resize(resizeFn);
+    });
+};
+
+var affixToCFN = function() {
+    $('#sidebar').affix({
+        offset: {
+            top: function () {
+                return (this.top = $('.jumbotron').outerHeight(true)-66)
+            }
+        }
+    });
+};
+
+var attachAnchorsToHeadings = function() {
+    //addAnchors('h1.title, h2.title, h3.title, h4.title, h5.title');
+
+
+    $('h1.title, h2.title, h3.title, h4.title, h5.title, .procedure-title, .table-title').each(function () {
+
+        var href = $(this).closest("div[id]").attr("id");
+
+        if (href === undefined || href === "") { // Unable to locate ID of parent element.
+            return;
+        }
+
+        $(this).wrapInner('<a class=\"self-link" href=\"#' + href + '\"></a>');
+
+    });
+};
+
+var addZeroClipboardToCmdlineButtonsFN = function () {
+    var copycmdline = new ZeroClipboard( $('.btn-copy-cmdline') );
+
+    copycmdline.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        copycmdline.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next().find("strong").each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycmdline.on( 'aftercopy', function(event) {
+            // console.log('Copied to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next().find("strong").each(function(index) {
+                $(this).effect("transfer", { to: $(event.target)}, 750);
+            });
+        });
+    });
+
+    copycmdline.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var addZeroClipboardToCodeButtonsFN = function () {
+    var copycodelisting = new ZeroClipboard( $('.btn-copy-codelisting') );
+
+    copycodelisting.on( 'ready', function(event) {
+        //console.log( 'movie is loaded' );
+
+        copycodelisting.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next(".codelisting.linenums").children().contents().each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            if(wrappedText == "") {
+                wrappedText = $(event.target).parent().next(".codelisting").contents().text();
+            };
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycodelisting.on( 'aftercopy', function(event) {
+            // console.log('Copied code to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next(".codelisting").first().effect("transfer", { to: $(event.target)}, 750);
+        });
+    });
+
+    copycodelisting.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var enableColorboxFN = function () {
+    $(".fancybox").colorbox({
+        title: function() {
+            return $(this).children('img').attr('alt');
+        },
+        opacity: 1,
+        transition:"elastic",
+        initialWidth: 0,
+        initialHeight: 0,
+        maxWidth:"95%",
+        maxHeight: "95%",
+        scalePhotos: true,
+        fixed: true
+    });
+};
+
+var trackPageViewsFN = function () {
+
+    $("a").click(function() {
+        var href = $(this).attr('href');
+        if(href) {
+            var titleText =  $(this).text();
+            if(href.charAt(0) === '#') {
+                ga('send', {
+                    'hitType': 'pageview',
+                    'page': location.pathname + location.search + href,
+                    'title': titleText
+                });
+            };
+            if(href.charAt(0) === '.') {
+                var lastHashPos = href.lastIndexOf('#');
+                var cleanHref = href.slice(3,lastHashPos);
+                var cleanFrag = href.slice(lastHashPos);
+                if(window.location.href.search(cleanHref) > -1)
+                {
+                    ga('send', {
+                        'hitType': 'pageview',
+                        'page': location.pathname + location.search + cleanFrag,
+                        'title': titleText
+                    });
+                }
+            };
+        }
+    });
+};
+
+var enableZeroClipboardFN = function () {
+    ZeroClipboard.config({
+            swfPath:  "includes/swf/ZeroClipboard.swf",
+            trustedDomains: ["*"],
+            forceEnhancedClipboard: false,
+            forceHandCursor: true,
+            debug: false}
+    );
+    addCopyButtonFN();
+    addZeroClipboardToCmdlineButtonsFN();
+    addZeroClipboardToCodeButtonsFN();
+};
+
+$(document).ready(function() {
+    //wrapConfigurablesFn();
+    btnClickHandler();
+    enableToolTipFN();
+    enableBackToTopFadeInFN();
+    enableClampedWidthsFN();
+    enableScrollSpyFN();
+    affixToCFN();
+    attachAnchorsToHeadings();
+    trackPageViewsFN();
+    loadJavaScriptsFN();
+});
+
+//
+
+    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link"></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenIDM  Installation Guide<span></span><small></small></h1><p>Guide to installing and evaluating OpenIDM. The OpenIDM project offers
+   flexible, open source services for automating management of the identity
+   life cycle.</p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenIDM  Installation Guide<br><small class="toc-subtitle"></small></h4><ul class="nav nav-stacked"><li><a href="#preface">Preface</a><ul class="nav nav-stacked"><li><a href="#d2843e147">1. Who Should Use this Guide</a></li><li><a href="#formatting-conventions">2. Formatting Conventions</a></li><li><a href="#accessing-doc-online">3. Accessing Documentation Online</a></li><li><a href="#joining-the-community">4. Joining the Open Identity Platform Community</a></li></ul></li><li><a href="#chap-install">1. Installing OpenIDM Services</a><ul class="nav nav-stacked"><li><a href="#before-you-start">1.1. Before You Run OpenIDM</a><ul class="nav nav-stacked"><li><a href="#java-prerequisites">1.1.1. Java Environment</a></li><li><a href="#application-container-prerequisites">1.1.2. Application Container</a></li></ul></li><li><a href="#installing-openidm">1.2. Installing and Running OpenIDM</a></li></ul></li><li><a href="#chap-sample">2. First OpenIDM Sample</a><ul class="nav nav-stacked"><li><a href="#before-you-begin-sample">2.1. Before You Begin</a></li><li><a href="#about-the-sample">2.2. About the Sample</a></li><li><a href="#sample-running-reconciliation">2.3. Running Reconciliation</a></li><li><a href="#sample-viewing-users-logs">2.4. Viewing Users and Logs</a></li><li><a href="#sample-adding-users-resource">2.5. Adding Users in a Resource</a></li><li><a href="#sample-adding-users-rest">2.6. Adding Users Through REST</a></li></ul></li><li><a href="#chap-samples">3. More OpenIDM Samples</a><ul class="nav nav-stacked"><li><a href="#before-you-begin-samples">3.1. Before You Begin</a><ul class="nav nav-stacked"><li><a href="#install-samples">3.1.1. Installing the Samples</a></li><li><a href="#preparing-openidm">3.1.2. Preparing OpenIDM</a></li></ul></li><li><a href="#more-sample1">3.2. Sample 1 - XML File</a></li><li><a href="#more-sample2">3.3. Sample 2 - LDAP One Way</a><ul class="nav nav-stacked"><li><a href="#external-ldap-config-2">3.3.1. LDAP Server Configuration</a></li><li><a href="#install-sample2">3.3.2. Install the Sample</a></li><li><a href="#run-sample2">3.3.3. Running the Sample</a></li></ul></li><li><a href="#more-sample2b">3.4. Sample 2b - LDAP Two Way</a><ul class="nav nav-stacked"><li><a href="#external-ldap-config-2b">3.4.1. External LDAP Configuration</a></li><li><a href="#install-sample2b">3.4.2. Install the Sample</a></li><li><a href="#run-sample2b">3.4.3. Running the Sample</a></li></ul></li><li><a href="#more-sample2c">3.5. Sample 2c - Synchronizing LDAP Group Membership</a><ul class="nav nav-stacked"><li><a href="#external-ldap-config-2c">3.5.1. External LDAP Configuration</a></li><li><a href="#install-sample2c">3.5.2. Install the Sample</a></li><li><a href="#run-sample2c">3.5.3. Running the Sample</a></li></ul></li><li><a href="#more-sample2d">3.6. Sample 2d - Synchronizing LDAP Groups</a><ul class="nav nav-stacked"><li><a href="#external-ldap-config-2d">3.6.1. External LDAP Configuration</a></li><li><a href="#install-sample2d">3.6.2. Install the Sample</a></li><li><a href="#run-sample2d">3.6.3. Running the Sample</a></li></ul></li><li><a href="#more-sample3">3.7. Sample 3 - Scripted SQL</a><ul class="nav nav-stacked"><li><a href="#external-mysql-config-sample3">3.7.1. External Configuration</a></li><li><a href="#install-sample3">3.7.2. Install the Sample</a></li><li><a href="#run-sample3">3.7.3. Run the Sample</a></li></ul></li><li><a href="#more-sample4">3.8. Sample 4 - CSV File</a><ul class="nav nav-stacked"><li><a href="#install-sample4">3.8.1. Install the Sample</a></li><li><a href="#run-sample4">3.8.2. Run the Sample</a></li></ul></li><li><a href="#more-sample5">3.9. Sample 5 - Synchronization of Two Resources</a><ul class="nav nav-stacked"><li><a href="#install-sample5">3.9.1. Install the Sample</a></li><li><a href="#run-sample5">3.9.2. Run the Sample</a></li></ul></li><li><a href="#more-sample6">3.10. Sample 6 - LiveSync Between Two LDAP Servers</a><ul class="nav nav-stacked"><li><a href="#external-resource-sample6">3.10.1. External Configuration</a><ul class="nav nav-stacked"><li><a href="#prepare-livesync-sample6">3.10.1.1. Prepare OpenDJ For LiveSync</a></li><li><a href="#ldap-configuration-sample6">3.10.1.2. LDAP Configuration</a></li></ul></li><li><a href="#install-sample6">3.10.2. Install the Sample</a></li><li><a href="#run-sample6">3.10.3. Running the Sample</a><ul class="nav nav-stacked"><li><a href="#run-sample6-reconciliation">3.10.3.1. Using Reconciliation</a></li><li><a href="#run-sample6-live-sync">3.10.3.2. Using LiveSync</a></li></ul></li></ul></li><li><a href="#more-sample7">3.11. Sample 7 - Scripting a SCIM-like Schema</a><ul class="nav nav-stacked"><li><a href="#install-sample7">3.11.1. Install the Sample</a></li><li><a href="#run-sample7">3.11.2. Running the Sample</a></li></ul></li><li><a href="#more-sample8">3.12. Sample 8 - Logging in Scripts</a><ul class="nav nav-stacked"><li><a href="#install-sample8">3.12.1. Install the Sample</a></li><li><a href="#run-sample8">3.12.2. Running the Sample</a></li></ul></li><li><a href="#more-sample9">3.13. Sample 9 - Asynchronous Reconciliation Using Workflows</a><ul class="nav nav-stacked"><li><a href="#install-sample9">3.13.1. Install the Sample</a></li><li><a href="#run-sample9">3.13.2. Running the Sample</a></li></ul></li></ul></li><li><a href="#chap-repository">4. Installing a Repository For Production</a></li><li><a href="#chap-uninstall">5. Removing and Moving OpenIDM Software</a></li><li><a href="#openidm-glossary">OpenIDM Glossary</a></li><li><a href="#d2843e2613">Index</a></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenIDM  Installation Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark</span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Lana</span> <span class="surname">Frost</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Paul</span> <span class="surname">Bryan</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Andi</span> <span class="surname">Egloff</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Laszlo</span> <span class="surname">Hordos</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Matthias</span> <span class="surname">Tristl</span></h3></div></div></div><div><p class="releaseinfo"></p></div><div><p class="copyright">Copyright &copy; 2011-2013 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">Publication date: July&nbsp;07,&nbsp;2024</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>Guide to installing and evaluating OpenIDM. The OpenIDM project offers
+   flexible, open source services for automating management of the identity
+   life cycle.</p></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div><div lang="en" class="preface" id="preface"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>This guide shows you how to install core OpenIDM services for identity
+ management, provisioning, and compliance. Unless you are planning a throwaway
+ evaluation or test installation, read the <a href="../release-notes/index.html#release-notes" class="link"><em class="citetitle">Release
+ Notes</em></a> before you get started.</p><div class="section" id="d2843e147"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.&nbsp;Who Should Use this Guide</h2></div></div></div><p>This guide is written for anyone installing OpenIDM to manage and to
+  provision identities, and to ensure compliance with identity management
+  regulations.</p><p>This guide covers the install and removal (uninstall)
+  procedures that you theoretically perform only once per version. This
+  guide aims to provide you with at least some idea of what happens
+  behind the scenes when you perform the steps.</p><p>This guide also takes you through all of the samples provided with
+  OpenIDM.</p><p>You do not need to be an OpenIDM wizard to learn something from
+  this guide, though a background in identity management and maintaining
+  web application software can help. You do need some background in
+  managing services on your operating systems and in your application
+  servers. You can nevertheless get started with this guide, and then
+  learn more as you go along.</p><p>If you have a previous version of OpenIDM installed, see the 
+  <a href="../release-notes/index.html#chap-compatibility" class="link">
+  <em class="citetitle">Compatibility</em></a> section of the 
+  <em class="citetitle">Release Notes</em> before installing this version.</p></div><div lang="en" class="section" id="formatting-conventions"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.&nbsp;Formatting Conventions</h2></div></div></div><p>
+  Most examples in the documentation are created in GNU/Linux or Mac OS X
+  operating environments.
+
+  If distinctions are necessary between operating environments,
+  examples are labeled with the operating environment name in parentheses.
+
+  To avoid repetition file system directory names are often given
+  only in UNIX format as in <code class="filename">/path/to/server</code>,
+  even if the text applies to <code class="filename">C:\path\to\server</code> as well.
+ </p><p>
+  Absolute path names usually begin with the placeholder
+  <code class="filename">/path/to/</code>.
+
+  This path might translate to <code class="filename">/opt/</code>,
+  <code class="filename">C:\Program Files\</code>, or somewhere else on your system.
+ </p><p>
+  Command line, terminal sessions are formatted as follows:
+ </p><pre class="cmdline prettyprint">$ <strong>echo $JAVA_HOME</strong>
+<em>/path/to/jdk</em></pre><p>
+  Command output is sometimes formatted for narrower, more readable output
+  even though formatting parameters are not shown in the command.
+  In the following example,
+  the query string parameter <code class="literal">_prettyPrint=true</code> is omitted
+  and some of the output is replaced with an ellipsis (<code class="literal">...</code>):
+ </p><pre class="cmdline prettyprint">
+$ <strong>curl https://bjensen:hifalutin@opendj.example.com:8443/users/newuser</strong>
+<em>{
+  "_rev" : "000000005b337348",
+  "_id" : "newuser",
+  ...
+}</em>
+ </pre><p>
+  Program listings are formatted as follows:
+ </p><pre class="codelisting prettyprint linenums lang-java">
+class Test {
+    public static void main(String [] args)  {
+        System.out.println("This is a program listing.");
+    }
+}
+ </pre></div><div lang="en" class="section" id="accessing-doc-online"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.&nbsp;Accessing Documentation Online</h2></div></div></div><p>
+  Open Identity Platform core documentation, such as this document, aims to be
+  technically accurate and complete with respect to the software documented.
+ </p><div class="itemizedlist"><p>
+   Core documentation therefore follows a three-phase review process
+   designed to eliminate errors:
+  </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Product managers and software architects review project documentation design
+    with respect to the readers' software lifecycle needs.
+   </p></li><li class="listitem"><p>
+    Subject matter experts review proposed documentation changes for
+    technical accuracy and completeness
+    with respect to the corresponding software.
+   </p></li><li class="listitem"><p>
+    Quality experts validate implemented documentation changes
+    for technical accuracy, completeness in scope,
+    and usability for the readership.
+   </p></li></ul></div><p>
+  The review process helps to ensure that documentation published for
+  a ForgeRock release is technically accurate and complete.
+ </p><p>
+  Fully reviewed, published core documentation is available at
+  <a class="link" href="https://www.openidentityplatform.org/" target="_blank">https://www.openidentityplatform.org/</a>.
+  Use this documentation when working with a ForgeRock Enterprise release.
+ </p><p>
+  You can find pre-release draft documentation at the online
+  <a class="link" href="https://github.com/OpenIdentityPlatform" target="_blank">community resource center</a>.
+  Use this documentation when trying a nightly build.
+ </p></div><div lang="en" class="section" id="joining-the-community"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.&nbsp;Joining the Open Identity Platform Community</h2></div></div></div><p>
+  Visit the
+  <a class="link" href="https://github.com/OpenIdentityPlatform" target="_blank">community resource center</a>
+  where you can find information about each project,
+  download nightly builds, browse the resource catalog,
+  ask and answer questions on the forums, find community events near you,
+  and of course get the source code as well.
+ </p></div></div><div lang="en" class="chapter" id="chap-install"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;1.&nbsp;Installing OpenIDM Services</h1></div></div></div><p>This chapter covers the tasks required to install and start
+ OpenIDM.</p><div class="section" id="before-you-start"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.1.&nbsp;Before You Run OpenIDM</h2></div></div></div><p>This section covers what you need to know before running OpenIDM.
+  </p><div class="section" id="java-prerequisites"><div class="titlepage"><div><div><h3 class="title">1.1.1.&nbsp;Java Environment</h3></div></div></div><a class="indexterm" name="d2843e272"></a><p>OpenIDM requires Oracle Java SE 6 update 24 or later.</p><p>The equivalent version of OpenJDK should work for evaluation,
+   too.</p></div><div class="section" id="application-container-prerequisites"><div class="titlepage"><div><div><h3 class="title">1.1.2.&nbsp;Application Container</h3></div></div></div><a class="indexterm" name="d2843e284"></a><p>OpenIDM services run in an OSGi container with an embedded Servlet
+   container, and an embedded noSQL database. By default the OSGi container is
+   Apache Felix. The default Servlet container is Jetty. For OpenIDM
+   , the only supported configuration is running
+   the services in Apache Felix and Jetty.</p></div></div><div class="section" id="installing-openidm"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.2.&nbsp;Installing and Running OpenIDM</h2></div></div></div><p>Follow the procedures in this section to install and run
+   OpenIDM.</p><div class="procedure" id="install-openidm"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;1.1.&nbsp;To Install OpenIDM Services</div><a class="indexterm" name="d2843e299"></a><p>Follow these steps to install OpenIDM.</p><ol class="procedure" type="1"><li class="step"><p>Make sure you have an appropriate version of Java installed.</p><pre class="cmdline prettyprint">$ java -version
+java version "1.6.0_24"
+Java(TM) SE Runtime Environment (build 1.6.0_24-b07-334)
+Java HotSpot(TM) 64-Bit Server VM (build 19.1-b02-334, mixed mode)</pre><p>Check the release notes for Java requirements in the chapter, <a href="../release-notes/index.html#chap-before-you-install" class="link"><em class="citetitle">Before You
+     Install OpenIDM Software</em></a>.</p></li><li class="step"><a class="indexterm" name="d2843e316"></a><div class="itemizedlist"><p>Download OpenIDM from one of the following locations:</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+              <a class="link" href="http://www.forgerock.com/download-stack/" target="_blank">
+              Enterprise Downloads</a> has the latest stable, supported
+              release of OpenIDM and the other products in the ForgeRock
+              identity stack.</p></li><li class="listitem"><p><a class="link" href="http://forgerock.org/openidm.html" target="_blank">
+              Builds</a> includes the nightly build, the nightly experimental
+              build, and the OpenIDM agents. Note that this is the working
+              version of the trunk and should not be used in a production
+              environment.</p></li><li class="listitem"><p>
+              <a class="link" href="http://forgerock.org/openidm-archive.html" target="_blank">
+              Archives</a> includes the stable builds for all previous releases
+              of OpenIDM.</p></li></ul></div></li><li class="step"><p>Unpack the contents of the .zip file into the install location.</p><pre class="cmdline prettyprint">$ cd /path/to
+$ unzip ~/Downloads/openidm-.zip
+...
+  inflating: openidm/connectors/scriptedsql-connector-.jar
+  inflating: openidm/bin/felix.jar   
+  inflating: openidm/bin/openidm.jar
+$</pre></li><li class="step"><p>By default, OpenIDM listens for HTTP connections on port 8080. To
+     change the default port, edit
+     <code class="filename">openidm/conf/jetty.xml</code>.</p></li><li class="step"><a class="indexterm" name="d2843e351"></a><p>Before running OpenIDM in production, replace the default OrientDB
+     repository provided for evaluation with a JDBC repository.</p><p>See the chapter on <a href="../install-guide/index.html#chap-repository" class="link"><em class="citetitle">Installing
+     a Repository For Production</em></a> for details.</p></li></ol></div></div><div class="procedure" id="run-openidm"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;1.2.&nbsp;To Start OpenIDM Services</div><a class="indexterm" name="d2843e367"></a><p>Follow these steps to run OpenIDM interactively.</p><p>To run OpenIDM as a background process, see <a href="../integrators-guide/index.html#chap-services" class="link"><em class="citetitle">Starting and
+    Stopping OpenIDM</em></a> in the <em class="citetitle">Integrator's
+    Guide</em>.</p><ol class="procedure" type="1"><li class="step"><p>Start the Felix container, load all OpenIDM services, and start a
+     command shell to allow you to manage the container.</p><ul class="stepalternatives">
+      <li class="step"><p>Start OpenIDM (UNIX).</p><pre class="cmdline prettyprint">$ ./startup.sh
+Using OPENIDM_HOME:   /path/to/openidm
+Using OPENIDM_OPTS:   -Xmx1024m
+Using LOGGING_CONFIG:
+ -Djava.util.logging.config.file=/path/to/openidm/conf/logging.properties
+Using boot properties at /path/to/openidm/conf/boot/boot.properties
+OpenIDM version "" (revision: XXXX)
+-&gt; OpenIDM ready</pre></li>
+      <li class="step"><p>Start OpenIDM (Windows).</p><pre class="cmdline prettyprint">&lt; cd \path\to\openidm
+&lt; startup.bat
+"Using OPENIDM_HOME:   \path\to\openidm"
+"Using OPENIDM_OPTS:   -Xmx1024m -Dfile.encoding=UTF-8"
+"Using LOGGING_CONFIG:
+ -Djava.util.logging.config.file=\path\to\openidm\conf\logging.properties"
+Using boot properties at \path\to\openidm\conf\boot\boot.properties
+OpenIDM version "" (revision: XXXX)
+-&gt; OpenIDM ready
+-&gt;</pre></li>
+     </ul><p>At the resulting <code class="literal">-&gt;</code> prompt, you can enter
+     commands such as <span class="command"><strong>help</strong></span> for usage, or
+     <span class="command"><strong>ps</strong></span> to view the bundles installed. To see a list of all
+     the OpenIDM core services and their states, enter the following
+     command.</p><pre class="cmdline prettyprint">-&gt; scr list
+   Id   State          Name
+[  12] [active       ] org.forgerock.openidm.endpoint
+[  13] [active       ] org.forgerock.openidm.endpoint
+[  14] [active       ] org.forgerock.openidm.endpoint
+[  15] [active       ] org.forgerock.openidm.endpoint
+[  16] [active       ] org.forgerock.openidm.endpoint
+[  17] [active       ] org.forgerock.openidm.endpoint
+[  23] [unsatisfied  ] org.forgerock.openidm.info
+[  27] [active       ] org.forgerock.openidm.provisioner.openicf.connectorinfoprovider
+[  35] [active       ] org.forgerock.openidm.ui.simple
+[  29] [active       ] org.forgerock.openidm.restlet
+[   3] [active       ] org.forgerock.openidm.repo.orientdb
+[   7] [active       ] org.forgerock.openidm.scope
+[   5] [active       ] org.forgerock.openidm.audit
+[  32] [active       ] org.forgerock.openidm.schedule
+[   2] [unsatisfied  ] org.forgerock.openidm.repo.jdbc
+[  31] [active       ] org.forgerock.openidm.workflow
+[   9] [active       ] org.forgerock.openidm.managed
+[  28] [active       ] org.forgerock.openidm.provisioner.openicf
+[  22] [active       ] org.forgerock.openidm.health
+[  26] [active       ] org.forgerock.openidm.provisioner
+[   0] [active       ] org.forgerock.openidm.config.starter
+[  34] [active       ] org.forgerock.openidm.taskscanner
+[  20] [active       ] org.forgerock.openidm.external.rest
+[   6] [active       ] org.forgerock.openidm.router
+[  33] [active       ] org.forgerock.openidm.scheduler
+[  19] [unsatisfied  ] org.forgerock.openidm.external.email
+[  11] [active       ] org.forgerock.openidm.sync
+[  25] [active       ] org.forgerock.openidm.policy
+[   8] [active       ] org.forgerock.openidm.script
+[  10] [active       ] org.forgerock.openidm.recon
+[   4] [active       ] org.forgerock.openidm.http.contextregistrator
+[   1] [active       ] org.forgerock.openidm.config
+[  18] [active       ] org.forgerock.openidm.endpointservice
+[  30] [unsatisfied  ] org.forgerock.openidm.servletfilter
+[  24] [active       ] org.forgerock.openidm.infoservice
+[  21] [active       ] org.forgerock.openidm.authentication
+-&gt;</pre><p>A default startup does not include certain configurable services, 
+     which will indicate an <code class="literal">unsatisfied</code> state until they 
+     are included in the configuration. As you work through the sample 
+     configurations described later in this guide, you will notice that these 
+     services are active.</p></li><li class="step"><p>Alternatively, you can manage the container and services from the
+     Felix administration console.</p><div class="itemizedlist"><p>Use these hints to connect to the console.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Default Console URL: <a class="link" href="http://localhost:8080/system/console" target="_blank">http://localhost:8080/system/console</a></p></li><li class="listitem"><p>Default user name: <code class="literal">admin</code></p></li><li class="listitem"><p>Default password: <code class="literal">admin</code></p></li></ul></div><div class="itemizedlist"><p>Some basic hints on using the Felix administration console
+      follow.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Select the Components tab to see OpenIDM core services and their
+       respective states.</p></li><li class="listitem"><p>Select the Shell tab to access the <code class="literal">-&gt;</code>
+       prompt.</p></li><li class="listitem"><p>Select the System Information tab to stop or restart the
+       container.</p></li></ul></div></li></ol></div></div><div class="procedure" id="first-steps-with-rest"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;1.3.&nbsp;To Get Started With the OpenIDM REST Interface</div><a class="indexterm" name="d2843e454"></a><p>OpenIDM provides RESTful access to users in the OpenIDM
+    repository. To access the OpenIDM repository over REST, you can use a 
+    browser-based REST client, such as the 
+    <a class="link" href="https://chrome.google.com/webstore/detail/simple-rest-client/fhjcajmcbmldlhcimfajhfbgofnpcjmb" target="_top">
+    Simple REST Client</a> for Chrome, or <a class="link" href="https://addons.mozilla.org/en-US/firefox/addon/restclient/" target="_top">
+    RESTClient</a> for Firefox. Alternatively you can use the 
+    <span class="command"><strong>curl</strong></span> command-line utility that is included with most
+     operating systems. For more information on <span class="command"><strong>curl</strong></span>, see 
+     <a class="link" href="http://curl.haxx.se/" target="_top">http://curl.haxx.se/</a>. If
+     you cannot locate the <span class="command"><strong>curl</strong></span> command on your system, you 
+     can download it from 
+     <a class="link" href="http://curl.haxx.se/download.html" target="_top">http://curl.haxx.se/download.html</a>.
+    </p><ol class="procedure" type="1"><li class="step"><p>Access the following URL to get a JSON file including all users in
+     the OpenIDM repository.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids</pre><p>When you first install OpenIDM with an empty repository, no users
+     exist.</p></li><li class="step"><p>Create a user <code class="literal">joe</code> by sending a RESTful PUT.</p><p>The following <span class="command"><strong>curl</strong></span> commands create the user
+     <code class="literal">joe</code> in the repository.</p><ul class="stepalternatives">
+      <li class="step"><p>Create <code class="literal">joe</code> (UNIX).</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request PUT
+ --data '{
+ "userName":"joe",
+ "givenName":"joe",
+ "familyName":"smith",
+ "email":"joe@example.com",
+ "phoneNumber":"555-123-1234",
+ "password":"TestPassw0rd",
+ "description":"My first user"
+ }'
+ http://localhost:8080/openidm/managed/user/joe
+
+{"_id":"joe","_rev":"0"}</pre></li>
+      <li class="step"><p>Create <code class="literal">joe</code> (Windows).</p><pre class="cmdline prettyprint">C:\&gt;curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request PUT
+ --data "{
+ \"userName\":\"joe\",
+ \"givenName\":\"joe\",
+ \"familyName\":\"smith\",
+ \"email\":\"joe@example.com\",
+ \"phoneNumber\":\"555-123-1234\",
+ \"password\":\"TestPassw0rd\",
+ \"description\":\"My first user\"
+ }"
+ http://localhost:8080/openidm/managed/user/joe
+
+{"_id":"joe","_rev":"0"}</pre></li>
+     </ul></li><li class="step"><p>Fetch the newly created user from the repository with a RESTful
+     GET.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ http://localhost:8080/openidm/managed/user/joe
+
+{
+  "stateProvince": "",
+  "userName": "joe",
+  "roles": "openidm-authorized",
+  "givenName": "joe",
+  "address2": "",
+  "lastPasswordAttempt": "Wed Nov 28 2012 22:19:35 GMT+0200 (SAST)",
+  "address1": "",
+  "familyName": "smith",
+  "passwordAttempts": "0",
+  "_rev": "0",
+  "_id": "joe",
+  "country": "",
+  "city": "",
+  "lastPasswordSet": "",
+  "postalCode": "",
+  "phoneNumber": "555-123-1234",
+  "email": "joe@example.com",
+  "description": "My first user",
+  "accountStatus": "active"
+}</pre><p>OpenIDM returns the JSON object all on one line. To format the JSON 
+     for legibility, use a JSON parser, such as <a class="link" href="http://stedolan.github.com/jq/" target="_top">jq</a>.</p><p>Notice that more attributes are returned for user <code class="literal">joe</code> 
+     than the attributes you added in the previous step. The additional 
+     attributes are added by a script named 
+     <code class="literal">onCreate-user-set-default-fields.js</code> that is triggered 
+     when a new user is created. For more information, see <a href="../integrators-guide/index.html#managed-object-configuration" class="link"><em class="citetitle">Managed Object 
+     Configuration</em></a> in the <em class="citetitle">Integrator's Guide</em>.
+     </p></li></ol></div></div><div class="procedure" id="stop-openidm"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;1.4.&nbsp;To Stop the OpenIDM Services</div><a class="indexterm" name="d2843e547"></a><ul class="procedure"><li class="step"><p>You can stop OpenIDM Services from the <code class="literal">-&gt;</code>
+    prompt, or through the Felix console.</p><ul class="stepalternatives">
+      <li class="step"><p>Either enter the <span class="command"><strong>shutdown</strong></span> command at the
+       <code class="literal">-&gt;</code> prompt.</p><pre class="cmdline prettyprint">-&gt; shutdown
+...
+$</pre></li>
+      <li class="step"><p>Or click Stop on the System Information tab of the Felix console,
+       by default <a class="link" href="http://localhost:8080/system/console" target="_blank">http://localhost:8080/system/console</a>.</p><p>This stops the Servlet container as well, and the console is
+       no longer accessible.</p></li>
+     </ul></li></ul></div></div></div></div><div lang="en" class="chapter" id="chap-sample"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;2.&nbsp;First OpenIDM Sample</h1></div></div></div><a class="indexterm" name="d2843e582"></a><a class="indexterm" name="d2843e585"></a><a class="indexterm" name="d2843e590"></a><p>This chapter provides an overview of the first sample and how it is
+ configured. To see a listing and an overview of the rest of the samples
+ provided, see the README found in <code class="filename">openidm/samples</code> and in
+ the chapter <a href="../install-guide/index.html#chap-samples" class="link"><em class="citetitle">More OpenIDM
+ Samples</em></a>.</p><div class="section" id="before-you-begin-sample"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.1.&nbsp;Before You Begin</h2></div></div></div><p>Install OpenIDM as described in the chapter on <a href="../install-guide/index.html#chap-install" class="link"><em class="citetitle">Installing
+  OpenIDM Services</em></a>.</p><p>OpenIDM comes with an internal noSQL database, OrientDB, for use as
+  the internal repository out of the box. This makes it easy to get started
+  with OpenIDM. OrientDB is not yet supported for production use, however,
+  so use a supported JDBC database when moving to production.</p><p>If you want to query the internal noSQL database, you can download 
+  OrientDB (version ) from <a class="link" href="http://code.google.com/p/orient/downloads/list" target="_top">http://code.google.com/p/orient/downloads/list</a>.
+  You will find the shell console in the <code class="filename">bin</code> directory. 
+  Start OrientDB console using either <span class="command"><strong>console.sh</strong></span> or 
+  <span class="command"><strong>console.bat</strong></span>, and then connect to the running OpenIDM with 
+  the <span class="command"><strong>connect</strong></span> command.</p><pre class="cmdline prettyprint">$ /path/to/orientdb-/bin/console.sh
+&gt;
+&gt; connect remote:localhost/openidm admin admin
+
+Connecting to database [remote:localhost/openidm] with user 'admin'...OK
+
+&gt;</pre><div class="variablelist"><p>When you have connected to the database, you might find the following
+   commands useful.</p><dl class="variablelist"><dt><span class="term"><span class="command"><strong>info</strong></span></span></dt><dd><p>Shows classes and records</p></dd><dt><span class="term"><span class="command"><strong>select * from managed_user</strong></span></span></dt><dd><p>Shows all users in the OpenIDM repository</p></dd><dt><span class="term"><span class="command"><strong>select * from audit_activity</strong></span></span></dt><dd><p>Shows all activity audit records</p><p>This table is created when there is some activity.</p></dd><dt><span class="term"><span class="command"><strong>select * from audit_recon</strong></span></span></dt><dd><p>Shows all reconciliation audit records</p><p>This table is created when you run reconciliation.</p></dd></dl></div><p>You can also use OrientDB Studio to query the default OrientDB 
+  repository. After you have installed and started OpenIDM, point your browser 
+  to <a class="link" href="http://localhost:2480/studio/" target="_top">http://localhost:2480/studio/</a>. The default database
+  is <code class="literal">openidm</code> and the default user and password are
+  <code class="literal">admin</code> and <code class="literal">admin</code>. Click Connect to
+  connect to the repository. For more information about OrientDB Studio, see the
+  <a class="link" href="http://code.google.com/p/orient/wiki/OrientDB_Studio" target="_top">
+  OrientDB Studio documentation</a>.</p></div><div class="section" id="about-the-sample"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.2.&nbsp;About the Sample</h2></div></div></div><p>OpenIDM connects identity data objects held in external resources
+  by mapping one object to another. To connect to external resources,
+  OpenIDM uses <a class="link" href="http://openicf.forgerock.org" target="_top">OpenICF</a>
+  connectors, configured for use with the external resources.</p><p>When objects in one external resource change, OpenIDM determines how
+  the changes affect other objects, and can make the changes as necessary.
+  This sample demonstrates how OpenIDM does this by using
+  <em class="firstterm">reconciliation</em> and
+  <em class="firstterm">synchronization</em>. OpenIDM reconciliation compares
+  objects in one object set to mapped objects in another object set.
+  Reconciliation can work in write mode, where OpenIDM writes changes to
+  affected objects, or in report mode, where OpenIDM reports on what changes
+  would be written without making the changes. OpenIDM synchronization reflects
+  changes in objects to any mapped objects, making changes as necessary to
+  create or remove mapped objects and links to associate them. For a more
+  thorough explanation of reconciliation and synchronization, see the section on
+  <a href="../integrators-guide/index.html#sync-types" class="link"><em class="citetitle">Types of
+  Synchronization</em></a> in the <em class="citetitle">Integrator's
+  Guide</em>.</p><p>This sample connects to an XML file that holds sample user data. The 
+  XML file is configured as the authoritative source. In this sample, users are
+  created in the local repository to show you how you can manage local users
+  through the REST APIs. You can also use OpenIDM without storing managed
+  objects for users in the local repository, instead reconciling and
+  synchronizing objects directly through connectors to external
+  resources.</p><p>Furthermore, this sample involves only one external resource. In
+  practice, you can connect as many resources as needed for your
+  deployment.</p><div class="variablelist" id="about-the-sample-configuration"><div class="variablelist-title">Sample Configuration Files</div><p>You can find configuration files for the sample under the
+   <code class="filename">openidm/samples/sample1/conf</code> directory. As you review
+   the sample, keep the following in mind.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>You must start OpenIDM with the sample configuration 
+      (<span class="command"><strong>$ ./startup.sh -p samples/sample1</strong></span>). For more 
+      information, see <a class="xref" href="#sample-running-reconciliation" title="2.3.&nbsp;Running Reconciliation">Section&nbsp;2.3, &#8220;Running Reconciliation&#8221;</a>.</p></li><li class="listitem"><p>OpenIDM regularly scans for any scheduler configuration files in the
+     <code class="filename">conf</code> directory.</p></li><li class="listitem"><p>OpenIDM's reconciliation service reads the mappings and actions for
+    the source and target users from
+    <code class="filename">conf/sync.json</code>.</p></li><li class="listitem"><p>Reconciliation runs, querying all users in the source, and then
+    creating, deleting, or modifying users in the local OpenIDM repository
+    according to the synchronization mappings.</p></li><li class="listitem"><p>OpenIDM writes all operations to the audit logs in both the internal
+    database and also the flat files in the <code class="filename">openidm/audit</code>
+    directory.</p></li></ol></div><p>The following configuration files play important roles in this
+   sample.</p><dl class="variablelist"><dt><span class="term"><code class="filename">samples/sample1/conf/provisioner.openicf-xml.json</code></span></dt><dd><p>This connector configuration file serves as the XML file resource.
+     In this sample, the connector instance acts as the authoritative source
+     for users. In the configuration file you can see that the
+     <code class="literal">xmlFilePath</code> is set to
+     <code class="filename">samples/sample1/data/xmlConnectorData.xml</code>, which
+     contains two users, in XML format.</p><p>For details on the OpenICF connector configuration files see
+     <a href="../integrators-guide/index.html#chap-resource-conf" class="link"><em class="citetitle">Connecting to External Resources</em></a> in
+     the <em class="citetitle">Integrator's Guide</em>.</p></dd><dt><span class="term"><code class="filename">samples/sample1/conf/schedule-reconcile_systemXmlAccounts_managedUser.json</code></span></dt><dd><p>The sample schedule configuration file defines a reconciliation
+     job that, if enabled by setting <code class="literal">"enabled" : true</code>,
+     starts a reconciliation each minute for the mapping named
+     <code class="literal">systemXmlAccounts_managedUser</code>. The mapping is defined
+     in the configuration file, <code class="filename">conf/sync.json</code>.</p><pre class="codelisting prettyprint linenums lang-js">{
+    "enabled" : false,
+    "type": "cron",
+    "schedule": "30 0/1 * * * ?",
+    "persisted" : true,
+    "misfirePolicy" : "fireAndProceed",
+    "invokeService": "org.forgerock.openidm.sync",
+    "invokeContext": {
+        "action": "reconcile",
+        "mapping": "systemXmlfileAccounts_managedUser"
+    }
+}</pre><p>For information about the schedule configuration see <a href="../integrators-guide/index.html#chap-scheduler-conf" class="link"><em class="citetitle">Scheduling Tasks and Events</em></a> in the
+     <em class="citetitle">Integrator's Guide</em>.</p><p>Apart from the scheduled reconciliation run, you can also start 
+     the reconciliation run through the REST interface. The call to the REST 
+     interface is an HTTP POST such as the following.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemXmlfileAccounts_managedUser"</pre></dd><dt><span class="term"><code class="filename">samples/sample1/conf/sync.json</code></span></dt><dd><p>This sample configuration file defines the configuration for
+     reconciliation and synchronization. The
+     <code class="literal">systemXmlAccounts_managedUser</code> is the mapping for the 
+     reconciliation. This entry in <code class="filename">conf/sync.json</code> defines 
+     the synchronization mappings between the XML file connector (source) and 
+     the local repository (target).</p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "mappings": [
+        {
+            "name": "systemXmlfileAccounts_managedUser",
+            "source": "system/xmlfile/account",
+            "target": "managed/user",
+            "correlationQuery": {
+                "type": "text/javascript",
+                "source": "var query = {'_queryId' : 'for-userName',
+                    'uid' :  source.name};query;"
+            },
+            "properties": [
+                {
+                    "source": "_id",
+                    "target": "_id"
+                },
+                {
+                    "source": "description",
+                    "target": "description"
+                },
+                {
+                    "source": "firstname",
+                    "target": "givenName"
+                },
+                {
+                    "source": "email",
+                    "target": "email"
+                },
+                {
+                    "source": "lastname",
+                    "target": "familyName"
+                },
+                {
+                    "source": "name",
+                    "target": "userName"
+                },
+                {
+                    "source": "password",
+                    "target": "password"
+                }
+                {
+                    "source" : "mobileTelephoneNumber",
+                    "target" : "phoneNumber"
+                },
+                {
+                    "source" : "securityQuestion",
+                    "target" : "securityQuestion"
+                },
+                {
+                    "source" : "securityAnswer",
+                    "target" : "securityAnswer"
+                },
+                {
+                    "source" : "passPhrase",
+                    "target" : "passPhrase"
+                },
+                {
+                    "source" : "roles",
+                    "target" : "roles"
+                }           
+            ],
+            "policies": [
+                {
+                    "situation": "CONFIRMED",
+                    "action": "UPDATE"
+                },
+                {
+                    "situation": "FOUND",
+                    "action": "IGNORE"
+                },
+                {
+                    "situation": "ABSENT",
+                    "action": "CREATE"
+                },
+                {
+                    "situation": "AMBIGUOUS",
+                    "action": "IGNORE"
+                },
+                {
+                    "situation": "MISSING",
+                    "action": "IGNORE"
+                },
+                {
+                    "situation": "SOURCE_MISSING",
+                    "action": "IGNORE"
+                },
+                {
+                    "situation": "UNQUALIFIED",
+                    "action": "IGNORE"
+                },
+                {
+                    "situation": "UNASSIGNED",
+                    "action": "IGNORE"
+                }
+            ]
+        }
+    ]
+}</pre><p>Source and target paths that start with <code class="literal">managed</code>,
+     such as <code class="literal">managed/user</code>, always refer to objects in the
+     local OpenIDM repository. Paths that start with <code class="literal">system</code>, 
+     such as <code class="literal">system/xmlfile/account</code>, refer to connector 
+     objects, in this case the XML file connector.</p><p>To filter objects from the resource for a particular target, you can
+     use the <code class="literal">validTarget</code> script in the mapping to ensure 
+     that only users who match specified criteria are considered part of the
+     reconciliation. You can use an <code class="literal">onCreate</code> script in a
+     mapping to set default values for a user created in the target resource.
+     For details on scripting see the <a href="../integrators-guide/index.html#appendix-scripting" class="link"><em class="citetitle">Scripting Reference</em></a> appendix in the
+     <em class="citetitle">Integrator's Guide</em>.</p><p>For more information about synchronization, reconciliation, and
+     <code class="filename">sync.json</code>, see <a href="../integrators-guide/index.html#chap-synchronization" class="link"><em class="citetitle">Configuring Synchronization</em></a> in the
+     <em class="citetitle">Integrator's Guide</em>.</p></dd></dl></div></div><div class="section" id="sample-running-reconciliation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.3.&nbsp;Running Reconciliation</h2></div></div></div><p>Start OpenIDM with the configuration for sample 1.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample1
+  </pre><p>Reconcile the objects in the resources, either by setting 
+  <code class="literal">"enabled" : true</code> in the schedule configuration file 
+  (<code class="filename">conf/schedule-reconcile_systemXmlAccounts_managedUser.json.json</code>) 
+  and then waiting until the scheduled reconciliation happens, or by using the
+  REST interface, as follows:</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemXmlfileAccounts_managedUser"</pre><p>Successful reconciliation returns a reconciliation run ID, similar
+ to the following:</p><pre class="cmdline prettyprint">{"_id":"2d87c817-3d00-4776-a705-7de2c65937d8"}</pre><p>To see what happened, look at the CSV format log file,
+  <code class="filename">openidm/audit/recon.csv</code>.</p></div><div class="section" id="sample-viewing-users-logs"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.4.&nbsp;Viewing Users and Logs</h2></div></div></div><p>After reconciliation runs, you can use the REST interface to display
+  all users in the local repository. Use a REST client to perform an HTTP 
+  GET on the following URL:
+  <code class="literal">http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids</code> 
+  with the headers <code class="literal">"X-OpenIDM-Username: openidm-admin"</code> and 
+  <code class="literal">"X-OpenIDM-Password: openidm-admin"</code>.
+  </p><p>OpenIDM returns a JSON file. Depending on your browser, it can display
+  the JSON or download it as a file. Alternatively, you can use the following
+  <a class="link" href="http://curl.haxx.se/" target="_top"><span class="command"><strong>curl</strong></span></a>
+  command to get the JSON file.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"
+
+{
+ "query-time-ms":1,
+ "result":[
+  {
+   "_id":"joe",
+   "_rev":"0"
+  },{
+   "_id":"bjensen",
+   "_rev":"0"
+  },{
+   "_id":"scarter",
+   "_rev":"0"
+  }
+  ],
+ "conversion-time-ms":0
+ }
+</pre><p>If you created user <code class="literal">joe</code> as described previously in
+  this guide, you see IDs for three users. The second and third users,
+  <code class="literal">bjensen</code> and <code class="literal">scarter</code>, were created 
+  during the reconcililation. Now try a RESTful GET of user 
+  <code class="literal">bjensen</code> by appending the user ID to the managed user URL 
+  (<code class="literal">http://localhost:8080/openidm/managed/user/</code>).</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/bjensen"
+
+{
+  "stateProvince": "",
+  "userName": "bjensen@example.com",
+  "roles": "openidm-authorized",
+  "description": "Created By XML1",
+  "givenName": "Barbara",
+  "address2": "",
+  "lastPasswordAttempt": "Mon Dec 17 2012 11:56:56 GMT+0200 (SAST)",
+  "address1": "",
+  "familyName": "Jensen",
+  "passwordAttempts": "0",
+  "_rev": "0",
+  "_id": "bjensen",
+  "securityQuestion": "1",
+  "country": "",
+  "city": "",
+  "lastPasswordSet": "",
+  "postalCode": "",
+  "phoneNumber": "1234567",
+  "email": "bjensen@example.com",
+  "accountStatus": "active"
+}</pre><p>In the OrientDB console, connect to the database, and then query the
+  users and audit logs. The following shows edited excerpts from a console
+  session querying OrientDB. To make it easier to view the records, the first 
+  query only requests three specific fields.</p><pre class="cmdline prettyprint">&gt; connect remote:localhost/openidm admin admin
+Connecting to database [remote:localhost/openidm] with user 'admin'...OK
+
+&gt; select familyName,email,description from managed_user
+
+---+---------+--------------------+--------------------+--------------------
+  #| RID     |familyName          |email               |description         
+---+---------+--------------------+--------------------+--------------------
+  0|    #-2:0|smith               |[1]                 |My first user       
+  1|    #-2:1|Jensen              |bjensen@example.com |Created By XML1     
+  2|    #-2:2|Carter              |scarter@example.com |Created By XML1     
+---+---------+--------------------+--------------------+--------------------
+
+3 item(s) found. Query executed in 0.0040 sec(s).
+
+&gt; select * from audit_activity
+
+---+---------+---------------+-------------------+-------------------------+...
+  #| RID     |rev            |status             |timestamp                |...
+---+---------+---------------+-------------------+-------------------------+...
+  0|    #-2:0|0              |SUCCESS            |2012-10-26T12:05:50.923Z |...
+  1|    #-2:1|0              |SUCCESS            |2012-10-26T12:05:50.966Z |...
+  2|    #-2:2|0              |SUCCESS            |2012-10-26T12:05:51.530Z |...
+  3|    #-2:3|0              |SUCCESS            |2012-10-26T12:05:51.605Z |...
+  ...
+ 18 item(s) found. Query executed in 0.0090 sec(s). 
+
+&gt; select * from audit_recon
+
+---+---------+--------------------+-----------+------------------------+---------...
+  #| RID     |reconId             |status     |timestamp               |message  ...      
+---+---------+--------------------+-----------+------------------------+---------...
+  0|    #22:0|48650107-66ef-48f...|SUCCESS    |2012-10-26T12:05:50.701Z|Reconcili...
+  1|    #22:1|48650107-66ef-48f...|SUCCESS    |2012-10-26T12:05:52.160Z|null     ...
+  2|    #22:2|48650107-66ef-48f...|SUCCESS    |2012-10-26T12:05:52.856Z|null     ...
+  3|    #22:3|48650107-66ef-48f...|SUCCESS    |2012-10-26T12:05:52.861Z|SOURCE_IG...
+---+---------+--------------------+-----------+------------------------+---------...
+
+4 item(s) found. Query executed in 0.0070 sec(s).
+</pre><p>This information is also available in the CSV format audit logs located 
+  in the <code class="filename">openidm/audit</code> directory.</p><pre class="cmdline prettyprint">$ ls /path/to/openidm/audit/
+access.csv activity.csv recon.csv</pre></div><div class="section" id="sample-adding-users-resource"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.5.&nbsp;Adding Users in a Resource</h2></div></div></div><p>Add a user to the source connector XML data file to see reconciliation
+  in action. During the next reconciliation, OpenIDM finds the new user in the
+  source connector, and creates the user in the local repository. To add the
+  user, copy the following XML into
+  <code class="filename">openidm/samples/sample1/data/xmlConnectorData.xml</code>.</p><pre class="codelisting prettyprint lang-xml">&lt;ri:__ACCOUNT__&gt;
+    &lt;icf:__UID__&gt;tmorris&lt;/icf:__UID__&gt;
+    &lt;icf:__NAME__&gt;tmorris@example.com&lt;/icf:__NAME__&gt;
+    &lt;ri:password&gt;TestPassw0rd#&lt;/ri:password&gt;
+    &lt;ri:firstname&gt;Toni&lt;/ri:firstname&gt;
+    &lt;ri:lastname&gt;Morris&lt;/ri:lastname&gt;
+    &lt;ri:email&gt;tmorris@example.com&lt;/ri:email&gt;
+    &lt;ri:mobileTelephoneNumber&gt;1234567&lt;/ri:mobileTelephoneNumber&gt;
+    &lt;ri:securityQuestion&gt;1&lt;/ri:securityQuestion&gt;
+    &lt;ri:securityAnswer&gt;Some security answer&lt;/ri:securityAnswer&gt;
+    &lt;ri:roles&gt;openidm-authorized&lt;/ri:roles&gt;
+    &lt;icf:__DESCRIPTION__&gt;Created By XML1&lt;/icf:__DESCRIPTION__&gt;
+ &lt;/ri:__ACCOUNT__&gt;</pre><p>Run reconciliation again, as described in the section on <a class="link" href="#sample-running-reconciliation" title="2.3.&nbsp;Running Reconciliation"><em class="citetitle">Running
+  Reconciliation</em></a>. After reconciliation has run, query the
+  local repository to see the new user appear in the list of all users under
+  <code class="literal">http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids</code>.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids
+ 
+{
+ "query-time-ms":1,
+ "result":[{
+    "_id":"joe",
+    "_rev":"0"
+    },{
+    "_id":"bjensen",
+    "_rev":"0"
+    },{
+    "_id":"scarter",
+    "_rev":"0"
+    },{
+    "_id":"tmorris",
+    "_rev":"0"
+    }],
+ "conversion-time-ms":0
+ }
+ </pre><p>Also look at the reconciliation audit log,
+  <code class="filename">openidm/audit/recon.csv</code> to see what took place during
+  reconciliation. This formatted excerpt from the log covers the two
+  reconciliation runs done in this sample.</p><pre class="codelisting prettyprint">
+"_id",  "action",...,"reconId","situation","sourceObjectId",                "targetObjectId","timestamp";
+"7e...","CREATE",...,"486...", "ABSENT",   "system/xmlfile/account/bjensen","managed/user/bjensen",...;
+"1a...","CREATE",...,"486...", "ABSENT",   "system/xmlfile/account/scarter","managed/user/scarter",...;
+"47...","IGNORE",...,"486...", "UNQUALIFIED",""            ,...,            "managed/user/joe",...;
+"33...","UPDATE",...,"aa9...", "CONFIRMED","system/xmlfile/account/bjensen","managed/user/bjensen",...;
+"1d...","UPDATE",...,"aa9...", "CONFIRMED","system/xmlfile/account/scarter","managed/user/scarter",...;
+"0e...","CREATE",...,"aa9...", "ABSENT",   "system/xmlfile/account/tmorris","managed/user/tmorris",...;
+"23...","IGNORE",...,"aa9...", "UNQUALIFIED","",...,                        "managed/user/joe",...;
+</pre><p>The important fields in the audit log are the action, the situation,
+  the source <code class="literal">sourceObjectId</code>, and the target
+  <code class="literal">targetObjectId</code>. For each object in the source,
+  reconciliation results in a situation that leads to an action on the
+  target.</p><p>In the first reconciliation run (the abbreviated
+  <code class="literal">reconID</code> is shown as <code class="literal">486...</code>), the source
+  object does not exist in the target, resulting in an ABSENT situation and an
+  action to CREATE the object in the target. The object created earlier in the
+  target does not exist in the source, and so is IGNORED.</p><p>In the second reconciliation run (the abbreviated
+  <code class="literal">reconID</code> is shown as <code class="literal">aa9...</code>), after you
+  added a user to the source XML, OpenIDM performs an UPDATE on the user objects
+  <code class="literal">bjensen</code> and <code class="literal">scarter</code> that already exist 
+  in the target, in this case changing the internal ID. OpenIDM performs a CREATE 
+  on the target for the new user (<code class="literal">tmorris</code>).</p><p>You configure the action that OpenIDM takes based on an object's
+  situation in the configuration file, <code class="filename">conf/sync.json</code>.
+  For the list of all possible situations and actions, see the <a href="../integrators-guide/index.html#chap-synchronization" class="link"><em class="citetitle">Configuring Synchronization</em></a> chapter in the
+  <em class="citetitle">Integrator's Guide</em>.</p><p>For details on auditing, see the <a href="../integrators-guide/index.html#chap-auditing" class="link"><em class="citetitle">Using Audit Logs</em></a> chapter in the
+  <em class="citetitle">Integrator's Guide</em>.</p></div><div class="section" id="sample-adding-users-rest"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.6.&nbsp;Adding Users Through REST</h2></div></div></div><p>You can also add users directly to the local repository through the
+  REST interface. The following example adds a user named James Berg.</p><p>Create <code class="literal">james</code> (UNIX).</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request PUT
+ --data '{
+  "userName":"jberg",
+  "familyName":"Berg",
+  "givenName":"James",
+  "email":"jberg@example.com",
+  "phoneNumber":"5556787",
+  "description":"Created by OpenIDM REST.",
+  "password":"MyPassw0rd"
+ }'
+ "http://localhost:8080/openidm/managed/user/jberg"
+
+{"_id":"jberg","_rev":"0"}</pre><p>Create <code class="literal">james</code> (Windows).</p><pre class="cmdline prettyprint">C:\&gt;curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request PUT
+ --data "{
+ \"userName\":\"jberg\",
+ \"familyName\":\"Berg\",
+ \"givenName\":\"James\",
+ \"email\":\"jberg@example.com\",
+ \"phoneNumber\":\"5556787\", 
+ \"description\":\"Created by OpenIDM REST.\",
+ \"password\":\"MyPassw0rd\"
+ }"
+ "http://localhost:8080/openidm/managed/user/jberg"
+
+{"_id":"jberg","_rev":"0"}</pre><p>OpenIDM creates the new user in the repository. If you configure a
+  mapping to apply changes from the local repository to the XML file connector
+  as a target, OpenIDM then updates the XML file to add the new user.</p></div></div><div lang="en" class="chapter" id="chap-samples"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;3.&nbsp;More OpenIDM Samples</h1></div></div></div><p>The current distribution of OpenIDM comes with a variety of samples
+ in <code class="filename">openidm/samples/</code>. Sample 1 is described in 
+ <a href="../install-guide/index.html#chap-sample" class="link"><em class="citetitle">First OpenIDM
+ Sample</em></a>. This chapter describes the remaining OpenIDM 
+ samples.</p><div class="section" id="before-you-begin-samples"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.1.&nbsp;Before You Begin</h2></div></div></div><p>Install OpenIDM, as described in <a href="../install-guide/index.html#chap-install" class="link"><em class="citetitle">Installing
+  OpenIDM Services</em></a>.</p><p>OpenIDM comes with an internal noSQL database, OrientDB, for use as
+  the internal repository out of the box. This makes it easy to get started
+  with OpenIDM. OrientDB is not yet supported for production use, however, 
+  so use a supported JDBC database when moving to production.</p><div class="section" id="install-samples"><div class="titlepage"><div><div><h3 class="title">3.1.1.&nbsp;Installing the Samples</h3></div></div></div><a class="indexterm" name="d2843e1070"></a><p>Each sample folder in <code class="filename">openidm/samples/</code> contains
+   a list of sub folders, such as <code class="filename">conf/</code> and
+   <code class="filename">script/</code>, depending on which files you need to run the
+   sample. The easiest way to configure a new installation for one of the
+   samples is to use the <code class="literal">-p</code> option of the 
+   <code class="literal">startup</code> command to point to the directory whose 
+   configuration you want to use. Some, but not all samples require additional 
+   software, such as an external LDAP server or database.</p><p>When you move from one sample to the next, bear in mind that you are
+   changing the OpenIDM configuration. For information on how configuration 
+   changes work, see <span class="olink">
+   <em class="citetitle">Changing the Configuration</em></span> in the 
+   <em class="citetitle">Integrator's Guide</em>.</p></div><div class="section" id="preparing-openidm"><div class="titlepage"><div><div><h3 class="title">3.1.2.&nbsp;Preparing OpenIDM</h3></div></div></div><p>Install an instance of OpenIDM specifically to try the samples. That
+   way you can experiment as much as you like, and discard the result if you
+   are not satisfied.</p><p>Shut down OpenIDM, and delete the <code class="literal">openidm/felix-cache</code> 
+   directory before you try a new sample.</p><pre class="cmdline prettyprint">$ rm -rf /path/to/openidm/felix-cache</pre></div></div><div class="section" id="more-sample1"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.2.&nbsp;Sample 1 - XML File</h2></div></div></div><p>Sample 1 is described in the chapter, <a href="../install-guide/index.html#chap-sample" class="link"><em class="citetitle">First OpenIDM
+  Sample</em></a>.</p></div><div class="section" id="more-sample2"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.3.&nbsp;Sample 2 - LDAP One Way</h2></div></div></div><a class="indexterm" name="d2843e1126"></a><p>Sample 2 resembles the first sample, but in sample 2 OpenIDM is 
+  connected to a local LDAP server. The sample has been tested with 
+  <a class="link" href="http://www.forgerock.org/opendj.html" target="_blank">OpenDJ
+  </a>, but it should work with any LDAPv3 compliant server.</p><p>Sample 2 demonstrates how OpenIDM can pick up new or changed objects
+  from an external resource. The sample contains only one mapping, from the
+  external LDAP server resource to the OpenIDM repository. The sample therefore
+  does not push any changes made to OpenIDM managed user objects out to the
+  LDAP server.</p><div class="section" id="external-ldap-config-2"><div class="titlepage"><div><div><h3 class="title">3.3.1.&nbsp;LDAP Server Configuration</h3></div></div></div><div class="itemizedlist"><p>Sample 2 expects the following configuration for the external LDAP
+    server:</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The LDAP server runs on the local host.</p></li><li class="listitem"><p>The LDAP server listens on port 1389.</p></li><li class="listitem"><p>A user with DN <code class="literal">cn=Directory Manager</code>
+    and password <code class="literal">password</code> has read access to the LDAP
+    server.</p></li><li class="listitem"><p>User objects are stored on the LDAP server under base DN
+    <code class="literal">ou=People,dc=example,dc=com</code>.</p></li><li class="listitem"><p>User objects have the object class
+    <code class="literal">inetOrgPerson</code>.</p></li><li class="listitem"><p>User objects have the following attributes:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p><code class="literal">uid</code></p></li><li class="listitem"><p><code class="literal">sn</code></p></li><li class="listitem"><p><code class="literal">cn</code></p></li><li class="listitem"><p><code class="literal">givenName</code></p></li><li class="listitem"><p><code class="literal">mail</code></p></li><li class="listitem"><p><code class="literal">description</code></p></li></ul></div><p>An example user object follows.</p><pre class="codelisting prettyprint">
+dn: uid=jdoe,ou=People,dc=example,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+givenName: John
+uid: jdoe
+cn: John Doe
+telephoneNumber: 12345
+sn: Doe
+mail: jdoe@example.com
+description: Created by OpenIDM</pre></li></ul></div><p>Prepare the LDAP server by creating a base suffix of
+   <code class="literal">dc=example,dc=com</code>, and importing these objects from
+   <code class="filename">samples/sample2/data/Example.ldif</code>.</p><pre class="codelisting prettyprint">
+dn: dc=com
+objectClass: domain
+objectClass: top
+dc: com
+
+dn: dc=example,dc=com
+objectClass: domain
+objectClass: top
+dc: example
+
+dn: ou=People,dc=example,dc=com
+ou: people
+description: people
+objectclass: organizationalunit
+
+dn: uid=jdoe,ou=People,dc=example,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+givenName: John
+uid: jdoe
+cn: John Doe
+telephoneNumber: 12345
+sn: Doe
+mail: jdoe@example.com
+description: Created for OpenIDM
+</pre></div><div class="section" id="install-sample2"><div class="titlepage"><div><div><h3 class="title">3.3.2.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 2.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample2</pre></div><div class="section" id="run-sample2"><div class="titlepage"><div><div><h3 class="title">3.3.3.&nbsp;Running the Sample</h3></div></div></div><p>Run reconciliation over the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapAccounts_managedUser"</pre><p>Successful reconciliation returns an "_id" object.</p><p>With the configuration of sample 2, OpenIDM creates user objects from
+   LDAP in OpenIDM, assigning the new objects random unique IDs. To list user
+   objects by ID, run a query over the REST interface.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"</pre><p>The resulting JSON object should look something like this, but all on
+   one line.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "query-time-ms": 1,
+    "result": [
+        {
+            "_id": "56f0fb7e-3837-464d-b9ec-9d3b6af665c3",
+            "_rev": "0"
+        }
+    ],
+    "conversion-time-ms": 0
+ }</pre><p>To retrieve the user, get the object by ID.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/56f0fb7e-3837-464d-b9ec-9d3b6af665c3"</pre><p>Read <code class="filename">openidm/samples/sample2/conf/sync.json</code> and
+   <code class="filename">openidm/samples/sample2/conf/provisioner.openicf-ldap.json</code> 
+   to understand the layout of the user object in the repository.</p></div></div><div class="section" id="more-sample2b"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.4.&nbsp;Sample 2b - LDAP Two Way</h2></div></div></div><a class="indexterm" name="d2843e1256"></a><p>Like sample 2, sample 2b also connects to an external LDAP
+  server.</p><p>Unlike sample 2, however, sample 2b has two mappings configured, one
+  from the LDAP server to the OpenIDM repository, and the other from the
+  OpenIDM repository to the LDAP server.</p><div class="section" id="external-ldap-config-2b"><div class="titlepage"><div><div><h3 class="title">3.4.1.&nbsp;External LDAP Configuration</h3></div></div></div><p>Configure the LDAP server as for sample 2,
+   <a class="xref" href="#external-ldap-config-2" title="3.3.1.&nbsp;LDAP Server Configuration">Section&nbsp;3.3.1, &#8220;LDAP Server Configuration&#8221;</a>. The LDAP user must have write
+   access to create users from OpenIDM on the LDAP server.</p></div><div class="section" id="install-sample2b"><div class="titlepage"><div><div><h3 class="title">3.4.2.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 2b.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample2b</pre></div><div class="section" id="run-sample2b"><div class="titlepage"><div><div><h3 class="title">3.4.3.&nbsp;Running the Sample</h3></div></div></div><p>Run reconciliation over the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapAccounts_managedUser"</pre><p>Successful reconciliation returns an "_id" object.</p><p>With the configuration of sample 2b, OpenIDM creates user objects from
+   LDAP in OpenIDM, assigning the new objects random unique IDs. To list user
+   objects by ID, run a query over the REST interface.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"
+   </pre><p>The resulting JSON object should look something like this, but all on
+   one line.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "query-time-ms": 1,
+    "result": [
+        {
+            "_id": "56f0fb7e-3837-464d-b9ec-9d3b6af665c3",
+            "_rev": "0"
+        }
+    ],
+    "conversion-time-ms": 0
+ }</pre><p>To retrieve the user, get the object by ID.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/56f0fb7e-3837-464d-b9ec-9d3b6af665c3"</pre><p>Test the second mapping by creating a user in the OpenIDM
+   repository. On UNIX:</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --data '{"email":"fdoe@example.com","familyName":"Doe","userName":"fdoe",
+ "givenName":"Felicitas","displayName":"Felicitas Doe"}'
+ --request PUT
+ "http://localhost:8080/openidm/managed/user/fdoe"</pre><p>On Windows:</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request PUT
+ --data "{\"email\":\"fdoe@example.com\",\"familyName\":\"Doe\", \"userName\":\"fdoe\",
+ \"givenName\":\"Felicitas\",\"displayName\":\"Felicitas Doe\"}" 
+ "http://localhost:8080/openidm/managed/user/fdoe"</pre><p>Run reconciliation again to create the new user in the LDAP directory.
+   </p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapAccounts_managedUser"</pre><p>Test that the reconciliation has been successful by locating the new 
+   user in the LDAP directory.</p><pre class="cmdline prettyprint">$ /path/to/OpenDJ/bin/ldapsearch
+ --bindDN "cn=Directory Manager"
+ --bindPassword password
+ --hostname localhost
+ --port 1389
+ --baseDN "dc=example,dc=com"
+ "uid=fdoe"
+dn: uid=fdoe,ou=People,dc=example,dc=com
+mail: fdoe@example.com
+givenName: Felicitas
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+uid: fdoe
+cn: Felicitas Doe
+sn: Doe
+   </pre></div></div><div class="section" id="more-sample2c"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.5.&nbsp;Sample 2c - Synchronizing LDAP Group Membership</h2></div></div></div><a class="indexterm" name="d2843e1324"></a><p>Like sample 2b, sample 2c also connects to an external LDAP
+  server. The only difference is that in sample 2c, LDAP Group Memberships 
+  are synchronized.</p><div class="section" id="external-ldap-config-2c"><div class="titlepage"><div><div><h3 class="title">3.5.1.&nbsp;External LDAP Configuration</h3></div></div></div><p>Configure the LDAP server as for sample 2,
+   <a class="xref" href="#external-ldap-config-2" title="3.3.1.&nbsp;LDAP Server Configuration">Section&nbsp;3.3.1, &#8220;LDAP Server Configuration&#8221;</a>. The LDAP user must have write
+   access to create users from OpenIDM on the LDAP server.</p><p>In addition, two LDAP Groups should be created, which can be found in 
+   the LDIF file: <code class="filename">openidm/samples/sample2c/data/Example.ldif</code>:</p><pre class="codelisting prettyprint">
+dn: ou=Groups,dc=example,dc=com
+ou: Groups
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=openidm,ou=Groups,dc=example,dc=com
+uniqueMember: uid=jdoe,ou=People,dc=example,dc=com
+cn: openidm
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=openidm2,ou=Groups,dc=example,dc=com
+cn: openidm2
+objectClass: groupOfUniqueNames
+objectClass: top</pre><p>The user with dn <code class="literal">uid=jdoe,ou=People,dc=example,dc=com</code> 
+   is also imported with the <code class="filename">Example.ldif</code> file.</p></div><div class="section" id="install-sample2c"><div class="titlepage"><div><div><h3 class="title">3.5.2.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 2c.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample2c</pre></div><div class="section" id="run-sample2c"><div class="titlepage"><div><div><h3 class="title">3.5.3.&nbsp;Running the Sample</h3></div></div></div><p>Run reconciliation over the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+  "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapAccounts_managedUser"</pre><p>Successful reconciliation returns an "_id" object.</p><p>With the configuration of sample 2c, OpenIDM creates user objects from
+   LDAP in OpenIDM, assigning the new objects random unique IDs. To list user
+   objects by ID, run a query over the REST interface.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"
+   </pre><p>The resulting JSON object should look something like this, but all on
+   one line.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "query-time-ms": 1,
+    "result": [
+        {
+            "_id": "56f0fb7e-3837-464d-b9ec-9d3b6af665c3",
+            "_rev": "0"
+        }
+    ],
+    "conversion-time-ms": 0
+ }</pre><p>To retrieve the user, get the object by ID.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/56f0fb7e-3837-464d-b9ec-9d3b6af665c3"</pre><p>Your user's object should contain a property like: </p><pre class="cmdline prettyprint">"ldapGroups":["cn=openidm,ou=Groups,dc=example,dc=com"]</pre><p>Now change the user on the OpdenIDM side with the following REST
+   call (on UNIX):</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST   
+ -d '[{"replace":"ldapGroups","value": ["cn=openidm2,ou=Groups,dc=example,dc=com"]}]' 
+ "http://localhost:8080/openidm/managed/user?_action=patch&amp;_queryId=for-userName&amp;uid=jdoe"
+   </pre><p>On Windows, you might need to escape certain characters, so your REST 
+   call will look like this:</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ -d "[{\"replace\":\"ldapGroups\",\"value\": [\"cn=openidm2,ou=Groups,dc=example,dc=com\"]}]"
+ "http://localhost:8080/openidm/managed/user?_action=patch&amp;_queryId=for-userName&amp;uid=jdoe"
+  </pre><p>This will change the user's <code class="literal">ldapGroups</code> property 
+   in OpenIDM from <code class="filename">"cn=openidm,ou=Groups,dc=example,dc=com"</code> 
+   to <code class="filename">"cn=openidm2,ou=Groups,dc=example,dc=com"</code> and, as a 
+   result, the user will be removed from the one LDAP group and added to 
+   the other LDAP group on OpenDJ.</p><p>By default, automatic synchronization is enabled. This means that 
+   when you update a managed object, any mappings defined in the 
+   <code class="filename">sync.json</code> file are automatically executed to update 
+   the target system. For more information, see <a href="../integrators-guide/index.html#synchronization-mappings-file" class="link">
+   <em class="citetitle">Synchronization Mappings File</em></a> in the 
+   <em class="citetitle">Integrator's Guide</em>.</p></div></div><div class="section" id="more-sample2d"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.6.&nbsp;Sample 2d - Synchronizing LDAP Groups</h2></div></div></div><a class="indexterm" name="d2843e1426"></a><p>Sample 2d also connects to an external LDAP server. This sample 
+  focuses on LDAP Group synchronization.</p><div class="section" id="external-ldap-config-2d"><div class="titlepage"><div><div><h3 class="title">3.6.1.&nbsp;External LDAP Configuration</h3></div></div></div><p>Configure the LDAP server as for sample 2,
+   <a class="xref" href="#external-ldap-config-2" title="3.3.1.&nbsp;LDAP Server Configuration">Section&nbsp;3.3.1, &#8220;LDAP Server Configuration&#8221;</a>. The LDAP user must have write
+   access to create users from OpenIDM on the LDAP server.</p><p>In addition, two LDAP Groups should be created, which can be found in 
+   the LDIF file: <code class="filename">openidm/samples/sample2d/data/Example.ldif</code> 
+   (if they have not already been added through sample 2c):</p><pre class="codelisting prettyprint">
+dn: ou=Groups,dc=example,dc=com
+ou: Groups
+objectClass: organizationalUnit
+objectClass: top
+
+dn: cn=openidm,ou=Groups,dc=example,dc=com
+uniqueMember: uid=jdoe,ou=People,dc=example,dc=com
+cn: openidm
+objectClass: groupOfUniqueNames
+objectClass: top
+
+dn: cn=openidm2,ou=Groups,dc=example,dc=com
+uniqueMember: uid=jdoe,ou=People,dc=example,dc=com
+cn: openidm2
+objectClass: groupOfUniqueNames
+objectClass: top
+</pre><p>The user with dn <code class="literal">uid=jdoe,ou=People,dc=example,dc=com</code> 
+   is also imported with the <code class="filename">Example.ldif</code> file.</p></div><div class="section" id="install-sample2d"><div class="titlepage"><div><div><h3 class="title">3.6.2.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 2d.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample2d</pre></div><div class="section" id="run-sample2d"><div class="titlepage"><div><div><h3 class="title">3.6.3.&nbsp;Running the Sample</h3></div></div></div><p>Run reconciliation <span class="emphasis"><em>for the groups mapping</em></span> over 
+   the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapGroups_managedGroup"</pre><p>Successful reconciliation returns an "_id" object.</p><p>With the configuration of sample 2d, OpenIDM creates group objects from
+   LDAP in OpenIDM. To list group objects by ID, run a query over the REST interface.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/group/?_queryId=query-all-ids"
+   </pre><p>The resulting JSON object should look something like this, but all on
+   one line.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+   "query-time-ms":1,
+   "result":[
+      {
+         "_id":"3c704429-aacd-4995-816a-fac33451c642"
+      },
+      {
+         "_id":"b0982152-5099-4358-bdd1-45a39ebe0d77"
+      }
+   ]
+}</pre><p>To retrieve a group, get the object by ID.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/group/b0982152-5099-4358-bdd1-45a39ebe0d77"</pre><p>Your group's object should be similar to the following:</p><pre class="codelisting prettyprint linenums lang-js">
+{
+   "_rev":"0",
+   "dn":"cn=openidm,ou=Groups,dc=example,dc=com",
+   "_id":"b0982152-5099-4358-bdd1-45a39ebe0d77",
+   "description":[],
+   "uniqueMember":["uid=jdoe,ou=People,dc=example,dc=com",],
+   "name":["openidm"]
+}   
+   </pre></div></div><div class="section" id="more-sample3"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.7.&nbsp;Sample 3 - Scripted SQL</h2></div></div></div><a class="indexterm" name="d2843e1497"></a><p>Sample 3 shows an example configuration for the Scripted SQL connector.
+  The Scripted SQL connector communicates with the database through
+  configurable SQL scripts. Each operation, like create or delete, is
+  represented by its own script.</p><p>Prepare a fresh installation of OpenIDM before trying this
+  sample.</p><div class="section" id="external-mysql-config-sample3"><div class="titlepage"><div><div><h3 class="title">3.7.1.&nbsp;External Configuration</h3></div></div></div><p>In this example OpenIDM communicates with an external MySQL database 
+   server.</p><div class="itemizedlist"><p>The sample expects the following configuration for MySQL:</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The database is available on the local host.</p></li><li class="listitem"><p>The database listens on port 3306.</p></li><li class="listitem"><p>You can connect over the network to the database with user
+    <code class="literal">root</code> and password <code class="literal">password</code>.</p></li><li class="listitem"><p>MySQL serves a database called <code class="literal">HRDB</code> with
+    a table called <code class="literal">Users</code>.</p></li><li class="listitem"><p>The database schema is as described in the data definition
+    language file,
+    <code class="filename">openidm/samples/sample3/data/sample_HR_DB.mysql</code>.
+    Import the file into MySQL before running the sample.</p><pre class="cmdline prettyprint">
+$ ./bin/mysql -u root -p &lt; /path/to/openidm/samples/sample3/data/sample_HR_DB.mysql
+Enter password:
+$ </pre></li></ul></div><p>Make sure MySQL is running.</p></div><div class="section" id="install-sample3"><div class="titlepage"><div><div><h3 class="title">3.7.2.&nbsp;Install the Sample</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>.</p></li><li class="listitem"><p>OpenIDM requires a MySQL driver, the MySQL Connector/J. Download
+         MySQL Connector/J, version 5.1 or later. Unpack the delivery and
+         copy the .jar into the <code class="filename">openidm/bundle</code> directory.</p><pre class="cmdline prettyprint">$ cp mysql-connector-java-<em><strong>version</strong></em>-bin.jar /path/to/openidm/bundle/</pre></li><li class="listitem"><p>In <code class="filename">openidm/samples/sample3/conf/provisioner.openicf-scriptedsql.json</code>, 
+     edit the paths to the scripts (starting with 
+     <code class="literal">/opt/openidm/</code>) to match your installation.</p></li><li class="listitem"><p>Start OpenIDM with the configuration for sample 3.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample3</pre></li></ul></div><p>If the configuration of the external database is correct, then
+   OpenIDM should show five users during startup, for example:</p><pre class="cmdline prettyprint">./startup.sh -p samples/sample3
+Using OPENIDM_HOME:   /path/to/openidm
+Using OPENIDM_OPTS:   -Xmx1024m
+Using LOGGING_CONFIG: -Djava.util.logging.config.file=/path/to/openidm/conf/logging.properties
+Using boot properties at /path/to/openidm/conf/boot/boot.properties
+OpenIDM version "" (revision: XXXX)
+bob
+rowley
+louis
+john
+jdoe</pre><p>The check method, executed for each connected resource, executes a 
+   <code class="literal">select * from Users</code> statement.</p></div><div class="section" id="run-sample3"><div class="titlepage"><div><div><h3 class="title">3.7.3.&nbsp;Run the Sample</h3></div></div></div><p>The sample 3 <code class="filename">sync.json</code> configuration file
+   contains a mapping to reconcile OpenIDM and the external database.
+   Run the reconciliation with the following command.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemHrdb_managedUser"</pre><p>Reconciliation creates the five users from the database in the
+   OpenIDM repository. Check the result with the following command.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"</pre><p>The result should resemble the following JSON object.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+  "conversion-time-ms": 0,
+  "result": [
+    {
+      "_rev": "0",
+      "_id": "8366a23d-f6cf-46df-9746-469bf45aafcd"
+    },
+    {
+      "_rev": "0",
+      "_id": "3f90933b-9397-4897-84d0-03ed8d99f61e"
+    },
+    {
+      "_rev": "0",
+      "_id": "8fbf759d-bebc-42ed-b321-b69487b4470f"
+    },
+    {
+      "_rev": "0",
+      "_id": "9592de42-a8ef-4db3-9c6c-7d191e39b084"
+    },
+    {
+      "_rev": "0",
+      "_id": "fd962b71-752a-444b-8492-35bff57bec69"
+    }
+  ],
+  "query-time-ms": 1
+}
+</pre><p>To view the JSON for one of the users, get the user by
+   the value of the <code class="literal">_id</code>.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/8366a23d-f6cf-46df-9746-469bf45aafcd"</pre></div></div><div class="section" id="more-sample4"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.8.&nbsp;Sample 4 - CSV File</h2></div></div></div><a class="indexterm" name="d2843e1622"></a><p>Sample 4 deals with a comma-separated value file as the external
+  resource. The file name is part of the sample configuration. Therefore you
+  do not need to manage any other external resources.</p><div class="section" id="install-sample4"><div class="titlepage"><div><div><h3 class="title">3.8.1.&nbsp;Install the Sample</h3></div></div></div><p>No external configuration is required for this sample. Prepare 
+   OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, then start up 
+   OpenIDM with the configuration of sample 4.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample4</pre></div><div class="section" id="run-sample4"><div class="titlepage"><div><div><h3 class="title">3.8.2.&nbsp;Run the Sample</h3></div></div></div><p>The <code class="filename">sample4/data/hr.csv</code> file contains two example
+   users. The first line of the file sets the attribute names. Running
+   reconciliation creates two users in the OpenIDM repository</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemHrAccounts_managedUser"</pre><p>Check the results of reconciliation with the following command.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"</pre><p>The result should resemble the following JSON object, but all on one
+   line.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "query-time-ms": 1,
+    "result": [
+        {
+            "_id": "VDART",
+            "_rev": "0"
+        },
+        {
+            "_id": "DDOE",
+            "_rev": "0"
+        }
+    ],
+    "conversion-time-ms": 0
+ }</pre><p>To view the JSON for one of the users, get the user by
+   the value of the <code class="literal">_id</code>.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/DDOE"
+
+{
+  "password": "Z29vZA==",
+  "employeeNumber": "123456",
+  "givenName": "Darth",
+  "userName": "DDOE",
+  "familyName": "Doe",
+  "email": "doe@forgerock.org",
+  "_rev": "0",
+  "_id": "DDOE"
+}</pre></div></div><div class="section" id="more-sample5"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.9.&nbsp;Sample 5 - Synchronization of Two Resources</h2></div></div></div><a class="indexterm" name="d2843e1668"></a><p>Sample 5 demonstrates the flow of data from one external resource to
+  another. The resources are called LDAP and AD, but in the sample both
+  directory-like resources are simulated with XML files.</p><div class="section" id="install-sample5"><div class="titlepage"><div><div><h3 class="title">3.9.1.&nbsp;Install the Sample</h3></div></div></div><p>No external configuration is required for this sample. Prepare 
+   OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, then start up 
+   OpenIDM with the configuration of sample 5.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample5</pre><p>The XML files that are used are located in the
+   <code class="filename">openidm/samples/sample5/data/</code> folder. When you start
+   OpenIDM with the sample 5 configuration, it creates
+   <code class="filename">xml_AD_Data.xml</code>, which does not contain users until
+   you run reconciliation.</p></div><div class="section" id="run-sample5"><div class="titlepage"><div><div><h3 class="title">3.9.2.&nbsp;Run the Sample</h3></div></div></div><p>Run reconciliation between OpenIDM and the pseudo-LDAP resource.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapAccounts_managedUser"</pre><p>This command creates a user in the repository and also in the pseudo
+   AD resource, represented by the
+   <code class="filename">samples/sample5/data/xml_AD_Data.xml</code> file.</p></div></div><div class="section" id="more-sample6"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.10.&nbsp;Sample 6 - LiveSync Between Two LDAP Servers</h2></div></div></div><a class="indexterm" name="d2843e1708"></a><p>Sample 6 resembles sample 5, but sample 6 uses two real LDAP
+  connections. The default sample configuration assumes two LDAP
+  server instances running on the local host, but listening on different 
+  LDAP ports.</p><p>To simplify setup, you can configure both provisioners to point to the 
+  same LDAP server, and only use different base DNs, so you can simulate use of two
+  directory servers with a single <a class="link" href="http://www.forgerock.org/opendj.html" target="_blank">OpenDJ</a> server,
+  for example.</p><p>Sample 6 picks up new and changed users from the LDAP suffix,
+  <code class="literal">ou=people,dc=example,dc=com</code>, and sends updates to the
+  "Active Directory" suffix <code class="literal">ou=people,o=ad</code>. To keep the
+  example relatively simple, no configuration is provided for the flow from
+  AD to LDAP.</p><div class="section" id="external-resource-sample6"><div class="titlepage"><div><div><h3 class="title">3.10.1.&nbsp;External Configuration</h3></div></div></div><p>Out of the box, the sample provisioners are configured to use two
+   independent LDAP servers, one listening on port 1389 and one on port 4389.</p><p>To simplify your setup, you can change the sample to connect to a single LDAP
+   server representing both external resources by using the same port numbers
+   in both provisioner .json files. For example, change
+   <code class="filename">conf/provisioner.openicf-ad.json</code> so that the port number
+   line reads <code class="literal">"port" : 1389</code>.</p><div class="section" id="prepare-livesync-sample6"><div class="titlepage"><div><div><h4 class="title">3.10.1.1.&nbsp;Prepare OpenDJ For LiveSync</h4></div></div></div><p>With LiveSync, OpenIDM detects changes in an external resource as they
+    happen. OpenIDM detects changes in OpenDJ by reading the External Change Log
+    (ECL). The ECL is presented as an LDAP subtree with base DN
+    <code class="literal">cn=changelog</code>. Each change is represented as an
+    entry in the subtree. Each change entry remains in the subtree until the
+    log is purged (by default every three days).</p><p>You turn on the external change log in OpenDJ by enabling replication. OpenDJ
+    provides the change log even if it does not, in fact, replicate data to
+    another OpenDJ server. Note that OpenDJ will log, in this case, harmless error
+    messages if replication is enabled without a connection to another replica.</p><p>To enable replication without another server, set up replication when
+    you install OpenDJ.</p><div class="mediaobject" align="center" id="figure-replication-setup"><a class="fancybox" href="images/replication-setup.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_replication-setup.png" align="middle" alt="Topology Options screen from the OpenDJ QuickSetup wizard" title="The OpenDJ QuickSetup wizard lets you set up replication at&#xA;      installation time."></a></div></div><div class="section" id="ldap-configuration-sample6"><div class="titlepage"><div><div><h4 class="title">3.10.1.2.&nbsp;LDAP Configuration</h4></div></div></div><div class="itemizedlist"><p>Sample 6 provides the configuration for two external LDAP servers, set up as
+    follows.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Both LDAP servers run on the local host.</p></li><li class="listitem"><p>The LDAP server "LDAP" listens on port 1389.</p></li><li class="listitem"><p>The LDAP server "AD" listens on port 4389. (If you want to 
+     use a single LDAP server instance, change this to 1389.)</p></li><li class="listitem"><p>Both LDAP servers have a user with DN
+     <code class="literal">cn=Directory Manager</code> and password
+     <code class="literal">password</code> who can read and write to the data and read
+     the change log.</p></li><li class="listitem"><p>User objects are stored under:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>Base DN <code class="literal">ou=people,o=ad</code> for the
+      connector called "AD".</p></li><li class="listitem"><p>Base DN <code class="literal">ou=people,dc=example,dc=com</code>
+      for the connector called "LDAP".</p></li></ul></div></li><li class="listitem"><p>User objects have the object class
+     <code class="literal">inetOrgPerson</code>.</p></li><li class="listitem"><p>User objects have the following attributes:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p><code class="literal">uid</code></p></li><li class="listitem"><p><code class="literal">sn</code></p></li><li class="listitem"><p><code class="literal">cn</code></p></li><li class="listitem"><p><code class="literal">givenName</code></p></li><li class="listitem"><p><code class="literal">mail</code></p></li><li class="listitem"><p><code class="literal">description</code></p></li></ul></div><p>The LDIF representation of an example user is as follows.</p><pre class="codelisting prettyprint">
+dn: uid=jdoe,ou=People,dc=example,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+givenName: John
+uid: jdoe
+cn: John Doe
+telephoneNumber: 12345
+sn: Doe
+mail: ddoe@example.com
+description: Created by OpenIDM
+</pre></li></ul></div><p>Prepare the LDAP servers by creating the base DN 
+    <code class="literal">dc=example,dc=com</code> on the first server and 
+    <code class="literal">o=AD</code> on the second server, and then importing the 
+    following objects.</p><p>For the "LDAP" directory, import
+    <code class="filename">samples/sample6/data/Example.ldif</code>.</p><pre class="codelisting prettyprint">
+dn: dc=com
+objectClass: domain
+objectClass: top
+dc: com
+
+dn: dc=example,dc=com
+objectClass: domain
+objectClass: top
+dc: example
+
+dn: ou=People,dc=example,dc=com
+ou: people
+description: people
+objectclass: organizationalunit
+
+dn: uid=jdoe,ou=People,dc=example,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+givenName: John
+uid: jdoe
+cn: John Doe
+telephoneNumber: 12345
+sn: Doe
+mail: jdoe@example.com
+description: Created for OpenIDM
+</pre><p>For the "AD" directory import
+    <code class="filename">samples/sample6/data/AD.ldif</code>.</p><pre class="codelisting prettyprint">
+dn: o=AD
+objectClass: domain
+objectClass: top
+dc: organization
+
+dn: ou=People,o=AD
+ou: people
+description: people
+objectclass: organizationalunit
+</pre></div></div><div class="section" id="install-sample6"><div class="titlepage"><div><div><h3 class="title">3.10.2.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 6.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample6</pre></div><div class="section" id="run-sample6"><div class="titlepage"><div><div><h3 class="title">3.10.3.&nbsp;Running the Sample</h3></div></div></div><p>The following sections show how to run the sample once off, with
+   reconciliation, and continuously with LiveSync.</p><div class="section" id="run-sample6-reconciliation"><div class="titlepage"><div><div><h4 class="title">3.10.3.1.&nbsp;Using Reconciliation</h4></div></div></div><p>Start up OpenIDM, and then run reconciliation over the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemLdapAccounts_managedUser"</pre><p>The result of a successful reconciliation is an
+    <code class="literal">_id</code> object.</p><pre class="cmdline prettyprint">{"_id":"9ece3807-08c3-4ec6-87fb-a6a2d0c71cee"}</pre><p>With the configuration for sample 6, OpenIDM creates user objects
+    from LDAP in the internal repository, and also in the target AD suffix.</p><p>After reconciliation, list all users in the repository.</p><pre class="cmdline prettyprint">
+$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids"</pre><p>The result should resemble the following JSON object.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+  "conversion-time-ms": 0,
+  "result": [
+    {
+      "_rev": "0",
+      "_id": "b6b76e9c-d534-4d0a-ac81-87153169a223"
+    }
+  ],
+  "query-time-ms": 0
+}</pre><p>To read the user object, use the <code class="literal">_id</code> value.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/b6b76e9c-d534-4d0a-ac81-87153169a223"</pre><p>The result should resemble the following JSON object, though all
+   on one line.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+  "displayName": "John Doe",
+  "givenName": "John",
+  "userName": "jdoe",
+  "familyName": "Doe",
+  "description": "Created for OpenIDM",
+  "email": "jdoe@example.com",
+  "_rev": "0",
+  "_id": "b6b76e9c-d534-4d0a-ac81-87153169a223"
+}</pre><p>You can also view users created in the AD suffix with the following
+    <code class="literal">ldapsearch</code> command:</p><pre class="cmdline prettyprint">$ /path/to/OpenDJ/bin/ldapsearch
+ --bindDN "cn=Directory Manager"
+ --bindPassword password
+ --hostname `hostname`
+ --port 4389
+ --baseDN o=AD
+ "(uid=*)"
+
+dn: uid=jdoe,ou=people,o=ad
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+givenName: John
+description: Created for OpenIDM
+uid: jdoe
+cn: John Doe
+sn: Doe
+mail: jdoe@example.com
+</pre></div><div class="section" id="run-sample6-live-sync"><div class="titlepage"><div><div><h4 class="title">3.10.3.2.&nbsp;Using LiveSync</h4></div></div></div><p>You can start reconciliation by using a schedule configuration or 
+    by using the REST interface directly. However, you must start LiveSync 
+    by using a schedule. The sample comes with the following schedule 
+    configuration file for LiveSync in
+    <code class="filename">samples/sample6/conf/schedule-activeSynchroniser_systemLdapAccount.json</code>.
+    </p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "enabled" : false,
+    "type" : "cron",
+    "schedule" : "0/15 * * * * ?",
+    "invokeService" : "provisioner",
+    "invokeContext" : {
+        "action" : "liveSync",
+        "source" : "system/ldap/account"
+    },
+    "invokeLogLevel" : "debug"
+}</pre><p>LiveSync is disabled by default. Activate LiveSync by editing the file,
+    <code class="filename">schedule-activeSynchroniser_systemLdapAccount.json</code>,
+    to change the "enabled" property value to <code class="literal">true</code>. With
+    LiveSync enabled, you can add and change LDAP users, and see the changes in AD
+    as OpenIDM flows the data between resources dynamically.</p></div></div></div><div class="section" id="more-sample7"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.11.&nbsp;Sample 7 - Scripting a SCIM-like Schema</h2></div></div></div><a class="indexterm" name="d2843e1940"></a><p>Sample 7 demonstrates how you can use OpenIDM to expose user data with a
+  SCIM-like schema. The sample uses the XML file connector to read in attributes
+  from external accounts and construct a JSON object for users stored in the
+  OpenIDM repository. For more information about SCIM schema, see <a class="link" href="http://www.simplecloud.info/specs/draft-scim-core-schema-01.html" target="_blank">System for Cross-Domain Identity Management: Core Schema 1.1</a>.</p><div class="section" id="install-sample7"><div class="titlepage"><div><div><h3 class="title">3.11.1.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 7.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample7</pre></div><div class="section" id="run-sample7"><div class="titlepage"><div><div><h3 class="title">3.11.2.&nbsp;Running the Sample</h3></div></div></div><p>Run a reconciliation to pull the user from
+   <code class="filename">samples/sample7/data/xmlConnectorData.xml</code> into the 
+   OpenIDM internal repository.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemXmlfileAccounts_managedUser"</pre><p>Reconciliation creates a user object in the repository. Retrieve the
+   user from the repository.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user/DDOE1"</pre><p>The user object has the following JSON representation.</p><pre class="codelisting prettyprint linenums lang-js">{
+  "groups": [
+    {
+      "display": "US Employees",
+      "value": "usemploys"
+    },
+    {
+      "display": "EU Employees",
+      "value": "euemploys"
+    }
+  ],
+  "addresses": [
+    {
+      "country": "USA",
+      "type": "work",
+      "locality": "Hollywood",
+      "primary": "true",
+      "postalCode": "91608",
+      "formatted": "100 Universal City Plaza\nHollywood, CA 91608 USA",
+      "region": "CA",
+      "streetAddress": "100 Universal City Plaza"
+    },
+    {
+      "country": "USA",
+      "type": "home",
+      "locality": "Hollywood",
+      "primary": "false",
+      "postalCode": "91622",
+      "formatted": "222 Universal City Plaza\nHollywood, CA 91622 USA",
+      "region": "CA",
+      "streetAddress": "222 Universal City Plaza"
+    }
+  ],
+  "displayName": "John Doe",
+  "userName": "DDOE1",
+  "name": {
+    "honorificPrefix": "Dr.",
+    "honorificSuffix": "III",
+    "givenName": "John",
+    "formatted": "Dr. John H Doe III",
+    "middleName": "Hias",
+    "familyName": "Doe"
+  },
+  "externalId": "DDOE1",
+  "emails": [
+    {
+      "primary": true,
+      "value": "hallo@example.com",
+      "type": "work"
+    },
+    {
+      "type": "home",
+      "value": "jdoe@forgerock.com"
+    }
+  ],
+  "phoneNumbers": [
+    {
+      "type": "work",
+      "value": "1234567"
+    },
+    {
+      "type": "home",
+      "value": "1234568"
+    }
+  ],
+  "locale": null,
+  "ims": [
+    {
+      "type": "aim",
+      "value": "jonyOnAim"
+    },
+    {
+      "type": "skype",
+      "value": "skyperHiasl"
+    }
+  ],
+  "schemas": "['urn:scim:schemas:core:1.0']",
+  "_rev": "0",
+  "_id": "DDOE1",
+  "preferredLanguage": "en_US",
+  "meta": {
+    "lastModified": "Tue Dec 04 2012 17:22:56 GMT+0200 (SAST)"
+  },
+  "userType": "permanent",
+  "photos": [
+    {
+      "type": "photo",
+      "value": "https://photos.example.com/profilephoto/72930000000Ccne/F"
+    },
+    {
+      "type": "thumbnail",
+      "value": "https://photos.example.com/profilephoto/72930000000Ccne/T"
+    }
+  ],
+  "title": "Mr.Univers",
+  "timezone": "America/Denver",
+  "profileUrl": "https://login.example.com/DDOE1",
+  "nickName": "Jonny"
+}</pre><p>The sample scripts (<code class="filename">samples/sample7/script/setScim*.js</code>) 
+   transform the user data from the resource into the JSON object layout 
+   required by SCIM schema.</p></div></div><div class="section" id="more-sample8"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.12.&nbsp;Sample 8 - Logging in Scripts</h2></div></div></div><a class="indexterm" name="d2843e1986"></a><p>OpenIDM provides a <code class="literal">logger</code> object with
+  <code class="literal">debug()</code>, <code class="literal">error()</code>,
+  <code class="literal">info()</code>, <code class="literal">trace()</code>, and
+  <code class="literal">warn()</code> functions that you can use to log messages to 
+  the OpenIDM console from your scripts.</p><div class="section" id="install-sample8"><div class="titlepage"><div><div><h3 class="title">3.12.1.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+   then start OpenIDM with the configuration for sample 8.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample8</pre><p>The scripts under <code class="filename">samples/sample8/script/</code>
+   show brief log message examples.</p></div><div class="section" id="run-sample8"><div class="titlepage"><div><div><h3 class="title">3.12.2.&nbsp;Running the Sample</h3></div></div></div><p>Run reconciliation over the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemXmlfileAccounts_managedUser"</pre><p>Successful reconciliation returns an "_id" object.</p><p>Notice the log messages displayed on the OpenIDM (Felix) console.
+   The following example omits timestamps and so forth to show only the message
+   strings.</p><pre>-&gt;
+...Case no Source: the source object contains: = null
+...Case emptySource: the source object contains: = {__UID__=1, email=[mail1@...
+...Case sourceDescription: the source object contains: = Created By XML1
+...Case onCreate: the source object contains: = {__UID__=1, email=[mail1@...
+...Case result: the source object contains: = {UNQUALIFIED={count=0, ids=[]},...
+</pre></div></div><div class="section" id="more-sample9"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.13.&nbsp;Sample 9 - Asynchronous Reconciliation Using Workflows</h2></div></div></div><a class="indexterm" name="d2843e2042"></a><p>Sample 9 demonstrates asynchronous reconciliation using workflows. 
+  Reconciliation generates an approval request for each ABSENT user. The 
+  configuration for this action is defined in the <code class="filename">conf/sync.json</code> 
+  file, which specifies that an <code class="literal">ABSENT</code> condition should 
+  launch the <code class="literal">managedUserApproval</code> workflow:</p><pre class="codelisting prettyprint linenums lang-js">
+...
+                {
+                    "situation" : "ABSENT",
+                    "action" : {
+                        "workflowName" : "managedUserApproval",
+                        "type" : "text/javascript",
+                        "file" : "bin/defaults/script/workflow/workflow.js"
+                    }
+                },
+ ...
+  </pre><p>When the request is approved by an administrator, the absent users are 
+  created by an asynchronous reconciliation process.</p><p>Prepare a fresh installation of OpenIDM before trying this
+  sample.</p><div class="section" id="install-sample9"><div class="titlepage"><div><div><h3 class="title">3.13.1.&nbsp;Install the Sample</h3></div></div></div><p>Prepare OpenIDM as described in <a class="xref" href="#preparing-openidm" title="3.1.2.&nbsp;Preparing OpenIDM">Section&nbsp;3.1.2, &#8220;Preparing OpenIDM&#8221;</a>, 
+     then start OpenIDM with the configuration for sample 9.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+$ ./startup.sh -p samples/sample9</pre></div><div class="section" id="run-sample9"><div class="titlepage"><div><div><h3 class="title">3.13.2.&nbsp;Running the Sample</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Run reconciliation over the REST interface.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ "http://localhost:8080/openidm/recon?_action=recon&amp;mapping=systemXmlfileAccounts_managedUser"
+         </pre><p>Successful reconciliation returns an "_id" object.</p><p>The reconciliation starts an approval workflow for each ABSENT 
+         user. These approval workflows (named <code class="literal">managedUserApproval</code>) 
+         wait for the request to be approved by an administrator.</p></li><li class="listitem"><p>Query the invoked workflow task instances over REST.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/workflow/taskinstance?_queryId=query-all-ids"
+         </pre><p>The request returns a workflow process ID.</p><pre class="cmdline prettyprint">
+{
+  "result": [
+    {
+      "name": "Evaluate request",
+      "_id": "13"
+    }
+  ]
+}
+        </pre></li><li class="listitem"><p>Approve the requests over REST, by setting the 
+         <code class="literal">"requestApproved"</code> parameter for the specified task 
+         instance to <code class="literal">"true"</code>.</p><p>On UNIX:</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ --data '{"requestApproved": "true"}'
+ "http://localhost:8080/openidm/workflow/taskinstance/13?_action=complete"        
+         </pre><p>On Windows:</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request POST
+ --data "{\"requestApproved\": \"true\"}"  
+ "http://localhost:8080/openidm/workflow/taskinstance/13?_action=complete"        
+         </pre><p>A successful call returns the following:</p><pre class="cmdline prettyprint">{"Task action performed":"complete"}</pre></li><li class="listitem"><p>Once the request has been approved, an asynchronous 
+         reconciliation operation runs, which creates the users whose accounts 
+         were approved in the previous step.</p><p>List the users that were created by the asynchronous 
+         reconciliation.</p><pre class="cmdline prettyprint">$ curl
+ --header "X-OpenIDM-Username: openidm-admin"
+ --header "X-OpenIDM-Password: openidm-admin"
+ --request GET
+ "http://localhost:8080/openidm/managed/user?_queryId=query-all-ids"
+         </pre><p>One user is returned.</p><pre class="cmdline prettyprint">
+ {
+  "conversion-time-ms": 0,
+  "result": [
+    {
+      "_rev": "0",
+      "_id": "1"
+    }
+  ],
+  "query-time-ms": 1
+}     
+         </pre></li></ol></div></div></div></div><div lang="en" class="chapter" id="chap-repository"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;4.&nbsp;Installing a Repository For Production</h1></div></div></div><a class="indexterm" name="d2843e2135"></a><p>By default, OpenIDM uses OrientDB for its internal repository so that you
+ do not have to install a database in order to evaluate OpenIDM. Before using
+ OpenIDM in production, however, you must replace OrientDB with a supported
+ repository.</p><p>OpenIDM  supports the use of <a class="link" href="http://dev.mysql.com/downloads/mysql/" target="_blank">MySQL</a> 
+ and MS SQL as an internal repository. For details of the supported versions, 
+ see <a href="../release-notes/index.html#chap-before-you-install" class="link"><em class="citetitle">Before You Install 
+ OpenIDM Software</em></a> in the <em class="citetitle">Release Notes</em>. 
+ </p><div class="procedure" id="repository-mysql"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;4.1.&nbsp;To Set Up OpenIDM With MySQL</div><p>After you have installed MySQL on the local host and <span class="emphasis"><em>before
+      starting OpenIDM for the first time</em></span>, set up OpenIDM to use the
+      new repository, as described in the following sections.</p><ol class="procedure" type="1"><li class="step"><p>Download MySQL Connector/J, version 5.1 or later from the MySQL website.
+   Unpack the delivery, and copy the .jar into the
+   <code class="filename">openidm/bundle</code> directory.</p><pre class="cmdline prettyprint">$ cp mysql-connector-java-<em><strong>version</strong></em>-bin.jar /path/to/openidm/bundle/</pre></li><li class="step"><p>Make sure that OpenIDM is stopped.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm/
+$ ./shutdown.sh
+OpenIDM is not running, not stopping.</pre></li><li class="step"><p>Remove <code class="filename">openidm/conf/repo.orientdb.json</code>.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm/conf/
+$ rm repo.orientdb.json</pre></li><li class="step"><p>Copy <code class="filename">openidm/samples/misc/repo.jdbc.json</code> to the
+   <code class="filename">openidm/conf</code> directory.</p><pre class="cmdline prettyprint">$ cd /path/to/openidm/conf
+$ cp ../samples/misc/repo.jdbc.json .</pre></li><li class="step"><a class="indexterm" name="d2843e2198"></a><p>Import the data definition language script for OpenIDM into
+   MySQL.</p><pre class="cmdline prettyprint">$ ./bin/mysql -u root -p &lt; /path/to/openidm/db/scripts/mysql/openidm.sql
+Enter password:
+$ </pre><p>This step creates an <code class="literal">openidm</code> database for use
+   as the internal repository, and a user <code class="literal">openidm</code> with 
+   password <code class="literal">openidm</code> who has all the required privileges to 
+   update the database.</p><pre class="cmdline prettyprint">$ cd /path/to/mysql
+$ ./bin/mysql -u root -p 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 18
+Server version: 5.5.19 MySQL Community Server (GPL)
+...
+mysql&gt; use openidm;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql&gt; show tables;
++---------------------------+
+| Tables_in_openidm         |
++---------------------------+
+| auditaccess               |
+| auditactivity             |
+| auditrecon                |
+| configobjectproperties    |
+| configobjects             |
+| genericobjectproperties   |
+| genericobjects            |
+| internaluser              |
+| links                     |
+| managedobjectproperties   |
+| managedobjects            |
+| objecttypes               |
+| schedulerobjectproperties |
+| schedulerobjects          |
+| uinotification            |
++---------------------------+
+17 rows in set (0.00 sec)</pre><p>The table names are similar to those used with OrientDB.</p></li><li class="step"><p>Update <code class="filename">openidm/conf/repo.jdbc.json</code> as necessary,
+   to reflect your MySQL deployment.</p><pre class="codelisting prettyprint linenums lang-js">
+"connection" : {
+    "dbType" : "MYSQL",
+    "jndiName" : "",
+    "driverClass" : "com.mysql.jdbc.Driver",
+    "jdbcUrl" : "jdbc:mysql://localhost:3306/openidm",
+    "username" : "openidm",
+    "password" : "openidm",
+    "defaultCatalog" : "openidm",
+    "maxBatchSize" : 100,
+    "maxTxRetry" : 5,
+    "enableConnectionPool" : true 
+},</pre></li></ol></div></div><p>When you have set up MySQL for use as the OpenIDM internal repository,
+    start OpenIDM to check that the setup has been successful. After startup,
+    you should see that <code class="literal">repo.jdbc</code> is <code class="literal">active</code>,
+    whereas <code class="literal">repo.orientdb</code> is <code class="literal">unsatisfied</code>.
+    </p><pre class="cmdline prettyprint">$ cd /path/to/openidm
+        $ ./startup.sh
+        Using OPENIDM_HOME:   /path/to/openidm
+        Using OPENIDM_OPTS:   -Xmx1024m
+        Using LOGGING_CONFIG:
+        -Djava.util.logging.config.file=/path/to/openidm/conf/logging.properties
+        Using boot properties at /path/to/openidm/conf/boot/boot.properties
+        -&gt; scr list
+        Id   State          Name
+        [  19] [active       ] org.forgerock.openidm.config.starter
+        [  23] [active       ] org.forgerock.openidm.taskscanner
+        [   8] [active       ] org.forgerock.openidm.external.rest
+        [  12] [active       ] org.forgerock.openidm.provisioner.openicf.connectorinfoprovider
+        [  15] [active       ] org.forgerock.openidm.ui.simple
+        [   1] [active       ] org.forgerock.openidm.router
+        [  22] [active       ] org.forgerock.openidm.scheduler
+        [  14] [active       ] org.forgerock.openidm.restlet
+        [   7] [unsatisfied  ] org.forgerock.openidm.external.email
+        [  18] [unsatisfied  ] org.forgerock.openidm.repo.orientdb
+        [   6] [active       ] org.forgerock.openidm.sync
+        [   3] [active       ] org.forgerock.openidm.script
+        [   5] [active       ] org.forgerock.openidm.recon
+        [   2] [active       ] org.forgerock.openidm.scope
+        [  10] [active       ] org.forgerock.openidm.http.contextregistrator
+        [  20] [active       ] org.forgerock.openidm.config
+        [   0] [active       ] org.forgerock.openidm.audit
+        [  21] [active       ] org.forgerock.openidm.schedule
+        [  17] [active       ] org.forgerock.openidm.repo.jdbc
+        [  16] [active       ] org.forgerock.openidm.workflow
+        [  13] [active       ] org.forgerock.openidm.provisioner.openicf
+        [   4] [active       ] org.forgerock.openidm.managed
+        [   9] [active       ] org.forgerock.openidm.authentication
+        [  11] [active       ] org.forgerock.openidm.provisioner</pre><div class="procedure" id="repository-mssql"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;4.2.&nbsp;To Set Up OpenIDM With MS SQL</div><p>These instructions are specific to MS SQL Server 2008 R2 Express
+     running on a local Windows XP system. Adapt the instructions for your
+     environment.</p><div class="itemizedlist"><p>When you install MS SQL Server, note that OpenIDM has the
+             following specific configuration requirements:</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>OpenIDM requires SQL Server authentication. During the
+                 MS SQL Server installation, make sure that you select SQL
+                 Server authentication and not just Windows authentication.
+             </p></li><li class="listitem"><p>During the Feature Selection installation step, make sure
+                 that at least SQL Server Replication, Full Text Search, and
+                 Management Tools - Basic are selected.</p><p>These instructions require SQL Management Studio so make sure that
+                 you include Management Tools in the installation.</p></li><li class="listitem"><p>TCP/IP must be enabled and configured for the correct IP 
+             address and port. To configure TCP/IP, follow these steps:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click Start &gt; All Programs &gt; MS SQL Server 2008 R2 &gt;
+                         Configuration Tools &gt; SQL Server Configuration Manager</p></li><li class="listitem"><p>Expand the SQL Server Network Configuration item and select
+                     "Protocols for SQLEXPRESS"</p></li><li class="listitem"><p>Double click TCP/IP and select Enabled &gt; Yes</p></li><li class="listitem"><p>Select the IP Adresses tab and set the addresses and
+                     ports on which the server will listen.</p><p>For this sample procedure, scroll down to IPAll and set
+                     TCP Dynamic Ports to 1433 (the default port for MS SQL). </p></li><li class="listitem"><p>Click Apply, then OK.</p></li><li class="listitem"><p>Restart MS SQL Server for the configuration changes to
+                     take effect. To restart the server, select SQL Server Services
+                     in the left pane, double click SQL Server (SQLEXPRESS) and click
+                     Restart.</p></li><li class="listitem"><p>If you have a firewall enabled, ensure that the port
+                     you configured in the previous step is open for OpenIDM to
+                     access MS SQL.</p></li></ol></div></li></ul></div><p>After you have installed MS SQL on the local host, install OpenIDM,
+     if you have not already done so, but <span class="emphasis"><em>do not start</em></span>
+     the OpenIDM instance. Import the data definition and set up OpenIDM to
+     use the new repository, as described in the following steps.</p><ol class="procedure" type="1"><li class="step"><p>Use SQL Management Studio to import the data definition language
+             script for OpenIDM into MS SQL.</p><ol type="a" class="substeps"><li class="step"><p>Click Start &gt; All Programs &gt; MS SQL Server 2008 R2 &gt;
+                     SQL Server Management Studio</p></li><li class="step"><p>On the Connect to Server panel, select SQL Server
+                 Authentication from the Authentication drop down list and log
+                 in as the current user (for example, Administrator).</p></li><li class="step"><p>Select File &gt; Open &gt; File and navigate to the OpenIDM
+                 data definition language script (
+                 <code class="filename">path\to\openidm\db\scripts\mssql\openidm.sql</code>).
+                 Click Open to open the file.</p></li><li class="step"><p>Click Execute to run the script.</p></li></ol></li><li class="step"><p>This step creates an <code class="literal">openidm</code> database for use
+         as the internal repository, and a user <code class="literal">openidm</code> with
+         password <code class="literal">Passw0rd</code> who has all the required privileges
+         to update the database. You might need to refresh the view in SQL Server
+         Management Studio to see the <code class="literal">openidm</code> database in the
+         Object Explorer.</p><p>Expand Databases &gt; openidm &gt; Tables. You should see the following
+         tables in the openidm database:</p><div class="mediaobject" align="center"><a class="fancybox" href="images/sql-tables.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_sql-tables.png" align="middle" alt="Default tables in the openidm MS SQL database"></a></div><p>The table names are similar to those used with OrientDB.</p></li><li class="step"><p>OpenIDM requires an MS SQL driver that must be created from two
+         separate jar files. Create the driver as follows.</p><ol type="a" class="substeps"><li class="step"><p>Download the JDBC Driver 4.0 for SQL Server
+                 (<code class="filename">sqljdbc_4.0.2206.100_enu.tar.gz</code>) from
+                 <a class="link" href="http://www.microsoft.com/en-us/download/details.aspx?id=11774" target="_top">Microsoft's download site</a>.
+                 The precise URL may vary, depending on your location.</p><p>Extract the executable Java archive file
+                 (<code class="filename">sqljdbc4.jar</code>) from the zip file, using
+                 7-zip or an equivalent file management application.</p><p>Copy the file to <code class="filename">openidm\db\scripts\mssql</code>.</p></li><li class="step"><p>Download the <code class="literal">bnd</code> Java archive file
+                 (<code class="filename">biz.aQute.bnd.jar</code>) that enables you
+                 to create OSGi bundles. The file can be downloaded from
+                 <a class="link" href="http://dl.dropbox.com/u/2590603/bnd/biz.aQute.bnd.jar" target="_top">http://dl.dropbox.com/u/2590603/bnd/biz.aQute.bnd.jar</a>. For
+                 more information about <code class="literal">bnd</code>, see
+                 <a class="link" href="http://www.aqute.biz/Bnd/Bnd" target="_top">http://www.aqute.biz/Bnd/Bnd</a>.
+                 </p><p>Copy the file to <code class="filename">openidm\db\scripts\mssql</code>.</p></li><li class="step"><p>Your <code class="filename">openidm\db\scripts\mssql</code> directory
+                 should now contain the following files:</p><pre class="cmdline prettyprint">.\&gt; ls \path\to\openidm\db\scripts\mssql
+ biz.aQute.bnd.jar  openidm.sql  sqljdbc4.bnd  sqljdbc4.jar
+                 </pre></li><li class="step"><p>Bundle the two jar files together with the following
+                 command:</p><pre class="cmdline prettyprint">C:\&gt; cd \path\to\openidm\db\scripts\mssql
+./&gt; java -jar biz.aQute.bnd.jar wrap -properties sqljdbc4.bnd sqljdbc4.jar</pre><p>This step creates a single <code class="literal">.bar</code> file,
+                 named <code class="filename">sqljdbc4.bar</code>.</p></li><li class="step"><p>Rename the <code class="filename">sqljdbc4.bar</code> file to
+                 <code class="filename">sqljdbc4-osgi.jar</code> and copy it to the
+                 <code class="filename">openidm\bundle</code> directory.</p><pre class="cmdline prettyprint">./&gt; mv sqljdbc4.bar sqljdbc4-osgi.jar
+./&gt; cp sqljdbc4-osgi.jar \path\to\openidm\bundle</pre></li></ol></li><li class="step"><p>Remove the default OrientDB repository configuration file
+         (<code class="filename">openidm\conf\repo.orientdb.json</code>) from the
+         configuration directory.</p><pre class="cmdline prettyprint">C:\&gt; cd \path\to\openidm\conf\
+.\&gt; del repo.orientdb.json</pre></li><li class="step"><p>Copy the repository configuration file for MS SQL
+         (<code class="filename">openidm\samples\misc\repo.jdbc.json</code>) to the
+         configuration directory.</p><pre class="cmdline prettyprint">C:\&gt; cd \path\to\openidm\conf\
+.\&gt; cp ..\samples\misc\repo.jdbc-mssql.json .</pre></li><li class="step"><p>Rename the MS SQL repository configuration file to
+         <code class="filename">repo.jdbc.json</code>.</p><pre class="cmdline prettyprint">.\&gt; mv repo.jdbc-mssql.json repo.jdbc.json</pre></li><li class="step"><p>Update <code class="filename">openidm\conf\repo.jdbc.json</code> as necessary,
+             to reflect your MS SQL deployment.</p><pre class="codelisting prettyprint linenums lang-js">
+{
+    "connection" : {
+        "dbType" : "SQLSERVER",
+        "jndiName" : "",
+        "driverClass" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+        "jdbcUrl" : "jdbc:sqlserver://localhost:1433;instanceName=default;databaseName=openidm;applicationName=OpenIDM",
+        "username" : "openidm",
+        "password" : "Passw0rd",
+        "defaultCatalog" : "openidm",
+        "maxBatchSize" : 100,
+        "maxTxRetry" : 5,
+        "enableConnectionPool" : true
+    },
+...
+         </pre><p>Specifically, check that the port matches what you have configured
+         in MS SQL.
+         </p></li></ol></div></div><p>When you have completed the preceding steps, start OpenIDM to check that
+        the setup has been successful. After startup, you should see that
+        <code class="literal">repo.jdbc</code> is <code class="literal">active</code>,
+        whereas <code class="literal">repo.orientdb</code> is <code class="literal">unsatisfied</code>.
+    </p><pre class="cmdline prettyprint">C:&gt; cd \path\to\openidm
+        ./&gt; startup.bat
+        "Using OPENIDM_HOME:   \path\to\openidm"
+        "Using OPENIDM_OPTS:   -Xmx1024m"
+        "Using LOGGING_CONFIG:
+        -Djava.util.logging.config.file=\path\to\openidm\conf\logging.properties"
+        Using boot properties at \path\to\openidm\conf\boot\boot.properties
+        -&gt; scr list
+        Id   State          Name
+        [  19] [active       ] org.forgerock.openidm.config.starter
+        [  23] [active       ] org.forgerock.openidm.taskscanner
+        [   8] [active       ] org.forgerock.openidm.external.rest
+        [  12] [active       ] org.forgerock.openidm.provisioner.openicf.connectorinfoprovider
+        [  15] [active       ] org.forgerock.openidm.ui.simple
+        [   1] [active       ] org.forgerock.openidm.router
+        [  22] [active       ] org.forgerock.openidm.scheduler
+        [  14] [active       ] org.forgerock.openidm.restlet
+        [   7] [unsatisfied  ] org.forgerock.openidm.external.email
+        [  18] [unsatisfied  ] org.forgerock.openidm.repo.orientdb
+        [   6] [active       ] org.forgerock.openidm.sync
+        [   3] [active       ] org.forgerock.openidm.script
+        [   5] [active       ] org.forgerock.openidm.recon
+        [   2] [active       ] org.forgerock.openidm.scope
+        [  10] [active       ] org.forgerock.openidm.http.contextregistrator
+        [  20] [active       ] org.forgerock.openidm.config
+        [   0] [active       ] org.forgerock.openidm.audit
+        [  21] [active       ] org.forgerock.openidm.schedule
+        [  17] [active       ] org.forgerock.openidm.repo.jdbc
+        [  16] [active       ] org.forgerock.openidm.workflow
+        [  13] [active       ] org.forgerock.openidm.provisioner.openicf
+        [   4] [active       ] org.forgerock.openidm.managed
+        [   9] [active       ] org.forgerock.openidm.authentication
+        [  11] [active       ] org.forgerock.openidm.provisioner</pre></div><div lang="en" class="chapter" id="chap-uninstall"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;5.&nbsp;Removing and Moving OpenIDM Software</h1></div></div></div><a class="indexterm" name="d2843e2473"></a><p>This chapter shows you how to uninstall OpenIDM software and to move 
+ an existing install to a different location.</p><div class="procedure" id="d2843e2478"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.1.&nbsp;To Remove OpenIDM Software</div><ol class="procedure" type="1"><li class="step"><p>Stop OpenIDM services if they are running, by entering
+   <code class="literal">shutdown</code> at the <code class="literal">-&gt;</code> prompt either
+   on the command line, or on the System Information tab of the Felix
+   console.</p><pre class="cmdline prettyprint">-&gt; shutdown</pre></li><li class="step"><p>Remove the file system directory where you installed OpenIDM
+   software.</p><pre class="cmdline prettyprint">$ rm -rf /path/to/openidm</pre></li><li class="step"><p>If you use a JDBC database for the internal repository, you can
+   drop the <code class="literal">openidm</code> database.</p></li></ol></div></div><div class="procedure" id="d2843e2503"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;5.2.&nbsp;To Move OpenIDM Software</div><p>If you want to move OpenIDM to a different directory, you do not have 
+ to uninstall and reinstall. To move an existing OpenIDM instance, follow these 
+ steps:</p><ol class="procedure" type="1"><li class="step"><p>Shutdown OpenIDM, as described in <a href="../install-guide/index.html#stop-openidm" class="link">
+     <em class="citetitle">To Stop the OpenIDM Services</em></a>.</p></li><li class="step"><p>Remove the <code class="filename">felix-cache</code> directory.</p><pre class="cmdline prettyprint">$ cd path/to/openidm
+$ rm -rf felix-cache
+     </pre></li><li class="step"><p>Move the files.</p><pre class="cmdline prettyprint">
+$ mv path/to/openidm path/to/new-openidm</pre></li><li class="step"><p>Start OpenIDM in the new location.</p><pre class="cmdline prettyprint">$ cd path/to/new-openidm
+$ ./startup.sh
+     </pre></li></ol></div></div></div><div lang="en" class="glossary" id="openidm-glossary"><div class="titlepage"><div><div><h1 class="title">OpenIDM Glossary</h1></div></div></div><dl><dt><span class="glossterm">JSON</span></dt><dd class="glossdef"><p>JavaScript Object Notation, a lightweight data interchange format 
+  based on a subset of JavaScript syntax. For more information, see the 
+  <a class="link" href="http://www.json.org" target="_blank">JSON</a> site.</p></dd><dt><span class="glossterm">managed object</span></dt><dd class="glossdef"><p>An object that represents the identity-related data managed by OpenIDM. 
+  Managed objects are configurable, JSON-based data structures that OpenIDM 
+  stores in its pluggable repository. The default configuration of a managed 
+  object is that of a user, but you can define any kind of managed object, for 
+  example, groups or roles.</p></dd><dt><span class="glossterm">mapping</span></dt><dd class="glossdef"><p>A policy that is defined between a source object and a target object 
+  during reconciliation or synchronization. A mapping can also define a trigger 
+  for validation, customization, filtering, and transformation of source and 
+  target objects.</p></dd><dt><span class="glossterm">OSGi</span></dt><dd class="glossdef"><p>A module system and service platform for the Java programming language 
+  that implements a complete and dynamic component model. For a good 
+  introduction, see the <a class="link" href="http://www.osgi.org/About/WhyOSGi" target="_blank">OSGi</a> site. OpenIDM 
+  services are designed to run in any OSGi container, but OpenIDM currently 
+  runs in <a class="link" href="http://felix.apache.org/site/index.html" target="_blank">Apache Felix</a>.</p></dd><dt><span class="glossterm">reconciliation</span></dt><dd class="glossdef"><p>During reconciliation, comparisons are made between managed objects 
+  and objects on source or target systems. Reconciliation can result in one 
+  or more specified actions, including, but not limited to, synchronization.
+  </p></dd><dt><span class="glossterm">resource</span></dt><dd class="glossdef"><p>An external system, database, directory server, or other source of 
+  identity data to be managed and audited by the identity management system.
+  </p></dd><dt id="gloss-rest"><span class="glossterm">REST</span></dt><dd class="glossdef"><p>Representational State Transfer. A software architecture style for 
+  exposing resources, using the technologies and protocols of the World Wide Web. 
+  REST describes how distributed data objects, or resources, can be defined and 
+  addressed.
+  </p></dd><dt><span class="glossterm">source object</span></dt><dd class="glossdef"><p>In the context of reconciliation, a source object is a data object on 
+  the source system, that OpenIDM scans before attempting to find a 
+  corresponding object on the target system. Depending on the defined mapping, 
+  OpenIDM then adjusts the object on the target system (target object).</p></dd><dt><span class="glossterm">synchronization</span></dt><dd class="glossdef"><p>The synchronization process creates, updates, or deletes objects on a 
+  target system, based on the defined mappings from the source system. 
+  Synchronization can be scheduled or on demand.</p></dd><dt><span class="glossterm">system object</span></dt><dd class="glossdef"><p>A pluggable representation of an object on an external system. For 
+  example, a user entry that is stored in an external LDAP directory is 
+  represented as a system object in OpenIDM for the period during which 
+  OpenIDM requires access to that entry.System objects follow the same 
+  RESTful resource-based design principles as managed objects.</p></dd><dt><span class="glossterm">target object</span></dt><dd class="glossdef"><p>In the context of reconciliation, a target object is a data object on 
+  the target system, that OpenIDM scans after locating its corresponding object 
+  on the source system. Depending on the defined mapping, OpenIDM then adjusts 
+  the target object to match the corresponding source object.</p></dd></dl></div><div class="index" id="d2843e2613"><div class="titlepage"><div><div><h1 class="title">Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>A</h3><dl><dt id="ientry-d2843e284">Application container</dt><dd><dl><dt>Requirements, <a class="indexterm" href="#application-container-prerequisites">Application Container</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>D</h3><dl><dt id="ientry-d2843e316">Downloading, <a class="indexterm" href="#installing-openidm">Installing and Running OpenIDM</a></dt></dl></div><div class="indexdiv"><h3>G</h3><dl><dt id="ientry-d2843e454">Getting started, <a class="indexterm" href="#installing-openidm">Installing and Running OpenIDM</a>, <a class="indexterm" href="#chap-sample">First OpenIDM Sample</a></dt></dl></div><div class="indexdiv"><h3>I</h3><dl><dt id="ientry-d2843e299">Installing, <a class="indexterm" href="#installing-openidm">Installing and Running OpenIDM</a></dt><dd><dl><dt>Samples, <a class="indexterm" href="#install-samples">Installing the Samples</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>J</h3><dl><dt id="ientry-d2843e272">Java</dt><dd><dl><dt>Requirements, <a class="indexterm" href="#java-prerequisites">Java Environment</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>R</h3><dl><dt id="ientry-d2843e351">Repository database</dt><dd><dl><dt>Evaluation version, <a class="indexterm" href="#chap-sample">First OpenIDM Sample</a></dt><dt>Production ready, <a class="indexterm" href="#chap-repository">Installing a Repository For Production</a></dt><dt>Requirements, <a class="indexterm" href="#installing-openidm">Installing and Running OpenIDM</a></dt><dt>Table names, <a class="indexterm" href="#chap-repository">Installing a Repository For Production</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-d2843e585">Samples</dt><dd><dl><dt>Sample 1 - XML file, <a class="indexterm" href="#chap-sample">First OpenIDM Sample</a></dt><dt>Sample 2 - LDAP one way, <a class="indexterm" href="#more-sample2">Sample 2 - LDAP One Way</a></dt><dt>Sample 2b - LDAP two way, <a class="indexterm" href="#more-sample2b">Sample 2b - LDAP Two Way</a></dt><dt>Sample 2c - Synchronizing LDAP Group Membership, <a class="indexterm" href="#more-sample2c">Sample 2c - Synchronizing LDAP Group Membership</a></dt><dt>Sample 2d - Synchronizing LDAP Groups, <a class="indexterm" href="#more-sample2d">Sample 2d - Synchronizing LDAP Groups</a></dt><dt>Sample 3 - Scripted SQL, <a class="indexterm" href="#more-sample3">Sample 3 - Scripted SQL</a></dt><dt>Sample 4 - CSV file, <a class="indexterm" href="#more-sample4">Sample 4 - CSV File</a></dt><dt>Sample 5 - Synchronization of two resources, <a class="indexterm" href="#more-sample5">Sample 5 - Synchronization of Two Resources</a></dt><dt>Sample 6 - LiveSync between two LDAP servers, <a class="indexterm" href="#more-sample6">Sample 6 - LiveSync Between Two LDAP Servers</a></dt><dt>Sample 7 - Scripting a SCIM-like Schema, <a class="indexterm" href="#more-sample7">Sample 7 - Scripting a SCIM-like Schema</a></dt><dt>Sample 8 - Logging in Scripts, <a class="indexterm" href="#more-sample8">Sample 8 - Logging in Scripts</a></dt><dt>Sample 9 - asynchronous reconciliation, <a class="indexterm" href="#more-sample9">Sample 9 - Asynchronous Reconciliation Using Workflows</a></dt></dl></dd><dt id="ientry-d2843e367">Starting OpenIDM, <a class="indexterm" href="#installing-openidm">Installing and Running OpenIDM</a></dt><dt id="ientry-d2843e547">Stopping OpenIDM, <a class="indexterm" href="#installing-openidm">Installing and Running OpenIDM</a></dt></dl></div><div class="indexdiv"><h3>U</h3><dl><dt id="ientry-d2843e2473">Uninstalling, <a class="indexterm" href="#chap-uninstall">Removing and Moving OpenIDM Software</a></dt></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
+              2011-2013&nbsp;
+              ForgeRock AS;&nbsp;
+              &nbsp;
+              &nbsp;
+          </span></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
