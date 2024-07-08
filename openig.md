@@ -1,6 +1,6 @@
 ---
 layout: docs
 product: OpenIG
-permalink: openig/
+permalink: /openig/
 ---
 {% include product-docs-page.html%}

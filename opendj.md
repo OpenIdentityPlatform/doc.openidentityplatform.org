@@ -1,6 +1,6 @@
 ---
 layout: docs
 product: OpenDJ
-permalink: opendj/
+permalink: /opendj/
 ---
 {% include product-docs-page.html%}

@@ -1,6 +1,6 @@
 ---
 layout: docs
 product: OpenIDM
-permalink: openidm/
+permalink: /openidm/
 ---
 {% include product-docs-page.html%}

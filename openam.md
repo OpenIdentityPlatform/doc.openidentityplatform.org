@@ -1,6 +1,6 @@
 ---
 layout: docs
 product: OpenAM
-permalink: openam/
+permalink: /openam/
 ---
 {% include product-docs-page.html%}
