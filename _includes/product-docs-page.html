@@ -1,0 +1,9 @@
+<div class="container px-4 py-5" id="custom-cards">
+    <div class="row justify-content-left">
+        {% for product in site.data.products %}
+        {% if product.name == page.product %}
+        {% include product-docs-card.html%}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
