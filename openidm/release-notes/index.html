@@ -1,0 +1,1186 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+   /*
+* The contents of this file are subject to the terms of the Common Development and
+* Distribution License (the License). You may not use this file except in compliance with the
+* License.
+*
+* You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+* specific language governing permission and limitations under the License.
+*
+* When distributing Covered Software, include this CDDL Header Notice in each file and include
+* the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+* Header, with the fields enclosed by brackets [] replaced by your own identifying
+* information: "Portions copyright [year] [name of copyright owner]".
+*
+* Copyright 2015 ForgeRock AS.
+* Portions copyright 2024 3A Systems LLC.
+*/
+
+/***********************************/
+/* Imported Styles
+/***********************************/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css);
+/* @import url(https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css); */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/example1/colorbox.css);
+
+/***********************************/
+/* General Styles
+/***********************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Dark Grey */
+
+    color: #2a2f32;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+
+a {
+    /* Sea Green */
+    color: #519387;
+}
+
+a.link[href^="http"] {
+    background-image: url("includes/logos/Icon_External_Link.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    margin-right: 2px;
+}
+
+a.self-link, a.self-link:hover, a.self-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href].self-link:hover::after
+{
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e144";
+    color: #519387;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-size: 75%;
+    font-style: normal;
+    line-height: 1;
+    padding-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: decimal !important
+}
+
+.section,
+.chapter,
+.preface,
+.glossary,
+.refentry,
+.reference,
+.appendix,
+.index,
+.titlepage h2,
+.titlepage h3,
+.titlepage h4,
+.titlepage h5 {
+    padding-top: 60px;
+    margin-top: -50px;
+}
+
+.left-shape-content {
+    background: url("includes/logos/left-shape-4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 566px;
+    position: fixed;
+    width: 57px;
+    top: 60%;
+    z-index: -1;
+}
+
+/***********************************/
+/* Bootstrap Override Styles
+/***********************************/
+
+/* Button Styles */
+
+.btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+
+.btn-default {
+    background-color: #A1A8AD;
+    border-color: #8a9298;
+    color: #ffffff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-color: #3f4b54;
+    border-color: #1B2025;
+    color: #ffffff;
+}
+
+/* Tooltip Styles */
+
+.tooltip.in {
+    opacity: 0.95;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #519387;
+}
+
+.tooltip-inner {
+    background-color: #519387;
+}
+
+/* List Styles */
+
+.dl-horizontal dt {
+    white-space: normal;
+    padding: 0 3px 0 0;
+    width: 200px;
+}
+
+.dl-horizontal dd {
+    border-bottom: 1px dotted rgb(125, 179, 168);
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin-bottom: 18px;
+    margin-left: 210px;
+}
+
+.dl-horizontal {
+    border-top: 1px dotted rgb(125, 179, 168);
+    border-top: 1px dotted rgba(125, 179, 168, 0.9);
+    padding-top: 10px;
+}
+
+.variablelist dt {
+    margin: 18px 0 5px 15px;
+}
+
+.variablelist dd {
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin: 5px 0 5px 30px;
+}
+
+.variablelist > dl {
+    border-top: 1px dotted rgba(125, 179, 168, 0.8);
+}
+
+
+/***********************************/
+/* Redirect Page Styles
+/***********************************/
+
+.index-redirect,
+.index-redirect body {
+    height: 100%;
+    background-color: #333;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+.index-redirect body {
+    color: #fff;
+    text-align: center;
+}
+.index-redirect .container {
+    display: table;
+    vertical-align: middle;
+    height: 100%;
+}
+.index-redirect .btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+.index-redirect .cover-heading {
+    font-weight: 400 !important;
+}
+.index-redirect .vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/***********************************/
+/* Header Styles
+/***********************************/
+
+.navbar-brand {
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand > img {
+    height: 100%;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    box-shadow: 0 0 10px 2px #111;
+}
+.nav > li > a {
+    font-weight: 200;
+}
+
+/***********************************/
+/* Banner Styles
+/***********************************/
+
+.jumbotron {
+    /* Sea Green */
+    background: url("includes/logos/hero-bg-01.png") no-repeat scroll left top #519387;
+    color: white;
+    box-shadow: 0 0 10px 2px grey;
+    margin-top: 50px;
+    padding: 0 0 10px;
+}
+.jumbotron small {
+    color: white;
+}
+.jumbotron p {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.jumbotron h1 {
+    font-size: 23px !important;
+    font-weight: 300 !important;
+}
+
+/***********************************/
+/* Table of Contents Styles
+/***********************************/
+
+#sidebar .nav>li>a {
+    /* Light Grey */
+
+    color: #777;
+    border-left: 4px solid transparent;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+/* nested links */
+
+#sidebar .nav .nav>li>a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+/* nested nested links */
+
+#sidebar .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 50px;
+    padding-top: 4px;
+}
+/* nested nested nested links */
+
+#sidebar .nav .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 70px;
+    padding-top: 4px;
+}
+/* active and hover links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.locked-active>a,
+#sidebar .nav>li>a:hover,
+#sidebar .nav>li>a:focus {
+    text-decoration: none;
+    /*
+    background-color: rgb(125, 179, 168, 0.8);
+    background-color: rgba(125, 179, 168, 0.8);
+    border-color: rgb(45, 52, 55, 0.8);
+    border-color: rgba(45, 52, 55, 0.8);
+    color: white;
+    */
+    /* Bright Yellow */
+
+    background-color: #eeea07;
+    border-color: #eeea07;
+    /* Grey */
+
+    color: #2a2f32;
+}
+/* all active links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.active:hover>a,
+#sidebar .nav>.active:focus>a {
+    font-weight: 600;
+}
+/* nested active links */
+
+#sidebar .nav .nav>.active>a,
+#sidebar .nav .nav>.active:hover>a,
+#sidebar .nav .nav>.active:focus>a {
+    font-weight: 400;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* hide all (inactive) nested list */
+
+#sidebar .nav ul.nav {
+    display: none;
+}
+/* show active nested list */
+
+#sidebar .nav>.active>ul.nav {
+    display: block;
+}
+#sidebar.affix {
+    top: 66px;
+    position: fixed;
+    bottom: 30px;
+    height: auto;
+    overflow-y: scroll;
+}
+#sidebar.affix-bottom {
+    position: absolute;
+}
+
+/***********************************/
+/* Content Styles
+/***********************************/
+
+/* Main Content Styles */
+
+h1 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+
+h1 span {
+    margin-right: .3em;
+}
+
+#doc-content h1,
+#doc-content .h1 {
+    /* Sea Green */
+    border-bottom: 2px solid #70ab9b;
+    font-size: 36px;
+    margin-top: 24px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+h5, .h5 {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    padding-bottom: 4px;
+    font-style: italic;
+}
+
+.anchorjs-link .anchorjs-icon {
+    color: #A1A8AD;
+    text-decoration: none;
+}
+.anchorjs-link:hover .anchorjs-icon {
+    color: #519387;
+    text-decoration: none;
+}
+
+h1:hover > .anchorjs-link,
+h2:hover > .anchorjs-link,
+h3:hover > .anchorjs-link,
+h4:hover > .anchorjs-link,
+h5:hover > .anchorjs-link,
+.anchorjs-link:focus {
+    opacity: 1 !important;
+    transition: color 0.16s linear 0s;
+    text-decoration: none;
+}
+
+.chapter > p:first-of-type,
+.preface > p:first-of-type {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+#doc-content {
+    padding: 0 20px 85px 10px;
+}
+
+div.procedure, div.table {
+    margin-top:-50px;
+    padding-top: 60px;
+}
+
+div.procedure-title, div.table-title {
+    margin: 6px 0 8px;
+}
+
+div.procedure-inner {
+    border-color: lightslategray;
+    border-left: 6px solid lightslategray;
+    border-style: dotted dotted dotted solid;
+    border-width: 1px 1px 1px 6px;
+    margin: 15px 0 10px;
+    padding: 10px 15px 10px 10px;
+}
+
+.author {
+    display: inline;
+}
+
+.table {
+    font-size: 14px;
+}
+
+div.simplelist {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Title Styles */
+
+.procedure-title > a, .procedure-title > a:hover {
+    color: lightslategray;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.itemizedlist-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+.figure-title {
+    font-weight: bold;
+    margin: 16px 0 4px;
+    text-align: center;
+}
+
+.table-title {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.variablelist-title {
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+/* Code Styles */
+
+.btn-copy-cmdline,
+.btn-copy-codelisting {
+    /* White */
+
+    background-color: #fff;
+    /* Light Grey */
+
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px;
+    color: #777;
+    display: block;
+    font-size: 12px;
+    padding: 5px 8px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+
+pre.prettyprint {
+    border: 1px solid #ccc;
+    padding: 9.5px;
+    font-size: 12px;
+}
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+.zeroclipboard-is-hover {
+    /* Light Sea Green */
+
+    background-color: #6faa9b;
+    border-color: #6faa9b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ui-effects-transfer {
+    border: 1px dotted black;
+    background-color: yellow;
+    opacity: 0.4;
+}
+
+/* Modal Dialog Styles */
+
+#doc-content .modal h1.title {
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    margin: 14px 0 5px;
+}
+#doc-content .modal h2.subtitle {
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    margin-bottom: 26px;
+}
+#doc-content .modal h3.author {
+    font-size: 14px !important;
+    font-style: italic;
+    font-weight: 100 !important;
+    margin: 4px 0 5px 18px;
+}
+#doc-content .modal .affiliation .orgname {
+    display: block;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    margin: 20px 0 0 0;
+}
+#doc-content .modal .affiliation .address p {
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    margin: 4px 0;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .abstract .abstract-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+#doc-content .modal .abstract > p {
+    margin: 10px 0 5px 20px;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+}
+
+/* Image Styles */
+
+.fancybox > img {
+    cursor: zoom-in;
+}
+a.fancybox {
+    text-decoration: none;
+}
+
+#cboxTitle {
+    color: #519387;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#cboxOverlay{
+    background: none repeat scroll 0 0 rgba(66, 130, 116, 0.6);
+}
+
+img.img-responsive {
+    margin-bottom: 20px;
+}
+
+/* Index Styles */
+
+.indexdiv > h3 {
+    border-bottom: 2px dotted lightgrey;
+    padding-bottom: 5px;
+}
+.indexdiv > dl {
+    margin-left: 30px;
+}
+.indexdiv dl {
+    margin-bottom: 5px;
+}
+.indexdiv dt {
+    margin: 5px 0 2px;
+}
+.indexdiv dd {
+    margin-left: 35px;
+}
+.indexdiv .indexterm {
+    font-weight: 200;
+}
+
+/* Reference Styles */
+
+.refnamediv h2 {
+    display: none;
+}
+
+.refsect1 h2,
+.refsynopsisdiv h2 {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.refnamediv p {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+/***********************************/
+/* Footer Styles
+/***********************************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    display: none;
+    z-index: 15;
+}
+
+#footer {
+    display: none;
+}
+
+.footer {
+    /* Light Grey */
+    background-color: #f5f5f5;
+
+    /* Medium Grey */
+    border-top: 1px solid #ACB5BD;
+    bottom: 0;
+    font-size: 12px;
+    height: 30px;
+    padding-top: 4px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer h3 {
+    margin: 0;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer-item {
+    line-height: 22px;
+    margin-left: 10px;
+}
+
+.footer-item.highlighted {
+    /* Orange */
+    color: #f7a540;
+}
+
+.footer-item.highlighted:hover {
+    /* Dark Orange */
+    color: #c97208;
+}
+
+.footer span {
+    /* Grey */
+    color: #2a2f32;
+    margin-bottom: 0;
+}
+
+.footer .footer-left {
+    float: left;
+}
+
+.footer .footer-right {
+    float: right;
+}
+
+/***********************************/
+
+  </style><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenIDM Release Notes</title><script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script><script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Notes covering OpenIDM software requirements, fixes, compatibility issues, and known issues. The OpenIDM project offers flexible, open source services for automating management of the identity life cycle."><script type="text/javascript">
+     /*
+ * The contents of this file are subject to the terms of the Common Development and
+ * Distribution License (the License). You may not use this file except in compliance with the
+ * License.
+ *
+ * You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ * specific language governing permission and limitations under the License.
+ *
+ * When distributing Covered Software, include this CDDL Header Notice in each file and include
+ * the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ * Header, with the fields enclosed by brackets [] replaced by your own identifying
+ * information: "Portions copyright [year] [name of copyright owner]".
+ *
+ * Copyright 2015 ForgeRock AS.
+ */
+
+//
+
+var loadJavaScriptsFN = function () {
+    $.ajaxSetup({ cache: true });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js", function () { prettyPrint() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function () {enableZeroClipboardFN() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox-min.js", function () { enableColorboxFN() });
+};
+
+var wrapConfigurablesFn = function () {
+    $('*:contains("https://openam.example.com:8443")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("https://openam.example.com:8443", 'g'),'<span class="exampleUrl">https://openam.example.com:8443</span>')
+            )
+    });
+    $('*:contains("amadmin")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("amadmin", 'g'),'<span class="exampleAdmin">amadmin</span>')
+            )
+    });
+    $('*:contains("iPlanetDirectoryPro")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("iPlanetDirectoryPro", 'g'),'<span class="exampleSsoCookieName">iPlanetDirectoryPro</span>')
+            )
+    });
+};
+
+var btnClickHandler = function () {
+    $("button#applyDocUpdate").click(function(){
+
+        $('span.exampleUrl').fadeOut("slow", function(){
+            $('span.exampleUrl').text($("input#exampleUrl").val());
+            $('span.exampleUrl').fadeIn("slow");
+        });
+
+        $('span.exampleAdmin').fadeOut("slow", function(){
+            $('span.exampleAdmin').text($("input#exampleAdmin").val());
+            $('span.exampleAdmin').fadeIn("slow");
+        });
+
+        $('span.exampleSsoCookieName').fadeOut("slow", function(){
+            $('span.exampleSsoCookieName').text($("input#exampleSsoCookieName").val());
+            $('span.exampleSsoCookieName').fadeIn("slow");
+        });
+
+        $('#docConfig').modal('hide');
+    });
+};
+
+
+var addCopyButtonFN = function () {
+    $( ".cmdline" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-cmdline"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> command to clipboard</span></span></div>');
+    });
+
+    $( ".codelisting" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-codelisting"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> code to clipboard</span></span></div>');
+    });
+};
+var enableScrollSpyFN = function () {
+    $('body').scrollspy({
+        target: '#sidebar',
+        offset: 16
+    });
+};
+
+var enableToolTipFN = function () {
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip({placement: 'bottom'});
+    });
+};
+
+var enableBackToTopFadeInFN = function () {
+    var offset = 220;
+    var duration = 500;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            $('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+};
+
+var enableClampedWidthsFN = function () {
+
+    /*
+     * Clamped-width.
+     * Usage:
+     *  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+     *
+     * Author: LV
+     */
+    $('[data-clampedwidth]').each(function () {
+        var elem = $(this);
+        var parentPanel = elem.data('clampedwidth');
+        var resizeFn = function () {
+            var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+            elem.css('width', sideBarNavWidth);
+        };
+
+        resizeFn();
+        $(window).resize(resizeFn);
+    });
+};
+
+var affixToCFN = function() {
+    $('#sidebar').affix({
+        offset: {
+            top: function () {
+                return (this.top = $('.jumbotron').outerHeight(true)-66)
+            }
+        }
+    });
+};
+
+var attachAnchorsToHeadings = function() {
+    //addAnchors('h1.title, h2.title, h3.title, h4.title, h5.title');
+
+
+    $('h1.title, h2.title, h3.title, h4.title, h5.title, .procedure-title, .table-title').each(function () {
+
+        var href = $(this).closest("div[id]").attr("id");
+
+        if (href === undefined || href === "") { // Unable to locate ID of parent element.
+            return;
+        }
+
+        $(this).wrapInner('<a class=\"self-link" href=\"#' + href + '\"></a>');
+
+    });
+};
+
+var addZeroClipboardToCmdlineButtonsFN = function () {
+    var copycmdline = new ZeroClipboard( $('.btn-copy-cmdline') );
+
+    copycmdline.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        copycmdline.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next().find("strong").each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycmdline.on( 'aftercopy', function(event) {
+            // console.log('Copied to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next().find("strong").each(function(index) {
+                $(this).effect("transfer", { to: $(event.target)}, 750);
+            });
+        });
+    });
+
+    copycmdline.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var addZeroClipboardToCodeButtonsFN = function () {
+    var copycodelisting = new ZeroClipboard( $('.btn-copy-codelisting') );
+
+    copycodelisting.on( 'ready', function(event) {
+        //console.log( 'movie is loaded' );
+
+        copycodelisting.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next(".codelisting.linenums").children().contents().each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            if(wrappedText == "") {
+                wrappedText = $(event.target).parent().next(".codelisting").contents().text();
+            };
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycodelisting.on( 'aftercopy', function(event) {
+            // console.log('Copied code to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next(".codelisting").first().effect("transfer", { to: $(event.target)}, 750);
+        });
+    });
+
+    copycodelisting.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var enableColorboxFN = function () {
+    $(".fancybox").colorbox({
+        title: function() {
+            return $(this).children('img').attr('alt');
+        },
+        opacity: 1,
+        transition:"elastic",
+        initialWidth: 0,
+        initialHeight: 0,
+        maxWidth:"95%",
+        maxHeight: "95%",
+        scalePhotos: true,
+        fixed: true
+    });
+};
+
+var trackPageViewsFN = function () {
+
+    $("a").click(function() {
+        var href = $(this).attr('href');
+        if(href) {
+            var titleText =  $(this).text();
+            if(href.charAt(0) === '#') {
+                ga('send', {
+                    'hitType': 'pageview',
+                    'page': location.pathname + location.search + href,
+                    'title': titleText
+                });
+            };
+            if(href.charAt(0) === '.') {
+                var lastHashPos = href.lastIndexOf('#');
+                var cleanHref = href.slice(3,lastHashPos);
+                var cleanFrag = href.slice(lastHashPos);
+                if(window.location.href.search(cleanHref) > -1)
+                {
+                    ga('send', {
+                        'hitType': 'pageview',
+                        'page': location.pathname + location.search + cleanFrag,
+                        'title': titleText
+                    });
+                }
+            };
+        }
+    });
+};
+
+var enableZeroClipboardFN = function () {
+    ZeroClipboard.config({
+            swfPath:  "includes/swf/ZeroClipboard.swf",
+            trustedDomains: ["*"],
+            forceEnhancedClipboard: false,
+            forceHandCursor: true,
+            debug: false}
+    );
+    addCopyButtonFN();
+    addZeroClipboardToCmdlineButtonsFN();
+    addZeroClipboardToCodeButtonsFN();
+};
+
+$(document).ready(function() {
+    //wrapConfigurablesFn();
+    btnClickHandler();
+    enableToolTipFN();
+    enableBackToTopFadeInFN();
+    enableClampedWidthsFN();
+    enableScrollSpyFN();
+    affixToCFN();
+    attachAnchorsToHeadings();
+    trackPageViewsFN();
+    loadJavaScriptsFN();
+});
+
+//
+
+    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link" class="nav navbar-nav navbar-right hidden-xs"><li><a href="../../OpenIDM-Release-Notes.pdf" target="_blank"><span class="glyphicon glyphicon-save"></span> Download PDF Version</a></li></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenIDM Release Notes<span></span><small>Version ${docTargetVersion}</small></h1><p>
+    Notes covering OpenIDM software requirements, fixes, compatibility issues,
+    and known issues. The OpenIDM project offers flexible, open source services
+    for automating management of the identity life cycle.
+   </p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenIDM Release Notes<br><small class="toc-subtitle">Version ${docTargetVersion}</small></h4><ul class="nav nav-stacked"><li><a href="#chap-whats-new">1. What's New in OpenIDM ${docTargetVersion}</a><ul class="nav nav-stacked"><li><a href="#product-enhancements">1.1. New Features</a></li><li><a href="#openidm-docs">1.2. OpenIDM Documentation</a></li></ul></li><li><a href="#chap-before-you-install">2. Before You Install OpenIDM Software</a></li><li><a href="#chap-issues">3. OpenIDM Fixes, Limitations, &amp; Known Issues</a><ul class="nav nav-stacked"><li><a href="#fixes">3.1. Fixes and Improvements</a></li><li><a href="#limitations">3.2. Limitations</a></li><li><a href="#known-issues">3.3. Known Issues</a></li></ul></li><li><a href="#chap-compatibility">4. OpenIDM Compatibility</a><ul class="nav nav-stacked"><li><a href="#major-changes">4.1. Major Changes to Existing Functionality</a></li><li><a href="#minor-changes">4.2. Minor Changes to Existing Functionality</a></li><li><a href="#deprecation">4.3. Deprecated Functionality</a></li><li><a href="#removed-functionality">4.4. Removed Functionality</a></li></ul></li><li><a href="#chap-feedback">5. How to Report Problems &amp; Provide Feedback</a></li><li><a href="#chap-support">6. Support</a></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenIDM Release Notes</h1></div><div><h2 class="subtitle">Version ${docTargetVersion}</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark </span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Lana </span> <span class="surname">Frost</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Andi </span> <span class="surname">Egloff</span></h3></div></div></div><div><p class="releaseinfo">${softwareReleaseDate}</p></div><div><p class="copyright">Copyright &copy; 2011-2015 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">Publication date: July&nbsp;30,&nbsp;2024</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>
+    Notes covering OpenIDM software requirements, fixes, compatibility issues,
+    and known issues. The OpenIDM project offers flexible, open source services
+    for automating management of the identity life cycle.
+   </p></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div><div lang="en" class="chapter" id="chap-whats-new"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;1.&nbsp;What's New in OpenIDM ${docTargetVersion}</h1></div></div></div><p>
+  OpenIDM ${docTargetVersion} is a maintenance release that resolves a number of
+  issues, including security issues in OpenIDM. It is strongly recommended that
+  you update to this release to make your deployment more secure, and to take
+  advantage of important functional fixes. ForgeRock customers can contact
+  support for help and further information.
+ </p><p>
+  Before you install OpenIDM or update your existing OpenIDM installation, read
+  these release notes. Then update or install OpenIDM.
+ </p><p>
+  For installation instructions and several samples to familiarize you with the
+  features, see the <a class="link" href="http://docs.forgerock.org/en/openidm/2.1.0/install-guide/index.html" target="_blank"><em class="citetitle">OpenIDM 2.1.0 Installation Guide</em></a>.
+ </p><p>
+  For an architectural overview and high-level presentation of OpenIDM, see the
+  <a class="link" href="http://docs.forgerock.org/en/openidm/2.1.0/integrators-guide/index.html#chap-overview" target="_blank"><em class="citetitle">Architectural Overview</em></a> chapter in the
+  <span class="emphasis"><em>OpenIDM 2.1.0 Integrator's Guide</em></span>.
+ </p><div class="section" id="product-enhancements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.1.&nbsp;New Features</h2></div></div></div><p>
+   Compared to the OpenIDM 2.1.1 release, OpenIDM ${docTargetVersion} fixes a
+   number of issues and provides the following new features:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-957" target="_blank">OPENIDM-957</a>: Ability to launch startup.sh and cli.sh from any directory</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1764" target="_blank">OPENIDM-1764</a>: New launcher.bat override, including install-service.bat</p></li></ul></div></div><div class="section" id="openidm-docs"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.2.&nbsp;OpenIDM Documentation</h2></div></div></div><p>
+   You can read the following additional <a class="link" href="http://docs.forgerock.org/en/openid/2.1.0/" target="_blank">product
+   documentation</a> for OpenIDM 2.1.0 online at <a class="link" href="http://docs.forgerock.org" target="_blank">http://docs.forgerock.org</a>.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     <a class="link" href="http://docs.forgerock.org/en/openidm/2.1.0/release-notes/index/index.html" target="_blank">OpenIDM 2.1.0 Release Notes</a>
+    </p></li><li class="listitem"><p>
+     <a class="link" href="http://docs.forgerock.org/en/openidm/2.1.0/install-guide/index/index.html" target="_blank">OpenIDM 2.1.0 Installation Guide</a>
+    </p></li><li class="listitem"><p>
+     <a class="link" href="http://docs.forgerock.org/en/openidm/2.1.0/integrators-guide/index/index.html" target="_blank">OpenIDM 2.1.0 Integrator's Guide</a>
+    </p></li></ul></div></div></div><div lang="en" class="chapter" id="chap-before-you-install"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;2.&nbsp;Before You Install OpenIDM Software</h1></div></div></div><p>
+  This chapter covers prerequisites for installing and running OpenIDM software.
+ </p><div class="variablelist"><p>
+   For OpenIDM ${docTargetVersion}, the following configurations are supported
+   for use in production.
+  </p><dl class="variablelist"><dt><span class="term">Repository</span></dt><dd><div class="itemizedlist"><p>
+      The following JDBC repositories are supported for use in production:
+     </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+       MySQL 5.1 or 5.5 with Connector/J 5.1.18 or later
+      </p></li><li class="listitem"><p>
+       Microsoft SQL Server 2008 Express
+      </p></li><li class="listitem"><p>
+       Oracle Database 11g Enterprise Edition
+      </p></li></ul></div><p>
+     OrientDB is provided for evaluation only.
+    </p></dd><dt><span class="term">Stand-alone installation</span></dt><dd><p>
+     You must install OpenIDM as a stand-alone service, using Apache Felix and
+     Jetty as provided. Alternate containers are not supported.
+    </p><p>
+     This OpenIDM release bundles Jetty version 7.6.2.v20120308.
+    </p></dd><dt><span class="term">Connectors</span></dt><dd><p>
+     OpenIDM ${docTargetVersion} comes packaged with these OpenICF connectors:
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>CSV File</p></li><li class="listitem"><p>LDAP</p></li><li class="listitem"><p>Scripted SQL</p></li><li class="listitem"><p>XML File</p></li><li class="listitem"><p>Database Table</p></li></ul></div><p>
+     ForgeRock provides additional connectors, as listed on the <a class="link" href="http://openicf.forgerock.org/connectors/" target="_blank">OpenICF project connectors site</a>.
+    </p></dd></dl></div><p>
+  If you have a special request to support a component or combination not listed
+  here, contact ForgeRock at <a class="link" href="mailto:info@forgerock.com" target="_top">info@forgerock.com</a>.
+ </p><p>
+  OpenIDM requires Java SE JDK 6 update 24 or later. When using the Oracle JDK,
+  you also need Java Cryptography Extension (JCE) <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">policy files</a>.
+ </p><p>
+  On Windows systems, use Java SE JDK 7 update 6 or later, to take advantage of
+  a recent JVM fix relating to non-blocking sockets with the default Jetty
+  configuration.
+ </p><p>
+  You need 150 MB disk space and 1 GB memory for an evaluation installation. For
+  a production installation, disk space and memory requirements will depend on
+  the size of the repository, and on size of the audit and service log files
+  that OpenIDM writes.
+ </p></div><div lang="en" class="chapter" id="chap-issues"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;3.&nbsp;OpenIDM Fixes, Limitations, &amp; Known Issues</h1></div></div></div><p>
+  OpenIDM issues are tracked at <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM" target="_top">https://bugster.forgerock.org/jira/browse/OPENIDM</a>.
+ </p><div class="section" id="fixes"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.1.&nbsp;Fixes and Improvements</h2></div></div></div><p>
+   OpenIDM ${docTargetVersion} includes the following major fixes and
+   improvements.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2776" target="_blank">OPENIDM-2776</a>: Install path with space not handled correctly in shutdown.sh</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2500" target="_blank">OPENIDM-2500</a>: properties set as encrypted in managed.json written in plain text in activity audit when new and old values are the same</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2480" target="_blank">OPENIDM-2480</a>: Enable READ_COMITTED_SNAPSHOT isolation w/MSSQL</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2127" target="_blank">OPENIDM-2127</a>: Switching existing schedule from persisted=false to persisted=true results in duplicate scheduled jobs.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1915" target="_blank">OPENIDM-1915</a>: Add ability to configure the HTTP session timeout for the OpenIDM UI</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1907" target="_blank">OPENIDM-1907</a>: Recon failures as a result of policy violations do not indicate the cause of the violation in the recon audit log.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1885" target="_blank">OPENIDM-1885</a>: onUnlink trigger throws NPE if invoked for SOURCE_MISSING situation (action=UNLINK) during target reconciliation</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1755" target="_blank">OPENIDM-1755</a>: Recon target phase is always single threaded regardless of the number of configured taskThreads</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1739" target="_blank">OPENIDM-1739</a>: Changes made to target objects by onLink triggers should be persisted if the situation action is UPDATE</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1665" target="_blank">OPENIDM-1665</a>: Startup failure when connectors directory contains arbitrary sub-directories</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1663" target="_blank">OPENIDM-1663</a>: Deadlock within OpenIDM when updating managed users w/MSSQL as the repository</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1658" target="_blank">OPENIDM-1658</a>: Hard-coded reference to database schema and table name in jdbc config files</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1655" target="_blank">OPENIDM-1655</a>: External Rest Service erroneously sets the remote auth ChallengeScheme to HTTP_COOKIE instead of HTTP_BASIC</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1652" target="_blank">OPENIDM-1652</a>: Policy violation doesn't prevent managed objects creation</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1647" target="_blank">OPENIDM-1647</a>: LiveSync fails when using Generic LDAP Connector if readSchema=false</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1629" target="_blank">OPENIDM-1629</a>: Policy cannot-contain-others raises an exception when one of the fields to check against is absent</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1624" target="_blank">OPENIDM-1624</a>: Linux rc script generated by create-openidm-rc.sh fails to shutdown OpenIDM when installed to a directory other than 'openidm'</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1584" target="_blank">OPENIDM-1584</a>: java.lang.OutOfMemoryError exception</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1583" target="_blank">OPENIDM-1583</a>: OpenIDM should not enforce the REAUTH_REQUIRED policy for openidm-cert role.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1563" target="_blank">OPENIDM-1563</a>: Task scanner creates a new thread pool for each execution resulting in a thread leak.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1433" target="_blank">OPENIDM-1433</a>: OpenIDM renames entry on update (OpenIDM ICF glue code sets __NAME__ to __UID__)</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1416" target="_blank">OPENIDM-1416</a>: Default onCreate script of UI sets the accountStatus to 'active', overrides the value of the managed user attribute</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1281" target="_blank">OPENIDM-1281</a>: Query for "get-by-field-value" is incorrect</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1256" target="_blank">OPENIDM-1256</a>: additionalPolicies option in policy.json not working</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1236" target="_blank">OPENIDM-1236</a>: ScriptableList: cannot put 0 (zero) index element</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1170" target="_blank">OPENIDM-1170</a>: Linux startup script generator is not working correctly</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1147" target="_blank">OPENIDM-1147</a>: Install path with space not handled correctly in startup.sh</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-969" target="_blank">OPENIDM-969</a>: Console login fails and leaves OpenIDM in unusable state </p></li></ul></div></div><div class="section" id="limitations"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.2.&nbsp;Limitations</h2></div></div></div><p>
+   OpenIDM ${docTargetVersion} has the following known limitations:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     A conditional GET request, with the <code class="literal">If-None-Match</code>
+     request header, is not currently supported.
+    </p></li><li class="listitem"><p>
+     The keystore password, the truststore password and the secret key passwords
+     must all be set to the same value. If you use different passwords, OpenIDM
+     is unable to read the required keys and certificates.
+    </p></li><li class="listitem"><p>
+     Connectors generally use the global JVM settings for keystore and
+     truststore, rather than the settings that are specified in the
+     <code class="filename">boot.properties</code> file. You can work around this by
+     specifying a path to the keystore or truststore in the
+     <code class="filename">conf/system.properties</code> file. For example:
+    </p><pre class="cmdline prettyprint"># Set the truststore
+javax.net.ssl.trustStore=/path/to/openidm/security/truststore</pre></li></ul></div></div><div class="section" id="known-issues"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.3.&nbsp;Known Issues</h2></div></div></div><p>
+   OpenIDM ${docTargetVersion} has the following known issues.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2595" target="_blank">OPENIDM-2595</a>: OpenIDM failed to start-up during installation</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2312" target="_blank">OPENIDM-2312</a>: SmartEvent framework maintains a unbounded event name cache which consumes the entire heap</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2184" target="_blank">OPENIDM-2184</a>: NPE thrown from within ObjectMapping$SyncOperation.isValidSource() during reconciliation.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2078" target="_blank">OPENIDM-2078</a>: PermGen leak in "source" scripts</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-2034" target="_blank">OPENIDM-2034</a>: Support arbitrary [commons] auth modules via className</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1946" target="_blank">OPENIDM-1946</a>: Working location flag (-w) not working as documented</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1912" target="_blank">OPENIDM-1912</a>: Exception from OpenIDMResolverFactory if used in a parallel execution workflow task</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1878" target="_blank">OPENIDM-1878</a>: DELETE situation-actions on managed objects in bidirectional mappings result in incorrect LINK_ONLY</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1860" target="_blank">OPENIDM-1860</a>: Null pointer exception when setting target attribute during onUnlink</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1823" target="_blank">OPENIDM-1823</a>: getScriptBindings function of ServiceScript (ScriptRegistryImpl.java) slows down extremely when accessed paralell from multiple threads</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1770" target="_blank">OPENIDM-1770</a>: CLI tool needs the ability to authenticate as a user other than openidm-admin w/default password</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1664" target="_blank">OPENIDM-1664</a>: Memory usage of AD connector continue to increase.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1637" target="_blank">OPENIDM-1637</a>: Problem in UI when the username contains a space char.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1632" target="_blank">OPENIDM-1632</a>: create-openidm-logrotate.sh is not properly defined</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1619" target="_blank">OPENIDM-1619</a>: OperationOptions specified within the provisioner configuration are not passed to connectors by OpenIDM</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1600" target="_blank">OPENIDM-1600</a>: Cluster with Oracle DB backend</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1574" target="_blank">OPENIDM-1574</a>: AD sync service might crash after applying latest Windows updates</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1564" target="_blank">OPENIDM-1564</a>: __NAME__ attribute incorrectly required as part of object definition for a create action</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1562" target="_blank">OPENIDM-1562</a>: Route to endpoint service not found if there is a resourcename after the name of the endpoint</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1560" target="_blank">OPENIDM-1560</a>: when starting OpenIDM with -p option logging.properties file is not taken in project location</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1535" target="_blank">OPENIDM-1535</a>: incomplete handleQuery implementation in ScriptedRequestHandler</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1530" target="_blank">OPENIDM-1530</a>: OpenIDM self-signed certificates in keystore and truststore does not match</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1513" target="_blank">OPENIDM-1513</a>: Inconsistency in script context: request object has different representations</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1511" target="_blank">OPENIDM-1511</a>: Policy.java overwrites the action parameter of async recon</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1509" target="_blank">OPENIDM-1509</a>: false 'validSource' entries still being evaluated, and returned correlation records are unexpectedly DELETEd</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1507" target="_blank">OPENIDM-1507</a>: Logging level change to FINE causes NullPointerException in OrientDBRepoService</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1504" target="_blank">OPENIDM-1504</a>: OpenICFProvisionerService handle method performs logger.isDebugEnabled() checks but logs at the error level</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1503" target="_blank">OPENIDM-1503</a>: InvalidCredentialException thrown from OpenICFProvisionerService uses 500 HTTP error code</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1501" target="_blank">OPENIDM-1501</a>: sync?_action=performAction with an action=DELETE results in a delete on the source rather than the target</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1489" target="_blank">OPENIDM-1489</a>: Command line needs to allow supplying user/pwd</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1483" target="_blank">OPENIDM-1483</a>: Pool size settings not effective for OrientDB repo</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1445" target="_blank">OPENIDM-1445</a>: Provisioner service does not decrypt encrypted attributes before passing them to OpenICF framework</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1444" target="_blank">OPENIDM-1444</a>: json schema package needs to specify export version and import version ranges</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1430" target="_blank">OPENIDM-1430</a>: OpenIDM needs a restart after importing a new cert via REST API</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1417" target="_blank">OPENIDM-1417</a>: Throwing 401 exception in augment security context javascript ends up being a 500 in the response</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1413" target="_blank">OPENIDM-1413</a>: In async recon starter script (workflow.js) the query of the already running instances is executed before all it's parameters are set</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1412" target="_blank">OPENIDM-1412</a>: Missing 'not undefined' check for sourceId and targetId in async recon workflow starter script (workflow.js) </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1411" target="_blank">OPENIDM-1411</a>: Add not null check to async recon starter script (workflow.js) for sourceId query parameter, fill businessKey field of the workflow when starting a new workflow</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1390" target="_blank">OPENIDM-1390</a>: Unable to parse boolean configuration values from custom OpenICF provisioner</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1380" target="_blank">OPENIDM-1380</a>: opendj-accountchange-handler schema does not load schema provided after install</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1379" target="_blank">OPENIDM-1379</a>: ADD operation failed for OpenDJ account notification handler</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1361" target="_blank">OPENIDM-1361</a>: Exception from UI when a workflow started by scheduler has a user task in it</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1358" target="_blank">OPENIDM-1358</a>: Connector test of LDAP fails</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1338" target="_blank">OPENIDM-1338</a>: Validation for create without objectId is always true</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1329" target="_blank">OPENIDM-1329</a>: OrientDB as repo does not initialize if there is no network connection</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1293" target="_blank">OPENIDM-1293</a>: OpenIDMELResolver should use component.name to bind JavaDelegate implementations instead of component.id</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1269" target="_blank">OPENIDM-1269</a>: some issues with Case Sensitivity options for Sync</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1267" target="_blank">OPENIDM-1267</a>: Add Enum and DateFormType specific data to the taskdefinitions returned by Activiti</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1265" target="_blank">OPENIDM-1265</a>: liveSync process should never get stuck because of exceptions with the synchronizationListener.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1245" target="_blank">OPENIDM-1245</a>: Align openidm and activiti contract on scripting(openidm.action() and openidm.patch() failed in a workflow on managed object.)</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1219" target="_blank">OPENIDM-1219</a>: DB/Config bootstrapping should use IdentityServer support for getting properties, including boot prop</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1218" target="_blank">OPENIDM-1218</a>: Audit filter on eventTypes for recon.csv does not work properly</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1210" target="_blank">OPENIDM-1210</a>: Directly-assigned workflow tasks disappear when "Requeue" button is hit</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1190" target="_blank">OPENIDM-1190</a>: Disable Quartz update check by default</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1186" target="_blank">OPENIDM-1186</a>: PATCH with POST using MVCC are successful even if revision wrong</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1184" target="_blank">OPENIDM-1184</a>: sample/sample3 and sample/provisioner use hardcoded path in provisioner configuration.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1175" target="_blank">OPENIDM-1175</a>: IE9 and below aggressively cache AJAX requests, causing the UI to behave strangely</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1174" target="_blank">OPENIDM-1174</a>: Some UI Features are Indistinguishable From Plaintext</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1165" target="_blank">OPENIDM-1165</a>: EXCEPTION action when doing liveSync stops the synctoken processing</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1162" target="_blank">OPENIDM-1162</a>: With OrientDB, for a MISSING/CREATE situation/action, reconciliation creates a new link instead of using an existing link</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1142" target="_blank">OPENIDM-1142</a>: Harmless error message may appear when starting OpenIDM</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1141" target="_blank">OPENIDM-1141</a>: OrientDB config bootstrap repository does not use .json config file, only properties</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1133" target="_blank">OPENIDM-1133</a>: Certain sample files contain unnecessary, unused entries</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1129" target="_blank">OPENIDM-1129</a>: OpenIDM freezes when the connection to the repository is interrupted</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1117" target="_blank">OPENIDM-1117</a>: Malformed content-type request header produces 500 error</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1115" target="_blank">OPENIDM-1115</a>: When an LDAP user is created through the REST API, the _id that is returned is not normalized</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1098" target="_blank">OPENIDM-1098</a>: onDelete script generates exception</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1096" target="_blank">OPENIDM-1096</a>: A PUT command on a configuration object may return an incorrect value</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1094" target="_blank">OPENIDM-1094</a>: Starting a second OpenIDM instance with a conflicting port causes the instance to freeze</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1093" target="_blank">OPENIDM-1093</a>: A user's accountStatus (active or inactive) has no effect on the UI or the REST API</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1074" target="_blank">OPENIDM-1074</a>: disabling automatic polling for changes of config file not possible on new install</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1021" target="_blank">OPENIDM-1021</a>: Wrong starting arguments during start could throw an error or warning.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-964" target="_blank">OPENIDM-964</a>: An incorrect password in boot.properties causes OpenIDM to hang on startup</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-848" target="_blank">OPENIDM-848</a>: Conflicting behavior might be observed between the default fields set by the onCreate script and policy enforcement</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-470" target="_blank">OPENIDM-470</a>: OpenIDM cannot rename objects - if the identifier of the object changes, the associated link breaks</p></li></ul></div></div></div><div lang="en" class="chapter" id="chap-compatibility"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;4.&nbsp;OpenIDM Compatibility</h1></div></div></div><p>This chapter covers both major changes to existing functionality, and
+ also deprecated and removed functionality.</p><div class="section" id="major-changes"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.1.&nbsp;Major Changes to Existing Functionality</h2></div></div></div><p>
+   There are no major changes that will have an impact on existing deployments
+   in this maintenance release.
+  </p></div><div class="section" id="minor-changes"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.2.&nbsp;Minor Changes to Existing Functionality</h2></div></div></div><p>
+    The following change will have a minor impact on existing deployments.
+   </p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Change to additional policy specification</span></dt><dd><p>
+         With the resolution of <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENIDM-1256" target="_blank">OPENIDM-1256</a>, the way in which additional
+         policy files are referenced in the <code class="filename">policy.json</code>
+         configuration file has changed.
+        </p><p>
+         In previous OpenIDM versions, the path to additional policy files was
+         relative to the root of the OpenIDM installation directory. In OpenIDM
+         ${docTargetVersion}, the path to additional files is relative to the
+         <span class="emphasis"><em>project</em></span> directory (if you start the server using
+         the <code class="literal">-p</code> option).
+        </p><p>
+         For example, if you had started OpenIDM with the configuration for
+         Sample 1 in a previous version, you would have specified an additional
+         policy file as follows:
+        </p><pre class="codelisting prettyprint">{
+    "type" : "text/javascript",
+    "file" : "bin/defaults/script/policy.js",
+    "additionalFiles" : [
+        "samples/sample1/script/password-policy.js"
+    ],
+    "resources" : [
+...
+}
+        </pre><p>
+         In OpenIDM ${docTargetVersion}, you would specify the additional file
+         as follows:
+        </p><pre class="codelisting prettyprint">{
+    "type" : "text/javascript",
+    "file" : "bin/defaults/script/policy.js",
+    "additionalFiles" : [
+        "script/password-policy.js"
+    ],
+    "resources" : [
+...
+}
+        </pre></dd></dl></div></div><div class="section" id="deprecation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.3.&nbsp;Deprecated Functionality</h2></div></div></div><p>No additional functionality is planned to be deprecated at this 
+  time.</p></div><div class="section" id="removed-functionality"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.4.&nbsp;Removed Functionality</h2></div></div></div><p>No functionality has been removed in OpenIDM ${docTargetVersion}.</p></div></div><div lang="en" class="chapter" id="chap-feedback"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;5.&nbsp;How to Report Problems &amp; Provide Feedback</h1></div></div></div><p>If you have questions regarding OpenIDM which are not answered by the
+ documentation, there is a mailing list which can be found at
+ <a class="link" href="https://lists.forgerock.org/mailman/listinfo/openidm" target="_blank">https://lists.forgerock.org/mailman/listinfo/openidm</a>
+ where you are likely to find an answer.</p><p>If you have found issues or reproducible bugs within OpenIDM
+ , report them in <a class="link" href="https://bugster.forgerock.org" target="_blank">https://bugster.forgerock.org</a>.</p><p>When requesting help with a problem, please include the following
+ information:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Description of the problem, including when the problem occurs and
+   its impact on your operation</p></li><li class="listitem"><p>Machine type, operating system version, 
+   Java version, and OpenIDM release version, including any patches or other
+   software that might be affecting the problem</p></li><li class="listitem"><p>Steps to reproduce the problem</p></li><li class="listitem"><p>Any relevant access and error logs, stack traces, or core dumps</p></li></ul></div></div><div lang="en" class="chapter" id="chap-support"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;6.&nbsp;Support</h1></div></div></div><p>You can purchase OpenIDM support subscriptions and training courses
+ from ForgeRock and from consulting partners around the world and in your
+ area. To contact ForgeRock, send mail to <a class="link" href="mailto:info@forgerock.com" target="_top">info@forgerock.com</a>. To find a
+ partner in your area, see <a class="link" href="http://forgerock.com/partners/find-a-partner/" target="_blank">http://forgerock.com/partners/find-a-partner/</a>.</p></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
+              2011-2015&nbsp;
+              ForgeRock AS;&nbsp;
+              &nbsp;
+              &nbsp;
+          </span></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
