@@ -1027,16 +1027,16 @@ $(document).ready(function() {
 
 //
 
-    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link"></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenAM  Developer's Guide<span></span><small></small></h1><p>Guide to developing OpenAM client applications and service providers.
+    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link" class="nav navbar-nav navbar-right hidden-xs"><li><a href="../../OpenAM-Dev-Guide.pdf" target="_blank"><span class="glyphicon glyphicon-save"></span> Download PDF Version</a></li></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenAM  Developer's Guide<span></span><small></small></h1><p>Guide to developing OpenAM client applications and service providers.
    OpenAM provides open source Authentication, Authorization, Entitlement and
-   Federation software.</p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenAM  Developer's Guide<br><small class="toc-subtitle"></small></h4><ul class="nav nav-stacked"><li><a href="#preface">Preface</a><ul class="nav nav-stacked"><li><a href="#d14138e119">1. Who Should Use this Guide</a></li><li><a href="#formatting-conventions">2. Formatting Conventions</a></li><li><a href="#accessing-doc-online">3. Accessing Documentation Online</a></li><li><a href="#joining-the-community">4. Joining the Open Identity Platform Community</a></li></ul></li><li><a href="#chap-api-overview">1. OpenAM APIs and Protocols</a><ul class="nav nav-stacked"><li><a href="#openam-apis">1.1. OpenAM APIs</a></li><li><a href="#openam-spis">1.2. OpenAM SPIs</a></li><li><a href="#openam-ipv">1.3. OpenAM, IPv4, and IPv6</a></li></ul></li><li><a href="#chap-client-dev">2. Developing Client Applications</a></li><li><a href="#chap-rest">3. Using RESTful Web Services</a><ul class="nav nav-stacked"><li><a href="#about-openam-rest-api">3.1. About the RESTful API</a></li><li><a href="#c66-encoding">3.2. Token Encoding</a></li><li><a href="#rest-api-auth">3.3. Authentication &amp; Logout</a><ul class="nav nav-stacked"><li><a href="#rest-api-auth-json">3.3.1. Authentication &amp; Logout</a></li><li><a href="#rest-api-auth-legacy">3.3.2. Authentication &amp; Logout (Legacy API)</a></li></ul></li><li><a href="#rest-api-cookie-info">3.4. Cookie Information</a></li><li><a href="#rest-api-tokens">3.5. Token Validation, Attribute Retrieval</a></li><li><a href="#rest-api-authz">3.6. Authorization</a><ul class="nav nav-stacked"><li><a href="#rest-api-policy-decisions">3.6.1. Requesting Policy Decisions</a></li><li><a href="#rest-api-policy-management">3.6.2. Managing Policies</a><ul class="nav nav-stacked"><li><a href="#rest-api-policy-management-create">3.6.2.1. Creating Policies</a></li><li><a href="#rest-api-policy-management-read">3.6.2.2. Reading Policies</a></li><li><a href="#rest-api-policy-management-update">3.6.2.3. Updating Policies</a></li><li><a href="#rest-api-policy-management-delete">3.6.2.4. Deleting Policies</a></li><li><a href="#rest-api-policy-management-query">3.6.2.5. Querying Policies</a></li></ul></li></ul></li><li><a href="#rest-api-oauth2">3.7. OAuth 2.0 Authorization</a><ul class="nav nav-stacked"><li><a href="#rest-api-oauth2-client-endpoints">3.7.1. OAuth 2.0 Client &amp; Resource Server Endpoints</a></li><li><a href="#rest-api-oauth2-token-admin-endpoint">3.7.2. OAuth 2.0 Token Administration Endpoint</a></li><li><a href="#rest-api-oauth2-client-admin-endpoint">3.7.3. OAuth 2.0 Client Administration Endpoint</a></li></ul></li><li><a href="#rest-api-openid-connect">3.8. OpenID Connect 1.0</a><ul class="nav nav-stacked"><li><a href="#rest-api-openid-connect-discovery">3.8.1. Discovering OpenID Connect 1.0 Configuration</a></li><li><a href="#rest-api-openid-connect-dynamic-registration">3.8.2. Registering OpenID Connect 1.0 Clients</a></li><li><a href="#rest-api-openid-connect-authorization">3.8.3. Performing OpenID Connect 1.0 Client Authorization</a></li><li><a href="#rest-api-openid-connect-session">3.8.4. Managing OpenID Connect 1.0 Sessions</a></li></ul></li><li><a href="#rest-api-self-registration">3.9. User Self-Registration</a></li><li><a href="#rest-api-password-reset">3.10. Resetting Forgotten Passwords</a></li><li><a href="#rest-api-logging">3.11. Logging</a></li><li><a href="#rest-api-crud-identity">3.12. Identity Management</a><ul class="nav nav-stacked"><li><a href="#rest-api-create-identity">3.12.1. Creating Identities</a></li><li><a href="#rest-api-read-identity">3.12.2. Reading Identities</a></li><li><a href="#rest-api-update-identity">3.12.3. Updating Identities</a></li><li><a href="#rest-api-delete-identity">3.12.4. Deleting Identities</a></li><li><a href="#rest-api-query-identity">3.12.5. Listing Identities</a></li><li><a href="#rest-api-create-legacy">3.12.6. Creating Identities (Legacy API)</a></li><li><a href="#rest-api-read-legacy">3.12.7. Reading &amp; Searching for Identities (Legacy API)</a></li><li><a href="#rest-api-update-legacy">3.12.8. Updating Identities (Legacy API)</a></li><li><a href="#rest-api-delete-legacy">3.12.9. Deleting Identities (Legacy API)</a></li></ul></li><li><a href="#rest-api-crud-realm">3.13. Realm Management</a><ul class="nav nav-stacked"><li><a href="#rest-api-parameters-realm">3.13.1. Default Parameters for Realms</a></li><li><a href="#rest-api-create-realm">3.13.2. Creating Realms</a></li><li><a href="#rest-api-read-realm">3.13.3. Reading Realms</a></li><li><a href="#rest-api-update-realm">3.13.4. Updating Realms</a></li><li><a href="#rest-api-delete-realm">3.13.5. Deleting Realms</a></li></ul></li><li><a href="#rest-dashboard">3.14. Displaying Dashboard Applications</a></li><li><a href="#rest-api-status-codes">3.15. REST Status Codes</a></li></ul></li><li><a href="#chap-jdk">4. Using the OpenAM Java SDK</a><ul class="nav nav-stacked"><li><a href="#install-jdk-samples">4.1. Installing OpenAM Client SDK Samples</a></li><li><a href="#about-jdk">4.2. About the OpenAM Java SDK</a></li></ul></li><li><a href="#chap-authentication">5. Authenticating Using OpenAM Java SDK</a></li><li><a href="#chap-session">6. Handling Single Sign-On Using OpenAM Java SDK</a><ul class="nav nav-stacked"><li><a href="#session-receiving-notifications">6.1. Receiving Notifications</a></li></ul></li><li><a href="#chap-policy-decisions">7. Requesting Policy Decisions Using OpenAM Java SDK</a></li><li><a href="#chap-xacml">8. Requesting a XACML Policy Decision Using OpenAM Java SDK</a></li><li><a href="#chap-fedlet-java">9. Using Fedlets in Java Web Applications</a><ul class="nav nav-stacked"><li><a href="#create-install-java-fedlet">9.1. Creating &amp; Installing a Java Fedlet</a></li><li><a href="#fedlet-signing-encryption">9.2. Signing &amp; Encryption For a Fedlet</a></li><li><a href="#customize-java-fedlet">9.3. Customizing a Java Fedlet</a><ul class="nav nav-stacked"><li><a href="#fedlet-perform-sso">9.3.1. Performing Single Sign-On</a></li><li><a href="#fedlet-perform-slo">9.3.2. Performing Single Logout</a></li><li><a href="#fedlet-perform-attr-query">9.3.3. Performing Attribute Queries</a></li><li><a href="#fedlet-perform-xacml-query">9.3.4. Performing XACML Queries</a></li></ul></li></ul></li><li><a href="#chap-fedlet-dotnet">10. Using Fedlets in .NET Applications</a></li><li><a href="#chap-sae">11. Using Secure Attribute Exchange</a><ul class="nav nav-stacked"><li><a href="#sae-install-prerequisites">11.1. Installing the Samples</a></li><li><a href="#sae-security-prerequisites">11.2. Preparing to Secure SAE Communications</a></li><li><a href="#sae-secure-idp">11.3. Securing the Identity Provider Side</a></li><li><a href="#sae-secure-sp">11.4. Securing the Service Provider Side</a></li><li><a href="#sae-trying-it-out">11.5. Trying It Out</a></li></ul></li><li><a href="#chap-csdk">12. Using the OpenAM C API</a></li><li><a href="#chap-extending">13. Extending OpenAM</a></li><li><a href="#chap-custom-attr">14. Customizing Profile Attributes</a></li><li><a href="#chap-oauth2-scopes">15. Customizing OAuth 2.0 Scope Handling</a><ul class="nav nav-stacked"><li><a href="#design-oauth2-scopes-plugin">15.1. Designing an OAuth 2.0 Scopes Plugin</a></li><li><a href="#build-oauth2-scopes-plugin">15.2. Building an OAuth 2.0 Scopes Plugin</a></li><li><a href="#configure-oauth2-scopes-plugin">15.3. Configuring OpenAM to Use the Plugin</a></li><li><a href="#try-oauth2-scopes-plugin">15.4. Trying the Example Plugin</a></li></ul></li><li><a href="#chap-auth-spi">16. Customizing Authentication Modules</a><ul class="nav nav-stacked"><li><a href="#about-custom-auth-module">16.1. About the Sample Authentication Module</a></li><li><a href="#properties-sample-auth-module">16.2. Sample Auth Properties</a></li><li><a href="#callbacks-file-sample-auth-module">16.3. Sample Auth Callbacks</a></li><li><a href="#authentication-logic-sample-auth-module">16.4. The Sample Authentication Logic</a></li><li><a href="#principal-sample-auth-module">16.5. The Sample Auth Principal</a></li><li><a href="#service-conf-sample-auth-module">16.6. The Sample Auth Service Configuration</a></li><li><a href="#build-config-sample-auth-module">16.7. Building &amp; Installing the Sample Auth Module</a><ul class="nav nav-stacked"><li><a href="#building-sample-auth-module">16.7.1. Building the Module</a></li><li><a href="#installing-sample-auth-module">16.7.2. Installing the Module</a></li></ul></li><li><a href="#configuring-testing-sample-auth-module">16.8. Configuring &amp; Testing the Sample Auth Module</a></li></ul></li><li><a href="#chap-custom-quota-exhaustion-action">17. Customizing Session Quota Exhaustion Actions</a><ul class="nav nav-stacked"><li><a href="#create-custom-quota-exhaustion-action">17.1. Creating &amp; Installing a Custom Session Quota Exhaustion Action</a></li><li><a href="#list-custom-quota-exhaustion-actions">17.2. Listing Session Quota Exhaustion Actions</a></li><li><a href="#remove-custom-quota-exhaustion-actions">17.3. Removing a Session Quota Exhaustion Action</a></li></ul></li><li><a href="#chap-post-auth">18. Creating a Post Authentication Plugin</a><ul class="nav nav-stacked"><li><a href="#design-post-authentication-plugin">18.1. Designing Your Post Authentication Plugin</a></li><li><a href="#build-post-authentication-plugin">18.2. Building Your Sample Post Authentication Plugin</a></li><li><a href="#configure-post-authentication-plugin">18.3. Configuring Your Post Authentication Plugin</a></li><li><a href="#test-post-authentication-plugin">18.4. Testing Your Post Authentication Plugin</a></li></ul></li><li><a href="#chap-policy-spi">19. Customizing Policy Evaluation</a><ul class="nav nav-stacked"><li><a href="#about-sample-policy-plugins">19.1. About the Sample Plugins</a></li><li><a href="#configure-sample-policy-plugin">19.2. Configuring A Sample Policy Plugin</a></li></ul></li><li><a href="#chap-identity-repo-spi">20. Customizing Identity Data Storage</a><ul class="nav nav-stacked"><li><a href="#about-idrepo-plugin">20.1. About the Identity Repository Plugin</a><ul class="nav nav-stacked"><li><a href="#idrepo-plugin-inheritance">20.1.1. IdRepo Inheritance</a></li><li><a href="#idrepo-plugin-lifecycle">20.1.2. IdRepo Lifecycle</a></li><li><a href="#idrepo-plugin-capabilties">20.1.3. IdRepo Plugin Capabilities</a></li></ul></li><li><a href="#idrepo-plugin-implementation">20.2. Identity Repository Plugin Implementation</a></li><li><a href="#idrepo-plugin-deployment">20.3. Identity Repository Plugin Deployment</a></li></ul></li><li><a href="#d14138e6682">Index</a></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenAM  Developer's Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark</span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">P&eacute;ter</span> <span class="surname">Major</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Jang</span></h3></div></div></div><div><p class="releaseinfo"></p></div><div><p class="copyright">Copyright &copy; 2011-2013 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">Publication date: July&nbsp;07,&nbsp;2024</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>Guide to developing OpenAM client applications and service providers.
+   Federation software.</p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenAM  Developer's Guide<br><small class="toc-subtitle"></small></h4><ul class="nav nav-stacked"><li><a href="#preface">Preface</a><ul class="nav nav-stacked"><li><a href="#d19565e119">1. Who Should Use this Guide</a></li><li><a href="#formatting-conventions">2. Formatting Conventions</a></li><li><a href="#accessing-doc-online">3. Accessing Documentation Online</a></li><li><a href="#joining-the-community">4. Joining the Open Identity Platform Community</a></li></ul></li><li><a href="#chap-api-overview">1. OpenAM APIs and Protocols</a><ul class="nav nav-stacked"><li><a href="#openam-apis">1.1. OpenAM APIs</a></li><li><a href="#openam-spis">1.2. OpenAM SPIs</a></li><li><a href="#openam-ipv">1.3. OpenAM, IPv4, and IPv6</a></li></ul></li><li><a href="#chap-client-dev">2. Developing Client Applications</a></li><li><a href="#chap-rest">3. Using RESTful Web Services</a><ul class="nav nav-stacked"><li><a href="#about-openam-rest-api">3.1. About the RESTful API</a></li><li><a href="#c66-encoding">3.2. Token Encoding</a></li><li><a href="#rest-api-auth">3.3. Authentication &amp; Logout</a><ul class="nav nav-stacked"><li><a href="#rest-api-auth-json">3.3.1. Authentication &amp; Logout</a></li><li><a href="#rest-api-auth-legacy">3.3.2. Authentication &amp; Logout (Legacy API)</a></li></ul></li><li><a href="#rest-api-cookie-info">3.4. Cookie Information</a></li><li><a href="#rest-api-tokens">3.5. Token Validation, Attribute Retrieval</a></li><li><a href="#rest-api-authz">3.6. Authorization</a><ul class="nav nav-stacked"><li><a href="#rest-api-policy-decisions">3.6.1. Requesting Policy Decisions</a></li><li><a href="#rest-api-policy-management">3.6.2. Managing Policies</a><ul class="nav nav-stacked"><li><a href="#rest-api-policy-management-create">3.6.2.1. Creating Policies</a></li><li><a href="#rest-api-policy-management-read">3.6.2.2. Reading Policies</a></li><li><a href="#rest-api-policy-management-update">3.6.2.3. Updating Policies</a></li><li><a href="#rest-api-policy-management-delete">3.6.2.4. Deleting Policies</a></li><li><a href="#rest-api-policy-management-query">3.6.2.5. Querying Policies</a></li></ul></li></ul></li><li><a href="#rest-api-oauth2">3.7. OAuth 2.0 Authorization</a><ul class="nav nav-stacked"><li><a href="#rest-api-oauth2-client-endpoints">3.7.1. OAuth 2.0 Client &amp; Resource Server Endpoints</a></li><li><a href="#rest-api-oauth2-token-admin-endpoint">3.7.2. OAuth 2.0 Token Administration Endpoint</a></li><li><a href="#rest-api-oauth2-client-admin-endpoint">3.7.3. OAuth 2.0 Client Administration Endpoint</a></li></ul></li><li><a href="#rest-api-openid-connect">3.8. OpenID Connect 1.0</a><ul class="nav nav-stacked"><li><a href="#rest-api-openid-connect-discovery">3.8.1. Discovering OpenID Connect 1.0 Configuration</a></li><li><a href="#rest-api-openid-connect-dynamic-registration">3.8.2. Registering OpenID Connect 1.0 Clients</a></li><li><a href="#rest-api-openid-connect-authorization">3.8.3. Performing OpenID Connect 1.0 Client Authorization</a></li><li><a href="#rest-api-openid-connect-session">3.8.4. Managing OpenID Connect 1.0 Sessions</a></li></ul></li><li><a href="#rest-api-self-registration">3.9. User Self-Registration</a></li><li><a href="#rest-api-password-reset">3.10. Resetting Forgotten Passwords</a></li><li><a href="#rest-api-logging">3.11. Logging</a></li><li><a href="#rest-api-crud-identity">3.12. Identity Management</a><ul class="nav nav-stacked"><li><a href="#rest-api-create-identity">3.12.1. Creating Identities</a></li><li><a href="#rest-api-read-identity">3.12.2. Reading Identities</a></li><li><a href="#rest-api-update-identity">3.12.3. Updating Identities</a></li><li><a href="#rest-api-delete-identity">3.12.4. Deleting Identities</a></li><li><a href="#rest-api-query-identity">3.12.5. Listing Identities</a></li><li><a href="#rest-api-create-legacy">3.12.6. Creating Identities (Legacy API)</a></li><li><a href="#rest-api-read-legacy">3.12.7. Reading &amp; Searching for Identities (Legacy API)</a></li><li><a href="#rest-api-update-legacy">3.12.8. Updating Identities (Legacy API)</a></li><li><a href="#rest-api-delete-legacy">3.12.9. Deleting Identities (Legacy API)</a></li></ul></li><li><a href="#rest-api-crud-realm">3.13. Realm Management</a><ul class="nav nav-stacked"><li><a href="#rest-api-parameters-realm">3.13.1. Default Parameters for Realms</a></li><li><a href="#rest-api-create-realm">3.13.2. Creating Realms</a></li><li><a href="#rest-api-read-realm">3.13.3. Reading Realms</a></li><li><a href="#rest-api-update-realm">3.13.4. Updating Realms</a></li><li><a href="#rest-api-delete-realm">3.13.5. Deleting Realms</a></li></ul></li><li><a href="#rest-dashboard">3.14. Displaying Dashboard Applications</a></li><li><a href="#rest-api-status-codes">3.15. REST Status Codes</a></li></ul></li><li><a href="#chap-jdk">4. Using the OpenAM Java SDK</a><ul class="nav nav-stacked"><li><a href="#install-jdk-samples">4.1. Installing OpenAM Client SDK Samples</a></li><li><a href="#about-jdk">4.2. About the OpenAM Java SDK</a></li></ul></li><li><a href="#chap-authentication">5. Authenticating Using OpenAM Java SDK</a></li><li><a href="#chap-session">6. Handling Single Sign-On Using OpenAM Java SDK</a><ul class="nav nav-stacked"><li><a href="#session-receiving-notifications">6.1. Receiving Notifications</a></li></ul></li><li><a href="#chap-policy-decisions">7. Requesting Policy Decisions Using OpenAM Java SDK</a></li><li><a href="#chap-xacml">8. Requesting a XACML Policy Decision Using OpenAM Java SDK</a></li><li><a href="#chap-fedlet-java">9. Using Fedlets in Java Web Applications</a><ul class="nav nav-stacked"><li><a href="#create-install-java-fedlet">9.1. Creating &amp; Installing a Java Fedlet</a></li><li><a href="#fedlet-signing-encryption">9.2. Signing &amp; Encryption For a Fedlet</a></li><li><a href="#customize-java-fedlet">9.3. Customizing a Java Fedlet</a><ul class="nav nav-stacked"><li><a href="#fedlet-perform-sso">9.3.1. Performing Single Sign-On</a></li><li><a href="#fedlet-perform-slo">9.3.2. Performing Single Logout</a></li><li><a href="#fedlet-perform-attr-query">9.3.3. Performing Attribute Queries</a></li><li><a href="#fedlet-perform-xacml-query">9.3.4. Performing XACML Queries</a></li></ul></li></ul></li><li><a href="#chap-fedlet-dotnet">10. Using Fedlets in .NET Applications</a></li><li><a href="#chap-sae">11. Using Secure Attribute Exchange</a><ul class="nav nav-stacked"><li><a href="#sae-install-prerequisites">11.1. Installing the Samples</a></li><li><a href="#sae-security-prerequisites">11.2. Preparing to Secure SAE Communications</a></li><li><a href="#sae-secure-idp">11.3. Securing the Identity Provider Side</a></li><li><a href="#sae-secure-sp">11.4. Securing the Service Provider Side</a></li><li><a href="#sae-trying-it-out">11.5. Trying It Out</a></li></ul></li><li><a href="#chap-csdk">12. Using the OpenAM C API</a></li><li><a href="#chap-extending">13. Extending OpenAM</a></li><li><a href="#chap-custom-attr">14. Customizing Profile Attributes</a></li><li><a href="#chap-oauth2-scopes">15. Customizing OAuth 2.0 Scope Handling</a><ul class="nav nav-stacked"><li><a href="#design-oauth2-scopes-plugin">15.1. Designing an OAuth 2.0 Scopes Plugin</a></li><li><a href="#build-oauth2-scopes-plugin">15.2. Building an OAuth 2.0 Scopes Plugin</a></li><li><a href="#configure-oauth2-scopes-plugin">15.3. Configuring OpenAM to Use the Plugin</a></li><li><a href="#try-oauth2-scopes-plugin">15.4. Trying the Example Plugin</a></li></ul></li><li><a href="#chap-auth-spi">16. Customizing Authentication Modules</a><ul class="nav nav-stacked"><li><a href="#about-custom-auth-module">16.1. About the Sample Authentication Module</a></li><li><a href="#properties-sample-auth-module">16.2. Sample Auth Properties</a></li><li><a href="#callbacks-file-sample-auth-module">16.3. Sample Auth Callbacks</a></li><li><a href="#authentication-logic-sample-auth-module">16.4. The Sample Authentication Logic</a></li><li><a href="#principal-sample-auth-module">16.5. The Sample Auth Principal</a></li><li><a href="#service-conf-sample-auth-module">16.6. The Sample Auth Service Configuration</a></li><li><a href="#build-config-sample-auth-module">16.7. Building &amp; Installing the Sample Auth Module</a><ul class="nav nav-stacked"><li><a href="#building-sample-auth-module">16.7.1. Building the Module</a></li><li><a href="#installing-sample-auth-module">16.7.2. Installing the Module</a></li></ul></li><li><a href="#configuring-testing-sample-auth-module">16.8. Configuring &amp; Testing the Sample Auth Module</a></li></ul></li><li><a href="#chap-custom-quota-exhaustion-action">17. Customizing Session Quota Exhaustion Actions</a><ul class="nav nav-stacked"><li><a href="#create-custom-quota-exhaustion-action">17.1. Creating &amp; Installing a Custom Session Quota Exhaustion Action</a></li><li><a href="#list-custom-quota-exhaustion-actions">17.2. Listing Session Quota Exhaustion Actions</a></li><li><a href="#remove-custom-quota-exhaustion-actions">17.3. Removing a Session Quota Exhaustion Action</a></li></ul></li><li><a href="#chap-post-auth">18. Creating a Post Authentication Plugin</a><ul class="nav nav-stacked"><li><a href="#design-post-authentication-plugin">18.1. Designing Your Post Authentication Plugin</a></li><li><a href="#build-post-authentication-plugin">18.2. Building Your Sample Post Authentication Plugin</a></li><li><a href="#configure-post-authentication-plugin">18.3. Configuring Your Post Authentication Plugin</a></li><li><a href="#test-post-authentication-plugin">18.4. Testing Your Post Authentication Plugin</a></li></ul></li><li><a href="#chap-policy-spi">19. Customizing Policy Evaluation</a><ul class="nav nav-stacked"><li><a href="#about-sample-policy-plugins">19.1. About the Sample Plugins</a></li><li><a href="#configure-sample-policy-plugin">19.2. Configuring A Sample Policy Plugin</a></li></ul></li><li><a href="#chap-identity-repo-spi">20. Customizing Identity Data Storage</a><ul class="nav nav-stacked"><li><a href="#about-idrepo-plugin">20.1. About the Identity Repository Plugin</a><ul class="nav nav-stacked"><li><a href="#idrepo-plugin-inheritance">20.1.1. IdRepo Inheritance</a></li><li><a href="#idrepo-plugin-lifecycle">20.1.2. IdRepo Lifecycle</a></li><li><a href="#idrepo-plugin-capabilties">20.1.3. IdRepo Plugin Capabilities</a></li></ul></li><li><a href="#idrepo-plugin-implementation">20.2. Identity Repository Plugin Implementation</a></li><li><a href="#idrepo-plugin-deployment">20.3. Identity Repository Plugin Deployment</a></li></ul></li><li><a href="#d19565e6826">Index</a></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenAM  Developer's Guide</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark</span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">P&eacute;ter</span> <span class="surname">Major</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Jang</span></h3></div></div></div><div><p class="releaseinfo"></p></div><div><p class="copyright">Copyright &copy; 2011-2013 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">Publication date: July&nbsp;30,&nbsp;2024</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>Guide to developing OpenAM client applications and service providers.
    OpenAM provides open source Authentication, Authorization, Entitlement and
    Federation software.</p></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div><div lang="en" class="preface" id="preface"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>This guide demonstrates how to handle sessions to permit single sign
  on and single log out in OpenAM client applications. This guide further
  demonstrates how to use the OpenAM APIs including both APIs for client
  applications, and also SPIs for authentication, policy, service management,
  delegation, and identity storage. Finally, this guide demonstrates how to
- write your own web policy agent.</p><div class="section" id="d14138e119"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.&nbsp;Who Should Use this Guide</h2></div></div></div><p>This guide is written for developers who adapt client applications
+ write your own web policy agent.</p><div class="section" id="d19565e119"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.&nbsp;Who Should Use this Guide</h2></div></div></div><p>This guide is written for developers who adapt client applications
   to use OpenAM access management capabilities. It is also written for
   designers and developers extending and integrating OpenAM services for
   their organizations.</p><p>You do not need to be an OpenAM wizard to learn something from
@@ -1077,7 +1077,7 @@ $ <strong>curl https://bjensen:hifalutin@opendj.example.com:8443/users/newuser</
 }</em>
  </pre><p>
   Program listings are formatted as follows:
- </p><pre class="codelisting prettyprint linenums lang-java">
+ </p><pre class="codelisting prettyprint">
 class Test {
     public static void main(String [] args)  {
         System.out.println("This is a program listing.");
@@ -1102,11 +1102,11 @@ class Test {
     and usability for the readership.
    </p></li></ul></div><p>
   The review process helps to ensure that documentation published for
-  a ForgeRock release is technically accurate and complete.
+  a Open Identity Platform release is technically accurate and complete.
  </p><p>
   Fully reviewed, published core documentation is available at
-  <a class="link" href="https://www.openidentityplatform.org/" target="_blank">https://www.openidentityplatform.org/</a>.
-  Use this documentation when working with a ForgeRock Enterprise release.
+  <a class="link" href="https://doc.openidentityplatform.org/" target="_blank">https://doc.openidentityplatform.org/</a>.
+  Use this documentation when working with a Open Identity Platform release.
  </p><p>
   You can find pre-release draft documentation at the online
   <a class="link" href="https://github.com/OpenIdentityPlatform" target="_blank">community resource center</a>.
@@ -1163,7 +1163,7 @@ class Test {
  as in the case where the client interacts with OpenAM over protocol, or
  tightly, as in the case of an application using the OpenAM Java or C API
  to interact with OpenAM services.</p><p>This part of the guide covers client interaction with OpenAM
- over supported protocols and using OpenAM APIs.</p></div><div lang="en" class="chapter" id="chap-rest"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;3.&nbsp;Using RESTful Web Services</h1></div></div></div><a class="indexterm" name="d14138e302"></a><p>This chapter shows how to use the OpenAM RESTful interfaces for direct
+ over supported protocols and using OpenAM APIs.</p></div><div lang="en" class="chapter" id="chap-rest"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;3.&nbsp;Using RESTful Web Services</h1></div></div></div><a class="indexterm" name="d19565e305"></a><p>This chapter shows how to use the OpenAM RESTful interfaces for direct
  integration between web client applications and OpenAM.</p><div class="section" id="about-openam-rest-api"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.1.&nbsp;About the RESTful API</h2></div></div></div><p>Interface Stability: <a href="../admin-guide/index.html#interface-stability" class="link">Evolving</a></p><p>OpenAM offers a RESTful API for these access and identity management
   operations:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="#rest-api-auth" title="3.3.&nbsp;Authentication &amp; Logout">Authentication</a> (login)</p></li><li class="listitem"><p><a class="link" href="#rest-api-auth" title="3.3.&nbsp;Authentication &amp; Logout">Logout</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-cookie-info" title="3.4.&nbsp;Cookie Information">Cookie information</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-tokens" title="3.5.&nbsp;Token Validation, Attribute Retrieval">Token attribute retrieval</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-tokens" title="3.5.&nbsp;Token Validation, Attribute Retrieval">Token validation</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-authz" title="3.6.&nbsp;Authorization">Authorization</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-oauth2" title="3.7.&nbsp;OAuth 2.0 Authorization">OAuth 2.0 Authorization</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-openid-connect" title="3.8.&nbsp;OpenID Connect 1.0">OpenID Connect 1.0</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-self-registration" title="3.9.&nbsp;User Self-Registration">User self-registration</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-password-reset" title="3.10.&nbsp;Resetting Forgotten Passwords">Resetting forgotten passwords</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-logging" title="3.11.&nbsp;Logging">Logging</a></p></li><li class="listitem"><p><a class="link" href="#rest-api-crud-identity" title="3.12.&nbsp;Identity Management">Identity management</a> (creating,
     reading, updating, deleting identities)</p></li><li class="listitem"><p><a class="link" href="#rest-api-crud-realm" title="3.13.&nbsp;Realm Management">Realm management</a> (creating,
@@ -1173,13 +1173,13 @@ class Test {
   The following is an example token that has not been encoded:</p><pre class="literallayout">AQIC5wM2LY4SfczntBbXvEAOuECbqMY3J4NW3byH6xwgkGE=@AAJTSQACMDE=#</pre><p>This token includes reserved characters such as <code class="literal">+</code>, <code class="literal">/</code>,
   and <code class="literal">=</code> (The <code class="literal">@</code>, <code class="literal">#</code>, and <code class="literal">*</code> are not
   reserved characters per se, but substitutions are still required). To c66encode this token,
-  you would substitute certain characters for others, as follows:</p><pre>+ is replaced with -
+  you would substitute certain characters for others, as follows:</p><pre class="codelisting prettyprint">+ is replaced with -
 / is replaced with _
 = is replaced with .
 @ is replaced with *
 # is repalced with *
 * (first instance) is replaced with @
-* (subsequent instances) is replaced with #</pre><p>In this case, the translated token would appear as shown here:</p><pre class="literallayout">AQIC5wM2LY4SfczntBbXvEAOuECbqMY3J4NW3byH6xwgkGE.*AAJTSQACMDE.*</pre></div><div class="section" id="rest-api-auth"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.3.&nbsp;Authentication &amp; Logout</h2></div></div></div><a class="indexterm" name="d14138e421"></a><a class="indexterm" name="d14138e426"></a><p>OpenAM provides REST APIs for authentication and for logout.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Under <code class="literal">/json/authenticate</code> and
+* (subsequent instances) is replaced with #</pre><p>In this case, the translated token would appear as shown here:</p><pre class="literallayout">AQIC5wM2LY4SfczntBbXvEAOuECbqMY3J4NW3byH6xwgkGE.*AAJTSQACMDE.*</pre></div><div class="section" id="rest-api-auth"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.3.&nbsp;Authentication &amp; Logout</h2></div></div></div><a class="indexterm" name="d19565e425"></a><a class="indexterm" name="d19565e430"></a><p>OpenAM provides REST APIs for authentication and for logout.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Under <code class="literal">/json/authenticate</code> and
     <code class="literal">/json/sessions</code>, you find the newer JSON-based APIs.</p><p>See <a class="xref" href="#rest-api-auth-json" title="3.3.1.&nbsp;Authentication &amp; Logout">Section&nbsp;3.3.1, &#8220;Authentication &amp; Logout&#8221;</a> below.</p></li><li class="listitem"><p>Under <code class="literal">/identity/authenticate</code> and
     <code class="literal">/identity/logout</code>, you find the backwards-compatible,
     legacy API.</p><p>See <a class="xref" href="#rest-api-auth-legacy" title="3.3.2.&nbsp;Authentication &amp; Logout (Legacy API)">Section&nbsp;3.3.2, &#8220;Authentication &amp; Logout (Legacy API)&#8221;</a> below.</p></li></ul></div><div class="section" id="rest-api-auth-json"><div class="titlepage"><div><div><h3 class="title">3.3.1.&nbsp;Authentication &amp; Logout</h3></div></div></div><p>The simplest user name/password authentication returns a
@@ -1320,7 +1320,7 @@ boolean=false</pre><p>With a valid token, you can retrieve attributes about the 
   OpenAM returns a series of <em class="replaceable"><code>name</code></em>,
   <em class="replaceable"><code>value</code></em> pairs.</p><p>The newer API for retrieving user information is demonstrated in
   <a class="xref" href="#rest-api-read-identity" title="3.12.2.&nbsp;Reading Identities">Section&nbsp;3.12.2, &#8220;Reading Identities&#8221;</a>. What follows describes the
-  legacy API.</p><a class="indexterm" name="d14138e712"></a><pre class="cmdline prettyprint">$ curl --request POST --data "subjectid=AQIC5w...*AAJTSQACMDE.*" 
+  legacy API.</p><a class="indexterm" name="d19565e729"></a><pre class="cmdline prettyprint">$ curl --request POST --data "subjectid=AQIC5w...*AAJTSQACMDE.*" 
   https://openam.example.com:8443/openam/identity/attributes
 userdetails.token.id=
  AQIC5wM2LY4SfcxuxIP0VnP2lVjs7ypEM6VDx6srk56CN1Q.*AAJTSQACMDE.*
@@ -1367,7 +1367,7 @@ userdetails.token.id=
  AQIC5wM2LY4SfcxuxIP0VnP2lVjs7ypEM6VDx6srk56CN1Q.*AAJTSQACMDE.*
 userdetails.attribute.name=cn
 userdetails.attribute.value=Babs Jensen
-userdetails.attribute.value=Barbara Jensen</pre></div><div class="section" id="rest-api-authz"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.6.&nbsp;Authorization</h2></div></div></div><a class="indexterm" name="d14138e733"></a><p>You can call on OpenAM to decide whether to authorize access to a
+userdetails.attribute.value=Barbara Jensen</pre></div><div class="section" id="rest-api-authz"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.6.&nbsp;Authorization</h2></div></div></div><a class="indexterm" name="d19565e753"></a><p>You can call on OpenAM to decide whether to authorize access to a
   protected resource based on a valid token. Of course, you must percent
   encode the resource URI.</p><pre class="cmdline prettyprint">$ curl "https://openam.example.com:8443/openam/identity/authorize?
  uri=http%3A%2F%2Fwww.example.com%3A8080%2Fexamples%2Findex.html
@@ -1641,7 +1641,7 @@ $ curl
     },
     "statusMessage": "OK"
 }
-</pre></div></div></div><div class="section" id="rest-api-oauth2"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.7.&nbsp;OAuth 2.0 Authorization</h2></div></div></div><a class="indexterm" name="d14138e940"></a><div class="itemizedlist"><p>OpenAM exposes the following REST endpoints for different OAuth 2.0
+</pre></div></div></div><div class="section" id="rest-api-oauth2"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.7.&nbsp;OAuth 2.0 Authorization</h2></div></div></div><a class="indexterm" name="d19565e967"></a><div class="itemizedlist"><p>OpenAM exposes the following REST endpoints for different OAuth 2.0
    purposes.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Endpoints for <a class="link" href="#rest-api-oauth2-client-endpoints" title="3.7.1.&nbsp;OAuth 2.0 Client &amp; Resource Server Endpoints">OAuth
     2.0 clients and resource servers</a>, mostly defined in RFC 6749,
     <a class="link" href="http://tools.ietf.org/html/rfc6749" target="_blank"><em class="citetitle">The OAuth 2.0 Authorization Framework</em></a>, with
@@ -1889,7 +1889,7 @@ $ curl
    as in the following example.</p><pre class="cmdline prettyprint">$ curl --request DELETE
  --header "iplanetDirectoryPro: AQIC5wM...3MTYxOA..*"
  https://openam.example.com:8443/openam/frrest/oauth2/client/testClient
-{"success":"true"}</pre></div></div><div class="section" id="rest-api-openid-connect"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.8.&nbsp;OpenID Connect 1.0</h2></div></div></div><a class="indexterm" name="d14138e1383"></a><p>OpenID Connect 1.0 extends OAuth 2.0 so the client can verify claims
+{"success":"true"}</pre></div></div><div class="section" id="rest-api-openid-connect"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.8.&nbsp;OpenID Connect 1.0</h2></div></div></div><a class="indexterm" name="d19565e1414"></a><p>OpenID Connect 1.0 extends OAuth 2.0 so the client can verify claims
   about the identity of the end user, get profile information about the end
   user, and log the user out at the end of the OpenAM session.</p><div class="itemizedlist"><p>OpenAM exposes the following REST endpoints for <a class="link" href="http://openid.net/connect/" target="_blank">OpenID Connect 1.0</a>
    purposes.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Endpoints for <a class="link" href="#rest-api-openid-connect-discovery" title="3.8.1.&nbsp;Discovering OpenID Connect 1.0 Configuration">discovering information</a>.</p></li><li class="listitem"><p>An endpoint for <a class="link" href="#rest-api-openid-connect-dynamic-registration" title="3.8.2.&nbsp;Registering OpenID Connect 1.0 Clients">registering client applications</a>.</p></li><li class="listitem"><p>Endpoints for <a class="link" href="#rest-api-openid-connect-authorization" title="3.8.3.&nbsp;Performing OpenID Connect 1.0 Client Authorization">client authorization</a>.</p></li><li class="listitem"><p>Endpoints for <a class="link" href="#rest-api-openid-connect-session" title="3.8.4.&nbsp;Managing OpenID Connect 1.0 Sessions">session management</a>.</p></li></ul></div><div class="section" id="rest-api-openid-connect-discovery"><div class="titlepage"><div><div><h3 class="title">3.8.1.&nbsp;Discovering OpenID Connect 1.0 Configuration</h3></div></div></div><p>OpenAM exposes endpoints for discovering information about the provider
@@ -1913,7 +1913,7 @@ $ curl
    handle end user logout actions.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">/oauth2/connect/checkSession</code> allows clients
      to retrieve session status notifications.</p></li><li class="listitem"><p><code class="literal">/oauth2/connect/endSession</code> allows clients to
      terminate end user sessions.</p></li></ul></div><p>For an example, see <a href="../admin-guide/index.html#manage-sessions-openid-connect" class="link"><em class="citetitle">Managing User
-   Sessions</em></a>.</p></div></div><div class="section" id="rest-api-self-registration"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.9.&nbsp;User Self-Registration</h2></div></div></div><a class="indexterm" name="d14138e1499"></a><p>The OpenAM REST API for users provides an action for
+   Sessions</em></a>.</p></div></div><div class="section" id="rest-api-self-registration"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.9.&nbsp;User Self-Registration</h2></div></div></div><a class="indexterm" name="d19565e1530"></a><p>The OpenAM REST API for users provides an action for
   self-registration.</p><p>The feature works by sending an email to the user in response to RESTful
   HTTP POST requesting registration with an email address. When the user clicks
   the link received by mail, an application intercepts the HTTP GET,
@@ -1999,7 +1999,7 @@ $ curl
         "id=newuser,ou=user,dc=openam,dc=forgerock,dc=org"
     ]
 }</pre></li></ol></div><p>At this point the user is registered, active, and can authenticate
-  with OpenAM.</p></div><div class="section" id="rest-api-password-reset"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.10.&nbsp;Resetting Forgotten Passwords</h2></div></div></div><a class="indexterm" name="d14138e1566"></a><p>The OpenAM REST API for users provides an action for handling forgotten
+  with OpenAM.</p></div><div class="section" id="rest-api-password-reset"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.10.&nbsp;Resetting Forgotten Passwords</h2></div></div></div><a class="indexterm" name="d19565e1599"></a><p>The OpenAM REST API for users provides an action for handling forgotten
   passwords as long as the user has a valid email address in their profile.</p><p>The option is disabled by default. You can enable it in the OpenAM Console
   globally via Configuration &gt; Global &gt; REST Security.</p><p>Alternatively, you can enable it for an individual realm under
   Access Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Services &gt; Add &gt;
@@ -2084,7 +2084,7 @@ $ curl
 "2011-09-14 16:38:17"   "Hello World"   id=bjensen,ou=user,o=openam
    8a4025a2b3af291d01  "Not Available" INFO    o=openam
    id=amadmin,ou=user,o=openam "Not Available" rest.access "Not Available"
-   192.168.56.2</pre></div><div class="section" id="rest-api-crud-identity"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.12.&nbsp;Identity Management</h2></div></div></div><a class="indexterm" name="d14138e1650"></a><p>This section shows how to create, read, update, delete, and list
+   192.168.56.2</pre></div><div class="section" id="rest-api-crud-identity"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.12.&nbsp;Identity Management</h2></div></div></div><a class="indexterm" name="d19565e1686"></a><p>This section shows how to create, read, update, delete, and list
   identities using the RESTful APIs.</p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">Important</h3></div><div class="panel-body"><p>OpenAM is not primarily an identity data store, nor is it provisioning
    software. For storing identity data, consider <a class="link" href="http://forgerock.com/what-we-offer/open-identity-stack/opendj/" target="_blank">OpenDJ</a>.
    For provisioning, consider <a class="link" href="http://forgerock.com/what-we-offer/open-identity-stack/openidm/" target="_blank">OpenIDM</a>.
@@ -2930,7 +2930,7 @@ string=bjensen</pre></div><div class="section" id="rest-api-update-legacy"><div 
  admin=AQIC5wM2LY4SfcxSYA8eG-vrNHb_W7nG8XkfAGyRyuaebDY.*AAJTSQACMDE.*
  &amp;identity_name=testuser
  &amp;identity_realm=%2F
- &amp;identity_type=user"</pre></div></div><div class="section" id="rest-api-crud-realm"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.13.&nbsp;Realm Management</h2></div></div></div><a class="indexterm" name="d14138e2047"></a><p>This section shows how to create, read, update, and delete realms 
+ &amp;identity_type=user"</pre></div></div><div class="section" id="rest-api-crud-realm"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.13.&nbsp;Realm Management</h2></div></div></div><a class="indexterm" name="d19565e2096"></a><p>This section shows how to create, read, update, and delete realms 
   using the RESTful APIs.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Under the <code class="literal">/json/realms</code> endpoint, you find the 
     newer JSON-based API.</p><div class="itemizedlist"><p>The following sections cover this JSON-based API.</p><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p><a class="xref" href="#rest-api-parameters-realm" title="3.13.1.&nbsp;Default Parameters for Realms">Section&nbsp;3.13.1, &#8220;Default Parameters for Realms&#8221;</a></p></li><li class="listitem"><p><a class="xref" href="#rest-api-create-realm" title="3.13.2.&nbsp;Creating Realms">Section&nbsp;3.13.2, &#8220;Creating Realms&#8221;</a></p></li><li class="listitem"><p><a class="xref" href="#rest-api-read-realm" title="3.13.3.&nbsp;Reading Realms">Section&nbsp;3.13.3, &#8220;Reading Realms&#8221;</a></p></li><li class="listitem"><p><a class="xref" href="#rest-api-update-realm" title="3.13.4.&nbsp;Updating Realms">Section&nbsp;3.13.4, &#8220;Updating Realms&#8221;</a></p></li><li class="listitem"><p><a class="xref" href="#rest-api-delete-realm" title="3.13.5.&nbsp;Deleting Realms">Section&nbsp;3.13.5, &#8220;Deleting Realms&#8221;</a></p></li></ul></div></li></ul></div><div class="section" id="rest-api-parameters-realm"><div class="titlepage"><div><div><h3 class="title">3.13.1.&nbsp;Default Parameters for Realms</h3></div></div></div><p>Realms have a number of fields entered with the default loading.
     The following table provides information on what the default realm settings are,
@@ -3017,7 +3017,7 @@ string=bjensen</pre></div><div class="section" id="rest-api-update-legacy"><div 
  https://openam.example.com:8443/openam/json/realms/testRealm
  {"success":"true"}</pre><p>On success, OpenAM returns a JSON object indicating success. On
     failure, OpenAM returns a JSON representation of the error including the
-    <a class="link" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">HTTP status code</a>.</p></div></div><div class="section" id="rest-dashboard"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.14.&nbsp;Displaying Dashboard Applications</h2></div></div></div><a class="indexterm" name="d14138e2283"></a><p>OpenAm lets administrators configure online applications to display
+    <a class="link" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank">HTTP status code</a>.</p></div></div><div class="section" id="rest-dashboard"><div class="titlepage"><div><div><h2 class="title" style="clear: both">3.14.&nbsp;Displaying Dashboard Applications</h2></div></div></div><a class="indexterm" name="d19565e2337"></a><p>OpenAm lets administrators configure online applications to display
     applications on user Dashboards. You can used exposed REST API to display
     information about the online applications.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">/dashboard/assigned</code></span></dt><dd><p>This endpoint retrieves the list of applications assigned to the 
        authenticated user.</p><pre class="cmdline prettyprint">$ curl --header "iplanetDirectoryPro: AQIC5w...2NzEz*"
@@ -3212,7 +3212,7 @@ The server refused this request because the request entity is in a
     "message": "Actions are not supported for resource instances"
 }</pre></dd><dt><span class="term">503 Service Unavailable</span></dt><dd><p>The requested resource was temporarily unavailable.</p></dd></dl></div></div></div><div lang="en" class="chapter" id="chap-jdk"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;4.&nbsp;Using the OpenAM Java SDK</h1></div></div></div><p>This chapter introduces OpenAM Java SDK. OpenAM Java SDK is delivered
  with the full version of OpenAM,
- <code class="filename"></code>.</p><div class="section" id="install-jdk-samples"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.1.&nbsp;Installing OpenAM Client SDK Samples</h2></div></div></div><a class="indexterm" name="d14138e2427"></a><p>The full OpenAM download,
+ <code class="filename"></code>.</p><div class="section" id="install-jdk-samples"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.1.&nbsp;Installing OpenAM Client SDK Samples</h2></div></div></div><a class="indexterm" name="d19565e2488"></a><p>The full OpenAM download,
   <code class="filename"></code>, contains the Java Client
   SDK library, <code class="filename"></code>, as well as
   samples for use on the command line in
@@ -3233,7 +3233,7 @@ The server refused this request because the request entity is in a
     running the web application container.</p></li><li class="step"><p>Verify that you have properly configured the sample web application.</p><ol type="a" class="substeps"><li class="step"><p>In another browser tab page of the same browser instance, login to
       OpenAM as the OpenAM Administrator, <code class="literal">amadmin</code>.</p><p>This signs you into OpenAM, storing the cookie in your browser.</p></li><li class="step"><p>On the Samples tab page, click the link under Single Sign On Token
       Verification Servlet.</p><p>If the sample web application is properly configured, you should
-      see something like the following text in your browser.</p><pre>SSOToken host name: 127.0.0.1
+      see something like the following text in your browser.</p><pre class="codelisting prettyprint">SSOToken host name: 127.0.0.1
 SSOToken Principal name: id=amadmin,ou=user,dc=openam,dc=forgerock,dc=org
 Authentication type used: DataStore
 IPAddress of the host: 127.0.0.1
@@ -3266,11 +3266,11 @@ Logged Out!!</pre></li></ol></div></div></div><div class="section" id="about-jdk
     hooks to make sure the application can be shut down gracefully. How you
     register for shutdown depends on the type of application.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>For Java EE applications, make sure the OpenAM client SDK shuts down
     successfully by including the following context listener in your
-    application's <code class="filename">web.xml</code> file.</p><pre class="codelisting prettyprint lang-xml">&lt;listener&gt;
+    application's <code class="filename">web.xml</code> file.</p><pre class="codelisting prettyprint">&lt;listener&gt;
  &lt;listener-class&gt;
   com.sun.identity.common.ShutdownServletContextListener
  &lt;/listener-class&gt;
-&lt;/listener&gt;</pre></li><li class="listitem"><p>For standalone applications, set the following JVM property.</p><pre class="literallayout">-Dopenam.runtime.shutdown.hook.enabled=true</pre></li></ul></div></div></div><div lang="en" class="chapter" id="chap-authentication"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;5.&nbsp;Authenticating Using OpenAM Java SDK</h1></div></div></div><a class="indexterm" name="d14138e2678"></a><p>This chapter looks at authentication with the OpenAM Java SDK and at the
+&lt;/listener&gt;</pre></li><li class="listitem"><p>For standalone applications, set the following JVM property.</p><pre class="literallayout">-Dopenam.runtime.shutdown.hook.enabled=true</pre></li></ul></div></div></div><div lang="en" class="chapter" id="chap-authentication"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;5.&nbsp;Authenticating Using OpenAM Java SDK</h1></div></div></div><a class="indexterm" name="d19565e2745"></a><p>This chapter looks at authentication with the OpenAM Java SDK and at the
  sample client, <code class="filename">Login.java</code>, which demonstrates
  authenticating to OpenAM from a client application, provided a realm, user
  name, and password. This is the sample you ran to test installation of the
@@ -3495,7 +3495,7 @@ public class Login {
         }
         System.exit(0);
     }
-}</pre></div><div lang="en" class="chapter" id="chap-session"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;6.&nbsp;Handling Single Sign-On Using OpenAM Java SDK</h1></div></div></div><a class="indexterm" name="d14138e2777"></a><p>This chapter looks at handling session tokens with the OpenAM Java SDK.
+}</pre></div><div lang="en" class="chapter" id="chap-session"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;6.&nbsp;Handling Single Sign-On Using OpenAM Java SDK</h1></div></div></div><a class="indexterm" name="d19565e2844"></a><p>This chapter looks at handling session tokens with the OpenAM Java SDK.
  The class shown in this chapter is
  <code class="literal">com.sun.identity.samples.sso.SSOTokenSample</code>.</p><p>When a user authenticates successfully, OpenAM sets up a single sign-on
  (SSO) session for the user. The session is associated with an SSO token that
@@ -3635,7 +3635,7 @@ Property: County: SantaClara</pre><p>Notice both the properties populated by Ope
   for other types of listeners, such as <code class="literal">ServiceListener</code>, and
   <code class="literal">IdEventListener</code> implementations. See the <a class="link" href="${javadocBase}" target="_blank"><em class="citetitle">OpenAM Java SDK API
   Specification</em></a> for details on the available listener
-  interfaces.</p></div></div><div lang="en" class="chapter" id="chap-policy-decisions"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;7.&nbsp;Requesting Policy Decisions Using OpenAM Java SDK</h1></div></div></div><a class="indexterm" name="d14138e2954"></a><p>This chapter shows how to request policy decision by using OpenAM Java
+  interfaces.</p></div></div><div lang="en" class="chapter" id="chap-policy-decisions"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;7.&nbsp;Requesting Policy Decisions Using OpenAM Java SDK</h1></div></div></div><a class="indexterm" name="d19565e3022"></a><p>This chapter shows how to request policy decision by using OpenAM Java
  SDK. The chapter focuses on the sample client,
  <code class="filename">source/samples/policy/PolicyEvaluationSample.java</code>, which
  demonstrates making a request to OpenAM for a policy decision about access to
@@ -3766,7 +3766,7 @@ public class PolicyEvaluationSample {
  indicate the user credentials, resource to access, and HTTP method to
  use. You can use a resource that might not exist for the purposes of this
  example, but you will need to set up a policy for that resource to get
- meaningful results.</p><pre class="codelisting prettyprint linenums lang-java">user.name=demo
+ meaningful results.</p><pre class="codelisting prettyprint">user.name=demo
 user.password=changeit
 service.name=iPlanetAMWebAgentService
 resource.name=http://www.example.com:80/banner.html
@@ -3805,8 +3805,8 @@ policyDecision:&lt;PolicyDecision&gt;
 &lt;/PolicyDecision&gt;
 
 returning from getPolicyDecision()</pre><p>As you see, the policy decision response is formatted here as an XML
- document.<a href="#ftn.d14138e3042" class="footnote"><sup class="footnote" id="d14138e3042">[1]</sup></a> Notice here the line showing that
- OpenAM has allowed access to the resource.</p><pre class="literallayout">&lt;Value&gt;allow&lt;/Value&gt;</pre><div class="footnotes"><br><hr class="footnote-hr"><div id="ftn.d14138e3042" class="footnote"><p><a href="#d14138e3042" class="para"><sup class="para">[1] </sup></a>The <code class="literal">PolicyDecision</code> element is
+ document.<a href="#ftn.d19565e3112" class="footnote"><sup class="footnote" id="d19565e3112">[1]</sup></a> Notice here the line showing that
+ OpenAM has allowed access to the resource.</p><pre class="literallayout">&lt;Value&gt;allow&lt;/Value&gt;</pre><div class="footnotes"><br><hr class="footnote-hr"><div id="ftn.d19565e3112" class="footnote"><p><a href="#d19565e3112" class="para"><sup class="para">[1] </sup></a>The <code class="literal">PolicyDecision</code> element is
  defined in
  <code class="filename"><em class="replaceable"><code>openam</code></em>/WEB-INF/remoteInterface.dtd</code>
  where <em class="replaceable"><code>openam</code></em> is the location where the OpenAM web
@@ -4166,7 +4166,7 @@ testProcessRequest():xacmlResponse:
 &lt;xacml-context:StatusDetail/&gt;&lt;/xacml-context:StatusDetail&gt;
 &lt;/xacml-context:Status&gt;
 &lt;/xacml-context:Result&gt;
-&lt;/xacml-context:Response&gt;</pre></div><div lang="en" class="chapter" id="chap-fedlet-java"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;9.&nbsp;Using Fedlets in Java Web Applications</h1></div></div></div><a class="indexterm" name="d14138e3169"></a><p>This chapter introduces OpenAM Fedlets, and shows how to use the Fedlet
+&lt;/xacml-context:Response&gt;</pre></div><div lang="en" class="chapter" id="chap-fedlet-java"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;9.&nbsp;Using Fedlets in Java Web Applications</h1></div></div></div><a class="indexterm" name="d19565e3242"></a><p>This chapter introduces OpenAM Fedlets, and shows how to use the Fedlet
  as part of your Java web application.</p><div class="section" id="create-install-java-fedlet"><div class="titlepage"><div><div><h2 class="title" style="clear: both">9.1.&nbsp;Creating &amp; Installing a Java Fedlet</h2></div></div></div><p>An OpenAM <em class="firstterm">Fedlet</em> is a small web application that
   can do federation in your service provider application with OpenAM acting as
   the identity provider. The Fedlet does not require an entire OpenAM
@@ -4232,7 +4232,7 @@ $ mv fedlet.war /path/to/tomcat/webapps</pre></li><li class="step"><p>Browse to 
       passwords are both the same.</p><p>Use the encoded value to create the password files as in the
       following example.</p><pre class="cmdline prettyprint">$ echo AQIC5BHNSjLwT303GqndmHbyYvzP9Tz7OAnK &gt; ~/fedlet/.storepass
 $ echo AQIC5BHNSjLwT303GqndmHbyYvzP9Tz7OAnK &gt; ~/fedlet/.keypass</pre></li><li class="step"><p>Edit <code class="filename">~/fedlet/sp.xml</code> to use the test
-      certificate for the attribute query.</p><p>Change the following:</p><pre class="codelisting prettyprint lang-xml">&lt;RoleDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      certificate for the attribute query.</p><p>Change the following:</p><pre class="codelisting prettyprint">&lt;RoleDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:query="urn:oasis:names:tc:SAML:metadata:ext:query"
     xsi:type="query:AttributeQueryDescriptorType"
     protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"&gt;
@@ -4284,7 +4284,7 @@ cGy/F2Zuj8XJJpuQRSE6PtQqBuDEHjjmOQJ0rV/r8mO1ZCtHRhpZ5zYRjhRC9eCbjx9VrFax0JDC
   &lt;/KeyDescriptor&gt;
  &lt;/RoleDescriptor&gt;</pre></li><li class="step"><p>Edit <code class="filename">~/fedlet/sp-extended.xml</code> to use the test
       certificate for the attribute query.</p><p>Change the following, assuming your Circle of Trust is called
-      <code class="literal">cot</code>:</p><pre class="codelisting prettyprint lang-xml">&lt;AttributeQueryConfig metaAlias="/attrQuery"&gt;
+      <code class="literal">cot</code>:</p><pre class="codelisting prettyprint">&lt;AttributeQueryConfig metaAlias="/attrQuery"&gt;
     &lt;Attribute name="signingCertAlias"&gt;
         &lt;Value&gt;&lt;/Value&gt;
     &lt;/Attribute&gt;
@@ -4297,7 +4297,7 @@ cGy/F2Zuj8XJJpuQRSE6PtQqBuDEHjjmOQJ0rV/r8mO1ZCtHRhpZ5zYRjhRC9eCbjx9VrFax0JDC
     &lt;Attribute name="cotlist"&gt;
         &lt;Value&gt;cot&lt;/Value&gt;
     &lt;/Attribute&gt;
-&lt;/AttributeQueryConfig&gt;</pre><p>To:</p><pre class="codelisting prettyprint lang-xml">&lt;AttributeQueryConfig metaAlias="/attrQuery"&gt;
+&lt;/AttributeQueryConfig&gt;</pre><p>To:</p><pre class="codelisting prettyprint">&lt;AttributeQueryConfig metaAlias="/attrQuery"&gt;
     &lt;Attribute name="signingCertAlias"&gt;
         &lt;Value&gt;test&lt;/Value&gt;
     &lt;/Attribute&gt;
@@ -4472,7 +4472,7 @@ cGy/F2Zuj8XJJpuQRSE6PtQqBuDEHjjmOQJ0rV/r8mO1ZCtHRhpZ5zYRjhRC9eCbjx9VrFax0JDC
     alias names to the alias for the Fedlet certificate, and the
     <code class="literal">want*Signed</code> and <code class="literal">want*Encrypted</code> values
     to <code class="literal">true</code>.</p><p>If you reformat the file, take care not to add white space around
-    string values in elements.</p><pre class="codelisting prettyprint lang-xml">
+    string values in elements.</p><pre class="codelisting prettyprint">
 &lt;EntityConfig xmlns="urn:sun:fm:SAML:2.0:entityconfig"
  xmlns:fm="urn:sun:fm:SAML:2.0:entityconfig" hosted="1"
  entityID="http://www.example.com:8080/fedlet"&gt;
@@ -4687,7 +4687,7 @@ cGy/F2Zuj8XJJpuQRSE6PtQqBuDEHjjmOQJ0rV/r8mO1ZCtHRhpZ5zYRjhRC9eCbjx9VrFax0JDC
       used in the Fedlet. Add mappings for your application before
       deployment.</p><p>In the <code class="filename">web.xml</code> mappings, your application must
       be mapped to <code class="literal">/fedletapplication</code>, as this is the
-      assertion consumer URL set in the Fedlet metadata.</p><pre class="codelisting prettyprint lang-xml">&lt;servlet&gt;
+      assertion consumer URL set in the Fedlet metadata.</p><pre class="codelisting prettyprint">&lt;servlet&gt;
     &lt;servlet-name&gt;yourApp&lt;/servlet-name&gt;
     &lt;jsp-file&gt;/fedletSampleApp.jsp&lt;/jsp-file&gt;
 &lt;/servlet&gt;
@@ -4740,7 +4740,7 @@ $ cp fedletSampleApp.jsp fedletSampleApp.jsp.orig</pre></li><li class="step"><p>
 %&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre></li><li class="step"><p>Add a <code class="filename">myapp.jsp</code> page to the Fedlet, such as the
-    following.</p><pre class="codelisting prettyprint linenums lang-html">&lt;html&gt;
+    following.</p><pre class="codelisting prettyprint">&lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;My Application&lt;/title&gt;
 &lt;meta http-equiv="Content-Type" content="text/html" /&gt;
@@ -4812,7 +4812,7 @@ $ cp fedletSampleApp.jsp fedletSampleApp.jsp.orig</pre></li><li class="step"><p>
    and if successful processes the result, which is a
    <code class="literal">java.lang.String</code> representing the decision, such as
    <code class="literal">Permit</code> if the decision is to allow access, or
-   <code class="literal">Deny</code> if the decision is to deny access.</p></div></div></div><div lang="en" class="chapter" id="chap-fedlet-dotnet"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;10.&nbsp;Using Fedlets in .NET Applications</h1></div></div></div><a class="indexterm" name="d14138e4155"></a><p>This chapter explains how to use the Fedlet in your .NET application.
+   <code class="literal">Deny</code> if the decision is to deny access.</p></div></div></div><div lang="en" class="chapter" id="chap-fedlet-dotnet"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;10.&nbsp;Using Fedlets in .NET Applications</h1></div></div></div><a class="indexterm" name="d19565e4239"></a><p>This chapter explains how to use the Fedlet in your .NET application.
  You must configure the OpenAM .NET Fedlet to work with the identity
  provider.</p><p>Before you try the .NET Fedlet with OpenAM, create a hosted identity
  provider in a Circle of Trust to which you plan to add the Fedlet. You can
@@ -4873,7 +4873,7 @@ $ cp fedletSampleApp.jsp fedletSampleApp.jsp.orig</pre></li><li class="step"><p>
    edit <code class="filename">SampleApp\Web.config</code>, to make sure that the
    certificate alias reflects the key pair installed in the Windows Local
    Computer Store and available to the IIS 7 application pool user.</p><p>Default settings set the log level to write informational messages, and
-   use the test key pair shipped with OpenAM.</p><pre class="codelisting prettyprint lang-xml">&lt;appSettings&gt;
+   use the test key pair shipped with OpenAM.</p><pre class="codelisting prettyprint">&lt;appSettings&gt;
     &lt;add key="fedletLogLevel" value="info" /&gt;
     &lt;add key="fedletMutualAuthCertAlias" value="test" /&gt;
 &lt;/appSettings&gt;</pre><p>The key pair specified by the
@@ -4957,7 +4957,7 @@ Finished installing ASP.NET (4.0.30319).</pre></li></ol></li></ol></div></div><d
      edit <code class="filename">SampleApp\Web.config</code>, to make sure that the
      certificate alias reflects the key pair installed in the Windows Local
      Computer Store and available to the IIS 7 application pool user.</p><p>Default settings set the log level to write informational messages,
-     and use the test key pair shipped with OpenAM.</p><pre class="codelisting prettyprint lang-xml">&lt;appSettings&gt;
+     and use the test key pair shipped with OpenAM.</p><pre class="codelisting prettyprint">&lt;appSettings&gt;
     &lt;add key="fedletLogLevel" value="info" /&gt;
     &lt;add key="fedletMutualAuthCertAlias" value="test" /&gt;
 &lt;/appSettings&gt;</pre><p>The key pair specified by the
@@ -5071,20 +5071,20 @@ cGy/F2Zuj8XJJpuQRSE6PtQqBuDEHjjmOQJ0rV/r8mO1ZCtHRhpZ5zYRjhRC9eCbjx9VrFax0JDC
           &gt;128&lt;/xenc:KeySize&gt;
       &lt;/EncryptionMethod&gt;
     &lt;/KeyDescriptor&gt;
-  &lt;/RoleDescriptor&gt;</pre></li><li class="step"><p>Edit <code class="filename">sp-extended.xml</code> for your configuration.</p><p>Set the signing and encryption certificate aliases.</p><pre class="codelisting prettyprint lang-xml">&lt;Attribute name="signingCertAlias"&gt;
+  &lt;/RoleDescriptor&gt;</pre></li><li class="step"><p>Edit <code class="filename">sp-extended.xml</code> for your configuration.</p><p>Set the signing and encryption certificate aliases.</p><pre class="codelisting prettyprint">&lt;Attribute name="signingCertAlias"&gt;
   &lt;Value&gt;test&lt;/Value&gt;
 &lt;/Attribute&gt;
 &lt;Attribute name="encryptionCertAlias"&gt;
   &lt;Value&gt;test&lt;/Value&gt;
 &lt;/Attribute&gt;</pre><p>Update the attribute map in to coincide with the mapped attributes
-     on the Identity Provider.</p><pre class="codelisting prettyprint lang-xml">&lt;Attribute name="attributeMap"&gt;
+     on the Identity Provider.</p><pre class="codelisting prettyprint">&lt;Attribute name="attributeMap"&gt;
    &lt;Value&gt;cn=cn&lt;/Value&gt;
    &lt;Value&gt;sn=sn&lt;/Value&gt;
    &lt;Value&gt;uid=uid&lt;/Value&gt;
-&lt;/Attribute&gt;</pre><p>Add a logout URL.</p><pre class="codelisting prettyprint lang-xml">&lt;Attribute name="appLogoutUrl"&gt;
+&lt;/Attribute&gt;</pre><p>Add a logout URL.</p><pre class="codelisting prettyprint">&lt;Attribute name="appLogoutUrl"&gt;
    &lt;Value&gt;http://openam.example.com/fedlet/logout.aspx&lt;/Value&gt;
 &lt;/Attribute&gt;</pre><p>Add an &lt;AttributeQueryConfig&gt; to the &lt;EntityDescriptor&gt; that
-     references the certificate aliases.</p><pre class="codelisting prettyprint lang-xml">&lt;AttributeQueryConfig metaAlias="/attrQuery"&gt;
+     references the certificate aliases.</p><pre class="codelisting prettyprint">&lt;AttributeQueryConfig metaAlias="/attrQuery"&gt;
   &lt;Attribute name="signingCertAlias"&gt;
     &lt;Value&gt;test&lt;/Value&gt;
   &lt;/Attribute&gt;
@@ -5117,7 +5117,7 @@ Finished installing ASP.NET (4.0.30319).</pre></li><li class="step"><p>At the bo
    either SSLv3 or TLSv1 depending on what the remote peer supports.</p><p>For IIS 6 on Windows Server 2003, see the Windows Server
    documentation on <a class="link" href="http://technet.microsoft.com/en-us/library/cc776467%28WS.10%29.aspx" target="_blank"><em class="citetitle">TLS/SSL Tools and Settings</em></a>.</p><p>For IIS 7.5 on Windows Server 2008 R2, also consider the explanation
    in an online article, <a class="link" href="http://www.derekseaman.com/2010/06/enable-tls-12-aes-256-and-sha-256-in.html" target="_blank"><em class="citetitle">Enable TLS 1.2 Ciphers in IIS 7.5, Server 2008 R2</em></a>.</p><p>For reference, Microsoft Developer Network has an article describing
-   <a class="link" href="http://msdn.microsoft.com/en-us/library/aa374757(VS.85).aspx" target="_blank"><em class="citetitle">Cipher Suites in Schannel</em></a>.</p></li></ol></div></div></div><div lang="en" class="chapter" id="chap-sae"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;11.&nbsp;Using Secure Attribute Exchange</h1></div></div></div><a class="indexterm" name="d14138e4868"></a><p>Most deployments can rely on OpenAM to handle authentication and provide
+   <a class="link" href="http://msdn.microsoft.com/en-us/library/aa374757(VS.85).aspx" target="_blank"><em class="citetitle">Cipher Suites in Schannel</em></a>.</p></li></ol></div></div></div><div lang="en" class="chapter" id="chap-sae"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;11.&nbsp;Using Secure Attribute Exchange</h1></div></div></div><a class="indexterm" name="d19565e4963"></a><p>Most deployments can rely on OpenAM to handle authentication and provide
  identity assertions. Not only does OpenAM support a wide variety of
  authentication scenarios out of the box, but OpenAM also makes it possible to
  add custom authentication modules. Furthermore OpenIG lets you integrate
@@ -5256,14 +5256,14 @@ Finished installing ASP.NET (4.0.30319).</pre></li><li class="step"><p>At the bo
   Attributes Exchange IDP APP SAMPLE page.</p><p>Click the <code class="literal">ssourl</code> link in the page to start the
   exchange.</p><p>The resulting web page shows the attributes exchanged, including the
   mail and branch values used. The text of that page is something like the
-  following.</p><pre>SAE SP APP SAMPLE
+  following.</p><pre class="codelisting prettyprint">SAE SP APP SAMPLE
 
 Secure Attrs :
 mail            testuser@foo.com
 sun.idpentityid http://idp.example.com:8080/openam
 sun.spentityid  http://sp.example.com:8080/openam
 branch          mainbranch
-sun.authlevel   0</pre></div></div><div lang="en" class="chapter" id="chap-csdk"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;12.&nbsp;Using the OpenAM C API</h1></div></div></div><a class="indexterm" name="d14138e5161"></a><p>This chapter introduces OpenAM C SDK. OpenAM C SDK is available for
+sun.authlevel   0</pre></div></div><div lang="en" class="chapter" id="chap-csdk"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;12.&nbsp;Using the OpenAM C API</h1></div></div></div><a class="indexterm" name="d19565e5257"></a><p>This chapter introduces OpenAM C SDK. OpenAM C SDK is available for
  selected platforms on the OpenAM <a class="link" href="http://forgerock.org/openam.html" target="_blank">nightly builds page</a>.
  Contact <a class="link" href="mailto:info@forgerock.com" target="_top">info@forgerock.com</a>
  if you need OpenAM C SDK support.</p><p>To prepare to install OpenAM C SDK, first download the version for your
@@ -5303,7 +5303,7 @@ x86_64</pre></li><li class="step"><p>Set up <code class="filename">OpenSSOAgentB
  management problems out of the box. Yet, OpenAM also exposes APIs and
  SPIs that enable you extend OpenAM services when built-in functionality
  does not fit your deployment.</p><p>This part of the guide covers OpenAM mechanisms for plugging in
- additional functionality not available out of the box.</p></div><div lang="en" class="chapter" id="chap-custom-attr"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;14.&nbsp;Customizing Profile Attributes</h1></div></div></div><a class="indexterm" name="d14138e5306"></a><p>You can extend user profiles by adding custom attributes. This chapter
+ additional functionality not available out of the box.</p></div><div lang="en" class="chapter" id="chap-custom-attr"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;14.&nbsp;Customizing Profile Attributes</h1></div></div></div><a class="indexterm" name="d19565e5405"></a><p>You can extend user profiles by adding custom attributes. This chapter
  demonstrates how to add a custom attribute to a user profile when storing
  user profiles in the embedded LDAP directory.</p><p>Adding a custom attribute involves both updating the
  <code class="literal">iPlanetAMUserService</code>, and also updating the identity
@@ -5312,7 +5312,7 @@ x86_64</pre></li><li class="step"><p>Set up <code class="filename">OpenSSOAgentB
  OpenAM policy configuration stored in the configuration directory.</p><div class="itemizedlist"><p>This chapter includes the following procedures.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="xref" href="#add-attr-to-service-description" title="Procedure&nbsp;14.1.&nbsp;To Update the AMUser Service For the New Attribute">Procedure&nbsp;14.1, &#8220;To Update the AMUser Service For the New Attribute&#8221;</a></p></li><li class="listitem"><p><a class="xref" href="#add-attr-to-identity-repository" title="Procedure&nbsp;14.2.&nbsp;To Update the Identity Repository For the New Attribute">Procedure&nbsp;14.2, &#8220;To Update the Identity Repository For the New Attribute&#8221;</a></p></li><li class="listitem"><p><a class="xref" href="#allow-users-to-update-attr" title="Procedure&nbsp;14.3.&nbsp;To Allow Users To Update the New Attribute">Procedure&nbsp;14.3, &#8220;To Allow Users To Update the New Attribute&#8221;</a></p></li></ul></div><div class="procedure" id="add-attr-to-service-description"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;14.1.&nbsp;To Update the AMUser Service For the New Attribute</div><p>Follow the steps below to create a custom attribute in OpenAM.</p><ol class="procedure" type="1"><li class="step"><p>Create a backup copy of the configuration file for the
    <code class="literal">iPlanetAmUserService</code>.</p><pre class="cmdline prettyprint">$ cd $HOME
 $ cp openam/config/xml/amUser.xml openam/config/xml/amUser.xml.orig</pre></li><li class="step"><p>Edit the file to add your attribute as one of the list of
-   <code class="literal">&lt;User&gt;</code> attributes.</p><pre class="codelisting prettyprint lang-xml">&lt;AttributeSchema name="customAttribute"
+   <code class="literal">&lt;User&gt;</code> attributes.</p><pre class="codelisting prettyprint">&lt;AttributeSchema name="customAttribute"
     type="single"
     syntax="string"
     any="display"
@@ -5378,7 +5378,7 @@ MODIFY operation successful for DN cn=schema</pre></li><li class="step"><p>In Op
    <code class="literal">\n</code> in the list with <code class="literal">,\n
    \"customAttribute\"\n</code>.</p></li><li class="step"><p>Restart OpenAM or the web container where it runs. The following example applies to Tomcat.</p><pre class="cmdline prettyprint">$ /path/to/tomcat/bin/shutdown.sh
 $ /path/to/tomcat/bin/startup.sh</pre></li><li class="step"><p>Login to OpenAM console as a user to check that a user can save a
-   value for your new, custom attribute.</p><div class="mediaobject" align="center" id="figure-bjensen-with-custom-attribute"><a class="fancybox" href="images/bjensen-with-custom-attribute.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_bjensen-with-custom-attribute.png" align="middle" alt="Saving Babs Jensen's profile with a custom attribute" title="If all goes well, you can save the new custom attribute to the&#xA;     user profile."></a></div></li></ol></div></div></div><div lang="en" class="chapter" id="chap-oauth2-scopes"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;15.&nbsp;Customizing OAuth 2.0 Scope Handling</h1></div></div></div><a class="indexterm" name="d14138e5488"></a><p>RFC 6749, <a class="link" href="http://tools.ietf.org/html/rfc6749" target="_blank"><em class="citetitle">The OAuth 2.0 Authorization Framework</em></a>,
+   value for your new, custom attribute.</p><div class="mediaobject" align="center" id="figure-bjensen-with-custom-attribute"><a class="fancybox" href="images/bjensen-with-custom-attribute.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_bjensen-with-custom-attribute.png" align="middle" alt="Saving Babs Jensen's profile with a custom attribute" title="If all goes well, you can save the new custom attribute to the&#xA;     user profile."></a></div></li></ol></div></div></div><div lang="en" class="chapter" id="chap-oauth2-scopes"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;15.&nbsp;Customizing OAuth 2.0 Scope Handling</h1></div></div></div><a class="indexterm" name="d19565e5594"></a><p>RFC 6749, <a class="link" href="http://tools.ietf.org/html/rfc6749" target="_blank"><em class="citetitle">The OAuth 2.0 Authorization Framework</em></a>,
  describes access token scopes as a set of case-sensitive strings defined by
  the authorization server. Clients can request scopes, and resource owners can
  authorize them.</p><p>The default scopes implementation in OpenAM treats scopes as profile
@@ -5391,7 +5391,7 @@ $ /path/to/tomcat/bin/startup.sh</pre></li><li class="step"><p>Login to OpenAM c
  OAuth 2.0 provider (authorization server) configuration.</p><div class="section" id="design-oauth2-scopes-plugin"><div class="titlepage"><div><div><h2 class="title" style="clear: both">15.1.&nbsp;Designing an OAuth 2.0 Scopes Plugin</h2></div></div></div><p>A scopes plugin implements the
   <code class="literal">org.forgerock.openam.oauth2.provider.Scope</code> interface. The
   <code class="literal">Scope</code> interface has four methods that your plugin
-  overrides.</p><pre class="codelisting prettyprint linenums lang-java">public Set&lt;String&gt; scopeToPresentOnAuthorizationPage(
+  overrides.</p><pre class="codelisting prettyprint">public Set&lt;String&gt; scopeToPresentOnAuthorizationPage(
         Set&lt;String&gt; requestedScope,
         Set&lt;String&gt; availableScopes,
         Set&lt;String&gt; defaultScopes);
@@ -5540,7 +5540,7 @@ $ curl http://oauth2.example.com:8080/openam/oauth2/tokeninfo
   "token_type": "Bearer",
   "expires_in": 539,
   "access_token": "84122d5e-0462-4d81-93c3-7bc58bd416b3"
-}</pre></div></div><div lang="en" class="chapter" id="chap-auth-spi"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;16.&nbsp;Customizing Authentication Modules</h1></div></div></div><a class="indexterm" name="d14138e5589"></a><p>This chapter shows how to customize authentication with a sample custom
+}</pre></div></div><div lang="en" class="chapter" id="chap-auth-spi"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;16.&nbsp;Customizing Authentication Modules</h1></div></div></div><a class="indexterm" name="d19565e5698"></a><p>This chapter shows how to customize authentication with a sample custom
  authentication module. For deployments with particular requirements not met by
  existing OpenAM authentication modules, determine whether you can adapt one of
  the built-in or extension modules for your needs. If not, build the
@@ -5562,7 +5562,7 @@ $ curl http://oauth2.example.com:8080/openam/oauth2/tokeninfo
      of this file. See <a class="xref" href="#callbacks-file-sample-auth-module" title="16.3.&nbsp;Sample Auth Callbacks">Section&nbsp;16.3, &#8220;Sample Auth Callbacks&#8221;</a> for
      details.</p></dd></dl></div></div><div class="section" id="properties-sample-auth-module"><div class="titlepage"><div><div><h2 class="title" style="clear: both">16.2.&nbsp;Sample Auth Properties</h2></div></div></div><p>OpenAM uses a Java properties file per locale to retrieve the
   appropriate, localized strings for the authentication module.</p><p>The following is the Sample Authentication Module properties file,
-  <code class="filename">amAuthSampleAuth.properties</code>.</p><pre class="codelisting prettyprint linenums lang-java">sampleauth-service-description=Sample Authentication Module
+  <code class="filename">amAuthSampleAuth.properties</code>.</p><pre class="codelisting prettyprint">sampleauth-service-description=Sample Authentication Module
 a500=Authentication Level
 a501=Service Specific Attribute
 
@@ -5576,7 +5576,7 @@ sampleauth-error-2=Error 2 occurred during the authentication</pre></div><div cl
   The document type for a callback XML file is described in
   <code class="filename">WEB-INF/Auth_Module_Properties.dtd</code> where OpenAM is
   deployed.</p><div class="example" id="full-callbacks-file"><div class="example-title">Example&nbsp;16.1.&nbsp;Sample Auth Callbacks File</div><div class="example-contents"><p>The following is the <code class="filename">SampleAuth.xml</code> callbacks
-   file.</p><pre class="codelisting prettyprint lang-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+   file.</p><pre class="codelisting prettyprint">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE ModuleProperties PUBLIC
  "=//iPlanet//Authentication Module Properties XML Interface 1.0 DTD//EN"
         "jar://com/sun/identity/authentication/Auth_Module_Properties.dtd"&gt;
@@ -5610,7 +5610,7 @@ sampleauth-error-2=Error 2 occurred during the authentication</pre></div><div cl
      Otherwise OpenAM does not permit header substitution.</p></li></ol></div></div></div><br class="example-break"></div><div class="section" id="authentication-logic-sample-auth-module"><div class="titlepage"><div><div><h2 class="title" style="clear: both">16.4.&nbsp;The Sample Authentication Logic</h2></div></div></div><p>An OpenAM authentication module must extend the
   <code class="literal">com.sun.identity.authentication.spi.AMLoginModule</code> abstract
   class, and must implement the methods shown below.</p><p>See the <a class="link" href="${javadocBase}" target="_blank"><em class="citetitle">OpenAM Java SDK API Specification</em></a> for
-  reference.</p><pre class="codelisting prettyprint linenums lang-java">
+  reference.</p><pre class="codelisting prettyprint">
 // OpenAM calls the init() method once when the module is created.
 public void init(Subject subject, Map sharedState, Map options)
 
@@ -6213,7 +6213,7 @@ myKey                     org...examples...SampleQuotaExhaustionAction</pre></di
  --choicevalues
  org.forgerock.openam.examples.quotaexhaustionaction.SampleQuotaExhaustionAction
 
-Choice Values were removed.</pre></div></div><div lang="en" class="chapter" id="chap-post-auth"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;18.&nbsp;Creating a Post Authentication Plugin</h1></div></div></div><a class="indexterm" name="d14138e6065"></a><p>Post authentication plugins (PAP) let you include custom processing at
+Choice Values were removed.</pre></div></div><div lang="en" class="chapter" id="chap-post-auth"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;18.&nbsp;Creating a Post Authentication Plugin</h1></div></div></div><a class="indexterm" name="d19565e6187"></a><p>Post authentication plugins (PAP) let you include custom processing at
  the end of the authentication process, immediately before the subject is
  authenticated. Common uses of post authentication plugins include setting
  cookies and session variables. Post authentication plugins are often used in
@@ -6221,7 +6221,7 @@ Choice Values were removed.</pre></div></div><div lang="en" class="chapter" id="
  session properties, and then the policy agent injects the custom properties
  into the request header to the protected application.</p><p>This chapter explains how to create a post authentication plugin.</p><div class="section" id="design-post-authentication-plugin"><div class="titlepage"><div><div><h2 class="title" style="clear: both">18.1.&nbsp;Designing Your Post Authentication Plugin</h2></div></div></div><p>Your post authentication plugin class implements the
   <code class="literal">AMPostAuthProcessInterface</code> interface, and in particular
-  the following three methods.</p><pre class="codelisting prettyprint linenums lang-java">public void onLoginSuccess(
+  the following three methods.</p><pre class="codelisting prettyprint">public void onLoginSuccess(
   Map requestParamsMap, 
   HttpServletRequest request,
   HttpServletResponse response,
@@ -6344,7 +6344,7 @@ iPlanetAMAuthService under /realm was modified.</pre></div><div class="section" 
   configured your plugin for the realm, <code class="literal">/realm</code>, specify the
   realm in the login URL.</p><pre class="literallayout">http://openam.example.com:8080/openam/UI/Login?realm=realm</pre><p>Although as a user you do not notice anywhere in the user interface
   that OpenAM calls your plugin, a policy agent or custom client code could
-  retrieve the session property your plugin added to the user session.</p></div></div><div lang="en" class="chapter" id="chap-policy-spi"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;19.&nbsp;Customizing Policy Evaluation</h1></div></div></div><a class="indexterm" name="d14138e6202"></a><p>OpenAM policies let you restrict access to resources based both on
+  retrieve the session property your plugin added to the user session.</p></div></div><div lang="en" class="chapter" id="chap-policy-spi"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;19.&nbsp;Customizing Policy Evaluation</h1></div></div></div><a class="indexterm" name="d19565e6329"></a><p>OpenAM policies let you restrict access to resources based both on
  identity and group membership, and also on a range of conditions including
  session age, authentication chain or module used, authentication level, realm,
  session properties, IP address and DNS name, user profile content, resource
@@ -6435,7 +6435,7 @@ Using CLASSPATH:       /path/to/tomcat/bin/bootstrap.jar:
  /path/to/tomcat/bin/tomcat-juli.jar</pre><p>In OpenAM console, browse to Access Control &gt; <em class="replaceable"><code>Realm
   Name</code></em> &gt; Policies &gt; <em class="replaceable"><code>Policy Name</code></em>
   &gt; Conditions &gt; New... Notice in the list of conditions that you can
-  now apply your Sample Condition.</p><div class="mediaobject" align="center" id="figure-sample-condition"><a class="fancybox" href="images/sample-condition.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_sample-condition.png" align="middle" alt="Sample Condition in list of conditions" title="The sample condition you added is present in the list of&#xA;    conditions."></a></div></div></div><div lang="en" class="chapter" id="chap-identity-repo-spi"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;20.&nbsp;Customizing Identity Data Storage</h1></div></div></div><a class="indexterm" name="d14138e6373"></a><p>OpenAM maps user and group identities into a realm using data stores.
+  now apply your Sample Condition.</p><div class="mediaobject" align="center" id="figure-sample-condition"><a class="fancybox" href="images/sample-condition.png"><img class="img-responsive center-block" data-toggle="tooltip" src="images/thumb_sample-condition.png" align="middle" alt="Sample Condition in list of conditions" title="The sample condition you added is present in the list of&#xA;    conditions."></a></div></div></div><div lang="en" class="chapter" id="chap-identity-repo-spi"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;20.&nbsp;Customizing Identity Data Storage</h1></div></div></div><a class="indexterm" name="d19565e6506"></a><p>OpenAM maps user and group identities into a realm using data stores.
  An OpenAM data store relies on a Java identity repository (IdRepo) plugin to
  implement interaction with the identity repository where the users and groups
  are stored.</p><div class="section" id="about-idrepo-plugin"><div class="titlepage"><div><div><h2 class="title" style="clear: both">20.1.&nbsp;About the Identity Repository Plugin</h2></div></div></div><p>This chapter describes how to create a custom identity repository plugin.
@@ -6449,7 +6449,7 @@ Using CLASSPATH:       /path/to/tomcat/bin/bootstrap.jar:
    <code class="literal">com.sun.identity.idm.plugins</code>.</p></div></div><div class="section" id="idrepo-plugin-inheritance"><div class="titlepage"><div><div><h3 class="title">20.1.1.&nbsp;IdRepo Inheritance</h3></div></div></div><p>Your identity repository plugin class must extend the
    <code class="literal">com.sun.identity.idm.IdRepo</code> abstract class, and must
    include a constructor method that takes no arguments.</p></div><div class="section" id="idrepo-plugin-lifecycle"><div class="titlepage"><div><div><h3 class="title">20.1.2.&nbsp;IdRepo Lifecycle</h3></div></div></div><p>When OpenAM instantiates your IdRepo plugin, it calls the
-   <code class="literal">initialize()</code> method.</p><pre class="codelisting prettyprint linenums lang-java">public void initialize(Map configParams)</pre><p>The <code class="literal">configParams</code> are service configuration
+   <code class="literal">initialize()</code> method.</p><pre class="codelisting prettyprint">public void initialize(Map configParams)</pre><p>The <code class="literal">configParams</code> are service configuration
    parameters for the realm where the IdRepo plugin is configured. The
    <code class="literal">configParams</code> normally serve to set up communication with
    the underlying identity data store. OpenAM calls the
@@ -6459,29 +6459,29 @@ Using CLASSPATH:       /path/to/tomcat/bin/bootstrap.jar:
    methods.</p><p>After initialization, OpenAM calls the <code class="literal">addListener()</code>
    and <code class="literal">removeListener()</code> methods to register listeners that
    inform OpenAM client code of changes to identities managed by your
-   IdRepo.</p><pre class="codelisting prettyprint linenums lang-java">public int addListener(SSOToken token, IdRepoListener listener)
+   IdRepo.</p><pre class="codelisting prettyprint">public int addListener(SSOToken token, IdRepoListener listener)
 public void removeListener()</pre><p>You must handle listener registration in your IdRepo plugin, and also
    return events to OpenAM through the <code class="literal">IdRepoListener</code>.</p><p>When stopping, OpenAM calls your IdRepo plugin
-   <code class="literal">shutdown()</code> method.</p><pre class="codelisting prettyprint linenums lang-java">public void shutdown()</pre><p>You are not required to implement <code class="literal">shutdown()</code> unless
+   <code class="literal">shutdown()</code> method.</p><pre class="codelisting prettyprint">public void shutdown()</pre><p>You are not required to implement <code class="literal">shutdown()</code> unless
    your IdRepo plugin has shut down work of its own to do, such as close
    connections to the underlying identity data store.</p></div><div class="section" id="idrepo-plugin-capabilties"><div class="titlepage"><div><div><h3 class="title">20.1.3.&nbsp;IdRepo Plugin Capabilities</h3></div></div></div><p>Your IdRepo plugin provides OpenAM with a generic means to manage
    subjects&#8212;including users and groups but also special types such as
    roles, realms, and agents&#8212; and to create, read, update, delete, and
    search subjects. In order for OpenAM to determine your plugin's capabilities,
-   it calls the methods described in this section.</p><pre class="codelisting prettyprint linenums lang-java">public Set getSupportedTypes()</pre><p>The <code class="literal">getSupportedTypes()</code> method returns a set of
+   it calls the methods described in this section.</p><pre class="codelisting prettyprint">public Set getSupportedTypes()</pre><p>The <code class="literal">getSupportedTypes()</code> method returns a set of
    <code class="literal">IdType</code> objects, such as <code class="literal">IdType.USER</code>
    and <code class="literal">IdType.GROUP</code>. You can either hard-code the supported
    types into your plugin, or make them configurable through the IdRepo
-   service.</p><pre class="codelisting prettyprint linenums lang-java">public Set getSupportedOperations(IdType type)</pre><p>The <code class="literal">getSupportedOperations()</code> method returns a set
+   service.</p><pre class="codelisting prettyprint">public Set getSupportedOperations(IdType type)</pre><p>The <code class="literal">getSupportedOperations()</code> method returns a set
    of <code class="literal">IdOperation</code> objects, such as
    <code class="literal">IdOperation.CREATE</code> and
    <code class="literal">IdOperation.EDIT</code>. You can also either hard-code these, or
-   make them configurable.</p><pre class="codelisting prettyprint linenums lang-java">public boolean supportsAuthentication()</pre><p>The <code class="literal">supportsAuthentication()</code> method returns true if
+   make them configurable.</p><pre class="codelisting prettyprint">public boolean supportsAuthentication()</pre><p>The <code class="literal">supportsAuthentication()</code> method returns true if
    your plugin supports the <code class="literal">authenticate()</code> method.</p></div></div><div class="section" id="idrepo-plugin-implementation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">20.2.&nbsp;Identity Repository Plugin Implementation</h2></div></div></div><p>Your IdRepo plugin implements operational methods depending on what
   you support. These methods perform the operations in your data store.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Create</span></dt><dd><p>OpenAM calls <code class="literal">create()</code> to provision a new identity
      in the repository, where <code class="literal">name</code> is the new identity's
      name, and <code class="literal">attrMap</code> holds the attributes names and
-     values.</p><pre class="codelisting prettyprint linenums lang-java">public String create(SSOToken token, IdType type, String name, Map attrMap)
+     values.</p><pre class="codelisting prettyprint">public String create(SSOToken token, IdType type, String name, Map attrMap)
   throws IdRepoException, SSOException</pre></dd><dt><span class="term">Read</span></dt><dd><p>OpenAM calls the following methods to retrieve subjects in the
      identity repository, and to check account activity. If your data store
      does not support binary attributes, return an empty <code class="literal">Map</code>
@@ -6578,10 +6578,10 @@ public void setActiveStatus(
   String name,
   boolean active
 )</pre></dd><dt><span class="term">Authenticate</span></dt><dd><p>OpenAM calls <code class="literal">authenticate()</code> with the credentials
-     from the <code class="literal">DataStore</code> authentication module.</p><pre class="codelisting prettyprint linenums lang-java">public boolean authenticate(Callback[] credentials)
+     from the <code class="literal">DataStore</code> authentication module.</p><pre class="codelisting prettyprint">public boolean authenticate(Callback[] credentials)
   throws IdRepoException, AuthLoginException</pre></dd><dt><span class="term">Delete</span></dt><dd><p>The <code class="literal">delete()</code> method removes the subject from
      the identity repository. The <code class="literal">name</code> specifies the
-     subject.</p><pre class="codelisting prettyprint linenums lang-java">public void delete(SSOToken token, IdType type, String name)
+     subject.</p><pre class="codelisting prettyprint">public void delete(SSOToken token, IdType type, String name)
   throws IdRepoException, SSOException</pre></dd><dt><span class="term">Service</span></dt><dd><p>The <code class="literal">IdOperation.SERVICE</code> operation is rarely used
      in recent OpenAM deployments.</p></dd></dl></div></div><div class="section" id="idrepo-plugin-deployment"><div class="titlepage"><div><div><h2 class="title" style="clear: both">20.3.&nbsp;Identity Repository Plugin Deployment</h2></div></div></div><p>Your IdRepo plugin must link to <code class="filename"></code>,
   which when you deploy OpenAM is
@@ -6592,7 +6592,7 @@ public void setActiveStatus(
   <code class="literal">SubSchema</code> to the
   <code class="literal">sunIdentityRepositoryService</code> using the
   <span class="command"><strong>ssoadm</strong></span> command. First, you create the
-  <code class="literal">SubSchema</code> document having the following structure.</p><pre class="codelisting prettyprint lang-xml">&lt;SubSchema i18nKey="x4000" inheritance="multiple" maintainPriority="no"
+  <code class="literal">SubSchema</code> document having the following structure.</p><pre class="codelisting prettyprint">&lt;SubSchema i18nKey="x4000" inheritance="multiple" maintainPriority="no"
            name="CustomRepo" supportsApplicableOrganization="no" validate="yes"&gt;
  &lt;AttributeSchema cosQualifier="default" isSearchable="no"
                   name="RequiredValueValidator" syntax="string"
@@ -6640,7 +6640,7 @@ public void setActiveStatus(
   check that your plugin works as expected. You can do this under Access
   Control &gt; <em class="replaceable"><code>Realm Name</code></em> &gt; Subjects.</p><p>If your plugin supports authentication, then users should now be able
   to authenticate using the <code class="literal">DataStore</code> module for the
-  realm.</p><pre class="literallayout">http://openam.example.com:8080/openam/UI/Login?realm=test&amp;module=DataStore</pre></div></div><div class="index" id="d14138e6682"><div class="titlepage"><div><div><h1 class="title">Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>A</h3><dl><dt id="ientry-d14138e421">Authentication</dt><dd><dl><dt>Custom module, <a class="indexterm" href="#chap-auth-spi">Customizing Authentication Modules</a></dt><dt>Java API, <a class="indexterm" href="#chap-authentication">Authenticating Using OpenAM Java SDK</a></dt><dt>Post authentication plugins, <a class="indexterm" href="#chap-post-auth">Creating a Post Authentication Plugin</a></dt><dt>REST API, <a class="indexterm" href="#rest-api-auth">Authentication &amp; Logout</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>D</h3><dl><dt id="ientry-d14138e2283">Dashboard services, <a class="indexterm" href="#rest-dashboard">Displaying Dashboard Applications</a></dt></dl></div><div class="indexdiv"><h3>F</h3><dl><dt id="ientry-d14138e3169">Fedlets</dt><dd><dl><dt>.NET, <a class="indexterm" href="#chap-fedlet-dotnet">Using Fedlets in .NET Applications</a></dt><dt>Java, <a class="indexterm" href="#chap-fedlet-java">Using Fedlets in Java Web Applications</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>I</h3><dl><dt id="ientry-d14138e2427">Installing</dt><dd><dl><dt>C SDK, <a class="indexterm" href="#chap-csdk">Using the OpenAM C API</a></dt><dt>Java SDK samples, <a class="indexterm" href="#install-jdk-samples">Installing OpenAM Client SDK Samples</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>O</h3><dl><dt id="ientry-d14138e940">OAuth 2.0, <a class="indexterm" href="#chap-oauth2-scopes">Customizing OAuth 2.0 Scope Handling</a></dt><dd><dl><dt>REST API, <a class="indexterm" href="#rest-api-oauth2">OAuth 2.0 Authorization</a></dt></dl></dd><dt id="ientry-d14138e1383">OpenID Connect 1.0</dt><dd><dl><dt>REST API, <a class="indexterm" href="#rest-api-openid-connect">OpenID Connect 1.0</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d14138e1566">Password reset, <a class="indexterm" href="#rest-api-password-reset">Resetting Forgotten Passwords</a></dt><dt id="ientry-d14138e733">Policy</dt><dd><dl><dt>Java API, <a class="indexterm" href="#chap-policy-decisions">Requesting Policy Decisions Using OpenAM Java SDK</a></dt><dt>Plugins, <a class="indexterm" href="#chap-policy-spi">Customizing Policy Evaluation</a></dt><dt>REST API, <a class="indexterm" href="#rest-api-authz">Authorization</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>R</h3><dl><dt id="ientry-d14138e2047">Realm data</dt><dd><dl><dt>REST access, <a class="indexterm" href="#rest-api-crud-realm">Realm Management</a></dt></dl></dd><dt id="ientry-d14138e302">REST API, <a class="indexterm" href="#chap-rest">Using RESTful Web Services</a></dt></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-d14138e4868">Secure Attribute Exchange (SAE), <a class="indexterm" href="#chap-sae">Using Secure Attribute Exchange</a></dt><dt id="ientry-d14138e1499">Self-registration, <a class="indexterm" href="#rest-api-self-registration">User Self-Registration</a></dt><dt id="ientry-d14138e426">Session tokens</dt><dd><dl><dt>Java API, <a class="indexterm" href="#chap-session">Handling Single Sign-On Using OpenAM Java SDK</a></dt><dt>REST API, <a class="indexterm" href="#rest-api-auth">Authentication &amp; Logout</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>U</h3><dl><dt id="ientry-d14138e712">User data</dt><dd><dl><dt>Custom profile attributes, <a class="indexterm" href="#chap-custom-attr">Customizing Profile Attributes</a></dt><dt>Custom repository, <a class="indexterm" href="#chap-identity-repo-spi">Customizing Identity Data Storage</a></dt><dt>REST access, <a class="indexterm" href="#rest-api-tokens">Token Validation, Attribute Retrieval</a>, <a class="indexterm" href="#rest-api-crud-identity">Identity Management</a></dt></dl></dd></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
+  realm.</p><pre class="literallayout">http://openam.example.com:8080/openam/UI/Login?realm=test&amp;module=DataStore</pre></div></div><div class="index" id="d19565e6826"><div class="titlepage"><div><div><h1 class="title">Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>A</h3><dl><dt id="ientry-d19565e425">Authentication</dt><dd><dl><dt>Custom module, <a class="indexterm" href="#chap-auth-spi">Customizing Authentication Modules</a></dt><dt>Java API, <a class="indexterm" href="#chap-authentication">Authenticating Using OpenAM Java SDK</a></dt><dt>Post authentication plugins, <a class="indexterm" href="#chap-post-auth">Creating a Post Authentication Plugin</a></dt><dt>REST API, <a class="indexterm" href="#rest-api-auth">Authentication &amp; Logout</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>D</h3><dl><dt id="ientry-d19565e2337">Dashboard services, <a class="indexterm" href="#rest-dashboard">Displaying Dashboard Applications</a></dt></dl></div><div class="indexdiv"><h3>F</h3><dl><dt id="ientry-d19565e3242">Fedlets</dt><dd><dl><dt>.NET, <a class="indexterm" href="#chap-fedlet-dotnet">Using Fedlets in .NET Applications</a></dt><dt>Java, <a class="indexterm" href="#chap-fedlet-java">Using Fedlets in Java Web Applications</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>I</h3><dl><dt id="ientry-d19565e2488">Installing</dt><dd><dl><dt>C SDK, <a class="indexterm" href="#chap-csdk">Using the OpenAM C API</a></dt><dt>Java SDK samples, <a class="indexterm" href="#install-jdk-samples">Installing OpenAM Client SDK Samples</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>O</h3><dl><dt id="ientry-d19565e967">OAuth 2.0, <a class="indexterm" href="#chap-oauth2-scopes">Customizing OAuth 2.0 Scope Handling</a></dt><dd><dl><dt>REST API, <a class="indexterm" href="#rest-api-oauth2">OAuth 2.0 Authorization</a></dt></dl></dd><dt id="ientry-d19565e1414">OpenID Connect 1.0</dt><dd><dl><dt>REST API, <a class="indexterm" href="#rest-api-openid-connect">OpenID Connect 1.0</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d19565e1599">Password reset, <a class="indexterm" href="#rest-api-password-reset">Resetting Forgotten Passwords</a></dt><dt id="ientry-d19565e753">Policy</dt><dd><dl><dt>Java API, <a class="indexterm" href="#chap-policy-decisions">Requesting Policy Decisions Using OpenAM Java SDK</a></dt><dt>Plugins, <a class="indexterm" href="#chap-policy-spi">Customizing Policy Evaluation</a></dt><dt>REST API, <a class="indexterm" href="#rest-api-authz">Authorization</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>R</h3><dl><dt id="ientry-d19565e2096">Realm data</dt><dd><dl><dt>REST access, <a class="indexterm" href="#rest-api-crud-realm">Realm Management</a></dt></dl></dd><dt id="ientry-d19565e305">REST API, <a class="indexterm" href="#chap-rest">Using RESTful Web Services</a></dt></dl></div><div class="indexdiv"><h3>S</h3><dl><dt id="ientry-d19565e4963">Secure Attribute Exchange (SAE), <a class="indexterm" href="#chap-sae">Using Secure Attribute Exchange</a></dt><dt id="ientry-d19565e1530">Self-registration, <a class="indexterm" href="#rest-api-self-registration">User Self-Registration</a></dt><dt id="ientry-d19565e430">Session tokens</dt><dd><dl><dt>Java API, <a class="indexterm" href="#chap-session">Handling Single Sign-On Using OpenAM Java SDK</a></dt><dt>REST API, <a class="indexterm" href="#rest-api-auth">Authentication &amp; Logout</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>U</h3><dl><dt id="ientry-d19565e729">User data</dt><dd><dl><dt>Custom profile attributes, <a class="indexterm" href="#chap-custom-attr">Customizing Profile Attributes</a></dt><dt>Custom repository, <a class="indexterm" href="#chap-identity-repo-spi">Customizing Identity Data Storage</a></dt><dt>REST access, <a class="indexterm" href="#rest-api-tokens">Token Validation, Attribute Retrieval</a>, <a class="indexterm" href="#rest-api-crud-identity">Identity Management</a></dt></dl></dd></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
               2011-2013&nbsp;
               ForgeRock AS;&nbsp;
               &nbsp;

@@ -1,0 +1,1484 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+   /*
+* The contents of this file are subject to the terms of the Common Development and
+* Distribution License (the License). You may not use this file except in compliance with the
+* License.
+*
+* You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+* specific language governing permission and limitations under the License.
+*
+* When distributing Covered Software, include this CDDL Header Notice in each file and include
+* the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+* Header, with the fields enclosed by brackets [] replaced by your own identifying
+* information: "Portions copyright [year] [name of copyright owner]".
+*
+* Copyright 2015 ForgeRock AS.
+* Portions copyright 2024 3A Systems LLC.
+*/
+
+/***********************************/
+/* Imported Styles
+/***********************************/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css);
+/* @import url(https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css); */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/example1/colorbox.css);
+
+/***********************************/
+/* General Styles
+/***********************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Dark Grey */
+
+    color: #2a2f32;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+
+a {
+    /* Sea Green */
+    color: #519387;
+}
+
+a.link[href^="http"] {
+    background-image: url("includes/logos/Icon_External_Link.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    margin-right: 2px;
+}
+
+a.self-link, a.self-link:hover, a.self-link:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href].self-link:hover::after
+{
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e144";
+    color: #519387;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-size: 75%;
+    font-style: normal;
+    line-height: 1;
+    padding-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+    list-style-type: decimal !important
+}
+
+.section,
+.chapter,
+.preface,
+.glossary,
+.refentry,
+.reference,
+.appendix,
+.index,
+.titlepage h2,
+.titlepage h3,
+.titlepage h4,
+.titlepage h5 {
+    padding-top: 60px;
+    margin-top: -50px;
+}
+
+.left-shape-content {
+    background: url("includes/logos/left-shape-4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 566px;
+    position: fixed;
+    width: 57px;
+    top: 60%;
+    z-index: -1;
+}
+
+/***********************************/
+/* Bootstrap Override Styles
+/***********************************/
+
+/* Button Styles */
+
+.btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+
+.btn-default {
+    background-color: #A1A8AD;
+    border-color: #8a9298;
+    color: #ffffff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-color: #3f4b54;
+    border-color: #1B2025;
+    color: #ffffff;
+}
+
+/* Tooltip Styles */
+
+.tooltip.in {
+    opacity: 0.95;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #519387;
+}
+
+.tooltip-inner {
+    background-color: #519387;
+}
+
+/* List Styles */
+
+.dl-horizontal dt {
+    white-space: normal;
+    padding: 0 3px 0 0;
+    width: 200px;
+}
+
+.dl-horizontal dd {
+    border-bottom: 1px dotted rgb(125, 179, 168);
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin-bottom: 18px;
+    margin-left: 210px;
+}
+
+.dl-horizontal {
+    border-top: 1px dotted rgb(125, 179, 168);
+    border-top: 1px dotted rgba(125, 179, 168, 0.9);
+    padding-top: 10px;
+}
+
+.variablelist dt {
+    margin: 18px 0 5px 15px;
+}
+
+.variablelist dd {
+    border-bottom: 1px dotted rgba(125, 179, 168, 0.8);
+    margin: 5px 0 5px 30px;
+}
+
+.variablelist > dl {
+    border-top: 1px dotted rgba(125, 179, 168, 0.8);
+}
+
+
+/***********************************/
+/* Redirect Page Styles
+/***********************************/
+
+.index-redirect,
+.index-redirect body {
+    height: 100%;
+    background-color: #333;
+    font-family: 'Open Sans', "proxima-nova", sans-serif;
+}
+.index-redirect body {
+    color: #fff;
+    text-align: center;
+}
+.index-redirect .container {
+    display: table;
+    vertical-align: middle;
+    height: 100%;
+}
+.index-redirect .btn-primary {
+    /* Sea Green */
+    background-color: #519387;
+
+    /* Dark Sea Green */
+    border-color: #488378;
+    color: #fff;
+}
+.index-redirect .cover-heading {
+    font-weight: 400 !important;
+}
+.index-redirect .vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/***********************************/
+/* Header Styles
+/***********************************/
+
+.navbar-brand {
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand > img {
+    height: 100%;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    box-shadow: 0 0 10px 2px #111;
+}
+.nav > li > a {
+    font-weight: 200;
+}
+
+/***********************************/
+/* Banner Styles
+/***********************************/
+
+.jumbotron {
+    /* Sea Green */
+    background: url("includes/logos/hero-bg-01.png") no-repeat scroll left top #519387;
+    color: white;
+    box-shadow: 0 0 10px 2px grey;
+    margin-top: 50px;
+    padding: 0 0 10px;
+}
+.jumbotron small {
+    color: white;
+}
+.jumbotron p {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.jumbotron h1 {
+    font-size: 23px !important;
+    font-weight: 300 !important;
+}
+
+/***********************************/
+/* Table of Contents Styles
+/***********************************/
+
+#sidebar .nav>li>a {
+    /* Light Grey */
+
+    color: #777;
+    border-left: 4px solid transparent;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+/* nested links */
+
+#sidebar .nav .nav>li>a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+/* nested nested links */
+
+#sidebar .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 50px;
+    padding-top: 4px;
+}
+/* nested nested nested links */
+
+#sidebar .nav .nav .nav .nav>li>a {
+    font-size: 11px;
+    padding-bottom: 2px;
+    padding-left: 70px;
+    padding-top: 4px;
+}
+/* active and hover links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.locked-active>a,
+#sidebar .nav>li>a:hover,
+#sidebar .nav>li>a:focus {
+    text-decoration: none;
+    /*
+    background-color: rgb(125, 179, 168, 0.8);
+    background-color: rgba(125, 179, 168, 0.8);
+    border-color: rgb(45, 52, 55, 0.8);
+    border-color: rgba(45, 52, 55, 0.8);
+    color: white;
+    */
+    /* Bright Yellow */
+
+    background-color: #eeea07;
+    border-color: #eeea07;
+    /* Grey */
+
+    color: #2a2f32;
+}
+/* all active links */
+
+#sidebar .nav>.active>a,
+#sidebar .nav>.active:hover>a,
+#sidebar .nav>.active:focus>a {
+    font-weight: 600;
+}
+/* nested active links */
+
+#sidebar .nav .nav>.active>a,
+#sidebar .nav .nav>.active:hover>a,
+#sidebar .nav .nav>.active:focus>a {
+    font-weight: 400;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* nested nested active links */
+
+#sidebar .nav .nav .nav>.active>a,
+#sidebar .nav .nav .nav>.active:hover>a,
+#sidebar .nav .nav .nav>.active:focus>a {
+    font-weight: 300;
+}
+/* hide all (inactive) nested list */
+
+#sidebar .nav ul.nav {
+    display: none;
+}
+/* show active nested list */
+
+#sidebar .nav>.active>ul.nav {
+    display: block;
+}
+#sidebar.affix {
+    top: 66px;
+    position: fixed;
+    bottom: 30px;
+    height: auto;
+    overflow-y: scroll;
+}
+#sidebar.affix-bottom {
+    position: absolute;
+}
+
+/***********************************/
+/* Content Styles
+/***********************************/
+
+/* Main Content Styles */
+
+h1 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+
+h1 span {
+    margin-right: .3em;
+}
+
+#doc-content h1,
+#doc-content .h1 {
+    /* Sea Green */
+    border-bottom: 2px solid #70ab9b;
+    font-size: 36px;
+    margin-top: 24px;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+h5, .h5 {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    padding-bottom: 4px;
+    font-style: italic;
+}
+
+.anchorjs-link .anchorjs-icon {
+    color: #A1A8AD;
+    text-decoration: none;
+}
+.anchorjs-link:hover .anchorjs-icon {
+    color: #519387;
+    text-decoration: none;
+}
+
+h1:hover > .anchorjs-link,
+h2:hover > .anchorjs-link,
+h3:hover > .anchorjs-link,
+h4:hover > .anchorjs-link,
+h5:hover > .anchorjs-link,
+.anchorjs-link:focus {
+    opacity: 1 !important;
+    transition: color 0.16s linear 0s;
+    text-decoration: none;
+}
+
+.chapter > p:first-of-type,
+.preface > p:first-of-type {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+#doc-content {
+    padding: 0 20px 85px 10px;
+}
+
+div.procedure, div.table {
+    margin-top:-50px;
+    padding-top: 60px;
+}
+
+div.procedure-title, div.table-title {
+    margin: 6px 0 8px;
+}
+
+div.procedure-inner {
+    border-color: lightslategray;
+    border-left: 6px solid lightslategray;
+    border-style: dotted dotted dotted solid;
+    border-width: 1px 1px 1px 6px;
+    margin: 15px 0 10px;
+    padding: 10px 15px 10px 10px;
+}
+
+.author {
+    display: inline;
+}
+
+.table {
+    font-size: 14px;
+}
+
+div.simplelist {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Title Styles */
+
+.procedure-title > a, .procedure-title > a:hover {
+    color: lightslategray;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.itemizedlist-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+}
+
+.figure-title {
+    font-weight: bold;
+    margin: 16px 0 4px;
+    text-align: center;
+}
+
+.table-title {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.variablelist-title {
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+/* Code Styles */
+
+.btn-copy-cmdline,
+.btn-copy-codelisting {
+    /* White */
+
+    background-color: #fff;
+    /* Light Grey */
+
+    border: 1px solid #e1e1e8;
+    border-radius: 0 4px;
+    color: #777;
+    display: block;
+    font-size: 12px;
+    padding: 5px 8px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+
+pre.prettyprint {
+    border: 1px solid #ccc;
+    padding: 9.5px;
+    font-size: 12px;
+}
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+.zeroclipboard-is-hover {
+    /* Light Sea Green */
+
+    background-color: #6faa9b;
+    border-color: #6faa9b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ui-effects-transfer {
+    border: 1px dotted black;
+    background-color: yellow;
+    opacity: 0.4;
+}
+
+/* Modal Dialog Styles */
+
+#doc-content .modal h1.title {
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    margin: 14px 0 5px;
+}
+#doc-content .modal h2.subtitle {
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    margin-bottom: 26px;
+}
+#doc-content .modal h3.author {
+    font-size: 14px !important;
+    font-style: italic;
+    font-weight: 100 !important;
+    margin: 4px 0 5px 18px;
+}
+#doc-content .modal .affiliation .orgname {
+    display: block;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    margin: 20px 0 0 0;
+}
+#doc-content .modal .affiliation .address p {
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    margin: 4px 0;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .copyright {
+    display: none;
+}
+#doc-content .modal .abstract .abstract-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+#doc-content .modal .abstract > p {
+    margin: 10px 0 5px 20px;
+    font-size: 16px !important;
+    font-weight: 100 !important;
+}
+
+/* Image Styles */
+
+.fancybox > img {
+    cursor: zoom-in;
+}
+a.fancybox {
+    text-decoration: none;
+}
+
+#cboxTitle {
+    color: #519387;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#cboxOverlay{
+    background: none repeat scroll 0 0 rgba(66, 130, 116, 0.6);
+}
+
+img.img-responsive {
+    margin-bottom: 20px;
+}
+
+/* Index Styles */
+
+.indexdiv > h3 {
+    border-bottom: 2px dotted lightgrey;
+    padding-bottom: 5px;
+}
+.indexdiv > dl {
+    margin-left: 30px;
+}
+.indexdiv dl {
+    margin-bottom: 5px;
+}
+.indexdiv dt {
+    margin: 5px 0 2px;
+}
+.indexdiv dd {
+    margin-left: 35px;
+}
+.indexdiv .indexterm {
+    font-weight: 200;
+}
+
+/* Reference Styles */
+
+.refnamediv h2 {
+    display: none;
+}
+
+.refsect1 h2,
+.refsynopsisdiv h2 {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.refnamediv p {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+/***********************************/
+/* Footer Styles
+/***********************************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    display: none;
+    z-index: 15;
+}
+
+#footer {
+    display: none;
+}
+
+.footer {
+    /* Light Grey */
+    background-color: #f5f5f5;
+
+    /* Medium Grey */
+    border-top: 1px solid #ACB5BD;
+    bottom: 0;
+    font-size: 12px;
+    height: 30px;
+    padding-top: 4px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer h3 {
+    margin: 0;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer-item {
+    line-height: 22px;
+    margin-left: 10px;
+}
+
+.footer-item.highlighted {
+    /* Orange */
+    color: #f7a540;
+}
+
+.footer-item.highlighted:hover {
+    /* Dark Orange */
+    color: #c97208;
+}
+
+.footer span {
+    /* Grey */
+    color: #2a2f32;
+    margin-bottom: 0;
+}
+
+.footer .footer-left {
+    float: left;
+}
+
+.footer .footer-right {
+    float: right;
+}
+
+/***********************************/
+
+  </style><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenAM ${serverDocTargetVersion} Release Notes</title><script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script><script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Notes covering OpenAM prerequisites, fixes, known issues. OpenAM provides open source Authentication, Authorization, Entitlement and Federation software."><script type="text/javascript">
+     /*
+ * The contents of this file are subject to the terms of the Common Development and
+ * Distribution License (the License). You may not use this file except in compliance with the
+ * License.
+ *
+ * You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ * specific language governing permission and limitations under the License.
+ *
+ * When distributing Covered Software, include this CDDL Header Notice in each file and include
+ * the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ * Header, with the fields enclosed by brackets [] replaced by your own identifying
+ * information: "Portions copyright [year] [name of copyright owner]".
+ *
+ * Copyright 2015 ForgeRock AS.
+ */
+
+//
+
+var loadJavaScriptsFN = function () {
+    $.ajaxSetup({ cache: true });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js", function () { prettyPrint() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function () {enableZeroClipboardFN() });
+    $.getScript("http://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox-min.js", function () { enableColorboxFN() });
+};
+
+var wrapConfigurablesFn = function () {
+    $('*:contains("https://openam.example.com:8443")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("https://openam.example.com:8443", 'g'),'<span class="exampleUrl">https://openam.example.com:8443</span>')
+            )
+    });
+    $('*:contains("amadmin")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("amadmin", 'g'),'<span class="exampleAdmin">amadmin</span>')
+            )
+    });
+    $('*:contains("iPlanetDirectoryPro")').each(function(){
+        if($(this).children().length < 1)
+            $(this).html(
+                $(this).text().replace(new RegExp("iPlanetDirectoryPro", 'g'),'<span class="exampleSsoCookieName">iPlanetDirectoryPro</span>')
+            )
+    });
+};
+
+var btnClickHandler = function () {
+    $("button#applyDocUpdate").click(function(){
+
+        $('span.exampleUrl').fadeOut("slow", function(){
+            $('span.exampleUrl').text($("input#exampleUrl").val());
+            $('span.exampleUrl').fadeIn("slow");
+        });
+
+        $('span.exampleAdmin').fadeOut("slow", function(){
+            $('span.exampleAdmin').text($("input#exampleAdmin").val());
+            $('span.exampleAdmin').fadeIn("slow");
+        });
+
+        $('span.exampleSsoCookieName').fadeOut("slow", function(){
+            $('span.exampleSsoCookieName').text($("input#exampleSsoCookieName").val());
+            $('span.exampleSsoCookieName').fadeIn("slow");
+        });
+
+        $('#docConfig').modal('hide');
+    });
+};
+
+
+var addCopyButtonFN = function () {
+    $( ".cmdline" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-cmdline"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> command to clipboard</span></span></div>');
+    });
+
+    $( ".codelisting" ).each(function() {
+        $(this).before('<div class="zero-clipboard hidden-xs"><span class="btn-copy-codelisting"><span class="glyphicon glyphicon-pencil"></span> Copy<span class="hidden-sm"> code to clipboard</span></span></div>');
+    });
+};
+var enableScrollSpyFN = function () {
+    $('body').scrollspy({
+        target: '#sidebar',
+        offset: 16
+    });
+};
+
+var enableToolTipFN = function () {
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip({placement: 'bottom'});
+    });
+};
+
+var enableBackToTopFadeInFN = function () {
+    var offset = 220;
+    var duration = 500;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            $('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+};
+
+var enableClampedWidthsFN = function () {
+
+    /*
+     * Clamped-width.
+     * Usage:
+     *  <div data-clampedwidth=".myParent">This long content will force clamped width</div>
+     *
+     * Author: LV
+     */
+    $('[data-clampedwidth]').each(function () {
+        var elem = $(this);
+        var parentPanel = elem.data('clampedwidth');
+        var resizeFn = function () {
+            var sideBarNavWidth = $(parentPanel).width() - parseInt(elem.css('paddingLeft')) - parseInt(elem.css('paddingRight')) - parseInt(elem.css('marginLeft')) - parseInt(elem.css('marginRight')) - parseInt(elem.css('borderLeftWidth')) - parseInt(elem.css('borderRightWidth'));
+            elem.css('width', sideBarNavWidth);
+        };
+
+        resizeFn();
+        $(window).resize(resizeFn);
+    });
+};
+
+var affixToCFN = function() {
+    $('#sidebar').affix({
+        offset: {
+            top: function () {
+                return (this.top = $('.jumbotron').outerHeight(true)-66)
+            }
+        }
+    });
+};
+
+var attachAnchorsToHeadings = function() {
+    //addAnchors('h1.title, h2.title, h3.title, h4.title, h5.title');
+
+
+    $('h1.title, h2.title, h3.title, h4.title, h5.title, .procedure-title, .table-title').each(function () {
+
+        var href = $(this).closest("div[id]").attr("id");
+
+        if (href === undefined || href === "") { // Unable to locate ID of parent element.
+            return;
+        }
+
+        $(this).wrapInner('<a class=\"self-link" href=\"#' + href + '\"></a>');
+
+    });
+};
+
+var addZeroClipboardToCmdlineButtonsFN = function () {
+    var copycmdline = new ZeroClipboard( $('.btn-copy-cmdline') );
+
+    copycmdline.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        copycmdline.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next().find("strong").each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycmdline.on( 'aftercopy', function(event) {
+            // console.log('Copied to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next().find("strong").each(function(index) {
+                $(this).effect("transfer", { to: $(event.target)}, 750);
+            });
+        });
+    });
+
+    copycmdline.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var addZeroClipboardToCodeButtonsFN = function () {
+    var copycodelisting = new ZeroClipboard( $('.btn-copy-codelisting') );
+
+    copycodelisting.on( 'ready', function(event) {
+        //console.log( 'movie is loaded' );
+
+        copycodelisting.on( 'copy', function(event) {
+            var wrappedText = "";
+            $(event.target).parent().next(".codelisting.linenums").children().contents().each(function(index) {
+                wrappedText += $(this).text() + "\n";
+            });
+            if(wrappedText == "") {
+                wrappedText = $(event.target).parent().next(".codelisting").contents().text();
+            };
+            event.clipboardData.setData('text/plain', wrappedText);
+        });
+
+        copycodelisting.on( 'aftercopy', function(event) {
+            // console.log('Copied code to clipboard: ' + event.data['text/plain']);
+            $(event.target).parent().next(".codelisting").first().effect("transfer", { to: $(event.target)}, 750);
+        });
+    });
+
+    copycodelisting.on( 'error', function(event) {
+        console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+    });
+};
+
+var enableColorboxFN = function () {
+    $(".fancybox").colorbox({
+        title: function() {
+            return $(this).children('img').attr('alt');
+        },
+        opacity: 1,
+        transition:"elastic",
+        initialWidth: 0,
+        initialHeight: 0,
+        maxWidth:"95%",
+        maxHeight: "95%",
+        scalePhotos: true,
+        fixed: true
+    });
+};
+
+var trackPageViewsFN = function () {
+
+    $("a").click(function() {
+        var href = $(this).attr('href');
+        if(href) {
+            var titleText =  $(this).text();
+            if(href.charAt(0) === '#') {
+                ga('send', {
+                    'hitType': 'pageview',
+                    'page': location.pathname + location.search + href,
+                    'title': titleText
+                });
+            };
+            if(href.charAt(0) === '.') {
+                var lastHashPos = href.lastIndexOf('#');
+                var cleanHref = href.slice(3,lastHashPos);
+                var cleanFrag = href.slice(lastHashPos);
+                if(window.location.href.search(cleanHref) > -1)
+                {
+                    ga('send', {
+                        'hitType': 'pageview',
+                        'page': location.pathname + location.search + cleanFrag,
+                        'title': titleText
+                    });
+                }
+            };
+        }
+    });
+};
+
+var enableZeroClipboardFN = function () {
+    ZeroClipboard.config({
+            swfPath:  "includes/swf/ZeroClipboard.swf",
+            trustedDomains: ["*"],
+            forceEnhancedClipboard: false,
+            forceHandCursor: true,
+            debug: false}
+    );
+    addCopyButtonFN();
+    addZeroClipboardToCmdlineButtonsFN();
+    addZeroClipboardToCodeButtonsFN();
+};
+
+$(document).ready(function() {
+    //wrapConfigurablesFn();
+    btnClickHandler();
+    enableToolTipFN();
+    enableBackToTopFadeInFN();
+    enableClampedWidthsFN();
+    enableScrollSpyFN();
+    affixToCFN();
+    attachAnchorsToHeadings();
+    trackPageViewsFN();
+    loadJavaScriptsFN();
+});
+
+//
+
+    </script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navbar navbar-inverse navbar-fixed-top"><nav class="container-fluid"><div class="navbar-header"><a href="/" class="navbar-brand"><span>Open Identity Platform</span></a></div><ul id="pdf-link" class="nav navbar-nav navbar-right hidden-xs"><li><a href="../../OpenAM-Release-Notes.pdf" target="_blank"><span class="glyphicon glyphicon-save"></span> Download PDF Version</a></li></ul></nav></div><div class="jumbotron"><div class="container-fluid"><h1>OpenAM ${serverDocTargetVersion} Release Notes<span></span><small></small></h1><p>Notes covering OpenAM prerequisites, fixes, known issues. OpenAM
+   provides open source Authentication, Authorization, Entitlement and
+   Federation software.</p></div></div><div class="left-shape-content"></div><div class="container-fluid"><div class="row"><div class="col-sm-3 hidden-xs"><div id="sidebar" data-clampedwidth=".col-sm-3"><h4 class="toc-title">OpenAM ${serverDocTargetVersion} Release Notes<br><small class="toc-subtitle"></small></h4><ul class="nav nav-stacked"><li><a href="#chap-whats-new">1. What's New in OpenAM ${serverDocTargetVersion}</a><ul class="nav nav-stacked"><li><a href="#product-enhancements">1.1. Product Enhancements</a></li><li><a href="#product-documentation">1.2. OpenAM Documentation</a></li><li><a href="#doc-changes">1.3. Documentation Changes</a></li></ul></li><li><a href="#chap-before-you-install">2. Before You Install OpenAM ${serverDocTargetVersion} Software</a><ul class="nav nav-stacked"><li><a href="#java-requirements">2.1. Java Requirements</a></li><li><a href="#web-container-requirements">2.2. Web Application Container Requirements</a></li><li><a href="#data-store-requirements">2.3. Data Store Requirements</a></li><li><a href="#browsers-tested">2.4. Browsers Tested</a></li><li><a href="#platform-requirements">2.5. Platform Requirements</a></li><li><a href="#hardware-requirements">2.6. Hardware Requirements</a></li><li><a href="#special-requests">2.7. Special Requests</a></li></ul></li><li><a href="#chap-update-install">3. Updating &amp; Installing OpenAM</a></li><li><a href="#chap-compatibility">4. OpenAM Changes &amp; Deprecated Functionality</a><ul class="nav nav-stacked"><li><a href="#changes">4.1. Important Changes to Existing Functionality</a></li><li><a href="#deprecated">4.2. Deprecated Functionality</a></li><li><a href="#removed">4.3. Removed Functionality</a></li></ul></li><li><a href="#chap-issues">5. OpenAM Fixes, Limitations, &amp; Known Issues</a><ul class="nav nav-stacked"><li><a href="#fixes">5.1. Key Fixes</a></li><li><a href="#limitations">5.2. Limitations</a></li><li><a href="#known-issues">5.3. Known Issues</a></li></ul></li><li><a href="#chap-feedback">6. How to Report Problems &amp; Provide Feedback</a></li></ul></div></div><div id="doc-content" class="col-sm-9"><div class="titlepage modal fade" id="myModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button><h4 class="modal-title">About this document</h4></div><div class="modal-body"><div><div><h1 class="title">OpenAM ${serverDocTargetVersion} Release Notes</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Mark</span> <span class="surname">Craig</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Vanessa</span> <span class="surname">Richie</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Jang </span></h3></div></div></div><div><p class="releaseinfo">${softwareReleaseDate}</p></div><div><p class="copyright">Copyright &copy; 2011-2014 ForgeRock AS</p></div><div><a href="legalnotice.html">Legal Notice</a></div><div><p class="pubdate">${publicationDate}</p></div><div><div class="abstract"><div class="abstract-title">Abstract</div><p>Notes covering OpenAM prerequisites, fixes, known issues. OpenAM
+   provides open source Authentication, Authorization, Entitlement and
+   Federation software.</p></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div><div lang="en" class="chapter" id="chap-whats-new"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;1.&nbsp;What's New in OpenAM ${serverDocTargetVersion}</h1></div></div></div><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">Important</h3></div><div class="panel-body"><p>
+   OpenAM ${serverDocTargetVersion} is a maintenance release
+   that resolves a number of issues, including security issues in OpenAM.
+   It is strongly recommended that you update to this release
+   to make your deployment more secure,
+   and to take advantage of important functional fixes.
+   ForgeRock customers can contact support for help and further information.
+  </p></div></div><div class="itemizedlist"><p>
+   Before you install OpenAM or update your existing OpenAM installation,
+   read these release notes.
+   Then update or install OpenAM.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    If you have already installed OpenAM, see <a href="../release-notes/index.html#update-from-earlier-release" class="link"><em class="citetitle">To Update OpenAM From 11.0</em></a>.
+   </p><p>
+    Do <span class="emphasis"><em>not</em></span> perform an upgrade
+    by deploying the new version
+    and then importing an existing configuration
+    by running the <span class="command"><strong>ssoadm import-svc-config</strong></span> command.
+    Importing an outdated configuration can result in a corrupted installation.
+   </p></li><li class="listitem"><p>
+    If you are installing OpenAM for the first time, see <a href="../release-notes/index.html#install-fresh" class="link"><em class="citetitle">To Install OpenAM</em></a>.
+   </p></li></ul></div><div class="section" id="product-enhancements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.1.&nbsp;Product Enhancements</h2></div></div></div><p>
+   In addition to fixes,
+   this release includes the following limited product enhancements.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     <span class="bold"><strong>OAuth 2.0 Refresh Token Renewal</strong></span>.
+     OpenAM now issues a new refresh token when an access token is refreshed (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3951" target="_blank">OPENAM-3951</a>).
+    </p></li><li class="listitem"><p>
+     <span class="bold"><strong>Quicker UI Customization</strong></span>.
+     While customizing the UI, you can set the advanced server property,
+     <code class="literal">org.forgerock.openam.core.resource.lookup.cache.enabled</code>,
+     to <code class="literal">false</code> to allow OpenAM immediately to pick up changes
+     to the files as you customize them (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3989" target="_blank">OPENAM-3989</a>).
+     You can set advanced server properties in OpenAM Console under
+     Configuration &gt; Servers and Sites &gt; <em class="replaceable"><code>Server Name</code></em> &gt; Advanced.
+     For production servers, leave this set to the default, <code class="literal">true</code>.
+    </p></li><li class="listitem"><p>
+     <span class="bold"><strong>Whitelist for Custom Login URIs</strong></span>.
+     OpenAM now includes a property that specifies
+     a whitelist for custom login URIs
+     so that the CDCServlet and the Distributed Authentication UI (DAS)
+     can check login URI values against those in the whitelist.
+    </p><p>
+     The property name is <code class="literal">org.forgerock.openam.cdc.validLoginURIs</code>.
+     If you use custom login URIs in your deployment, add them to the whitelist,
+     separating URIs with commas,
+     setting <code class="literal">org.forgerock.openam.cdc.validLoginURIs</code>
+     to <code class="literal">/UI/Login,/customLoginURI</code> for example.
+     You can set this property in OpenAM console under
+     Configuration &gt; Servers and Sites &gt; Default Server Settings &gt; Advanced.
+     The default value is <code class="literal">/UI/Login</code>.
+    </p><p>
+     The CDCServlet and DAS accept only <code class="literal">loginURI</code> values
+     that match one of the values in the whitelist.
+     OpenAM strips query strings from <code class="literal">loginURI</code> values
+     before comparing them with the values in the whitelist,
+     so only include the URIs, not query string parameters.
+    </p></li><li class="listitem"><p>
+      <span class="bold"><strong>Configurable DN Cache for LDAP Data Stores</strong></span>.
+      OpenAM now has the capability to enable and disable DN caching.
+      DN caching helps avoid DN lookups
+      that can happen in bursts during authentication.
+      (
+      <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3822" target="_blank">OPENAM-3822</a>
+      ).
+     </p><p>
+      You can configure this feature as part of a Data Store profile.
+      To configure DN caching in OpenAM console,
+      browse to Access Control &gt; <em class="replaceable"><code>Realm Name</code></em>
+      &gt; Data Stores &gt; <em class="replaceable"><code>Data Store Name</code></em> &gt; Cache Control.
+     </p></li><li class="listitem"><p>
+     <span class="bold"><strong>CTS Connection Management Improvement</strong></span> (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3219" target="_blank">OPENAM-3219</a>).
+    </p></li><li class="listitem"><p>
+     <span class="bold"><strong>Debug Log Improvements</strong></span>.
+     AMSetupServlet now displays all configuration parameters
+     in debug logs when the log level is set to ERROR (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2089" target="_blank">OPENAM-2089</a>).
+    </p><p>
+     Debug log improvements have also reduced spurious stack traces
+     that were logged during authentication processing (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-371" target="_blank">OPENAM-371</a>).
+    </p></li><li class="listitem"><p>
+     <span class="bold"><strong>Attributes Populated on Dynamic User Creation</strong></span>.
+     When creating users dynamically, OpenAM now populates all attributes
+     that are provided and mapped for SAML 2.0 federation (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-474" target="_blank">OPENAM-474</a>).
+    </p></li><li class="listitem"><p>
+     <span class="bold"><strong>Policies Support Additional HTTP Operations</strong></span>.
+     Policies now support all types of HTTP operations, not just GET and POST (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-336" target="_blank">OPENAM-336</a>).
+    </p></li></ul></div></div><div class="section" id="product-documentation"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.2.&nbsp;OpenAM Documentation</h2></div></div></div><div class="itemizedlist"><p>
+     You can read the following additional
+     <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/" target="_blank">product documentation for OpenAM 11.0.0</a>
+     online at <a class="link" href="http://docs.forgerock.org/" target="_blank">http://docs.forgerock.org/</a>.
+    </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/release-notes/" target="_blank">OpenAM 11.0.0 Release Notes</a>
+     </p></li><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/install-guide/" target="_blank">OpenAM 11.0.0 Installation Guide</a></p></li><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/upgrade-guide/" target="_blank">OpenAM 11.0.0 Upgrade Guide</a></p></li><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/admin-guide/" target="_blank">OpenAM 11.0.0 Administration Guide</a>
+     </p></li><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/dev-guide/" target="_blank">OpenAM 11.0.0 Developer's Guide</a>
+     </p></li><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/reference/" target="_blank">OpenAM 11.0.0 Reference</a>
+     </p></li><li class="listitem"><p>
+      <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/apidocs/" target="_blank">OpenAM 11.0.0 Javadoc</a>
+     </p></li></ul></div></div><div class="section" id="doc-changes"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.3.&nbsp;Documentation Changes</h2></div></div></div><p>
+   The following changes have been made to the documentation:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     The installation instructions for the Distributed Authentication
+     (see
+     <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/install-guide#chap-install-das" target="_blank">Installing OpenAM Distributed Authentication</a>)
+           is missing a step.</p><p>
+      After "Step 2. Make sure the realms used have a Realm/DNS alias for the DAS
+      configured in OpenAM under Access Control &gt; <em class="replaceable"><code>Realm
+      Name</code></em> &gt; General."
+     </p><p>
+      Add step 3. "Create a 2.2 agent profile in OpenAM for the DAS to
+      connect to the server."
+     </p></li></ul></div></div></div><div lang="en" class="chapter" id="chap-before-you-install"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;2.&nbsp;Before You Install OpenAM ${serverDocTargetVersion} Software</h1></div></div></div><p>This chapter covers software and hardware prerequisites for installing
+ and running OpenAM software.</p><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">Note</h3></div><div class="panel-body"><p>
+   The content of this chapter has not changed since OpenAM 11.0.0.
+  </p></div></div><div class="section" id="java-requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.1.&nbsp;Java Requirements</h2></div></div></div><p>This release of OpenAM requires Java Development Kit 6 or
+  Java Development Kit 7. ForgeRock recommends the most recent update
+  of Java 6 or 7 to ensure you have the latest security fixes.</p><p>ForgeRock has tested this release of OpenAM primarily with Oracle
+  Java SE JDK, and also tested OpenAM on WebSphere with IBM JDK.</p><p>OpenAM Java SDK requires Java Development Kit 6 or 7.</p></div><div class="section" id="web-container-requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.2.&nbsp;Web Application Container Requirements</h2></div></div></div><div class="itemizedlist"><p>This release of OpenAM runs in the following web application
+   containers.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Apache Tomcat 6, 7 (ForgeRock's preferred web container for OpenAM)</p></li><li class="listitem"><p>GlassFish v2, v3</p></li><li class="listitem"><p>IBM WebSphere 8.0, 8.5</p></li><li class="listitem"><p>JBoss Enterprise Application Platform 5, 6</p><p>JBoss Application Server 7</p></li><li class="listitem"><p>Jetty 7 (7.6.13 or later)</p><p>Jetty 8 (8.1.13 or later)</p></li><li class="listitem"><p>Oracle WebLogic Server 11g (10.3.5)</p><p>Oracle WebLogic Server 12c (12.1.1)</p></li></ul></div><p>If running as a non-root user, the web application container must be
+  able to write to its own home directory, where OpenAM stores configuration
+  files.</p></div><div class="section" id="data-store-requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.3.&nbsp;Data Store Requirements</h2></div></div></div><div class="itemizedlist"><p>This release of OpenAM works with the following CTS data stores.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Embedded (using ForgeRock OpenDJ for the data store)</p></li><li class="listitem"><p>External ForgeRock OpenDJ data store</p><p>The CTS is supported on OpenDJ versions 2.6.0 and later.</p></li></ul></div><div class="itemizedlist"><p>This release of OpenAM works with the following configuration data
+   stores.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Embedded (using ForgeRock OpenDJ for the data store)</p><p>When using the embedded configuration store for CTS or configuration,
+    you must deploy OpenAM on a local file system and not on an NFS-mounted file
+    system.</p></li><li class="listitem"><p>External ForgeRock OpenDJ data store</p><p>ForgeRock recommends updating to the latest stable release.</p></li><li class="listitem"><p>External Oracle Unified Directory 11g or later</p></li><li class="listitem"><p>External Oracle Directory Server Enterprise Edition data store,
+    version 6.3 or later</p></li></ul></div><div class="itemizedlist"><p>This release of OpenAM works with the following user profile data
+   stores.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>ForgeRock OpenDJ</p></li><li class="listitem"><p>Microsoft Active Directory (tested by ForgeRock on Windows Server
+    2008 R2 and 2012)</p></li><li class="listitem"><p>IBM Tivoli Directory Server 6.3</p></li><li class="listitem"><p>OpenDS, version 2 or later</p></li><li class="listitem"><p>Oracle Directory Server Enterprise Edition, version 6.3 or later</p></li></ul></div><p>OpenAM also works with other LDAPv3 compliant directory servers. Some
+  features of OpenAM depend on features supported by your directory service,
+  such as the following:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Extensible LDAP schema, required to extend the schema for OpenAM.
+    First, install OpenAM to use a fresh instance of OpenDJ, such as the
+    embedded OpenDJ server. After installation, study the custom schema
+    definitions from the OpenDJ file,
+    <code class="filename">config/schema/99-user.ldif</code>, to see what schema
+    definitions you must add to your directory. You might need to adapt the
+    schema definition format before adding the definitions to your
+    directory.</p></li><li class="listitem"><p>The persistent search request control
+    (OID: <code class="literal">2.16.840.1.113730.3.4.3</code>).</p></li><li class="listitem"><p>The Behera Internet-Draft <a class="link" href="http://tools.ietf.org/html/draft-behera-ldap-password-policy-09" target="_blank">Password Policy for LDAP Directories</a> (in the context of the LDAP
+    authentication module only)</p></li></ul></div><p>If you plan to deploy with OpenLDAP or other LDAPv3 directory for user
+  data, make sure you test your solution before you deploy to ensure all OpenAM
+  features that you use work as expected.</p></div><div class="section" id="browsers-tested"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.4.&nbsp;Browsers Tested</h2></div></div></div><div class="itemizedlist"><p>ForgeRock has tested many browsers with OpenAM console and end user
+   pages, including the following browsers.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Chrome and Chromium 16 and later</p></li><li class="listitem"><p>Firefox 3.6 and later</p></li><li class="listitem"><p>Internet Explorer 7 and later</p></li><li class="listitem"><p>Safari 5 and later</p></li></ul></div></div><div class="section" id="platform-requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.5.&nbsp;Platform Requirements</h2></div></div></div><div class="itemizedlist"><p>ForgeRock has tested this release of OpenAM on the following
+   platforms.</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Linux 2.6, 3.0</p></li><li class="listitem"><p>Microsoft Windows Server 2008 R2, 2012</p></li><li class="listitem"><p>Oracle Solaris 10, 11</p></li></ul></div></div><div class="section" id="hardware-requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.6.&nbsp;Hardware Requirements</h2></div></div></div><p>You can deploy OpenAM on any hardware supported for the combination of
+  software required. Deploying OpenAM requires a minimum of 1 GB free RAM over
+  and above the RAM used by all other software on the system.</p><p>Minimum requirements are enough to start and to evaluate OpenAM.
+  Recommended hardware resources depend on your specific deployment
+  requirements. For more information, see the <em class="citetitle">Administration
+  Guide</em> chapter on <em class="citetitle">Tuning OpenAM</em>.</p><p>ForgeRock has tested this release of OpenAM primarily on x86 and x64
+  based systems.</p></div><div class="section" id="special-requests"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.7.&nbsp;Special Requests</h2></div></div></div><p><span class="strong"><strong>If you have a special request regarding support
+  for a component or combination not listed here, contact ForgeRock at <a class="link" href="mailto:info@forgerock.com" target="_top">info@forgerock.com</a>.</strong></span></p></div></div><div lang="en" class="chapter" id="chap-update-install"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;3.&nbsp;Updating &amp; Installing OpenAM</h1></div></div></div><p>
+  ForgeRock recommends that you update OpenAM 11.0 installations
+  to this release.
+  If you are installing OpenAM for the first time,
+  you can use the same installation instructions as for 11.0.0.
+ </p><div class="procedure" id="update-from-earlier-release"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;3.1.&nbsp;To Update From OpenAM 11.0</div><p>If you have already installed OpenAM, follow these steps.</p><ol class="procedure" type="1"><li class="step"><p>
+    Download and unzip OpenAM ${serverDocTargetVersion}.
+   </p><p>
+    Find a link to the OpenAM download page from
+    <a class="link" href="http://forgerock.com/download-stack/" target="_blank">http://forgerock.com/download-stack/</a>.
+   </p></li><li class="step"><p>
+    If you have made any customizations,
+    apply them to the ${serverDocTargetVersion} .war file.
+   </p></li><li class="step"><p>
+    Redeploy the .war file to your web container,
+    using the web container administration console or deployment command.
+   </p></li><li class="step"><p>
+    Start OpenAM, and run the upgrade process for the server.
+   </p></li><li class="step"><p>
+    If you have deployed other components,
+    such as the Distributed Authentication UI (DAS),
+    Core Server only (no console),
+    or the <span class="command"><strong>ssoadm</strong></span> command,
+    also update those components.
+   </p></li></ol></div></div><div class="procedure" id="install-fresh"><div class="procedure-inner"><div class="procedure-title">Procedure&nbsp;3.2.&nbsp;To Install OpenAM</div><p>
+   If you have not yet installed OpenAM,
+   install this release instead of OpenAM 11.0.0.
+  </p><ol class="procedure" type="1"><li class="step"><p>
+    Download and unzip OpenAM ${serverDocTargetVersion}.
+   </p><p>
+    Find a link to the OpenAM download page from
+    <a class="link" href="http://forgerock.com/download-stack/" target="_blank">http://forgerock.com/download-stack/</a>.
+   </p></li><li class="step"><p>
+    Follow the instructions in the
+    <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/install-guide/" target="_blank"><em class="citetitle">OpenAM 11.0.0 Installation Guide</em></a>.
+   </p></li></ol></div></div></div><div lang="en" class="chapter" id="chap-compatibility"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;4.&nbsp;OpenAM Changes &amp; Deprecated Functionality</h1></div></div></div><p>This chapter covers both major changes to existing functionality, and
+ also deprecated and removed functionality.</p><div class="section" id="changes"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.1.&nbsp;Important Changes to Existing Functionality</h2></div></div></div><div class="itemizedlist"><p>
+    These changes are new in OpenAM ${serverDocTargetVersion}.
+   </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     Valid loginURIs are now set using a property that specifies
+     a whitelist for custom login URIs
+     so that the CDCServlet and the Distributed Authentication UI (DAS)
+     can check login URI values against those in the whitelist.
+    </p><p>
+     For details, see the explanation in
+     <a href="../release-notes/index.html#product-enhancements" class="link"><em class="citetitle">Product Enhancements</em></a>.
+    </p></li><li class="listitem"><p>
+     Attributes names in responses to REST API calls now
+     preserve the original case used in the request (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3159" target="_blank">OPENAM-3159</a>).
+     In other words, if the request asks for <code class="literal">userName</code>,
+     the response includes <code class="literal">userName</code>.
+     If the request asks for <code class="literal">username</code>,
+     the response includes <code class="literal">username</code>.
+    </p><p>
+     If you prefer that responses always use lower case names,
+     set the advanced server property,
+     <code class="literal">org.forgerock.openam.idm.attribute.names.lower.case</code>
+     to <code class="literal">true</code>.
+    </p></li><li class="listitem"><p>
+     The <code class="literal">AttributeQueryUtil</code> class now uses
+     the configured SP attribute mapper to map received attributes
+     in the same way as they come as part of an assertion (
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1655" target="_blank">OPENAM-1655</a>).
+    </p></li></ul></div><div class="itemizedlist"><p>
+    The following changes were listed for OpenAM 11.0.1.
+   </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     Consistency has been improved in how OpenAM policy rules match resources.
+     Policy rules are now interpreted more consistently
+     in line with the documentation,
+     and more consistently across platforms and across self and subtree modes.
+     Before you upgrade, consider how these changes affect policy rules.
+    </p><div class="itemizedlist"><p>
+      Although the changes introduced by the improvements affect mainly edge cases,
+      they do impact deployments relying on previous, inconsistent behaviors.
+      The following points describe how OpenAM and policy agents behave
+      following upgrade to OpenAM 11.0.1 or later
+      and web policy agents 3.3.1 or later.
+     </p><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>
+       Policy agents configured to use subtree mode behave
+       as they did prior to 3.3.0.
+      </p></li><li class="listitem"><p>
+       If you created your policies with OpenAM 11.0.0 and web policy agents 3.3.0,
+       then note that trailing slashes are no longer stripped from resource names
+       (<a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3509" target="_blank">OPENAM-3509</a>).
+      </p><p>
+       In order to match a trailing slash, your rule must end in a slash,
+       or a slash followed by a wildcard.
+      </p></li><li class="listitem"><p>
+       When policy agents are configured to use self mode,
+       trailing wildcards, except after <code class="literal">?</code>,
+       match zero or more characters.
+      </p></li><li class="listitem"><p>
+       When policy agents are configured to use self mode,
+       previously a trailing wildcard after a slash, <code class="literal">/*</code>,
+       matched one or more characters, whereas it now matches zero or more.
+       This means that a resource ending in <code class="literal">/</code>
+       previously would not match a rule ending in <code class="literal">/*</code>,
+       whereas it now does.
+      </p><p>
+       If you already have two rules to allow access,
+       one ending in <code class="literal">/</code> and the other in <code class="literal">/*</code>,
+       then you have nothing to do.
+       Only the latter rule is now required.
+      </p><p>
+       If however you have only rules ending in <code class="literal">/*</code>
+       and intend these to deny access to resources ending in <code class="literal">/</code>,
+       then add rules ending in <code class="literal">/</code>
+       specifically to deny access to resources ending in <code class="literal">/</code>.
+      </p></li><li class="listitem"><p>
+       When web policy agents are configured to use self mode,
+       trailing wildcards after <code class="literal">?</code>
+       match <span class="emphasis"><em>one</em></span> or more characters.
+       This means that a resource with a trailing <code class="literal">?</code>
+       no longer matches a rule of the form <code class="literal">/*?*</code>,
+       whereas it would have matched with earlier versions.
+      </p><p>
+       To match the behavior of previous releases,
+       when using self mode with resources having empty query strings,
+       add additional rules without trailing wildcards as in <code class="literal">/*?</code>
+       before you upgrade OpenAM.
+      </p></li></ul></div></li><li class="listitem"><p>
+     OpenAM now handles SAML single logout (SLO) requests differently
+     when the user presents an invalid session
+     (<a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3437" target="_blank">OPENAM-3437</a>).
+    </p><p>
+     In this scenario OpenAM no longer follows
+     the <code class="literal">RelayState</code> without validation.
+     To ensure that the <code class="literal">RelayState</code> validation succeeds,
+     include the <code class="literal">metaAlias</code> request parameter
+     when invoking the SLO JSPs.
+    </p></li><li class="listitem"><p>
+     For LDAP and Active Directory data store configurations
+     the settings for the Authentication Naming Attribute
+     (<code class="literal">sun-idrepo-ldapv3-config-auth-naming-attr</code>)
+     and the LDAP Users Search Attribute
+     (<code class="literal">sun-idrepo-ldapv3-config-users-search-attribute</code>)
+     now have the same effects as they did in versions prior to 11.0.0
+     (<a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3428" target="_blank">OPENAM-3428</a>).
+    </p><p>
+     The Authentication Naming Attribute
+     is now used only to find the user when performing authentication.
+     The LDAP Users Search Attribute is used in other cases
+     when searching for users.
+     When upgrading from OpenAM 11.0.0,
+     make sure these attributes are correctly set in data store configurations.
+    </p></li><li class="listitem"><p>
+     The fix for
+     <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2327" target="_blank">OPENAM-2327</a>
+     adds a new <code class="literal">PrintWriter</code> argument
+     to the <code class="literal">postSingleSignOnSuccess</code> method of the
+     <a class="link" href="http://docs.forgerock.org/en/openam/11.0.0/apidocs/index.html?com/sun/identity/saml2/plugins/SAML2ServiceProviderAdapter.html" target="_blank"><code class="literal">SAML2ServiceProviderAdapter</code></a> class.
+     If you use a custom Service Provider adapter,
+     then you must update its implementation.
+    </p><p>
+     The new <code class="literal">PrintWriter</code> argument takes
+     the <code class="literal">PrintWriter</code> for presenting output.
+     It fits between the <code class="literal">HttpServletResponse response</code> argument
+     and the <code class="literal">Object session</code> argument.
+    </p></li></ul></div><div class="itemizedlist"><p>
+    The following changes were listed for OpenAM 11.0.0.
+   </p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The advanced server property used to set the HTTP header name,
+      <code class="literal">com.sun.identity.authentication.client.ipAddressHeader</code>,
+      has replaced the legacy OpenSSO property
+      <code class="literal">com.sun.identity.session.httpClientIPHeader</code> (<a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1879" target="_blank">OPENAM-1879</a>).</p></li><li class="listitem"><p>Legacy naming conventions have been changed to conform to the
+    current product name, OpenAM.</p><p><code class="filename">$HOME/.openamcfg/</code> is the new name for
+    <code class="filename">$HOME/.openssocfg/</code>. If you upgrade, OpenAM still
+    supports use of <code class="filename">$HOME/.openssocfg/</code>, and does not
+    rename the folder. For new OpenAM installs, OpenAM creates the directory
+    with the new name, <code class="filename">$HOME/.openamcfg/</code>, at configuration
+    time.</p><p>Other files, such as the <code class="filename">openam.war</code> file, and
+    paths have been modified to ensure consistency with the naming
+    conventions.</p></li><li class="listitem"><p>OpenAM now ships with multiple .war files. You no longer have to
+    build custom .war files for core server-only or distributed authentication
+    UI installations for example.</p></li><li class="listitem"><p>In versions before OpenAM 10.1.0 the default root suffix DN for OpenAM
+    configuration and profile data was <code class="literal">dc=opensso,dc=java,dc=net</code>.
+    The default root suffix is now <code class="literal"></code>.</p></li><li class="listitem"><div class="itemizedlist"><p>The fix for <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1630" target="_blank">OPENAM-1630</a> changes SAML metadata signing in OpenAM to better
+     conform with the SAML 2.0 standard.</p><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>Metadata for hosted entities is signed using the
+      <code class="literal">metadataSigningKey</code> configured for the realm, or
+      inherited from the global configuration for the server.</p></li><li class="listitem"><p>OpenAM now signs the <code class="literal">EntityDescriptor</code> element
+      that contains child <code class="literal">SPSSODescriptor</code> or
+      <code class="literal">IDPSSODescriptor</code> elements.</p></li><li class="listitem"><p>When importing remote entity metadata with signatures, OpenAM does
+      not modify the signatures, but instead returns them as they were when they
+      were imported.</p></li><li class="listitem"><p>When OpenAM imports remote entity metadata that has no signature and
+      signed metadata is requested on export, OpenAM signs the metadata with
+      the <code class="literal">metadataSigningKey</code>.</p></li></ul></div></li><li class="listitem"><p>The default policy evaluation mode for new policy agent profiles is
+    now self rather than subtree, in order to better scale for large numbers of
+    policy rules.</p><p>Upgrade does not change existing policy agent profile configurations,
+    however. If you want to adopt the new default setting for existing policy
+    agents, you must change the setting manually.</p><p>To do so for Java EE policy agents, set
+    <code class="literal">com.sun.identity.policy.client.cacheMode=self</code>.</p><p>For web policy agents, set
+    <code class="literal">com.sun.identity.agents.config.fetch.from.root.resource=false</code>.</p></li><li class="listitem"><p>
+     You now specify rules for referrals in the same way as rules for policies.
+    </p><p>
+     For example, with previous releases a referral rule for
+     <code class="literal">http://example.com/</code> matched everything underneath.
+     Now you would need three rules, <code class="literal">http://example.com/</code>,
+     <code class="literal">http://example.com/*</code>,
+     and <code class="literal">http://example.com/*?*</code>.
+
+     When used at the end of a rule
+     <code class="literal">*</code> matches one or more characters,
+     rather than zero or more characters.
+    </p><p>
+     When you upgrade OpenAM, the upgrade tool converts existing referral rules.
+    </p></li><li class="listitem"><p>
+     The distributed authentication service (DAS) and cross-domain single sign-on
+     (CDSSO) do not support the <code class="literal">iPSPCookie/DProPCookie</code>
+     query string parameter to set a <code class="literal">DProPCookie</code> in the
+     user-agent as a mechanism for cookie persistence. Neither DAS nor CDSSO retains
+     <code class="literal">iPSPCookie=yes</code>.
+    </p></li></ul></div></div><div class="section" id="deprecated"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.2.&nbsp;Deprecated Functionality</h2></div></div></div><p>
+   The following functionality is deprecated in OpenAM 11.0.0,
+   and is likely to be removed in a future release.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>With the implementation of OAuth 2.0 in this release, OAuth 1.0 has been 
+    deprecated. OAuth 1.0 support was originally provided in OpenAM 9.</p></li><li class="listitem"><p>The Netscape LDAP API is to be removed from OpenAM, with OpenAM
+    using the OpenDJ LDAP SDK instead. This affects all classes in
+    <code class="literal">com.sun.identity.shared.ldap.*</code> packages.</p></li><li class="listitem"><p>OpenAM currently uses Sun Java System Application Framework (JATO).
+    JATO is deprecated and is likely to be replaced in a future release.</p></li><li class="listitem"><p>With the implementation of the Persistent Cookie authentication module, the
+    Core Authentication module persistent cookie options are deprecated and are
+    likely to be removed in a future release.</p></li><li class="listitem"><p>Older REST services relying on the following end points are
+    deprecated.</p><table border="0" summary="Simple list" class="simplelist"><tr><td>/identity/attributes</td><td>/identity/logout</td></tr><tr><td>/identity/authenticate</td><td>/identity/read</td></tr><tr><td>/identity/create</td><td>/identity/search</td></tr><tr><td>/identity/delete</td><td>/identity/update</td></tr></table><p>The following table shows how legacy and newer end points
+    correspond.</p><div class="table" id="d15472e951"><div class="table-title">Table&nbsp;4.1.&nbsp;REST End Points</div><div class="table-contents"><table xmlns:ng="http://docbook.org/docbook-ng" xmlns:db="http://docbook.org/ns/docbook" xmlns:exsl="http://exslt.org/common" xmlns:exslt="http://exslt.org/common" xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="xalan://com.nwalsh.xalan.Table" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="table table-striped" summary="REST End Points" border="0"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Deprecated URIs</th><th>Newer Evolving URIs</th></tr></thead><tbody><tr><td>/identity/attributes</td><td>/json/users</td></tr><tr><td>/identity/authenticate</td><td>/json/authenticate</td></tr><tr><td>/identity/create, /identity/delete, /identity/read,
+        /identity/search, /identity/update</td><td>/json/agents, /json/groups, /json/realms, /json/users</td></tr><tr><td>/identity/logout</td><td>/json/sessions/?_action=logout</td></tr><tr><td>N/A</td><td>/json/dashboard</td></tr><tr><td>N/A</td><td>/json/serverinfo</td></tr></tbody></table></div></div><br class="table-break"><p>Find examples in the <em class="citetitle">Developer Guide</em> chapter on
+    <em class="citetitle">Using RESTful Web Services</em> OpenAM.</p><p>Support for the older REST services is likely to be removed in a
+    future release in favor of the newer REST services. Older REST services
+    will be removed only after replacement REST services are introduced.</p></li></ul></div></div><div class="section" id="removed"><div class="titlepage"><div><div><h2 class="title" style="clear: both">4.3.&nbsp;Removed Functionality</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>OpenAM Java SDK no longer supports JDK 5.</p></li><li class="listitem"><p>The <code class="literal">iplanet-am-auth-ldap-server-check</code> property for
+    LDAP and Active Directory authentication modules has been removed and
+    replaced with a heartbeat mechanism configurable through the LDAP Connection
+    Heartbeat Interval (<code class="literal">openam-auth-ldap-heartbeat-interval</code>)
+    and LDAP Connection Heartbeat Time Unit
+    (<code class="literal">openam-auth-ldap-heartbeat-interval</code>) properties for the
+    modules.</p><p>Set these new properties as necessary when you have firewalls or
+    load balancers that drop connections that remain idle for too long.</p></li><li class="listitem"><p>The advanced server property,
+    <code class="literal">openam.session.destroy_all_sessions</code>, has been replaced
+    by the built-in Global Session Service setting,
+    <code class="literal">DESTROY_OLD_SESSIONS</code>.</p></li><li class="listitem"><p>Javadoc for the client SDK is no longer delivered with the
+    distribution, but instead is available online.</p></li></ul></div></div></div><div lang="en" class="chapter" id="chap-issues"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;5.&nbsp;OpenAM Fixes, Limitations, &amp; Known Issues</h1></div></div></div><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">Important</h3></div><div class="panel-body"><p>
+   OpenAM 11.0.1 and later together with OpenAM web policy agents 3.3.1 and later
+   address backward compatibility for policy evaluation.
+   For details, make sure that you read the release notes section on <a href="../release-notes/index.html#changes" class="link"><em class="citetitle">Important Changes to Existing Functionality</em></a>.
+  </p></div></div><p>
+  OpenAM issues are tracked at
+  <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM" target="_top">https://bugster.forgerock.org/jira/browse/OPENAM</a>.
+  This chapter covers the status of key issues and limitations
+  in this release.
+ </p><div class="section" id="fixes"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.1.&nbsp;Key Fixes</h2></div></div></div><p>
+   The following bugs were fixed in release ${serverDocTargetVersion}.
+   For details, see the <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM" target="_blank">OpenAM issue tracker</a>.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4235" target="_blank">OPENAM-4235</a>: RestAuthorizationDispatcherFilter is not thread-safe in its usage of the AuthZFilter</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4176" target="_blank">OPENAM-4176</a>: Concurrent access of non-thread safe objects possible in DelegationPolicyImpl</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4138" target="_blank">OPENAM-4138</a>: SMS*Object implementations can cache entry presence incorrectly</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4111" target="_blank">OPENAM-4111</a>: IdP Proxy should use supported binding when connecting to the remote IdP</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4066" target="_blank">OPENAM-4066</a>: RedirectCallbackHandler should use AuthClientUtils instead of AuthUtils</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4044" target="_blank">OPENAM-4044</a>: RestSecurity is instantiated every time user makes REST JSON request</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4041" target="_blank">OPENAM-4041</a>: Session fails to recover deleted session gracefully if  CTS compression enabled </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4023" target="_blank">OPENAM-4023</a>: Configurator should not ping the configuration store</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4005" target="_blank">OPENAM-4005</a>: REST logout session fails and does not produce a result message in 11.0.1</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3999" target="_blank">OPENAM-3999</a>: Adaptive module doesn't honor encoded cookies in user requests</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3995" target="_blank">OPENAM-3995</a>: Referral policies cannot be deactivated</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3993" target="_blank">OPENAM-3993</a>: CachingEntitlementCondition should call getState only once</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3989" target="_blank">OPENAM-3989</a>: ResourceLookup should cache results more aggresively</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3987" target="_blank">OPENAM-3987</a>: DAS fails to add cookie header from CAS when cookie.httponly=true</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3977" target="_blank">OPENAM-3977</a>: Review debug statements in IdServicesImpl and subclasses</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3967" target="_blank">OPENAM-3967</a>: PerThreadCache: move initialValue() call outside of critical section</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3965" target="_blank">OPENAM-3965</a>: Use char[] version of Base64 decoding</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3964" target="_blank">OPENAM-3964</a>: SessionService#addInternalSessionListener should not persist the token if the notification URL was already registered</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3959" target="_blank">OPENAM-3959</a>: auth chain miscalculates auth level </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3947" target="_blank">OPENAM-3947</a>: Upgrade removes user-added Advanced Properties from Default Server Settings </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3920" target="_blank">OPENAM-3920</a>: Remote IDP MetaData Import fails with Unable to verify signature under element "EntitiesDescriptor".</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3871" target="_blank">OPENAM-3871</a>: Configurator fails if password contains '%'</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3864" target="_blank">OPENAM-3864</a>: Policy evaluation results differs between clean and upgraded OpenAM instances</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3841" target="_blank">OPENAM-3841</a>: Export metadata produces XML Parsing Error after upgrade to AM11.0.1</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3830" target="_blank">OPENAM-3830</a>: LDAPUtils heartbeat timeout needs to be updated to keep in line with opendj-sdk timeout setting. </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3826" target="_blank">OPENAM-3826</a>: WindowsDesktopSSO auth-module does not log details about GSSException</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3811" target="_blank">OPENAM-3811</a>: Possible CME while serializing InternalSessions</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3809" target="_blank">OPENAM-3809</a>: The final SLO response should be sent using appropriate binding</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3790" target="_blank">OPENAM-3790</a>: Spurious authentication cookie can prevent logout</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3739" target="_blank">OPENAM-3739</a>: configurator tool fails when AuthClientUtil is initialized before the tool</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3731" target="_blank">OPENAM-3731</a>: Sun JDK 1.6.0_43: some requests cause never-ending loop in SAML2Utils.decodeFromRedirect</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3683" target="_blank">OPENAM-3683</a>: Version number on upgrade wizard is wrong if using a language other than English</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3660" target="_blank">OPENAM-3660</a>: RedirectCallbackHander uses HttpServletRequest.getRequestURL to construct AM_REDIRECT_BACK_SERVER_URL</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3659" target="_blank">OPENAM-3659</a>: OAuth2 auth module uses HttpServletRequest.getRequestURL() to construct ORIG_URL cookie</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3651" target="_blank">OPENAM-3651</a>: LoA based SAML2IDPFinder fails with NPE if the AuthnRequest did not contain RequestedAuthnContext</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3646" target="_blank">OPENAM-3646</a>: REST endpoint frrest/oauth2/token reports tokenName access_token when given a refresh_token</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3640" target="_blank">OPENAM-3640</a>: StackOverFlowError in WebtopNaming</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3633" target="_blank">OPENAM-3633</a>: SystemConfigurationUtil returning wrong information while config is reloaded in rare condition</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3626" target="_blank">OPENAM-3626</a>: Changes to policy rules only take effect after restarting OpenAM</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3447" target="_blank">OPENAM-3447</a>: CTS update fails due to attribute conflict</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3239" target="_blank">OPENAM-3239</a>: OAuth 2 client properties randomly disappears after upgrade from OpenAM 10.1 to OpenAM 11</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3207" target="_blank">OPENAM-3207</a>: PLLRequestServlet should log an error if the configured maximum request size is exceeded</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3184" target="_blank">OPENAM-3184</a>: Insufficient error logging when 'agent profile' can not be found by CDCServlet</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3065" target="_blank">OPENAM-3065</a>: Working with realms/sub-realms in site setup is not working properly. </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2712" target="_blank">OPENAM-2712</a>: Adaptive.getIdentity prints 'More than one user found' when no user was found</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2532" target="_blank">OPENAM-2532</a>: deleting ActiveDirectory DataStore from subrealm deleting parent's referrals too.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2460" target="_blank">OPENAM-2460</a>: Policy evaluation may hang with large number of matching referral privileges</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1655" target="_blank">OPENAM-1655</a>: AttributeQueryUtil ignores configured SPAttributeMapper</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1642" target="_blank">OPENAM-1642</a>: Chain based UI customization is not case insensitive</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-752" target="_blank">OPENAM-752</a>: AgentsRepo#getAttributes fails to get agent information occasionally leading to server restart</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-294" target="_blank">OPENAM-294</a>: ssoadm: create and update </p></li></ul></div></div><div class="section" id="limitations"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.2.&nbsp;Limitations</h2></div></div></div><p>When session failover is configured to use external OpenDJ directory
+  servers, OpenAM must access those directory servers through an LDAP load
+  balancer that can fail over connections from OpenAM whenever a directory
+  server goes offline. Otherwise, sessions could continue to persist after
+  users logout of OpenAM.</p><p>Do not run different versions of OpenAM together in the same OpenAM
+  site.</p><p>
+   OpenAM allows you to delete a referral policy
+   even if policies depending on the referral still exist in the target realm.
+   Deleting a referral policy that other policies depend on
+   can cause problems during policy evaluation.
+   You must therefore make sure that no policies
+   depend on any referrals that you delete.
+  </p><p>When deploying OpenAM components on Microsoft Windows in an IPv6 environment,
+  you must use the Java 7 Development Kit on Windows (due to <a class="link" href="http://bugs.sun.com/view_bug.do?bug_id=6230761" target="_blank">JDK-6230761</a>,
+  which is fixed only in Java 7).</p><p>The Database Repository type of data store is experimental and not
+  supported for production use.</p><p>By default OpenAM does not enforce session quotas when running in Site
+  mode without session failover. To work around this behavior, set the server
+  configuration property
+  <code class="literal">openam.session.useLocalSessionsInMultiServerMode=true</code>.
+  You can set this property in OpenAM console under Configuration &gt; Servers
+  and Sites &gt; Servers &gt; Server Name &gt; Advanced.</p><p>The XUI is experimental and not supported for production use. The only
+  language locale available for the XUI at this time is US English, in the
+  <code class="filename">/path/to/openam/webapps/XUI/locales</code> directory.</p><p>
+   On hosts with pure IPv6 networks, OpenAM configuration has been seen to fail
+   while starting the embedded OpenDJ directory server
+   (<a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3008" target="_blank">OPENAM-3008</a>).
+  </p></div><div class="section" id="known-issues"><div class="titlepage"><div><div><h2 class="title" style="clear: both">5.3.&nbsp;Known Issues</h2></div></div></div><p>
+   The following important known issues remained open
+   at the time release ${serverDocTargetVersion} became available.
+   For details and information on other issues, see the
+   <a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM" target="_blank">OpenAM issue tracker</a>.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4430" target="_blank">OPENAM-4430</a>: Upgrade wizard is not actual and not the same for the others languages than EN</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4320" target="_blank">OPENAM-4320</a>: NotificationServlet does not check for null before closing writer in finally block</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4262" target="_blank">OPENAM-4262</a>: IDP Proxy should set destination depending on the Binding</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4252" target="_blank">OPENAM-4252</a>: StatusCode SAML response missing space</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4225" target="_blank">OPENAM-4225</a>: Unable to modify some parts of policies in OpenAM console when not using amAdmin account. Unable to replace policy &lt;policy_name&gt; in organization dc=&lt;org&gt;</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4218" target="_blank">OPENAM-4218</a>: JAVA_HOME is not set correctly when installing admin tools (ssoadm, ampassword, amverifyarchive)</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4215" target="_blank">OPENAM-4215</a>: ScopingImpl#makeImmutable should perform null checks</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-4213" target="_blank">OPENAM-4213</a>: Root cause of MetaData import is lost when debug level is set to 'error'</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3827" target="_blank">OPENAM-3827</a>: json/session endpoint not listing sessions</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3783" target="_blank">OPENAM-3783</a>: Device print check of installed plugins and fonts does not work</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3780" target="_blank">OPENAM-3780</a>: Max number and percentage of tolerated difference between installed fonts is replaced by each other</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3548" target="_blank">OPENAM-3548</a>: Items on the device print authn page are disordered</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3547" target="_blank">OPENAM-3547</a>: Typos and errors of 11.0 additional fields</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3466" target="_blank">OPENAM-3466</a>: LDAP authentication module does not apply the change of the password for the bind DN user until restart</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3390" target="_blank">OPENAM-3390</a>: Japanese translation for OpenAM 11.0</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3243" target="_blank">OPENAM-3243</a>: The Core Auth Module persistent cookie options are different from the Persistent Cookie Module</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3223" target="_blank">OPENAM-3223</a>: Policy Wildcard Matches doesn't work after OpenAM upgrade with an ODSEE</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3205" target="_blank">OPENAM-3205</a>: Missing labels in OAuth2 "Register a Client" page</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3159" target="_blank">OPENAM-3159</a>: Difference in case between results of identity/json/attributes REST API between first and subsequent calls</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3152" target="_blank">OPENAM-3152</a>: CTS -- External Store Passwords configured in default server settings shown in clear text elsewhere</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3109" target="_blank">OPENAM-3109</a>: Token conflicts can occur if OpenDJ servers are replicated</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3056" target="_blank">OPENAM-3056</a>: Retrieving roles may fail when using more than one data store</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-3048" target="_blank">OPENAM-3048</a>: RESTful authentication using curl doesn't work on the WebLogic 12c (12.1.1.0) </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2874" target="_blank">OPENAM-2874</a>: The OpenID Connect client registration endpoint does not set idTokenSignedResponseAlg to its default</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2777" target="_blank">OPENAM-2777</a>: Default user profile name field in device print page is unused</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2715" target="_blank">OPENAM-2715</a>: Mandatory OAuth2 Provider settings not enforced in the UI</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2656" target="_blank">OPENAM-2656</a>: PrefixResourceName#compare() strips off trailing '/' in PathInfo</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2608" target="_blank">OPENAM-2608</a>: Restricted Token validation does not work in legacy REST API</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2564" target="_blank">OPENAM-2564</a>: resource-based authentication with DistAuth not working</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2537" target="_blank">OPENAM-2537</a>: SAML AuthContext mapper auth level setting inconsistencies</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2469" target="_blank">OPENAM-2469</a>: IdP initiated SSO endpoints should honor RelayState even when they're POSTed</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2453" target="_blank">OPENAM-2453</a>: HTTP GET /ws/1/entitlement/privilege? HTTP 400 with message "Unable to search privileges."</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2404" target="_blank">OPENAM-2404</a>: new_org.jsp is displayed from the original realm in case of session upgrade</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2262" target="_blank">OPENAM-2262</a>: Configure OAuth2 wizard always enables refresh tokens</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2170" target="_blank">OPENAM-2170</a>: Configure OAuth2 wizard fails to create policy in sub-realm</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2168" target="_blank">OPENAM-2168</a>: Authentication Success Rate and Authentication Failure Rate are always 0</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2155" target="_blank">OPENAM-2155</a>: Non printable characters in some files.  Looks like most should be copyright 0xA9</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2137" target="_blank">OPENAM-2137</a>: DSConfigMgr can hide exception root causes</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2090" target="_blank">OPENAM-2090</a>: OPENAM_HOME/.version file is not updated</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2085" target="_blank">OPENAM-2085</a>: Unreliable policy evaluation results with com.sun.identity.agents.config.fetch.from.root.resource enabled</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-2023" target="_blank">OPENAM-2023</a>: Federation Connectivity Test fails with Account termination is not working </p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1946" target="_blank">OPENAM-1946</a>: Password change with AD does not work when old password is provided</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1945" target="_blank">OPENAM-1945</a>: Default Configuration create invalid domain cookie</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1921" target="_blank">OPENAM-1921</a>: REST GET for user "*" returning first user listed</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1892" target="_blank">OPENAM-1892</a>: Only Accept certificate for authentication if KeyUsage is correct</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1886" target="_blank">OPENAM-1886</a>: Session invalidated on OpenAM server is not deleted from SFO datastore</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1852" target="_blank">OPENAM-1852</a>: Oauth2 auth-module can not be used with DistAuth</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1831" target="_blank">OPENAM-1831</a>: OpenAM 10.0 subrealm DNS alias doesn't work as expected unless setting com.sun.identity.server.fqdnMap</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1811" target="_blank">OPENAM-1811</a>: DAS response serialization is not working as expected when using PAP</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1660" target="_blank">OPENAM-1660</a>: Read-access to SubjectEvaluationCache is not synchronized</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1659" target="_blank">OPENAM-1659</a>: Default Authentication Locale is not used as fallback</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1563" target="_blank">OPENAM-1563</a>: Servers and Sites pages may display password in clear text</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1505" target="_blank">OPENAM-1505</a>: LogoutViewBean does not use request information for finding the correct template</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1456" target="_blank">OPENAM-1456</a>: Change of the agent group in the J2EE policy agent profile causes profile corruption</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1323" target="_blank">OPENAM-1323</a>: Unable to create session service when no datastore is available</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1317" target="_blank">OPENAM-1317</a>: With ssoadm create-agent, default values are handled differently for web agents and j2ee agents</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1269" target="_blank">OPENAM-1269</a>: Entitlements are incorrectly converted to policies</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1219" target="_blank">OPENAM-1219</a>: SAML 2 metadata parsing breaks in glassfish 3.1.2</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1194" target="_blank">OPENAM-1194</a>: Unable to get AuthnRequest error in multiserver setup</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1181" target="_blank">OPENAM-1181</a>: Improperly defined applications cause the policy framework to throw NPE</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1137" target="_blank">OPENAM-1137</a>: Error message raised when adding a user to a group</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1111" target="_blank">OPENAM-1111</a>: Persistent search in LDAPv3EventService should be turned off if caching is disabled</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-1105" target="_blank">OPENAM-1105</a>: Init properties sometimes don't honor final settings</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-774" target="_blank">OPENAM-774</a>: Invalid characters check not performed.</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-291" target="_blank">OPENAM-291</a>: SelfWrite permissions are denied to sub realms</p></li><li class="listitem"><p><a class="link" href="https://bugster.forgerock.org/jira/browse/OPENAM-71" target="_blank">OPENAM-71</a>: SAML2 error handling in HTTP POST and Redirect bindings</p></li></ul></div></div></div><div lang="en" class="chapter" id="chap-feedback"><div class="titlepage"><div><div><h1 class="title">Chapter&nbsp;6.&nbsp;How to Report Problems &amp; Provide Feedback</h1></div></div></div><p>If you have questions regarding OpenAM which are not answered by the
+ documentation, there is a mailing list which can be found at
+ <a class="link" href="https://lists.forgerock.org/mailman/listinfo/openam" target="_blank">https://lists.forgerock.org/mailman/listinfo/openam</a>
+ where you are likely to find an answer.</p><p>If you have found issues or reproducible bugs within OpenAM
+ , report them in <a class="link" href="https://bugster.forgerock.org" target="_blank">https://bugster.forgerock.org</a>.</p><div class="itemizedlist"><p>When requesting help with a problem, include the following
+  information:</p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Description of the problem, including when the problem occurs and
+   its impact on your operation</p></li><li class="listitem"><div class="itemizedlist"><p>Description of the environment, including the following
+    information:</p><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>Machine type</p></li><li class="listitem"><p>Operating system and version</p></li><li class="listitem"><p>Web server or container and version</p></li><li class="listitem"><p>Java version</p></li><li class="listitem"><p>OpenAM version</p></li><li class="listitem"><p>Any patches or other software that might be affecting the problem</p></li></ul></div></li><li class="listitem"><p>Steps to reproduce the problem</p></li><li class="listitem"><p>Any relevant access and error logs, stack traces, or core dumps</p></li></ul></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
+              2011-2014&nbsp;
+              ForgeRock AS;&nbsp;
+              &nbsp;
+              &nbsp;
+          </span></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
