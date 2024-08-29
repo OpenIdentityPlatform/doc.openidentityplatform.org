@@ -1328,6 +1328,7 @@ LDIF processing complete.  10003 entries written</pre></li></ol></div></div></di
       have millions of directory entries to import&#8212;first shut down the
       server, and then run the <span class="command"><strong>import-ldif</strong></span> command.</p><pre class="cmdline prettyprint">$ stop-ds
 $ import-ldif
+ --offline
  --includeBranch dc=example,dc=org
  --backendID userRoot
  --ldifFile /path/to/generated.ldif</pre></li>
@@ -1349,6 +1350,7 @@ $ import-ldif
     <li class="step"><p>If you want to speed up export, first shut down the server, and then
      export data using the <span class="command"><strong>export-ldif</strong></span> command.</p><pre class="cmdline prettyprint">$ stop-ds
 $ export-ldif
+ --offline
  --includeBranch dc=example,dc=org
  --backendID userRoot
  --ldifFile /path/to/backup.ldif</pre></li>
