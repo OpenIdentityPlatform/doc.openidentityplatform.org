@@ -44,8 +44,11 @@ body {
 }
 
 a {
-    /* Sea Green */
-    color: #519387;
+    color: #1e20b4;
+}
+
+a:hover, a:focus {
+    color: #1e20b4;
 }
 
 a.link[href^="http"] {
@@ -65,7 +68,7 @@ a[href].self-link:hover::after
 {
     -moz-osx-font-smoothing: grayscale;
     content: "\e144";
-    color: #519387;
+    color: #1e20b4;
     display: inline-block;
     font-family: "Glyphicons Halflings";
     font-size: 75%;
@@ -105,7 +108,7 @@ li.L8 {
 }
 
 .left-shape-content {
-    background: url("includes/logos/left-shape-4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 566px;
     position: fixed;
@@ -153,11 +156,11 @@ li.L8 {
 }
 
 .tooltip.bottom .tooltip-arrow {
-    border-bottom-color: #519387;
+    border-bottom-color: #27297e;
 }
 
 .tooltip-inner {
-    background-color: #519387;
+    background-color: #27297e;
 }
 
 /* List Styles */
@@ -256,7 +259,7 @@ li.L8 {
 
 .jumbotron {
     /* Sea Green */
-    background: url("includes/logos/hero-bg-01.png") no-repeat scroll left top #519387;
+    background: no-repeat scroll left top #00013c;
     color: white;
     box-shadow: 0 0 10px 2px grey;
     margin-top: 50px;
@@ -328,8 +331,8 @@ li.L8 {
     */
     /* Bright Yellow */
 
-    background-color: #eeea07;
-    border-color: #eeea07;
+    background-color: #e2e2fe;
+    border-color: #e2e2fe;
     /* Grey */
 
     color: #2a2f32;
@@ -401,7 +404,7 @@ h1 span {
 #doc-content h1,
 #doc-content .h1 {
     /* Sea Green */
-    border-bottom: 2px solid #70ab9b;
+    border-bottom: 2px solid #27297e;
     font-size: 36px;
     margin-top: 24px;
     padding-bottom: 5px;
@@ -736,7 +739,6 @@ img.img-responsive {
 }
 
 /***********************************/
-
   </style><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenAM Installation Guide</title><script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script><script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><meta name="description" content="Guide showing you how to install OpenAM. OpenAM provides open source Authentication, Authorization, Entitlement and Federation software."><script type="text/javascript">
      /*
  * The contents of this file are subject to the terms of the Common Development and
@@ -2395,9 +2397,4 @@ Using CLASSPATH:       /path/to/tomcat/bin/bootstrap.jar:
    base DN for the OpenAM configuration is
    <code class="literal"></code>.</p></li><li class="step"><p>Undeploy the OpenAM web application.</p><p>For example, if you are using Apache Tomcat as the web container,
    remove the .war file and expanded web application from the container.</p><pre class="cmdline prettyprint">$ cd /path/to/tomcat/webapps/
-$ rm -rf openam.war openam/</pre></li></ol></div></div></div><div class="index" id="d4462e3990"><div class="titlepage"><div><div><h1 class="title">Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>C</h3><dl><dt id="ientry-d4462e3189">Core Token Service, <a class="indexterm" href="#chap-cts">Configuring the Core Token Service (CTS)</a></dt><dt id="ientry-d4462e2694">Custom end user pages, <a class="indexterm" href="#chap-custom-ui">Customizing the OpenAM End User Pages</a></dt></dl></div><div class="indexdiv"><h3>D</h3><dl><dt id="ientry-d4462e347">Directory service requirements, <a class="indexterm" href="#prerequisites-file-descriptors">Setting Maximum File Descriptors</a>, <a class="indexterm" href="#prepare-configuration-store">Preparing a Configuration Data Store</a>, <a class="indexterm" href="#prepare-identity-repository">Preparing an Identity Repository</a></dt><dt id="ientry-d4462e789">Downloading OpenAM, <a class="indexterm" href="#download-openam-software">Obtaining OpenAM Software</a></dt></dl></div><div class="indexdiv"><h3>I</h3><dl><dt id="ientry-d4462e1492">Installing</dt><dd><dl><dt>Behind the firewall, <a class="indexterm" href="#chap-install-das">Installing OpenAM Distributed Authentication</a></dt><dt>Full install, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Interactive configuration, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Load Balancer, <a class="indexterm" href="#chap-session-failover">Setting Up OpenAM Session Failover</a></dt><dt>No console, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Session failover, <a class="indexterm" href="#chap-session-failover">Setting Up OpenAM Session Failover</a></dt><dt>Silent configuration, <a class="indexterm" href="#chap-install-tools">Installing OpenAM Tools</a></dt><dt>Starting over, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Tools (ssoadm, etc.), <a class="indexterm" href="#chap-install-tools">Installing OpenAM Tools</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>J</h3><dl><dt id="ientry-d4462e265">Java requirements, <a class="indexterm" href="#prepare-java">Preparing a Java Environment</a></dt></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d4462e228">Prerequisites, <a class="indexterm" href="#chap-prepare-install">Preparing For Installation</a></dt></dl></div><div class="indexdiv"><h3>U</h3><dl><dt id="ientry-d4462e3915">Uninstalling, <a class="indexterm" href="#chap-uninstall">Removing OpenAM Software</a></dt></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"><span class="footer-item">Copyright &copy;
-              2011-2013&nbsp;
-              ForgeRock AS;&nbsp;
-              &nbsp;
-              &nbsp;
-          </span></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
+$ rm -rf openam.war openam/</pre></li></ol></div></div></div><div class="index" id="d4462e3990"><div class="titlepage"><div><div><h1 class="title">Index</h1></div></div></div><div xmlns:xlink="http://www.w3.org/1999/xlink" class="index"><div class="indexdiv"><h3>C</h3><dl><dt id="ientry-d4462e3189">Core Token Service, <a class="indexterm" href="#chap-cts">Configuring the Core Token Service (CTS)</a></dt><dt id="ientry-d4462e2694">Custom end user pages, <a class="indexterm" href="#chap-custom-ui">Customizing the OpenAM End User Pages</a></dt></dl></div><div class="indexdiv"><h3>D</h3><dl><dt id="ientry-d4462e347">Directory service requirements, <a class="indexterm" href="#prerequisites-file-descriptors">Setting Maximum File Descriptors</a>, <a class="indexterm" href="#prepare-configuration-store">Preparing a Configuration Data Store</a>, <a class="indexterm" href="#prepare-identity-repository">Preparing an Identity Repository</a></dt><dt id="ientry-d4462e789">Downloading OpenAM, <a class="indexterm" href="#download-openam-software">Obtaining OpenAM Software</a></dt></dl></div><div class="indexdiv"><h3>I</h3><dl><dt id="ientry-d4462e1492">Installing</dt><dd><dl><dt>Behind the firewall, <a class="indexterm" href="#chap-install-das">Installing OpenAM Distributed Authentication</a></dt><dt>Full install, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Interactive configuration, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Load Balancer, <a class="indexterm" href="#chap-session-failover">Setting Up OpenAM Session Failover</a></dt><dt>No console, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Session failover, <a class="indexterm" href="#chap-session-failover">Setting Up OpenAM Session Failover</a></dt><dt>Silent configuration, <a class="indexterm" href="#chap-install-tools">Installing OpenAM Tools</a></dt><dt>Starting over, <a class="indexterm" href="#chap-install-core">Installing OpenAM Core Services</a></dt><dt>Tools (ssoadm, etc.), <a class="indexterm" href="#chap-install-tools">Installing OpenAM Tools</a></dt></dl></dd></dl></div><div class="indexdiv"><h3>J</h3><dl><dt id="ientry-d4462e265">Java requirements, <a class="indexterm" href="#prepare-java">Preparing a Java Environment</a></dt></dl></div><div class="indexdiv"><h3>P</h3><dl><dt id="ientry-d4462e228">Prerequisites, <a class="indexterm" href="#chap-prepare-install">Preparing For Installation</a></dt></dl></div><div class="indexdiv"><h3>U</h3><dl><dt id="ientry-d4462e3915">Uninstalling, <a class="indexterm" href="#chap-uninstall">Removing OpenAM Software</a></dt></dl></div></div></div></div><a href="#" class="back-to-top hidden-xs"><button type="button" class="btn btn-primary btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button></a></div></div><div class="footer"><div class="container-fluid"><div class="footer-left"></div><div class="footer-right"><a target="_blank" class="footer-item snap-left" href="legalnotice.html"><i class="glyphicon glyphicon-briefcase"></i> Legal Notice</a><a target="_blank" class="footer-item snap-left" href="https://github.com/OpenIdentityPlatform/OpenAM/issues"><i class="glyphicon glyphicon-ok-sign"></i> Feedback</a><a target="_blank" class="footer-item snap-left" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-info-sign"></i> About</a></div></div></div></body></html>
