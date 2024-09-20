@@ -1,0 +1,37 @@
+site:
+  title: Open Identity Platform Documentation
+  start_page: opendj:ROOT:index.adoc
+  url: https://doc.openidentityplatform.org
+  robots: allow
+  keys:
+    google_analytics: 'G-TFFQQ60TMD'
+    google_site_verification: 'gB-OZuT18mmNEL-k5UNMHmNWQX5Wv46GnWWs1XZxZeE'
+content:
+  edit_url: false 
+  sources:
+  - url: ./
+    start_path: opendj
+  - url: ./
+    start_path: openig
+  - url: ./
+    start_path: openam
+  - url: ./
+    start_path: openidm
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+
+output:
+  clean: true
+
+asciidoc:
+  extensions:
+  - ./lib/nested-open-block
+  attributes:
+    page-toclevels: 1@
+    page-pagination: ''
+
+urls: 
+  html_extension_style: drop 
