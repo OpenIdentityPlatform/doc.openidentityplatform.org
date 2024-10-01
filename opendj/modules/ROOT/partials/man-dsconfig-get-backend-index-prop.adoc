@@ -1,0 +1,395 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-backend-index-prop]
+= dsconfig get-backend-index-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-backend-index-prop - Shows Backend Index properties
+
+== Synopsis
+
+`dsconfig get-backend-index-prop` {options}
+
+[#dsconfig-get-backend-index-prop-description]
+== Description
+
+Shows Backend Index properties.
+
+
+
+[#dsconfig-get-backend-index-prop-options]
+== Options
+
+The `dsconfig get-backend-index-prop` command takes the following options:
+
+--
+`--backend-name {name}`::
+
+The name of the Pluggable Backend.
++
+
+[open]
+====
+Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Backend Index types:
+
+`backend-index`::
++
+Default {name}: Backend Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-index-prop-backend-index>> for the properties of this Backend Index type.
+====
+
+`--index-name {name}`::
+
+The name of the Backend Index.
++
+
+[open]
+====
+Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Backend Index types:
+
+`backend-index`::
++
+Default {name}: Backend Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-index-prop-backend-index>> for the properties of this Backend Index type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Backend Index properties depend on the Backend Index type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Backend Index types:
+
+`backend-index`::
++
+Default {property}: Backend Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-index-prop-backend-index>> for the properties of this Backend Index type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Backend Index properties depend on the Backend Index type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Backend Index types:
+
+`backend-index`::
++
+Default null: Backend Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-index-prop-backend-index>> for the properties of this Backend Index type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Backend Index properties depend on the Backend Index type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Backend Index types:
+
+`backend-index`::
++
+Default {unit}: Backend Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-index-prop-backend-index>> for the properties of this Backend Index type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Backend Index properties depend on the Backend Index type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Backend Index types:
+
+`backend-index`::
++
+Default {unit}: Backend Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-index-prop-backend-index>> for the properties of this Backend Index type.
+====
+
+--
+
+[#dsconfig-get-backend-index-prop-backend-index]
+== Backend Index
+
+Backend Indexes of type backend-index have the following properties:
+
+--
+
+
+attribute::
+[open]
+====
+Description::
+Specifies the name of the attribute for which the index is to be maintained. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+confidentiality-enabled::
+[open]
+====
+Description::
+Specifies whether contents of the index should be confidential. Setting the flag to true will hash keys for equality type indexes using SHA-1 and encrypt the list of entries matching a substring key for substring indexes.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+If the index for the attribute must be protected for security purposes and values for that attribute already exist in the database, the index must be rebuilt before it will be accurate. The property cannot be set on a backend for which confidentiality is not enabled.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+index-entry-limit::
+[open]
+====
+Description::
+Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. This is analogous to the ALL IDs threshold in the Sun Java System Directory Server. If this is specified, its value overrides the JE backend-wide configuration. For no limit, use 0 for the value.
+
+
+Default Value::
+4000
+
+
+Allowed Values::
+An integer value. Lower value is 0. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+If any index keys have already reached this limit, indexes must be rebuilt before they will be allowed to use the new limit.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+index-extensible-matching-rule::
+[open]
+====
+Description::
+The extensible matching rule in an extensible index. An extensible matching rule must be specified using either LOCALE or OID of the matching rule.
+
+
+Default Value::
+No extensible matching rules will be indexed.
+
+
+Allowed Values::
+A Locale or an OID.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The index must be rebuilt before it will reflect the new value.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+index-type::
+[open]
+====
+Description::
+Specifies the type(s) of indexing that should be performed for the associated attribute. For equality, presence, and substring index types, the associated attribute type must have a corresponding matching rule.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+
+
+approximate::
+This index type is used to improve the efficiency of searches using approximate matching search filters.
+
+equality::
+This index type is used to improve the efficiency of searches using equality search filters.
+
+extensible::
+This index type is used to improve the efficiency of searches using extensible matching search filters.
+
+ordering::
+This index type is used to improve the efficiency of searches using "greater than or equal to" or "less then or equal to" search filters.
+
+presence::
+This index type is used to improve the efficiency of searches using the presence search filters.
+
+substring::
+This index type is used to improve the efficiency of searches using substring search filters.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+If any new index types are added for an attribute, and values for that attribute already exist in the database, the index must be rebuilt before it will be accurate.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+substring-length::
+[open]
+====
+Description::
+The length of substrings in a substring index. 
+
+
+Default Value::
+6
+
+
+Allowed Values::
+An integer value. Lower value is 3.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The index must be rebuilt before it will reflect the new value.
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

@@ -1,0 +1,595 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-entry-cache]
+= dsconfig create-entry-cache(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-entry-cache - Creates Entry Caches
+
+== Synopsis
+
+`dsconfig create-entry-cache` {options}
+
+[#dsconfig-create-entry-cache-description]
+== Description
+
+Creates Entry Caches.
+
+
+
+[#dsconfig-create-entry-cache-options]
+== Options
+
+The `dsconfig create-entry-cache` command takes the following options:
+
+--
+`--cache-name {name}`::
+
+The name of the new Entry Cache.
++
+
+[open]
+====
+Entry Cache properties depend on the Entry Cache type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Entry Cache types:
+
+`fifo-entry-cache`::
++
+Default {name}: FIFO Entry Cache
++
+Enabled by default: true
++
+See  <<dsconfig-create-entry-cache-fifo-entry-cache>> for the properties of this Entry Cache type.
+`soft-reference-entry-cache`::
++
+Default {name}: Soft Reference Entry Cache
++
+Enabled by default: true
++
+See  <<dsconfig-create-entry-cache-soft-reference-entry-cache>> for the properties of this Entry Cache type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Entry Cache properties depend on the Entry Cache type, which depends on the `--cache-name {name}` option.
+
+`-t | --type {type}`::
+
+The type of Entry Cache which should be created. The value for TYPE can be one of: custom | fifo | soft-reference.
++
+
+[open]
+====
+Entry Cache properties depend on the Entry Cache type, which depends on the {type} you provide.
+
+By default, OpenDJ directory server supports the following Entry Cache types:
+
+`fifo-entry-cache`::
++
+Default {type}: FIFO Entry Cache
++
+Enabled by default: true
++
+See  <<dsconfig-create-entry-cache-fifo-entry-cache>> for the properties of this Entry Cache type.
+`soft-reference-entry-cache`::
++
+Default {type}: Soft Reference Entry Cache
++
+Enabled by default: true
++
+See  <<dsconfig-create-entry-cache-soft-reference-entry-cache>> for the properties of this Entry Cache type.
+====
+
+--
+
+[#dsconfig-create-entry-cache-fifo-entry-cache]
+== FIFO Entry Cache
+
+Entry Caches of type fifo-entry-cache have the following properties:
+
+--
+
+
+cache-level::
+[open]
+====
+Description::
+Specifies the cache level in the cache order if more than one instance of the cache is configured. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Entry Cache is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+exclude-filter::
+[open]
+====
+Description::
+The set of filters that define the entries that should be excluded from the cache. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+include-filter::
+[open]
+====
+Description::
+The set of filters that define the entries that should be included in the cache. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the FIFO Entry Cache implementation. 
+
+
+Default Value::
+org.opends.server.extensions.FIFOEntryCache
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.EntryCache
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Entry Cache must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+lock-timeout::
+[open]
+====
+Description::
+Specifies the length of time to wait while attempting to acquire a read or write lock. 
+
+
+Default Value::
+2000.0ms
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+max-entries::
+[open]
+====
+Description::
+Specifies the maximum number of entries that we will allow in the cache. 
+
+
+Default Value::
+2147483647
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+max-memory-percent::
+[open]
+====
+Description::
+Specifies the maximum percentage of JVM memory used by the server before the entry caches stops caching and begins purging itself. Very low settings such as 10 or 20 (percent) can prevent this entry cache from having enough space to hold any of the entries to cache, making it appear that the server is ignoring or skipping the entry cache entirely.
+
+
+Default Value::
+90
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 100.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-entry-cache-soft-reference-entry-cache]
+== Soft Reference Entry Cache
+
+Entry Caches of type soft-reference-entry-cache have the following properties:
+
+--
+
+
+cache-level::
+[open]
+====
+Description::
+Specifies the cache level in the cache order if more than one instance of the cache is configured. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Entry Cache is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+exclude-filter::
+[open]
+====
+Description::
+The set of filters that define the entries that should be excluded from the cache. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+include-filter::
+[open]
+====
+Description::
+The set of filters that define the entries that should be included in the cache. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Soft Reference Entry Cache implementation. 
+
+
+Default Value::
+org.opends.server.extensions.SoftReferenceEntryCache
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.EntryCache
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Entry Cache must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+lock-timeout::
+[open]
+====
+Description::
+Specifies the length of time in milliseconds to wait while attempting to acquire a read or write lock. 
+
+
+Default Value::
+3000ms
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

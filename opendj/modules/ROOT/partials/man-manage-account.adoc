@@ -1,0 +1,413 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#manage-account-1]
+= manage-account(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+manage-account - manage state of OpenDJ server accounts
+
+== Synopsis
+`manage-account` `{subcommand} {options}`
+
+[#manage-account-description]
+== Description
+
+This utility can be used to retrieve and manipulate the values of password policy state variables.
+
+
+
+
+[#manage-account-options]
+== Options
+
+The `manage-account` command takes the following options:
+
+.Command options:
+
+--
+`-b | --targetDN {targetDN}`::
+The DN of the user entry for which to get and set password policy state information.
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+The DN to use to bind to the server.
++
+
+`-h | --hostname {host}`::
+Directory server hostname or IP address.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+The path to the file containing the bind password.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of certificate for SSL client authentication.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+Default: 4444
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`-w | --bindPassword {bindPassword}`::
+The password to use to bind to the server.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+[#manage-account-subcommands]
+== Subcommands
+
+
+
+The `manage-account` command supports the following subcommands:
+
+
+[#manage-account-clear-account-is-disabled]
+=== manage-account clear-account-is-disabled
+
+Clear account disabled state information from the user account.
+
+
+
+
+
+
+[#manage-account-get-account-expiration-time]
+=== manage-account get-account-expiration-time
+
+Display when the user account will expire.
+
+
+
+
+
+
+[#manage-account-get-account-is-disabled]
+=== manage-account get-account-is-disabled
+
+Display information about whether the user account has been administratively disabled.
+
+
+
+
+
+
+[#manage-account-get-all]
+=== manage-account get-all
+
+Display all password policy state information for the user.
+
+
+
+
+
+
+[#manage-account-get-authentication-failure-times]
+=== manage-account get-authentication-failure-times
+
+Display the authentication failure times for the user.
+
+
+
+
+
+
+[#manage-account-get-grace-login-use-times]
+=== manage-account get-grace-login-use-times
+
+Display the grace login use times for the user.
+
+
+
+
+
+
+[#manage-account-get-last-login-time]
+=== manage-account get-last-login-time
+
+Display the time that the user last authenticated to the server.
+
+
+
+
+
+
+[#manage-account-get-password-changed-by-required-time]
+=== manage-account get-password-changed-by-required-time
+
+Display the required password change time with which the user last complied.
+
+
+
+
+
+
+[#manage-account-get-password-changed-time]
+=== manage-account get-password-changed-time
+
+Display the time that the user's password was last changed.
+
+
+
+
+
+
+[#manage-account-get-password-expiration-warned-time]
+=== manage-account get-password-expiration-warned-time
+
+Display the time that the user first received an expiration warning notice.
+
+
+
+
+
+
+[#manage-account-get-password-history]
+=== manage-account get-password-history
+
+Display password history state values for the user.
+
+
+
+
+
+
+[#manage-account-get-password-is-reset]
+=== manage-account get-password-is-reset
+
+Display information about whether the user will be required to change his or her password on the next successful authentication.
+
+
+
+
+
+
+[#manage-account-get-password-policy-dn]
+=== manage-account get-password-policy-dn
+
+Display the DN of the password policy for the user.
+
+
+
+
+
+
+[#manage-account-get-remaining-authentication-failure-count]
+=== manage-account get-remaining-authentication-failure-count
+
+Display the number of remaining authentication failures until the user's account is locked.
+
+
+
+
+
+
+[#manage-account-get-remaining-grace-login-count]
+=== manage-account get-remaining-grace-login-count
+
+Display the number of grace logins remaining for the user.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-account-expiration]
+=== manage-account get-seconds-until-account-expiration
+
+Display the length of time in seconds until the user account expires.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-authentication-failure-unlock]
+=== manage-account get-seconds-until-authentication-failure-unlock
+
+Display the length of time in seconds until the authentication failure lockout expires.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-idle-lockout]
+=== manage-account get-seconds-until-idle-lockout
+
+Display the length of time in seconds until user's account is locked because it has remained idle for too long.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-password-expiration]
+=== manage-account get-seconds-until-password-expiration
+
+Display length of time in seconds until the user's password expires.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-password-expiration-warning]
+=== manage-account get-seconds-until-password-expiration-warning
+
+Display the length of time in seconds until the user should start receiving password expiration warning notices.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-password-reset-lockout]
+=== manage-account get-seconds-until-password-reset-lockout
+
+Display the length of time in seconds until user's account is locked because the user failed to change the password in a timely manner after an administrative reset.
+
+
+
+
+
+
+[#manage-account-get-seconds-until-required-change-time]
+=== manage-account get-seconds-until-required-change-time
+
+Display the length of time in seconds that the user has remaining to change his or her password before the account becomes locked due to the required change time.
+
+
+
+
+
+
+[#manage-account-set-account-is-disabled]
+=== manage-account set-account-is-disabled
+
+Specify whether the user account has been administratively disabled.
+
+
+
+[#manage-account-set-account-is-disabled-options]
+==== Options
+
+--
+
+`-O | --operationValue {true|false}`::
+'true' to indicate that the account is disabled, or 'false' to indicate that it is not disabled.
++
+
++
+
+
+--
+
+
+
+
+
+include::./_exit-codes-0-89.adoc[]
+
+include::./_manage-account-examples.adoc[]
+
+

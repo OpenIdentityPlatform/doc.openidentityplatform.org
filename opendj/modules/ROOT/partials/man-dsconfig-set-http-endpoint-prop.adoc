@@ -1,0 +1,419 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-http-endpoint-prop]
+= dsconfig set-http-endpoint-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-http-endpoint-prop - Modifies HTTP Endpoint properties
+
+== Synopsis
+
+`dsconfig set-http-endpoint-prop` {options}
+
+[#dsconfig-set-http-endpoint-prop-description]
+== Description
+
+Modifies HTTP Endpoint properties.
+
+
+
+[#dsconfig-set-http-endpoint-prop-options]
+== Options
+
+The `dsconfig set-http-endpoint-prop` command takes the following options:
+
+--
+`--endpoint-name {name}`::
+
+The name of the HTTP Endpoint.
++
+
+[open]
+====
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following HTTP Endpoint types:
+
+`admin-endpoint`::
++
+Default {name}: Admin Endpoint
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-endpoint-prop-admin-endpoint>> for the properties of this HTTP Endpoint type.
+`rest2ldap-endpoint`::
++
+Default {name}: Rest2ldap Endpoint
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-endpoint-prop-rest2ldap-endpoint>> for the properties of this HTTP Endpoint type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+
+--
+
+[#dsconfig-set-http-endpoint-prop-admin-endpoint]
+== Admin Endpoint
+
+HTTP Endpoints of type admin-endpoint have the following properties:
+
+--
+
+
+authorization-mechanism::
+[open]
+====
+Description::
+The HTTP authorization mechanisms supported by this HTTP Endpoint. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any HTTP Authorization Mechanism. The referenced authorization mechanism must be enabled when the HTTP Endpoint is enabled.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-path::
+[open]
+====
+Description::
+All HTTP requests matching the base path or subordinate to it will be routed to the HTTP endpoint unless a more specific HTTP endpoint is found. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Endpoint is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Admin Endpoint implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.rest2ldap.AdminEndpoint
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.HttpEndpoint
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-http-endpoint-prop-rest2ldap-endpoint]
+== Rest2ldap Endpoint
+
+HTTP Endpoints of type rest2ldap-endpoint have the following properties:
+
+--
+
+
+authorization-mechanism::
+[open]
+====
+Description::
+The HTTP authorization mechanisms supported by this HTTP Endpoint. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any HTTP Authorization Mechanism. The referenced authorization mechanism must be enabled when the HTTP Endpoint is enabled.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-path::
+[open]
+====
+Description::
+All HTTP requests matching the base path or subordinate to it will be routed to the HTTP endpoint unless a more specific HTTP endpoint is found. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+config-directory::
+[open]
+====
+Description::
+The directory containing the Rest2Ldap configuration file(s) for this specific endpoint. The directory must be readable by the server and may contain multiple configuration files, one for each supported version of the REST endpoint. If a relative path is used then it will be resolved against the server&apos;s instance directory.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A directory that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Endpoint is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Rest2ldap Endpoint implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.rest2ldap.Rest2LdapEndpoint
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.HttpEndpoint
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

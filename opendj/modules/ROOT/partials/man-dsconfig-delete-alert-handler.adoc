@@ -1,0 +1,521 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-delete-alert-handler]
+= dsconfig delete-alert-handler(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig delete-alert-handler - Deletes Alert Handlers
+
+== Synopsis
+
+`dsconfig delete-alert-handler` {options}
+
+[#dsconfig-delete-alert-handler-description]
+== Description
+
+Deletes Alert Handlers.
+
+
+
+[#dsconfig-delete-alert-handler-options]
+== Options
+
+The `dsconfig delete-alert-handler` command takes the following options:
+
+--
+`--handler-name {name}`::
+
+The name of the Alert Handler.
++
+
+[open]
+====
+Alert Handler properties depend on the Alert Handler type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Alert Handler types:
+
+`jmx-alert-handler`::
++
+Default {name}: JMX Alert Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-alert-handler-jmx-alert-handler>> for the properties of this Alert Handler type.
+`smtp-alert-handler`::
++
+Default {name}: SMTP Alert Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-alert-handler-smtp-alert-handler>> for the properties of this Alert Handler type.
+====
+
+`-f | --force`::
+
+Ignore non-existent Alert Handlers.
++
+
+[open]
+====
+Alert Handler properties depend on the Alert Handler type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Alert Handler types:
+
+`jmx-alert-handler`::
++
+Default null: JMX Alert Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-alert-handler-jmx-alert-handler>> for the properties of this Alert Handler type.
+`smtp-alert-handler`::
++
+Default null: SMTP Alert Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-alert-handler-smtp-alert-handler>> for the properties of this Alert Handler type.
+====
+
+--
+
+[#dsconfig-delete-alert-handler-jmx-alert-handler]
+== JMX Alert Handler
+
+Alert Handlers of type jmx-alert-handler have the following properties:
+
+--
+
+
+disabled-alert-type::
+[open]
+====
+Description::
+Specifies the names of the alert types that are disabled for this alert handler. If there are any values for this attribute, then no alerts with any of the specified types are allowed. If there are no values for this attribute, then only alerts with a type included in the set of enabled alert types are allowed, or if there are no values for the enabled alert types option, then all alert types are allowed.
+
+
+Default Value::
+If there is a set of enabled alert types, then only alerts with one of those types are allowed. Otherwise, all alerts are allowed.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Alert Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled-alert-type::
+[open]
+====
+Description::
+Specifies the names of the alert types that are enabled for this alert handler. If there are any values for this attribute, then only alerts with one of the specified types are allowed (unless they are also included in the disabled alert types). If there are no values for this attribute, then any alert with a type not included in the list of disabled alert types is allowed.
+
+
+Default Value::
+All alerts with types not included in the set of disabled alert types are allowed.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the JMX Alert Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.JMXAlertHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.AlertHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Alert Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-delete-alert-handler-smtp-alert-handler]
+== SMTP Alert Handler
+
+Alert Handlers of type smtp-alert-handler have the following properties:
+
+--
+
+
+disabled-alert-type::
+[open]
+====
+Description::
+Specifies the names of the alert types that are disabled for this alert handler. If there are any values for this attribute, then no alerts with any of the specified types are allowed. If there are no values for this attribute, then only alerts with a type included in the set of enabled alert types are allowed, or if there are no values for the enabled alert types option, then all alert types are allowed.
+
+
+Default Value::
+If there is a set of enabled alert types, then only alerts with one of those types are allowed. Otherwise, all alerts are allowed.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Alert Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled-alert-type::
+[open]
+====
+Description::
+Specifies the names of the alert types that are enabled for this alert handler. If there are any values for this attribute, then only alerts with one of the specified types are allowed (unless they are also included in the disabled alert types). If there are no values for this attribute, then any alert with a type not included in the list of disabled alert types is allowed.
+
+
+Default Value::
+All alerts with types not included in the set of disabled alert types are allowed.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SMTP Alert Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.SMTPAlertHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.AlertHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Alert Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+message-body::
+[open]
+====
+Description::
+Specifies the body that should be used for email messages generated by this alert handler. The token &quot;%%%%alert-type%%%%&quot; is dynamically replaced with the alert type string. The token &quot;%%%%alert-id%%%%&quot; is dynamically replaced with the alert ID value. The token &quot;%%%%alert-message%%%%&quot; is dynamically replaced with the alert message. The token &quot;\n&quot; is replaced with an end-of-line marker.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+message-subject::
+[open]
+====
+Description::
+Specifies the subject that should be used for email messages generated by this alert handler. The token &quot;%%%%alert-type%%%%&quot; is dynamically replaced with the alert type string. The token &quot;%%%%alert-id%%%%&quot; is dynamically replaced with the alert ID value. The token &quot;%%%%alert-message%%%%&quot; is dynamically replaced with the alert message. The token &quot;\n&quot; is replaced with an end-of-line marker.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+recipient-address::
+[open]
+====
+Description::
+Specifies an email address to which the messages should be sent. Multiple values may be provided if there should be more than one recipient.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+sender-address::
+[open]
+====
+Description::
+Specifies the email address to use as the sender for messages generated by this alert handler. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

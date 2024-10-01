@@ -1,0 +1,65 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-list-properties]
+= dsconfig list-properties(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig list-properties - Describes managed objects and their properties
+
+== Synopsis
+
+`dsconfig list-properties` {options}
+
+[#dsconfig-list-properties-description]
+== Description
+
+Describes managed objects and their properties.
+
+
+
+[#dsconfig-list-properties-options]
+== Options
+
+The `dsconfig list-properties` command takes the following options:
+
+--
+`-c | --category {category}`::
+
+The category of components whose properties should be described.
++
+
+`-t | --type {type}`::
+
+The type of components whose properties should be described. The value for TYPE must be one of the component types associated with the CATEGORY specified using the "--category" option.
++
+
+`--inherited`::
+
+Modifies the display output to show the inherited properties of components.
++
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+--
+

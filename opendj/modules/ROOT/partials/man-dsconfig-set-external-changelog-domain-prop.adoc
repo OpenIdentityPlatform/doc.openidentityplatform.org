@@ -1,0 +1,221 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-external-changelog-domain-prop]
+= dsconfig set-external-changelog-domain-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-external-changelog-domain-prop - Modifies External Changelog Domain properties
+
+== Synopsis
+
+`dsconfig set-external-changelog-domain-prop` {options}
+
+[#dsconfig-set-external-changelog-domain-prop-description]
+== Description
+
+Modifies External Changelog Domain properties.
+
+
+
+[#dsconfig-set-external-changelog-domain-prop-options]
+== Options
+
+The `dsconfig set-external-changelog-domain-prop` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Replication Synchronization Provider.
++
+
+[open]
+====
+External Changelog Domain properties depend on the External Changelog Domain type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following External Changelog Domain types:
+
+`external-changelog-domain`::
++
+Default {name}: External Changelog Domain
++
+Enabled by default: true
++
+See  <<dsconfig-set-external-changelog-domain-prop-external-changelog-domain>> for the properties of this External Changelog Domain type.
+====
+
+`--domain-name {name}`::
+
+The name of the Replication Domain.
++
+
+[open]
+====
+External Changelog Domain properties depend on the External Changelog Domain type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following External Changelog Domain types:
+
+`external-changelog-domain`::
++
+Default {name}: External Changelog Domain
++
+Enabled by default: true
++
+See  <<dsconfig-set-external-changelog-domain-prop-external-changelog-domain>> for the properties of this External Changelog Domain type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+External Changelog Domain properties depend on the External Changelog Domain type, which depends on the `--domain-name {name}` option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+External Changelog Domain properties depend on the External Changelog Domain type, which depends on the `--domain-name {name}` option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+External Changelog Domain properties depend on the External Changelog Domain type, which depends on the `--domain-name {name}` option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+External Changelog Domain properties depend on the External Changelog Domain type, which depends on the `--domain-name {name}` option.
+
+--
+
+[#dsconfig-set-external-changelog-domain-prop-external-changelog-domain]
+== External Changelog Domain
+
+External Changelog Domains of type external-changelog-domain have the following properties:
+
+--
+
+
+ecl-include::
+[open]
+====
+Description::
+Specifies a list of attributes which should be published with every change log entry, regardless of whether the attribute itself has changed. The list of attributes may include wild cards such as &quot;*&quot; and &quot;+&quot; as well as object class references prefixed with an ampersand, for example &quot;@person&quot;. The included attributes will be published using the &quot;includedAttributes&quot; operational attribute as a single LDIF value rather like the &quot;changes&quot; attribute. For modify and modifyDN operations the included attributes will be taken from the entry before any changes were applied.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ecl-include-for-deletes::
+[open]
+====
+Description::
+Specifies a list of attributes which should be published with every delete operation change log entry, in addition to those specified by the &quot;ecl-include&quot; property. This property provides a means for applications to archive entries after they have been deleted. See the description of the &quot;ecl-include&quot; property for further information about how the included attributes are published.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the External Changelog Domain is enabled. To enable computing the change numbers, set the Replication Server&apos;s &quot;ds-cfg-compute-change-number&quot; property to true. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

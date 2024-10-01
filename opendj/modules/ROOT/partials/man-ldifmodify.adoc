@@ -1,0 +1,102 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#ldifmodify-1]
+= ldifmodify(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+ldifmodify - apply LDIF changes to LDIF
+
+== Synopsis
+`ldifmodify` `source_file [changes_files...]`
+
+[#ldifmodify-description]
+== Description
+
+This utility can be used to apply a set of modify, add, and delete operations to entries contained in an LDIF file.
+ If standard input is used to specify source or changes, end your input with EOF (Ctrl+D on UNIX, Ctrl+Z on Windows).
+
+
+
+
+[#ldifmodify-options]
+== Options
+
+The `ldifmodify` command takes the following options:
+
+.Command options:
+
+--
+`-c | --continueOnError`::
+Continue processing even if there are errors.
++
+Default: false
++
+
+`-o | --outputLDIF {file}`::
+Write updated entries to {file} instead of stdout.
++
+Default: stdout
++
+
+
+--
+.Utility input/output options:
+
+--
+`-t | --wrapColumn {wrapColumn}`::
+Maximum length of an output line (0 for no wrapping).
++
+Default: 0
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_ldifmodify-examples.adoc[]
+
+

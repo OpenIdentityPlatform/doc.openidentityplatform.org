@@ -1,0 +1,766 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#dsreplication-1]
+= dsreplication(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsreplication - manage OpenDJ directory data replication
+
+== Synopsis
+`dsreplication` `{subcommand} {options}`
+
+[#dsreplication-description]
+== Description
+
+This utility can be used to configure replication between servers so that the data of the servers is synchronized.  For replication to work you must first enable replication using the 'enable' subcommand and then initialize the contents of one of the servers with the contents of the other using the 'initialize' subcommand.
+
+
+
+
+[#dsreplication-options]
+== Options
+
+The `dsreplication` command takes the following options:
+
+.Command options:
+
+--
+`-b | --baseDN {baseDN}`::
+Base DN of the data to be replicated, initialized or for which we want to disable replication.  Multiple base DNs can be provided by using this option multiple times.
++
+
+`--commandFilePath {path}`::
+The full path to the file where the equivalent non-interactive commands will be written when this command is run in interactive mode.
++
+
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`--displayCommand`::
+Display the equivalent non-interactive argument in the standard output when this command is run in interactive mode.
++
+Default: false
++
+
+`-j | --adminPasswordFile {bindPasswordFile}`::
+The file containing the password of the global administrator.
++
+
+`-w | --adminPassword {bindPassword}`::
+The global administrator password.
++
+
+
+--
+.Configuration Options
+
+--
+`--advanced`::
+Allows the configuration of advanced components and properties.
++
+Default: false
++
+
+
+--
+.LDAP connection options:
+
+--
+`-I | --adminUID {adminUID}`::
+User ID of the Global Administrator to use to bind to the server.  For the 'enable' subcommand if no Global Administrator was defined previously for none of the server the Global Administrator will be created using the provided data.
++
+Default: admin
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`-n | --no-prompt`::
+Use non-interactive mode.  If data in the command is missing, the user is not prompted and the tool will fail.
++
+Default: false
++
+
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-Q | --quiet`::
+Use quiet mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+[#dsreplication-subcommands]
+== Subcommands
+
+
+
+The `dsreplication` command supports the following subcommands:
+
+
+[#dsreplication-disable]
+=== dsreplication disable
+
+Disables replication on the specified server for the provided base DN and removes references in the other servers with which it is replicating data.
+
+
+
+[#dsreplication-disable-options]
+==== Options
+
+--
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+
++
+Default: 4444
++
+
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server where we want to disable replication.  This option must be used when no Global Administrator has been defined on the server or if the user does not want to remove references in the other replicated servers.  The password provided for the Global Administrator will be used when specifying this option.
++
+
++
+Default: cn=Directory Manager
++
+
+`-a | --disableReplicationServer`::
+Disable the replication server.  The replication port and change log are disabled on the specified server.
++
+
++
+Default: false
++
+
+`--disableAll`::
+Disable the replication configuration on the specified server.  The contents of the server are no longer replicated and the replication server (changelog and replication port) is disabled if it is configured.
++
+
++
+Default: false
++
+
+
+--
+
+
+
+
+[#dsreplication-enable]
+=== dsreplication enable
+
+Updates the configuration of the servers to replicate the data under the specified base DN.  If one of the specified servers is already replicating the data under the base DN with other servers, executing this subcommand will update the configuration of all the servers (so it is sufficient to execute the command line once for each server we add to the replication topology).
+
+
+
+[#dsreplication-enable-options]
+==== Options
+
+--
+
+`-h | --host1 {host}`::
+Fully qualified host name or IP address of the first server whose contents will be replicated.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port1 {port}`::
+Directory server administration port number of the first server whose contents will be replicated.
++
+
++
+Default: 4444
++
+
+`-D | --bindDN1 {bindDN}`::
+DN to use to bind to the first server whose contents will be replicated.  If not specified the global administrator will be used to bind.
++
+
++
+Default: cn=Directory Manager
++
+
+`--bindPassword1 {bindPassword}`::
+Password to use to bind to the first server whose contents will be replicated.  If no bind DN was specified for the first server the password of the global administrator will be used to bind.
++
+
++
+
+`--bindPasswordFile1 {bindPasswordFile}`::
+File containing the password to use to bind to the first server whose contents will be replicated.  If no bind DN was specified for the first server the password of the global administrator will be used to bind.
++
+
++
+
+`-r | --replicationPort1 {port}`::
+Port that will be used by the replication mechanism in the first server to communicate with the other servers.  You have to specify this option only if replication was not previously configured in the first server.
++
+
++
+Default: 8989
++
+
+`--secureReplication1`::
+Specifies whether the communication through the replication port of the first server is encrypted or not.  This option will only be taken into account the first time replication is configured on the first server.
++
+
++
+Default: false
++
+
+`--noReplicationServer1`::
+Do not configure a replication port or change log on the first server. The first server will contain replicated data but will not contain a change log of modifications made to the replicated data. Note that each replicated topology must contain at least two servers with a change log to avoid a single point of failure.
++
+
++
+Default: false
++
+
+`--onlyReplicationServer1`::
+Configure only a change log and replication port on the first server.  The first server will not contain replicated data, but will contain a change log of the modifications made to the replicated data on other servers.
++
+
++
+Default: false
++
+
+`-O | --host2 {host}`::
+Fully qualified host name or IP address of the second server whose contents will be replicated.
++
+
++
+Default: localhost.localdomain
++
+
+`--port2 {port}`::
+Directory server administration port number of the second server whose contents will be replicated.
++
+
++
+Default: 4444
++
+
+`--bindDN2 {bindDN}`::
+DN to use to bind to the second server whose contents will be replicated.  If not specified the global administrator will be used to bind.
++
+
++
+Default: cn=Directory Manager
++
+
+`--bindPassword2 {bindPassword}`::
+Password to use to bind to the second server whose contents will be replicated.  If no bind DN was specified for the second server the password of the global administrator will be used to bind.
++
+
++
+
+`-F | --bindPasswordFile2 {bindPasswordFile}`::
+File containing the password to use to bind to the second server whose contents will be replicated.  If no bind DN was specified for the second server the password of the global administrator will be used to bind.
++
+
++
+
+`-R | --replicationPort2 {port}`::
+Port that will be used by the replication mechanism in the second server to communicate with the other servers.  You have to specify this option only if replication was not previously configured in the second server.
++
+
++
+Default: 8989
++
+
+`--secureReplication2`::
+Specifies whether the communication through the replication port of the second server is encrypted or not.  This option will only be taken into account the first time replication is configured on the second server.
++
+
++
+Default: false
++
+
+`--noReplicationServer2`::
+Do not configure a replication port or change log on the second server. The second server will contain replicated data but will not contain a change log of modifications made to the replicated data. Note that each replicated topology must contain at least two servers with a change log to avoid a single point of failure.
++
+
++
+Default: false
++
+
+`--onlyReplicationServer2`::
+Configure only a change log and replication port on the second server.  The second server will not contain replicated data, but will contain a change log of the modifications made to the replicated data on other servers.
++
+
++
+Default: false
++
+
+`-S | --skipPortCheck`::
+Skip the check to determine whether the specified replication ports are usable.
++
+
++
+Default: false
++
+
+`--noSchemaReplication`::
+Do not replicate the schema between the servers.
++
+
++
+Default: false
++
+
+`--useSecondServerAsSchemaSource`::
+Use the second server to initialize the schema of the first server.  If this option nor option --noSchemaReplication are specified the schema of the first server will be used to initialize the schema of the second server.
++
+
++
+Default: false
++
+
+
+--
+
+
+
+
+[#dsreplication-initialize]
+=== dsreplication initialize
+
+Initialize the contents of the data under the specified base DN on the destination server with the contents on the source server.  This operation is required after enabling replication in order replication to work ('initialize-all' can also be used for this purpose).
+
+
+
+[#dsreplication-initialize-options]
+==== Options
+
+--
+
+`-h | --hostSource {host}`::
+Fully qualified host name or IP address of the source server whose contents will be used to initialize the destination server.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --portSource {port}`::
+Directory server administration port number of the source server whose contents will be used to initialize the destination server.
++
+
++
+Default: 4444
++
+
+`-O | --hostDestination {host}`::
+Fully qualified host name or IP address of the destination server whose contents will be initialized.
++
+
++
+Default: localhost.localdomain
++
+
+`--portDestination {port}`::
+Directory server administration port number of the destination server whose contents will be initialized.
++
+
++
+Default: 4444
++
+
+
+--
+
+
+
+
+[#dsreplication-initialize-all]
+=== dsreplication initialize-all
+
+Initialize the contents of the data under the specified base DN on all the servers whose contents are being replicated with the contents on the specified server.  This operation is required after enabling replication for replication to work ('initialize' applied to each server can also be used for this purpose).
+
+
+
+[#dsreplication-initialize-all-options]
+==== Options
+
+--
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+
++
+Default: 4444
++
+
+
+--
+
+
+
+
+[#dsreplication-post-external-initialization]
+=== dsreplication post-external-initialization
+
+This subcommand must be called after initializing the contents of all the replicated servers using the tool import-ldif or the binary copy method.  You must specify the list of base DNs that have been initialized and you must provide the credentials of any of the servers that are being replicated.  See the usage of the subcommand 'pre-external-initialization' for more information.
+
+
+
+[#dsreplication-post-external-initialization-options]
+==== Options
+
+--
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+
++
+Default: 4444
++
+
+
+--
+
+
+
+
+[#dsreplication-pre-external-initialization]
+=== dsreplication pre-external-initialization
+
+This subcommand must be called before initializing the contents of all the replicated servers using the tool import-ldif or the binary copy method.  You must specify the list of base DNs that will be initialized and you must provide the credentials of any of the servers that are being replicated.  After calling this subcommand, initialize the contents of all the servers in the topology (use the same LDIF file/binary copy on each of the servers), then call the subcommand 'post-external-initialization'.
+
+
+
+[#dsreplication-pre-external-initialization-options]
+==== Options
+
+--
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+
++
+Default: 4444
++
+
+
+--
+
+
+
+
+[#dsreplication-purge-historical]
+=== dsreplication purge-historical
+
+Launches a purge processing of the historical informations stored in the user entries by replication. Since this processing may take a while, you must specify the maximum duration for this processing.
+
+
+
+[#dsreplication-purge-historical-options]
+==== Options
+
+--
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+
++
+Default: 4444
++
+
+`--maximumDuration {maximum duration}`::
+This argument specifies the maximum duration the purge processing must last expressed in seconds.
++
+
++
+Default: 3600
++
+
+`-t | --start {startTime}`::
+Indicates the date/time at which this operation will start when scheduled as a server task expressed in YYYYMMDDhhmmssZ format for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the task to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
++
+
++
+
+`--recurringTask {schedulePattern}`::
+Indicates the task is recurring and will be scheduled according to the value argument expressed in crontab(5) compatible time/date pattern.
++
+
++
+
+`--completionNotify {emailAddress}`::
+Email address of a recipient to be notified when the task completes.  This option may be specified more than once.
++
+
++
+
+`--errorNotify {emailAddress}`::
+Email address of a recipient to be notified if an error occurs when this task executes.  This option may be specified more than once.
++
+
++
+
+`--dependency {taskID}`::
+ID of a task upon which this task depends.  A task will not start execution until all its dependencies have completed execution.
++
+
++
+
+`--failedDependencyAction {action}`::
+Action this task will take should one if its dependent tasks fail.  The value must be one of PROCESS,CANCEL,DISABLE.  If not specified defaults to CANCEL.
++
+
++
+
+
+--
+
+
+
+
+[#dsreplication-reset-change-number]
+=== dsreplication reset-change-number
+
+Re-synchronizes the change-log changenumber on one server with the change-log changenumber of another.
+
+
+
+[#dsreplication-reset-change-number-options]
+==== Options
+
+--
+
+`-h | --hostSource {host}`::
+Fully qualified host name or IP address of the source server whose contents will be used to initialize the destination server.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --portSource {port}`::
+Directory server administration port number of the source server whose contents will be used to initialize the destination server.
++
+
++
+Default: 4444
++
+
+`-O | --hostDestination {host}`::
+Fully qualified host name or IP address of the destination server whose contents will be initialized.
++
+
++
+Default: localhost.localdomain
++
+
+`--portDestination {port}`::
+Directory server administration port number of the destination server whose contents will be initialized.
++
+
++
+Default: 4444
++
+
+`--change-number {change number}`::
+The change number to use as the basis for re-synchronization.
++
+
++
+
+
+--
+
+
+
+
+[#dsreplication-status]
+=== dsreplication status
+
+Displays a list with the basic replication configuration of the base DNs of the servers defined in the registration information.  If no base DNs are specified as parameter the information for all base DNs is displayed.
+
+
+
+[#dsreplication-status-options]
+==== Options
+
+--
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+
++
+Default: localhost.localdomain
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+
++
+Default: 4444
++
+
+`-s | --script-friendly`::
+Use script-friendly mode.
++
+
++
+Default: false
++
+
+
+--
+
+
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_dsreplication-examples.adoc[]
+
+

@@ -1,0 +1,771 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-replication-domain-prop]
+= dsconfig set-replication-domain-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-replication-domain-prop - Modifies Replication Domain properties
+
+== Synopsis
+
+`dsconfig set-replication-domain-prop` {options}
+
+[#dsconfig-set-replication-domain-prop-description]
+== Description
+
+Modifies Replication Domain properties.
+
+
+
+[#dsconfig-set-replication-domain-prop-options]
+== Options
+
+The `dsconfig set-replication-domain-prop` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Replication Synchronization Provider.
++
+
+[open]
+====
+Replication Domain properties depend on the Replication Domain type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Replication Domain types:
+
+`replication-domain`::
++
+Default {name}: Replication Domain
++
+Enabled by default: false
++
+See  <<dsconfig-set-replication-domain-prop-replication-domain>> for the properties of this Replication Domain type.
+====
+
+`--domain-name {name}`::
+
+The name of the Replication Domain.
++
+
+[open]
+====
+Replication Domain properties depend on the Replication Domain type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Replication Domain types:
+
+`replication-domain`::
++
+Default {name}: Replication Domain
++
+Enabled by default: false
++
+See  <<dsconfig-set-replication-domain-prop-replication-domain>> for the properties of this Replication Domain type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Replication Domain properties depend on the Replication Domain type, which depends on the `--domain-name {name}` option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+Replication Domain properties depend on the Replication Domain type, which depends on the `--domain-name {name}` option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+Replication Domain properties depend on the Replication Domain type, which depends on the `--domain-name {name}` option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+Replication Domain properties depend on the Replication Domain type, which depends on the `--domain-name {name}` option.
+
+--
+
+[#dsconfig-set-replication-domain-prop-replication-domain]
+== Replication Domain
+
+Replication Domains of type replication-domain have the following properties:
+
+--
+
+
+assured-sd-level::
+[open]
+====
+Description::
+The level of acknowledgment for Safe Data assured sub mode. When assured replication is configured in Safe Data mode, this value defines the number of replication servers (with the same group ID of the local server) that should acknowledge the sent update before the LDAP client call can return.
+
+
+Default Value::
+1
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 127.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+assured-timeout::
+[open]
+====
+Description::
+The timeout value when waiting for assured replication acknowledgments. Defines the amount of milliseconds the server will wait for assured acknowledgments (in either Safe Data or Safe Read assured replication modes) before returning anyway the LDAP client call.
+
+
+Default Value::
+2000ms
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+assured-type::
+[open]
+====
+Description::
+Defines the assured replication mode of the replicated domain. The assured replication can be disabled or enabled. When enabled, two modes are available: Safe Data or Safe Read modes.
+
+
+Default Value::
+not-assured
+
+
+Allowed Values::
+
+
+not-assured::
+Assured replication is not enabled. Updates sent for replication (for being replayed on other LDAP servers in the topology) are sent without waiting for any acknowledgment and the LDAP client call returns immediately.
+
+safe-data::
+Assured replication is enabled in Safe Data mode: updates sent for replication are subject to acknowledgment from the replication servers that have the same group ID as the local server (defined with the group-id property). The number of acknowledgments to expect is defined by the assured-sd-level property. After acknowledgments are received, LDAP client call returns.
+
+safe-read::
+Assured replication is enabled in Safe Read mode: updates sent for replication are subject to acknowledgments from the LDAP servers in the topology that have the same group ID as the local server (defined with the group-id property). After acknowledgments are received, LDAP client call returns.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DN of the replicated data. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+changetime-heartbeat-interval::
+[open]
+====
+Description::
+Specifies the heart-beat interval that the directory server will use when sending its local change time to the Replication Server. The directory server sends a regular heart-beat to the Replication within the specified interval. The heart-beat indicates the change time of the directory server to the Replication Server.
+
+
+Default Value::
+1000ms
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+conflicts-historical-purge-delay::
+[open]
+====
+Description::
+This delay indicates the time (in minutes) the domain keeps the historical information necessary to solve conflicts.When a change stored in the historical part of the user entry has a date (from its replication ChangeNumber) older than this delay, it is candidate to be purged. The purge is applied on 2 events: modify of the entry, dedicated purge task. 
+
+
+Default Value::
+1440m
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 minutes.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+fractional-exclude::
+[open]
+====
+Description::
+Allows to exclude some attributes to replicate to this server. If fractional-exclude configuration attribute is used, attributes specified in this attribute will be ignored (not added/modified/deleted) when an operation performed from another directory server is being replayed in the local server. Note that the usage of this configuration attribute is mutually exclusive with the usage of the fractional-include attribute.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of one or more attribute types in the named object class to be excluded. The object class may be "*" indicating that the attribute type(s) should be excluded regardless of the type of entry they belong to.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+fractional-include::
+[open]
+====
+Description::
+Allows to include some attributes to replicate to this server. If fractional-include configuration attribute is used, only attributes specified in this attribute will be added/modified/deleted when an operation performed from another directory server is being replayed in the local server. Note that the usage of this configuration attribute is mutually exclusive with the usage of the fractional-exclude attribute.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of one or more attribute types in the named object class to be included. The object class may be "*" indicating that the attribute type(s) should be included regardless of the type of entry they belong to.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-id::
+[open]
+====
+Description::
+The group ID associated with this replicated domain. This value defines the group ID of the replicated domain. The replication system will preferably connect and send updates to replicate to a replication server with the same group ID as its own one (the local server group ID).
+
+
+Default Value::
+1
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 127.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+heartbeat-interval::
+[open]
+====
+Description::
+Specifies the heart-beat interval that the directory server will use when communicating with Replication Servers. The directory server expects a regular heart-beat coming from the Replication Server within the specified interval. If a heartbeat is not received within the interval, the Directory Server closes its connection and connects to another Replication Server.
+
+
+Default Value::
+10000ms
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 100 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+initialization-window-size::
+[open]
+====
+Description::
+Specifies the window size that this directory server may use when communicating with remote Directory Servers for initialization. 
+
+
+Default Value::
+100
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+isolation-policy::
+[open]
+====
+Description::
+Specifies the behavior of the directory server if a write operation is attempted on the data within the Replication Domain when none of the configured Replication Servers are available. 
+
+
+Default Value::
+reject-all-updates
+
+
+Allowed Values::
+
+
+accept-all-updates::
+Indicates that updates should be accepted even though it is not possible to send them to any Replication Server. Best effort is made to re-send those updates to a Replication Servers when one of them is available, however those changes are at risk because they are only available from the historical information. This mode can also introduce high replication latency.
+
+reject-all-updates::
+Indicates that all updates attempted on this Replication Domain are rejected when no Replication Server is available.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-changenumber::
+[open]
+====
+Description::
+Indicates if this server logs the ChangeNumber in access log. This boolean indicates if the domain should log the ChangeNumber of replicated operations in the access log.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+referrals-url::
+[open]
+====
+Description::
+The URLs other LDAP servers should use to refer to the local server. URLs used by peer servers in the topology to refer to the local server through LDAP referrals. If this attribute is not defined, every URLs available to access this server will be used. If defined, only URLs specified here will be used.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A LDAP URL compliant with RFC 2255.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+replication-server::
+[open]
+====
+Description::
+Specifies the addresses of the Replication Servers within the Replication Domain to which the directory server should try to connect at startup time. Addresses must be specified using the syntax: hostname:port
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A host name followed by a ":" and a port number.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+server-id::
+[open]
+====
+Description::
+Specifies a unique identifier for the directory server within the Replication Domain. Each directory server within the same Replication Domain must have a different server ID. A directory server which is a member of multiple Replication Domains may use the same server ID for each of its Replication Domain configurations.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+solve-conflicts::
+[open]
+====
+Description::
+Indicates if this server solves conflict. This boolean indicates if this domain keeps the historical information necessary to solve conflicts. When set to false the server will not maintain historical information and will therefore not be able to solve conflict. This should therefore be done only if the replication is used in a single master type of deployment.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+source-address::
+[open]
+====
+Description::
+If specified, the server will bind to the address before connecting to the remote server. The address must be one assigned to an existing network interface.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+window-size::
+[open]
+====
+Description::
+Specifies the window size that the directory server will use when communicating with Replication Servers. This option may be deprecated and removed in future releases.
+
+
+Default Value::
+100000
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

@@ -1,0 +1,795 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-service-discovery-mechanism]
+= dsconfig create-service-discovery-mechanism(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-service-discovery-mechanism - Creates Service Discovery Mechanisms
+
+== Synopsis
+
+`dsconfig create-service-discovery-mechanism` {options}
+
+[#dsconfig-create-service-discovery-mechanism-description]
+== Description
+
+Creates Service Discovery Mechanisms.
+
+
+
+[#dsconfig-create-service-discovery-mechanism-options]
+== Options
+
+The `dsconfig create-service-discovery-mechanism` command takes the following options:
+
+--
+`--mechanism-name {name}`::
+
+The name of the new Service Discovery Mechanism.
++
+
+[open]
+====
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Service Discovery Mechanism types:
+
+`replication-service-discovery-mechanism`::
++
+Default {name}: Replication Service Discovery Mechanism
++
+Enabled by default: false
++
+See  <<dsconfig-create-service-discovery-mechanism-replication-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
+`static-service-discovery-mechanism`::
++
+Default {name}: Static Service Discovery Mechanism
++
+Enabled by default: false
++
+See  <<dsconfig-create-service-discovery-mechanism-static-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name {name}` option.
+
+`-t | --type {type}`::
+
+The type of Service Discovery Mechanism which should be created (Default: generic). The value for TYPE can be one of: generic | replication | static.
++
+
+[open]
+====
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the {type} you provide.
+
+By default, OpenDJ directory server supports the following Service Discovery Mechanism types:
+
+`replication-service-discovery-mechanism`::
++
+Default {type}: Replication Service Discovery Mechanism
++
+Enabled by default: false
++
+See  <<dsconfig-create-service-discovery-mechanism-replication-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
+`static-service-discovery-mechanism`::
++
+Default {type}: Static Service Discovery Mechanism
++
+Enabled by default: false
++
+See  <<dsconfig-create-service-discovery-mechanism-static-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
+====
+
+--
+
+[#dsconfig-create-service-discovery-mechanism-replication-service-discovery-mechanism]
+== Replication Service Discovery Mechanism
+
+Service Discovery Mechanisms of type replication-service-discovery-mechanism have the following properties:
+
+--
+
+
+bind-dn::
+[open]
+====
+Description::
+The bind DN for periodically reading replication server configurations The bind DN must be present on all replication servers and directory servers, it must be able to read the server configuration.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+bind-password::
+[open]
+====
+Description::
+The bind password for periodically reading replication server configurations The bind password must be the same on all replication and directory servers
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+discovery-interval::
+[open]
+====
+Description::
+Interval between two replication server configuration discovery queries. Specifies how frequently to query a replication server configuration in order to discover information about available directory server replicas.
+
+
+Default Value::
+60s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Replication Service Discovery Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.backends.proxy.ReplicationServiceDiscoveryMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.backends.proxy.ServiceDiscoveryMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this Service Discovery Mechanism. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled when the Service Discovery Mechanism is enabled and configured to use SSL or StartTLS.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the key manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+primary-group-id::
+[open]
+====
+Description::
+Replication domain group ID of preferred directory server replicas. Directory server replicas with this replication domain group ID will be preferred over other directory server replicas. Secondary server replicas will only be used when all primary server replicas become unavailable.
+
+
+Default Value::
+All the server replicas will be treated the same.
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+replication-server::
+[open]
+====
+Description::
+Specifies the list of replication servers to contact periodically when discovering server replicas. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A host name followed by a ":" and a port number.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cert-nickname::
+[open]
+====
+Description::
+Specifies the nicknames (also called the aliases) of the keys or key pairs that the Service Discovery Mechanism should use when performing SSL communication. The property can be used multiple times (referencing different nicknames) when server certificates with different public key algorithms are used in parallel (for example, RSA, DSA, and ECC-based algorithms). When a nickname refers to an asymmetric (public/private) key pair, the nickname for the public key certificate and associated private key entry must match exactly. A single nickname is used to retrieve both the public key and the private key. This is only applicable when the Service Discovery Mechanism is configured to use SSL.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that should be used with the Service Discovery Mechanism. 
+
+
+Default Value::
+Use the trust manager provided by the JVM.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled when the Service Discovery Mechanism is enabled and configured to use SSL or StartTLS.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the trust manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-ssl::
+[open]
+====
+Description::
+Indicates whether the Service Discovery Mechanism should use SSL. If enabled, the Service Discovery Mechanism will use SSL to encrypt communication with the clients.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-start-tls::
+[open]
+====
+Description::
+Indicates whether the Service Discovery Mechanism should use Start TLS. If enabled, the Service Discovery Mechanism will use Start TLS to encrypt communication with remote servers.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-service-discovery-mechanism-static-service-discovery-mechanism]
+== Static Service Discovery Mechanism
+
+Service Discovery Mechanisms of type static-service-discovery-mechanism have the following properties:
+
+--
+
+
+discovery-interval::
+[open]
+====
+Description::
+Interval between two server configuration discovery executions. Specifies how frequently to read the configuration of the servers in order to discover their new information.
+
+
+Default Value::
+60s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Static Service Discovery Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.backends.proxy.StaticServiceDiscoveryMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.backends.proxy.ServiceDiscoveryMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this Service Discovery Mechanism. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled when the Service Discovery Mechanism is enabled and configured to use SSL or StartTLS.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the key manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+primary-server::
+[open]
+====
+Description::
+Specifies a list of servers that will be used in preference to secondary servers when available. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A host name followed by a ":" and a port number.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+secondary-server::
+[open]
+====
+Description::
+Specifies a list of servers that will be used in place of primary servers when all primary servers are unavailable. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A host name followed by a ":" and a port number.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cert-nickname::
+[open]
+====
+Description::
+Specifies the nicknames (also called the aliases) of the keys or key pairs that the Service Discovery Mechanism should use when performing SSL communication. The property can be used multiple times (referencing different nicknames) when server certificates with different public key algorithms are used in parallel (for example, RSA, DSA, and ECC-based algorithms). When a nickname refers to an asymmetric (public/private) key pair, the nickname for the public key certificate and associated private key entry must match exactly. A single nickname is used to retrieve both the public key and the private key. This is only applicable when the Service Discovery Mechanism is configured to use SSL.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that should be used with the Service Discovery Mechanism. 
+
+
+Default Value::
+Use the trust manager provided by the JVM.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled when the Service Discovery Mechanism is enabled and configured to use SSL or StartTLS.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the trust manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-ssl::
+[open]
+====
+Description::
+Indicates whether the Service Discovery Mechanism should use SSL. If enabled, the Service Discovery Mechanism will use SSL to encrypt communication with the clients.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-start-tls::
+[open]
+====
+Description::
+Indicates whether the Service Discovery Mechanism should use Start TLS. If enabled, the Service Discovery Mechanism will use Start TLS to encrypt communication with remote servers.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Service Discovery Mechanism must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

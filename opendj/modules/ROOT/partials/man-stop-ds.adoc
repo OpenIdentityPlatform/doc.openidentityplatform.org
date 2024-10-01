@@ -1,0 +1,184 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#stop-ds-1]
+= stop-ds(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+stop-ds - stop OpenDJ directory server
+
+== Synopsis
+`stop-ds` 
+
+[#stop-ds-description]
+== Description
+
+This utility can be used to request that the Directory Server stop running or perform a restart. When run without connection options, this utility sends a signal to the OpenDJ process to stop the server. When run with connection options, this utility connects to the OpenDJ administration port and creates a shutdown task to stop the server.
+
+
+
+
+[#stop-ds-options]
+== Options
+
+The `stop-ds` command takes the following options:
+
+.Command options:
+
+--
+`-r | --stopReason {stopReason}`::
+Reason the server is being stopped or restarted.
++
+
+`-R | --restart`::
+Attempt to automatically restart the server once it has stopped.
++
+Default: false
++
+
+`-t | --stopTime {stopTime}`::
+Indicates the date/time at which the shutdown operation will begin as a server task expressed in format YYYYMMDDhhmmssZ for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the shutdown to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
++
+
+`-Y | --proxyAs {authzID}`::
+Use the proxied authorization control with the given authorization ID.
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+
+`-h | --hostname {host}`::
+Directory server hostname or IP address.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of certificate for SSL client authentication.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+Default: 4444
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-Q | --quiet`::
+Use quiet mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_stop-ds-examples.adoc[]
+
+

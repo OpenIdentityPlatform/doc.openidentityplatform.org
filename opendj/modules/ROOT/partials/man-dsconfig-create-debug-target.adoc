@@ -1,0 +1,339 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-debug-target]
+= dsconfig create-debug-target(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-debug-target - Creates Debug Targets
+
+== Synopsis
+
+`dsconfig create-debug-target` {options}
+
+[#dsconfig-create-debug-target-description]
+== Description
+
+Creates Debug Targets.
+
+
+
+[#dsconfig-create-debug-target-options]
+== Options
+
+The `dsconfig create-debug-target` command takes the following options:
+
+--
+`--publisher-name {name}`::
+
+The name of the Debug Log Publisher.
++
+
+[open]
+====
+Debug Target properties depend on the Debug Target type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Debug Target types:
+
+`debug-target`::
++
+Default {name}: Debug Target
++
+Enabled by default: true
++
+See  <<dsconfig-create-debug-target-debug-target>> for the properties of this Debug Target type.
+====
+
+`--target-name {STRING}`::
+
+The name of the new Debug Target which will also be used as the value of the "debug-scope" property: Specifies the fully-qualified OpenDJ Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, org.opends.server.core.DirectoryServer#startUp).
++
+
+[open]
+====
+Debug Target properties depend on the Debug Target type, which depends on the {STRING} you provide.
+
+By default, OpenDJ directory server supports the following Debug Target types:
+
+`debug-target`::
++
+Default {STRING}: Debug Target
++
+Enabled by default: true
++
+See  <<dsconfig-create-debug-target-debug-target>> for the properties of this Debug Target type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Debug Target properties depend on the Debug Target type, which depends on the `--target-name {STRING}` option.
+
+--
+
+[#dsconfig-create-debug-target-debug-target]
+== Debug Target
+
+Debug Targets of type debug-target have the following properties:
+
+--
+
+
+debug-exceptions-only::
+[open]
+====
+Description::
+Indicates whether only logs with exception should be logged. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+debug-scope::
+[open]
+====
+Description::
+Specifies the fully-qualified OpenDJ Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, org.opends.server.core.DirectoryServer#startUp). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The fully-qualified OpenDJ Java package, class, or method name.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Debug Target is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+include-throwable-cause::
+[open]
+====
+Description::
+Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+omit-method-entry-arguments::
+[open]
+====
+Description::
+Specifies the property to indicate whether to include method arguments in debug messages. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+omit-method-return-value::
+[open]
+====
+Description::
+Specifies the property to indicate whether to include the return value in debug messages. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+throwable-stack-frames::
+[open]
+====
+Description::
+Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages. 
+
+
+Default Value::
+0
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

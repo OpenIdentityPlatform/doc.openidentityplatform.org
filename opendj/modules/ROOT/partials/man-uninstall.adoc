@@ -1,0 +1,235 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#uninstall-1]
+= uninstall(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+uninstall - remove OpenDJ directory server software
+
+== Synopsis
+`uninstall` `{options}`
+
+[#uninstall-description]
+== Description
+
+This utility can be used to uninstall the Directory Server.
+
+
+
+
+[#uninstall-options]
+== Options
+
+The `uninstall` command takes the following options:
+
+.Command options:
+
+--
+`-a | --remove-all`::
+Remove all components of the server (this option is not compatible with the rest of remove options).
++
+Default: false
++
+
+`-b | --backup-files`::
+Remove backup files.
++
+Default: false
++
+
+`-c | --configuration-files`::
+Remove configuration files.
++
+Default: false
++
+
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`-d | --databases`::
+Remove database contents.
++
+Default: false
++
+
+`-e | --ldif-files`::
+Remove LDIF files.
++
+Default: false
++
+
+`-f | --forceOnError`::
+Specifies whether the uninstall should continue if there is an error updating references to this server in remote server instances or not.  This option can only be used with the --no-prompt no prompt option.
++
+Default: false
++
+
+`-i | --cli`::
+Use the command line install. If not specified the graphical interface will be launched.  The rest of the options (excluding help and version) will only be taken into account if this option is specified.
++
+Default: false
++
+
+`-l | --server-libraries`::
+Remove Server Libraries and Administrative Tools.
++
+Default: false
++
+
+`-L | --log-files`::
+Remove log files.
++
+Default: false
++
+
+
+--
+.LDAP connection options:
+
+--
+`-h | --referencedHostName {host}`::
+The name of this host (or IP address) as it is referenced in remote servers for replication.
++
+Default: localhost.localdomain
++
+
+`-I | --adminUID {adminUID}`::
+User ID of the Global Administrator to use to bind to the server.
++
+Default: admin
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`-n | --no-prompt`::
+Use non-interactive mode.  If data in the command is missing, the user is not prompted and the tool will fail.
++
+Default: false
++
+
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-Q | --quiet`::
+Use quiet mode.
++
+Default: false
++
+
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_uninstall-examples.adoc[]
+
+

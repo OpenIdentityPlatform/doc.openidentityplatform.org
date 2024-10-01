@@ -1,0 +1,660 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#dsconfig-1]
+= dsconfig(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig - manage OpenDJ directory server configuration
+
+== Synopsis
+`dsconfig` `{subcommand} {options}`
+
+[#dsconfig-description]
+== Description
+
+This utility can be used to define a base configuration for the Directory Server.
+
+include::./_description-dsconfig.adoc[]
+
+
+[#dsconfig-options]
+== Options
+
+The `dsconfig` command takes the following options:
+
+.Command options:
+
+--
+`--batch`::
+Reads from standard input a set of commands to be executed.
++
+Default: false
++
+
+`--commandFilePath {path}`::
+The full path to the file where the equivalent non-interactive commands will be written when this command is run in interactive mode.
++
+
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`--displayCommand`::
+Display the equivalent non-interactive argument in the standard output when this command is run in interactive mode.
++
+Default: false
++
+
+`--help-all`::
+Display all subcommands.
++
+Default: false
++
+
+`--help-core-server`::
+Display subcommands relating to core server.
++
+Default: false
++
+
+`--help-database`::
+Display subcommands relating to caching and back-ends.
++
+Default: false
++
+
+`--help-logging`::
+Display subcommands relating to logging.
++
+Default: false
++
+
+`--help-replication`::
+Display subcommands relating to replication.
++
+Default: false
++
+
+`--help-security`::
+Display subcommands relating to authentication and authorization.
++
+Default: false
++
+
+`--help-service-discovery`::
+Display subcommands relating to service discovery mechanism.
++
+Default: false
++
+
+`--help-user-management`::
+Display subcommands relating to user management.
++
+Default: false
++
+
+
+--
+.Configuration Options
+
+--
+`--advanced`::
+Allows the configuration of advanced components and properties.
++
+Default: false
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+Default: cn=Directory Manager
++
+
+`-E | --reportAuthzID`::
+Use the authorization identity control.
++
+Default: false
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+Default: 4444
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`--usePasswordPolicyControl`::
+Use the password policy request control.
++
+Default: false
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`-F | --batchFilePath {batchFilePath}`::
+Path to a batch file containing a set of commands to be executed.
++
+
+`-n | --no-prompt`::
+Use non-interactive mode.  If data in the command is missing, the user is not prompted and the tool will fail.
++
+Default: false
++
+
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-Q | --quiet`::
+Use quiet mode.
++
+Default: false
++
+
+`-s | --script-friendly`::
+Use script-friendly mode.
++
+Default: false
++
+
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+[#dsconfig-subcommands]
+== Subcommands
+
+include::./_description-dsconfig-subcommands.adoc[]
+
+The `dsconfig` command supports the following subcommands:
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-access-log-filtering-criteria[dsconfig create-access-log-filtering-criteria, window=_blank]: Creates Access Log Filtering Criteria
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-account-status-notification-handler[dsconfig create-account-status-notification-handler, window=_blank]: Creates Account Status Notification Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-alert-handler[dsconfig create-alert-handler, window=_blank]: Creates Alert Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-backend[dsconfig create-backend, window=_blank]: Creates Backends
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-backend-index[dsconfig create-backend-index, window=_blank]: Creates Backend Indexes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-backend-vlv-index[dsconfig create-backend-vlv-index, window=_blank]: Creates Backend VLV Indexes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-certificate-mapper[dsconfig create-certificate-mapper, window=_blank]: Creates Certificate Mappers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-connection-handler[dsconfig create-connection-handler, window=_blank]: Creates Connection Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-debug-target[dsconfig create-debug-target, window=_blank]: Creates Debug Targets
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-entry-cache[dsconfig create-entry-cache, window=_blank]: Creates Entry Caches
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-extended-operation-handler[dsconfig create-extended-operation-handler, window=_blank]: Creates Extended Operation Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-group-implementation[dsconfig create-group-implementation, window=_blank]: Creates Group Implementations
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-http-authorization-mechanism[dsconfig create-http-authorization-mechanism, window=_blank]: Creates HTTP Authorization Mechanisms
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-http-endpoint[dsconfig create-http-endpoint, window=_blank]: Creates HTTP Endpoints
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-identity-mapper[dsconfig create-identity-mapper, window=_blank]: Creates Identity Mappers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-key-manager-provider[dsconfig create-key-manager-provider, window=_blank]: Creates Key Manager Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-log-publisher[dsconfig create-log-publisher, window=_blank]: Creates Log Publishers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-log-retention-policy[dsconfig create-log-retention-policy, window=_blank]: Creates Log Retention Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-log-rotation-policy[dsconfig create-log-rotation-policy, window=_blank]: Creates Log Rotation Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-monitor-provider[dsconfig create-monitor-provider, window=_blank]: Creates Monitor Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-password-generator[dsconfig create-password-generator, window=_blank]: Creates Password Generators
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-password-policy[dsconfig create-password-policy, window=_blank]: Creates Authentication Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-password-storage-scheme[dsconfig create-password-storage-scheme, window=_blank]: Creates Password Storage Schemes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-password-validator[dsconfig create-password-validator, window=_blank]: Creates Password Validators
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-plugin[dsconfig create-plugin, window=_blank]: Creates Plugins
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-replication-domain[dsconfig create-replication-domain, window=_blank]: Creates Replication Domains
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-replication-server[dsconfig create-replication-server, window=_blank]: Creates Replication Servers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-sasl-mechanism-handler[dsconfig create-sasl-mechanism-handler, window=_blank]: Creates SASL Mechanism Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-schema-provider[dsconfig create-schema-provider, window=_blank]: Creates Schema Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-service-discovery-mechanism[dsconfig create-service-discovery-mechanism, window=_blank]: Creates Service Discovery Mechanisms
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-synchronization-provider[dsconfig create-synchronization-provider, window=_blank]: Creates Synchronization Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-trust-manager-provider[dsconfig create-trust-manager-provider, window=_blank]: Creates Trust Manager Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-create-virtual-attribute[dsconfig create-virtual-attribute, window=_blank]: Creates Virtual Attributes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-access-log-filtering-criteria[dsconfig delete-access-log-filtering-criteria, window=_blank]: Deletes Access Log Filtering Criteria
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-account-status-notification-handler[dsconfig delete-account-status-notification-handler, window=_blank]: Deletes Account Status Notification Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-alert-handler[dsconfig delete-alert-handler, window=_blank]: Deletes Alert Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-backend[dsconfig delete-backend, window=_blank]: Deletes Backends
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-backend-index[dsconfig delete-backend-index, window=_blank]: Deletes Backend Indexes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-backend-vlv-index[dsconfig delete-backend-vlv-index, window=_blank]: Deletes Backend VLV Indexes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-certificate-mapper[dsconfig delete-certificate-mapper, window=_blank]: Deletes Certificate Mappers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-connection-handler[dsconfig delete-connection-handler, window=_blank]: Deletes Connection Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-debug-target[dsconfig delete-debug-target, window=_blank]: Deletes Debug Targets
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-entry-cache[dsconfig delete-entry-cache, window=_blank]: Deletes Entry Caches
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-extended-operation-handler[dsconfig delete-extended-operation-handler, window=_blank]: Deletes Extended Operation Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-group-implementation[dsconfig delete-group-implementation, window=_blank]: Deletes Group Implementations
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-http-authorization-mechanism[dsconfig delete-http-authorization-mechanism, window=_blank]: Deletes HTTP Authorization Mechanisms
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-http-endpoint[dsconfig delete-http-endpoint, window=_blank]: Deletes HTTP Endpoints
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-identity-mapper[dsconfig delete-identity-mapper, window=_blank]: Deletes Identity Mappers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-key-manager-provider[dsconfig delete-key-manager-provider, window=_blank]: Deletes Key Manager Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-log-publisher[dsconfig delete-log-publisher, window=_blank]: Deletes Log Publishers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-log-retention-policy[dsconfig delete-log-retention-policy, window=_blank]: Deletes Log Retention Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-log-rotation-policy[dsconfig delete-log-rotation-policy, window=_blank]: Deletes Log Rotation Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-monitor-provider[dsconfig delete-monitor-provider, window=_blank]: Deletes Monitor Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-password-generator[dsconfig delete-password-generator, window=_blank]: Deletes Password Generators
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-password-policy[dsconfig delete-password-policy, window=_blank]: Deletes Authentication Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-password-storage-scheme[dsconfig delete-password-storage-scheme, window=_blank]: Deletes Password Storage Schemes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-password-validator[dsconfig delete-password-validator, window=_blank]: Deletes Password Validators
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-plugin[dsconfig delete-plugin, window=_blank]: Deletes Plugins
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-replication-domain[dsconfig delete-replication-domain, window=_blank]: Deletes Replication Domains
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-replication-server[dsconfig delete-replication-server, window=_blank]: Deletes Replication Servers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-sasl-mechanism-handler[dsconfig delete-sasl-mechanism-handler, window=_blank]: Deletes SASL Mechanism Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-schema-provider[dsconfig delete-schema-provider, window=_blank]: Deletes Schema Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-service-discovery-mechanism[dsconfig delete-service-discovery-mechanism, window=_blank]: Deletes Service Discovery Mechanisms
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-synchronization-provider[dsconfig delete-synchronization-provider, window=_blank]: Deletes Synchronization Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-trust-manager-provider[dsconfig delete-trust-manager-provider, window=_blank]: Deletes Trust Manager Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-delete-virtual-attribute[dsconfig delete-virtual-attribute, window=_blank]: Deletes Virtual Attributes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-access-control-handler-prop[dsconfig get-access-control-handler-prop, window=_blank]: Shows Access Control Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-access-log-filtering-criteria-prop[dsconfig get-access-log-filtering-criteria-prop, window=_blank]: Shows Access Log Filtering Criteria properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-account-status-notification-handler-prop[dsconfig get-account-status-notification-handler-prop, window=_blank]: Shows Account Status Notification Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-administration-connector-prop[dsconfig get-administration-connector-prop, window=_blank]: Shows Administration Connector properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-alert-handler-prop[dsconfig get-alert-handler-prop, window=_blank]: Shows Alert Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-backend-index-prop[dsconfig get-backend-index-prop, window=_blank]: Shows Backend Index properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-backend-prop[dsconfig get-backend-prop, window=_blank]: Shows Backend properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-backend-vlv-index-prop[dsconfig get-backend-vlv-index-prop, window=_blank]: Shows Backend VLV Index properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-certificate-mapper-prop[dsconfig get-certificate-mapper-prop, window=_blank]: Shows Certificate Mapper properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-connection-handler-prop[dsconfig get-connection-handler-prop, window=_blank]: Shows Connection Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-crypto-manager-prop[dsconfig get-crypto-manager-prop, window=_blank]: Shows Crypto Manager properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-debug-target-prop[dsconfig get-debug-target-prop, window=_blank]: Shows Debug Target properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-entry-cache-prop[dsconfig get-entry-cache-prop, window=_blank]: Shows Entry Cache properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-extended-operation-handler-prop[dsconfig get-extended-operation-handler-prop, window=_blank]: Shows Extended Operation Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-external-changelog-domain-prop[dsconfig get-external-changelog-domain-prop, window=_blank]: Shows External Changelog Domain properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-global-configuration-prop[dsconfig get-global-configuration-prop, window=_blank]: Shows Global Configuration properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-group-implementation-prop[dsconfig get-group-implementation-prop, window=_blank]: Shows Group Implementation properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-http-authorization-mechanism-prop[dsconfig get-http-authorization-mechanism-prop, window=_blank]: Shows HTTP Authorization Mechanism properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-http-endpoint-prop[dsconfig get-http-endpoint-prop, window=_blank]: Shows HTTP Endpoint properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-identity-mapper-prop[dsconfig get-identity-mapper-prop, window=_blank]: Shows Identity Mapper properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-key-manager-provider-prop[dsconfig get-key-manager-provider-prop, window=_blank]: Shows Key Manager Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-log-publisher-prop[dsconfig get-log-publisher-prop, window=_blank]: Shows Log Publisher properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-log-retention-policy-prop[dsconfig get-log-retention-policy-prop, window=_blank]: Shows Log Retention Policy properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-log-rotation-policy-prop[dsconfig get-log-rotation-policy-prop, window=_blank]: Shows Log Rotation Policy properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-monitor-provider-prop[dsconfig get-monitor-provider-prop, window=_blank]: Shows Monitor Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-password-generator-prop[dsconfig get-password-generator-prop, window=_blank]: Shows Password Generator properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-password-policy-prop[dsconfig get-password-policy-prop, window=_blank]: Shows Authentication Policy properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-password-storage-scheme-prop[dsconfig get-password-storage-scheme-prop, window=_blank]: Shows Password Storage Scheme properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-password-validator-prop[dsconfig get-password-validator-prop, window=_blank]: Shows Password Validator properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-plugin-prop[dsconfig get-plugin-prop, window=_blank]: Shows Plugin properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-plugin-root-prop[dsconfig get-plugin-root-prop, window=_blank]: Shows Plugin Root properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-replication-domain-prop[dsconfig get-replication-domain-prop, window=_blank]: Shows Replication Domain properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-replication-server-prop[dsconfig get-replication-server-prop, window=_blank]: Shows Replication Server properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-root-dn-prop[dsconfig get-root-dn-prop, window=_blank]: Shows Root DN properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-root-dse-backend-prop[dsconfig get-root-dse-backend-prop, window=_blank]: Shows Root DSE Backend properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-sasl-mechanism-handler-prop[dsconfig get-sasl-mechanism-handler-prop, window=_blank]: Shows SASL Mechanism Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-schema-provider-prop[dsconfig get-schema-provider-prop, window=_blank]: Shows Schema Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-service-discovery-mechanism-prop[dsconfig get-service-discovery-mechanism-prop, window=_blank]: Shows Service Discovery Mechanism properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-synchronization-provider-prop[dsconfig get-synchronization-provider-prop, window=_blank]: Shows Synchronization Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-trust-manager-provider-prop[dsconfig get-trust-manager-provider-prop, window=_blank]: Shows Trust Manager Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-virtual-attribute-prop[dsconfig get-virtual-attribute-prop, window=_blank]: Shows Virtual Attribute properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-get-work-queue-prop[dsconfig get-work-queue-prop, window=_blank]: Shows Work Queue properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-access-log-filtering-criteria[dsconfig list-access-log-filtering-criteria, window=_blank]: Lists existing Access Log Filtering Criteria
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-account-status-notification-handlers[dsconfig list-account-status-notification-handlers, window=_blank]: Lists existing Account Status Notification Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-alert-handlers[dsconfig list-alert-handlers, window=_blank]: Lists existing Alert Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-backend-indexes[dsconfig list-backend-indexes, window=_blank]: Lists existing Backend Indexes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-backend-vlv-indexes[dsconfig list-backend-vlv-indexes, window=_blank]: Lists existing Backend VLV Indexes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-backends[dsconfig list-backends, window=_blank]: Lists existing Backends
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-certificate-mappers[dsconfig list-certificate-mappers, window=_blank]: Lists existing Certificate Mappers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-connection-handlers[dsconfig list-connection-handlers, window=_blank]: Lists existing Connection Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-debug-targets[dsconfig list-debug-targets, window=_blank]: Lists existing Debug Targets
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-entry-caches[dsconfig list-entry-caches, window=_blank]: Lists existing Entry Caches
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-extended-operation-handlers[dsconfig list-extended-operation-handlers, window=_blank]: Lists existing Extended Operation Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-group-implementations[dsconfig list-group-implementations, window=_blank]: Lists existing Group Implementations
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-http-authorization-mechanisms[dsconfig list-http-authorization-mechanisms, window=_blank]: Lists existing HTTP Authorization Mechanisms
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-http-endpoints[dsconfig list-http-endpoints, window=_blank]: Lists existing HTTP Endpoints
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-identity-mappers[dsconfig list-identity-mappers, window=_blank]: Lists existing Identity Mappers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-key-manager-providers[dsconfig list-key-manager-providers, window=_blank]: Lists existing Key Manager Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-log-publishers[dsconfig list-log-publishers, window=_blank]: Lists existing Log Publishers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-log-retention-policies[dsconfig list-log-retention-policies, window=_blank]: Lists existing Log Retention Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-log-rotation-policies[dsconfig list-log-rotation-policies, window=_blank]: Lists existing Log Rotation Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-monitor-providers[dsconfig list-monitor-providers, window=_blank]: Lists existing Monitor Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-password-generators[dsconfig list-password-generators, window=_blank]: Lists existing Password Generators
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-password-policies[dsconfig list-password-policies, window=_blank]: Lists existing Password Policies
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-password-storage-schemes[dsconfig list-password-storage-schemes, window=_blank]: Lists existing Password Storage Schemes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-password-validators[dsconfig list-password-validators, window=_blank]: Lists existing Password Validators
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-plugins[dsconfig list-plugins, window=_blank]: Lists existing Plugins
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-properties[dsconfig list-properties, window=_blank]: Describes managed objects and their properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-replication-domains[dsconfig list-replication-domains, window=_blank]: Lists existing Replication Domains
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-replication-server[dsconfig list-replication-server, window=_blank]: Lists existing Replication Server
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-sasl-mechanism-handlers[dsconfig list-sasl-mechanism-handlers, window=_blank]: Lists existing SASL Mechanism Handlers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-schema-providers[dsconfig list-schema-providers, window=_blank]: Lists existing Schema Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-service-discovery-mechanisms[dsconfig list-service-discovery-mechanisms, window=_blank]: Lists existing Service Discovery Mechanisms
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-synchronization-providers[dsconfig list-synchronization-providers, window=_blank]: Lists existing Synchronization Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-trust-manager-providers[dsconfig list-trust-manager-providers, window=_blank]: Lists existing Trust Manager Providers
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-list-virtual-attributes[dsconfig list-virtual-attributes, window=_blank]: Lists existing Virtual Attributes
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-access-control-handler-prop[dsconfig set-access-control-handler-prop, window=_blank]: Modifies Access Control Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-access-log-filtering-criteria-prop[dsconfig set-access-log-filtering-criteria-prop, window=_blank]: Modifies Access Log Filtering Criteria properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-account-status-notification-handler-prop[dsconfig set-account-status-notification-handler-prop, window=_blank]: Modifies Account Status Notification Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-administration-connector-prop[dsconfig set-administration-connector-prop, window=_blank]: Modifies Administration Connector properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-alert-handler-prop[dsconfig set-alert-handler-prop, window=_blank]: Modifies Alert Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-backend-index-prop[dsconfig set-backend-index-prop, window=_blank]: Modifies Backend Index properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-backend-prop[dsconfig set-backend-prop, window=_blank]: Modifies Backend properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-backend-vlv-index-prop[dsconfig set-backend-vlv-index-prop, window=_blank]: Modifies Backend VLV Index properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-certificate-mapper-prop[dsconfig set-certificate-mapper-prop, window=_blank]: Modifies Certificate Mapper properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-connection-handler-prop[dsconfig set-connection-handler-prop, window=_blank]: Modifies Connection Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-crypto-manager-prop[dsconfig set-crypto-manager-prop, window=_blank]: Modifies Crypto Manager properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-debug-target-prop[dsconfig set-debug-target-prop, window=_blank]: Modifies Debug Target properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-entry-cache-prop[dsconfig set-entry-cache-prop, window=_blank]: Modifies Entry Cache properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-extended-operation-handler-prop[dsconfig set-extended-operation-handler-prop, window=_blank]: Modifies Extended Operation Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-external-changelog-domain-prop[dsconfig set-external-changelog-domain-prop, window=_blank]: Modifies External Changelog Domain properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-global-configuration-prop[dsconfig set-global-configuration-prop, window=_blank]: Modifies Global Configuration properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-group-implementation-prop[dsconfig set-group-implementation-prop, window=_blank]: Modifies Group Implementation properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-http-authorization-mechanism-prop[dsconfig set-http-authorization-mechanism-prop, window=_blank]: Modifies HTTP Authorization Mechanism properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-http-endpoint-prop[dsconfig set-http-endpoint-prop, window=_blank]: Modifies HTTP Endpoint properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-identity-mapper-prop[dsconfig set-identity-mapper-prop, window=_blank]: Modifies Identity Mapper properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-key-manager-provider-prop[dsconfig set-key-manager-provider-prop, window=_blank]: Modifies Key Manager Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-log-publisher-prop[dsconfig set-log-publisher-prop, window=_blank]: Modifies Log Publisher properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-log-retention-policy-prop[dsconfig set-log-retention-policy-prop, window=_blank]: Modifies Log Retention Policy properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-log-rotation-policy-prop[dsconfig set-log-rotation-policy-prop, window=_blank]: Modifies Log Rotation Policy properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-monitor-provider-prop[dsconfig set-monitor-provider-prop, window=_blank]: Modifies Monitor Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-password-generator-prop[dsconfig set-password-generator-prop, window=_blank]: Modifies Password Generator properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-password-policy-prop[dsconfig set-password-policy-prop, window=_blank]: Modifies Authentication Policy properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-password-storage-scheme-prop[dsconfig set-password-storage-scheme-prop, window=_blank]: Modifies Password Storage Scheme properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-password-validator-prop[dsconfig set-password-validator-prop, window=_blank]: Modifies Password Validator properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-plugin-prop[dsconfig set-plugin-prop, window=_blank]: Modifies Plugin properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-plugin-root-prop[dsconfig set-plugin-root-prop, window=_blank]: Modifies Plugin Root properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-replication-domain-prop[dsconfig set-replication-domain-prop, window=_blank]: Modifies Replication Domain properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-replication-server-prop[dsconfig set-replication-server-prop, window=_blank]: Modifies Replication Server properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-root-dn-prop[dsconfig set-root-dn-prop, window=_blank]: Modifies Root DN properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-root-dse-backend-prop[dsconfig set-root-dse-backend-prop, window=_blank]: Modifies Root DSE Backend properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-sasl-mechanism-handler-prop[dsconfig set-sasl-mechanism-handler-prop, window=_blank]: Modifies SASL Mechanism Handler properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-schema-provider-prop[dsconfig set-schema-provider-prop, window=_blank]: Modifies Schema Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-service-discovery-mechanism-prop[dsconfig set-service-discovery-mechanism-prop, window=_blank]: Modifies Service Discovery Mechanism properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-synchronization-provider-prop[dsconfig set-synchronization-provider-prop, window=_blank]: Modifies Synchronization Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-trust-manager-provider-prop[dsconfig set-trust-manager-provider-prop, window=_blank]: Modifies Trust Manager Provider properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-virtual-attribute-prop[dsconfig set-virtual-attribute-prop, window=_blank]: Modifies Virtual Attribute properties
+
+* xref:dsconfig-subcommands-ref.adoc#dsconfig-set-work-queue-prop[dsconfig set-work-queue-prop, window=_blank]: Modifies Work Queue properties
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_dsconfig-examples.adoc[]
+
+

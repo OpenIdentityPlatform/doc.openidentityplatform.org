@@ -1,0 +1,129 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#control-panel-1]
+= control-panel(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+control-panel - start the OpenDJ graphical admin interface
+
+== Synopsis
+`control-panel` 
+
+[#control-panel-description]
+== Description
+
+This utility can be used to display the Control Panel window which displays basic server information and allows to do some basic administration tasks on the server.
+
+If no host name or port is provided, the tool will try to connect to the local server.
+
+
+
+
+[#control-panel-options]
+== Options
+
+The `control-panel` command takes the following options:
+
+.Command options:
+
+--
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`-r | --remote`::
+Connect to a remote server.
++
+Default: false
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+Default: cn=Directory Manager
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+Default: 4444
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_control-panel-examples.adoc[]
+
+

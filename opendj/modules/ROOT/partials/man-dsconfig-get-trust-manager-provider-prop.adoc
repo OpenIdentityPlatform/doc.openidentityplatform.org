@@ -1,0 +1,1061 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-trust-manager-provider-prop]
+= dsconfig get-trust-manager-provider-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-trust-manager-provider-prop - Shows Trust Manager Provider properties
+
+== Synopsis
+
+`dsconfig get-trust-manager-provider-prop` {options}
+
+[#dsconfig-get-trust-manager-provider-prop-description]
+== Description
+
+Shows Trust Manager Provider properties.
+
+
+
+[#dsconfig-get-trust-manager-provider-prop-options]
+== Options
+
+The `dsconfig get-trust-manager-provider-prop` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Trust Manager Provider.
++
+
+[open]
+====
+Trust Manager Provider properties depend on the Trust Manager Provider type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Trust Manager Provider types:
+
+`blind-trust-manager-provider`::
++
+Default {name}: Blind Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-blind-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`file-based-trust-manager-provider`::
++
+Default {name}: File Based Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-file-based-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`ldap-trust-manager-provider`::
++
+Default {name}: LDAP Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-ldap-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`pkcs11-trust-manager-provider`::
++
+Default {name}: PKCS11 Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-pkcs11-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Trust Manager Provider properties depend on the Trust Manager Provider type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Trust Manager Provider types:
+
+`blind-trust-manager-provider`::
++
+Default {property}: Blind Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-blind-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`file-based-trust-manager-provider`::
++
+Default {property}: File Based Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-file-based-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`ldap-trust-manager-provider`::
++
+Default {property}: LDAP Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-ldap-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`pkcs11-trust-manager-provider`::
++
+Default {property}: PKCS11 Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-pkcs11-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Trust Manager Provider properties depend on the Trust Manager Provider type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Trust Manager Provider types:
+
+`blind-trust-manager-provider`::
++
+Default null: Blind Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-blind-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`file-based-trust-manager-provider`::
++
+Default null: File Based Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-file-based-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`ldap-trust-manager-provider`::
++
+Default null: LDAP Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-ldap-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`pkcs11-trust-manager-provider`::
++
+Default null: PKCS11 Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-pkcs11-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Trust Manager Provider properties depend on the Trust Manager Provider type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Trust Manager Provider types:
+
+`blind-trust-manager-provider`::
++
+Default {unit}: Blind Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-blind-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`file-based-trust-manager-provider`::
++
+Default {unit}: File Based Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-file-based-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`ldap-trust-manager-provider`::
++
+Default {unit}: LDAP Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-ldap-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`pkcs11-trust-manager-provider`::
++
+Default {unit}: PKCS11 Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-pkcs11-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Trust Manager Provider properties depend on the Trust Manager Provider type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Trust Manager Provider types:
+
+`blind-trust-manager-provider`::
++
+Default {unit}: Blind Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-blind-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`file-based-trust-manager-provider`::
++
+Default {unit}: File Based Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-file-based-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`ldap-trust-manager-provider`::
++
+Default {unit}: LDAP Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-ldap-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+`pkcs11-trust-manager-provider`::
++
+Default {unit}: PKCS11 Trust Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-trust-manager-provider-prop-pkcs11-trust-manager-provider>> for the properties of this Trust Manager Provider type.
+====
+
+--
+
+[#dsconfig-get-trust-manager-provider-prop-blind-trust-manager-provider]
+== Blind Trust Manager Provider
+
+Trust Manager Providers of type blind-trust-manager-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicate whether the Trust Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the Blind Trust Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.BlindTrustManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.TrustManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-trust-manager-provider-prop-file-based-trust-manager-provider]
+== File Based Trust Manager Provider
+
+Trust Manager Providers of type file-based-trust-manager-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicate whether the Trust Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based Trust Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.FileBasedTrustManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.TrustManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+trust-store-file::
+[open]
+====
+Description::
+Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the OpenDJ instance root. Changes to this configuration attribute take effect the next time that the trust manager is accessed.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An absolute path or a path that is relative to the OpenDJ directory server instance root.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin::
+[open]
+====
+Description::
+Specifies the clear-text PIN needed to access the File Based Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-environment-variable::
+[open]
+====
+Description::
+Specifies the name of the environment variable that contains the clear-text PIN needed to access the File Based Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-property::
+[open]
+====
+Description::
+Specifies the name of the Java property that contains the clear-text PIN needed to access the File Based Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-type::
+[open]
+====
+Description::
+Specifies the format for the data in the trust store file. Valid values always include &apos;JKS&apos; and &apos;PKCS12&apos;, but different implementations can allow other values as well. If no value is provided, then the JVM default value is used. Changes to this configuration attribute take effect the next time that the trust manager is accessed.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Any key store format supported by the Java runtime environment. The "JKS" and "PKCS12" formats are typically available in Java environments.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-trust-manager-provider-prop-ldap-trust-manager-provider]
+== LDAP Trust Manager Provider
+
+Trust Manager Providers of type ldap-trust-manager-provider have the following properties:
+
+--
+
+
+base-dn::
+[open]
+====
+Description::
+The base DN beneath which LDAP key store entries are located. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicate whether the Trust Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the LDAP Trust Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.LDAPTrustManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.TrustManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin::
+[open]
+====
+Description::
+Specifies the clear-text PIN needed to access the LDAP Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-environment-variable::
+[open]
+====
+Description::
+Specifies the name of the environment variable that contains the clear-text PIN needed to access the LDAP Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the LDAP Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-property::
+[open]
+====
+Description::
+Specifies the name of the Java property that contains the clear-text PIN needed to access the LDAP Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-trust-manager-provider-prop-pkcs11-trust-manager-provider]
+== PKCS11 Trust Manager Provider
+
+Trust Manager Providers of type pkcs11-trust-manager-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicate whether the Trust Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the PKCS11 Trust Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.PKCS11TrustManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.TrustManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin::
+[open]
+====
+Description::
+Specifies the clear-text PIN needed to access the PKCS11 Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-environment-variable::
+[open]
+====
+Description::
+Specifies the name of the environment variable that contains the clear-text PIN needed to access the PKCS11 Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the PKCS11 Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-store-pin-property::
+[open]
+====
+Description::
+Specifies the name of the Java property that contains the clear-text PIN needed to access the PKCS11 Trust Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Trust Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

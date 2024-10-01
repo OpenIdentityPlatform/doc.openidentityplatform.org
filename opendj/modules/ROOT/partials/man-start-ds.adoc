@@ -1,0 +1,113 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#start-ds-1]
+= start-ds(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+start-ds - start OpenDJ directory server
+
+== Synopsis
+`start-ds` 
+
+[#start-ds-description]
+== Description
+
+This utility can be used to start the Directory Server, as well as to obtain the server version and other forms of general server information.
+
+
+
+
+[#start-ds-options]
+== Options
+
+The `start-ds` command takes the following options:
+
+.Command options:
+
+--
+`-L | --useLastKnownGoodConfig`::
+Attempt to start using the configuration that was in place at the last successful startup (if it is available) rather than using the current active configuration.
++
+Default: false
++
+
+`-N | --nodetach`::
+Do not detach from the terminal and continue running in the foreground. This option cannot be used with the -t, --timeout option.
++
+Default: false
++
+
+`-s | --systemInfo`::
+Display general system information.
++
+Default: false
++
+
+`-t | --timeout {seconds}`::
+Maximum time (in seconds) to wait before the command returns (the server continues the startup process, regardless). A value of '0' indicates an infinite timeout, which means that the command returns only when the server startup is completed. The default value is 60 seconds. This option cannot be used with the -N, --nodetach option.
++
+Default: 200
++
+
+
+--
+.Utility input/output options:
+
+--
+`-Q | --quiet`::
+Use quiet mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_start-ds-examples.adoc[]
+
+

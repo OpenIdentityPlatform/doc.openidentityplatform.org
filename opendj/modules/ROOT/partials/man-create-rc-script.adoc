@@ -1,0 +1,94 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#create-rc-script-1]
+= create-rc-script(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+create-rc-script - script to manage OpenDJ as a service on UNIX
+
+== Synopsis
+`create-rc-script` 
+
+[#create-rc-script-description]
+== Description
+
+Create an RC script that may be used to start, stop, and restart the Directory Server on UNIX-based systems.
+
+
+
+
+[#create-rc-script-options]
+== Options
+
+The `create-rc-script` command takes the following options:
+
+.Command options:
+
+--
+`-f | --outputFile {path}`::
+The path to the output file to create.
++
+
+`-j | --javaHome {path}`::
+The path to the Java installation that should be used to run the server.
++
+
+`-J | --javaArgs {args}`::
+A set of arguments that should be passed to the JVM when running the server.
++
+
+`-u | --userName {userName}`::
+The name of the user account under which the server should run.
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_create-rc-script-examples.adoc[]
+
+

@@ -1,0 +1,342 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-work-queue-prop]
+= dsconfig get-work-queue-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-work-queue-prop - Shows Work Queue properties
+
+== Synopsis
+
+`dsconfig get-work-queue-prop` {options}
+
+[#dsconfig-get-work-queue-prop-description]
+== Description
+
+Shows Work Queue properties.
+
+
+
+[#dsconfig-get-work-queue-prop-options]
+== Options
+
+The `dsconfig get-work-queue-prop` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Work Queue properties depend on the Work Queue type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Work Queue types:
+
+`parallel-work-queue`::
++
+Default {property}: Parallel Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-parallel-work-queue>> for the properties of this Work Queue type.
+`traditional-work-queue`::
++
+Default {property}: Traditional Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-traditional-work-queue>> for the properties of this Work Queue type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Work Queue properties depend on the Work Queue type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Work Queue types:
+
+`parallel-work-queue`::
++
+Default null: Parallel Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-parallel-work-queue>> for the properties of this Work Queue type.
+`traditional-work-queue`::
++
+Default null: Traditional Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-traditional-work-queue>> for the properties of this Work Queue type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Work Queue properties depend on the Work Queue type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Work Queue types:
+
+`parallel-work-queue`::
++
+Default {unit}: Parallel Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-parallel-work-queue>> for the properties of this Work Queue type.
+`traditional-work-queue`::
++
+Default {unit}: Traditional Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-traditional-work-queue>> for the properties of this Work Queue type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Work Queue properties depend on the Work Queue type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Work Queue types:
+
+`parallel-work-queue`::
++
+Default {unit}: Parallel Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-parallel-work-queue>> for the properties of this Work Queue type.
+`traditional-work-queue`::
++
+Default {unit}: Traditional Work Queue
++
+Enabled by default: false
++
+See  <<dsconfig-get-work-queue-prop-traditional-work-queue>> for the properties of this Work Queue type.
+====
+
+--
+
+[#dsconfig-get-work-queue-prop-parallel-work-queue]
+== Parallel Work Queue
+
+Work Queues of type parallel-work-queue have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Parallel Work Queue implementation. 
+
+
+Default Value::
+org.opends.server.extensions.ParallelWorkQueue
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.WorkQueue
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+num-worker-threads::
+[open]
+====
+Description::
+Specifies the number of worker threads to be used for processing operations placed in the queue. If the value is increased, the additional worker threads are created immediately. If the value is reduced, the appropriate number of threads are destroyed as operations complete processing.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-work-queue-prop-traditional-work-queue]
+== Traditional Work Queue
+
+Work Queues of type traditional-work-queue have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Traditional Work Queue implementation. 
+
+
+Default Value::
+org.opends.server.extensions.TraditionalWorkQueue
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.WorkQueue
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+max-work-queue-capacity::
+[open]
+====
+Description::
+Specifies the maximum number of queued operations that can be in the work queue at any given time. If the work queue is already full and additional requests are received by the server, then the server front end, and possibly the client, will be blocked until the work queue has available capacity.
+
+
+Default Value::
+1000
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+num-worker-threads::
+[open]
+====
+Description::
+Specifies the number of worker threads to be used for processing operations placed in the queue. If the value is increased, the additional worker threads are created immediately. If the value is reduced, the appropriate number of threads are destroyed as operations complete processing.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

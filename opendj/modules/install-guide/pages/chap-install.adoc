@@ -1,4 +1,3 @@
-:leveloffset: -1
 ////
   The contents of this file are subject to the terms of the Common Development and
   Distribution License (the License). You may not use this file except in compliance with the
@@ -19,6 +18,7 @@
 :figure-caption!:
 :example-caption!:
 :table-caption!:
+:leveloffset: -1"
 
 
 [#chap-install]
@@ -991,7 +991,7 @@ At minimum adjust the following configuration settings in `WEB-INF/classes/confi
 The LDAP account used to authenticate needs to perform proxied authorization as described in xref:server-dev-guide:chap-ldap-operations.adoc#proxied-authz["Configuring Proxied Authorization"] in the __Directory Server Developer's Guide__.
 
 +
-The default sample configuration configuration is built to work with generated example data and also the sample content in link:../attachments/Example.ldif[Example.ldif, window=\_blank]. If your data is different, then you must also change the JSON resource to LDAP entry mapping settings, described in xref:reference:appendix-rest2ldap.adoc#mappings-json["Mapping Configuration File"] in the __Reference__.
+The default sample configuration configuration is built to work with generated example data and also the sample content in xref:ROOT:attachment$Example.ldif[Example.ldif, window=\_blank]. If your data is different, then you must also change the JSON resource to LDAP entry mapping settings, described in xref:reference:appendix-rest2ldap.adoc#mappings-json["Mapping Configuration File"] in the __Reference__.
 +
 For details regarding the configuration, see xref:reference:appendix-rest2ldap.adoc#appendix-rest2ldap["REST to LDAP Configuration"] in the __Reference__.
 +
@@ -1068,7 +1068,7 @@ You configure the gateway to access your directory service by editing the config
 
 . Edit `opendj-rest2ldap-servlet.json` where you deployed the gateway web application.
 +
-The default JSON resource for the configuration includes both connection and authentication information, and also `mappings`. The `mappings` describe how the gateway translates between JSON and LDAP representations of directory data. The default `mappings` are built to work with generated example data and also the sample content in link:../attachments/Example.ldif[Example.ldif, window=\_blank].
+The default JSON resource for the configuration includes both connection and authentication information, and also `mappings`. The `mappings` describe how the gateway translates between JSON and LDAP representations of directory data. The default `mappings` are built to work with generated example data and also the sample content in xref:ROOT:attachment$Example.ldif[Example.ldif, window=\_blank].
 +
 At minimum adjust the following gateway configuration settings:
 

@@ -1,0 +1,852 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-schema-provider-prop]
+= dsconfig get-schema-provider-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-schema-provider-prop - Shows Schema Provider properties
+
+== Synopsis
+
+`dsconfig get-schema-provider-prop` {options}
+
+[#dsconfig-get-schema-provider-prop-description]
+== Description
+
+Shows Schema Provider properties.
+
+
+
+[#dsconfig-get-schema-provider-prop-options]
+== Options
+
+The `dsconfig get-schema-provider-prop` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Schema Provider.
++
+
+[open]
+====
+Schema Provider properties depend on the Schema Provider type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Schema Provider types:
+
+`core-schema`::
++
+Default {name}: Core Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-core-schema>> for the properties of this Schema Provider type.
+`json-schema`::
++
+Default {name}: Json Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-json-schema>> for the properties of this Schema Provider type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Schema Provider properties depend on the Schema Provider type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Schema Provider types:
+
+`core-schema`::
++
+Default {property}: Core Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-core-schema>> for the properties of this Schema Provider type.
+`json-schema`::
++
+Default {property}: Json Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-json-schema>> for the properties of this Schema Provider type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Schema Provider properties depend on the Schema Provider type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Schema Provider types:
+
+`core-schema`::
++
+Default null: Core Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-core-schema>> for the properties of this Schema Provider type.
+`json-schema`::
++
+Default null: Json Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-json-schema>> for the properties of this Schema Provider type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Schema Provider properties depend on the Schema Provider type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Schema Provider types:
+
+`core-schema`::
++
+Default {unit}: Core Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-core-schema>> for the properties of this Schema Provider type.
+`json-schema`::
++
+Default {unit}: Json Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-json-schema>> for the properties of this Schema Provider type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Schema Provider properties depend on the Schema Provider type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Schema Provider types:
+
+`core-schema`::
++
+Default {unit}: Core Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-core-schema>> for the properties of this Schema Provider type.
+`json-schema`::
++
+Default {unit}: Json Schema
++
+Enabled by default: true
++
+See  <<dsconfig-get-schema-provider-prop-json-schema>> for the properties of this Schema Provider type.
+====
+
+--
+
+[#dsconfig-get-schema-provider-prop-core-schema]
+== Core Schema
+
+Schema Providers of type core-schema have the following properties:
+
+--
+
+
+allow-attribute-types-with-no-sup-or-syntax::
+[open]
+====
+Description::
+Indicates whether the schema should allow attribute type definitions that do not declare a superior attribute type or syntax When set to true, invalid attribute type definitions will use the default syntax.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+allow-zero-length-values-directory-string::
+[open]
+====
+Description::
+Indicates whether zero-length (that is, an empty string) values are allowed for directory string. This is technically not allowed by the revised LDAPv3 specification, but some environments may require it for backward compatibility with servers that do allow it.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+disabled-matching-rule::
+[open]
+====
+Description::
+The set of disabled matching rules. Matching rules must be specified using the syntax: OID, or use the default value &apos;NONE&apos; to specify no value.
+
+
+Default Value::
+NONE
+
+
+Allowed Values::
+The OID of the disabled matching rule.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+disabled-syntax::
+[open]
+====
+Description::
+The set of disabled syntaxes. Syntaxes must be specified using the syntax: OID, or use the default value &apos;NONE&apos; to specify no value.
+
+
+Default Value::
+NONE
+
+
+Allowed Values::
+The OID of the disabled syntax, or NONE
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Schema Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Core Schema implementation. 
+
+
+Default Value::
+org.opends.server.schema.CoreSchemaProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.schema.SchemaProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+json-validation-policy::
+[open]
+====
+Description::
+Specifies the policy that will be used when validating JSON syntax values. 
+
+
+Default Value::
+strict
+
+
+Allowed Values::
+
+
+disabled::
+JSON syntax values will not be validated and, as a result any sequence of bytes will be acceptable.
+
+lenient::
+JSON syntax values must comply with RFC 7159 except: 1) comments are allowed, 2) single quotes may be used instead of double quotes, and 3) unquoted control characters are allowed in strings.
+
+strict::
+JSON syntax values must strictly conform to RFC 7159.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+strict-format-certificates::
+[open]
+====
+Description::
+Indicates whether X.509 Certificate values are required to strictly comply with the standard definition for this syntax. When set to false, certificates will not be validated and, as a result any sequence of bytes will be acceptable.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+strict-format-country-string::
+[open]
+====
+Description::
+Indicates whether country code values are required to strictly comply with the standard definition for this syntax. When set to false, country codes will not be validated and, as a result any string containing 2 characters will be acceptable.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+strict-format-jpeg-photos::
+[open]
+====
+Description::
+Indicates whether to require JPEG values to strictly comply with the standard definition for this syntax. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+strict-format-telephone-numbers::
+[open]
+====
+Description::
+Indicates whether to require telephone number values to strictly comply with the standard definition for this syntax. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+strip-syntax-min-upper-bound-attribute-type-description::
+[open]
+====
+Description::
+Indicates whether the suggested minimum upper bound appended to an attribute&apos;s syntax OID in it&apos;s schema definition Attribute Type Description is stripped off. When retrieving the server&apos;s schema, some APIs (JNDI) fail in their syntax lookup methods, because they do not parse this value correctly. This configuration option allows the server to be configured to provide schema definitions these APIs can parse correctly.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-schema-provider-prop-json-schema]
+== Json Schema
+
+Schema Providers of type json-schema have the following properties:
+
+--
+
+
+case-sensitive-strings::
+[open]
+====
+Description::
+Indicates whether JSON string comparisons should be case-sensitive. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Schema Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ignore-white-space::
+[open]
+====
+Description::
+Indicates whether JSON string comparisons should ignore white-space. When enabled all leading and trailing white space will be removed and intermediate white space will be reduced to a single character.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+indexed-field::
+[open]
+====
+Description::
+Specifies which JSON fields should be indexed. A field will be indexed if it matches any of the configured field patterns.
+
+
+Default Value::
+All JSON fields will be indexed.
+
+
+Allowed Values::
+A JSON pointer which may include wild-cards. A single '*' wild-card matches at most a single path element, whereas a double '**' matches zero or more path elements.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Json Schema implementation. 
+
+
+Default Value::
+org.opends.server.schema.JsonSchemaProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.schema.SchemaProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+matching-rule-name::
+[open]
+====
+Description::
+The name of the custom JSON matching rule. 
+
+
+Default Value::
+The matching rule will not have a name.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+matching-rule-oid::
+[open]
+====
+Description::
+The numeric OID of the custom JSON matching rule. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The OID of the matching rule.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

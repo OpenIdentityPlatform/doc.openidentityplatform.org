@@ -1,0 +1,560 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-delete-account-status-notification-handler]
+= dsconfig delete-account-status-notification-handler(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig delete-account-status-notification-handler - Deletes Account Status Notification Handlers
+
+== Synopsis
+
+`dsconfig delete-account-status-notification-handler` {options}
+
+[#dsconfig-delete-account-status-notification-handler-description]
+== Description
+
+Deletes Account Status Notification Handlers.
+
+
+
+[#dsconfig-delete-account-status-notification-handler-options]
+== Options
+
+The `dsconfig delete-account-status-notification-handler` command takes the following options:
+
+--
+`--handler-name {name}`::
+
+The name of the Account Status Notification Handler.
++
+
+[open]
+====
+Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Account Status Notification Handler types:
+
+`error-log-account-status-notification-handler`::
++
+Default {name}: Error Log Account Status Notification Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-account-status-notification-handler-error-log-account-status-notification-handler>> for the properties of this Account Status Notification Handler type.
+`smtp-account-status-notification-handler`::
++
+Default {name}: SMTP Account Status Notification Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-account-status-notification-handler-smtp-account-status-notification-handler>> for the properties of this Account Status Notification Handler type.
+====
+
+`-f | --force`::
+
+Ignore non-existent Account Status Notification Handlers.
++
+
+[open]
+====
+Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Account Status Notification Handler types:
+
+`error-log-account-status-notification-handler`::
++
+Default null: Error Log Account Status Notification Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-account-status-notification-handler-error-log-account-status-notification-handler>> for the properties of this Account Status Notification Handler type.
+`smtp-account-status-notification-handler`::
++
+Default null: SMTP Account Status Notification Handler
++
+Enabled by default: true
++
+See  <<dsconfig-delete-account-status-notification-handler-smtp-account-status-notification-handler>> for the properties of this Account Status Notification Handler type.
+====
+
+--
+
+[#dsconfig-delete-account-status-notification-handler-error-log-account-status-notification-handler]
+== Error Log Account Status Notification Handler
+
+Account Status Notification Handlers of type error-log-account-status-notification-handler have the following properties:
+
+--
+
+
+account-status-notification-type::
+[open]
+====
+Description::
+Indicates which types of event can trigger an account status notification. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+
+
+account-disabled::
+Generate a notification whenever a user account has been disabled by an administrator.
+
+account-enabled::
+Generate a notification whenever a user account has been enabled by an administrator.
+
+account-expired::
+Generate a notification whenever a user authentication has failed because the account has expired.
+
+account-idle-locked::
+Generate a notification whenever a user account has been locked because it was idle for too long.
+
+account-permanently-locked::
+Generate a notification whenever a user account has been permanently locked after too many failed attempts.
+
+account-reset-locked::
+Generate a notification whenever a user account has been locked, because the password had been reset by an administrator but not changed by the user within the required interval.
+
+account-temporarily-locked::
+Generate a notification whenever a user account has been temporarily locked after too many failed attempts.
+
+account-unlocked::
+Generate a notification whenever a user account has been unlocked by an administrator.
+
+password-changed::
+Generate a notification whenever a user changes his/her own password.
+
+password-expired::
+Generate a notification whenever a user authentication has failed because the password has expired.
+
+password-expiring::
+Generate a notification whenever a password expiration warning is encountered for a user password for the first time.
+
+password-reset::
+Generate a notification whenever a user's password is reset by an administrator.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Account Status Notification Handler is enabled. Only enabled handlers are invoked whenever a related event occurs in the server. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Error Log Account Status Notification Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.ErrorLogAccountStatusNotificationHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.AccountStatusNotificationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Account Status Notification Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-delete-account-status-notification-handler-smtp-account-status-notification-handler]
+== SMTP Account Status Notification Handler
+
+Account Status Notification Handlers of type smtp-account-status-notification-handler have the following properties:
+
+--
+
+
+email-address-attribute-type::
+[open]
+====
+Description::
+Specifies which attribute in the user&apos;s entries may be used to obtain the email address when notifying the end user. You can specify more than one email address as separate values. In this case, the OpenDJ server sends a notification to all email addresses identified.
+
+
+Default Value::
+If no email address attribute types are specified, then no attempt is made to send email notification messages to end users. Only those users specified in the set of additional recipient addresses are sent the notification messages.
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Account Status Notification Handler is enabled. Only enabled handlers are invoked whenever a related event occurs in the server. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SMTP Account Status Notification Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.SMTPAccountStatusNotificationHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.AccountStatusNotificationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Account Status Notification Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+message-subject::
+[open]
+====
+Description::
+Specifies the subject that should be used for email messages generated by this account status notification handler. The values for this property should begin with the name of an account status notification type followed by a colon and the subject that should be used for the associated notification message. If an email message is generated for an account status notification type for which no subject is defined, then that message is given a generic subject.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+message-template-file::
+[open]
+====
+Description::
+Specifies the path to the file containing the message template to generate the email notification messages. The values for this property should begin with the name of an account status notification type followed by a colon and the path to the template file that should be used for that notification type. If an account status notification has a notification type that is not associated with a message template file, then no email message is generated for that notification.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+recipient-address::
+[open]
+====
+Description::
+Specifies an email address to which notification messages are sent, either instead of or in addition to the end user for whom the notification has been generated. This may be used to ensure that server administrators also receive a copy of any notification messages that are generated.
+
+
+Default Value::
+If no additional recipient addresses are specified, then only the end users that are the subjects of the account status notifications receive the notification messages.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+send-email-as-html::
+[open]
+====
+Description::
+Indicates whether an email notification message should be sent as HTML. If this value is true, email notification messages are marked as text/html. Otherwise outgoing email messages are assumed to be plaintext and marked as text/plain.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+send-message-without-end-user-address::
+[open]
+====
+Description::
+Indicates whether an email notification message should be generated and sent to the set of notification recipients even if the user entry does not contain any values for any of the email address attributes (that is, in cases when it is not be possible to notify the end user). This is only applicable if both one or more email address attribute types and one or more additional recipient addresses are specified.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+sender-address::
+[open]
+====
+Description::
+Specifies the email address from which the message is sent. Note that this does not necessarily have to be a legitimate email address. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

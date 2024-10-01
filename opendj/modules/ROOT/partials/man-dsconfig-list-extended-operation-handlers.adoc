@@ -1,0 +1,817 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-list-extended-operation-handlers]
+= dsconfig list-extended-operation-handlers(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig list-extended-operation-handlers - Lists existing Extended Operation Handlers
+
+== Synopsis
+
+`dsconfig list-extended-operation-handlers` {options}
+
+[#dsconfig-list-extended-operation-handlers-description]
+== Description
+
+Lists existing Extended Operation Handlers.
+
+
+
+[#dsconfig-list-extended-operation-handlers-options]
+== Options
+
+The `dsconfig list-extended-operation-handlers` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Extended Operation Handler types:
+
+`cancel-extended-operation-handler`::
++
+Default {property}: Cancel Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`get-connection-id-extended-operation-handler`::
++
+Default {property}: Get Connection Id Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-get-connection-id-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`get-symmetric-key-extended-operation-handler`::
++
+Default {property}: Get Symmetric Key Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-get-symmetric-key-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`password-modify-extended-operation-handler`::
++
+Default {property}: Password Modify Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-password-modify-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`password-policy-state-extended-operation-handler`::
++
+Default {property}: Password Policy State Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-password-policy-state-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`start-tls-extended-operation-handler`::
++
+Default {property}: Start TLS Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`who-am-i-extended-operation-handler`::
++
+Default {property}: Who Am I Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-who-am-i-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Extended Operation Handler types:
+
+`cancel-extended-operation-handler`::
++
+Default {unit}: Cancel Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`get-connection-id-extended-operation-handler`::
++
+Default {unit}: Get Connection Id Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-get-connection-id-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`get-symmetric-key-extended-operation-handler`::
++
+Default {unit}: Get Symmetric Key Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-get-symmetric-key-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`password-modify-extended-operation-handler`::
++
+Default {unit}: Password Modify Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-password-modify-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`password-policy-state-extended-operation-handler`::
++
+Default {unit}: Password Policy State Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-password-policy-state-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`start-tls-extended-operation-handler`::
++
+Default {unit}: Start TLS Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`who-am-i-extended-operation-handler`::
++
+Default {unit}: Who Am I Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-who-am-i-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Extended Operation Handler types:
+
+`cancel-extended-operation-handler`::
++
+Default {unit}: Cancel Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`get-connection-id-extended-operation-handler`::
++
+Default {unit}: Get Connection Id Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-get-connection-id-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`get-symmetric-key-extended-operation-handler`::
++
+Default {unit}: Get Symmetric Key Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-get-symmetric-key-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`password-modify-extended-operation-handler`::
++
+Default {unit}: Password Modify Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-password-modify-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`password-policy-state-extended-operation-handler`::
++
+Default {unit}: Password Policy State Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-password-policy-state-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`start-tls-extended-operation-handler`::
++
+Default {unit}: Start TLS Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`who-am-i-extended-operation-handler`::
++
+Default {unit}: Who Am I Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-list-extended-operation-handlers-who-am-i-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+====
+
+--
+
+[#dsconfig-list-extended-operation-handlers-cancel-extended-operation-handler]
+== Cancel Extended Operation Handler
+
+Extended Operation Handlers of type cancel-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Cancel Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.CancelExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-extended-operation-handlers-get-connection-id-extended-operation-handler]
+== Get Connection Id Extended Operation Handler
+
+Extended Operation Handlers of type get-connection-id-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Get Connection Id Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.GetConnectionIDExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-extended-operation-handlers-get-symmetric-key-extended-operation-handler]
+== Get Symmetric Key Extended Operation Handler
+
+Extended Operation Handlers of type get-symmetric-key-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Get Symmetric Key Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.crypto.GetSymmetricKeyExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-extended-operation-handlers-password-modify-extended-operation-handler]
+== Password Modify Extended Operation Handler
+
+Extended Operation Handlers of type password-modify-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+Specifies the name of the identity mapper that should be used in conjunction with the password modify extended operation. This property is used to identify a user based on an authorization ID in the &apos;u:&apos; form. Changes to this property take effect immediately.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the Password Modify Extended Operation Handler is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Password Modify Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.PasswordModifyExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-extended-operation-handlers-password-policy-state-extended-operation-handler]
+== Password Policy State Extended Operation Handler
+
+Extended Operation Handlers of type password-policy-state-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Password Policy State Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.PasswordPolicyStateExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-extended-operation-handlers-start-tls-extended-operation-handler]
+== Start TLS Extended Operation Handler
+
+Extended Operation Handlers of type start-tls-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Start TLS Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.StartTLSExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-extended-operation-handlers-who-am-i-extended-operation-handler]
+== Who Am I Extended Operation Handler
+
+Extended Operation Handlers of type who-am-i-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Who Am I Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.WhoAmIExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

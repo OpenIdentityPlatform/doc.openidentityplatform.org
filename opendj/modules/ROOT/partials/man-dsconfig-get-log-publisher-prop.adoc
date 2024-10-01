@@ -1,0 +1,5186 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-log-publisher-prop]
+= dsconfig get-log-publisher-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-log-publisher-prop - Shows Log Publisher properties
+
+== Synopsis
+
+`dsconfig get-log-publisher-prop` {options}
+
+[#dsconfig-get-log-publisher-prop-description]
+== Description
+
+Shows Log Publisher properties.
+
+
+
+[#dsconfig-get-log-publisher-prop-options]
+== Options
+
+The `dsconfig get-log-publisher-prop` command takes the following options:
+
+--
+`--publisher-name {name}`::
+
+The name of the Log Publisher.
++
+
+[open]
+====
+Log Publisher properties depend on the Log Publisher type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Log Publisher types:
+
+`csv-file-access-log-publisher`::
++
+Default {name}: Csv File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-access-log-publisher>> for the properties of this Log Publisher type.
+`csv-file-http-access-log-publisher`::
++
+Default {name}: Csv File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+`external-access-log-publisher`::
++
+Default {name}: External Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-access-log-publisher>> for the properties of this Log Publisher type.
+`external-http-access-log-publisher`::
++
+Default {name}: External HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-http-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-access-log-publisher`::
++
+Default {name}: File Based Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-audit-log-publisher`::
++
+Default {name}: File Based Audit Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-audit-log-publisher>> for the properties of this Log Publisher type.
+`file-based-debug-log-publisher`::
++
+Default {name}: File Based Debug Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-debug-log-publisher>> for the properties of this Log Publisher type.
+`file-based-error-log-publisher`::
++
+Default {name}: File Based Error Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-error-log-publisher>> for the properties of this Log Publisher type.
+`file-based-http-access-log-publisher`::
++
+Default {name}: File Based HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-http-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-access-log-publisher`::
++
+Default {name}: Json File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-http-access-log-publisher`::
++
+Default {name}: Json File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Log Publisher properties depend on the Log Publisher type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Log Publisher types:
+
+`csv-file-access-log-publisher`::
++
+Default {property}: Csv File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-access-log-publisher>> for the properties of this Log Publisher type.
+`csv-file-http-access-log-publisher`::
++
+Default {property}: Csv File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+`external-access-log-publisher`::
++
+Default {property}: External Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-access-log-publisher>> for the properties of this Log Publisher type.
+`external-http-access-log-publisher`::
++
+Default {property}: External HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-http-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-access-log-publisher`::
++
+Default {property}: File Based Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-audit-log-publisher`::
++
+Default {property}: File Based Audit Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-audit-log-publisher>> for the properties of this Log Publisher type.
+`file-based-debug-log-publisher`::
++
+Default {property}: File Based Debug Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-debug-log-publisher>> for the properties of this Log Publisher type.
+`file-based-error-log-publisher`::
++
+Default {property}: File Based Error Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-error-log-publisher>> for the properties of this Log Publisher type.
+`file-based-http-access-log-publisher`::
++
+Default {property}: File Based HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-http-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-access-log-publisher`::
++
+Default {property}: Json File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-http-access-log-publisher`::
++
+Default {property}: Json File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Log Publisher properties depend on the Log Publisher type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Log Publisher types:
+
+`csv-file-access-log-publisher`::
++
+Default null: Csv File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-access-log-publisher>> for the properties of this Log Publisher type.
+`csv-file-http-access-log-publisher`::
++
+Default null: Csv File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+`external-access-log-publisher`::
++
+Default null: External Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-access-log-publisher>> for the properties of this Log Publisher type.
+`external-http-access-log-publisher`::
++
+Default null: External HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-http-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-access-log-publisher`::
++
+Default null: File Based Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-audit-log-publisher`::
++
+Default null: File Based Audit Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-audit-log-publisher>> for the properties of this Log Publisher type.
+`file-based-debug-log-publisher`::
++
+Default null: File Based Debug Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-debug-log-publisher>> for the properties of this Log Publisher type.
+`file-based-error-log-publisher`::
++
+Default null: File Based Error Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-error-log-publisher>> for the properties of this Log Publisher type.
+`file-based-http-access-log-publisher`::
++
+Default null: File Based HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-http-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-access-log-publisher`::
++
+Default null: Json File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-http-access-log-publisher`::
++
+Default null: Json File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Log Publisher properties depend on the Log Publisher type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Log Publisher types:
+
+`csv-file-access-log-publisher`::
++
+Default {unit}: Csv File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-access-log-publisher>> for the properties of this Log Publisher type.
+`csv-file-http-access-log-publisher`::
++
+Default {unit}: Csv File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+`external-access-log-publisher`::
++
+Default {unit}: External Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-access-log-publisher>> for the properties of this Log Publisher type.
+`external-http-access-log-publisher`::
++
+Default {unit}: External HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-http-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-access-log-publisher`::
++
+Default {unit}: File Based Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-audit-log-publisher`::
++
+Default {unit}: File Based Audit Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-audit-log-publisher>> for the properties of this Log Publisher type.
+`file-based-debug-log-publisher`::
++
+Default {unit}: File Based Debug Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-debug-log-publisher>> for the properties of this Log Publisher type.
+`file-based-error-log-publisher`::
++
+Default {unit}: File Based Error Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-error-log-publisher>> for the properties of this Log Publisher type.
+`file-based-http-access-log-publisher`::
++
+Default {unit}: File Based HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-http-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-access-log-publisher`::
++
+Default {unit}: Json File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-http-access-log-publisher`::
++
+Default {unit}: Json File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Log Publisher properties depend on the Log Publisher type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Log Publisher types:
+
+`csv-file-access-log-publisher`::
++
+Default {unit}: Csv File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-access-log-publisher>> for the properties of this Log Publisher type.
+`csv-file-http-access-log-publisher`::
++
+Default {unit}: Csv File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-csv-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+`external-access-log-publisher`::
++
+Default {unit}: External Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-access-log-publisher>> for the properties of this Log Publisher type.
+`external-http-access-log-publisher`::
++
+Default {unit}: External HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-external-http-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-access-log-publisher`::
++
+Default {unit}: File Based Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-access-log-publisher>> for the properties of this Log Publisher type.
+`file-based-audit-log-publisher`::
++
+Default {unit}: File Based Audit Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-audit-log-publisher>> for the properties of this Log Publisher type.
+`file-based-debug-log-publisher`::
++
+Default {unit}: File Based Debug Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-debug-log-publisher>> for the properties of this Log Publisher type.
+`file-based-error-log-publisher`::
++
+Default {unit}: File Based Error Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-error-log-publisher>> for the properties of this Log Publisher type.
+`file-based-http-access-log-publisher`::
++
+Default {unit}: File Based HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-file-based-http-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-access-log-publisher`::
++
+Default {unit}: Json File Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-access-log-publisher>> for the properties of this Log Publisher type.
+`json-file-http-access-log-publisher`::
++
+Default {unit}: Json File HTTP Access Log Publisher
++
+Enabled by default: true
++
+See  <<dsconfig-get-log-publisher-prop-json-file-http-access-log-publisher>> for the properties of this Log Publisher type.
+====
+
+--
+
+[#dsconfig-get-log-publisher-prop-csv-file-access-log-publisher]
+== Csv File Access Log Publisher
+
+Log Publishers of type csv-file-access-log-publisher have the following properties:
+
+--
+
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the Csv File Access Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer is flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+csv-delimiter-char::
+[open]
+====
+Description::
+The delimiter character to use when writing in CSV format. 
+
+
+Default Value::
+,
+
+
+Allowed Values::
+The delimiter character to use when writing in CSV format.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+csv-eol-symbols::
+[open]
+====
+Description::
+The string that marks the end of a line. 
+
+
+Default Value::
+Use the platform specific end of line character sequence.
+
+
+Allowed Values::
+The string that marks the end of a line.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+csv-quote-char::
+[open]
+====
+Description::
+The character to append and prepend to a CSV field when writing in CSV format. 
+
+
+Default Value::
+"
+
+
+Allowed Values::
+The quote character to use when writting in CSV format.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filtering-policy::
+[open]
+====
+Description::
+Specifies how filtering criteria should be applied to log records. 
+
+
+Default Value::
+no-filtering
+
+
+Allowed Values::
+
+
+exclusive::
+Records must not match any of the filtering criteria in order to be logged.
+
+inclusive::
+Records must match at least one of the filtering criteria in order to be logged.
+
+no-filtering::
+No filtering will be performed, and all records will be logged.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the Csv File Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.CsvFileAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-store-file::
+[open]
+====
+Description::
+Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the OpenDJ instance root. Changes to this property will take effect the next time that the key store is accessed.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the Csv File Access Log Publisher . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the Csv File Access Log Publisher is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-control-oids::
+[open]
+====
+Description::
+Specifies whether control OIDs will be included in operation log records. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-directory::
+[open]
+====
+Description::
+The directory to use for the log files generated by the Csv File Access Log Publisher. The path to the directory is relative to the server root. 
+
+
+Default Value::
+logs
+
+
+Allowed Values::
+A path to an existing directory that is readable and writable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the Csv File Access Log Publisher . When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the Csv File Access Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+signature-time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to sign the log file when the tamper-evident option is enabled. 
+
+
+Default Value::
+3s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+suppress-internal-operations::
+[open]
+====
+Description::
+Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+suppress-synchronization-operations::
+[open]
+====
+Description::
+Indicates whether access messages that are generated by synchronization operations should be suppressed. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+tamper-evident::
+[open]
+====
+Description::
+Specifies whether the log should be signed in order to detect tampering. Every log record will be signed, making it possible to verify that the log has not been tampered with. This feature has a significative impact on performance of the server.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-csv-file-http-access-log-publisher]
+== Csv File HTTP Access Log Publisher
+
+Log Publishers of type csv-file-http-access-log-publisher have the following properties:
+
+--
+
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the Csv File HTTP Access Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer is flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+csv-delimiter-char::
+[open]
+====
+Description::
+The delimiter character to use when writing in CSV format. 
+
+
+Default Value::
+,
+
+
+Allowed Values::
+The delimiter character to use when writing in CSV format.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+csv-eol-symbols::
+[open]
+====
+Description::
+The string that marks the end of a line. 
+
+
+Default Value::
+Use the platform specific end of line character sequence.
+
+
+Allowed Values::
+The string that marks the end of a line.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+csv-quote-char::
+[open]
+====
+Description::
+The character to append and prepend to a CSV field when writing in CSV format. 
+
+
+Default Value::
+"
+
+
+Allowed Values::
+The quote character to use when writing in CSV format.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the Csv File HTTP Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.CommonAuditHTTPAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-store-file::
+[open]
+====
+Description::
+Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the OpenDJ instance root. Changes to this property will take effect the next time that the key store is accessed.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the Csv File HTTP Access Log Publisher . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the Csv File HTTP Access Log Publisher is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-directory::
+[open]
+====
+Description::
+The directory to use for the log files generated by the Csv File HTTP Access Log Publisher. The path to the directory is relative to the server root. 
+
+
+Default Value::
+logs
+
+
+Allowed Values::
+A path to an existing directory that is readable and writable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the Csv File HTTP Access Log Publisher . When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the Csv File HTTP Access Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+signature-time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to sign the log file when secure option is enabled. 
+
+
+Default Value::
+3s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+tamper-evident::
+[open]
+====
+Description::
+Specifies whether the log should be signed in order to detect tampering. Every log record will be signed, making it possible to verify that the log has not been tampered with. This feature has a significative impact on performance of the server.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-external-access-log-publisher]
+== External Access Log Publisher
+
+Log Publishers of type external-access-log-publisher have the following properties:
+
+--
+
+
+config-file::
+[open]
+====
+Description::
+The JSON configuration file that defines the External Access Log Publisher. The content of the JSON configuration file depends on the type of external audit event handler. The path to the file is relative to the server root. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filtering-policy::
+[open]
+====
+Description::
+Specifies how filtering criteria should be applied to log records. 
+
+
+Default Value::
+no-filtering
+
+
+Allowed Values::
+
+
+exclusive::
+Records must not match any of the filtering criteria in order to be logged.
+
+inclusive::
+Records must match at least one of the filtering criteria in order to be logged.
+
+no-filtering::
+No filtering will be performed, and all records will be logged.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the External Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.ExternalAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-control-oids::
+[open]
+====
+Description::
+Specifies whether control OIDs will be included in operation log records. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+suppress-internal-operations::
+[open]
+====
+Description::
+Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+suppress-synchronization-operations::
+[open]
+====
+Description::
+Indicates whether access messages that are generated by synchronization operations should be suppressed. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-external-http-access-log-publisher]
+== External HTTP Access Log Publisher
+
+Log Publishers of type external-http-access-log-publisher have the following properties:
+
+--
+
+
+config-file::
+[open]
+====
+Description::
+The JSON configuration file that defines the External HTTP Access Log Publisher. The content of the JSON configuration file depends on the type of external audit event handler. The path to the file is relative to the server root. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the External HTTP Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.CommonAuditHTTPAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-file-based-access-log-publisher]
+== File Based Access Log Publisher
+
+Log Publishers of type file-based-access-log-publisher have the following properties:
+
+--
+
+
+append::
+[open]
+====
+Description::
+Specifies whether to append to existing log files. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the File Based Access Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer is flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the log file buffer size. 
+
+
+Default Value::
+64kb
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filtering-policy::
+[open]
+====
+Description::
+Specifies how filtering criteria should be applied to log records. 
+
+
+Default Value::
+no-filtering
+
+
+Allowed Values::
+
+
+exclusive::
+Records must not match any of the filtering criteria in order to be logged.
+
+inclusive::
+Records must match at least one of the filtering criteria in order to be logged.
+
+no-filtering::
+No filtering will be performed, and all records will be logged.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.TextAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-control-oids::
+[open]
+====
+Description::
+Specifies whether control OIDs will be included in operation log records. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-file::
+[open]
+====
+Description::
+The file name to use for the log files generated by the File Based Access Log Publisher. The path to the file is relative to the server root. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-file-permissions::
+[open]
+====
+Description::
+The UNIX permissions of the log files created by this File Based Access Log Publisher. 
+
+
+Default Value::
+640
+
+
+Allowed Values::
+A valid UNIX mode string. The mode string must contain three digits between zero and seven.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-format::
+[open]
+====
+Description::
+Specifies how log records should be formatted and written to the access log. 
+
+
+Default Value::
+multi-line
+
+
+Allowed Values::
+
+
+combined::
+Combine log records for operation requests and responses into a single record. This format should be used when log records are to be filtered based on response criteria (e.g. result code).
+
+multi-line::
+Outputs separate log records for operation requests and responses.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-record-time-format::
+[open]
+====
+Description::
+Specifies the format string that is used to generate log record timestamps. 
+
+
+Default Value::
+dd/MMM/yyyy:HH:mm:ss Z
+
+
+Allowed Values::
+Any valid format string that can be used with the java.text.SimpleDateFormat class.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+queue-size::
+[open]
+====
+Description::
+The maximum number of log records that can be stored in the asynchronous queue. 
+
+
+Default Value::
+5000
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the File Based Access Log Publisher . When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the File Based Access Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+suppress-internal-operations::
+[open]
+====
+Description::
+Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+suppress-synchronization-operations::
+[open]
+====
+Description::
+Indicates whether access messages that are generated by synchronization operations should be suppressed. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to check whether the log files need to be rotated. 
+
+
+Default Value::
+5s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-file-based-audit-log-publisher]
+== File Based Audit Log Publisher
+
+Log Publishers of type file-based-audit-log-publisher have the following properties:
+
+--
+
+
+append::
+[open]
+====
+Description::
+Specifies whether to append to existing log files. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the File Based Audit Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer is flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the log file buffer size. 
+
+
+Default Value::
+64kb
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filtering-policy::
+[open]
+====
+Description::
+Specifies how filtering criteria should be applied to log records. 
+
+
+Default Value::
+no-filtering
+
+
+Allowed Values::
+
+
+exclusive::
+Records must not match any of the filtering criteria in order to be logged.
+
+inclusive::
+Records must match at least one of the filtering criteria in order to be logged.
+
+no-filtering::
+No filtering will be performed, and all records will be logged.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based Audit Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.TextAuditLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-file::
+[open]
+====
+Description::
+The file name to use for the log files generated by the File Based Audit Log Publisher. The path to the file is relative to the server root. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-file-permissions::
+[open]
+====
+Description::
+The UNIX permissions of the log files created by this File Based Audit Log Publisher. 
+
+
+Default Value::
+640
+
+
+Allowed Values::
+A valid UNIX mode string. The mode string must contain three digits between zero and seven.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+queue-size::
+[open]
+====
+Description::
+The maximum number of log records that can be stored in the asynchronous queue. 
+
+
+Default Value::
+5000
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the File Based Audit Log Publisher . When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the File Based Audit Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+suppress-internal-operations::
+[open]
+====
+Description::
+Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+suppress-synchronization-operations::
+[open]
+====
+Description::
+Indicates whether access messages that are generated by synchronization operations should be suppressed. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to check whether the log files need to be rotated. 
+
+
+Default Value::
+5s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-file-based-debug-log-publisher]
+== File Based Debug Log Publisher
+
+Log Publishers of type file-based-debug-log-publisher have the following properties:
+
+--
+
+
+append::
+[open]
+====
+Description::
+Specifies whether to append to existing log files. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the File Based Debug Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer is flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the log file buffer size. 
+
+
+Default Value::
+64kb
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+default-debug-exceptions-only::
+[open]
+====
+Description::
+Indicates whether only logs with exception should be logged. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+default-include-throwable-cause::
+[open]
+====
+Description::
+Indicates whether to include the cause of exceptions in exception thrown and caught messages logged by default. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+default-omit-method-entry-arguments::
+[open]
+====
+Description::
+Indicates whether to include method arguments in debug messages logged by default. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+default-omit-method-return-value::
+[open]
+====
+Description::
+Indicates whether to include the return value in debug messages logged by default. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+default-throwable-stack-frames::
+[open]
+====
+Description::
+Indicates the number of stack frames to include in the stack trace for method entry and exception thrown messages. 
+
+
+Default Value::
+2147483647
+
+
+Allowed Values::
+An integer value. Lower value is 0. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based Debug Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.TextDebugLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-file::
+[open]
+====
+Description::
+The file name to use for the log files generated by the File Based Debug Log Publisher . The path to the file is relative to the server root.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-file-permissions::
+[open]
+====
+Description::
+The UNIX permissions of the log files created by this File Based Debug Log Publisher . 
+
+
+Default Value::
+640
+
+
+Allowed Values::
+A valid UNIX mode string. The mode string must contain three digits between zero and seven.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+queue-size::
+[open]
+====
+Description::
+The maximum number of log records that can be stored in the asynchronous queue. 
+
+
+Default Value::
+5000
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the File Based Debug Log Publisher . When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the File Based Debug Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to check whether the log files need to be rotated. 
+
+
+Default Value::
+5s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-file-based-error-log-publisher]
+== File Based Error Log Publisher
+
+Log Publishers of type file-based-error-log-publisher have the following properties:
+
+--
+
+
+append::
+[open]
+====
+Description::
+Specifies whether to append to existing log files. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the File Based Error Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer will be flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the log file buffer size. 
+
+
+Default Value::
+64kb
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+default-severity::
+[open]
+====
+Description::
+Specifies the default severity levels for the logger. 
+
+
+Default Value::
+error
+warning
+
+
+Allowed Values::
+
+
+all::
+Messages of all severity levels are logged.
+
+debug::
+The error log severity that is used for messages that provide debugging information triggered during processing.
+
+error::
+The error log severity that is used for messages that provide information about errors which may force the server to shut down or operate in a significantly degraded state.
+
+info::
+The error log severity that is used for messages that provide information about significant events within the server that are not warnings or errors.
+
+none::
+No messages of any severity are logged by default. This value is intended to be used in conjunction with the override-severity property to define an error logger that will publish no error message beside the errors of a given category.
+
+notice::
+The error log severity that is used for the most important informational messages (i.e., information that should almost always be logged but is not associated with a warning or error condition).
+
+warning::
+The error log severity that is used for messages that provide information about warnings triggered during processing.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based Error Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.TextErrorLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-file::
+[open]
+====
+Description::
+The file name to use for the log files generated by the File Based Error Log Publisher . The path to the file is relative to the server root.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-file-permissions::
+[open]
+====
+Description::
+The UNIX permissions of the log files created by this File Based Error Log Publisher . 
+
+
+Default Value::
+640
+
+
+Allowed Values::
+A valid UNIX mode string. The mode string must contain three digits between zero and seven.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+override-severity::
+[open]
+====
+Description::
+Specifies the override severity levels for the logger based on the category of the messages. Each override severity level should include the category and the severity levels to log for that category, for example, core=error,info,warning. Valid categories are: core, extensions, protocol, config, log, util, schema, plugin, jeb, backend, tools, task, access-control, admin, sync, version, quicksetup, admin-tool, dsconfig, user-defined. Valid severities are: all, error, info, warning, notice, debug.
+
+
+Default Value::
+All messages with the default severity levels are logged.
+
+
+Allowed Values::
+A string in the form category=severity1,severity2...
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+queue-size::
+[open]
+====
+Description::
+The maximum number of log records that can be stored in the asynchronous queue. 
+
+
+Default Value::
+5000
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the File Based Error Log Publisher . When multiple policies are used, log files will be cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files will never be cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the File Based Error Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to check whether the log files need to be rotated. 
+
+
+Default Value::
+5s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-file-based-http-access-log-publisher]
+== File Based HTTP Access Log Publisher
+
+Log Publishers of type file-based-http-access-log-publisher have the following properties:
+
+--
+
+
+append::
+[open]
+====
+Description::
+Specifies whether to append to existing log files. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+asynchronous::
+[open]
+====
+Description::
+Indicates whether the File Based HTTP Access Log Publisher will publish records asynchronously. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+auto-flush::
+[open]
+====
+Description::
+Specifies whether to flush the writer after every log record. If the asynchronous writes option is used, the writer is flushed after all the log records in the queue are written.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the log file buffer size. 
+
+
+Default Value::
+64kb
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based HTTP Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.TextHTTPAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-file::
+[open]
+====
+Description::
+The file name to use for the log files generated by the File Based HTTP Access Log Publisher. The path to the file is relative to the server root. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-file-permissions::
+[open]
+====
+Description::
+The UNIX permissions of the log files created by this File Based HTTP Access Log Publisher. 
+
+
+Default Value::
+640
+
+
+Allowed Values::
+A valid UNIX mode string. The mode string must contain three digits between zero and seven.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-format::
+[open]
+====
+Description::
+Specifies how log records should be formatted and written to the HTTP access log. 
+
+
+Default Value::
+cs-host c-ip cs-username x-datetime cs-method cs-uri-stem cs-uri-query cs-version sc-status cs(User-Agent) x-connection-id x-etime x-transaction-id
+
+
+Allowed Values::
+A space separated list of fields describing the extended log format to be used for logging HTTP accesses. Available values are listed on the W3C working draft http://www.w3.org/TR/WD-logfile.html and Microsoft website http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/676400bc-8969-4aa7-851a-9319490a9bbb.mspx?mfr=true OpenDJ supports the following standard fields: "c-ip", "c-port", "cs-host", "cs-method", "cs-uri", "cs-uri-stem", "cs-uri-query", "cs(User-Agent)", "cs-username", "cs-version", "s-computername", "s-ip", "s-port", "sc-status". OpenDJ supports the following application specific field extensions: "x-connection-id" displays the internal connection ID assigned to the HTTP client connection, "x-datetime" displays the completion date and time for the logged HTTP request and its ouput is controlled by the "ds-cfg-log-record-time-format" property, "x-etime" displays the total execution time for the logged HTTP request, "x-transaction-id" displays the transaction id associated to a request
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-record-time-format::
+[open]
+====
+Description::
+Specifies the format string that is used to generate log record timestamps. 
+
+
+Default Value::
+dd/MMM/yyyy:HH:mm:ss Z
+
+
+Allowed Values::
+Any valid format string that can be used with the java.text.SimpleDateFormat class.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+queue-size::
+[open]
+====
+Description::
+The maximum number of log records that can be stored in the asynchronous queue. 
+
+
+Default Value::
+5000
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the File Based HTTP Access Log Publisher . When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the File Based HTTP Access Log Publisher . When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+time-interval::
+[open]
+====
+Description::
+Specifies the interval at which to check whether the log files need to be rotated. 
+
+
+Default Value::
+5s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-json-file-access-log-publisher]
+== Json File Access Log Publisher
+
+Log Publishers of type json-file-access-log-publisher have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filtering-policy::
+[open]
+====
+Description::
+Specifies how filtering criteria should be applied to log records. 
+
+
+Default Value::
+no-filtering
+
+
+Allowed Values::
+
+
+exclusive::
+Records must not match any of the filtering criteria in order to be logged.
+
+inclusive::
+Records must match at least one of the filtering criteria in order to be logged.
+
+no-filtering::
+No filtering will be performed, and all records will be logged.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the Json File Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.JsonFileAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-control-oids::
+[open]
+====
+Description::
+Specifies whether control OIDs will be included in operation log records. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+log-directory::
+[open]
+====
+Description::
+The directory to use for the log files generated by the Json File Access Log Publisher. The path to the directory is relative to the server root. 
+
+
+Default Value::
+logs
+
+
+Allowed Values::
+A path to an existing directory that is readable and writable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the Json File Access Log Publisher. When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the Json File Access Log Publisher. When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+suppress-internal-operations::
+[open]
+====
+Description::
+Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users. 
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+suppress-synchronization-operations::
+[open]
+====
+Description::
+Indicates whether access messages that are generated by synchronization operations should be suppressed. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-publisher-prop-json-file-http-access-log-publisher]
+== Json File HTTP Access Log Publisher
+
+Log Publishers of type json-file-http-access-log-publisher have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Log Publisher is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the Json File HTTP Access Log Publisher implementation. 
+
+
+Default Value::
+org.opends.server.loggers.CommonAuditHTTPAccessLogPublisher
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.LogPublisher
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-directory::
+[open]
+====
+Description::
+The directory to use for the log files generated by the Json File HTTP Access Log Publisher. The path to the directory is relative to the server root. 
+
+
+Default Value::
+logs
+
+
+Allowed Values::
+A path to an existing directory that is readable and writable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Log Publisher must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+retention-policy::
+[open]
+====
+Description::
+The retention policy to use for the Json File HTTP Access Log Publisher. When multiple policies are used, log files are cleaned when any of the policy&apos;s conditions are met.
+
+
+Default Value::
+No retention policy is used and log files are never cleaned.
+
+
+Allowed Values::
+The DN of any Log Retention Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rotation-policy::
+[open]
+====
+Description::
+The rotation policy to use for the Json File HTTP Access Log Publisher. When multiple policies are used, rotation will occur if any policy&apos;s conditions are met.
+
+
+Default Value::
+No rotation policy is used and log rotation will not occur.
+
+
+Allowed Values::
+The DN of any Log Rotation Policy. 
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

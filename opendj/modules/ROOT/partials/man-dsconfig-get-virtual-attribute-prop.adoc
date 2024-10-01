@@ -1,0 +1,4940 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-virtual-attribute-prop]
+= dsconfig get-virtual-attribute-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-virtual-attribute-prop - Shows Virtual Attribute properties
+
+== Synopsis
+
+`dsconfig get-virtual-attribute-prop` {options}
+
+[#dsconfig-get-virtual-attribute-prop-description]
+== Description
+
+Shows Virtual Attribute properties.
+
+
+
+[#dsconfig-get-virtual-attribute-prop-options]
+== Options
+
+The `dsconfig get-virtual-attribute-prop` command takes the following options:
+
+--
+`--name {name}`::
+
+The name of the Virtual Attribute.
++
+
+[open]
+====
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Virtual Attribute types:
+
+`collective-attribute-subentries-virtual-attribute`::
++
+Default {name}: Collective Attribute Subentries Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entity-tag-virtual-attribute`::
++
+Default {name}: Entity Tag Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entity-tag-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-dn-virtual-attribute`::
++
+Default {name}: Entry DN Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-dn-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-uuid-virtual-attribute`::
++
+Default {name}: Entry UUID Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-uuid-virtual-attribute>> for the properties of this Virtual Attribute type.
+`governing-structure-rule-virtual-attribute`::
++
+Default {name}: Governing Structure Rule Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-governing-structure-rule-virtual-attribute>> for the properties of this Virtual Attribute type.
+`has-subordinates-virtual-attribute`::
++
+Default {name}: Has Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-has-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`is-member-of-virtual-attribute`::
++
+Default {name}: Is Member Of Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-is-member-of-virtual-attribute>> for the properties of this Virtual Attribute type.
+`member-virtual-attribute`::
++
+Default {name}: Member Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-member-virtual-attribute>> for the properties of this Virtual Attribute type.
+`num-subordinates-virtual-attribute`::
++
+Default {name}: Num Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-num-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-expiration-time-virtual-attribute`::
++
+Default {name}: Password Expiration Time Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-expiration-time-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-policy-subentry-virtual-attribute`::
++
+Default {name}: Password Policy Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-policy-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`structural-object-class-virtual-attribute`::
++
+Default {name}: Structural Object Class Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-structural-object-class-virtual-attribute>> for the properties of this Virtual Attribute type.
+`subschema-subentry-virtual-attribute`::
++
+Default {name}: Subschema Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-subschema-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`user-defined-virtual-attribute`::
++
+Default {name}: User Defined Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-user-defined-virtual-attribute>> for the properties of this Virtual Attribute type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Virtual Attribute types:
+
+`collective-attribute-subentries-virtual-attribute`::
++
+Default {property}: Collective Attribute Subentries Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entity-tag-virtual-attribute`::
++
+Default {property}: Entity Tag Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entity-tag-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-dn-virtual-attribute`::
++
+Default {property}: Entry DN Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-dn-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-uuid-virtual-attribute`::
++
+Default {property}: Entry UUID Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-uuid-virtual-attribute>> for the properties of this Virtual Attribute type.
+`governing-structure-rule-virtual-attribute`::
++
+Default {property}: Governing Structure Rule Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-governing-structure-rule-virtual-attribute>> for the properties of this Virtual Attribute type.
+`has-subordinates-virtual-attribute`::
++
+Default {property}: Has Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-has-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`is-member-of-virtual-attribute`::
++
+Default {property}: Is Member Of Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-is-member-of-virtual-attribute>> for the properties of this Virtual Attribute type.
+`member-virtual-attribute`::
++
+Default {property}: Member Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-member-virtual-attribute>> for the properties of this Virtual Attribute type.
+`num-subordinates-virtual-attribute`::
++
+Default {property}: Num Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-num-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-expiration-time-virtual-attribute`::
++
+Default {property}: Password Expiration Time Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-expiration-time-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-policy-subentry-virtual-attribute`::
++
+Default {property}: Password Policy Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-policy-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`structural-object-class-virtual-attribute`::
++
+Default {property}: Structural Object Class Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-structural-object-class-virtual-attribute>> for the properties of this Virtual Attribute type.
+`subschema-subentry-virtual-attribute`::
++
+Default {property}: Subschema Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-subschema-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`user-defined-virtual-attribute`::
++
+Default {property}: User Defined Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-user-defined-virtual-attribute>> for the properties of this Virtual Attribute type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Virtual Attribute types:
+
+`collective-attribute-subentries-virtual-attribute`::
++
+Default null: Collective Attribute Subentries Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entity-tag-virtual-attribute`::
++
+Default null: Entity Tag Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entity-tag-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-dn-virtual-attribute`::
++
+Default null: Entry DN Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-dn-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-uuid-virtual-attribute`::
++
+Default null: Entry UUID Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-uuid-virtual-attribute>> for the properties of this Virtual Attribute type.
+`governing-structure-rule-virtual-attribute`::
++
+Default null: Governing Structure Rule Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-governing-structure-rule-virtual-attribute>> for the properties of this Virtual Attribute type.
+`has-subordinates-virtual-attribute`::
++
+Default null: Has Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-has-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`is-member-of-virtual-attribute`::
++
+Default null: Is Member Of Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-is-member-of-virtual-attribute>> for the properties of this Virtual Attribute type.
+`member-virtual-attribute`::
++
+Default null: Member Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-member-virtual-attribute>> for the properties of this Virtual Attribute type.
+`num-subordinates-virtual-attribute`::
++
+Default null: Num Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-num-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-expiration-time-virtual-attribute`::
++
+Default null: Password Expiration Time Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-expiration-time-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-policy-subentry-virtual-attribute`::
++
+Default null: Password Policy Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-policy-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`structural-object-class-virtual-attribute`::
++
+Default null: Structural Object Class Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-structural-object-class-virtual-attribute>> for the properties of this Virtual Attribute type.
+`subschema-subentry-virtual-attribute`::
++
+Default null: Subschema Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-subschema-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`user-defined-virtual-attribute`::
++
+Default null: User Defined Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-user-defined-virtual-attribute>> for the properties of this Virtual Attribute type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Virtual Attribute types:
+
+`collective-attribute-subentries-virtual-attribute`::
++
+Default {unit}: Collective Attribute Subentries Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entity-tag-virtual-attribute`::
++
+Default {unit}: Entity Tag Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entity-tag-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-dn-virtual-attribute`::
++
+Default {unit}: Entry DN Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-dn-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-uuid-virtual-attribute`::
++
+Default {unit}: Entry UUID Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-uuid-virtual-attribute>> for the properties of this Virtual Attribute type.
+`governing-structure-rule-virtual-attribute`::
++
+Default {unit}: Governing Structure Rule Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-governing-structure-rule-virtual-attribute>> for the properties of this Virtual Attribute type.
+`has-subordinates-virtual-attribute`::
++
+Default {unit}: Has Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-has-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`is-member-of-virtual-attribute`::
++
+Default {unit}: Is Member Of Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-is-member-of-virtual-attribute>> for the properties of this Virtual Attribute type.
+`member-virtual-attribute`::
++
+Default {unit}: Member Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-member-virtual-attribute>> for the properties of this Virtual Attribute type.
+`num-subordinates-virtual-attribute`::
++
+Default {unit}: Num Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-num-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-expiration-time-virtual-attribute`::
++
+Default {unit}: Password Expiration Time Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-expiration-time-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-policy-subentry-virtual-attribute`::
++
+Default {unit}: Password Policy Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-policy-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`structural-object-class-virtual-attribute`::
++
+Default {unit}: Structural Object Class Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-structural-object-class-virtual-attribute>> for the properties of this Virtual Attribute type.
+`subschema-subentry-virtual-attribute`::
++
+Default {unit}: Subschema Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-subschema-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`user-defined-virtual-attribute`::
++
+Default {unit}: User Defined Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-user-defined-virtual-attribute>> for the properties of this Virtual Attribute type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Virtual Attribute types:
+
+`collective-attribute-subentries-virtual-attribute`::
++
+Default {unit}: Collective Attribute Subentries Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entity-tag-virtual-attribute`::
++
+Default {unit}: Entity Tag Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entity-tag-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-dn-virtual-attribute`::
++
+Default {unit}: Entry DN Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-dn-virtual-attribute>> for the properties of this Virtual Attribute type.
+`entry-uuid-virtual-attribute`::
++
+Default {unit}: Entry UUID Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-entry-uuid-virtual-attribute>> for the properties of this Virtual Attribute type.
+`governing-structure-rule-virtual-attribute`::
++
+Default {unit}: Governing Structure Rule Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-governing-structure-rule-virtual-attribute>> for the properties of this Virtual Attribute type.
+`has-subordinates-virtual-attribute`::
++
+Default {unit}: Has Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-has-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`is-member-of-virtual-attribute`::
++
+Default {unit}: Is Member Of Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-is-member-of-virtual-attribute>> for the properties of this Virtual Attribute type.
+`member-virtual-attribute`::
++
+Default {unit}: Member Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-member-virtual-attribute>> for the properties of this Virtual Attribute type.
+`num-subordinates-virtual-attribute`::
++
+Default {unit}: Num Subordinates Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-num-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-expiration-time-virtual-attribute`::
++
+Default {unit}: Password Expiration Time Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-expiration-time-virtual-attribute>> for the properties of this Virtual Attribute type.
+`password-policy-subentry-virtual-attribute`::
++
+Default {unit}: Password Policy Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-password-policy-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`structural-object-class-virtual-attribute`::
++
+Default {unit}: Structural Object Class Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-structural-object-class-virtual-attribute>> for the properties of this Virtual Attribute type.
+`subschema-subentry-virtual-attribute`::
++
+Default {unit}: Subschema Subentry Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-subschema-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
+`user-defined-virtual-attribute`::
++
+Default {unit}: User Defined Virtual Attribute
++
+Enabled by default: true
++
+See  <<dsconfig-get-virtual-attribute-prop-user-defined-virtual-attribute>> for the properties of this Virtual Attribute type.
+====
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute]
+== Collective Attribute Subentries Virtual Attribute
+
+Virtual Attributes of type collective-attribute-subentries-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+collectiveAttributeSubentries
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.CollectiveAttributeSubentriesVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-entity-tag-virtual-attribute]
+== Entity Tag Virtual Attribute
+
+Virtual Attributes of type entity-tag-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+etag
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+checksum-algorithm::
+[open]
+====
+Description::
+The algorithm which should be used for calculating the entity tag checksum value. 
+
+
+Default Value::
+adler-32
+
+
+Allowed Values::
+
+
+adler-32::
+The Adler-32 checksum algorithm which is almost as reliable as a CRC-32 but can be computed much faster.
+
+crc-32::
+The CRC-32 checksum algorithm.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+real-overrides-virtual
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+excluded-attribute::
+[open]
+====
+Description::
+The list of attributes which should be ignored when calculating the entity tag checksum value. Certain attributes like &quot;ds-sync-hist&quot; may vary between replicas due to different purging schedules and should not be included in the checksum.
+
+
+Default Value::
+ds-sync-hist
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.EntityTagVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-entry-dn-virtual-attribute]
+== Entry DN Virtual Attribute
+
+Virtual Attributes of type entry-dn-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+entryDN
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.EntryDNVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-entry-uuid-virtual-attribute]
+== Entry UUID Virtual Attribute
+
+Virtual Attributes of type entry-uuid-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+entryUUID
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+real-overrides-virtual
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.EntryUUIDVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-governing-structure-rule-virtual-attribute]
+== Governing Structure Rule Virtual Attribute
+
+Virtual Attributes of type governing-structure-rule-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+governingStructureRule
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.GoverningSturctureRuleVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-has-subordinates-virtual-attribute]
+== Has Subordinates Virtual Attribute
+
+Virtual Attributes of type has-subordinates-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+hasSubordinates
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.HasSubordinatesVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-is-member-of-virtual-attribute]
+== Is Member Of Virtual Attribute
+
+Virtual Attributes of type is-member-of-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+isMemberOf
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.IsMemberOfVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-member-virtual-attribute]
+== Member Virtual Attribute
+
+Virtual Attributes of type member-virtual-attribute have the following properties:
+
+--
+
+
+allow-retrieving-membership::
+[open]
+====
+Description::
+Indicates whether to handle requests that request all values for the virtual attribute. This operation can be very expensive in some cases and is not consistent with the primary function of virtual static groups, which is to make it possible to use static group idioms to determine whether a given user is a member. If this attribute is set to false, attempts to retrieve the entire set of values receive an empty set, and only attempts to determine whether the attribute has a specific value or set of values (which is the primary anticipated use for virtual static groups) are handled properly.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.MemberVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-num-subordinates-virtual-attribute]
+== Num Subordinates Virtual Attribute
+
+Virtual Attributes of type num-subordinates-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+numSubordinates
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.NumSubordinatesVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-password-expiration-time-virtual-attribute]
+== Password Expiration Time Virtual Attribute
+
+Virtual Attributes of type password-expiration-time-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+ds-pwp-password-expiration-time
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.PasswordExpirationTimeVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-password-policy-subentry-virtual-attribute]
+== Password Policy Subentry Virtual Attribute
+
+Virtual Attributes of type password-policy-subentry-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+pwdPolicySubentry
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.PasswordPolicySubentryVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-structural-object-class-virtual-attribute]
+== Structural Object Class Virtual Attribute
+
+Virtual Attributes of type structural-object-class-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+structuralObjectClass
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.StructuralObjectClassVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-subschema-subentry-virtual-attribute]
+== Subschema Subentry Virtual Attribute
+
+Virtual Attributes of type subschema-subentry-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+subschemaSubentry
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+virtual-overrides-real
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.SubschemaSubentryVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-virtual-attribute-prop-user-defined-virtual-attribute]
+== User Defined Virtual Attribute
+
+Virtual Attributes of type user-defined-virtual-attribute have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. If no values are given, then the server generates virtual attributes anywhere in the server.
+
+
+Default Value::
+The location of the entry in the server is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+conflict-behavior::
+[open]
+====
+Description::
+Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute. 
+
+
+Default Value::
+real-overrides-virtual
+
+
+Allowed Values::
+
+
+merge-real-and-virtual::
+Indicates that the virtual attribute provider is to preserve any real values contained in the entry and merge them with the set of generated virtual values so that both the real and virtual values are used.
+
+real-overrides-virtual::
+Indicates that any real values contained in the entry are preserved and used, and virtual values are not generated.
+
+virtual-overrides-real::
+Indicates that the virtual attribute provider suppresses any real values contained in the entry and generates virtual values and uses them.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Virtual Attribute is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. If no values are given, then any entry is eligible to have the value generated. If one or more filters are specified, then only entries that match at least one of those filters are allowed to have the virtual attribute.
+
+
+Default Value::
+(objectClass=*)
+
+
+Allowed Values::
+Any valid search filter string.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-dn::
+[open]
+====
+Description::
+Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. If no values are given, then group membership is not taken into account when generating the virtual attribute. If one or more group DNs are specified, then only members of those groups are allowed to have the virtual attribute.
+
+
+Default Value::
+Group membership is not taken into account when determining whether an entry is eligible to use this virtual attribute.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the virtual attribute provider class that generates the attribute values. 
+
+
+Default Value::
+org.opends.server.extensions.UserDefinedVirtualAttributeProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.VirtualAttributeProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Virtual Attribute must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope associated with base DNs for entries that are eligible to use this virtual attribute. 
+
+
+Default Value::
+whole-subtree
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+value::
+[open]
+====
+Description::
+Specifies the values to be included in the virtual attribute. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

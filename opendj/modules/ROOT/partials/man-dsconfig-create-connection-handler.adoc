@@ -1,0 +1,2900 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-connection-handler]
+= dsconfig create-connection-handler(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-connection-handler - Creates Connection Handlers
+
+== Synopsis
+
+`dsconfig create-connection-handler` {options}
+
+[#dsconfig-create-connection-handler-description]
+== Description
+
+Creates Connection Handlers.
+
+
+
+[#dsconfig-create-connection-handler-options]
+== Options
+
+The `dsconfig create-connection-handler` command takes the following options:
+
+--
+`--handler-name {name}`::
+
+The name of the new Connection Handler.
++
+
+[open]
+====
+Connection Handler properties depend on the Connection Handler type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Connection Handler types:
+
+`http-connection-handler`::
++
+Default {name}: HTTP Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-http-connection-handler>> for the properties of this Connection Handler type.
+`jmx-connection-handler`::
++
+Default {name}: JMX Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-jmx-connection-handler>> for the properties of this Connection Handler type.
+`ldap-connection-handler`::
++
+Default {name}: LDAP Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-ldap-connection-handler>> for the properties of this Connection Handler type.
+`ldif-connection-handler`::
++
+Default {name}: LDIF Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-ldif-connection-handler>> for the properties of this Connection Handler type.
+`snmp-connection-handler`::
++
+Default {name}: SNMP Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-snmp-connection-handler>> for the properties of this Connection Handler type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name {name}` option.
+
+`-t | --type {type}`::
+
+The type of Connection Handler which should be created. The value for TYPE can be one of: custom | http | jmx | ldap | ldif | snmp.
++
+
+[open]
+====
+Connection Handler properties depend on the Connection Handler type, which depends on the {type} you provide.
+
+By default, OpenDJ directory server supports the following Connection Handler types:
+
+`http-connection-handler`::
++
+Default {type}: HTTP Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-http-connection-handler>> for the properties of this Connection Handler type.
+`jmx-connection-handler`::
++
+Default {type}: JMX Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-jmx-connection-handler>> for the properties of this Connection Handler type.
+`ldap-connection-handler`::
++
+Default {type}: LDAP Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-ldap-connection-handler>> for the properties of this Connection Handler type.
+`ldif-connection-handler`::
++
+Default {type}: LDIF Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-ldif-connection-handler>> for the properties of this Connection Handler type.
+`snmp-connection-handler`::
++
+Default {type}: SNMP Connection Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-connection-handler-snmp-connection-handler>> for the properties of this Connection Handler type.
+====
+
+--
+
+[#dsconfig-create-connection-handler-http-connection-handler]
+== HTTP Connection Handler
+
+Connection Handlers of type http-connection-handler have the following properties:
+
+--
+
+
+accept-backlog::
+[open]
+====
+Description::
+Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts. This is primarily an issue for cases in which a large number of connections are established to the server in a very short period of time (for example, a benchmark utility that creates a large number of client threads that each have their own connection to the server) and the connection handler is unable to keep up with the rate at which the new connections are established.
+
+
+Default Value::
+128
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+allow-tcp-reuse-address::
+[open]
+====
+Description::
+Indicates whether the HTTP Connection Handler should reuse socket descriptors. If enabled, the SO_REUSEADDR socket option is used on the server listen socket to potentially allow the reuse of socket descriptors for clients in a TIME_WAIT state. This may help the server avoid temporarily running out of socket descriptors in cases in which a very large number of short-lived connections have been established from the same client system.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+allowed-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask.
+
+
+Default Value::
+All clients with addresses that do not match an address on the deny list are allowed. If there is no deny list, then all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the size in bytes of the HTTP response message write buffer. This property specifies write buffer size allocated by the server for each client connection and used to buffer HTTP response messages data when writing.
+
+
+Default Value::
+4096 bytes
+
+
+Allowed Values::
+Lower value is 1.Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+denied-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are not allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask. If both allowed and denied client masks are defined and a client connection matches one or more masks in both lists, then the connection is denied. If only a denied list is specified, then any client not matching a mask in that list is allowed.
+
+
+Default Value::
+If an allow list is specified, then only clients with addresses on the allow list are allowed. Otherwise, all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Connection Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Connection Handler implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.HTTPConnectionHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ConnectionHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+keep-stats::
+[open]
+====
+Description::
+Indicates whether the HTTP Connection Handler should keep statistics. If enabled, the HTTP Connection Handler maintains statistics about the number and types of operations requested over HTTP and the amount of data sent and received.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this HTTP Connection Handler . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled when the HTTP Connection Handler is enabled and configured to use SSL.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the key manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-address::
+[open]
+====
+Description::
+Specifies the address or set of addresses on which this HTTP Connection Handler should listen for connections from HTTP clients. Multiple addresses may be provided as separate values for this attribute. If no values are provided, then the HTTP Connection Handler listens on all interfaces.
+
+
+Default Value::
+0.0.0.0
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-port::
+[open]
+====
+Description::
+Specifies the port number on which the HTTP Connection Handler will listen for connections from clients. Only a single port number may be provided.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+max-blocked-write-time-limit::
+[open]
+====
+Description::
+Specifies the maximum length of time that attempts to write data to HTTP clients should be allowed to block. If an attempt to write data to a client takes longer than this length of time, then the client connection is terminated.
+
+
+Default Value::
+2 minutes
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+max-concurrent-ops-per-connection::
+[open]
+====
+Description::
+Specifies the maximum number of internal operations that each HTTP client connection can execute concurrently. This property allow to limit the impact that each HTTP request can have on the whole server by limiting the number of internal operations that each HTTP request can execute concurrently. A value of 0 means that no limit is enforced.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+max-request-size::
+[open]
+====
+Description::
+Specifies the size in bytes of the largest HTTP request message that will be allowed by the HTTP Connection Handler. This can help prevent denial-of-service attacks by clients that indicate they send extremely large requests to the server causing it to attempt to allocate large amounts of memory.
+
+
+Default Value::
+5 megabytes
+
+
+Allowed Values::
+Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+num-request-handlers::
+[open]
+====
+Description::
+Specifies the number of request handlers that are used to read requests from clients. The HTTP Connection Handler uses one thread to accept new connections from clients, but uses one or more additional threads to read requests from existing client connections. This ensures that new requests are read efficiently and that the connection handler itself does not become a bottleneck when the server is under heavy load from many clients at the same time.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+ssl-cert-nickname::
+[open]
+====
+Description::
+Specifies the nicknames (also called the aliases) of the keys or key pairs that the HTTP Connection Handler should use when performing SSL communication. The property can be used multiple times (referencing different nicknames) when server certificates with different public key algorithms are used in parallel (for example, RSA, DSA, and ECC-based algorithms). When a nickname refers to an asymmetric (public/private) key pair, the nickname for the public key certificate and associated private key entry must match exactly. A single nickname is used to retrieve both the public key and the private key. This is only applicable when the HTTP Connection Handler is configured to use SSL.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cipher-suite::
+[open]
+====
+Description::
+Specifies the names of the SSL cipher suites that are allowed for use in SSL communication. 
+
+
+Default Value::
+Uses the default set of SSL cipher suites provided by the server's JVM.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but will only impact new SSL/TLS-based sessions created after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-client-auth-policy::
+[open]
+====
+Description::
+Specifies the policy that the HTTP Connection Handler should use regarding client SSL certificates. Clients can use the SASL EXTERNAL mechanism only if the policy is set to &quot;optional&quot; or &quot;required&quot;. This is only applicable if clients are allowed to use SSL.
+
+
+Default Value::
+optional
+
+
+Allowed Values::
+
+
+disabled::
+Clients must not provide their own certificates when performing SSL negotiation.
+
+optional::
+Clients are requested to provide their own certificates when performing SSL negotiation. The connection is nevertheless accepted if the client does not provide a certificate.
+
+required::
+Clients are required to provide their own certificates when performing SSL negotiation and are refused access if they do not provide a certificate.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-protocol::
+[open]
+====
+Description::
+Specifies the names of the SSL protocols that are allowed for use in SSL communication. 
+
+
+Default Value::
+Uses the default set of SSL protocols provided by the server's JVM.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only impact new SSL/TLS-based sessions created after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that should be used with the HTTP Connection Handler . 
+
+
+Default Value::
+Use the trust manager provided by the JVM.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled when the HTTP Connection Handler is enabled and configured to use SSL.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the trust manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-ssl::
+[open]
+====
+Description::
+Indicates whether the HTTP Connection Handler should use SSL. If enabled, the HTTP Connection Handler will use SSL to encrypt communication with the clients.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-tcp-keep-alive::
+[open]
+====
+Description::
+Indicates whether the HTTP Connection Handler should use TCP keep-alive. If enabled, the SO_KEEPALIVE socket option is used to indicate that TCP keepalive messages should periodically be sent to the client to verify that the associated connection is still valid. This may also help prevent cases in which intermediate network hardware could silently drop an otherwise idle client connection, provided that the keepalive interval configured in the underlying operating system is smaller than the timeout enforced by the network hardware.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+use-tcp-no-delay::
+[open]
+====
+Description::
+Indicates whether the HTTP Connection Handler should use TCP no-delay. If enabled, the TCP_NODELAY socket option is used to ensure that response messages to the client are sent immediately rather than potentially waiting to determine whether additional response messages can be sent in the same packet. In most cases, using the TCP_NODELAY socket option provides better performance and lower response times, but disabling it may help for some cases in which the server sends a large number of entries to a client in response to a search request.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-connection-handler-jmx-connection-handler]
+== JMX Connection Handler
+
+Connection Handlers of type jmx-connection-handler have the following properties:
+
+--
+
+
+allowed-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask.
+
+
+Default Value::
+All clients with addresses that do not match an address on the deny list are allowed. If there is no deny list, then all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+denied-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are not allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask. If both allowed and denied client masks are defined and a client connection matches one or more masks in both lists, then the connection is denied. If only a denied list is specified, then any client not matching a mask in that list is allowed.
+
+
+Default Value::
+If an allow list is specified, then only clients with addresses on the allow list are allowed. Otherwise, all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Connection Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the JMX Connection Handler implementation. 
+
+
+Default Value::
+org.opends.server.protocols.jmx.JmxConnectionHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ConnectionHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this JMX Connection Handler . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled when the JMX Connection Handler is enabled and configured to use SSL.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the key manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-address::
+[open]
+====
+Description::
+Specifies the address on which this JMX Connection Handler should listen for connections from JMX clients. If no value is provided, then the JMX Connection Handler listens on all interfaces.
+
+
+Default Value::
+0.0.0.0
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-port::
+[open]
+====
+Description::
+Specifies the port number on which the JMX Connection Handler will listen for connections from clients. Only a single port number may be provided.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rmi-port::
+[open]
+====
+Description::
+Specifies the port number on which the JMX RMI service will listen for connections from clients. A value of 0 indicates the service to choose a port of its own. If the value provided is different than 0, the value will be used as the RMI port. Otherwise, the RMI service will choose a port of its own.
+
+
+Default Value::
+0
+
+
+Allowed Values::
+An integer value. Lower value is 0. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cert-nickname::
+[open]
+====
+Description::
+Specifies the nicknames (also called the aliases) of the keys or key pairs that the JMX Connection Handler should use when performing SSL communication. The property can be used multiple times (referencing different nicknames) when server certificates with different public key algorithms are used in parallel (for example, RSA, DSA, and ECC-based algorithms). When a nickname refers to an asymmetric (public/private) key pair, the nickname for the public key certificate and associated private key entry must match exactly. A single nickname is used to retrieve both the public key and the private key. This is only applicable when the JMX Connection Handler is configured to use SSL.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-ssl::
+[open]
+====
+Description::
+Indicates whether the JMX Connection Handler should use SSL. If enabled, the JMX Connection Handler will use SSL to encrypt communication with the clients.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-connection-handler-ldap-connection-handler]
+== LDAP Connection Handler
+
+Connection Handlers of type ldap-connection-handler have the following properties:
+
+--
+
+
+accept-backlog::
+[open]
+====
+Description::
+Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts. This is primarily an issue for cases in which a large number of connections are established to the server in a very short period of time (for example, a benchmark utility that creates a large number of client threads that each have their own connection to the server) and the connection handler is unable to keep up with the rate at which the new connections are established.
+
+
+Default Value::
+128
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+allow-ldap-v2::
+[open]
+====
+Description::
+Indicates whether connections from LDAPv2 clients are allowed. If LDAPv2 clients are allowed, then only a minimal degree of special support are provided for them to ensure that LDAPv3-specific protocol elements (for example, Configuration Guide 25 controls, extended response messages, intermediate response messages, referrals) are not sent to an LDAPv2 client.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+allow-start-tls::
+[open]
+====
+Description::
+Indicates whether clients are allowed to use StartTLS. If enabled, the LDAP Connection Handler allows clients to use the StartTLS extended operation to initiate secure communication over an otherwise insecure channel. Note that this is only allowed if the LDAP Connection Handler is not configured to use SSL, and if the server is configured with a valid key manager provider and a valid trust manager provider.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+allow-tcp-reuse-address::
+[open]
+====
+Description::
+Indicates whether the LDAP Connection Handler should reuse socket descriptors. If enabled, the SO_REUSEADDR socket option is used on the server listen socket to potentially allow the reuse of socket descriptors for clients in a TIME_WAIT state. This may help the server avoid temporarily running out of socket descriptors in cases in which a very large number of short-lived connections have been established from the same client system.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+allowed-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask.
+
+
+Default Value::
+All clients with addresses that do not match an address on the deny list are allowed. If there is no deny list, then all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+buffer-size::
+[open]
+====
+Description::
+Specifies the size in bytes of the LDAP response message write buffer. This property specifies write buffer size allocated by the server for each client connection and used to buffer LDAP response messages data when writing.
+
+
+Default Value::
+4096 bytes
+
+
+Allowed Values::
+Lower value is 1.Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+denied-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are not allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask. If both allowed and denied client masks are defined and a client connection matches one or more masks in both lists, then the connection is denied. If only a denied list is specified, then any client not matching a mask in that list is allowed.
+
+
+Default Value::
+If an allow list is specified, then only clients with addresses on the allow list are allowed. Otherwise, all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Connection Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the LDAP Connection Handler implementation. 
+
+
+Default Value::
+org.opends.server.protocols.ldap.LDAPConnectionHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ConnectionHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+keep-stats::
+[open]
+====
+Description::
+Indicates whether the LDAP Connection Handler should keep statistics. If enabled, the LDAP Connection Handler maintains statistics about the number and types of operations requested over LDAP and the amount of data sent and received.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this LDAP Connection Handler . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled when the LDAP Connection Handler is enabled and configured to use SSL or StartTLS.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the key manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-address::
+[open]
+====
+Description::
+Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients. Multiple addresses may be provided as separate values for this attribute. If no values are provided, then the LDAP Connection Handler listens on all interfaces.
+
+
+Default Value::
+0.0.0.0
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-port::
+[open]
+====
+Description::
+Specifies the port number on which the LDAP Connection Handler will listen for connections from clients. Only a single port number may be provided.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+max-blocked-write-time-limit::
+[open]
+====
+Description::
+Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block. If an attempt to write data to a client takes longer than this length of time, then the client connection is terminated.
+
+
+Default Value::
+2 minutes
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+max-request-size::
+[open]
+====
+Description::
+Specifies the size in bytes of the largest LDAP request message that will be allowed by this LDAP Connection handler. This property is analogous to the maxBERSize configuration attribute of the Sun Java System Directory Server. This can help prevent denial-of-service attacks by clients that indicate they send extremely large requests to the server causing it to attempt to allocate large amounts of memory.
+
+
+Default Value::
+5 megabytes
+
+
+Allowed Values::
+Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+num-request-handlers::
+[open]
+====
+Description::
+Specifies the number of request handlers that are used to read requests from clients. The LDAP Connection Handler uses one thread to accept new connections from clients, but uses one or more additional threads to read requests from existing client connections. This ensures that new requests are read efficiently and that the connection handler itself does not become a bottleneck when the server is under heavy load from many clients at the same time.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+send-rejection-notice::
+[open]
+====
+Description::
+Indicates whether the LDAP Connection Handler should send a notice of disconnection extended response message to the client if a new connection is rejected for some reason. The extended response message may provide an explanation indicating the reason that the connection was rejected.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+ssl-cert-nickname::
+[open]
+====
+Description::
+Specifies the nicknames (also called the aliases) of the keys or key pairs that the LDAP Connection Handler should use when performing SSL communication. The property can be used multiple times (referencing different nicknames) when server certificates with different public key algorithms are used in parallel (for example, RSA, DSA, and ECC-based algorithms). When a nickname refers to an asymmetric (public/private) key pair, the nickname for the public key certificate and associated private key entry must match exactly. A single nickname is used to retrieve both the public key and the private key. This is only applicable when the LDAP Connection Handler is configured to use SSL.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cipher-suite::
+[open]
+====
+Description::
+Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. 
+
+
+Default Value::
+Uses the default set of SSL cipher suites provided by the server's JVM.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but will only impact new SSL/TLS-based sessions created after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-client-auth-policy::
+[open]
+====
+Description::
+Specifies the policy that the LDAP Connection Handler should use regarding client SSL certificates. Clients can use the SASL EXTERNAL mechanism only if the policy is set to &quot;optional&quot; or &quot;required&quot;. This is only applicable if clients are allowed to use SSL.
+
+
+Default Value::
+optional
+
+
+Allowed Values::
+
+
+disabled::
+Clients must not provide their own certificates when performing SSL negotiation.
+
+optional::
+Clients are requested to provide their own certificates when performing SSL negotiation. The connection is nevertheless accepted if the client does not provide a certificate.
+
+required::
+Clients are required to provide their own certificates when performing SSL negotiation and are refused access if they do not provide a certificate.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-protocol::
+[open]
+====
+Description::
+Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. 
+
+
+Default Value::
+Uses the default set of SSL protocols provided by the server's JVM.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only impact new SSL/TLS-based sessions created after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that should be used with the LDAP Connection Handler . 
+
+
+Default Value::
+Use the trust manager provided by the JVM.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled when the LDAP Connection Handler is enabled and configured to use SSL or StartTLS.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent attempts to access the trust manager provider for associated client connections.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-ssl::
+[open]
+====
+Description::
+Indicates whether the LDAP Connection Handler should use SSL. If enabled, the LDAP Connection Handler will use SSL to encrypt communication with the clients.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+use-tcp-keep-alive::
+[open]
+====
+Description::
+Indicates whether the LDAP Connection Handler should use TCP keep-alive. If enabled, the SO_KEEPALIVE socket option is used to indicate that TCP keepalive messages should periodically be sent to the client to verify that the associated connection is still valid. This may also help prevent cases in which intermediate network hardware could silently drop an otherwise idle client connection, provided that the keepalive interval configured in the underlying operating system is smaller than the timeout enforced by the network hardware.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+use-tcp-no-delay::
+[open]
+====
+Description::
+Indicates whether the LDAP Connection Handler should use TCP no-delay. If enabled, the TCP_NODELAY socket option is used to ensure that response messages to the client are sent immediately rather than potentially waiting to determine whether additional response messages can be sent in the same packet. In most cases, using the TCP_NODELAY socket option provides better performance and lower response times, but disabling it may help for some cases in which the server sends a large number of entries to a client in response to a search request.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-connection-handler-ldif-connection-handler]
+== LDIF Connection Handler
+
+Connection Handlers of type ldif-connection-handler have the following properties:
+
+--
+
+
+allowed-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask.
+
+
+Default Value::
+All clients with addresses that do not match an address on the deny list are allowed. If there is no deny list, then all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+denied-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are not allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask. If both allowed and denied client masks are defined and a client connection matches one or more masks in both lists, then the connection is denied. If only a denied list is specified, then any client not matching a mask in that list is allowed.
+
+
+Default Value::
+If an allow list is specified, then only clients with addresses on the allow list are allowed. Otherwise, all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Connection Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the LDIF Connection Handler implementation. 
+
+
+Default Value::
+org.opends.server.protocols.LDIFConnectionHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ConnectionHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+ldif-directory::
+[open]
+====
+Description::
+Specifies the path to the directory in which the LDIF files should be placed. 
+
+
+Default Value::
+config/auto-process-ldif
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+poll-interval::
+[open]
+====
+Description::
+Specifies how frequently the LDIF connection handler should check the LDIF directory to determine whether a new LDIF file has been added. 
+
+
+Default Value::
+5 seconds
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-connection-handler-snmp-connection-handler]
+== SNMP Connection Handler
+
+Connection Handlers of type snmp-connection-handler have the following properties:
+
+--
+
+
+allowed-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask.
+
+
+Default Value::
+All clients with addresses that do not match an address on the deny list are allowed. If there is no deny list, then all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+allowed-manager::
+[open]
+====
+Description::
+Specifies the hosts of the managers to be granted the access rights. This property is required for SNMP v1 and v2 security configuration. An asterisk (*) opens access to all managers. 
+
+
+Default Value::
+*
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+allowed-user::
+[open]
+====
+Description::
+Specifies the users to be granted the access rights. This property is required for SNMP v3 security configuration. An asterisk (*) opens access to all users. 
+
+
+Default Value::
+*
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+community::
+[open]
+====
+Description::
+Specifies the v1,v2 community or the v3 context name allowed to access the MIB 2605 monitoring information or the USM MIB. The mapping between &quot;community&quot; and &quot;context name&quot; is set. 
+
+
+Default Value::
+OpenDJ
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+denied-client::
+[open]
+====
+Description::
+Specifies a set of host names or address masks that determine the clients that are not allowed to establish connections to this Connection Handler. Valid values include a host name, a fully qualified domain name, a domain name, an IP address, or a subnetwork with subnetwork mask. If both allowed and denied client masks are defined and a client connection matches one or more masks in both lists, then the connection is denied. If only a denied list is specified, then any client not matching a mask in that list is allowed.
+
+
+Default Value::
+If an allow list is specified, then only clients with addresses on the allow list are allowed. Otherwise, all clients are allowed.
+
+
+Allowed Values::
+An IP address mask
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately and do not interfere with connections that may have already been established.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Connection Handler is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SNMP Connection Handler implementation. 
+
+
+Default Value::
+org.opends.server.snmp.SNMPConnectionHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ConnectionHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+listen-address::
+[open]
+====
+Description::
+Specifies the address or set of addresses on which this SNMP Connection Handler should listen for connections from SNMP clients. Multiple addresses may be provided as separate values for this attribute. If no values are provided, then the SNMP Connection Handler listens on all interfaces.
+
+
+Default Value::
+0.0.0.0
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+listen-port::
+[open]
+====
+Description::
+Specifies the port number on which the SNMP Connection Handler will listen for connections from clients. Only a single port number may be provided.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+opendmk-jarfile::
+[open]
+====
+Description::
+Indicates the OpenDMK runtime jar file location 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+registered-mbean::
+[open]
+====
+Description::
+Indicates whether the SNMP objects have to be registered in the directory server MBeanServer or not allowing to access SNMP Objects with RMI connector if enabled. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+security-agent-file::
+[open]
+====
+Description::
+Specifies the USM security configuration to receive authenticated only SNMP requests. 
+
+
+Default Value::
+config/snmp/security/opendj-snmp.security
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+security-level::
+[open]
+====
+Description::
+Specifies the type of security level : NoAuthNoPriv : No security mechanisms activated, AuthNoPriv : Authentication activated with no privacy, AuthPriv : Authentication with privacy activated. This property is required for SNMP V3 security configuration. 
+
+
+Default Value::
+authnopriv
+
+
+Allowed Values::
+
+
+authnopriv::
+Authentication activated with no privacy.
+
+authpriv::
+Authentication with privacy activated.
+
+noauthnopriv::
+No security mechanisms activated.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trap-port::
+[open]
+====
+Description::
+Specifies the port to use to send SNMP Traps. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+traps-community::
+[open]
+====
+Description::
+Specifies the community string that must be included in the traps sent to define managers (trap-destinations). This property is used in the context of SNMP v1, v2 and v3. 
+
+
+Default Value::
+OpenDJ
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+traps-destination::
+[open]
+====
+Description::
+Specifies the hosts to which V1 traps will be sent. V1 Traps are sent to every host listed. If this list is empty, V1 traps are sent to &quot;localhost&quot;. Each host in the list must be identifed by its name or complete IP Addess.
+
+
+Default Value::
+If the list is empty, V1 traps are sent to "localhost".
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

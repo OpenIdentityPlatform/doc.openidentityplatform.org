@@ -1,0 +1,1886 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-plugin-root-prop]
+= dsconfig get-plugin-root-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-plugin-root-prop - Shows Plugin Root properties
+
+== Synopsis
+
+`dsconfig get-plugin-root-prop` {options}
+
+[#dsconfig-get-plugin-root-prop-description]
+== Description
+
+Shows Plugin Root properties.
+
+
+
+[#dsconfig-get-plugin-root-prop-options]
+== Options
+
+The `dsconfig get-plugin-root-prop` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Plugin Root properties depend on the Plugin Root type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Plugin Root types:
+
+`plugin-root`::
++
+Default {property}: Plugin Root
++
+Enabled by default: false
++
+See  <<dsconfig-get-plugin-root-prop-plugin-root>> for the properties of this Plugin Root type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Plugin Root properties depend on the Plugin Root type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Plugin Root types:
+
+`plugin-root`::
++
+Default null: Plugin Root
++
+Enabled by default: false
++
+See  <<dsconfig-get-plugin-root-prop-plugin-root>> for the properties of this Plugin Root type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Plugin Root properties depend on the Plugin Root type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Plugin Root types:
+
+`plugin-root`::
++
+Default {unit}: Plugin Root
++
+Enabled by default: false
++
+See  <<dsconfig-get-plugin-root-prop-plugin-root>> for the properties of this Plugin Root type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Plugin Root properties depend on the Plugin Root type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Plugin Root types:
+
+`plugin-root`::
++
+Default {unit}: Plugin Root
++
+Enabled by default: false
++
+See  <<dsconfig-get-plugin-root-prop-plugin-root>> for the properties of this Plugin Root type.
+====
+
+--
+
+[#dsconfig-get-plugin-root-prop-plugin-root]
+== Plugin Root
+
+Plugin Roots of type plugin-root have the following properties:
+
+--
+
+
+plugin-order-intermediate-response::
+[open]
+====
+Description::
+Specifies the order in which intermediate response plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which intermediate response plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-ldif-export::
+[open]
+====
+Description::
+Specifies the order in which LDIF export plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which LDIF export plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-ldif-import::
+[open]
+====
+Description::
+Specifies the order in which LDIF import plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which LDIF import plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-ldif-import-begin::
+[open]
+====
+Description::
+Specifies the order in which LDIF import begin plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which LDIF import begin plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-ldif-import-end::
+[open]
+====
+Description::
+Specifies the order in which LDIF import end plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which LDIF import end plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-connect::
+[open]
+====
+Description::
+Specifies the order in which post-connect plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-connect plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-disconnect::
+[open]
+====
+Description::
+Specifies the order in which post-disconnect plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-disconnect plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-abandon::
+[open]
+====
+Description::
+Specifies the order in which post-operation abandon plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation abandon plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-add::
+[open]
+====
+Description::
+Specifies the order in which post-operation add plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation add plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-bind::
+[open]
+====
+Description::
+Specifies the order in which post-operation bind plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation bind plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-compare::
+[open]
+====
+Description::
+Specifies the order in which post-operation compare plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation compare plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-delete::
+[open]
+====
+Description::
+Specifies the order in which post-operation delete plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation delete plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-extended::
+[open]
+====
+Description::
+Specifies the order in which post-operation extended operation plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation extended operation plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-modify::
+[open]
+====
+Description::
+Specifies the order in which post-operation modify plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation modify plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-modify-dn::
+[open]
+====
+Description::
+Specifies the order in which post-operation modify DN plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation modify DN plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-search::
+[open]
+====
+Description::
+Specifies the order in which post-operation search plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation search plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-operation-unbind::
+[open]
+====
+Description::
+Specifies the order in which post-operation unbind plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-operation unbind plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-add::
+[open]
+====
+Description::
+Specifies the order in which post-response add plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response add plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-bind::
+[open]
+====
+Description::
+Specifies the order in which post-response bind plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response bind plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-compare::
+[open]
+====
+Description::
+Specifies the order in which post-response compare plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response compare plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-delete::
+[open]
+====
+Description::
+Specifies the order in which post-response delete plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response delete plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-extended::
+[open]
+====
+Description::
+Specifies the order in which post-response extended operation plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response extended operation plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-modify::
+[open]
+====
+Description::
+Specifies the order in which post-response modify plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response modify plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-modify-dn::
+[open]
+====
+Description::
+Specifies the order in which post-response modify DN plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response modify DN plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-response-search::
+[open]
+====
+Description::
+Specifies the order in which post-response search plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-response search plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-synchronization-add::
+[open]
+====
+Description::
+Specifies the order in which post-synchronization add plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-synchronization add plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-synchronization-delete::
+[open]
+====
+Description::
+Specifies the order in which post-synchronization delete plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-synchronization delete plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-synchronization-modify::
+[open]
+====
+Description::
+Specifies the order in which post-synchronization modify plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-synchronization modify plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-post-synchronization-modify-dn::
+[open]
+====
+Description::
+Specifies the order in which post-synchronization modify DN plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which post-synchronization modify DN plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-add::
+[open]
+====
+Description::
+Specifies the order in which pre-operation add plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation add plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-bind::
+[open]
+====
+Description::
+Specifies the order in which pre-operation bind plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation bind plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-compare::
+[open]
+====
+Description::
+Specifies the order in which pre-operation compare plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation compare plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-delete::
+[open]
+====
+Description::
+Specifies the order in which pre-operation delete plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation delete plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-extended::
+[open]
+====
+Description::
+Specifies the order in which pre-operation extended operation plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation extended operation plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-modify::
+[open]
+====
+Description::
+Specifies the order in which pre-operation modify plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation modify plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-modify-dn::
+[open]
+====
+Description::
+Specifies the order in which pre-operation modify DN plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation modify DN plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-operation-search::
+[open]
+====
+Description::
+Specifies the order in which pre-operation search plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-operation searc plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-abandon::
+[open]
+====
+Description::
+Specifies the order in which pre-parse abandon plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse abandon plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-add::
+[open]
+====
+Description::
+Specifies the order in which pre-parse add plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse add plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-bind::
+[open]
+====
+Description::
+Specifies the order in which pre-parse bind plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse bind plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-compare::
+[open]
+====
+Description::
+Specifies the order in which pre-parse compare plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse compare plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-delete::
+[open]
+====
+Description::
+Specifies the order in which pre-parse delete plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse delete plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-extended::
+[open]
+====
+Description::
+Specifies the order in which pre-parse extended operation plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse extended operation plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-modify::
+[open]
+====
+Description::
+Specifies the order in which pre-parse modify plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse modify plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-modify-dn::
+[open]
+====
+Description::
+Specifies the order in which pre-parse modify DN plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse modify DN plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-search::
+[open]
+====
+Description::
+Specifies the order in which pre-parse search plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse search plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-pre-parse-unbind::
+[open]
+====
+Description::
+Specifies the order in which pre-parse unbind plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which pre-parse unbind plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-search-result-entry::
+[open]
+====
+Description::
+Specifies the order in which search result entry plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which search result entry plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-search-result-reference::
+[open]
+====
+Description::
+Specifies the order in which search result reference plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which search result reference plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-shutdown::
+[open]
+====
+Description::
+Specifies the order in which shutdown plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which shutdown plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-startup::
+[open]
+====
+Description::
+Specifies the order in which startup plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which startup plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-subordinate-delete::
+[open]
+====
+Description::
+Specifies the order in which subordinate delete plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which subordinate delete plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-order-subordinate-modify-dn::
+[open]
+====
+Description::
+Specifies the order in which subordinate modify DN plug-ins are to be loaded and invoked. The value is a comma-delimited list of plug-in names (where the plug-in name is the RDN value from the plug-in configuration entry DN). The list can include at most one asterisk to indicate the position of any unspecified plug-in (and the relative order of those unspecified plug-ins is undefined).
+
+
+Default Value::
+The order in which subordinate modify DN plug-ins are loaded and invoked is undefined.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

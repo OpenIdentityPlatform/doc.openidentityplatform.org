@@ -1,0 +1,851 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-key-manager-provider]
+= dsconfig create-key-manager-provider(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-key-manager-provider - Creates Key Manager Providers
+
+== Synopsis
+
+`dsconfig create-key-manager-provider` {options}
+
+[#dsconfig-create-key-manager-provider-description]
+== Description
+
+Creates Key Manager Providers.
+
+
+
+[#dsconfig-create-key-manager-provider-options]
+== Options
+
+The `dsconfig create-key-manager-provider` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the new Key Manager Provider.
++
+
+[open]
+====
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Key Manager Provider types:
+
+`file-based-key-manager-provider`::
++
+Default {name}: File Based Key Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-create-key-manager-provider-file-based-key-manager-provider>> for the properties of this Key Manager Provider type.
+`ldap-key-manager-provider`::
++
+Default {name}: LDAP Key Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-create-key-manager-provider-ldap-key-manager-provider>> for the properties of this Key Manager Provider type.
+`pkcs11-key-manager-provider`::
++
+Default {name}: PKCS11 Key Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-create-key-manager-provider-pkcs11-key-manager-provider>> for the properties of this Key Manager Provider type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name {name}` option.
+
+`-t | --type {type}`::
+
+The type of Key Manager Provider which should be created. The value for TYPE can be one of: custom | file-based | ldap | pkcs11.
++
+
+[open]
+====
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the {type} you provide.
+
+By default, OpenDJ directory server supports the following Key Manager Provider types:
+
+`file-based-key-manager-provider`::
++
+Default {type}: File Based Key Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-create-key-manager-provider-file-based-key-manager-provider>> for the properties of this Key Manager Provider type.
+`ldap-key-manager-provider`::
++
+Default {type}: LDAP Key Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-create-key-manager-provider-ldap-key-manager-provider>> for the properties of this Key Manager Provider type.
+`pkcs11-key-manager-provider`::
++
+Default {type}: PKCS11 Key Manager Provider
++
+Enabled by default: true
++
+See  <<dsconfig-create-key-manager-provider-pkcs11-key-manager-provider>> for the properties of this Key Manager Provider type.
+====
+
+--
+
+[#dsconfig-create-key-manager-provider-file-based-key-manager-provider]
+== File Based Key Manager Provider
+
+Key Manager Providers of type file-based-key-manager-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Key Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the File Based Key Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.FileBasedKeyManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.KeyManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Key Manager Provider must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-store-file::
+[open]
+====
+Description::
+Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the OpenDJ instance root. Changes to this property will take effect the next time that the key manager is accessed.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin::
+[open]
+====
+Description::
+Specifies the clear-text PIN needed to access the File Based Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-environment-variable::
+[open]
+====
+Description::
+Specifies the name of the environment variable that contains the clear-text PIN needed to access the File Based Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of a defined environment variable that contains the clear-text PIN required to access the contents of the key store.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-property::
+[open]
+====
+Description::
+Specifies the name of the Java property that contains the clear-text PIN needed to access the File Based Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of a defined Java property.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the File Based Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-type::
+[open]
+====
+Description::
+Specifies the format for the data in the key store file. Valid values should always include &apos;JKS&apos; and &apos;PKCS12&apos;, but different implementations may allow other values as well. If no value is provided, the JVM-default value is used. Changes to this configuration attribute will take effect the next time that the key manager is accessed.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Any key store format supported by the Java runtime environment.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-key-manager-provider-ldap-key-manager-provider]
+== LDAP Key Manager Provider
+
+Key Manager Providers of type ldap-key-manager-provider have the following properties:
+
+--
+
+
+base-dn::
+[open]
+====
+Description::
+The base DN beneath which LDAP key store entries are located. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Key Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the LDAP Key Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.LDAPKeyManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.KeyManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Key Manager Provider must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-store-pin::
+[open]
+====
+Description::
+Specifies the clear-text PIN needed to access the LDAP Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-environment-variable::
+[open]
+====
+Description::
+Specifies the name of the environment variable that contains the clear-text PIN needed to access the LDAP Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of a defined environment variable that contains the clear-text PIN required to access the contents of the key store.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the LDAP Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-property::
+[open]
+====
+Description::
+Specifies the name of the Java property that contains the clear-text PIN needed to access the LDAP Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of a defined Java property.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the LDAP Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-key-manager-provider-pkcs11-key-manager-provider]
+== PKCS11 Key Manager Provider
+
+Key Manager Providers of type pkcs11-key-manager-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Key Manager Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+The fully-qualified name of the Java class that provides the PKCS11 Key Manager Provider implementation. 
+
+
+Default Value::
+org.opends.server.extensions.PKCS11KeyManagerProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.KeyManagerProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Key Manager Provider must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-store-pin::
+[open]
+====
+Description::
+Specifies the clear-text PIN needed to access the PKCS11 Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-environment-variable::
+[open]
+====
+Description::
+Specifies the name of the environment variable that contains the clear-text PIN needed to access the PKCS11 Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of a defined environment variable that contains the clear-text PIN required to access the contents of the key store.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-file::
+[open]
+====
+Description::
+Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the PKCS11 Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+key-store-pin-property::
+[open]
+====
+Description::
+Specifies the name of the Java property that contains the clear-text PIN needed to access the PKCS11 Key Manager Provider . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of a defined Java property.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property will take effect the next time that the PKCS11 Key Manager Provider is accessed.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

@@ -1,0 +1,310 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#ldapsearch-1]
+= ldapsearch(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+ldapsearch - perform LDAP search operations
+
+== Synopsis
+`ldapsearch` `filter [attributes ...]`
+
+[#ldapsearch-description]
+== Description
+
+This utility can be used to perform LDAP search operations in the Directory Server.
+
+
+
+
+[#ldapsearch-options]
+== Options
+
+The `ldapsearch` command takes the following options:
+
+.Command options:
+
+--
+`-a | --dereferencePolicy {dereferencePolicy}`::
+Alias dereference policy ('never', 'always', 'search', or 'find').
++
+Default: never
++
+
+`-A | --typesOnly`::
+Only retrieve attribute names but not their values.
++
+Default: false
++
+
+`--assertionFilter {filter}`::
+Use the LDAP assertion control with the provided filter.
++
+
+`-b | --baseDN {baseDN}`::
+Search base DN.
++
+
+`-c | --continueOnError`::
+Continue processing even if there are errors.
++
+Default: false
++
+
+`-C | --persistentSearch ps[:changetype[:changesonly[:entrychgcontrols]]]`::
+Use the persistent search control.
++
+include::./_description-psearch-info.adoc[]
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`--countEntries`::
+Count the number of entries returned by the server.
++
+Default: false
++
+
+`-e | --getEffectiveRightsAttribute {attribute}`::
+Specifies geteffectiverights control specific attribute list.
++
+
+`-g | --getEffectiveRightsAuthzid {authzID}`::
+Use geteffectiverights control with the provided authzid.
++
+
+`-G | --virtualListView {before:after:index:count | before:after:value}`::
+Use the virtual list view control to retrieve the specified results page.
++
+
+`-J | --control {controloid[:criticality[:value|::b64value|:&lt;filePath]]}`::
+Use a request control with the provided information.
++
+include::./_variablelist-ldap-controls.adoc[]
+`-l | --timeLimit {timeLimit}`::
+Maximum length of time in seconds to allow for the search.
++
+Default: 0
++
+
+`--matchedValuesFilter {filter}`::
+Use the LDAP matched values control with the provided filter.
++
+
+`-n | --dry-run`::
+Show what would be done but do not perform any operation.
++
+Default: false
++
+
+`-s | --searchScope {searchScope}`::
+Search scope ('base', 'one', 'sub', or 'subordinates'). Note: 'subordinates' is an LDAP extension that might not work with all LDAP servers.
++
+Default: sub
++
+
+`-S | --sortOrder {sortOrder}`::
+Sort the results using the provided sort order.
++
+
+`--simplePageSize {numEntries}`::
+Use the simple paged results control with the given page size.
++
+Default: 1000
++
+
+`--subEntries`::
+Use subentries control to specify that subentries are visible and normal entries are not.
++
+Default: false
++
+
+`-Y | --proxyAs {authzID}`::
+Use the proxied authorization control with the given authorization ID.
++
+
+`-z | --sizeLimit {sizeLimit}`::
+Maximum number of entries to return from the search.
++
+Default: 0
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+Default: 
++
+
+`-E | --reportAuthzID`::
+Use the authorization identity control.
++
+Default: false
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server port number.
++
+Default: 389
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-q | --useStartTLS`::
+Use StartTLS to secure communication with the server.
++
+Default: false
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`--usePasswordPolicyControl`::
+Use the password policy request control.
++
+Default: false
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+`-Z | --useSSL`::
+Use SSL for secure communication with the server.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-t | --wrapColumn {wrapColumn}`::
+Maximum length of an output line (0 for no wrapping).
++
+Default: 0
++
+
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_filters.adoc[]
+
+include::./_attributes.adoc[]
+
+include::./_exit-codes-0-ldap-89.adoc[]
+
+include::./_files.adoc[]
+
+include::./_ldapsearch-examples.adoc[]
+
+

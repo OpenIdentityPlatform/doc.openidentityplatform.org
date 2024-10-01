@@ -1,0 +1,126 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#ldifsearch-1]
+= ldifsearch(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+ldifsearch - search LDIF with LDAP filters
+
+== Synopsis
+`ldifsearch` `source filter [attributes ...]`
+
+[#ldifsearch-description]
+== Description
+
+This utility can be used to perform search operations against entries contained in an LDIF file.
+ If standard input is used to specify source, end your input with EOF (Ctrl+D on UNIX, Ctrl+Z on Windows).
+
+
+
+
+[#ldifsearch-options]
+== Options
+
+The `ldifsearch` command takes the following options:
+
+.Command options:
+
+--
+`-A | --typesOnly`::
+Only retrieve attribute names but not their values.
++
+Default: false
++
+
+`-b | --baseDN {baseDN}`::
+The base DN for the search. If no base DN is provided, then the root DSE will be used.
++
+Default: 
++
+
+`-l | --timeLimit {timeLimit}`::
+Maximum length of time in seconds to allow for the search.
++
+Default: 0
++
+
+`-o | --outputLDIF {file}`::
+Write search results to {file} instead of stdout.
++
+Default: stdout
++
+
+`-s | --searchScope {searchScope}`::
+Search scope ('base', 'one', 'sub', or 'subordinates'). Note: 'subordinates' is an LDAP extension that might not work with all LDAP servers.
++
+Default: sub
++
+
+`-z | --sizeLimit {sizeLimit}`::
+Maximum number of entries to return from the search.
++
+Default: 0
++
+
+
+--
+.Utility input/output options:
+
+--
+`-t | --wrapColumn {wrapColumn}`::
+Maximum length of an output line (0 for no wrapping).
++
+Default: 0
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_ldifsearch-examples.adoc[]
+
+

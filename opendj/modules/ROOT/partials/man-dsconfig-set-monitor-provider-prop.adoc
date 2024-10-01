@@ -1,0 +1,598 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-monitor-provider-prop]
+= dsconfig set-monitor-provider-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-monitor-provider-prop - Modifies Monitor Provider properties
+
+== Synopsis
+
+`dsconfig set-monitor-provider-prop` {options}
+
+[#dsconfig-set-monitor-provider-prop-description]
+== Description
+
+Modifies Monitor Provider properties.
+
+
+
+[#dsconfig-set-monitor-provider-prop-options]
+== Options
+
+The `dsconfig set-monitor-provider-prop` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Monitor Provider.
++
+
+[open]
+====
+Monitor Provider properties depend on the Monitor Provider type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Monitor Provider types:
+
+`client-connection-monitor-provider`::
++
+Default {name}: Client Connection Monitor Provider
++
+Enabled by default: true
++
+See  <<dsconfig-set-monitor-provider-prop-client-connection-monitor-provider>> for the properties of this Monitor Provider type.
+`entry-cache-monitor-provider`::
++
+Default {name}: Entry Cache Monitor Provider
++
+Enabled by default: true
++
+See  <<dsconfig-set-monitor-provider-prop-entry-cache-monitor-provider>> for the properties of this Monitor Provider type.
+`memory-usage-monitor-provider`::
++
+Default {name}: Memory Usage Monitor Provider
++
+Enabled by default: true
++
+See  <<dsconfig-set-monitor-provider-prop-memory-usage-monitor-provider>> for the properties of this Monitor Provider type.
+`stack-trace-monitor-provider`::
++
+Default {name}: Stack Trace Monitor Provider
++
+Enabled by default: true
++
+See  <<dsconfig-set-monitor-provider-prop-stack-trace-monitor-provider>> for the properties of this Monitor Provider type.
+`system-info-monitor-provider`::
++
+Default {name}: System Info Monitor Provider
++
+Enabled by default: true
++
+See  <<dsconfig-set-monitor-provider-prop-system-info-monitor-provider>> for the properties of this Monitor Provider type.
+`version-monitor-provider`::
++
+Default {name}: Version Monitor Provider
++
+Enabled by default: true
++
+See  <<dsconfig-set-monitor-provider-prop-version-monitor-provider>> for the properties of this Monitor Provider type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Monitor Provider properties depend on the Monitor Provider type, which depends on the `--provider-name {name}` option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+Monitor Provider properties depend on the Monitor Provider type, which depends on the `--provider-name {name}` option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+Monitor Provider properties depend on the Monitor Provider type, which depends on the `--provider-name {name}` option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+Monitor Provider properties depend on the Monitor Provider type, which depends on the `--provider-name {name}` option.
+
+--
+
+[#dsconfig-set-monitor-provider-prop-client-connection-monitor-provider]
+== Client Connection Monitor Provider
+
+Monitor Providers of type client-connection-monitor-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Monitor Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Client Connection Monitor Provider implementation. 
+
+
+Default Value::
+org.opends.server.monitors.ClientConnectionMonitorProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.MonitorProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-monitor-provider-prop-entry-cache-monitor-provider]
+== Entry Cache Monitor Provider
+
+Monitor Providers of type entry-cache-monitor-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Monitor Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Entry Cache Monitor Provider implementation. 
+
+
+Default Value::
+org.opends.server.monitors.EntryCacheMonitorProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.MonitorProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-monitor-provider-prop-memory-usage-monitor-provider]
+== Memory Usage Monitor Provider
+
+Monitor Providers of type memory-usage-monitor-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Monitor Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Memory Usage Monitor Provider implementation. 
+
+
+Default Value::
+org.opends.server.monitors.MemoryUsageMonitorProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.MonitorProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-monitor-provider-prop-stack-trace-monitor-provider]
+== Stack Trace Monitor Provider
+
+Monitor Providers of type stack-trace-monitor-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Monitor Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Stack Trace Monitor Provider implementation. 
+
+
+Default Value::
+org.opends.server.monitors.StackTraceMonitorProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.MonitorProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-monitor-provider-prop-system-info-monitor-provider]
+== System Info Monitor Provider
+
+Monitor Providers of type system-info-monitor-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Monitor Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the System Info Monitor Provider implementation. 
+
+
+Default Value::
+org.opends.server.monitors.SystemInfoMonitorProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.MonitorProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-monitor-provider-prop-version-monitor-provider]
+== Version Monitor Provider
+
+Monitor Providers of type version-monitor-provider have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Monitor Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Version Monitor Provider implementation. 
+
+
+Default Value::
+org.opends.server.monitors.VersionMonitorProvider
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.MonitorProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

@@ -1,0 +1,663 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-delete-replication-server]
+= dsconfig delete-replication-server(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig delete-replication-server - Deletes Replication Servers
+
+== Synopsis
+
+`dsconfig delete-replication-server` {options}
+
+[#dsconfig-delete-replication-server-description]
+== Description
+
+Deletes Replication Servers.
+
+
+
+[#dsconfig-delete-replication-server-options]
+== Options
+
+The `dsconfig delete-replication-server` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Replication Synchronization Provider.
++
+
+[open]
+====
+Replication Server properties depend on the Replication Server type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Replication Server types:
+
+`replication-server`::
++
+Default {name}: Replication Server
++
+Enabled by default: false
++
+See  <<dsconfig-delete-replication-server-replication-server>> for the properties of this Replication Server type.
+====
+
+`-f | --force`::
+
+Ignore non-existent Replication Servers.
++
+
+[open]
+====
+Replication Server properties depend on the Replication Server type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Replication Server types:
+
+`replication-server`::
++
+Default null: Replication Server
++
+Enabled by default: false
++
+See  <<dsconfig-delete-replication-server-replication-server>> for the properties of this Replication Server type.
+====
+
+--
+
+[#dsconfig-delete-replication-server-replication-server]
+== Replication Server
+
+Replication Servers of type replication-server have the following properties:
+
+--
+
+
+assured-timeout::
+[open]
+====
+Description::
+The timeout value when waiting for assured mode acknowledgments. Defines the number of milliseconds that the replication server will wait for assured acknowledgments (in either Safe Data or Safe Read assured sub modes) before forgetting them and answer to the entity that sent an update and is waiting for acknowledgment.
+
+
+Default Value::
+1000ms
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+cipher-key-length::
+[open]
+====
+Description::
+Specifies the key length in bits for the preferred cipher. 
+
+
+Default Value::
+128
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only affect cryptographic operations performed after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+cipher-transformation::
+[open]
+====
+Description::
+Specifies the cipher for the directory server. The syntax is &quot;algorithm/mode/padding&quot;. The full transformation is required: specifying only an algorithm and allowing the cipher provider to supply the default mode and padding is not supported, because there is no guarantee these default values are the same among different implementations. Some cipher algorithms, including RC4 and ARCFOUR, do not have a mode or padding, and hence must be specified using NONE for the mode field and NoPadding for the padding field. For example, RC4/NONE/NoPadding.
+
+
+Default Value::
+AES/CBC/PKCS5Padding
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only affect cryptographic operations performed after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+compute-change-number::
+[open]
+====
+Description::
+Whether the replication server will compute change numbers. This boolean tells the replication server to compute change numbers for each replicated change by maintaining a change number index database. Changenumbers are computed according to http://tools.ietf.org/html/draft-good-ldap-changelog-04. Note this functionality has an impact on CPU, disk accesses and storage. If changenumbers are not required, it is advisable to set this value to false.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+confidentiality-enabled::
+[open]
+====
+Description::
+Indicates whether the replication change-log should make records readable only by Directory Server. Throughput and disk space are affected by the more expensive operations taking place. Confidentiality is achieved by encrypting records on all domains managed by this replication server. Encrypting the records prevents unauthorized parties from accessing contents of LDAP operations. For complete protection, consider enabling secure communications between servers. Change number indexing is not affected by the setting.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only affect operations performed after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+degraded-status-threshold::
+[open]
+====
+Description::
+The number of pending changes as threshold value for putting a directory server in degraded status. This value represents a number of pending changes a replication server has in queue for sending to a directory server. Once this value is crossed, the matching directory server goes in degraded status. When number of pending changes goes back under this value, the directory server is put back in normal status. 0 means status analyzer is disabled and directory servers are never put in degraded status.
+
+
+Default Value::
+5000
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+group-id::
+[open]
+====
+Description::
+The group id for the replication server. This value defines the group id of the replication server. The replication system of a LDAP server uses the group id of the replicated domain and tries to connect, if possible, to a replication with the same group id.
+
+
+Default Value::
+1
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 127.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+monitoring-period::
+[open]
+====
+Description::
+The period between sending of monitoring messages. Defines the duration that the replication server will wait before sending new monitoring messages to its peers (replication servers and directory servers). Larger values increase the length of time it takes for a directory server to detect and switch to a more suitable replication server, whereas smaller values increase the amount of background network traffic.
+
+
+Default Value::
+60s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+queue-size::
+[open]
+====
+Description::
+Specifies the number of changes that are kept in memory for each directory server in the Replication Domain. 
+
+
+Default Value::
+10000
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+replication-db-directory::
+[open]
+====
+Description::
+The path where the Replication Server stores all persistent information. 
+
+
+Default Value::
+changelogDb
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+replication-port::
+[open]
+====
+Description::
+The port on which this Replication Server waits for connections from other Replication Servers or Directory Servers. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+replication-purge-delay::
+[open]
+====
+Description::
+The time (in seconds) after which the Replication Server erases all persistent information. 
+
+
+Default Value::
+3 days
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+replication-server::
+[open]
+====
+Description::
+Specifies the addresses of other Replication Servers to which this Replication Server tries to connect at startup time. Addresses must be specified using the syntax: &quot;hostname:port&quot;. If IPv6 addresses are used as the hostname, they must be specified using the syntax &quot;[IPv6Address]:port&quot;.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A host name followed by a ":" and a port number.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+replication-server-id::
+[open]
+====
+Description::
+Specifies a unique identifier for the Replication Server. Each Replication Server must have a different server ID.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+source-address::
+[open]
+====
+Description::
+If specified, the server will bind to the address before connecting to the remote server. The address must be one assigned to an existing network interface.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+weight::
+[open]
+====
+Description::
+The weight of the replication server. The weight affected to the replication server. Each replication server of the topology has a weight. When combined together, the weights of the replication servers of a same group can be translated to a percentage that determines the quantity of directory servers of the topology that should be connected to a replication server. For instance imagine a topology with 3 replication servers (with the same group id) with the following weights: RS1=1, RS2=1, RS3=2. This means that RS1 should have 25% of the directory servers connected in the topology, RS2 25%, and RS3 50%. This may be useful if the replication servers of the topology have a different power and one wants to spread the load between the replication servers according to their power.
+
+
+Default Value::
+1
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+window-size::
+[open]
+====
+Description::
+Specifies the window size that the Replication Server uses when communicating with other Replication Servers. This option may be deprecated and removed in future releases.
+
+
+Default Value::
+100000
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

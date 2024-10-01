@@ -1,0 +1,452 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-group-implementation-prop]
+= dsconfig get-group-implementation-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-group-implementation-prop - Shows Group Implementation properties
+
+== Synopsis
+
+`dsconfig get-group-implementation-prop` {options}
+
+[#dsconfig-get-group-implementation-prop-description]
+== Description
+
+Shows Group Implementation properties.
+
+
+
+[#dsconfig-get-group-implementation-prop-options]
+== Options
+
+The `dsconfig get-group-implementation-prop` command takes the following options:
+
+--
+`--implementation-name {name}`::
+
+The name of the Group Implementation.
++
+
+[open]
+====
+Group Implementation properties depend on the Group Implementation type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Group Implementation types:
+
+`dynamic-group-implementation`::
++
+Default {name}: Dynamic Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-dynamic-group-implementation>> for the properties of this Group Implementation type.
+`static-group-implementation`::
++
+Default {name}: Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-static-group-implementation>> for the properties of this Group Implementation type.
+`virtual-static-group-implementation`::
++
+Default {name}: Virtual Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-virtual-static-group-implementation>> for the properties of this Group Implementation type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Group Implementation properties depend on the Group Implementation type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Group Implementation types:
+
+`dynamic-group-implementation`::
++
+Default {property}: Dynamic Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-dynamic-group-implementation>> for the properties of this Group Implementation type.
+`static-group-implementation`::
++
+Default {property}: Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-static-group-implementation>> for the properties of this Group Implementation type.
+`virtual-static-group-implementation`::
++
+Default {property}: Virtual Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-virtual-static-group-implementation>> for the properties of this Group Implementation type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Group Implementation properties depend on the Group Implementation type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Group Implementation types:
+
+`dynamic-group-implementation`::
++
+Default null: Dynamic Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-dynamic-group-implementation>> for the properties of this Group Implementation type.
+`static-group-implementation`::
++
+Default null: Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-static-group-implementation>> for the properties of this Group Implementation type.
+`virtual-static-group-implementation`::
++
+Default null: Virtual Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-virtual-static-group-implementation>> for the properties of this Group Implementation type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Group Implementation properties depend on the Group Implementation type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Group Implementation types:
+
+`dynamic-group-implementation`::
++
+Default {unit}: Dynamic Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-dynamic-group-implementation>> for the properties of this Group Implementation type.
+`static-group-implementation`::
++
+Default {unit}: Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-static-group-implementation>> for the properties of this Group Implementation type.
+`virtual-static-group-implementation`::
++
+Default {unit}: Virtual Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-virtual-static-group-implementation>> for the properties of this Group Implementation type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Group Implementation properties depend on the Group Implementation type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Group Implementation types:
+
+`dynamic-group-implementation`::
++
+Default {unit}: Dynamic Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-dynamic-group-implementation>> for the properties of this Group Implementation type.
+`static-group-implementation`::
++
+Default {unit}: Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-static-group-implementation>> for the properties of this Group Implementation type.
+`virtual-static-group-implementation`::
++
+Default {unit}: Virtual Static Group Implementation
++
+Enabled by default: true
++
+See  <<dsconfig-get-group-implementation-prop-virtual-static-group-implementation>> for the properties of this Group Implementation type.
+====
+
+--
+
+[#dsconfig-get-group-implementation-prop-dynamic-group-implementation]
+== Dynamic Group Implementation
+
+Group Implementations of type dynamic-group-implementation have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Group Implementation is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Dynamic Group Implementation implementation. 
+
+
+Default Value::
+org.opends.server.extensions.DynamicGroup
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.Group
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Group Implementation must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-group-implementation-prop-static-group-implementation]
+== Static Group Implementation
+
+Group Implementations of type static-group-implementation have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Group Implementation is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Static Group Implementation implementation. 
+
+
+Default Value::
+org.opends.server.extensions.StaticGroup
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.Group
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Group Implementation must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-group-implementation-prop-virtual-static-group-implementation]
+== Virtual Static Group Implementation
+
+Group Implementations of type virtual-static-group-implementation have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Group Implementation is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Virtual Static Group Implementation implementation. 
+
+
+Default Value::
+org.opends.server.extensions.VirtualStaticGroup
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.Group
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Group Implementation must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

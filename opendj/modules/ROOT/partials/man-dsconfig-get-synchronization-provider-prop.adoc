@@ -1,0 +1,291 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-synchronization-provider-prop]
+= dsconfig get-synchronization-provider-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-synchronization-provider-prop - Shows Synchronization Provider properties
+
+== Synopsis
+
+`dsconfig get-synchronization-provider-prop` {options}
+
+[#dsconfig-get-synchronization-provider-prop-description]
+== Description
+
+Shows Synchronization Provider properties.
+
+
+
+[#dsconfig-get-synchronization-provider-prop-options]
+== Options
+
+The `dsconfig get-synchronization-provider-prop` command takes the following options:
+
+--
+`--provider-name {name}`::
+
+The name of the Synchronization Provider.
++
+
+[open]
+====
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Synchronization Provider types:
+
+`replication-synchronization-provider`::
++
+Default {name}: Replication Synchronization Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-synchronization-provider-prop-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Synchronization Provider types:
+
+`replication-synchronization-provider`::
++
+Default {property}: Replication Synchronization Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-synchronization-provider-prop-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Synchronization Provider types:
+
+`replication-synchronization-provider`::
++
+Default null: Replication Synchronization Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-synchronization-provider-prop-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Synchronization Provider types:
+
+`replication-synchronization-provider`::
++
+Default {unit}: Replication Synchronization Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-synchronization-provider-prop-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Synchronization Provider types:
+
+`replication-synchronization-provider`::
++
+Default {unit}: Replication Synchronization Provider
++
+Enabled by default: true
++
+See  <<dsconfig-get-synchronization-provider-prop-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
+====
+
+--
+
+[#dsconfig-get-synchronization-provider-prop-replication-synchronization-provider]
+== Replication Synchronization Provider
+
+Synchronization Providers of type replication-synchronization-provider have the following properties:
+
+--
+
+
+connection-timeout::
+[open]
+====
+Description::
+Specifies the timeout used when connecting to peers and when performing SSL negotiation. 
+
+
+Default Value::
+5 seconds
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Synchronization Provider is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Replication Synchronization Provider implementation. 
+
+
+Default Value::
+org.opends.server.replication.plugin.MultimasterReplication
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SynchronizationProvider
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+num-update-replay-threads::
+[open]
+====
+Description::
+Specifies the number of update replay threads. This value is the number of threads created for replaying every updates received for all the replication domains.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

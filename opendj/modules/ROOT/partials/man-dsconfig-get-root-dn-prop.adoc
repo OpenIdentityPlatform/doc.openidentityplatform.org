@@ -1,0 +1,265 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-root-dn-prop]
+= dsconfig get-root-dn-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-root-dn-prop - Shows Root DN properties
+
+== Synopsis
+
+`dsconfig get-root-dn-prop` {options}
+
+[#dsconfig-get-root-dn-prop-description]
+== Description
+
+Shows Root DN properties.
+
+
+
+[#dsconfig-get-root-dn-prop-options]
+== Options
+
+The `dsconfig get-root-dn-prop` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Root DN properties depend on the Root DN type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Root DN types:
+
+`root-dn`::
++
+Default {property}: Root DN
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dn-prop-root-dn>> for the properties of this Root DN type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Root DN properties depend on the Root DN type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Root DN types:
+
+`root-dn`::
++
+Default null: Root DN
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dn-prop-root-dn>> for the properties of this Root DN type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Root DN properties depend on the Root DN type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Root DN types:
+
+`root-dn`::
++
+Default {unit}: Root DN
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dn-prop-root-dn>> for the properties of this Root DN type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Root DN properties depend on the Root DN type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Root DN types:
+
+`root-dn`::
++
+Default {unit}: Root DN
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dn-prop-root-dn>> for the properties of this Root DN type.
+====
+
+--
+
+[#dsconfig-get-root-dn-prop-root-dn]
+== Root DN
+
+Root Dns of type root-dn have the following properties:
+
+--
+
+
+default-root-privilege-name::
+[open]
+====
+Description::
+Specifies the names of the privileges that root users will be granted by default. 
+
+
+Default Value::
+bypass-lockdown
+bypass-acl
+modify-acl
+config-read
+config-write
+ldif-import
+ldif-export
+backend-backup
+backend-restore
+server-lockdown
+server-shutdown
+server-restart
+disconnect-client
+cancel-request
+password-reset
+update-schema
+privilege-change
+unindexed-search
+subentry-write
+changelog-read
+
+
+Allowed Values::
+
+
+backend-backup::
+Allows the user to request that the server process backup tasks.
+
+backend-restore::
+Allows the user to request that the server process restore tasks.
+
+bypass-acl::
+Allows the associated user to bypass access control checks performed by the server.
+
+bypass-lockdown::
+Allows the associated user to bypass server lockdown mode.
+
+cancel-request::
+Allows the user to cancel operations in progress on other client connections.
+
+changelog-read::
+Allows the user to perform read operations on the changelog
+
+config-read::
+Allows the associated user to read the server configuration.
+
+config-write::
+Allows the associated user to update the server configuration. The config-read privilege is also required.
+
+data-sync::
+Allows the user to participate in data synchronization.
+
+disconnect-client::
+Allows the user to terminate other client connections.
+
+jmx-notify::
+Allows the associated user to subscribe to receive JMX notifications.
+
+jmx-read::
+Allows the associated user to perform JMX read operations.
+
+jmx-write::
+Allows the associated user to perform JMX write operations.
+
+ldif-export::
+Allows the user to request that the server process LDIF export tasks.
+
+ldif-import::
+Allows the user to request that the server process LDIF import tasks.
+
+modify-acl::
+Allows the associated user to modify the server's access control configuration.
+
+password-reset::
+Allows the user to reset user passwords.
+
+privilege-change::
+Allows the user to make changes to the set of defined root privileges, as well as to grant and revoke privileges for users.
+
+proxied-auth::
+Allows the user to use the proxied authorization control, or to perform a bind that specifies an alternate authorization identity.
+
+server-lockdown::
+Allows the user to place and bring the server of lockdown mode.
+
+server-restart::
+Allows the user to request that the server perform an in-core restart.
+
+server-shutdown::
+Allows the user to request that the server shut down.
+
+subentry-write::
+Allows the associated user to perform LDAP subentry write operations.
+
+unindexed-search::
+Allows the user to request that the server process a search that cannot be optimized using server indexes.
+
+update-schema::
+Allows the user to make changes to the server schema.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

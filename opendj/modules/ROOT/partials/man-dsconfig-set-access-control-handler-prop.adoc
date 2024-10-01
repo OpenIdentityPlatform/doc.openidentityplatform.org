@@ -1,0 +1,181 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-access-control-handler-prop]
+= dsconfig set-access-control-handler-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-access-control-handler-prop - Modifies Access Control Handler properties
+
+== Synopsis
+
+`dsconfig set-access-control-handler-prop` {options}
+
+[#dsconfig-set-access-control-handler-prop-description]
+== Description
+
+Modifies Access Control Handler properties.
+
+
+
+[#dsconfig-set-access-control-handler-prop-options]
+== Options
+
+The `dsconfig set-access-control-handler-prop` command takes the following options:
+
+--
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Access Control Handler properties depend on the Access Control Handler type, which depends on the null option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+Access Control Handler properties depend on the Access Control Handler type, which depends on the null option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+Access Control Handler properties depend on the Access Control Handler type, which depends on the null option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+Access Control Handler properties depend on the Access Control Handler type, which depends on the null option.
+
+--
+
+[#dsconfig-set-access-control-handler-prop-dsee-compat-access-control-handler]
+== Dsee Compat Access Control Handler
+
+Access Control Handlers of type dsee-compat-access-control-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+global-aci::
+[open]
+====
+Description::
+Defines global access control rules. Global access control rules apply to all entries anywhere in the data managed by the OpenDJ directory server. The global access control rules may be overridden by more specific access control rules placed in the data.
+
+
+Default Value::
+No global access control rules are defined, which means that no access is allowed for any data in the server unless specifically granted by access control rules in the data.
+
+
+Allowed Values::
+<olink targetdoc="admin-guide" targetptr="about-acis" />
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Dsee Compat Access Control Handler implementation. 
+
+
+Default Value::
+org.opends.server.authorization.dseecompat.AciHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.AccessControlHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Access Control Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

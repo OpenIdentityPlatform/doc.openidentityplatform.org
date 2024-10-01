@@ -1,0 +1,259 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#export-ldif-1]
+= export-ldif(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+export-ldif - export OpenDJ directory data in LDIF
+
+== Synopsis
+`export-ldif` 
+
+[#export-ldif-description]
+== Description
+
+This utility can be used to export data from a Directory Server backend in LDIF form.
+
+
+
+
+[#export-ldif-options]
+== Options
+
+The `export-ldif` command takes the following options:
+
+.Command options:
+
+--
+`-a | --appendToLDIF`::
+Append an existing LDIF file rather than overwriting it.
++
+Default: false
++
+
+`-b | --includeBranch {branchDN}`::
+Base DN of a branch to include in the LDIF export.
++
+
+`-B | --excludeBranch {branchDN}`::
+Base DN of a branch to exclude from the LDIF export.
++
+
+`-c | --compress`::
+Compress the LDIF data as it is exported.
++
+Default: false
++
+
+`-e | --excludeAttribute {attribute}`::
+Attribute to exclude from the LDIF export.
++
+
+`-E | --excludeFilter {filter}`::
+Filter to identify entries to exclude from the LDIF export.
++
+
+`-i | --includeAttribute {attribute}`::
+Attribute to include in the LDIF export.
++
+
+`-I | --includeFilter {filter}`::
+Filter to identify entries to include in the LDIF export.
++
+
+`-l | --ldifFile {ldifFile}`::
+Path to the LDIF file to be written.
++
+
+`-n | --backendID {backendName}`::
+Backend ID for the backend to export.
++
+
+`-O | --excludeOperational`::
+Exclude operational attributes from the LDIF export.
++
+Default: false
++
+
+`--offline`::
+Indicates that the command must be run in offline mode.
++
+Default: false
++
+
+
+--
+.Task Backend Connection Options
+
+--
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+Default: cn=Directory Manager
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+Default: 4444
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+
+--
+.Task Scheduling Options
+
+--
+`--completionNotify {emailAddress}`::
+Email address of a recipient to be notified when the task completes.  This option may be specified more than once.
++
+
+`--dependency {taskID}`::
+ID of a task upon which this task depends.  A task will not start execution until all its dependencies have completed execution.
++
+
+`--errorNotify {emailAddress}`::
+Email address of a recipient to be notified if an error occurs when this task executes.  This option may be specified more than once.
++
+
+`--failedDependencyAction {action}`::
+Action this task will take should one if its dependent tasks fail.  The value must be one of PROCESS,CANCEL,DISABLE.  If not specified defaults to CANCEL.
++
+
+`--recurringTask {schedulePattern}`::
+Indicates the task is recurring and will be scheduled according to the value argument expressed in crontab(5) compatible time/date pattern.
++
+
+`-t | --start {startTime}`::
+Indicates the date/time at which this operation will start when scheduled as a server task expressed in YYYYMMDDhhmmssZ format for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the task to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
++
+
+
+--
+.Utility input/output options:
+
+--
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`--wrapColumn {wrapColumn}`::
+Column at which to wrap long lines (0 for no wrapping).
++
+Default: 0
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_export-ldif-examples.adoc[]
+
+

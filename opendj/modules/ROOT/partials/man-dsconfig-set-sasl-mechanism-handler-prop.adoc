@@ -1,0 +1,1156 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-sasl-mechanism-handler-prop]
+= dsconfig set-sasl-mechanism-handler-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-sasl-mechanism-handler-prop - Modifies SASL Mechanism Handler properties
+
+== Synopsis
+
+`dsconfig set-sasl-mechanism-handler-prop` {options}
+
+[#dsconfig-set-sasl-mechanism-handler-prop-description]
+== Description
+
+Modifies SASL Mechanism Handler properties.
+
+
+
+[#dsconfig-set-sasl-mechanism-handler-prop-options]
+== Options
+
+The `dsconfig set-sasl-mechanism-handler-prop` command takes the following options:
+
+--
+`--handler-name {name}`::
+
+The name of the SASL Mechanism Handler.
++
+
+[open]
+====
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following SASL Mechanism Handler types:
+
+`anonymous-sasl-mechanism-handler`::
++
+Default {name}: Anonymous SASL Mechanism Handler
++
+Enabled by default: true
++
+See  <<dsconfig-set-sasl-mechanism-handler-prop-anonymous-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
+`cram-md5-sasl-mechanism-handler`::
++
+Default {name}: Cram MD5 SASL Mechanism Handler
++
+Enabled by default: true
++
+See  <<dsconfig-set-sasl-mechanism-handler-prop-cram-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
+`digest-md5-sasl-mechanism-handler`::
++
+Default {name}: Digest MD5 SASL Mechanism Handler
++
+Enabled by default: true
++
+See  <<dsconfig-set-sasl-mechanism-handler-prop-digest-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
+`external-sasl-mechanism-handler`::
++
+Default {name}: External SASL Mechanism Handler
++
+Enabled by default: true
++
+See  <<dsconfig-set-sasl-mechanism-handler-prop-external-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
+`gssapi-sasl-mechanism-handler`::
++
+Default {name}: GSSAPI SASL Mechanism Handler
++
+Enabled by default: true
++
+See  <<dsconfig-set-sasl-mechanism-handler-prop-gssapi-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
+`plain-sasl-mechanism-handler`::
++
+Default {name}: Plain SASL Mechanism Handler
++
+Enabled by default: true
++
+See  <<dsconfig-set-sasl-mechanism-handler-prop-plain-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+
+--
+
+[#dsconfig-set-sasl-mechanism-handler-prop-anonymous-sasl-mechanism-handler]
+== Anonymous SASL Mechanism Handler
+
+SASL Mechanism Handlers of type anonymous-sasl-mechanism-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the SASL mechanism handler is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SASL mechanism handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.AnonymousSASLMechanismHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SASLMechanismHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The SASL Mechanism Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-sasl-mechanism-handler-prop-cram-md5-sasl-mechanism-handler]
+== Cram MD5 SASL Mechanism Handler
+
+SASL Mechanism Handlers of type cram-md5-sasl-mechanism-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the SASL mechanism handler is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+Specifies the name of the identity mapper used with this SASL mechanism handler to match the authentication ID included in the SASL bind request to the corresponding user in the directory. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the Cram MD5 SASL Mechanism Handler is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SASL mechanism handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.CRAMMD5SASLMechanismHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SASLMechanismHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The SASL Mechanism Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-sasl-mechanism-handler-prop-digest-md5-sasl-mechanism-handler]
+== Digest MD5 SASL Mechanism Handler
+
+SASL Mechanism Handlers of type digest-md5-sasl-mechanism-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the SASL mechanism handler is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the authentication or authorization ID included in the SASL bind request to the corresponding user in the directory. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the Digest MD5 SASL Mechanism Handler is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SASL mechanism handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.DigestMD5SASLMechanismHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SASLMechanismHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The SASL Mechanism Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+quality-of-protection::
+[open]
+====
+Description::
+The name of a property that specifies the quality of protection the server will support. 
+
+
+Default Value::
+none
+
+
+Allowed Values::
+
+
+confidentiality::
+Quality of protection equals authentication with integrity and confidentiality protection.
+
+integrity::
+Quality of protection equals authentication with integrity protection.
+
+none::
+QOP equals authentication only.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+realm::
+[open]
+====
+Description::
+Specifies the realms that is to be used by the server for DIGEST-MD5 authentication. If this value is not provided, then the server defaults to use the fully qualified hostname of the machine.
+
+
+Default Value::
+If this value is not provided, then the server defaults to use the fully qualified hostname of the machine.
+
+
+Allowed Values::
+Any realm string that does not contain a comma.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+server-fqdn::
+[open]
+====
+Description::
+Specifies the DNS-resolvable fully-qualified domain name for the server that is used when validating the digest-uri parameter during the authentication process. If this configuration attribute is present, then the server expects that clients use a digest-uri equal to &quot;ldap/&quot; followed by the value of this attribute. For example, if the attribute has a value of &quot;directory.example.com&quot;, then the server expects clients to use a digest-uri of &quot;ldap/directory.example.com&quot;. If no value is provided, then the server does not attempt to validate the digest-uri provided by the client and accepts any value.
+
+
+Default Value::
+The server attempts to determine the fully-qualified domain name dynamically.
+
+
+Allowed Values::
+The fully-qualified address that is expected for clients to use when connecting to the server and authenticating via DIGEST-MD5.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-sasl-mechanism-handler-prop-external-sasl-mechanism-handler]
+== External SASL Mechanism Handler
+
+SASL Mechanism Handlers of type external-sasl-mechanism-handler have the following properties:
+
+--
+
+
+certificate-attribute::
+[open]
+====
+Description::
+Specifies the name of the attribute to hold user certificates. This property must specify the name of a valid attribute type defined in the server schema.
+
+
+Default Value::
+userCertificate
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+certificate-mapper::
+[open]
+====
+Description::
+Specifies the name of the certificate mapper that should be used to match client certificates to user entries. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Certificate Mapper. The referenced certificate mapper must be enabled when the External SASL Mechanism Handler is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+certificate-validation-policy::
+[open]
+====
+Description::
+Indicates whether to attempt to validate the peer certificate against a certificate held in the user&apos;s entry. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+
+
+always::
+Always require the peer certificate to be present in the user's entry.
+
+ifpresent::
+If the user's entry contains one or more certificates, require that one of them match the peer certificate.
+
+never::
+Do not look for the peer certificate to be present in the user's entry.
+
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the SASL mechanism handler is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SASL mechanism handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.ExternalSASLMechanismHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SASLMechanismHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The SASL Mechanism Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-sasl-mechanism-handler-prop-gssapi-sasl-mechanism-handler]
+== GSSAPI SASL Mechanism Handler
+
+SASL Mechanism Handlers of type gssapi-sasl-mechanism-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the SASL mechanism handler is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the Kerberos principal included in the SASL bind request to the corresponding user in the directory. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the GSSAPI SASL Mechanism Handler is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SASL mechanism handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.GSSAPISASLMechanismHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SASLMechanismHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The SASL Mechanism Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+kdc-address::
+[open]
+====
+Description::
+Specifies the address of the KDC that is to be used for Kerberos processing. If provided, this property must be a fully-qualified DNS-resolvable name. If this property is not provided, then the server attempts to determine it from the system-wide Kerberos configuration.
+
+
+Default Value::
+The server attempts to determine the KDC address from the underlying system configuration.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+keytab::
+[open]
+====
+Description::
+Specifies the path to the keytab file that should be used for Kerberos processing. If provided, this is either an absolute path or one that is relative to the server instance root.
+
+
+Default Value::
+The server attempts to use the system-wide default keytab.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+principal-name::
+[open]
+====
+Description::
+Specifies the principal name. It can either be a simple user name or a service name such as host/example.com. If this property is not provided, then the server attempts to build the principal name by appending the fully qualified domain name to the string &quot;ldap/&quot;.
+
+
+Default Value::
+The server attempts to determine the principal name from the underlying system configuration.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+quality-of-protection::
+[open]
+====
+Description::
+The name of a property that specifies the quality of protection the server will support. 
+
+
+Default Value::
+none
+
+
+Allowed Values::
+
+
+confidentiality::
+Quality of protection equals authentication with integrity and confidentiality protection.
+
+integrity::
+Quality of protection equals authentication with integrity protection.
+
+none::
+QOP equals authentication only.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+realm::
+[open]
+====
+Description::
+Specifies the realm to be used for GSSAPI authentication. 
+
+
+Default Value::
+The server attempts to determine the realm from the underlying system configuration.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+server-fqdn::
+[open]
+====
+Description::
+Specifies the DNS-resolvable fully-qualified domain name for the system. 
+
+
+Default Value::
+The server attempts to determine the fully-qualified domain name dynamically .
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-sasl-mechanism-handler-prop-plain-sasl-mechanism-handler]
+== Plain SASL Mechanism Handler
+
+SASL Mechanism Handlers of type plain-sasl-mechanism-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the SASL mechanism handler is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the authentication or authorization ID included in the SASL bind request to the corresponding user in the directory. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the Plain SASL Mechanism Handler is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the SASL mechanism handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.PlainSASLMechanismHandler
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.SASLMechanismHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The SASL Mechanism Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

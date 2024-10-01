@@ -1,0 +1,205 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-root-dse-backend-prop]
+= dsconfig get-root-dse-backend-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-root-dse-backend-prop - Shows Root DSE Backend properties
+
+== Synopsis
+
+`dsconfig get-root-dse-backend-prop` {options}
+
+[#dsconfig-get-root-dse-backend-prop-description]
+== Description
+
+Shows Root DSE Backend properties.
+
+
+
+[#dsconfig-get-root-dse-backend-prop-options]
+== Options
+
+The `dsconfig get-root-dse-backend-prop` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Root DSE Backend types:
+
+`root-dse-backend`::
++
+Default {property}: Root DSE Backend
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dse-backend-prop-root-dse-backend>> for the properties of this Root DSE Backend type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Root DSE Backend types:
+
+`root-dse-backend`::
++
+Default null: Root DSE Backend
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dse-backend-prop-root-dse-backend>> for the properties of this Root DSE Backend type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Root DSE Backend types:
+
+`root-dse-backend`::
++
+Default {unit}: Root DSE Backend
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dse-backend-prop-root-dse-backend>> for the properties of this Root DSE Backend type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Root DSE Backend types:
+
+`root-dse-backend`::
++
+Default {unit}: Root DSE Backend
++
+Enabled by default: false
++
+See  <<dsconfig-get-root-dse-backend-prop-root-dse-backend>> for the properties of this Root DSE Backend type.
+====
+
+--
+
+[#dsconfig-get-root-dse-backend-prop-root-dse-backend]
+== Root DSE Backend
+
+Root DSE Backends of type root-dse-backend have the following properties:
+
+--
+
+
+show-all-attributes::
+[open]
+====
+Description::
+Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the directory server schema configuration. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+show-subordinate-naming-contexts::
+[open]
+====
+Description::
+Indicates whether subordinate naming contexts should be visible in the namingContexts attribute of the RootDSE. By default only top level naming contexts are visible 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

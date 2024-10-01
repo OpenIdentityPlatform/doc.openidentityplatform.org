@@ -1,0 +1,461 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-identity-mapper]
+= dsconfig create-identity-mapper(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-identity-mapper - Creates Identity Mappers
+
+== Synopsis
+
+`dsconfig create-identity-mapper` {options}
+
+[#dsconfig-create-identity-mapper-description]
+== Description
+
+Creates Identity Mappers.
+
+
+
+[#dsconfig-create-identity-mapper-options]
+== Options
+
+The `dsconfig create-identity-mapper` command takes the following options:
+
+--
+`--mapper-name {name}`::
+
+The name of the new Identity Mapper.
++
+
+[open]
+====
+Identity Mapper properties depend on the Identity Mapper type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Identity Mapper types:
+
+`exact-match-identity-mapper`::
++
+Default {name}: Exact Match Identity Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-create-identity-mapper-exact-match-identity-mapper>> for the properties of this Identity Mapper type.
+`regular-expression-identity-mapper`::
++
+Default {name}: Regular Expression Identity Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-create-identity-mapper-regular-expression-identity-mapper>> for the properties of this Identity Mapper type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name {name}` option.
+
+`-t | --type {type}`::
+
+The type of Identity Mapper which should be created. The value for TYPE can be one of: custom | exact-match | regular-expression.
++
+
+[open]
+====
+Identity Mapper properties depend on the Identity Mapper type, which depends on the {type} you provide.
+
+By default, OpenDJ directory server supports the following Identity Mapper types:
+
+`exact-match-identity-mapper`::
++
+Default {type}: Exact Match Identity Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-create-identity-mapper-exact-match-identity-mapper>> for the properties of this Identity Mapper type.
+`regular-expression-identity-mapper`::
++
+Default {type}: Regular Expression Identity Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-create-identity-mapper-regular-expression-identity-mapper>> for the properties of this Identity Mapper type.
+====
+
+--
+
+[#dsconfig-create-identity-mapper-exact-match-identity-mapper]
+== Exact Match Identity Mapper
+
+Identity Mappers of type exact-match-identity-mapper have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Identity Mapper is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Exact Match Identity Mapper implementation. 
+
+
+Default Value::
+org.opends.server.extensions.ExactMatchIdentityMapper
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.IdentityMapper
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Identity Mapper must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+match-attribute::
+[open]
+====
+Description::
+Specifies the attribute whose value should exactly match the ID string provided to this identity mapper. At least one value must be provided. All values must refer to the name or OID of an attribute type defined in the directory server schema. If multiple attributes or OIDs are provided, at least one of those attributes must contain the provided ID string value in exactly one entry. The internal search performed includes a logical OR across all of these values.
+
+
+Default Value::
+uid
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+match-base-dn::
+[open]
+====
+Description::
+Specifies the set of base DNs below which to search for users. The base DNs will be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all specified base DNs.
+
+
+Default Value::
+The server searches below all public naming contexts.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-identity-mapper-regular-expression-identity-mapper]
+== Regular Expression Identity Mapper
+
+Identity Mappers of type regular-expression-identity-mapper have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Identity Mapper is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Regular Expression Identity Mapper implementation. 
+
+
+Default Value::
+org.opends.server.extensions.RegularExpressionIdentityMapper
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.IdentityMapper
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Identity Mapper must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+match-attribute::
+[open]
+====
+Description::
+Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression. All values must refer to the name or OID of an attribute type defined in the directory server schema. If multiple attributes or OIDs are provided, at least one of those attributes must contain the provided ID string value in exactly one entry.
+
+
+Default Value::
+uid
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+match-base-dn::
+[open]
+====
+Description::
+Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs. 
+
+
+Default Value::
+The server searches below all public naming contexts.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+match-pattern::
+[open]
+====
+Description::
+Specifies the regular expression pattern that is used to identify portions of the ID string that will be replaced. Any portion of the ID string that matches this pattern is replaced in accordance with the provided replace pattern (or is removed if no replace pattern is specified). If multiple substrings within the given ID string match this pattern, all occurrences are replaced. If no part of the given ID string matches this pattern, the ID string is not altered. Exactly one match pattern value must be provided, and it must be a valid regular expression as described in the API documentation for the java.util.regex.Pattern class, including support for capturing groups.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Any valid regular expression pattern which is supported by the javax.util.regex.Pattern class (see http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/api/java/util/regex/Pattern.html for documentation about this class for Java SE 6).
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+replace-pattern::
+[open]
+====
+Description::
+Specifies the replacement pattern that should be used for substrings in the ID string that match the provided regular expression pattern. If no replacement pattern is provided, then any matching portions of the ID string will be removed (i.e., replaced with an empty string). The replacement pattern may include a string from a capturing group by using a dollar sign ($) followed by an integer value that indicates which capturing group should be used.
+
+
+Default Value::
+The replace pattern will be the empty string.
+
+
+Allowed Values::
+Any valid replacement string that is allowed by the javax.util.regex.Matcher class.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

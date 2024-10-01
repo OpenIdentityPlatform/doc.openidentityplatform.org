@@ -1,0 +1,4758 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-list-plugins]
+= dsconfig list-plugins(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig list-plugins - Lists existing Plugins
+
+== Synopsis
+
+`dsconfig list-plugins` {options}
+
+[#dsconfig-list-plugins-description]
+== Description
+
+Lists existing Plugins.
+
+
+
+[#dsconfig-list-plugins-options]
+== Options
+
+The `dsconfig list-plugins` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Plugin properties depend on the Plugin type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Plugin types:
+
+`attribute-cleanup-plugin`::
++
+Default {property}: Attribute Cleanup Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-attribute-cleanup-plugin>> for the properties of this Plugin type.
+`change-number-control-plugin`::
++
+Default {property}: Change Number Control Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-change-number-control-plugin>> for the properties of this Plugin type.
+`entry-uuid-plugin`::
++
+Default {property}: Entry UUID Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-entry-uuid-plugin>> for the properties of this Plugin type.
+`fractional-ldif-import-plugin`::
++
+Default {property}: Fractional LDIF Import Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-fractional-ldif-import-plugin>> for the properties of this Plugin type.
+`last-mod-plugin`::
++
+Default {property}: Last Mod Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-last-mod-plugin>> for the properties of this Plugin type.
+`ldap-attribute-description-list-plugin`::
++
+Default {property}: LDAP Attribute Description List Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-ldap-attribute-description-list-plugin>> for the properties of this Plugin type.
+`password-policy-import-plugin`::
++
+Default {property}: Password Policy Import Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-password-policy-import-plugin>> for the properties of this Plugin type.
+`profiler-plugin`::
++
+Default {property}: Profiler Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-profiler-plugin>> for the properties of this Plugin type.
+`referential-integrity-plugin`::
++
+Default {property}: Referential Integrity Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-referential-integrity-plugin>> for the properties of this Plugin type.
+`samba-password-plugin`::
++
+Default {property}: Samba Password Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-samba-password-plugin>> for the properties of this Plugin type.
+`seven-bit-clean-plugin`::
++
+Default {property}: Seven Bit Clean Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-seven-bit-clean-plugin>> for the properties of this Plugin type.
+`unique-attribute-plugin`::
++
+Default {property}: Unique Attribute Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-unique-attribute-plugin>> for the properties of this Plugin type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Plugin properties depend on the Plugin type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Plugin types:
+
+`attribute-cleanup-plugin`::
++
+Default {unit}: Attribute Cleanup Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-attribute-cleanup-plugin>> for the properties of this Plugin type.
+`change-number-control-plugin`::
++
+Default {unit}: Change Number Control Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-change-number-control-plugin>> for the properties of this Plugin type.
+`entry-uuid-plugin`::
++
+Default {unit}: Entry UUID Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-entry-uuid-plugin>> for the properties of this Plugin type.
+`fractional-ldif-import-plugin`::
++
+Default {unit}: Fractional LDIF Import Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-fractional-ldif-import-plugin>> for the properties of this Plugin type.
+`last-mod-plugin`::
++
+Default {unit}: Last Mod Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-last-mod-plugin>> for the properties of this Plugin type.
+`ldap-attribute-description-list-plugin`::
++
+Default {unit}: LDAP Attribute Description List Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-ldap-attribute-description-list-plugin>> for the properties of this Plugin type.
+`password-policy-import-plugin`::
++
+Default {unit}: Password Policy Import Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-password-policy-import-plugin>> for the properties of this Plugin type.
+`profiler-plugin`::
++
+Default {unit}: Profiler Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-profiler-plugin>> for the properties of this Plugin type.
+`referential-integrity-plugin`::
++
+Default {unit}: Referential Integrity Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-referential-integrity-plugin>> for the properties of this Plugin type.
+`samba-password-plugin`::
++
+Default {unit}: Samba Password Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-samba-password-plugin>> for the properties of this Plugin type.
+`seven-bit-clean-plugin`::
++
+Default {unit}: Seven Bit Clean Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-seven-bit-clean-plugin>> for the properties of this Plugin type.
+`unique-attribute-plugin`::
++
+Default {unit}: Unique Attribute Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-unique-attribute-plugin>> for the properties of this Plugin type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Plugin properties depend on the Plugin type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Plugin types:
+
+`attribute-cleanup-plugin`::
++
+Default {unit}: Attribute Cleanup Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-attribute-cleanup-plugin>> for the properties of this Plugin type.
+`change-number-control-plugin`::
++
+Default {unit}: Change Number Control Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-change-number-control-plugin>> for the properties of this Plugin type.
+`entry-uuid-plugin`::
++
+Default {unit}: Entry UUID Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-entry-uuid-plugin>> for the properties of this Plugin type.
+`fractional-ldif-import-plugin`::
++
+Default {unit}: Fractional LDIF Import Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-fractional-ldif-import-plugin>> for the properties of this Plugin type.
+`last-mod-plugin`::
++
+Default {unit}: Last Mod Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-last-mod-plugin>> for the properties of this Plugin type.
+`ldap-attribute-description-list-plugin`::
++
+Default {unit}: LDAP Attribute Description List Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-ldap-attribute-description-list-plugin>> for the properties of this Plugin type.
+`password-policy-import-plugin`::
++
+Default {unit}: Password Policy Import Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-password-policy-import-plugin>> for the properties of this Plugin type.
+`profiler-plugin`::
++
+Default {unit}: Profiler Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-profiler-plugin>> for the properties of this Plugin type.
+`referential-integrity-plugin`::
++
+Default {unit}: Referential Integrity Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-referential-integrity-plugin>> for the properties of this Plugin type.
+`samba-password-plugin`::
++
+Default {unit}: Samba Password Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-samba-password-plugin>> for the properties of this Plugin type.
+`seven-bit-clean-plugin`::
++
+Default {unit}: Seven Bit Clean Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-seven-bit-clean-plugin>> for the properties of this Plugin type.
+`unique-attribute-plugin`::
++
+Default {unit}: Unique Attribute Plugin
++
+Enabled by default: true
++
+See  <<dsconfig-list-plugins-unique-attribute-plugin>> for the properties of this Plugin type.
+====
+
+--
+
+[#dsconfig-list-plugins-attribute-cleanup-plugin]
+== Attribute Cleanup Plugin
+
+Plugins of type attribute-cleanup-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.AttributeCleanupPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+preparseadd
+preparsemodify
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+remove-inbound-attributes::
+[open]
+====
+Description::
+A list of attributes which should be removed from incoming add or modify requests. 
+
+
+Default Value::
+No attributes will be removed
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+rename-inbound-attributes::
+[open]
+====
+Description::
+A list of attributes which should be renamed in incoming add or modify requests. 
+
+
+Default Value::
+No attributes will be renamed
+
+
+Allowed Values::
+An attribute name mapping.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-change-number-control-plugin]
+== Change Number Control Plugin
+
+Plugins of type change-number-control-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.ChangeNumberControlPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+postOperationAdd
+postOperationDelete
+postOperationModify
+postOperationModifyDN
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-entry-uuid-plugin]
+== Entry UUID Plugin
+
+Plugins of type entry-uuid-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.EntryUUIDPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+ldifimport
+preoperationadd
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-fractional-ldif-import-plugin]
+== Fractional LDIF Import Plugin
+
+Plugins of type fractional-ldif-import-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-last-mod-plugin]
+== Last Mod Plugin
+
+Plugins of type last-mod-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.LastModPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+preoperationadd
+preoperationmodify
+preoperationmodifydn
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-ldap-attribute-description-list-plugin]
+== LDAP Attribute Description List Plugin
+
+Plugins of type ldap-attribute-description-list-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.LDAPADListPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+preparsesearch
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-password-policy-import-plugin]
+== Password Policy Import Plugin
+
+Plugins of type password-policy-import-plugin have the following properties:
+
+--
+
+
+default-auth-password-storage-scheme::
+[open]
+====
+Description::
+Specifies the names of password storage schemes that to be used for encoding passwords contained in attributes with the auth password syntax for entries that do not include the ds-pwp-password-policy-dn attribute specifying which password policy should be used to govern them. 
+
+
+Default Value::
+If the default password policy uses an attribute with the auth password syntax, then the server uses the default password storage schemes for that password policy. Otherwise, it encodes auth password values using the "SHA1" scheme.
+
+
+Allowed Values::
+The DN of any Password Storage Scheme. The referenced password storage schemes must be enabled when the Password Policy Import plug-in is enabled.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+default-user-password-storage-scheme::
+[open]
+====
+Description::
+Specifies the names of the password storage schemes to be used for encoding passwords contained in attributes with the user password syntax for entries that do not include the ds-pwp-password-policy-dn attribute specifying which password policy is to be used to govern them. 
+
+
+Default Value::
+If the default password policy uses the attribute with the user password syntax, then the server uses the default password storage schemes for that password policy. Otherwise, it encodes user password values using the "SSHA" scheme.
+
+
+Allowed Values::
+The DN of any Password Storage Scheme. The referenced password storage schemes must be enabled when the Password Policy Import Plugin is enabled.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.PasswordPolicyImportPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+ldifimport
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-profiler-plugin]
+== Profiler Plugin
+
+Plugins of type profiler-plugin have the following properties:
+
+--
+
+
+enable-profiling-on-startup::
+[open]
+====
+Description::
+Indicates whether the profiler plug-in is to start collecting data automatically when the directory server is started. This property is read only when the server is started, and any changes take effect on the next restart. This property is typically set to &quot;false&quot; unless startup profiling is required, because otherwise the volume of data that can be collected can cause the server to run out of memory if it is not turned off in a timely manner.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.profiler.ProfilerPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+startup
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+profile-action::
+[open]
+====
+Description::
+Specifies the action that should be taken by the profiler. A value of &quot;start&quot; causes the profiler thread to start collecting data if it is not already active. A value of &quot;stop&quot; causes the profiler thread to stop collecting data and write it to disk, and a value of &quot;cancel&quot; causes the profiler thread to stop collecting data and discard anything that has been captured. These operations occur immediately.
+
+
+Default Value::
+none
+
+
+Allowed Values::
+
+
+cancel::
+Stop collecting profile data and discard what has been captured.
+
+none::
+Do not take any action.
+
+start::
+Start collecting profile data.
+
+stop::
+Stop collecting profile data and write what has been captured to a file in the profile directory.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+profile-directory::
+[open]
+====
+Description::
+Specifies the path to the directory where profile information is to be written. This path may be either an absolute path or a path that is relative to the root of the OpenDJ directory server instance. The directory must exist and the directory server must have permission to create new files in it.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The path to any directory that exists on the filesystem and that can be read and written by the server user.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+profile-sample-interval::
+[open]
+====
+Description::
+Specifies the sample interval in milliseconds to be used when capturing profiling information in the server. When capturing data, the profiler thread sleeps for this length of time between calls to obtain traces for all threads running in the JVM.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.Upper limit is 2147483647 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+NoneChanges to this configuration attribute take effect the next time the profiler is started.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-referential-integrity-plugin]
+== Referential Integrity Plugin
+
+Plugins of type referential-integrity-plugin have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the attribute types for which referential integrity is to be maintained. At least one attribute type must be specified, and the syntax of any attributes must be either a distinguished name (1.3.6.1.4.1.1466.115.121.1.12) or name and optional UID (1.3.6.1.4.1.1466.115.121.1.34).
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DN that limits the scope within which referential integrity is maintained. 
+
+
+Default Value::
+Referential integrity is maintained in all public naming contexts.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+check-references::
+[open]
+====
+Description::
+Specifies whether reference attributes must refer to existing entries. When this property is set to true, this plugin will ensure that any new references added as part of an add or modify operation point to existing entries, and that the referenced entries match the filter criteria for the referencing attribute, if specified.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+check-references-filter-criteria::
+[open]
+====
+Description::
+Specifies additional filter criteria which will be enforced when checking references. If a reference attribute has filter criteria defined then this plugin will ensure that any new references added as part of an add or modify operation refer to an existing entry which matches the specified filter.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An attribute-filter mapping.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+check-references-scope-criteria::
+[open]
+====
+Description::
+Specifies whether referenced entries must reside within the same naming context as the entry containing the reference. The reference scope will only be enforced when reference checking is enabled.
+
+
+Default Value::
+global
+
+
+Allowed Values::
+
+
+global::
+References may refer to existing entries located anywhere in the Directory.
+
+naming-context::
+References must refer to existing entries located within the same naming context.
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.ReferentialIntegrityPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+log-file::
+[open]
+====
+Description::
+Specifies the log file location where the update records are written when the plug-in is in background-mode processing. The default location is the logs directory of the server instance, using the file name &quot;referint&quot;.
+
+
+Default Value::
+logs/referint
+
+
+Allowed Values::
+A path to an existing file that is readable by the server.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+postoperationdelete
+postoperationmodifydn
+subordinatemodifydn
+subordinatedelete
+preoperationadd
+preoperationmodify
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+update-interval::
+[open]
+====
+Description::
+Specifies the interval in seconds when referential integrity updates are made. If this value is 0, then the updates are made synchronously in the foreground.
+
+
+Default Value::
+0 seconds
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-samba-password-plugin]
+== Samba Password Plugin
+
+Plugins of type samba-password-plugin have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.SambaPasswordPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+preoperationmodify
+postoperationextended
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+pwd-sync-policy::
+[open]
+====
+Description::
+Specifies which Samba passwords should be kept synchronized. 
+
+
+Default Value::
+sync-nt-password
+
+
+Allowed Values::
+
+
+sync-lm-password::
+Synchronize the LanMan password attribute "sambaLMPassword"
+
+sync-nt-password::
+Synchronize the NT password attribute "sambaNTPassword"
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+samba-administrator-dn::
+[open]
+====
+Description::
+Specifies the distinguished name of the user which Samba uses to perform Password Modify extended operations against this directory server in order to synchronize the userPassword attribute after the LanMan or NT passwords have been updated. The user must have the &apos;password-reset&apos; privilege and should not be a root user. This user name can be used in order to identify Samba connections and avoid double re-synchronization of the same password. If this property is left undefined, then no password updates will be skipped.
+
+
+Default Value::
+Synchronize all updates to user passwords
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-seven-bit-clean-plugin]
+== Seven Bit Clean Plugin
+
+Plugins of type seven-bit-clean-plugin have the following properties:
+
+--
+
+
+attribute-type::
+[open]
+====
+Description::
+Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean. 
+
+
+Default Value::
+uid
+mail
+userPassword
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DN below which the checking is performed. Any attempt to update a value for one of the configured attributes below this base DN must be 7-bit clean for the operation to be allowed.
+
+
+Default Value::
+All entries below all public naming contexts will be checked.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.SevenBitCleanPlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+ldifimport
+preparseadd
+preparsemodify
+preparsemodifydn
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-list-plugins-unique-attribute-plugin]
+== Unique Attribute Plugin
+
+Plugins of type unique-attribute-plugin have the following properties:
+
+--
+
+
+base-dn::
+[open]
+====
+Description::
+Specifies a base DN within which the attribute must be unique. 
+
+
+Default Value::
+The plug-in uses the server's public naming contexts in the searches.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the plug-in is enabled for use. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+invoke-for-internal-operations::
+[open]
+====
+Description::
+Indicates whether the plug-in should be invoked for internal operations. Any plug-in that can be invoked for internal operations must ensure that it does not create any new internal operatons that can cause the same plug-in to be re-invoked.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the plug-in implementation. 
+
+
+Default Value::
+org.opends.server.plugins.UniqueAttributePlugin
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.plugin.DirectoryServerPlugin
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+plugin-type::
+[open]
+====
+Description::
+Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. 
+
+
+Default Value::
+preoperationadd
+preoperationmodify
+preoperationmodifydn
+postoperationadd
+postoperationmodify
+postoperationmodifydn
+postsynchronizationadd
+postsynchronizationmodify
+postsynchronizationmodifydn
+
+
+Allowed Values::
+
+
+intermediateresponse::
+Invoked before sending an intermediate repsonse message to the client.
+
+ldifexport::
+Invoked for each operation to be written during an LDIF export.
+
+ldifimport::
+Invoked for each entry read during an LDIF import.
+
+ldifimportbegin::
+Invoked at the beginning of an LDIF import session.
+
+ldifimportend::
+Invoked at the end of an LDIF import session.
+
+postconnect::
+Invoked whenever a new connection is established to the server.
+
+postdisconnect::
+Invoked whenever an existing connection is terminated (by either the client or the server).
+
+postoperationabandon::
+Invoked after completing the abandon processing.
+
+postoperationadd::
+Invoked after completing the core add processing but before sending the response to the client.
+
+postoperationbind::
+Invoked after completing the core bind processing but before sending the response to the client.
+
+postoperationcompare::
+Invoked after completing the core compare processing but before sending the response to the client.
+
+postoperationdelete::
+Invoked after completing the core delete processing but before sending the response to the client.
+
+postoperationextended::
+Invoked after completing the core extended processing but before sending the response to the client.
+
+postoperationmodify::
+Invoked after completing the core modify processing but before sending the response to the client.
+
+postoperationmodifydn::
+Invoked after completing the core modify DN processing but before sending the response to the client.
+
+postoperationsearch::
+Invoked after completing the core search processing but before sending the response to the client.
+
+postoperationunbind::
+Invoked after completing the unbind processing.
+
+postresponseadd::
+Invoked after sending the add response to the client.
+
+postresponsebind::
+Invoked after sending the bind response to the client.
+
+postresponsecompare::
+Invoked after sending the compare response to the client.
+
+postresponsedelete::
+Invoked after sending the delete response to the client.
+
+postresponseextended::
+Invoked after sending the extended response to the client.
+
+postresponsemodify::
+Invoked after sending the modify response to the client.
+
+postresponsemodifydn::
+Invoked after sending the modify DN response to the client.
+
+postresponsesearch::
+Invoked after sending the search result done message to the client.
+
+postsynchronizationadd::
+Invoked after completing post-synchronization processing for an add operation.
+
+postsynchronizationdelete::
+Invoked after completing post-synchronization processing for a delete operation.
+
+postsynchronizationmodify::
+Invoked after completing post-synchronization processing for a modify operation.
+
+postsynchronizationmodifydn::
+Invoked after completing post-synchronization processing for a modify DN operation.
+
+preoperationadd::
+Invoked prior to performing the core add processing.
+
+preoperationbind::
+Invoked prior to performing the core bind processing.
+
+preoperationcompare::
+Invoked prior to performing the core compare processing.
+
+preoperationdelete::
+Invoked prior to performing the core delete processing.
+
+preoperationextended::
+Invoked prior to performing the core extended processing.
+
+preoperationmodify::
+Invoked prior to performing the core modify processing.
+
+preoperationmodifydn::
+Invoked prior to performing the core modify DN processing.
+
+preoperationsearch::
+Invoked prior to performing the core search processing.
+
+preparseabandon::
+Invoked prior to parsing an abandon request.
+
+preparseadd::
+Invoked prior to parsing an add request.
+
+preparsebind::
+Invoked prior to parsing a bind request.
+
+preparsecompare::
+Invoked prior to parsing a compare request.
+
+preparsedelete::
+Invoked prior to parsing a delete request.
+
+preparseextended::
+Invoked prior to parsing an extended request.
+
+preparsemodify::
+Invoked prior to parsing a modify request.
+
+preparsemodifydn::
+Invoked prior to parsing a modify DN request.
+
+preparsesearch::
+Invoked prior to parsing a search request.
+
+preparseunbind::
+Invoked prior to parsing an unbind request.
+
+searchresultentry::
+Invoked before sending a search result entry to the client.
+
+searchresultreference::
+Invoked before sending a search result reference to the client.
+
+shutdown::
+Invoked during a graceful directory server shutdown.
+
+startup::
+Invoked during the directory server startup process.
+
+subordinatedelete::
+Invoked in the course of deleting a subordinate entry of a delete operation.
+
+subordinatemodifydn::
+Invoked in the course of moving or renaming an entry subordinate to the target of a modify DN operation.
+
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+The Plugin must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+type::
+[open]
+====
+Description::
+Specifies the type of attributes to check for value uniqueness. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

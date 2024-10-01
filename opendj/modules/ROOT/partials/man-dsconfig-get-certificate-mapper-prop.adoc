@@ -1,0 +1,804 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-certificate-mapper-prop]
+= dsconfig get-certificate-mapper-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-certificate-mapper-prop - Shows Certificate Mapper properties
+
+== Synopsis
+
+`dsconfig get-certificate-mapper-prop` {options}
+
+[#dsconfig-get-certificate-mapper-prop-description]
+== Description
+
+Shows Certificate Mapper properties.
+
+
+
+[#dsconfig-get-certificate-mapper-prop-options]
+== Options
+
+The `dsconfig get-certificate-mapper-prop` command takes the following options:
+
+--
+`--mapper-name {name}`::
+
+The name of the Certificate Mapper.
++
+
+[open]
+====
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Certificate Mapper types:
+
+`fingerprint-certificate-mapper`::
++
+Default {name}: Fingerprint Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-attribute-to-user-attribute-certificate-mapper`::
++
+Default {name}: Subject Attribute To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-dn-to-user-attribute-certificate-mapper`::
++
+Default {name}: Subject DN To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-equals-dn-certificate-mapper`::
++
+Default {name}: Subject Equals DN Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-equals-dn-certificate-mapper>> for the properties of this Certificate Mapper type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Certificate Mapper types:
+
+`fingerprint-certificate-mapper`::
++
+Default {property}: Fingerprint Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-attribute-to-user-attribute-certificate-mapper`::
++
+Default {property}: Subject Attribute To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-dn-to-user-attribute-certificate-mapper`::
++
+Default {property}: Subject DN To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-equals-dn-certificate-mapper`::
++
+Default {property}: Subject Equals DN Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-equals-dn-certificate-mapper>> for the properties of this Certificate Mapper type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Certificate Mapper types:
+
+`fingerprint-certificate-mapper`::
++
+Default null: Fingerprint Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-attribute-to-user-attribute-certificate-mapper`::
++
+Default null: Subject Attribute To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-dn-to-user-attribute-certificate-mapper`::
++
+Default null: Subject DN To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-equals-dn-certificate-mapper`::
++
+Default null: Subject Equals DN Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-equals-dn-certificate-mapper>> for the properties of this Certificate Mapper type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Certificate Mapper types:
+
+`fingerprint-certificate-mapper`::
++
+Default {unit}: Fingerprint Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-attribute-to-user-attribute-certificate-mapper`::
++
+Default {unit}: Subject Attribute To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-dn-to-user-attribute-certificate-mapper`::
++
+Default {unit}: Subject DN To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-equals-dn-certificate-mapper`::
++
+Default {unit}: Subject Equals DN Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-equals-dn-certificate-mapper>> for the properties of this Certificate Mapper type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Certificate Mapper types:
+
+`fingerprint-certificate-mapper`::
++
+Default {unit}: Fingerprint Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-attribute-to-user-attribute-certificate-mapper`::
++
+Default {unit}: Subject Attribute To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-dn-to-user-attribute-certificate-mapper`::
++
+Default {unit}: Subject DN To User Attribute Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
+`subject-equals-dn-certificate-mapper`::
++
+Default {unit}: Subject Equals DN Certificate Mapper
++
+Enabled by default: true
++
+See  <<dsconfig-get-certificate-mapper-prop-subject-equals-dn-certificate-mapper>> for the properties of this Certificate Mapper type.
+====
+
+--
+
+[#dsconfig-get-certificate-mapper-prop-fingerprint-certificate-mapper]
+== Fingerprint Certificate Mapper
+
+Certificate Mappers of type fingerprint-certificate-mapper have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Certificate Mapper is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+fingerprint-algorithm::
+[open]
+====
+Description::
+Specifies the name of the digest algorithm to compute the fingerprint of client certificates. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+
+
+md5::
+Use the MD5 digest algorithm to compute certificate fingerprints.
+
+sha1::
+Use the SHA-1 digest algorithm to compute certificate fingerprints.
+
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+fingerprint-attribute::
+[open]
+====
+Description::
+Specifies the attribute in which to look for the fingerprint. Values of the fingerprint attribute should exactly match the MD5 or SHA1 representation of the certificate fingerprint.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Fingerprint Certificate Mapper implementation. 
+
+
+Default Value::
+org.opends.server.extensions.FingerprintCertificateMapper
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.CertificateMapper
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Certificate Mapper must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+user-base-dn::
+[open]
+====
+Description::
+Specifies the set of base DNs below which to search for users. The base DNs are used when performing searches to map the client certificates to a user entry.
+
+
+Default Value::
+The server performs the search in all public naming contexts.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper]
+== Subject Attribute To User Attribute Certificate Mapper
+
+Certificate Mappers of type subject-attribute-to-user-attribute-certificate-mapper have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Certificate Mapper is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Subject Attribute To User Attribute Certificate Mapper implementation. 
+
+
+Default Value::
+org.opends.server.extensions.SubjectAttributeToUserAttributeCertificateMapper
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.CertificateMapper
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Certificate Mapper must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+subject-attribute-mapping::
+[open]
+====
+Description::
+Specifies a mapping between certificate attributes and user attributes. Each value should be in the form &quot;certattr:userattr&quot; where certattr is the name of the attribute in the certificate subject and userattr is the name of the corresponding attribute in user entries. There may be multiple mappings defined, and when performing the mapping values for all attributes present in the certificate subject that have mappings defined must be present in the corresponding user entries.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+user-base-dn::
+[open]
+====
+Description::
+Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry. 
+
+
+Default Value::
+The server will perform the search in all public naming contexts.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper]
+== Subject DN To User Attribute Certificate Mapper
+
+Certificate Mappers of type subject-dn-to-user-attribute-certificate-mapper have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Certificate Mapper is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Subject DN To User Attribute Certificate Mapper implementation. 
+
+
+Default Value::
+org.opends.server.extensions.SubjectDNToUserAttributeCertificateMapper
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.CertificateMapper
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Certificate Mapper must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+subject-attribute::
+[open]
+====
+Description::
+Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The name of an attribute type defined in the server schema.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+user-base-dn::
+[open]
+====
+Description::
+Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry. 
+
+
+Default Value::
+The server will perform the search in all public naming contexts.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-certificate-mapper-prop-subject-equals-dn-certificate-mapper]
+== Subject Equals DN Certificate Mapper
+
+Certificate Mappers of type subject-equals-dn-certificate-mapper have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Certificate Mapper is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Subject Equals DN Certificate Mapper implementation. 
+
+
+Default Value::
+org.opends.server.extensions.SubjectEqualsDNCertificateMapper
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.CertificateMapper
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Certificate Mapper must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

@@ -1,0 +1,149 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-root-dse-backend-prop]
+= dsconfig set-root-dse-backend-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-root-dse-backend-prop - Modifies Root DSE Backend properties
+
+== Synopsis
+
+`dsconfig set-root-dse-backend-prop` {options}
+
+[#dsconfig-set-root-dse-backend-prop-description]
+== Description
+
+Modifies Root DSE Backend properties.
+
+
+
+[#dsconfig-set-root-dse-backend-prop-options]
+== Options
+
+The `dsconfig set-root-dse-backend-prop` command takes the following options:
+
+--
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the null option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the null option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the null option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+Root DSE Backend properties depend on the Root DSE Backend type, which depends on the null option.
+
+--
+
+[#dsconfig-set-root-dse-backend-prop-root-dse-backend]
+== Root DSE Backend
+
+Root DSE Backends of type root-dse-backend have the following properties:
+
+--
+
+
+show-all-attributes::
+[open]
+====
+Description::
+Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the directory server schema configuration. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+show-subordinate-naming-contexts::
+[open]
+====
+Description::
+Indicates whether subordinate naming contexts should be visible in the namingContexts attribute of the RootDSE. By default only top level naming contexts are visible 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

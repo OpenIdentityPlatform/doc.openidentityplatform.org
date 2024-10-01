@@ -1,0 +1,354 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-create-log-rotation-policy]
+= dsconfig create-log-rotation-policy(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig create-log-rotation-policy - Creates Log Rotation Policies
+
+== Synopsis
+
+`dsconfig create-log-rotation-policy` {options}
+
+[#dsconfig-create-log-rotation-policy-description]
+== Description
+
+Creates Log Rotation Policies.
+
+
+
+[#dsconfig-create-log-rotation-policy-options]
+== Options
+
+The `dsconfig create-log-rotation-policy` command takes the following options:
+
+--
+`--policy-name {name}`::
+
+The name of the new Log Rotation Policy.
++
+
+[open]
+====
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Log Rotation Policy types:
+
+`fixed-time-log-rotation-policy`::
++
+Default {name}: Fixed Time Log Rotation Policy
++
+Enabled by default: false
++
+See  <<dsconfig-create-log-rotation-policy-fixed-time-log-rotation-policy>> for the properties of this Log Rotation Policy type.
+`size-limit-log-rotation-policy`::
++
+Default {name}: Size Limit Log Rotation Policy
++
+Enabled by default: false
++
+See  <<dsconfig-create-log-rotation-policy-size-limit-log-rotation-policy>> for the properties of this Log Rotation Policy type.
+`time-limit-log-rotation-policy`::
++
+Default {name}: Time Limit Log Rotation Policy
++
+Enabled by default: false
++
+See  <<dsconfig-create-log-rotation-policy-time-limit-log-rotation-policy>> for the properties of this Log Rotation Policy type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name {name}` option.
+
+`-t | --type {type}`::
+
+The type of Log Rotation Policy which should be created. The value for TYPE can be one of: custom | fixed-time | size-limit | time-limit.
++
+
+[open]
+====
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the {type} you provide.
+
+By default, OpenDJ directory server supports the following Log Rotation Policy types:
+
+`fixed-time-log-rotation-policy`::
++
+Default {type}: Fixed Time Log Rotation Policy
++
+Enabled by default: false
++
+See  <<dsconfig-create-log-rotation-policy-fixed-time-log-rotation-policy>> for the properties of this Log Rotation Policy type.
+`size-limit-log-rotation-policy`::
++
+Default {type}: Size Limit Log Rotation Policy
++
+Enabled by default: false
++
+See  <<dsconfig-create-log-rotation-policy-size-limit-log-rotation-policy>> for the properties of this Log Rotation Policy type.
+`time-limit-log-rotation-policy`::
++
+Default {type}: Time Limit Log Rotation Policy
++
+Enabled by default: false
++
+See  <<dsconfig-create-log-rotation-policy-time-limit-log-rotation-policy>> for the properties of this Log Rotation Policy type.
+====
+
+--
+
+[#dsconfig-create-log-rotation-policy-fixed-time-log-rotation-policy]
+== Fixed Time Log Rotation Policy
+
+Log Rotation Policies of type fixed-time-log-rotation-policy have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Fixed Time Log Rotation Policy implementation. 
+
+
+Default Value::
+org.opends.server.loggers.FixedTimeRotationPolicy
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.RotationPolicy
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+time-of-day::
+[open]
+====
+Description::
+Specifies the time of day at which log rotation should occur. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+24 hour time of day in HHmm format.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-log-rotation-policy-size-limit-log-rotation-policy]
+== Size Limit Log Rotation Policy
+
+Log Rotation Policies of type size-limit-log-rotation-policy have the following properties:
+
+--
+
+
+file-size-limit::
+[open]
+====
+Description::
+Specifies the maximum size that a log file can reach before it is rotated. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Size Limit Log Rotation Policy implementation. 
+
+
+Default Value::
+org.opends.server.loggers.SizeBasedRotationPolicy
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.RotationPolicy
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-log-rotation-policy-time-limit-log-rotation-policy]
+== Time Limit Log Rotation Policy
+
+Log Rotation Policies of type time-limit-log-rotation-policy have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Time Limit Log Rotation Policy implementation. 
+
+
+Default Value::
+org.opends.server.loggers.TimeLimitRotationPolicy
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.RotationPolicy
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+rotation-interval::
+[open]
+====
+Description::
+Specifies the time interval between rotations. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 1 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

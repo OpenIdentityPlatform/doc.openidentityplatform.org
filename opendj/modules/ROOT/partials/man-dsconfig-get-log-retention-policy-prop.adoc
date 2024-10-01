@@ -1,0 +1,449 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-log-retention-policy-prop]
+= dsconfig get-log-retention-policy-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-log-retention-policy-prop - Shows Log Retention Policy properties
+
+== Synopsis
+
+`dsconfig get-log-retention-policy-prop` {options}
+
+[#dsconfig-get-log-retention-policy-prop-description]
+== Description
+
+Shows Log Retention Policy properties.
+
+
+
+[#dsconfig-get-log-retention-policy-prop-options]
+== Options
+
+The `dsconfig get-log-retention-policy-prop` command takes the following options:
+
+--
+`--policy-name {name}`::
+
+The name of the Log Retention Policy.
++
+
+[open]
+====
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Log Retention Policy types:
+
+`file-count-log-retention-policy`::
++
+Default {name}: File Count Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-file-count-log-retention-policy>> for the properties of this Log Retention Policy type.
+`free-disk-space-log-retention-policy`::
++
+Default {name}: Free Disk Space Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-free-disk-space-log-retention-policy>> for the properties of this Log Retention Policy type.
+`size-limit-log-retention-policy`::
++
+Default {name}: Size Limit Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-size-limit-log-retention-policy>> for the properties of this Log Retention Policy type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Log Retention Policy types:
+
+`file-count-log-retention-policy`::
++
+Default {property}: File Count Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-file-count-log-retention-policy>> for the properties of this Log Retention Policy type.
+`free-disk-space-log-retention-policy`::
++
+Default {property}: Free Disk Space Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-free-disk-space-log-retention-policy>> for the properties of this Log Retention Policy type.
+`size-limit-log-retention-policy`::
++
+Default {property}: Size Limit Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-size-limit-log-retention-policy>> for the properties of this Log Retention Policy type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Log Retention Policy types:
+
+`file-count-log-retention-policy`::
++
+Default null: File Count Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-file-count-log-retention-policy>> for the properties of this Log Retention Policy type.
+`free-disk-space-log-retention-policy`::
++
+Default null: Free Disk Space Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-free-disk-space-log-retention-policy>> for the properties of this Log Retention Policy type.
+`size-limit-log-retention-policy`::
++
+Default null: Size Limit Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-size-limit-log-retention-policy>> for the properties of this Log Retention Policy type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Log Retention Policy types:
+
+`file-count-log-retention-policy`::
++
+Default {unit}: File Count Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-file-count-log-retention-policy>> for the properties of this Log Retention Policy type.
+`free-disk-space-log-retention-policy`::
++
+Default {unit}: Free Disk Space Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-free-disk-space-log-retention-policy>> for the properties of this Log Retention Policy type.
+`size-limit-log-retention-policy`::
++
+Default {unit}: Size Limit Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-size-limit-log-retention-policy>> for the properties of this Log Retention Policy type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Log Retention Policy types:
+
+`file-count-log-retention-policy`::
++
+Default {unit}: File Count Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-file-count-log-retention-policy>> for the properties of this Log Retention Policy type.
+`free-disk-space-log-retention-policy`::
++
+Default {unit}: Free Disk Space Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-free-disk-space-log-retention-policy>> for the properties of this Log Retention Policy type.
+`size-limit-log-retention-policy`::
++
+Default {unit}: Size Limit Log Retention Policy
++
+Enabled by default: false
++
+See  <<dsconfig-get-log-retention-policy-prop-size-limit-log-retention-policy>> for the properties of this Log Retention Policy type.
+====
+
+--
+
+[#dsconfig-get-log-retention-policy-prop-file-count-log-retention-policy]
+== File Count Log Retention Policy
+
+Log Retention Policies of type file-count-log-retention-policy have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the File Count Log Retention Policy implementation. 
+
+
+Default Value::
+org.opends.server.loggers.FileNumberRetentionPolicy
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.RetentionPolicy
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+number-of-files::
+[open]
+====
+Description::
+Specifies the number of archived log files to retain before the oldest ones are cleaned. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-retention-policy-prop-free-disk-space-log-retention-policy]
+== Free Disk Space Log Retention Policy
+
+Log Retention Policies of type free-disk-space-log-retention-policy have the following properties:
+
+--
+
+
+free-disk-space::
+[open]
+====
+Description::
+Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Free Disk Space Log Retention Policy implementation. 
+
+
+Default Value::
+org.opends.server.loggers.FreeDiskSpaceRetentionPolicy
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.RetentionPolicy
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-log-retention-policy-prop-size-limit-log-retention-policy]
+== Size Limit Log Retention Policy
+
+Log Retention Policies of type size-limit-log-retention-policy have the following properties:
+
+--
+
+
+disk-space-used::
+[open]
+====
+Description::
+Specifies the maximum total disk space used by the log files. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Size Limit Log Retention Policy implementation. 
+
+
+Default Value::
+org.opends.server.loggers.SizeBasedRetentionPolicy
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.loggers.RetentionPolicy
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

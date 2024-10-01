@@ -1,0 +1,230 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#ldapcompare-1]
+= ldapcompare(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+ldapcompare - perform LDAP compare operations
+
+== Synopsis
+`ldapcompare` `attribute:value DN`
+
+[#ldapcompare-description]
+== Description
+
+This utility can be used to perform LDAP compare operations in the Directory Server.
+
+
+
+
+[#ldapcompare-options]
+== Options
+
+The `ldapcompare` command takes the following options:
+
+.Command options:
+
+--
+`--assertionFilter {filter}`::
+Use the LDAP assertion control with the provided filter.
++
+
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`-J | --control {controloid[:criticality[:value|::b64value|:&lt;filePath]]}`::
+Use a request control with the provided information.
++
+include::./_variablelist-ldap-controls.adoc[]
+`-m | --useCompareResultCode`::
+Use the LDAP compare result as an exit code for the LDAP compare operations.
++
+Default: false
++
+
+`-n | --dry-run`::
+Show what would be done but do not perform any operation.
++
+Default: false
++
+
+`-S | --scriptFriendly`::
+Use script-friendly mode.
++
+Default: false
++
+
+`-Y | --proxyAs {authzID}`::
+Use the proxied authorization control with the given authorization ID.
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+Default: 
++
+
+`-E | --reportAuthzID`::
+Use the authorization identity control.
++
+Default: false
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server port number.
++
+Default: 389
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-q | --useStartTLS`::
+Use StartTLS to secure communication with the server.
++
+Default: false
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`--usePasswordPolicyControl`::
+Use the password policy request control.
++
+Default: false
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+`-Z | --useSSL`::
+Use SSL for secure communication with the server.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_ldapcompare-exit-codes.adoc[]
+
+include::./_files.adoc[]
+
+include::./_ldapcompare-examples.adoc[]
+
+

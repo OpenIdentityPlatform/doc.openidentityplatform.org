@@ -1,0 +1,265 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#setup-1]
+= setup(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+setup - install OpenDJ directory server
+
+== Synopsis
+`setup` 
+
+[#setup-description]
+== Description
+
+This utility can be used to setup the Directory Server.
+
+
+
+
+[#setup-options]
+== Options
+
+The `setup` command takes the following options:
+
+.Command options:
+
+--
+`-a | --addBaseEntry`::
+Indicates whether to create the base entry in the Directory Server database.
++
+Default: false
++
+
+`--acceptLicense`::
+Automatically accepts the product license (if present).
++
+Default: false
++
+
+`--adminConnectorPort {port}`::
+Port on which the Administration Connector should listen for communication.
++
+Default: 4444
++
+
+`-b | --baseDN {baseDN}`::
+Base DN for user information in the Directory Server.  Multiple base DNs may be provided by using this option multiple times.
++
+
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`-d | --sampleData {numEntries}`::
+Specifies that the database should be populated with the specified number of sample entries.
++
+Default: 0
++
+
+`-D | --rootUserDN {rootUserDN}`::
+DN for the initial root user for the Directory Server.
++
+Default: cn=Directory Manager
++
+
+`--generateSelfSignedCertificate`::
+Generate a self-signed certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+Default: false
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-i | --cli`::
+Use the command line install. If not specified the graphical interface will be launched.  The rest of the options (excluding help and version) will only be taken into account if this option is specified.
++
+Default: false
++
+
+`-j | --rootUserPasswordFile {rootUserPasswordFile}`::
+Path to a file containing the password for the initial root user for the Directory Server.
++
+
+`-l | --ldifFile {ldifFile}`::
+Path to an LDIF file containing data that should be added to the Directory Server database. Multiple LDIF files may be provided by using this option multiple times.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-O | --doNotStart`::
+Do not start the server when the configuration is completed.
++
+Default: false
++
+
+`-p | --ldapPort {port}`::
+Port on which the Directory Server should listen for LDAP communication.
++
+Default: 1389
++
+
+`-q | --enableStartTLS`::
+Enable StartTLS to allow secure communication with the server using the LDAP port.
++
+Default: false
++
+
+`-R | --rejectFile {rejectFile}`::
+Write rejected entries to the specified file.
++
+
+`-S | --skipPortCheck`::
+Skip the check to determine whether the specified ports are usable.
++
+Default: false
++
+
+`--skipFile {skipFile}`::
+Write skipped entries to the specified file.
++
+
+`-t | --backendType {backendType}`::
+The type of the userRoot backend.
++
+Default: `je` for standard edition, `pdb` for OEM edition.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate (JKS, JCEKS, PKCS#12 or PKCS#11) as server certificate.
++
+
+`--useBcfksKeystore {keyStorePath}`::
+Path of a BCFKS key store containing the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`--useJavaKeystore {keyStorePath}`::
+Path of a Java Key Store (JKS) containing a certificate to be used as the server certificate. This does not apply to the administration connector, which uses its own key store and certificate (default: config/admin-keystore and admin-cert).
++
+
+`--useJCEKS {keyStorePath}`::
+Path of a JCEKS containing a certificate to be used as the server certificate.
++
+
+`--usePkcs11Keystore`::
+Use a certificate in a PKCS#11 token that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+Default: false
++
+
+`--usePkcs12keyStore {keyStorePath}`::
+Path of a PKCS#12 key store containing the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-w | --rootUserPassword {rootUserPassword}`::
+Password for the initial root user for the Directory Server.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate (JKS, JCEKS, PKCS#12 or PKCS#11) as server certificate.
++
+
+`-x | --jmxPort {jmxPort}`::
+Port on which the Directory Server should listen for JMX communication.
++
+Default: 1689
++
+
+`-Z | --ldapsPort {port}`::
+Port on which the Directory Server should listen for LDAPS communication.  The LDAPS port will be configured and SSL will be enabled only if this argument is explicitly specified.
++
+Default: 1636
++
+
+
+--
+.Utility input/output options:
+
+--
+`-n | --no-prompt`::
+Use non-interactive mode.  If data in the command is missing, the user is not prompted and the tool will fail.
++
+Default: false
++
+
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-Q | --quiet`::
+Use quiet mode.
++
+Default: false
++
+
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_setup-examples.adoc[]
+
+

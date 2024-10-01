@@ -1,0 +1,355 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-backend-vlv-index-prop]
+= dsconfig get-backend-vlv-index-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-backend-vlv-index-prop - Shows Backend VLV Index properties
+
+== Synopsis
+
+`dsconfig get-backend-vlv-index-prop` {options}
+
+[#dsconfig-get-backend-vlv-index-prop-description]
+== Description
+
+Shows Backend VLV Index properties.
+
+
+
+[#dsconfig-get-backend-vlv-index-prop-options]
+== Options
+
+The `dsconfig get-backend-vlv-index-prop` command takes the following options:
+
+--
+`--backend-name {name}`::
+
+The name of the Pluggable Backend.
++
+
+[open]
+====
+Backend VLV Index properties depend on the Backend VLV Index type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Backend VLV Index types:
+
+`backend-vlv-index`::
++
+Default {name}: Backend VLV Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-vlv-index-prop-backend-vlv-index>> for the properties of this Backend VLV Index type.
+====
+
+`--index-name {name}`::
+
+The name of the Backend VLV Index.
++
+
+[open]
+====
+Backend VLV Index properties depend on the Backend VLV Index type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following Backend VLV Index types:
+
+`backend-vlv-index`::
++
+Default {name}: Backend VLV Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-vlv-index-prop-backend-vlv-index>> for the properties of this Backend VLV Index type.
+====
+
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Backend VLV Index properties depend on the Backend VLV Index type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Backend VLV Index types:
+
+`backend-vlv-index`::
++
+Default {property}: Backend VLV Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-vlv-index-prop-backend-vlv-index>> for the properties of this Backend VLV Index type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Backend VLV Index properties depend on the Backend VLV Index type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Backend VLV Index types:
+
+`backend-vlv-index`::
++
+Default null: Backend VLV Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-vlv-index-prop-backend-vlv-index>> for the properties of this Backend VLV Index type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Backend VLV Index properties depend on the Backend VLV Index type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Backend VLV Index types:
+
+`backend-vlv-index`::
++
+Default {unit}: Backend VLV Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-vlv-index-prop-backend-vlv-index>> for the properties of this Backend VLV Index type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Backend VLV Index properties depend on the Backend VLV Index type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Backend VLV Index types:
+
+`backend-vlv-index`::
++
+Default {unit}: Backend VLV Index
++
+Enabled by default: false
++
+See  <<dsconfig-get-backend-vlv-index-prop-backend-vlv-index>> for the properties of this Backend VLV Index type.
+====
+
+--
+
+[#dsconfig-get-backend-vlv-index-prop-backend-vlv-index]
+== Backend VLV Index
+
+Backend VLV Indexes of type backend-vlv-index have the following properties:
+
+--
+
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DN used in the search query that is being indexed. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The index must be rebuilt after modifying this property.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+filter::
+[open]
+====
+Description::
+Specifies the LDAP filter used in the query that is being indexed. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid LDAP search filter.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The index must be rebuilt after modifying this property.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+name::
+[open]
+====
+Description::
+Specifies a unique name for this VLV index. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+NoneThe VLV index name cannot be altered after the index is created.
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+scope::
+[open]
+====
+Description::
+Specifies the LDAP scope of the query that is being indexed. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+
+
+base-object::
+Search the base object only.
+
+single-level::
+Search the immediate children of the base object but do not include any of their descendants or the base object itself.
+
+subordinate-subtree::
+Search the entire subtree below the base object but do not include the base object itself.
+
+whole-subtree::
+Search the base object and the entire subtree below the base object.
+
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The index must be rebuilt after modifying this property.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+sort-order::
+[open]
+====
+Description::
+Specifies the names of the attributes that are used to sort the entries for the query being indexed. Multiple attributes can be used to determine the sort order by listing the attribute names from highest to lowest precedence. Optionally, + or - can be prefixed to the attribute name to sort the attribute in ascending order or descending order respectively.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+Valid attribute types defined in the schema, separated by a space and optionally prefixed by + or -.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The index must be rebuilt after modifying this property.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

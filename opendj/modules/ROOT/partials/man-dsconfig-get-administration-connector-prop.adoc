@@ -1,0 +1,368 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-get-administration-connector-prop]
+= dsconfig get-administration-connector-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig get-administration-connector-prop - Shows Administration Connector properties
+
+== Synopsis
+
+`dsconfig get-administration-connector-prop` {options}
+
+[#dsconfig-get-administration-connector-prop-description]
+== Description
+
+Shows Administration Connector properties.
+
+
+
+[#dsconfig-get-administration-connector-prop-options]
+== Options
+
+The `dsconfig get-administration-connector-prop` command takes the following options:
+
+--
+`--property {property}`::
+
+The name of a property to be displayed.
++
+
+[open]
+====
+Administration Connector properties depend on the Administration Connector type, which depends on the {property} you provide.
+
+By default, OpenDJ directory server supports the following Administration Connector types:
+
+`administration-connector`::
++
+Default {property}: Administration Connector
++
+Enabled by default: false
++
+See  <<dsconfig-get-administration-connector-prop-administration-connector>> for the properties of this Administration Connector type.
+====
+
+`-E | --record`::
+
+Modifies the display output to show one property value per line.
++
+
+[open]
+====
+Administration Connector properties depend on the Administration Connector type, which depends on the null you provide.
+
+By default, OpenDJ directory server supports the following Administration Connector types:
+
+`administration-connector`::
++
+Default null: Administration Connector
++
+Enabled by default: false
++
+See  <<dsconfig-get-administration-connector-prop-administration-connector>> for the properties of this Administration Connector type.
+====
+
+`-z | --unit-size {unit}`::
+
+Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
++
+
+[open]
+====
+Administration Connector properties depend on the Administration Connector type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Administration Connector types:
+
+`administration-connector`::
++
+Default {unit}: Administration Connector
++
+Enabled by default: false
++
+See  <<dsconfig-get-administration-connector-prop-administration-connector>> for the properties of this Administration Connector type.
+====
+
+`-m | --unit-time {unit}`::
+
+Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
++
+
+[open]
+====
+Administration Connector properties depend on the Administration Connector type, which depends on the {unit} you provide.
+
+By default, OpenDJ directory server supports the following Administration Connector types:
+
+`administration-connector`::
++
+Default {unit}: Administration Connector
++
+Enabled by default: false
++
+See  <<dsconfig-get-administration-connector-prop-administration-connector>> for the properties of this Administration Connector type.
+====
+
+--
+
+[#dsconfig-get-administration-connector-prop-administration-connector]
+== Administration Connector
+
+Administration Connectors of type administration-connector have the following properties:
+
+--
+
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that is used with the Administration Connector . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-address::
+[open]
+====
+Description::
+Specifies the address or set of addresses on which this Administration Connector should listen for connections from LDAP clients. Multiple addresses may be provided as separate values for this attribute. If no values are provided, then the Administration Connector listens on all interfaces.
+
+
+Default Value::
+0.0.0.0
+
+
+Allowed Values::
+An IP address
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+listen-port::
+[open]
+====
+Description::
+Specifies the port number on which the Administration Connector will listen for connections from clients. Only a single port number may be provided.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 65535.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Administration Connector must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cert-nickname::
+[open]
+====
+Description::
+Specifies the nicknames (also called the aliases) of the keys or key pairs that the Administration Connector should use when performing SSL communication. The property can be used multiple times (referencing different nicknames) when server certificates with different public key algorithms are used in parallel (for example, RSA, DSA, and ECC-based algorithms). When a nickname refers to an asymmetric (public/private) key pair, the nickname for the public key certificate and associated private key entry must match exactly. A single nickname is used to retrieve both the public key and the private key. 
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-cipher-suite::
+[open]
+====
+Description::
+Specifies the names of the SSL cipher suites that are allowed for use in SSL communication. 
+
+
+Default Value::
+Uses the default set of SSL cipher suites provided by the server's JVM.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but will only impact new SSL/TLS-based sessions created after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+ssl-protocol::
+[open]
+====
+Description::
+Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. 
+
+
+Default Value::
+Uses the default set of SSL protocols provided by the server's JVM.
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only impact new SSL/TLS-based sessions created after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that is used with the Administration Connector . 
+
+
+Default Value::
+Use the trust manager provided by the JVM.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

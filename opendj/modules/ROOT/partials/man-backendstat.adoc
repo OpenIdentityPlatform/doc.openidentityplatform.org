@@ -1,0 +1,385 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#backendstat-1]
+= backendstat(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+backendstat - gather OpenDJ backend debugging information
+
+== Synopsis
+`backendstat` `{subcommand} {options}`
+
+[#backendstat-description]
+== Description
+
+This utility can be used to debug a backend.
+
+
+
+
+[#backendstat-options]
+== Options
+
+The `backendstat` command takes the following options:
+
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+[#backendstat-subcommands]
+== Subcommands
+
+
+
+The `backendstat` command supports the following subcommands:
+
+
+[#backendstat-dump-index]
+=== backendstat dump-index
+
+Dump records from an index, decoding keys and values. Depending on index size, this subcommand can generate lots of output.
+
+
+
+[#backendstat-dump-index-options]
+==== Options
+
+--
+
+`-n | --backendID {backendName}`::
+The backend ID of the backend.
++
+
++
+
+`-b | --baseDN {baseDN}`::
+The base DN within the backend.
++
+
++
+
+`-i | --indexName {indexName}`::
+The name of the index.
++
+
++
+
+`-q | --statsOnly`::
+Do not display backend data, just statistics.
++
+
++
+Default: false
++
+
+`-K | --maxKeyValue {maxKeyValue}`::
+Only show records with keys that should be ordered before the provided value using the comparator for the database container.
++
+
++
+
+`-k | --minKeyValue {minKeyValue}`::
+Only show records with keys that should be ordered after the provided value using the comparator for the database container.
++
+
++
+
+`-X | --maxHexKeyValue {maxKeyValue}`::
+Only show records with keys that should be ordered before the provided value using the comparator for the database container.
++
+
++
+
+`-x | --minHexKeyValue {minKeyValue}`::
+Only show records with keys that should be ordered after the provided value using the comparator for the database container.
++
+
++
+
+`-S | --maxDataSize {maxDataSize}`::
+Only show records whose data is no larger than the provided value.
++
+
++
+Default: -1
++
+
+`-s | --minDataSize {minDataSize}`::
+Only show records whose data is no smaller than the provided value.
++
+
++
+Default: -1
++
+
+`-p | --skipDecode`::
+Do not try to decode backend data to their appropriate types.
++
+
++
+Default: false
++
+
+
+--
+
+
+
+
+[#backendstat-dump-raw-db]
+=== backendstat dump-raw-db
+
+Dump the raw records in hexadecimal format for a low-level database within the pluggable backend's storage engine. Depending on index size, this subcommand can generate lots of output.
+
+
+
+[#backendstat-dump-raw-db-options]
+==== Options
+
+--
+
+`-n | --backendID {backendName}`::
+The backend ID of the backend.
++
+
++
+
+`-d | --dbName {databaseName}`::
+The raw database name.
++
+
++
+
+`-q | --statsOnly`::
+Do not display backend data, just statistics.
++
+
++
+Default: false
++
+
+`-K | --maxKeyValue {maxKeyValue}`::
+Only show records with keys that should be ordered before the provided value using the comparator for the database container.
++
+
++
+
+`-k | --minKeyValue {minKeyValue}`::
+Only show records with keys that should be ordered after the provided value using the comparator for the database container.
++
+
++
+
+`-X | --maxHexKeyValue {maxKeyValue}`::
+Only show records with keys that should be ordered before the provided value using the comparator for the database container.
++
+
++
+
+`-x | --minHexKeyValue {minKeyValue}`::
+Only show records with keys that should be ordered after the provided value using the comparator for the database container.
++
+
++
+
+`-S | --maxDataSize {maxDataSize}`::
+Only show records whose data is no larger than the provided value.
++
+
++
+Default: -1
++
+
+`-s | --minDataSize {minDataSize}`::
+Only show records whose data is no smaller than the provided value.
++
+
++
+Default: -1
++
+
+`-l | --singleLine`::
+Write hexadecimal data on a single line instead of pretty format.
++
+
++
+Default: false
++
+
+
+--
+
+
+
+
+[#backendstat-list-backends]
+=== backendstat list-backends
+
+List the pluggable backends.
+
+
+
+
+
+
+[#backendstat-list-base-dns]
+=== backendstat list-base-dns
+
+List the base DNs in a backend.
+
+
+
+[#backendstat-list-base-dns-options]
+==== Options
+
+--
+
+`-n | --backendID {backendName}`::
+The backend ID of the backend.
++
+
++
+
+
+--
+
+
+
+
+[#backendstat-list-indexes]
+=== backendstat list-indexes
+
+List the indexes associated with a pluggable backend. This subcommand may take a long time to complete depending on the size of the backend.
+
+
+
+[#backendstat-list-indexes-options]
+==== Options
+
+--
+
+`-n | --backendID {backendName}`::
+The backend ID of the backend.
++
+
++
+
+`-b | --baseDN {baseDN}`::
+The base DN within the backend.
++
+
++
+
+
+--
+
+
+
+
+[#backendstat-list-raw-dbs]
+=== backendstat list-raw-dbs
+
+List the low-level databases within a pluggable backend's storage engine. This subcommand may take a long time to complete depending on the size of the backend.
+
+
+
+[#backendstat-list-raw-dbs-options]
+==== Options
+
+--
+
+`-n | --backendID {backendName}`::
+The backend ID of the backend.
++
+
++
+
+`-u | --useSIUnits`::
+Uses SI Units for printing sizes.
++
+
++
+Default: false
++
+
+
+--
+
+
+
+
+[#backendstat-show-index-status]
+=== backendstat show-index-status
+
+Shows the status of indexes for a backend base DN. This subcommand can take a long time to complete, as it reads all indexes for all backends.
+
+<xinclude:include href="variablelist-backendstat-index-status.xml" />
+
+[#backendstat-show-index-status-options]
+==== Options
+
+--
+
+`-n | --backendID {backendName}`::
+The backend ID of the backend.
++
+
++
+
+`-b | --baseDN {baseDN}`::
+The base DN within the backend.
++
+
++
+
+
+--
+
+
+
+
+
+include::./_exit-codes-0-gt0.adoc[]
+
+include::./_backendstat-examples.adoc[]
+
+

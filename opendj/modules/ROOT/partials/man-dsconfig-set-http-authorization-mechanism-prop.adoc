@@ -1,0 +1,1762 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-http-authorization-mechanism-prop]
+= dsconfig set-http-authorization-mechanism-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-http-authorization-mechanism-prop - Modifies HTTP Authorization Mechanism properties
+
+== Synopsis
+
+`dsconfig set-http-authorization-mechanism-prop` {options}
+
+[#dsconfig-set-http-authorization-mechanism-prop-description]
+== Description
+
+Modifies HTTP Authorization Mechanism properties.
+
+
+
+[#dsconfig-set-http-authorization-mechanism-prop-options]
+== Options
+
+The `dsconfig set-http-authorization-mechanism-prop` command takes the following options:
+
+--
+`--mechanism-name {name}`::
+
+The name of the HTTP Authorization Mechanism.
++
+
+[open]
+====
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the {name} you provide.
+
+By default, OpenDJ directory server supports the following HTTP Authorization Mechanism types:
+
+`http-anonymous-authorization-mechanism`::
++
+Default {name}: HTTP Anonymous Authorization Mechanism
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-authorization-mechanism-prop-http-anonymous-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
+`http-basic-authorization-mechanism`::
++
+Default {name}: HTTP Basic Authorization Mechanism
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-authorization-mechanism-prop-http-basic-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
+`http-oauth2-cts-authorization-mechanism`::
++
+Default {name}: HTTP Oauth2 Cts Authorization Mechanism
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-cts-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
+`http-oauth2-file-authorization-mechanism`::
++
+Default {name}: HTTP Oauth2 File Authorization Mechanism
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-file-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
+`http-oauth2-openam-authorization-mechanism`::
++
+Default {name}: HTTP Oauth2 Openam Authorization Mechanism
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-openam-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
+`http-oauth2-token-introspection-authorization-mechanism`::
++
+Default {name}: HTTP Oauth2 Token Introspection Authorization Mechanism
++
+Enabled by default: true
++
+See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-token-introspection-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
+====
+
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+
+--
+
+[#dsconfig-set-http-authorization-mechanism-prop-http-anonymous-authorization-mechanism]
+== HTTP Anonymous Authorization Mechanism
+
+HTTP Authorization Mechanisms of type http-anonymous-authorization-mechanism have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Authorization Mechanism is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Anonymous Authorization Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.authz.HttpAnonymousAuthorizationMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.protocols.http.authz.HttpAuthorizationMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+user-dn::
+[open]
+====
+Description::
+The authorization DN which will be used for performing anonymous operations. 
+
+
+Default Value::
+By default, operations will be performed using an anonymously bound connection.
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-http-authorization-mechanism-prop-http-basic-authorization-mechanism]
+== HTTP Basic Authorization Mechanism
+
+HTTP Authorization Mechanisms of type http-basic-authorization-mechanism have the following properties:
+
+--
+
+
+alt-authentication-enabled::
+[open]
+====
+Description::
+Specifies whether user credentials may be provided using alternative headers to the standard &apos;Authorize&apos; header. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+alt-password-header::
+[open]
+====
+Description::
+Alternate HTTP headers to get the user&apos;s password from. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+alt-username-header::
+[open]
+====
+Description::
+Alternate HTTP headers to get the user&apos;s name from. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Authorization Mechanism is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+&gt; Specifies the name of the identity mapper used to get the user&apos;s entry corresponding to the user-id provided in the HTTP authentication header. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the HTTP Basic Authorization Mechanism is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Basic Authorization Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.authz.HttpBasicAuthorizationMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.protocols.http.authz.HttpAuthorizationMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-http-authorization-mechanism-prop-http-oauth2-cts-authorization-mechanism]
+== HTTP Oauth2 Cts Authorization Mechanism
+
+HTTP Authorization Mechanisms of type http-oauth2-cts-authorization-mechanism have the following properties:
+
+--
+
+
+access-token-cache-enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Oauth2 Authorization Mechanism is enabled for use. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+access-token-cache-expiration::
+[open]
+====
+Description::
+Token cache expiration 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+authzid-json-pointer::
+[open]
+====
+Description::
+Specifies the JSON pointer to the value to use as Authorization ID. The JSON pointer is applied to the resolved access token JSON document. (example: /uid) 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+The base DN of the Core Token Service where access token are stored. (example: ou=famrecords,ou=openam-session,ou=tokens,dc=example,dc=com) 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Authorization Mechanism is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+&gt; Specifies the name of the identity mapper to use in conjunction with the authzid-json-pointer to get the user corresponding to the acccess-token. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the HTTP Oauth2 Authorization Mechanism is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Oauth2 Cts Authorization Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.authz.HttpOAuth2CtsAuthorizationMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.protocols.http.authz.HttpAuthorizationMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+required-scope::
+[open]
+====
+Description::
+Scopes required to grant access to the service. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-http-authorization-mechanism-prop-http-oauth2-file-authorization-mechanism]
+== HTTP Oauth2 File Authorization Mechanism
+
+HTTP Authorization Mechanisms of type http-oauth2-file-authorization-mechanism have the following properties:
+
+--
+
+
+access-token-cache-enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Oauth2 Authorization Mechanism is enabled for use. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+access-token-cache-expiration::
+[open]
+====
+Description::
+Token cache expiration 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+access-token-directory::
+[open]
+====
+Description::
+Directory containing token files. File names must be equal to the token strings. The file content must a JSON object with the following attributes: &apos;scope&apos;, &apos;expireTime&apos; and all the field(s) needed to resolve the authzIdTemplate. 
+
+
+Default Value::
+oauth2-demo/
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+authzid-json-pointer::
+[open]
+====
+Description::
+Specifies the JSON pointer to the value to use as Authorization ID. The JSON pointer is applied to the resolved access token JSON document. (example: /uid) 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Authorization Mechanism is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+&gt; Specifies the name of the identity mapper to use in conjunction with the authzid-json-pointer to get the user corresponding to the acccess-token. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the HTTP Oauth2 Authorization Mechanism is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Oauth2 File Authorization Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.authz.HttpOAuth2FileAuthorizationMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.protocols.http.authz.HttpAuthorizationMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+required-scope::
+[open]
+====
+Description::
+Scopes required to grant access to the service. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-http-authorization-mechanism-prop-http-oauth2-openam-authorization-mechanism]
+== HTTP Oauth2 Openam Authorization Mechanism
+
+HTTP Authorization Mechanisms of type http-oauth2-openam-authorization-mechanism have the following properties:
+
+--
+
+
+access-token-cache-enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Oauth2 Authorization Mechanism is enabled for use. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+access-token-cache-expiration::
+[open]
+====
+Description::
+Token cache expiration 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+authzid-json-pointer::
+[open]
+====
+Description::
+Specifies the JSON pointer to the value to use as Authorization ID. The JSON pointer is applied to the resolved access token JSON document. (example: /uid) 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Authorization Mechanism is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+&gt; Specifies the name of the identity mapper to use in conjunction with the authzid-json-pointer to get the user corresponding to the acccess-token. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the HTTP Oauth2 Authorization Mechanism is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Oauth2 Openam Authorization Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.authz.HttpOAuth2OpenAmAuthorizationMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.protocols.http.authz.HttpAuthorizationMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this HTTP Oauth2 Openam Authorization Mechanism . 
+
+
+Default Value::
+By default the system key manager(s) will be used.
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent requests to the authorization server.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+required-scope::
+[open]
+====
+Description::
+Scopes required to grant access to the service. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+token-info-url::
+[open]
+====
+Description::
+Defines the OpenAM endpoint URL where the access-token resolution request should be sent. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that should be used when negotiating SSL connections with the remote authorization server. 
+
+
+Default Value::
+By default, no trust manager is specified indicating that only certificates signed by the authorities associated with this JVM will be accepted.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled when SSL is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only impact subsequent SSL connection negotiations.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-http-authorization-mechanism-prop-http-oauth2-token-introspection-authorization-mechanism]
+== HTTP Oauth2 Token Introspection Authorization Mechanism
+
+HTTP Authorization Mechanisms of type http-oauth2-token-introspection-authorization-mechanism have the following properties:
+
+--
+
+
+access-token-cache-enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Oauth2 Authorization Mechanism is enabled for use. 
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+access-token-cache-expiration::
+[open]
+====
+Description::
+Token cache expiration 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+authzid-json-pointer::
+[open]
+====
+Description::
+Specifies the JSON pointer to the value to use as Authorization ID. The JSON pointer is applied to the resolved access token JSON document. (example: /uid) 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+client-id::
+[open]
+====
+Description::
+Client&apos;s ID to use during the HTTP basic authentication against the authorization server. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+client-secret::
+[open]
+====
+Description::
+Client&apos;s secret to use during the HTTP basic authentication against the authorization server. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the HTTP Authorization Mechanism is enabled. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+identity-mapper::
+[open]
+====
+Description::
+&gt; Specifies the name of the identity mapper to use in conjunction with the authzid-json-pointer to get the user corresponding to the acccess-token. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Identity Mapper. The referenced identity mapper must be enabled when the HTTP Oauth2 Authorization Mechanism is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the HTTP Oauth2 Token Introspection Authorization Mechanism implementation. 
+
+
+Default Value::
+org.opends.server.protocols.http.authz.HttpOAuth2TokenIntrospectionAuthorizationMechanism
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.protocols.http.authz.HttpAuthorizationMechanism
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+key-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the key manager that should be used with this HTTP Oauth2 Token Introspection Authorization Mechanism . 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+The DN of any Key Manager Provider. The referenced key manager provider must be enabled.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only for subsequent requests to the authorization server.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+required-scope::
+[open]
+====
+Description::
+Scopes required to grant access to the service. 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+token-introspection-url::
+[open]
+====
+Description::
+Defines the token introspection endpoint URL where the access-token resolution request should be sent. (example: http://example.com/introspect) 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+trust-manager-provider::
+[open]
+====
+Description::
+Specifies the name of the trust manager that should be used when negotiating SSL connections with the remote authorization server. 
+
+
+Default Value::
+By default, no trust manager is specified indicating that only certificates signed by the authorities associated with this JVM will be accepted.
+
+
+Allowed Values::
+The DN of any Trust Manager Provider. The referenced trust manager provider must be enabled when SSL is enabled.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately, but only impact subsequent SSL connection negotiations.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+

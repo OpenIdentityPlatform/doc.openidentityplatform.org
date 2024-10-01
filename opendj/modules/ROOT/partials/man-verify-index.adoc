@@ -1,0 +1,98 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions 2024 3A Systems LLC.
+ #
+////
+
+[#verify-index-1]
+= verify-index(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+verify-index - check index for consistency or errors
+
+== Synopsis
+`verify-index` 
+
+[#verify-index-description]
+== Description
+
+This utility can be used to ensure that index data is consistent within an indexed backend database.
+
+
+
+
+[#verify-index-options]
+== Options
+
+The `verify-index` command takes the following options:
+
+.Command options:
+
+--
+`-b | --baseDN {baseDN}`::
+Base DN of a backend supporting indexing. Verification is performed on indexes within the scope of the given base DN.
++
+
+`-c | --clean`::
+Specifies that a single index should be verified to ensure it is clean.  An index is clean if each index value references only entries containing that value.  Only one index at a time may be verified in this way.
++
+Default: false
++
+
+`--countErrors`::
+Count the number of errors found during the verification and return that value as the exit code (values > 255 will be reduced to 255 due to exit code restrictions).
++
+Default: false
++
+
+`-i | --index {index}`::
+Name of an index to be verified. For an attribute index this is simply an attribute name. Multiple indexes may be verified for completeness, or all indexes if no indexes are specified.  An index is complete if each index value references all entries containing that value.
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_verify-index-exit-codes.adoc[]
+
+include::./_verify-index-examples.adoc[]
+
+

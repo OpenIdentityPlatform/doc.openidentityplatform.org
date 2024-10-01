@@ -1,0 +1,258 @@
+////
+  The contents of this file are subject to the terms of the Common Development and
+  Distribution License (the License). You may not use this file except in compliance with the
+  License.
+
+  You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+  specific language governing permission and limitations under the License.
+
+  When distributing Covered Software, include this CDDL Header Notice in each file and include
+  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+  Header, with the fields enclosed by brackets [] replaced by your own identifying
+  information: "Portions Copyright [year] [name of copyright owner]".
+
+  Copyright 2011-2017 ForgeRock AS.
+  Portions Copyright 2024 3A Systems LLC.
+////
+
+[#dsconfig-set-work-queue-prop]
+= dsconfig set-work-queue-prop(1)
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+dsconfig set-work-queue-prop - Modifies Work Queue properties
+
+== Synopsis
+
+`dsconfig set-work-queue-prop` {options}
+
+[#dsconfig-set-work-queue-prop-description]
+== Description
+
+Modifies Work Queue properties.
+
+
+
+[#dsconfig-set-work-queue-prop-options]
+== Options
+
+The `dsconfig set-work-queue-prop` command takes the following options:
+
+--
+`--set {PROP:VALUE}`::
+
+Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
++
+Work Queue properties depend on the Work Queue type, which depends on the null option.
+
+`--reset {property}`::
+
+Resets a property back to its default values where PROP is the name of the property to be reset.
++
+Work Queue properties depend on the Work Queue type, which depends on the null option.
+
+`--add {PROP:VALUE}`::
+
+Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
++
+Work Queue properties depend on the Work Queue type, which depends on the null option.
+
+`--remove {PROP:VALUE}`::
+
+Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
++
+Work Queue properties depend on the Work Queue type, which depends on the null option.
+
+--
+
+[#dsconfig-set-work-queue-prop-parallel-work-queue]
+== Parallel Work Queue
+
+Work Queues of type parallel-work-queue have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Parallel Work Queue implementation. 
+
+
+Default Value::
+org.opends.server.extensions.ParallelWorkQueue
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.WorkQueue
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+num-worker-threads::
+[open]
+====
+Description::
+Specifies the number of worker threads to be used for processing operations placed in the queue. If the value is increased, the additional worker threads are created immediately. If the value is reduced, the appropriate number of threads are destroyed as operations complete processing.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-set-work-queue-prop-traditional-work-queue]
+== Traditional Work Queue
+
+Work Queues of type traditional-work-queue have the following properties:
+
+--
+
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Traditional Work Queue implementation. 
+
+
+Default Value::
+org.opends.server.extensions.TraditionalWorkQueue
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.WorkQueue
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+Restart the server
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+max-work-queue-capacity::
+[open]
+====
+Description::
+Specifies the maximum number of queued operations that can be in the work queue at any given time. If the work queue is already full and additional requests are received by the server, then the server front end, and possibly the client, will be blocked until the work queue has available capacity.
+
+
+Default Value::
+1000
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+num-worker-threads::
+[open]
+====
+Description::
+Specifies the number of worker threads to be used for processing operations placed in the queue. If the value is increased, the additional worker threads are created immediately. If the value is reduced, the appropriate number of threads are destroyed as operations complete processing.
+
+
+Default Value::
+Let the server decide.
+
+
+Allowed Values::
+An integer value. Lower value is 1. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
