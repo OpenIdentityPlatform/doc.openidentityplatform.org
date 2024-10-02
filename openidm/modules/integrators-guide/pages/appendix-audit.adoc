@@ -1,4 +1,3 @@
-:leveloffset: -1
 ////
   The contents of this file are subject to the terms of the Common Development and
   Distribution License (the License). You may not use this file except in compliance with the
@@ -19,6 +18,7 @@
 :figure-caption!:
 :example-caption!:
 :table-caption!:
+:leveloffset: -1"
 
 
 [appendix]
@@ -64,7 +64,7 @@ Once imported, you can activate the `useSSL` option in the `audit.json` file. If
 
 If you want to create an audit index for Elasticsearch, you must set it up __before__ starting OpenIDM, for the audit event topics described in this section: xref:chap-auditing.adoc#default-audit-topics["OpenIDM Audit Event Topics"].
 
-To do so, execute the REST call shown in the following link:../resources/audit-index.sh[audit index, window=\_blank] file. Note the properties that are `not_analyzed`. Such fields are not indexed within Elasticsearch.
+To do so, execute the REST call shown in the following xref:ROOT:attachment$audit-index.sh[audit index, window=\_blank] file. Note the properties that are `not_analyzed`. Such fields are not indexed within Elasticsearch.
 
 The REST call in the audit index file includes the following URL:
 

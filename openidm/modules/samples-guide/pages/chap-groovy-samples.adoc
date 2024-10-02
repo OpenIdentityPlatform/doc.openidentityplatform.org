@@ -1,4 +1,3 @@
-:leveloffset: -1
 ////
   The contents of this file are subject to the terms of the Common Development and
   Distribution License (the License). You may not use this file except in compliance with the
@@ -19,6 +18,7 @@
 :figure-caption!:
 :example-caption!:
 :table-caption!:
+:leveloffset: -1"
 
 
 [#chap-groovy-samples]
@@ -594,15 +594,15 @@ The Groovy Connector Toolkit is bundled with OpenIDM 4.5, in the JAR `openidm/co
 
 The connector configuration file for this sample (`samples/scriptedrest2dj/conf/provisioner.openicf-scriptedrest.json`) indicates the ScriptedREST implementation of the Groovy connector as follows:
 
-[source, javascript]
+[source, json]
 ----
 {
     "name": "scriptedrest",
     "connectorRef": {
         "connectorHostRef": "#LOCAL",
         "connectorName": "org.forgerock.openicf.connectors.scriptedrest.ScriptedRESTConnector",
-        "bundleName": "org.forgerock.openicf.connectors.groovy-connector",
-        "bundleVersion": "[1.4.0.0,2.0.0.0)"
+        "bundleName": "org.openidentityplatform.openicf.connectors.groovy-connector",
+        "bundleVersion": "[1.4.0.0,2)"
     },
 ...
 ----
@@ -810,9 +810,9 @@ $ curl \
     "group"
   ],
   "connectorRef": {
-    "bundleName": "org.forgerock.openicf.connectors.groovy-connector",
+    "bundleName": "org.openidentityplatform.openicf.connectors.groovy-connector",
     "connectorName": "org.forgerock.openicf.connectors.scriptedrest.ScriptedRESTConnector",
-    "bundleVersion": "[1.4.0.0,2.0.0.0)"
+    "bundleVersion": "[1.4.0.0,2)"
   },
   "displayName": "Scripted REST Connector",
   "ok": true
@@ -1031,15 +1031,15 @@ The Groovy Connector Toolkit is bundled with OpenIDM 4.5, in the JAR `openidm/co
 
 The connector configuration file for this sample (`samples/scriptedcrest2dj/conf/provisioner.openicf-scriptedcrest.json`) indicates the ScriptedCREST implementation of the Groovy Connector Toolkit as follows:
 
-[source, javascript]
+[source, json]
 ----
 {
     "name": "scriptedcrest",
     "connectorRef": {
         "connectorHostRef": "#LOCAL",
         "connectorName": "org.forgerock.openicf.connectors.scriptedcrest.ScriptedCRESTConnector",
-        "bundleName": "org.forgerock.openicf.connectors.groovy-connector",
-        "bundleVersion": "[1.4.0.0,2.0.0.0)"
+        "bundleName": "org.openidentityplatform.openicf.connectors.groovy-connector",
+        "bundleVersion": "[1.4.0.0,2)"
     },
 ...
 ----
@@ -1240,8 +1240,8 @@ $ curl \
 {
   "ok": true,
   "connectorRef": {
-    "bundleVersion": "[1.4.0.0,2.0.0.0)",
-    "bundleName": "org.forgerock.openicf.connectors.groovy-connector",
+    "bundleVersion": "[1.4.0.0,2)",
+    "bundleName": "org.openidentityplatform.openicf.connectors.groovy-connector",
     "connectorName": "org.forgerock.openicf.connectors.scriptedcrest.ScriptedCRESTConnector"
   },
   "objectTypes": [
