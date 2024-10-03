@@ -1,3 +1,6 @@
 {{#if (and (not (eq  page.module 'ROOT')) page.editUrl) }}
 <div class="edit-this-page"><a href="{{page.editUrl}}/{{page.module}}/{{page.relativeSrcPath}}">Edit this Page</a></div>
 {{/if}}
+{{#if page.attributes.pdflink }}
+<div class="edit-this-page">|</div><div class="edit-this-page"><a href="{{page.attributes.pdflink}}">Download PDF</a></div>
+{{/if }}
