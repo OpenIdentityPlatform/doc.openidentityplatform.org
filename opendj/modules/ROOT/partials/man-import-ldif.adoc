@@ -78,7 +78,7 @@ Filter to identify entries to exclude from the LDIF import.
 +
 
 `-F | --clearBackend`::
-Remove all entries for all base DNs in the backend before importing.
+Remove all entries for all base DNs in the backend before importing. Set to `true` when running in the offline mode (i.e. the `--offline` flag is set).
 +
 Default: false
 +
@@ -106,7 +106,7 @@ Default: false
 +
 
 `--offline`::
-Indicates that the command must be run in offline mode.
+Indicates that the command must be run in offline mode. Forces old data replacement with imported data.
 +
 Default: false
 +
