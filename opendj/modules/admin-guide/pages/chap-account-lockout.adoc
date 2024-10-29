@@ -38,7 +38,7 @@ Account lockout disables a user account after a specified number of successive a
 
 [NOTE]
 ====
-You configure account lockout as part of password policy. OpenDJ locks an account after the specified number of consecutive authentication failures. Account lockout is not transactional across a replication topology. Under normal circumstances, replication propagates lockout quickly. If replication is ever delayed, an attacker with direct access to multiple replicas could try to authenticate up to the specified number of times on each replica before being locked out on all replicas.
+You configure account lockout as part of password policy. OpenDJ locks an account after the specified number of consecutive authentication failures. Account lockout is not transactional across a replication topology. Under normal circumstances, replication propagates lockout quickly. If replication is ever delayed, an attacker with direct access to multiple replicas could try to authenticate up to the specified number of times on each replica before being locked out on all replicas.!
 ====
 This chapter shows you how to set up account lockout policies by using the `dsconfig` command, described in xref:reference:admin-tools-ref.adoc#dsconfig-1[dsconfig(1)] in the __Reference__, and how to intervene manually to lock and unlock accounts by using the `manage-account` command, described in xref:reference:admin-tools-ref.adoc#manage-account-1[manage-account(1)] in the __Reference__.
 
