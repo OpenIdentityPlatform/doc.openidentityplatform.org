@@ -1,0 +1,75 @@
+{
+    "index_name": "doc_openidentityplatform",
+    "start_urls": [
+        {
+            "url": "https://doc.openidentityplatform.org/openam",
+            "extra_attributes": {
+                "component": "openam"
+            }
+        },
+        {
+            "url": "https://doc.openidentityplatform.org/opendj",
+            "extra_attributes": {
+                "component": "opendj"
+            }
+        },
+        {
+            "url": "https://doc.openidentityplatform.org/openidm",
+            "extra_attributes": {
+                "component": "openidm"
+            }
+        },
+        {
+            "url": "https://doc.openidentityplatform.org/openig",
+            "extra_attributes": {
+                "component": "openig"
+            }
+        }
+    ],
+    "sitemap_urls": [
+        "https://doc.openidentityplatform.org/sitemap.xml"
+    ],
+    "scrape_start_urls": true,
+    "stop_urls": [
+        "https://doc.openidentityplatform.org/opendj/reference/dsconfig-subcommands-ref",
+        "https://doc.openidentityplatform.org/opendj/reference/appendix-log-messages",
+        "https://doc.openidentityplatform.org/openam/reference/chap-log-messages",
+        "https://doc.openidentityplatform.org/openig/apidocs"
+    ],
+    "selectors": {
+        "default": {
+            "lvl0": {
+                "global": true,
+                "selector": ".nav-panel-explore .context .title, .nav-panel-explore .context .version"
+            },
+            "lvl1": ".doc > h1.page",
+            "lvl2": ".doc .sect1 > h2:first-child",
+            "lvl3": ".doc .sect2 > h3:first-child",
+            "lvl4": ".doc .sect3 > h4:first-child",
+            "lvl5": ".doc .sidebarblock > .content > .title",
+            "text": ".doc p, .doc dt, .doc td.content, .doc th.tableblock"
+        }
+    },
+    "selectors_exclude": [],
+    "min_indexed_level": 1,
+    "custom_settings": {
+        "advancedSyntax": true,
+        "attributesToRetrieve": [
+            "anchor",
+            "content",
+            "hierarchy",
+            "url",
+            "component",
+            "version"
+        ],
+        "attributesToSnippet": [
+            "content:25"
+        ],
+        "customRanking": [
+            "desc(weight.page_rank)",
+            "desc(version)",
+            "desc(weight.level)",
+            "asc(weight.position)"
+        ]
+    }
+}
