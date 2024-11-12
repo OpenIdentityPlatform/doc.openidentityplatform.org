@@ -30,6 +30,9 @@ jobs:
     - name: Install Antora
       run: npm i antora
     - name: Generate Site
+      env:
+        ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+        ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
       run: npm run buildAll
     - name: Upload Artifacts
       uses: actions/upload-pages-artifact@v2
