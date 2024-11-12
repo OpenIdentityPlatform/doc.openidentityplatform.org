@@ -13,6 +13,21 @@
         <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
       </div>
       {{/if}}
+      <div class="navbar-item hide-for-print">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: 'en', 
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              includedLanguages: 'en,fr,es,jp,ko,pa,pt,ru,zh-CN'
+            }, 
+            'google_translate_element');
+        }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
