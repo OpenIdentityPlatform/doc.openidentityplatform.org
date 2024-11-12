@@ -12,7 +12,7 @@ var search = docsearch({
   indexName: 'doc_openidentityplatform',
   inputSelector: '#search-input',
   autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
-  algoliaOptions: { hitsPerPage: 10 }
+  algoliaOptions: { hitsPerPage: 5 }
 }).autocomplete
 search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
 </script>
