@@ -4,7 +4,7 @@
   },
   "scripts": {
     "build": "npx antora antora-playbook.yml",
-    "copyApiDocs": "cp -R ./openig/apidocs build/site/openig",
+    "copyApiDocs": "cp -R ./openig/apidocs build/site/openig && cp -R ./openam/apidocs build/site/openam",
     "runServer": "npx http-server build/site -c-1",
     "buildAll": "npm run build && npm run copyApiDocs",
     "buildAllAndRun": "npm run build && npm run copyApiDocs && npm run runServer"
