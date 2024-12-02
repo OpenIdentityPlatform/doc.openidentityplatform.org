@@ -8,12 +8,20 @@
         <a href="{{{relativize @root.page.url ./url}}}">{{page.component.title}}</a>
         {{/if}}
       </div>
+
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
       {{#if (or env.ALGOLIA_API_KEY env.SITE_SEARCH_PROVIDER)}}
-      <div class="navbar-item search hide-for-print">
+      <div class="navbar-end navbar-item search hide-for-print">
         <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
       </div>
       {{/if}}
-      <div class="navbar-item hide-for-print">
+      <div class="navbar-end navbar-item hide-for-print">
         <div id="google_translate_element"></div>
         <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -27,15 +35,8 @@
             'google_translate_element');
         }
         </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript" async src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       </div>
-      <button class="navbar-burger" data-target="topbar-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
           <div class="navbar-link">Projects</a>
