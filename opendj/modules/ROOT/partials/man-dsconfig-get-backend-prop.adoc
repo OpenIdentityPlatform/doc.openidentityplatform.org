@@ -66,6 +66,13 @@ Default {name}: CAS Backend
 Enabled by default: true
 +
 See  <<dsconfig-get-backend-prop-cas-backend>> for the properties of this Backend type.
+`jdbc-backend`::
++
+Default {name}: JDBC Backend
++
+Enabled by default: true
++
+See  <<dsconfig-get-backend-prop-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
 Default {name}: JE Backend
@@ -156,6 +163,13 @@ Default {property}: CAS Backend
 Enabled by default: true
 +
 See  <<dsconfig-get-backend-prop-cas-backend>> for the properties of this Backend type.
+`jdbc-backend`::
++
+Default {property}: JDBC Backend
++
+Enabled by default: true
++
+See  <<dsconfig-get-backend-prop-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
 Default {property}: JE Backend
@@ -246,6 +260,13 @@ Default null: CAS Backend
 Enabled by default: true
 +
 See  <<dsconfig-get-backend-prop-cas-backend>> for the properties of this Backend type.
+`jdbc-backend`::
++
+Default null: JDBC Backend
++
+Enabled by default: true
++
+See  <<dsconfig-get-backend-prop-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
 Default null: JE Backend
@@ -336,6 +357,13 @@ Default {unit}: CAS Backend
 Enabled by default: true
 +
 See  <<dsconfig-get-backend-prop-cas-backend>> for the properties of this Backend type.
+`jdbc-backend`::
++
+Default {unit}: JDBC Backend
++
+Enabled by default: true
++
+See  <<dsconfig-get-backend-prop-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
 Default {unit}: JE Backend
@@ -426,6 +454,13 @@ Default {unit}: CAS Backend
 Enabled by default: true
 +
 See  <<dsconfig-get-backend-prop-cas-backend>> for the properties of this Backend type.
+`jdbc-backend`::
++
+Default {unit}: JDBC Backend
++
+Enabled by default: true
++
+See  <<dsconfig-get-backend-prop-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
 Default {unit}: JE Backend
@@ -1165,6 +1200,562 @@ Specifies the fully-qualified name of the Java class that provides the backend i
 
 Default Value::
 org.opends.server.backends.cassandra.Backend
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.Backend
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Backend must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+preload-time-limit::
+[open]
+====
+Description::
+Specifies the length of time that the backend is allowed to spend &quot;pre-loading&quot; data when it is initialized. The pre-load process is used to pre-populate the database cache, so that it can be more quickly available when the server is processing requests. A duration of zero means there is no pre-load.
+
+
+Default Value::
+0s
+
+
+Allowed Values::
+<xinclude:include href="itemizedlist-duration.xml" />
+Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+writability-mode::
+[open]
+====
+Description::
+Specifies the behavior that the backend should use when processing write operations. 
+
+
+Default Value::
+enabled
+
+
+Allowed Values::
+
+
+disabled::
+Causes all write attempts to fail.
+
+enabled::
+Allows write operations to be performed in that backend (if the requested operation is valid, the user has permission to perform the operation, the backend supports that type of write operation, and the global writability-mode property is also enabled).
+
+internal-only::
+Causes external write attempts to fail but allows writes by replication and internal operations.
+
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-get-backend-prop-jdbc-backend]
+== JDBC Backend
+
+Backends of type jdbc-backend have the following properties:
+
+--
+
+
+backend-id::
+[open]
+====
+Description::
+Specifies a name to identify the associated backend. The name must be unique among all backends in the server. The backend ID may not be altered after the backend is created in the server.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+Yes
+
+
+====
+
+base-dn::
+[open]
+====
+Description::
+Specifies the base DN(s) for the data that the backend handles. A single backend may be responsible for one or more base DNs. Note that no two backends may have the same base DN although one backend may have a base DN that is below a base DN provided by another backend (similar to the use of sub-suffixes in the Sun Java System Directory Server). If any of the base DNs is subordinate to a base DN for another backend, then all base DNs for that backend must be subordinate to that same base DN.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+A valid DN.
+
+
+Multi-valued::
+Yes
+
+Required::
+Yes
+
+Admin Action Required::
+NoneNo administrative action is required by default although some action may be required on a per-backend basis before the new base DN may be used.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+cipher-key-length::
+[open]
+====
+Description::
+Specifies the key length in bits for the preferred cipher. 
+
+
+Default Value::
+128
+
+
+Allowed Values::
+An integer value. Lower value is 0.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only affect cryptographic operations performed after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+cipher-transformation::
+[open]
+====
+Description::
+Specifies the cipher for the directory server. The syntax is &quot;algorithm/mode/padding&quot;. The full transformation is required: specifying only an algorithm and allowing the cipher provider to supply the default mode and padding is not supported, because there is no guarantee these default values are the same among different implementations. Some cipher algorithms, including RC4 and ARCFOUR, do not have a mode or padding, and hence must be specified using NONE for the mode field and NoPadding for the padding field. For example, RC4/NONE/NoPadding.
+
+
+Default Value::
+AES/CBC/PKCS5Padding
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this property take effect immediately but only affect cryptographic operations performed after the change.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+compact-encoding::
+[open]
+====
+Description::
+Indicates whether the backend should use a compact form when encoding entries by compressing the attribute descriptions and object class sets. Note that this property applies only to the entries themselves and does not impact the index data.
+
+
+Default Value::
+true
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this setting take effect only for writes that occur after the change is made. It is not retroactively applied to existing data.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+confidentiality-enabled::
+[open]
+====
+Description::
+Indicates whether the backend should make entries in database files readable only by Directory Server. Confidentiality is achieved by enrypting entries before writing them to the underlying storage. Entry encryption will protect data on disk from unauthorised parties reading the files; for complete protection, also set confidentiality for sensitive attributes indexes. The property cannot be set to false if some of the indexes have confidentiality set to true.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+db-directory::
+[open]
+====
+Description::
+Specifies the connection string jdbc:postgresql://localhost/test
+
+
+Default Value::
+jdbc:postgresql://localhost/test
+
+
+Allowed Values::
+A String
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Backend must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the backend is enabled in the server. If a backend is not enabled, then its contents are not accessible when processing operations.
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+entries-compressed::
+[open]
+====
+Description::
+Indicates whether the backend should attempt to compress entries before storing them in the database. Note that this property applies only to the entries themselves and does not impact the index data. Further, the effectiveness of the compression is based on the type of data contained in the entry.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneChanges to this setting take effect only for writes that occur after the change is made. It is not retroactively applied to existing data.
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+import-offheap-memory-size::
+[open]
+====
+Description::
+Specifies the amount of off-heap memory dedicated to the online operation (import-ldif, rebuild-index). 
+
+
+Default Value::
+Use only heap memory.
+
+
+Allowed Values::
+
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+index-entry-limit::
+[open]
+====
+Description::
+Specifies the maximum number of entries that is allowed to match a given index key before that particular index key is no longer maintained. This property is analogous to the ALL IDs threshold in the Sun Java System Directory Server. Note that this is the default limit for the backend, and it may be overridden on a per-attribute basis.A value of 0 means there is no limit.
+
+
+Default Value::
+4000
+
+
+Allowed Values::
+An integer value. Lower value is 0. Upper value is 2147483647.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+NoneIf any index keys have already reached this limit, indexes need to be rebuilt before they are allowed to use the new limit.
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+index-filter-analyzer-enabled::
+[open]
+====
+Description::
+Indicates whether to gather statistical information about the search filters processed by the directory server while evaluating the usage of indexes. Analyzing indexes requires gathering search filter usage patterns from user requests, especially for values as specified in the filters and subsequently looking the status of those values into the index files. When a search requests is processed, internal or user generated, a first phase uses indexes to find potential entries to be returned. Depending on the search filter, if the index of one of the specified attributes matches too many entries (exceeds the index entry limit), the search becomes non-indexed. In any case, all entries thus gathered (or the entire DIT) are matched against the filter for actually returning the search result.
+
+
+Default Value::
+false
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+index-filter-analyzer-max-filters::
+[open]
+====
+Description::
+The maximum number of search filter statistics to keep. When the maximum number of search filter is reached, the least used one will be deleted.
+
+
+Default Value::
+25
+
+
+Allowed Values::
+An integer value. Lower value is 1.
+
+
+Multi-valued::
+No
+
+Required::
+No
+
+Admin Action Required::
+None
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the backend implementation. 
+
+
+Default Value::
+org.opends.server.backends.jdbc.Backend
 
 
 Allowed Values::
