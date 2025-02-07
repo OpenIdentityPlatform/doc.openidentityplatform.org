@@ -12,7 +12,7 @@
   information: "Portions copyright [year] [name of copyright owner]".
  
   Copyright 2017 ForgeRock AS.
-  Portions Copyright 2024 3A Systems LLC.
+  Portions Copyright 2024-2025 3A Systems LLC.
 ////
 
 :figure-caption!:
@@ -89,7 +89,7 @@ When installation is complete, add at least one configuration file. Each configu
 
 The following very simple configuration routes requests to be handled according to separate route configurations:
 
-[source, javascript]
+[source, json]
 ----
 {
     "handler": {
@@ -103,7 +103,7 @@ To change the definition of an object defined by default or when you need to dec
 
 The following example declares a reusable router object and references it by its name, as follows:
 
-[source, javascript]
+[source, json]
 ----
 {
     "handler": "My Router",
@@ -132,7 +132,7 @@ When all the configuration settings for the type are optional, the config field 
 
 The configuration can specify additional objects as well. For example, you can configure a __ClientHandler__ object that OpenIG uses to connect to servers. The following ClientHandler configuration uses defaults for all settings, except __hostnameVerifier__, which it configures to verify host names in SSL certificates:
 
-[source, javascript]
+[source, json]
 ----
 {
     "name": "ClientHandler",
@@ -144,7 +144,7 @@ The configuration can specify additional objects as well. For example, you can c
 ----
 __Decorators__ are additional heap objects that let you extend what another object can do. For example, a __CaptureDecorator__ extends the capability of filters and handlers to log requests and responses. A __TimerDecorator__ logs processing times. Decorate configuration objects with decorator names as field names. By default OpenIG defines both a CaptureDecorator named `capture` and also a TimerDecorator named `timer`. Log requests, responses, and processing times by adding decorations as shown in the following example:
 
-[source, javascript]
+[source, json]
 ----
 {
     "handler": {
@@ -172,7 +172,7 @@ A router does not explicitly specify any routes. Instead the router specifies a 
 
 The following example specifies a condition that is true when the request path is `/login`:
 
-[source, javascript]
+[source, json]
 ----
 "condition": "${matches(request.uri.path, '^/login')}"
 ----
@@ -212,7 +212,7 @@ The route configuration in xref:#example-chain[Chain to a Protected Application]
 .Chain to a Protected Application
 ====
 
-[source, javascript]
+[source, json]
 ----
 {
     "handler": {
@@ -318,7 +318,7 @@ Use the following conventions when commenting to ensure your configuration files
 
 [#figure-comment-field]
 
-[source, javascript]
+[source, json]
 ----
 {
     "name": "capture",
@@ -336,7 +336,7 @@ Use the following conventions when commenting to ensure your configuration files
 
 [#figure-comment-underscore]
 
-[source, javascript]
+[source, json]
 ----
 {
     "name": "capture",
