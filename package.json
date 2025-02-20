@@ -4,7 +4,7 @@
   },
   "scripts": {
     "build": "npx antora antora-playbook.yml",
-    "copyApiDocs": "cp -R ./openig/apidocs build/site/openig && cp -R ./openam/apidocs build/site/openam && cp -R ./openicf build/site/openicf && cp -R ./commons build/site/commons && cp -R ./openidm/apidocs build/site/openidm",
+    "copyApiDocs": "cp -R ./openig/apidocs build/site/openig && cp -R ./openam/apidocs build/site/openam && cp -R ./openicf build/site/openicf && cp -R ./commons build/site/commons && cp -R ./openidm/apidocs build/site/openidm && cp -R ./opendj/apidocs build/site/opendj",
     "runServer": "npx http-server build/site -c-1",
     "buildAll": "npm run build && npm run copyApiDocs",
     "buildAllAndRun": "npm run build && npm run copyApiDocs && npm run runServer"
