@@ -250,10 +250,10 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MatchingRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/MatchingRule.Builder.html#addToSchema--">addToSchema</a></span>()</code>
-<div class="block">Adds this matching rule to the schema, throwing a
+<td class="colLast"><span class="typeNameLabel">NameForm.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/NameForm.Builder.html#addToSchema--">addToSchema</a></span>()</code>
+<div class="block">Adds this name form to the schema, throwing a
  <code>ConflictingSchemaElementException</code> if there is an existing
- matching rule with the same numeric OID.</div>
+ name form with the same numeric OID.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -266,22 +266,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DITStructureRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/DITStructureRule.Builder.html#addToSchema--">addToSchema</a></span>()</code>
-<div class="block">Adds this DIT structure rule to the schema, throwing a
- <code>ConflictingSchemaElementException</code> if there is an existing DIT
- structure rule with the same numeric ID.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NameForm.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/NameForm.Builder.html#addToSchema--">addToSchema</a></span>()</code>
-<div class="block">Adds this name form to the schema, throwing a
- <code>ConflictingSchemaElementException</code> if there is an existing
- name form with the same numeric OID.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
 <td class="colLast"><span class="typeNameLabel">ObjectClass.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/ObjectClass.Builder.html#addToSchema--">addToSchema</a></span>()</code>
 <div class="block">Adds this object class to the schema, throwing a
  <code>ConflictingSchemaElementException</code> if there is an existing
@@ -290,10 +274,26 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
+<td class="colLast"><span class="typeNameLabel">MatchingRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/MatchingRule.Builder.html#addToSchema--">addToSchema</a></span>()</code>
+<div class="block">Adds this matching rule to the schema, throwing a
+ <code>ConflictingSchemaElementException</code> if there is an existing
+ matching rule with the same numeric OID.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
 <td class="colLast"><span class="typeNameLabel">DITContentRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/DITContentRule.Builder.html#addToSchema--">addToSchema</a></span>()</code>
 <div class="block">Adds this DIT content rule to the schema, throwing a
  <code>ConflictingSchemaElementException</code> if there is an existing DIT
  content rule with the same structural object class OID.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DITStructureRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/DITStructureRule.Builder.html#addToSchema--">addToSchema</a></span>()</code>
+<div class="block">Adds this DIT structure rule to the schema, throwing a
+ <code>ConflictingSchemaElementException</code> if there is an existing DIT
+ structure rule with the same numeric ID.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -314,8 +314,9 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MatchingRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/MatchingRule.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
-<div class="block">Adds this matching rule to the schema overwriting any existing matching rule with the same numeric OID.</div>
+<td class="colLast"><span class="typeNameLabel">NameForm.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/NameForm.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
+<div class="block">Adds this name form to the schema overwriting any existing name form
+ with the same numeric OID.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -327,20 +328,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DITStructureRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/DITStructureRule.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
-<div class="block">Adds this DIT structure rule to the schema overwriting any existing
- DIT structure rule with the same numeric ID.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NameForm.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/NameForm.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
-<div class="block">Adds this name form to the schema overwriting any existing name form
- with the same numeric OID.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
 <td class="colLast"><span class="typeNameLabel">ObjectClass.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/ObjectClass.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
 <div class="block">Adds this object class to the schema overwriting any existing object class
  with the same numeric OID.</div>
@@ -348,9 +335,22 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
+<td class="colLast"><span class="typeNameLabel">MatchingRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/MatchingRule.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
+<div class="block">Adds this matching rule to the schema overwriting any existing matching rule with the same numeric OID.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
 <td class="colLast"><span class="typeNameLabel">DITContentRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/DITContentRule.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
 <div class="block">Adds this DIT content rule to the schema overwriting any existing
  content rule with the same structural class OID.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/SchemaBuilder.html" title="class in org.forgerock.opendj.ldap.schema">SchemaBuilder</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DITStructureRule.Builder.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/schema/DITStructureRule.Builder.html#addToSchemaOverwrite--">addToSchemaOverwrite</a></span>()</code>
+<div class="block">Adds this DIT structure rule to the schema overwriting any existing
+ DIT structure rule with the same numeric ID.</div>
 </td>
 </tr>
 <tr class="altColor">
