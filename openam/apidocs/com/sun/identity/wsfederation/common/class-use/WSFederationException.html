@@ -267,22 +267,22 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultIDPAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/plugins/DefaultIDPAttributeMapper.html#getAttributes-java.lang.Object-java.lang.String-java.lang.String-java.lang.String-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;session,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostEntityID,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteEntityID,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
-<div class="block">Returns list of SAML <code>Attribute</code> objects for the 
- IDP framework to insert into the generated <code>Assertion</code>.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a></code></td>
 <td class="colLast"><span class="typeNameLabel">IDPAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/plugins/IDPAttributeMapper.html#getAttributes-java.lang.Object-java.lang.String-java.lang.String-java.lang.String-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;session,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostEntityID,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteEntityID,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Returns list of SAML <code>Attribute</code> objects for an 
  authenticated user local attributes.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DefaultIDPAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/plugins/DefaultIDPAttributeMapper.html#getAttributes-java.lang.Object-java.lang.String-java.lang.String-java.lang.String-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;session,
+             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostEntityID,
+             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;remoteEntityID,
+             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
+<div class="block">Returns list of SAML <code>Attribute</code> objects for the 
+ IDP framework to insert into the generated <code>Assertion</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -476,10 +476,24 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">IPSigninRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/IPSigninRequest.html#process--">process</a></span>()</code>
+<div class="block">Processes the sign-in request, returning a response via the 
+ HttpServletResponse passed to the constructor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">MexRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/MexRequest.html#process--">process</a></span>()</code>
 <div class="block">Currently two kind of requests are supported:
  
   GET requests: The plain old WSDL is returned to the remote clients.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">RPSigninRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/RPSigninRequest.html#process--">process</a></span>()</code>
+<div class="block">Processes the sign-in request, redirecting the browser to the identity
+ provider via the HttpServletResponse passed to the constructor.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -491,31 +505,18 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ActiveRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/ActiveRequest.html#process--">process</a></span>()</code>
+<div class="block">Processes the incoming SOAP request <a href="../../../../../../com/sun/identity/wsfederation/servlet/ActiveRequest.html#parseAndValidateRequest-javax.xml.soap.SOAPMessage-com.sun.identity.wsfederation.jaxb.entityconfig.IDPSSOConfigElement-"><code>parsing
+ and validating the request</code></a>, and then authenticating the end-user using a customizable <a href="../../../../../../org/forgerock/openam/saml2/plugins/WsFedAuthenticator.html" title="interface in org.forgerock.openam.saml2.plugins"><code>WsFedAuthenticator</code></a>
+ implementation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">RPSigninResponse.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/RPSigninResponse.html#process--">process</a></span>()</code>
 <div class="block">Processes the sign-in response, redirecting the browser wreply URL 
  supplied in the sign-in request via the HttpServletResponse passed to 
  the constructor.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">IPSigninRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/IPSigninRequest.html#process--">process</a></span>()</code>
-<div class="block">Processes the sign-in request, returning a response via the 
- HttpServletResponse passed to the constructor.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="typeNameLabel">WSFederationAction.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/WSFederationAction.html#process--">process</a></span>()</code>
-<div class="block">Processes the sign-out request, returning a response via the 
- HttpServletResponse passed to the constructor.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">RPSigninRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/RPSigninRequest.html#process--">process</a></span>()</code>
-<div class="block">Processes the sign-in request, redirecting the browser to the identity
- provider via the HttpServletResponse passed to the constructor.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -523,11 +524,10 @@
 <td class="colLast"><span class="typeNameLabel">MetadataRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/MetadataRequest.html#process--">process</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ActiveRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/ActiveRequest.html#process--">process</a></span>()</code>
-<div class="block">Processes the incoming SOAP request <a href="../../../../../../com/sun/identity/wsfederation/servlet/ActiveRequest.html#parseAndValidateRequest-javax.xml.soap.SOAPMessage-com.sun.identity.wsfederation.jaxb.entityconfig.IDPSSOConfigElement-"><code>parsing
- and validating the request</code></a>, and then authenticating the end-user using a customizable <a href="../../../../../../org/forgerock/openam/saml2/plugins/WsFedAuthenticator.html" title="interface in org.forgerock.openam.saml2.plugins"><code>WsFedAuthenticator</code></a>
- implementation.</div>
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><span class="typeNameLabel">WSFederationAction.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wsfederation/servlet/WSFederationAction.html#process--">process</a></span>()</code>
+<div class="block">Processes the sign-out request, returning a response via the 
+ HttpServletResponse passed to the constructor.</div>
 </td>
 </tr>
 </tbody>

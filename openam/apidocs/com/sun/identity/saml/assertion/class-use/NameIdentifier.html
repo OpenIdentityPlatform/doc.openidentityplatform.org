@@ -267,9 +267,10 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">FSLogoutNotification.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSLogoutNotification.html#getNameIdentifier--">getNameIdentifier</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">FSNameIdentifierMappingRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSNameIdentifierMappingRequest.html#getNameIdentifier--">getNameIdentifier</a></span>()</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns the <code>NameIdentifier</code> object.</div>
+<div class="block">Returns the <code>NameIdentifier</code> object  qualified by the
+ requesting service provider .</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -288,10 +289,9 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">FSNameIdentifierMappingRequest.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSNameIdentifierMappingRequest.html#getNameIdentifier--">getNameIdentifier</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">FSLogoutNotification.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSLogoutNotification.html#getNameIdentifier--">getNameIdentifier</a></span>()</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns the <code>NameIdentifier</code> object  qualified by the
- requesting service provider .</div>
+<div class="block">Returns the <code>NameIdentifier</code> object.</div>
 </td>
 </tr>
 </tbody>
@@ -305,14 +305,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">FSLogoutNotification.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSLogoutNotification.html#setNameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">setNameIdentifier</a></span>(<a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId)</code>
+<td class="colLast"><span class="typeNameLabel">FSFederationTerminationNotification.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSFederationTerminationNotification.html#setNameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">setNameIdentifier</a></span>(<a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId)</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Sets the <code>NameIdentifier</code> object.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">FSFederationTerminationNotification.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSFederationTerminationNotification.html#setNameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">setNameIdentifier</a></span>(<a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId)</code>
+<td class="colLast"><span class="typeNameLabel">FSLogoutNotification.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/message/FSLogoutNotification.html#setNameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">setNameIdentifier</a></span>(<a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId)</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Sets the <code>NameIdentifier</code> object.</div>
 </td>
@@ -611,19 +611,12 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">FSSSOLECPProfileHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOLECPProfileHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inResponseTo,
-              <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;opaqueHandle,
-              <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;idpOpaqueHandle)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">FSSSOBrowserPostProfileHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOBrowserPostProfileHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
+<td class="colLast"><span class="typeNameLabel">FSSSOAndFedHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOAndFedHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inResponseTo,
               <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;spHandle,
               <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;idpHandle)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">FSSSOBrowserArtifactProfileHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOBrowserArtifactProfileHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inResponseTo,
@@ -632,7 +625,7 @@
 <div class="block">Generates artifact and sends it to <code>SP</code>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">FSProxyHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSProxyHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inResponseTo,
@@ -642,9 +635,16 @@
  requesting service provider.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">FSSSOLECPProfileHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOLECPProfileHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
+              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inResponseTo,
+              <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;opaqueHandle,
+              <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;idpOpaqueHandle)</code>&nbsp;</td>
+</tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">FSSSOAndFedHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOAndFedHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
+<td class="colLast"><span class="typeNameLabel">FSSSOBrowserPostProfileHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/federation/services/fednsso/FSSSOBrowserPostProfileHandler.html#doSingleSignOn-java.lang.Object-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-com.sun.identity.saml.assertion.NameIdentifier-">doSingleSignOn</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;ssoToken,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inResponseTo,
               <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;spHandle,
               <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;idpHandle)</code>&nbsp;</td>
@@ -722,7 +722,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IDFFNameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/IDFFNameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
+<td class="colLast"><span class="typeNameLabel">NameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/NameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpProviderID,
                  <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userID)</code>
@@ -731,7 +731,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/NameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
+<td class="colLast"><span class="typeNameLabel">IDFFNameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/IDFFNameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpProviderID,
                  <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userID)</code>
@@ -749,7 +749,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IDFFNameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/IDFFNameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
+<td class="colLast"><span class="typeNameLabel">NameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/NameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpProviderID,
                  <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userID)</code>
@@ -758,7 +758,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/NameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
+<td class="colLast"><span class="typeNameLabel">IDFFNameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/liberty/ws/disco/plugins/IDFFNameIdentifierMapper.html#getNameIdentifier-java.lang.String-java.lang.String-com.sun.identity.saml.assertion.NameIdentifier-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;spProviderID,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpProviderID,
                  <a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a>&nbsp;nameId,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userID)</code>
@@ -1115,21 +1115,21 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultNameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultNameIdentifierMapper.html#getNameIdentifier-java.lang.Object-java.lang.String-java.lang.String-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;session,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceID,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destID,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nameIDFormat)</code>
-<div class="block">Returns name identifier for assertion subject based on user account.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
 <td class="colLast"><span class="typeNameLabel">NameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/NameIdentifierMapper.html#getNameIdentifier-java.lang.Object-java.lang.String-java.lang.String-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;session,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceID,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destID,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nameIDFormat)</code>
 <div class="block">Returns name identifier for assertion subject based on user account in
  the data store.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/NameIdentifier.html" title="class in com.sun.identity.saml.assertion">NameIdentifier</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DefaultNameIdentifierMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultNameIdentifierMapper.html#getNameIdentifier-java.lang.Object-java.lang.String-java.lang.String-java.lang.String-">getNameIdentifier</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;session,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceID,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;destID,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nameIDFormat)</code>
+<div class="block">Returns name identifier for assertion subject based on user account.</div>
 </td>
 </tr>
 </tbody>
