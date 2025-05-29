@@ -731,8 +731,9 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MD5Transform.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/authentication/modules/jdbc/MD5Transform.html#transform-java.lang.String-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</code>
-<div class="block">This simply returns the MD5 format of the password.</div>
+<td class="colLast"><span class="typeNameLabel">JDBCPasswordSyntaxTransform.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/authentication/modules/jdbc/JDBCPasswordSyntaxTransform.html#transform-java.lang.String-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</code>
+<div class="block">This is the only method to implement if you don't store your password in 
+ cleartext.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -743,9 +744,8 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JDBCPasswordSyntaxTransform.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/authentication/modules/jdbc/JDBCPasswordSyntaxTransform.html#transform-java.lang.String-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</code>
-<div class="block">This is the only method to implement if you don't store your password in 
- cleartext.</div>
+<td class="colLast"><span class="typeNameLabel">MD5Transform.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/authentication/modules/jdbc/MD5Transform.html#transform-java.lang.String-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</code>
+<div class="block">This simply returns the MD5 format of the password.</div>
 </td>
 </tr>
 </tbody>
@@ -1507,11 +1507,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">SpecialRepo.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/idm/plugins/internal/SpecialRepo.html#authenticate-javax.security.auth.callback.Callback:A-">authenticate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a>[]&nbsp;credentials)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">AgentsRepo.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/idm/plugins/internal/AgentsRepo.html#authenticate-javax.security.auth.callback.Callback:A-">authenticate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a>[]&nbsp;credentials)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AgentsRepo.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/idm/plugins/internal/AgentsRepo.html#authenticate-javax.security.auth.callback.Callback:A-">authenticate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a>[]&nbsp;credentials)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SpecialRepo.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/idm/plugins/internal/SpecialRepo.html#authenticate-javax.security.auth.callback.Callback:A-">authenticate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback">Callback</a>[]&nbsp;credentials)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -1688,15 +1688,15 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>byte[]</code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultSharedSecretProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oath/plugins/DefaultSharedSecretProvider.html#getSharedSecret-java.lang.String-">getSharedSecret</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secretKeyValue)</code>
-<div class="block">Processes the shared secret value retrieved for the user.</div>
+<td class="colLast"><span class="typeNameLabel">SharedSecretProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oath/plugins/SharedSecretProvider.html#getSharedSecret-java.lang.String-">getSharedSecret</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secretKey)</code>
+<div class="block">Takes the non-empty shared secret that is retrieved for a user and implements any processing needed for to
+ return the byte array of the string value.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
-<td class="colLast"><span class="typeNameLabel">SharedSecretProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oath/plugins/SharedSecretProvider.html#getSharedSecret-java.lang.String-">getSharedSecret</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secretKey)</code>
-<div class="block">Takes the non-empty shared secret that is retrieved for a user and implements any processing needed for to
- return the byte array of the string value.</div>
+<td class="colLast"><span class="typeNameLabel">DefaultSharedSecretProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oath/plugins/DefaultSharedSecretProvider.html#getSharedSecret-java.lang.String-">getSharedSecret</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;secretKeyValue)</code>
+<div class="block">Processes the shared secret value retrieved for the user.</div>
 </td>
 </tr>
 </tbody>
@@ -1787,13 +1787,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ServiceUrlProvider.html#getServiceUri-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getServiceUri</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
+<td class="colLast"><span class="typeNameLabel">ESIAServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ESIAServiceUrlProvider.html#getServiceUri-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getServiceUri</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;originalUrl,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;state)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ESIAServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ESIAServiceUrlProvider.html#getServiceUri-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getServiceUri</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
+<td class="colLast"><span class="typeNameLabel">ServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ServiceUrlProvider.html#getServiceUri-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getServiceUri</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;originalUrl,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;state)</code>&nbsp;</td>
 </tr>
@@ -1805,13 +1805,13 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ServiceUrlProvider.html#getTokenServiceGETparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServiceGETparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;oAuthConf,
+<td class="colLast"><span class="typeNameLabel">ESIAServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ESIAServiceUrlProvider.html#getTokenServiceGETparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServiceGETparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;code,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authServiceURL)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ESIAServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ESIAServiceUrlProvider.html#getTokenServiceGETparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServiceGETparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
+<td class="colLast"><span class="typeNameLabel">ServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ServiceUrlProvider.html#getTokenServiceGETparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServiceGETparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;oAuthConf,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;code,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authServiceURL)</code>&nbsp;</td>
 </tr>
@@ -1823,13 +1823,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ServiceUrlProvider.html#getTokenServicePOSTparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServicePOSTparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
+<td class="colLast"><span class="typeNameLabel">ESIAServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ESIAServiceUrlProvider.html#getTokenServicePOSTparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServicePOSTparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;code,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authServiceURL)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ESIAServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ESIAServiceUrlProvider.html#getTokenServicePOSTparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServicePOSTparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
+<td class="colLast"><span class="typeNameLabel">ServiceUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/service/ServiceUrlProvider.html#getTokenServicePOSTparameters-org.forgerock.openam.authentication.modules.oauth2.OAuthConf-java.lang.String-java.lang.String-">getTokenServicePOSTparameters</a></span>(<a href="../../../../../../org/forgerock/openam/authentication/modules/oauth2/OAuthConf.html" title="class in org.forgerock.openam.authentication.modules.oauth2">OAuthConf</a>&nbsp;config,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;code,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authServiceURL)</code>&nbsp;</td>
 </tr>

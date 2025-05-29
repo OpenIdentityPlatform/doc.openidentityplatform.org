@@ -126,8 +126,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AgentOAuth2ProviderSettings.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AgentOAuth2ProviderSettings.html#additionalDataToReturnFromTokenEndpoint-org.forgerock.oauth2.core.AccessToken-org.forgerock.oauth2.core.OAuth2Request-">additionalDataToReturnFromTokenEndpoint</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken,
-                                       <a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ScopeValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/ScopeValidator.html#additionalDataToReturnFromTokenEndpoint-org.forgerock.oauth2.core.AccessToken-org.forgerock.oauth2.core.OAuth2Request-">additionalDataToReturnFromTokenEndpoint</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken,
+                                       <a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
+<div class="block">Provided as an extension point to allow the OAuth2 provider to return additional data from an access token
+ request.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -139,11 +142,8 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ScopeValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/ScopeValidator.html#additionalDataToReturnFromTokenEndpoint-org.forgerock.oauth2.core.AccessToken-org.forgerock.oauth2.core.OAuth2Request-">additionalDataToReturnFromTokenEndpoint</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken,
-                                       <a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
-<div class="block">Provided as an extension point to allow the OAuth2 provider to return additional data from an access token
- request.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">AgentOAuth2ProviderSettings.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AgentOAuth2ProviderSettings.html#additionalDataToReturnFromTokenEndpoint-org.forgerock.oauth2.core.AccessToken-org.forgerock.oauth2.core.OAuth2Request-">additionalDataToReturnFromTokenEndpoint</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken,
+                                       <a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -205,20 +205,8 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PasswordCredentialsGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/PasswordCredentialsGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+<td class="colLast"><span class="typeNameLabel">JwtBearerGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/JwtBearerGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
       <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration,
-      <a href="../../../../../../org/forgerock/oauth2/core/OAuth2ProviderSettings.html" title="interface in org.forgerock.oauth2.core">OAuth2ProviderSettings</a>&nbsp;providerSettings)</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthorizationCodeGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizationCodeGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-      <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration,
-      <a href="../../../../../../org/forgerock/oauth2/core/OAuth2ProviderSettings.html" title="interface in org.forgerock.oauth2.core">OAuth2ProviderSettings</a>&nbsp;providerSettings)</code></td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DeviceCodeGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/DeviceCodeGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-      <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;client,
       <a href="../../../../../../org/forgerock/oauth2/core/OAuth2ProviderSettings.html" title="interface in org.forgerock.oauth2.core">OAuth2ProviderSettings</a>&nbsp;providerSettings)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -229,9 +217,21 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JwtBearerGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/JwtBearerGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+<td class="colLast"><span class="typeNameLabel">AuthorizationCodeGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizationCodeGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
       <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration,
+      <a href="../../../../../../org/forgerock/oauth2/core/OAuth2ProviderSettings.html" title="interface in org.forgerock.oauth2.core">OAuth2ProviderSettings</a>&nbsp;providerSettings)</code></td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DeviceCodeGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/DeviceCodeGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+      <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;client,
       <a href="../../../../../../org/forgerock/oauth2/core/OAuth2ProviderSettings.html" title="interface in org.forgerock.oauth2.core">OAuth2ProviderSettings</a>&nbsp;providerSettings)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/oauth2/core/AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
+<td class="colLast"><span class="typeNameLabel">PasswordCredentialsGrantTypeHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/PasswordCredentialsGrantTypeHandler.html#handle-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-org.forgerock.oauth2.core.OAuth2ProviderSettings-">handle</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+      <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration,
+      <a href="../../../../../../org/forgerock/oauth2/core/OAuth2ProviderSettings.html" title="interface in org.forgerock.oauth2.core">OAuth2ProviderSettings</a>&nbsp;providerSettings)</code></td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.Entry.html?is-external=true" title="class or interface in java.util">Map.Entry</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../../org/forgerock/oauth2/core/Token.html" title="interface in org.forgerock.oauth2.core">Token</a>&gt;</code></td>
@@ -295,28 +295,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AuthorizeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizeRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
-<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorize endpoint.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">AuthorizeRequestValidatorImpl.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizeRequestValidatorImpl.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
 <div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorize endpoint.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AuthorizationCodeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizationCodeRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-               <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration)</code>
-<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorization code grant.</div>
-</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ClientCredentialsRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/ClientCredentialsRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-               <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration)</code>
-<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 client credentials grant.</div>
+<td class="colLast"><span class="typeNameLabel">AuthorizeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizeRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
+<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorize endpoint.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -328,9 +314,23 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AuthorizationCodeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/AuthorizationCodeRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+               <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration)</code>
+<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorization code grant.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">PasswordCredentialsRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/PasswordCredentialsRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration)</code>
 <div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 password credentials grant.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ClientCredentialsRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/oauth2/core/ClientCredentialsRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-org.forgerock.oauth2.core.ClientRegistration-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+               <a href="../../../../../../org/forgerock/oauth2/core/ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration)</code>
+<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 client credentials grant.</div>
 </td>
 </tr>
 </tbody>
@@ -532,9 +532,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">OpenIdConnectAuthorizeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openidconnect/OpenIdConnectAuthorizeRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
-<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorize endpoint.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">SubjectTypeValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openidconnect/SubjectTypeValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -546,7 +544,9 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectTypeValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openidconnect/SubjectTypeValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">OpenIdConnectAuthorizeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/openidconnect/OpenIdConnectAuthorizeRequestValidator.html#validateRequest-org.forgerock.oauth2.core.OAuth2Request-">validateRequest</a></span>(<a href="../../../../../../org/forgerock/oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code>
+<div class="block">Validates that the OAuth2 request contains the valid parameters for the OAuth2 authorize endpoint.</div>
+</td>
 </tr>
 </tbody>
 </table>

@@ -213,14 +213,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">CTSPersistentStoreImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/CTSPersistentStoreImpl.html#delete-java.util.Map-">delete</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;query)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
 <td class="colLast"><span class="typeNameLabel">CTSPersistentStore.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/CTSPersistentStore.html#delete-java.util.Map-">delete</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;query)</code>
 <div class="block">Delete a collection of Tokens from the Token Store asynchronously using a filter to narrow down the Tokens to be
  deleted.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><span class="typeNameLabel">CTSPersistentStoreImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/CTSPersistentStoreImpl.html#delete-java.util.Map-">delete</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;query)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -238,17 +238,17 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a></code></td>
-<td class="colLast"><span class="typeNameLabel">OAuthTokenField.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/api/fields/OAuthTokenField.html#getField--">getField</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SAMLTokenField.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/api/fields/SAMLTokenField.html#getField--">getField</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a></code></td>
+<td class="colLast"><span class="typeNameLabel">OAuthTokenField.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/api/fields/OAuthTokenField.html#getField--">getField</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SessionTokenField.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/api/fields/SessionTokenField.html#getField--">getField</a></span>()</code>
 <div class="block">The CoreTokenField that this Session Field is mapped to.</div>
 </td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SAMLTokenField.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/cts/api/fields/SAMLTokenField.html#getField--">getField</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -573,12 +573,12 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>org.forgerock.json.JsonValue</code></td>
-<td class="colLast"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/oauth2/StatelessTokenStore.html#queryForToken-java.lang.String-org.forgerock.util.query.QueryFilter-">queryForToken</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/oauth2/StatefulTokenStore.html#queryForToken-java.lang.String-org.forgerock.util.query.QueryFilter-">queryForToken</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
              org.forgerock.util.query.QueryFilter&lt;<a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a>&gt;&nbsp;queryFilter)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>org.forgerock.json.JsonValue</code></td>
-<td class="colLast"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/oauth2/StatefulTokenStore.html#queryForToken-java.lang.String-org.forgerock.util.query.QueryFilter-">queryForToken</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/oauth2/StatelessTokenStore.html#queryForToken-java.lang.String-org.forgerock.util.query.QueryFilter-">queryForToken</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
              org.forgerock.util.query.QueryFilter&lt;<a href="../../../../../org/forgerock/openam/tokens/CoreTokenField.html" title="enum in org.forgerock.openam.tokens">CoreTokenField</a>&gt;&nbsp;queryFilter)</code>&nbsp;</td>
 </tr>
 </tbody>

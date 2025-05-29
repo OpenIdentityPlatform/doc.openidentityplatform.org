@@ -120,14 +120,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">Reference.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/Reference.html#addToParent-org.w3c.dom.Element-">addToParent</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a>&nbsp;parent)</code>
-<div class="block">Adds the reference to parent element.</div>
+<td class="colLast"><span class="typeNameLabel">KeyIdentifier.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/KeyIdentifier.html#addToParent-org.w3c.dom.Element-">addToParent</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a>&nbsp;parent)</code>
+<div class="block">Adds the key identifier to the parent element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">KeyIdentifier.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/KeyIdentifier.html#addToParent-org.w3c.dom.Element-">addToParent</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a>&nbsp;parent)</code>
-<div class="block">Adds the key identifier to the parent element.</div>
+<td class="colLast"><span class="typeNameLabel">Reference.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/Reference.html#addToParent-org.w3c.dom.Element-">addToParent</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a>&nbsp;parent)</code>
+<div class="block">Adds the reference to parent element.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -178,13 +178,13 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/wss/security/SecurityToken.html" title="interface in com.sun.identity.wss.security">SecurityToken</a></code></td>
-<td class="colLast"><span class="typeNameLabel">TokenProvider.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/TokenProvider.html#getSecurityToken--">getSecurityToken</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">AMTokenProvider.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/AMTokenProvider.html#getSecurityToken--">getSecurityToken</a></span>()</code>
 <div class="block">Returns the <code>SecurityToken</code> for the WS-Security.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/wss/security/SecurityToken.html" title="interface in com.sun.identity.wss.security">SecurityToken</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AMTokenProvider.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/AMTokenProvider.html#getSecurityToken--">getSecurityToken</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">TokenProvider.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/TokenProvider.html#getSecurityToken--">getSecurityToken</a></span>()</code>
 <div class="block">Returns the <code>SecurityToken</code> for the WS-Security.</div>
 </td>
 </tr>
@@ -214,15 +214,15 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/cert/X509Certificate.html?is-external=true" title="class or interface in java.security.cert">X509Certificate</a></code></td>
-<td class="colLast"><span class="typeNameLabel">KeyIdentifier.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/KeyIdentifier.html#getX509Certificate--">getX509Certificate</a></span>()</code>
-<div class="block">Returns the <code>X509Certficate</code> for the value set in the
- key identifier.</div>
+<td class="colLast"><span class="typeNameLabel">SAML2Token.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/SAML2Token.html#getX509Certificate--">getX509Certificate</a></span>()</code>
+<div class="block">Returns X509 certificate of the authenticated subject.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/cert/X509Certificate.html?is-external=true" title="class or interface in java.security.cert">X509Certificate</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SAML2Token.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/SAML2Token.html#getX509Certificate--">getX509Certificate</a></span>()</code>
-<div class="block">Returns X509 certificate of the authenticated subject.</div>
+<td class="colLast"><span class="typeNameLabel">KeyIdentifier.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/KeyIdentifier.html#getX509Certificate--">getX509Certificate</a></span>()</code>
+<div class="block">Returns the <code>X509Certficate</code> for the value set in the
+ key identifier.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -245,6 +245,18 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
+<td class="colLast"><span class="typeNameLabel">UserNameToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/UserNameToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
+<div class="block">Returns the XML document element for the username security token.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AssertionToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/AssertionToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
+<div class="block">Convert the security token into DOM Object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
 <td class="colLast"><span class="typeNameLabel">BinarySecurityToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/BinarySecurityToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
 <div class="block">Returns the <code>DOM</code> Element of the binary security
  token.</div>
@@ -258,26 +270,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
-<td class="colLast"><span class="typeNameLabel">FAMSecurityToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/FAMSecurityToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
-<div class="block">Convert the security token into DOM Object.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
-<td class="colLast"><span class="typeNameLabel">UserNameToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/UserNameToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
-<div class="block">Returns the XML document element for the username security token.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AssertionToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/AssertionToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
-<div class="block">Convert the security token into DOM Object.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SAML2Token.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/SAML2Token.html#toDocumentElement--">toDocumentElement</a></span>()</code>
 <div class="block">Returns DOM element for the SAML2 token</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom">Element</a></code></td>
+<td class="colLast"><span class="typeNameLabel">FAMSecurityToken.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/FAMSecurityToken.html#toDocumentElement--">toDocumentElement</a></span>()</code>
+<div class="block">Convert the security token into DOM Object.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -409,7 +409,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">MessageAuthorizer.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/MessageAuthorizer.html#authorize-javax.security.auth.Subject-java.lang.Object-com.sun.identity.wss.security.SecurityMechanism-com.sun.identity.wss.security.SecurityToken-com.sun.identity.wss.provider.ProviderConfig-boolean-">authorize</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">DefaultAuthorizer.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/DefaultAuthorizer.html#authorize-javax.security.auth.Subject-java.lang.Object-com.sun.identity.wss.security.SecurityMechanism-com.sun.identity.wss.security.SecurityToken-com.sun.identity.wss.provider.ProviderConfig-boolean-">authorize</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;secureMessage,
          <a href="../../../../../../com/sun/identity/wss/security/SecurityMechanism.html" title="class in com.sun.identity.wss.security">SecurityMechanism</a>&nbsp;securityMechanism,
          <a href="../../../../../../com/sun/identity/wss/security/SecurityToken.html" title="interface in com.sun.identity.wss.security">SecurityToken</a>&nbsp;securityToken,
@@ -420,7 +420,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultAuthorizer.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/DefaultAuthorizer.html#authorize-javax.security.auth.Subject-java.lang.Object-com.sun.identity.wss.security.SecurityMechanism-com.sun.identity.wss.security.SecurityToken-com.sun.identity.wss.provider.ProviderConfig-boolean-">authorize</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">MessageAuthorizer.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/MessageAuthorizer.html#authorize-javax.security.auth.Subject-java.lang.Object-com.sun.identity.wss.security.SecurityMechanism-com.sun.identity.wss.security.SecurityToken-com.sun.identity.wss.provider.ProviderConfig-boolean-">authorize</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;secureMessage,
          <a href="../../../../../../com/sun/identity/wss/security/SecurityMechanism.html" title="class in com.sun.identity.wss.security">SecurityMechanism</a>&nbsp;securityMechanism,
          <a href="../../../../../../com/sun/identity/wss/security/SecurityToken.html" title="interface in com.sun.identity.wss.security">SecurityToken</a>&nbsp;securityToken,
@@ -461,13 +461,13 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#init-java.util.Map-">init</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;config)</code>
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#init-java.util.Map-">init</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;config)</code>
 <div class="block">Initializes the handler with the given configuration.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#init-java.util.Map-">init</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;config)</code>
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#init-java.util.Map-">init</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;config)</code>
 <div class="block">Initializes the handler with the given configuration.</div>
 </td>
 </tr>
@@ -479,7 +479,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#secureRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-">secureRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#secureRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-">secureRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
              <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState)</code>
 <div class="block">Secures the <code>SOAPMessage</code> request by adding necessary
@@ -488,7 +488,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#secureRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-">secureRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#secureRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-">secureRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
              <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState)</code>
 <div class="block">Secures the <code>SOAPMessage</code> request by adding necessary
@@ -497,14 +497,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#secureResponse-javax.xml.soap.SOAPMessage-java.util.Map-">secureResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#secureResponse-javax.xml.soap.SOAPMessage-java.util.Map-">secureResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState)</code>
 <div class="block">Secures the SOAP Message response to the client.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#secureResponse-javax.xml.soap.SOAPMessage-java.util.Map-">secureResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#secureResponse-javax.xml.soap.SOAPMessage-java.util.Map-">secureResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState)</code>
 <div class="block">Secures the SOAP Message response to the client.</div>
 </td>
@@ -523,7 +523,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#validateRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-">validateRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapRequest,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#validateRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-">validateRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapRequest,
                <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState,
                javax.servlet.http.HttpServletRequest&nbsp;request,
@@ -533,7 +533,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#validateRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-">validateRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapRequest,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#validateRequest-javax.xml.soap.SOAPMessage-javax.security.auth.Subject-java.util.Map-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-">validateRequest</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapRequest,
                <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState,
                javax.servlet.http.HttpServletRequest&nbsp;request,
@@ -543,14 +543,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#validateResponse-javax.xml.soap.SOAPMessage-java.util.Map-">validateResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#validateResponse-javax.xml.soap.SOAPMessage-java.util.Map-">validateResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState)</code>
 <div class="block">Validates the SOAP Response from the service provider.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SOAPRequestHandlerInterface.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandlerInterface.html#validateResponse-javax.xml.soap.SOAPMessage-java.util.Map-">validateResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
+<td class="colLast"><span class="typeNameLabel">SOAPRequestHandler.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/wss/security/handler/SOAPRequestHandler.html#validateResponse-javax.xml.soap.SOAPMessage-java.util.Map-">validateResponse</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/soap/SOAPMessage.html?is-external=true" title="class or interface in javax.xml.soap">SOAPMessage</a>&nbsp;soapMessage,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&nbsp;sharedState)</code>
 <div class="block">Validates the SOAP Response from the service provider.</div>
 </td>

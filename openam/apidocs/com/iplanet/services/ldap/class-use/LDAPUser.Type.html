@@ -157,14 +157,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a></code></td>
-<td class="colLast"><span class="typeNameLabel">LDAPUser.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/LDAPUser.html#getAuthType--">getAuthType</a></span>()</code>
-<div class="block">Get the type of authentication of this user.</div>
+<td class="colLast"><span class="typeNameLabel">ServerInstance.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html#getAuthType--">getAuthType</a></span>()</code>
+<div class="block">Get the authentication type of this server.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ServerInstance.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html#getAuthType--">getAuthType</a></span>()</code>
-<div class="block">Get the authentication type of this server.</div>
+<td class="colLast"><span class="typeNameLabel">LDAPUser.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/LDAPUser.html#getAuthType--">getAuthType</a></span>()</code>
+<div class="block">Get the type of authentication of this user.</div>
 </td>
 </tr>
 </tbody>
@@ -189,18 +189,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ServerGroup.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/ServerGroup.html#getServerInstance-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
-<div class="block">Get the server instance that's currently active.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DSConfigMgr.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/DSConfigMgr.html#getServerInstance-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
-<div class="block">Get the instance from server group, which is defined as default.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
 <td class="colLast"><span class="typeNameLabel">IDSConfigMgr.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/IDSConfigMgr.html#getServerInstance-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
 <div class="block">Returns server instance of a given authentication type.</div>
 </td>
@@ -213,7 +201,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DSConfigMgr.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/DSConfigMgr.html#getServerInstance-java.lang.String-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;serverGroupID,
+<td class="colLast"><span class="typeNameLabel">ServerGroup.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/ServerGroup.html#getServerInstance-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
+<div class="block">Get the server instance that's currently active.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DSConfigMgr.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/DSConfigMgr.html#getServerInstance-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
+<div class="block">Get the instance from server group, which is defined as default.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DSConfigMgrBase.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/DSConfigMgrBase.html#getServerInstance-java.lang.String-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;serverGroupID,
                  <a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
 <div class="block">Given the server group ID, this method returns the active and best
  available server instance.</div>
@@ -221,7 +221,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/iplanet/services/ldap/ServerInstance.html" title="class in com.iplanet.services.ldap">ServerInstance</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DSConfigMgrBase.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/DSConfigMgrBase.html#getServerInstance-java.lang.String-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;serverGroupID,
+<td class="colLast"><span class="typeNameLabel">DSConfigMgr.</span><code><span class="memberNameLink"><a href="../../../../../com/iplanet/services/ldap/DSConfigMgr.html#getServerInstance-java.lang.String-com.iplanet.services.ldap.LDAPUser.Type-">getServerInstance</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;serverGroupID,
                  <a href="../../../../../com/iplanet/services/ldap/LDAPUser.Type.html" title="class in com.iplanet.services.ldap">LDAPUser.Type</a>&nbsp;authType)</code>
 <div class="block">Given the server group ID, this method returns the active and best
  available server instance.</div>
