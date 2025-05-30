@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -119,13 +119,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>, <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>, <a href="../../../../../org/opends/server/types/operation/PluginOperation.html" title="interface in org.opends.server.types.operation">PluginOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PostOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationOperation.html" title="interface in org.opends.server.types.operation">PostOperationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseModifyOperation.html" title="interface in org.opends.server.types.operation">PostResponseModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseOperation.html" title="interface in org.opends.server.types.operation">PostResponseOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PreOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationOperation.html" title="interface in org.opends.server.types.operation">PreOperationOperation</a></dd>
+<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>, <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>, <a href="../../../../../org/opends/server/types/operation/PluginOperation.html" title="interface in org.opends.server.types.operation">PluginOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PostOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationOperation.html" title="interface in org.opends.server.types.operation">PostOperationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseModifyOperation.html" title="interface in org.opends.server.types.operation">PostResponseModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseOperation.html" title="interface in org.opends.server.types.operation">PostResponseOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PreOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationOperation.html" title="interface in org.opends.server.types.operation">PreOperationOperation</a>, <a href="../../../../../org/opends/server/types/operation/RollbackOperation.html" title="interface in org.opends.server.types.operation">RollbackOperation</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">LocalBackendModifyOperation</span>
 extends <a href="../../../../../org/opends/server/core/ModifyOperationWrapper.html" title="class in org.opends.server.core">ModifyOperationWrapper</a>
-implements <a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PreOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PostOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseModifyOperation.html" title="interface in org.opends.server.types.operation">PostResponseModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationModifyOperation</a></pre>
+implements <a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PreOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html" title="interface in org.opends.server.types.operation">PostOperationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseModifyOperation.html" title="interface in org.opends.server.types.operation">PostResponseModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationModifyOperation</a>, <a href="../../../../../org/opends/server/types/operation/RollbackOperation.html" title="interface in org.opends.server.types.operation">RollbackOperation</a></pre>
 <div class="block">This class defines an operation used to modify an entry in a local backend of the Directory Server.</div>
 </li>
 </ul>
@@ -217,6 +217,10 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <div class="block">Indicates whether this is a synchronization operation rather than
  one that was requested by an external client.</div>
 </td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/opends/server/workflowelement/localbackend/LocalBackendModifyOperation.html#rollback--">rollback</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -484,7 +488,7 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <a name="addModification-org.opends.server.types.Modification-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>addModification</h4>
 <pre>public&nbsp;void&nbsp;addModification(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)
@@ -506,6 +510,24 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../org/opends/server/types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></code> - If an unexpected problem occurs while applying
                               the modification to the entry.</dd>
+</dl>
+</li>
+</ul>
+<a name="rollback--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>rollback</h4>
+<pre>public&nbsp;void&nbsp;rollback()
+              throws <a href="../../../../../org/opends/server/types/CanceledOperationException.html" title="class in org.opends.server.types">CanceledOperationException</a>,
+                     <a href="../../../../../org/opends/server/types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/opends/server/types/operation/RollbackOperation.html#rollback--">rollback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/opends/server/types/operation/RollbackOperation.html" title="interface in org.opends.server.types.operation">RollbackOperation</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../../org/opends/server/types/CanceledOperationException.html" title="class in org.opends.server.types">CanceledOperationException</a></code></dd>
+<dd><code><a href="../../../../../org/opends/server/types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></code></dd>
 </dl>
 </li>
 </ul>

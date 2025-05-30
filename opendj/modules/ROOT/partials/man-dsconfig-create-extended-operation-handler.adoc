@@ -59,6 +59,13 @@ Default {name}: Cancel Extended Operation Handler
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`end-transaction-extended-operation-handler`::
++
+Default {name}: End Transaction Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-extended-operation-handler-end-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `get-connection-id-extended-operation-handler`::
 +
 Default {name}: Get Connection Id Extended Operation Handler
@@ -94,6 +101,13 @@ Default {name}: Start TLS Extended Operation Handler
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`start-transaction-extended-operation-handler`::
++
+Default {name}: Start Transaction Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-extended-operation-handler-start-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `who-am-i-extended-operation-handler`::
 +
 Default {name}: Who Am I Extended Operation Handler
@@ -111,7 +125,7 @@ Extended Operation Handler properties depend on the Extended Operation Handler t
 
 `-t | --type {type}`::
 
-The type of Extended Operation Handler which should be created. The value for TYPE can be one of: cancel | custom | get-connection-id | get-symmetric-key | password-modify | password-policy-state | start-tls | who-am-i.
+The type of Extended Operation Handler which should be created. The value for TYPE can be one of: cancel | custom | end-transaction | get-connection-id | get-symmetric-key | password-modify | password-policy-state | start-tls | start-transaction | who-am-i.
 +
 
 [open]
@@ -127,6 +141,13 @@ Default {type}: Cancel Extended Operation Handler
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`end-transaction-extended-operation-handler`::
++
+Default {type}: End Transaction Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-extended-operation-handler-end-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `get-connection-id-extended-operation-handler`::
 +
 Default {type}: Get Connection Id Extended Operation Handler
@@ -162,6 +183,13 @@ Default {type}: Start TLS Extended Operation Handler
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
+`start-transaction-extended-operation-handler`::
++
+Default {type}: Start Transaction Extended Operation Handler
++
+Enabled by default: true
++
+See  <<dsconfig-create-extended-operation-handler-start-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `who-am-i-extended-operation-handler`::
 +
 Default {type}: Who Am I Extended Operation Handler
@@ -224,6 +252,85 @@ Specifies the fully-qualified name of the Java class that provides the Cancel Ex
 
 Default Value::
 org.opends.server.extensions.CancelExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-extended-operation-handler-end-transaction-extended-operation-handler]
+== End Transaction Extended Operation Handler
+
+Extended Operation Handlers of type end-transaction-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the End Transaction Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.EndTransactionExtendedOperation
 
 
 Allowed Values::
@@ -652,6 +759,85 @@ Specifies the fully-qualified name of the Java class that provides the Start TLS
 
 Default Value::
 org.opends.server.extensions.StartTLSExtendedOperation
+
+
+Allowed Values::
+A Java class that implements or extends the class(es): org.opends.server.api.ExtendedOperationHandler
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+The Extended Operation Handler must be disabled and re-enabled for changes to this setting to take effect
+
+Advanced Property::
+Yes (Use --advanced in interactive mode.)
+
+Read-only::
+No
+
+
+====
+
+
+
+--
+
+[#dsconfig-create-extended-operation-handler-start-transaction-extended-operation-handler]
+== Start Transaction Extended Operation Handler
+
+Extended Operation Handlers of type start-transaction-extended-operation-handler have the following properties:
+
+--
+
+
+enabled::
+[open]
+====
+Description::
+Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). 
+
+
+Default Value::
+None
+
+
+Allowed Values::
+true
+false
+
+
+Multi-valued::
+No
+
+Required::
+Yes
+
+Admin Action Required::
+None
+
+Advanced Property::
+No
+
+Read-only::
+No
+
+
+====
+
+java-class::
+[open]
+====
+Description::
+Specifies the fully-qualified name of the Java class that provides the Start Transaction Extended Operation Handler implementation. 
+
+
+Default Value::
+org.opends.server.extensions.StartTransactionExtendedOperation
 
 
 Allowed Values::

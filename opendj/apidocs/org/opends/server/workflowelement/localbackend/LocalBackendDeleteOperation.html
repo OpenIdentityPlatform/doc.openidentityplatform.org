@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
+var methods = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -119,13 +119,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>, <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>, <a href="../../../../../org/opends/server/types/operation/PluginOperation.html" title="interface in org.opends.server.types.operation">PluginOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationOperation.html" title="interface in org.opends.server.types.operation">PostOperationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseDeleteOperation.html" title="interface in org.opends.server.types.operation">PostResponseDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseOperation.html" title="interface in org.opends.server.types.operation">PostResponseOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PreOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationOperation.html" title="interface in org.opends.server.types.operation">PreOperationOperation</a></dd>
+<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</a>, <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>, <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>, <a href="../../../../../org/opends/server/types/operation/PluginOperation.html" title="interface in org.opends.server.types.operation">PluginOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationOperation.html" title="interface in org.opends.server.types.operation">PostOperationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseDeleteOperation.html" title="interface in org.opends.server.types.operation">PostResponseDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseOperation.html" title="interface in org.opends.server.types.operation">PostResponseOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PreOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PreOperationOperation.html" title="interface in org.opends.server.types.operation">PreOperationOperation</a>, <a href="../../../../../org/opends/server/types/operation/RollbackOperation.html" title="interface in org.opends.server.types.operation">RollbackOperation</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">LocalBackendDeleteOperation</span>
 extends <a href="../../../../../org/opends/server/core/DeleteOperationWrapper.html" title="class in org.opends.server.core">DeleteOperationWrapper</a>
-implements <a href="../../../../../org/opends/server/types/operation/PreOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PreOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseDeleteOperation.html" title="interface in org.opends.server.types.operation">PostResponseDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationDeleteOperation</a></pre>
+implements <a href="../../../../../org/opends/server/types/operation/PreOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PreOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostOperationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostOperationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostResponseDeleteOperation.html" title="interface in org.opends.server.types.operation">PostResponseDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/PostSynchronizationDeleteOperation.html" title="interface in org.opends.server.types.operation">PostSynchronizationDeleteOperation</a>, <a href="../../../../../org/opends/server/types/operation/RollbackOperation.html" title="interface in org.opends.server.types.operation">RollbackOperation</a></pre>
 <div class="block">This class defines an operation used to delete an entry in a local backend
  of the Directory Server.</div>
 </li>
@@ -193,6 +193,10 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <div class="block">Process this delete operation in a local backend.</div>
 </td>
 </tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/opends/server/workflowelement/localbackend/LocalBackendDeleteOperation.html#rollback--">rollback</a></span>()</code>&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.opends.server.core.DeleteOperationWrapper">
@@ -213,7 +217,7 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.opends.server.types.operation.PreOperationDeleteOperation">
@@ -355,7 +359,7 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <a name="processLocalDelete-org.opends.server.api.LocalBackend-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>processLocalDelete</h4>
 <pre>public&nbsp;void&nbsp;processLocalDelete(<a href="../../../../../org/opends/server/api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;?&gt;&nbsp;backend)
@@ -366,6 +370,24 @@ implements <a href="../../../../../org/opends/server/types/operation/PreOperatio
 <dd><code>backend</code> - The backend on which operation is performed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../org/opends/server/types/CanceledOperationException.html" title="class in org.opends.server.types">CanceledOperationException</a></code> - if this operation should be cancelled</dd>
+</dl>
+</li>
+</ul>
+<a name="rollback--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>rollback</h4>
+<pre>public&nbsp;void&nbsp;rollback()
+              throws <a href="../../../../../org/opends/server/types/CanceledOperationException.html" title="class in org.opends.server.types">CanceledOperationException</a>,
+                     <a href="../../../../../org/opends/server/types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/opends/server/types/operation/RollbackOperation.html#rollback--">rollback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/opends/server/types/operation/RollbackOperation.html" title="interface in org.opends.server.types.operation">RollbackOperation</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../../org/opends/server/types/CanceledOperationException.html" title="class in org.opends.server.types">CanceledOperationException</a></code></dd>
+<dd><code><a href="../../../../../org/opends/server/types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></code></dd>
 </dl>
 </li>
 </ul>
