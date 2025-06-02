@@ -157,14 +157,14 @@ implements <a href="../../../../../../../../org/forgerock/openam/sts/soap/token/
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/provider/oidc/DefaultSoapOpenIdConnectTokenAuthnContextMapper.html#getAuthnContext-java.util.List-">getAuthnContext</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.ws.security.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/provider/oidc/DefaultSoapOpenIdConnectTokenAuthnContextMapper.html#getAuthnContext-java.util.List-">getAuthnContext</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</code>
 <div class="block">Returns the SAML2 AuthnContext class reference corresponding the the SupportingToken specified in the SecurityPolicy
  bindings protecting a soap-sts instance.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/provider/oidc/DefaultSoapOpenIdConnectTokenAuthnContextMapper.html#getAuthnContextForDelegatedToken-java.util.List-org.apache.cxf.sts.request.ReceivedToken-">getAuthnContextForDelegatedToken</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.ws.security.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/provider/oidc/DefaultSoapOpenIdConnectTokenAuthnContextMapper.html#getAuthnContextForDelegatedToken-java.util.List-org.apache.cxf.sts.request.ReceivedToken-">getAuthnContextForDelegatedToken</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
                                 org.apache.cxf.sts.request.ReceivedToken&nbsp;delegatedToken)</code>
 <div class="block">Returns the SAML2 AuthnContext class reference for delegated tokens (specified as part of the ActAs/OnBehalfOf
  element in the RequestSecurityToken).</div>
@@ -215,7 +215,7 @@ implements <a href="../../../../../../../../org/forgerock/openam/sts/soap/token/
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthnContext</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAuthnContext(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.ws.security.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAuthnContext(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/provider/oidc/SoapOpenIdConnectTokenAuthnContextMapper.html#getAuthnContext-java.util.List-">SoapOpenIdConnectTokenAuthnContextMapper</a></code></span></div>
 <div class="block">Returns the SAML2 AuthnContext class reference corresponding the the SupportingToken specified in the SecurityPolicy
  bindings protecting a soap-sts instance.</div>
@@ -237,7 +237,7 @@ implements <a href="../../../../../../../../org/forgerock/openam/sts/soap/token/
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getAuthnContextForDelegatedToken</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAuthnContextForDelegatedToken(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.ws.security.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getAuthnContextForDelegatedToken(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
                                                org.apache.cxf.sts.request.ReceivedToken&nbsp;delegatedToken)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/provider/oidc/SoapOpenIdConnectTokenAuthnContextMapper.html#getAuthnContextForDelegatedToken-java.util.List-org.apache.cxf.sts.request.ReceivedToken-">SoapOpenIdConnectTokenAuthnContextMapper</a></code></span></div>
 <div class="block">Returns the SAML2 AuthnContext class reference for delegated tokens (specified as part of the ActAs/OnBehalfOf

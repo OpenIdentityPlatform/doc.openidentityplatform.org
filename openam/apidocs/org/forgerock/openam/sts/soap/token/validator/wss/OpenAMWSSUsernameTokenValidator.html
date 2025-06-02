@@ -100,7 +100,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>org.apache.ws.security.validate.UsernameTokenValidator</li>
+<li>org.apache.wss4j.dom.validate.UsernameTokenValidator</li>
 <li>
 <ul class="inheritance">
 <li>org.forgerock.openam.sts.soap.token.validator.wss.OpenAMWSSUsernameTokenValidator</li>
@@ -114,12 +114,12 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>org.apache.ws.security.validate.Validator</dd>
+<dd>org.apache.wss4j.dom.validate.Validator</dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">OpenAMWSSUsernameTokenValidator</span>
-extends org.apache.ws.security.validate.UsernameTokenValidator</pre>
+extends org.apache.wss4j.dom.validate.UsernameTokenValidator</pre>
 <div class="block">The org.apache.cxf.sts.token.validator.UsernameTokenValidator class ultimately calls a org.apache.ws.security.validate.Validator
  instance (set via a setter) to perform the actual token validation. This class implements the ws.security.validate.Validator
  interface and will be set in the cxf.sts.token.validator.UsernameTokenValidator class. It will perform the actual
@@ -142,7 +142,7 @@ extends org.apache.ws.security.validate.UsernameTokenValidator</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#OpenAMWSSUsernameTokenValidator-org.forgerock.openam.sts.token.validator.AuthenticationHandler-org.forgerock.openam.sts.token.ThreadLocalAMTokenCache-org.forgerock.openam.sts.token.validator.ValidationInvocationContext-boolean-org.slf4j.Logger-">OpenAMWSSUsernameTokenValidator</a></span>(<a href="../../../../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html" title="interface in org.forgerock.openam.sts.token.validator">AuthenticationHandler</a>&lt;org.apache.ws.security.message.token.UsernameToken&gt;&nbsp;authenticationHandler,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#OpenAMWSSUsernameTokenValidator-org.forgerock.openam.sts.token.validator.AuthenticationHandler-org.forgerock.openam.sts.token.ThreadLocalAMTokenCache-org.forgerock.openam.sts.token.validator.ValidationInvocationContext-boolean-org.slf4j.Logger-">OpenAMWSSUsernameTokenValidator</a></span>(<a href="../../../../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html" title="interface in org.forgerock.openam.sts.token.validator">AuthenticationHandler</a>&lt;org.apache.wss4j.dom.message.token.UsernameToken&gt;&nbsp;authenticationHandler,
                                <a href="../../../../../../../../org/forgerock/openam/sts/token/ThreadLocalAMTokenCache.html" title="interface in org.forgerock.openam.sts.token">ThreadLocalAMTokenCache</a>&nbsp;threadLocalAMTokenCache,
                                <a href="../../../../../../../../org/forgerock/openam/sts/token/validator/ValidationInvocationContext.html" title="enum in org.forgerock.openam.sts.token.validator">ValidationInvocationContext</a>&nbsp;validationInvocationContext,
                                boolean&nbsp;invalidateOpenAMSession,
@@ -165,29 +165,29 @@ extends org.apache.ws.security.validate.UsernameTokenValidator</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#printConfig-org.apache.ws.security.handler.RequestData-">printConfig</a></span>(org.apache.ws.security.handler.RequestData&nbsp;data)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#printConfig-org.apache.wss4j.dom.handler.RequestData-">printConfig</a></span>(org.apache.wss4j.dom.handler.RequestData&nbsp;data)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#verifyCustomPassword-org.apache.ws.security.message.token.UsernameToken-org.apache.ws.security.handler.RequestData-">verifyCustomPassword</a></span>(org.apache.ws.security.message.token.UsernameToken&nbsp;usernameToken,
-                    org.apache.ws.security.handler.RequestData&nbsp;data)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#verifyCustomPassword-org.apache.wss4j.dom.message.token.UsernameToken-org.apache.wss4j.dom.handler.RequestData-">verifyCustomPassword</a></span>(org.apache.wss4j.dom.message.token.UsernameToken&nbsp;usernameToken,
+                    org.apache.wss4j.dom.handler.RequestData&nbsp;data)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#verifyDigestPassword-org.apache.ws.security.message.token.UsernameToken-org.apache.ws.security.handler.RequestData-">verifyDigestPassword</a></span>(org.apache.ws.security.message.token.UsernameToken&nbsp;usernameToken,
-                    org.apache.ws.security.handler.RequestData&nbsp;data)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#verifyDigestPassword-org.apache.wss4j.dom.message.token.UsernameToken-org.apache.wss4j.dom.handler.RequestData-">verifyDigestPassword</a></span>(org.apache.wss4j.dom.message.token.UsernameToken&nbsp;usernameToken,
+                    org.apache.wss4j.dom.handler.RequestData&nbsp;data)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#verifyPlaintextPassword-org.apache.ws.security.message.token.UsernameToken-org.apache.ws.security.handler.RequestData-">verifyPlaintextPassword</a></span>(org.apache.ws.security.message.token.UsernameToken&nbsp;usernameToken,
-                       org.apache.ws.security.handler.RequestData&nbsp;data)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/OpenAMWSSUsernameTokenValidator.html#verifyPlaintextPassword-org.apache.wss4j.dom.message.token.UsernameToken-org.apache.wss4j.dom.handler.RequestData-">verifyPlaintextPassword</a></span>(org.apache.wss4j.dom.message.token.UsernameToken&nbsp;usernameToken,
+                       org.apache.wss4j.dom.handler.RequestData&nbsp;data)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.apache.ws.security.validate.UsernameTokenValidator">
+<li class="blockList"><a name="methods.inherited.from.class.org.apache.wss4j.dom.validate.UsernameTokenValidator">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;org.apache.ws.security.validate.UsernameTokenValidator</h3>
+<h3>Methods inherited from class&nbsp;org.apache.wss4j.dom.validate.UsernameTokenValidator</h3>
 <code>validate, verifyUnknownPassword</code></li>
 </ul>
 <ul class="blockList">
@@ -217,7 +217,7 @@ extends org.apache.ws.security.validate.UsernameTokenValidator</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OpenAMWSSUsernameTokenValidator</h4>
-<pre>public&nbsp;OpenAMWSSUsernameTokenValidator(<a href="../../../../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html" title="interface in org.forgerock.openam.sts.token.validator">AuthenticationHandler</a>&lt;org.apache.ws.security.message.token.UsernameToken&gt;&nbsp;authenticationHandler,
+<pre>public&nbsp;OpenAMWSSUsernameTokenValidator(<a href="../../../../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html" title="interface in org.forgerock.openam.sts.token.validator">AuthenticationHandler</a>&lt;org.apache.wss4j.dom.message.token.UsernameToken&gt;&nbsp;authenticationHandler,
                                        <a href="../../../../../../../../org/forgerock/openam/sts/token/ThreadLocalAMTokenCache.html" title="interface in org.forgerock.openam.sts.token">ThreadLocalAMTokenCache</a>&nbsp;threadLocalAMTokenCache,
                                        <a href="../../../../../../../../org/forgerock/openam/sts/token/validator/ValidationInvocationContext.html" title="enum in org.forgerock.openam.sts.token.validator">ValidationInvocationContext</a>&nbsp;validationInvocationContext,
                                        boolean&nbsp;invalidateOpenAMSession,
@@ -232,64 +232,64 @@ extends org.apache.ws.security.validate.UsernameTokenValidator</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="verifyPlaintextPassword-org.apache.ws.security.message.token.UsernameToken-org.apache.ws.security.handler.RequestData-">
+<a name="verifyPlaintextPassword-org.apache.wss4j.dom.message.token.UsernameToken-org.apache.wss4j.dom.handler.RequestData-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>verifyPlaintextPassword</h4>
-<pre>protected&nbsp;void&nbsp;verifyPlaintextPassword(org.apache.ws.security.message.token.UsernameToken&nbsp;usernameToken,
-                                       org.apache.ws.security.handler.RequestData&nbsp;data)
-                                throws org.apache.ws.security.WSSecurityException</pre>
+<pre>protected&nbsp;void&nbsp;verifyPlaintextPassword(org.apache.wss4j.dom.message.token.UsernameToken&nbsp;usernameToken,
+                                       org.apache.wss4j.dom.handler.RequestData&nbsp;data)
+                                throws org.apache.wss4j.common.ext.WSSecurityException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>verifyPlaintextPassword</code>&nbsp;in class&nbsp;<code>org.apache.ws.security.validate.UsernameTokenValidator</code></dd>
+<dd><code>verifyPlaintextPassword</code>&nbsp;in class&nbsp;<code>org.apache.wss4j.dom.validate.UsernameTokenValidator</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.apache.ws.security.WSSecurityException</code></dd>
+<dd><code>org.apache.wss4j.common.ext.WSSecurityException</code></dd>
 </dl>
 </li>
 </ul>
-<a name="verifyDigestPassword-org.apache.ws.security.message.token.UsernameToken-org.apache.ws.security.handler.RequestData-">
+<a name="verifyDigestPassword-org.apache.wss4j.dom.message.token.UsernameToken-org.apache.wss4j.dom.handler.RequestData-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>verifyDigestPassword</h4>
-<pre>protected&nbsp;void&nbsp;verifyDigestPassword(org.apache.ws.security.message.token.UsernameToken&nbsp;usernameToken,
-                                    org.apache.ws.security.handler.RequestData&nbsp;data)
-                             throws org.apache.ws.security.WSSecurityException</pre>
+<pre>protected&nbsp;void&nbsp;verifyDigestPassword(org.apache.wss4j.dom.message.token.UsernameToken&nbsp;usernameToken,
+                                    org.apache.wss4j.dom.handler.RequestData&nbsp;data)
+                             throws org.apache.wss4j.common.ext.WSSecurityException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>verifyDigestPassword</code>&nbsp;in class&nbsp;<code>org.apache.ws.security.validate.UsernameTokenValidator</code></dd>
+<dd><code>verifyDigestPassword</code>&nbsp;in class&nbsp;<code>org.apache.wss4j.dom.validate.UsernameTokenValidator</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.apache.ws.security.WSSecurityException</code></dd>
+<dd><code>org.apache.wss4j.common.ext.WSSecurityException</code></dd>
 </dl>
 </li>
 </ul>
-<a name="verifyCustomPassword-org.apache.ws.security.message.token.UsernameToken-org.apache.ws.security.handler.RequestData-">
+<a name="verifyCustomPassword-org.apache.wss4j.dom.message.token.UsernameToken-org.apache.wss4j.dom.handler.RequestData-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>verifyCustomPassword</h4>
-<pre>protected&nbsp;void&nbsp;verifyCustomPassword(org.apache.ws.security.message.token.UsernameToken&nbsp;usernameToken,
-                                    org.apache.ws.security.handler.RequestData&nbsp;data)
-                             throws org.apache.ws.security.WSSecurityException</pre>
+<pre>protected&nbsp;void&nbsp;verifyCustomPassword(org.apache.wss4j.dom.message.token.UsernameToken&nbsp;usernameToken,
+                                    org.apache.wss4j.dom.handler.RequestData&nbsp;data)
+                             throws org.apache.wss4j.common.ext.WSSecurityException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>verifyCustomPassword</code>&nbsp;in class&nbsp;<code>org.apache.ws.security.validate.UsernameTokenValidator</code></dd>
+<dd><code>verifyCustomPassword</code>&nbsp;in class&nbsp;<code>org.apache.wss4j.dom.validate.UsernameTokenValidator</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.apache.ws.security.WSSecurityException</code></dd>
+<dd><code>org.apache.wss4j.common.ext.WSSecurityException</code></dd>
 </dl>
 </li>
 </ul>
-<a name="printConfig-org.apache.ws.security.handler.RequestData-">
+<a name="printConfig-org.apache.wss4j.dom.handler.RequestData-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>printConfig</h4>
-<pre>protected&nbsp;void&nbsp;printConfig(org.apache.ws.security.handler.RequestData&nbsp;data)</pre>
+<pre>protected&nbsp;void&nbsp;printConfig(org.apache.wss4j.dom.handler.RequestData&nbsp;data)</pre>
 </li>
 </ul>
 </li>

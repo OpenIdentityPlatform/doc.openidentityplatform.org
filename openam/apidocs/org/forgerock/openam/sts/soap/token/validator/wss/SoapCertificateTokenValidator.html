@@ -109,13 +109,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>org.apache.ws.security.validate.Validator</dd>
+<dd>org.apache.wss4j.dom.validate.Validator</dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">SoapCertificateTokenValidator</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements org.apache.ws.security.validate.Validator</pre>
+implements org.apache.wss4j.dom.validate.Validator</pre>
 <div class="block">This class extends the Apache WSS4j TokenValidator deployed by Apache CXF to validate x509 tokens presented as part
  of consuming an STS instance protected by SecurityPolicy bindings specifying an x509 Certificate which serves to
  identify the client (examples  2.2.2, and 2.2.4 of http://docs.oasis-open.org/ws-sx/security-policy/examples/ws-sp-usecases-examples.html)
@@ -170,9 +170,9 @@ implements org.apache.ws.security.validate.Validator</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>org.apache.ws.security.validate.Credential</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/SoapCertificateTokenValidator.html#validate-org.apache.ws.security.validate.Credential-org.apache.ws.security.handler.RequestData-">validate</a></span>(org.apache.ws.security.validate.Credential&nbsp;credential,
-        org.apache.ws.security.handler.RequestData&nbsp;data)</code>&nbsp;</td>
+<td class="colFirst"><code>org.apache.wss4j.dom.validate.Credential</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../../org/forgerock/openam/sts/soap/token/validator/wss/SoapCertificateTokenValidator.html#validate-org.apache.wss4j.dom.validate.Credential-org.apache.wss4j.dom.handler.RequestData-">validate</a></span>(org.apache.wss4j.dom.validate.Credential&nbsp;credential,
+        org.apache.wss4j.dom.handler.RequestData&nbsp;data)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -217,20 +217,20 @@ implements org.apache.ws.security.validate.Validator</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="validate-org.apache.ws.security.validate.Credential-org.apache.ws.security.handler.RequestData-">
+<a name="validate-org.apache.wss4j.dom.validate.Credential-org.apache.wss4j.dom.handler.RequestData-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>validate</h4>
-<pre>public&nbsp;org.apache.ws.security.validate.Credential&nbsp;validate(org.apache.ws.security.validate.Credential&nbsp;credential,
-                                                           org.apache.ws.security.handler.RequestData&nbsp;data)
-                                                    throws org.apache.ws.security.WSSecurityException</pre>
+<pre>public&nbsp;org.apache.wss4j.dom.validate.Credential&nbsp;validate(org.apache.wss4j.dom.validate.Credential&nbsp;credential,
+                                                         org.apache.wss4j.dom.handler.RequestData&nbsp;data)
+                                                  throws org.apache.wss4j.common.ext.WSSecurityException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>validate</code>&nbsp;in interface&nbsp;<code>org.apache.ws.security.validate.Validator</code></dd>
+<dd><code>validate</code>&nbsp;in interface&nbsp;<code>org.apache.wss4j.dom.validate.Validator</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>org.apache.ws.security.WSSecurityException</code></dd>
+<dd><code>org.apache.wss4j.common.ext.WSSecurityException</code></dd>
 </dl>
 </li>
 </ul>

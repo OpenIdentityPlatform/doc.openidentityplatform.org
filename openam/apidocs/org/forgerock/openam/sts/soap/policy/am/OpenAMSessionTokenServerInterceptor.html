@@ -164,7 +164,7 @@ extends <a href="../../../../../../../org/forgerock/openam/sts/soap/policy/am/Ab
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected org.apache.cxf.ws.security.policy.model.Token</code></td>
+<td class="colFirst"><code>protected org.apache.wss4j.policy.model.AbstractToken</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../org/forgerock/openam/sts/soap/policy/am/OpenAMSessionTokenServerInterceptor.html#assertTokens-org.apache.cxf.binding.soap.SoapMessage-">assertTokens</a></span>(org.apache.cxf.binding.soap.SoapMessage&nbsp;message)</code>
 <div class="block">Called to assert the relevant tokens.</div>
 </td>
@@ -188,7 +188,7 @@ extends <a href="../../../../../../../org/forgerock/openam/sts/soap/policy/am/Ab
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.apache.cxf.ws.security.wss4j.AbstractTokenInterceptor</h3>
-<code>assertTokens, findSecurityHeader, getCallback, getPassword, getTokenStore, getUnderstoodHeaders, policyNotAsserted, policyNotAsserted</code></li>
+<code>assertTokens, findSecurityHeader, getPassword, getTokenStore, getUnderstoodHeaders, policyNotAsserted, policyNotAsserted</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.org.apache.cxf.binding.soap.interceptor.AbstractSoapInterceptor">
@@ -278,7 +278,7 @@ extends <a href="../../../../../../../org/forgerock/openam/sts/soap/policy/am/Ab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>assertTokens</h4>
-<pre>protected&nbsp;org.apache.cxf.ws.security.policy.model.Token&nbsp;assertTokens(org.apache.cxf.binding.soap.SoapMessage&nbsp;message)</pre>
+<pre>protected&nbsp;org.apache.wss4j.policy.model.AbstractToken&nbsp;assertTokens(org.apache.cxf.binding.soap.SoapMessage&nbsp;message)</pre>
 <div class="block">Called to assert the relevant tokens. Asserting tokens means asserting that the corresponding policy has been
  satisfied. This method is called outbound on the server-side, and inbound on the client side. It is also called from
  processTokenAbove, following successful token validation. This method will assert that the OpenAMSessionAssertion
