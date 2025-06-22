@@ -271,8 +271,8 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AddMsg.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/protocol/AddMsg.html#createOperation-org.opends.server.protocols.internal.InternalClientConnection-org.forgerock.opendj.ldap.DN-">createOperation</a></span>(<a href="../../../../../org/opends/server/protocols/internal/InternalClientConnection.html" title="class in org.opends.server.protocols.internal">InternalClientConnection</a>&nbsp;connection,
+<td class="colFirst"><code>abstract <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a></code></td>
+<td class="colLast"><span class="typeNameLabel">LDAPUpdateMsg.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/protocol/LDAPUpdateMsg.html#createOperation-org.opends.server.protocols.internal.InternalClientConnection-org.forgerock.opendj.ldap.DN-">createOperation</a></span>(<a href="../../../../../org/opends/server/protocols/internal/InternalClientConnection.html" title="class in org.opends.server.protocols.internal">InternalClientConnection</a>&nbsp;conn,
                <a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;newDN)</code>
 <div class="block">Create and Operation from the message using the provided DN.</div>
 </td>
@@ -290,8 +290,8 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>abstract <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a></code></td>
-<td class="colLast"><span class="typeNameLabel">LDAPUpdateMsg.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/protocol/LDAPUpdateMsg.html#createOperation-org.opends.server.protocols.internal.InternalClientConnection-org.forgerock.opendj.ldap.DN-">createOperation</a></span>(<a href="../../../../../org/opends/server/protocols/internal/InternalClientConnection.html" title="class in org.opends.server.protocols.internal">InternalClientConnection</a>&nbsp;conn,
+<td class="colFirst"><code><a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AddMsg.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/protocol/AddMsg.html#createOperation-org.opends.server.protocols.internal.InternalClientConnection-org.forgerock.opendj.ldap.DN-">createOperation</a></span>(<a href="../../../../../org/opends/server/protocols/internal/InternalClientConnection.html" title="class in org.opends.server.protocols.internal">InternalClientConnection</a>&nbsp;connection,
                <a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;newDN)</code>
 <div class="block">Create and Operation from the message using the provided DN.</div>
 </td>
@@ -452,24 +452,24 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../org/opends/server/protocols/ldap/LDAPAttribute.html" title="class in org.opends.server.protocols.ldap">LDAPAttribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">RawAttribute.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/RawAttribute.html#decode-org.forgerock.opendj.io.ASN1Reader-">decode</a></span>(<a href="../../../../../org/forgerock/opendj/io/ASN1Reader.html" title="interface in org.forgerock.opendj.io">ASN1Reader</a>&nbsp;reader)</code>
-<div class="block">Decodes the elements from the provided ASN.1 reader as an
- LDAP attribute.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../org/opends/server/protocols/ldap/LDAPFilter.html" title="class in org.opends.server.protocols.ldap">LDAPFilter</a></code></td>
 <td class="colLast"><span class="typeNameLabel">RawFilter.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/RawFilter.html#decode-org.forgerock.opendj.io.ASN1Reader-">decode</a></span>(<a href="../../../../../org/forgerock/opendj/io/ASN1Reader.html" title="interface in org.forgerock.opendj.io">ASN1Reader</a>&nbsp;reader)</code>
 <div class="block">Decodes the elements from the provided ASN.1 reader as a
  raw search filter.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../org/opends/server/protocols/ldap/LDAPModification.html" title="class in org.opends.server.protocols.ldap">LDAPModification</a></code></td>
 <td class="colLast"><span class="typeNameLabel">RawModification.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/RawModification.html#decode-org.forgerock.opendj.io.ASN1Reader-">decode</a></span>(<a href="../../../../../org/forgerock/opendj/io/ASN1Reader.html" title="interface in org.forgerock.opendj.io">ASN1Reader</a>&nbsp;reader)</code>
 <div class="block">Decodes the elements from the provided ASN.1 reader as an
  LDAP modification.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../org/opends/server/protocols/ldap/LDAPAttribute.html" title="class in org.opends.server.protocols.ldap">LDAPAttribute</a></code></td>
+<td class="colLast"><span class="typeNameLabel">RawAttribute.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/RawAttribute.html#decode-org.forgerock.opendj.io.ASN1Reader-">decode</a></span>(<a href="../../../../../org/forgerock/opendj/io/ASN1Reader.html" title="interface in org.forgerock.opendj.io">ASN1Reader</a>&nbsp;reader)</code>
+<div class="block">Decodes the elements from the provided ASN.1 reader as an
+ LDAP attribute.</div>
 </td>
 </tr>
 <tr class="altColor">

@@ -294,18 +294,18 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#getModifications--">getModifications</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationWrapper.html#getModifications--">getModifications</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#getModifications--">getModifications</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">PasswordPolicyState.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/PasswordPolicyState.html#getModifications--">getModifications</a></span>()</code>
 <div class="block">Retrieves the set of modifications that correspond to changes made in password policy processing
  that may need to be applied to the user entry.</div>
 </td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationWrapper.html#getModifications--">getModifications</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
@@ -315,10 +315,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
-<div class="block">Retrieves the set of modifications applied to attributes of the target
- entry in the course of processing this modify DN operation.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">ModifyOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationBasis.html#getModifications--">getModifications</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
@@ -326,7 +323,10 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationBasis.html#getModifications--">getModifications</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
+<div class="block">Retrieves the set of modifications applied to attributes of the target
+ entry in the course of processing this modify DN operation.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -339,11 +339,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationWrapper.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationWrapper.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -354,10 +354,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperation.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>
-<div class="block">Adds the provided modification to the set of modifications to be applied
- as part of the update.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">ModifyOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationBasis.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -365,7 +362,10 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyOperationBasis.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperation.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>
+<div class="block">Adds the provided modification to the set of modifications to be applied
+ as part of the update.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -424,11 +424,11 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#updateMembers-java.util.List-">updateMembers</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modifications)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">DynamicGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DynamicGroup.html#updateMembers-java.util.List-">updateMembers</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modifications)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">DynamicGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DynamicGroup.html#updateMembers-java.util.List-">updateMembers</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modifications)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#updateMembers-java.util.List-">updateMembers</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modifications)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -525,16 +525,6 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#processLocalOrNonConflictModification-org.opends.server.replication.common.CSN-org.opends.server.types.Modification-">processLocalOrNonConflictModification</a></span>(<a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
-                                     <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistoricalMultiple.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalMultiple.html#processLocalOrNonConflictModification-org.opends.server.replication.common.CSN-org.opends.server.types.Modification-">processLocalOrNonConflictModification</a></span>(<a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
-                                     <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><span class="typeNameLabel">AttrHistorical.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistorical.html#processLocalOrNonConflictModification-org.opends.server.replication.common.CSN-org.opends.server.types.Modification-">processLocalOrNonConflictModification</a></span>(<a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
                                      <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>
@@ -544,18 +534,14 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
-               <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
-               <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
-               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistoricalMultiple.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalMultiple.html#processLocalOrNonConflictModification-org.opends.server.replication.common.CSN-org.opends.server.types.Modification-">processLocalOrNonConflictModification</a></span>(<a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
+                                     <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistoricalMultiple.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalMultiple.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
-               <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
-               <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
-               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;m)</code>&nbsp;</td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#processLocalOrNonConflictModification-org.opends.server.replication.common.CSN-org.opends.server.types.Modification-">processLocalOrNonConflictModification</a></span>(<a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
+                                     <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
@@ -565,6 +551,20 @@
                <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>
 <div class="block">This method will be called when replaying an operation.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistoricalMultiple.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalMultiple.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
+               <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
+               <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
+               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;m)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
+               <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
+               <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
+               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -584,11 +584,13 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistorical.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistorical.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
                <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
                <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
-               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
+               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>
+<div class="block">This method will be called when replaying an operation.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -598,13 +600,11 @@
                <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;m)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>abstract boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistorical.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistorical.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
                <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
                <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
-               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>
-<div class="block">This method will be called when replaying an operation.</div>
-</td>
+               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -786,13 +786,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">PostResponseModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostResponseModifyOperation.html#getModifications--">getModifications</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#getModifications--">getModifications</a></span>()</code>
 <div class="block">Retrieves the set of modifications for this modify operation.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html#getModifications--">getModifications</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html#getModifications--">getModifications</a></span>()</code>
 <div class="block">Retrieves the set of modifications for this modify operation.</div>
 </td>
 </tr>
@@ -806,20 +806,6 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">PostResponseModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostResponseModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
-<div class="block">Retrieves the set of modifications applied to attributes of the
- target entry in the course of processing this modify DN
- operation.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html#getModifications--">getModifications</a></span>()</code>
-<div class="block">Retrieves the set of modifications for this modify operation.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
 <div class="block">Retrieves the set of modifications applied to attributes of the
  target entry in the course of processing this modify DN
@@ -828,16 +814,30 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostResponseModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostResponseModifyOperation.html#getModifications--">getModifications</a></span>()</code>
+<div class="block">Retrieves the set of modifications for this modify operation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">PostResponseModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostResponseModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
 <div class="block">Retrieves the set of modifications applied to attributes of the
  target entry in the course of processing this modify DN
  operation.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">PostOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html#getModifications--">getModifications</a></span>()</code>
+<div class="block">Retrieves the set of modifications for this modify operation.</div>
+</td>
+</tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#getModifications--">getModifications</a></span>()</code>
-<div class="block">Retrieves the set of modifications for this modify operation.</div>
+<td class="colLast"><span class="typeNameLabel">PostOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyDNOperation.html#getModifications--">getModifications</a></span>()</code>
+<div class="block">Retrieves the set of modifications applied to attributes of the
+ target entry in the course of processing this modify DN
+ operation.</div>
 </td>
 </tr>
 </tbody>
@@ -851,16 +851,16 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyDNOperation.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>
-<div class="block">Adds the provided modification to the set of modifications to be
- applied as part of the update.</div>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>
+<div class="block">Adds the provided modification to the set of modifications to
+ this modify operation.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>
-<div class="block">Adds the provided modification to the set of modifications to
- this modify operation.</div>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyDNOperation.html#addModification-org.opends.server.types.Modification-">addModification</a></span>(<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;modification)</code>
+<div class="block">Adds the provided modification to the set of modifications to be
+ applied as part of the update.</div>
 </td>
 </tr>
 </tbody>

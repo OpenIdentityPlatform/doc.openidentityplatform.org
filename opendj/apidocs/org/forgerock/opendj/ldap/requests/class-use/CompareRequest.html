@@ -132,15 +132,15 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AbstractLDAPMessageHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/io/AbstractLDAPMessageHandler.html#compareRequest-int-org.forgerock.opendj.ldap.requests.CompareRequest-">compareRequest</a></span>(int&nbsp;messageID,
+              <a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">LDAPMessageHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/io/LDAPMessageHandler.html#compareRequest-int-org.forgerock.opendj.ldap.requests.CompareRequest-">compareRequest</a></span>(int&nbsp;messageID,
               <a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
 <div class="block">Handles an LDAP compare request message.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractLDAPMessageHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/io/AbstractLDAPMessageHandler.html#compareRequest-int-org.forgerock.opendj.ldap.requests.CompareRequest-">compareRequest</a></span>(int&nbsp;messageID,
-              <a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -169,16 +169,27 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractConnectionWrapper.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractConnectionWrapper.html#compare-org.forgerock.opendj.ldap.requests.CompareRequest-">compare</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
+<td class="colLast"><span class="typeNameLabel">Connection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/Connection.html#compare-org.forgerock.opendj.ldap.requests.CompareRequest-">compare</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
 <div class="block">Compares an entry in the Directory Server using the provided compare
  request.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Connection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/Connection.html#compare-org.forgerock.opendj.ldap.requests.CompareRequest-">compare</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
+<td class="colLast"><span class="typeNameLabel">AbstractConnectionWrapper.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractConnectionWrapper.html#compare-org.forgerock.opendj.ldap.requests.CompareRequest-">compare</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
 <div class="block">Compares an entry in the Directory Server using the provided compare
  request.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">AbstractConnection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractConnection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Connection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/Connection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
+<div class="block">Asynchronously compares an entry in the Directory Server using the
+ provided compare request.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -190,23 +201,12 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractConnection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractConnection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Connection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/Connection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request)</code>
-<div class="block">Asynchronously compares an entry in the Directory Server using the
- provided compare request.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">AbstractSynchronousConnection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractSynchronousConnection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-org.forgerock.opendj.ldap.IntermediateResponseHandler-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request,
             <a href="../../../../../../org/forgerock/opendj/ldap/IntermediateResponseHandler.html" title="interface in org.forgerock.opendj.ldap">IntermediateResponseHandler</a>&nbsp;intermediateResponseHandler)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractConnectionWrapper.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractConnectionWrapper.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-org.forgerock.opendj.ldap.IntermediateResponseHandler-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request,
+<td class="colLast"><span class="typeNameLabel">Connection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/Connection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-org.forgerock.opendj.ldap.IntermediateResponseHandler-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request,
             <a href="../../../../../../org/forgerock/opendj/ldap/IntermediateResponseHandler.html" title="interface in org.forgerock.opendj.ldap">IntermediateResponseHandler</a>&nbsp;intermediateResponseHandler)</code>
 <div class="block">Asynchronously compares an entry in the Directory Server using the
  provided compare request.</div>
@@ -214,7 +214,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/LdapPromise.html" title="interface in org.forgerock.opendj.ldap">LdapPromise</a>&lt;<a href="../../../../../../org/forgerock/opendj/ldap/responses/CompareResult.html" title="interface in org.forgerock.opendj.ldap.responses">CompareResult</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Connection.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/Connection.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-org.forgerock.opendj.ldap.IntermediateResponseHandler-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request,
+<td class="colLast"><span class="typeNameLabel">AbstractConnectionWrapper.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/ldap/AbstractConnectionWrapper.html#compareAsync-org.forgerock.opendj.ldap.requests.CompareRequest-org.forgerock.opendj.ldap.IntermediateResponseHandler-">compareAsync</a></span>(<a href="../../../../../../org/forgerock/opendj/ldap/requests/CompareRequest.html" title="interface in org.forgerock.opendj.ldap.requests">CompareRequest</a>&nbsp;request,
             <a href="../../../../../../org/forgerock/opendj/ldap/IntermediateResponseHandler.html" title="interface in org.forgerock.opendj.ldap">IntermediateResponseHandler</a>&nbsp;intermediateResponseHandler)</code>
 <div class="block">Asynchronously compares an entry in the Directory Server using the
  provided compare request.</div>
