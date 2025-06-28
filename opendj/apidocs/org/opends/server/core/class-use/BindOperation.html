@@ -239,23 +239,23 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CRAMMD5SASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CRAMMD5SASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">AnonymousSASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/AnonymousSASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">DigestMD5SASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DigestMD5SASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOp)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">ExternalSASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/ExternalSASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AnonymousSASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/AnonymousSASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">PlainSASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PlainSASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">CRAMMD5SASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CRAMMD5SASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">DigestMD5SASLMechanismHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DigestMD5SASLMechanismHandler.html#processSASLBind-org.opends.server.core.BindOperation-">processSASLBind</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOp)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -272,6 +272,17 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logBindRequest-org.opends.server.core.BindOperation-">logBindRequest</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
+<div class="block">Writes a message to the access logger with information about the
+ bind request associated with the provided bind operation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logBindRequest-org.opends.server.core.BindOperation-">logBindRequest</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logBindRequest-org.opends.server.core.BindOperation-">logBindRequest</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
 <div class="block">Writes a message to the access logger with information about the bind
@@ -280,20 +291,9 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logBindRequest-org.opends.server.core.BindOperation-">logBindRequest</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logBindRequest-org.opends.server.core.BindOperation-">logBindRequest</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logBindResponse-org.opends.server.core.BindOperation-">logBindResponse</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
 <div class="block">Writes a message to the access logger with information about the
- bind request associated with the provided bind operation.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logBindResponse-org.opends.server.core.BindOperation-">logBindResponse</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
-<div class="block">Writes a message to the access logger with information about the bind
- response associated with the provided bind operation.</div>
+ bind response associated with the provided bind operation.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -301,10 +301,10 @@
 <td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logBindResponse-org.opends.server.core.BindOperation-">logBindResponse</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logBindResponse-org.opends.server.core.BindOperation-">logBindResponse</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
-<div class="block">Writes a message to the access logger with information about the
- bind response associated with the provided bind operation.</div>
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logBindResponse-org.opends.server.core.BindOperation-">logBindResponse</a></span>(<a href="../../../../../org/opends/server/core/BindOperation.html" title="interface in org.opends.server.core">BindOperation</a>&nbsp;bindOperation)</code>
+<div class="block">Writes a message to the access logger with information about the bind
+ response associated with the provided bind operation.</div>
 </td>
 </tr>
 </tbody>

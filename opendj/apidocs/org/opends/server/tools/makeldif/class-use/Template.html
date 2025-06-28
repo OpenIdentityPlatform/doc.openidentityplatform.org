@@ -151,15 +151,15 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">FirstNameTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/FirstNameTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">DNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/DNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="typeNameLabel">Tag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/Tag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">StaticTextTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/StaticTextTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
@@ -170,11 +170,36 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeValueTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/AttributeValueTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">RandomTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/RandomTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
+<div class="block">Performs any initialization for this tag that may be needed while parsing
+ a template definition.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">PresenceTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/PresenceTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
+                     int&nbsp;lineNumber,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
+<div class="block">Performs any initialization for this tag that may be needed while parsing
+ a template definition.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">IfPresentTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/IfPresentTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
+                     int&nbsp;lineNumber,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
+<div class="block">Performs any initialization for this tag that may be needed while parsing
+ a template definition.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -189,7 +214,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">PresenceTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/PresenceTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">SequentialTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/SequentialTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
@@ -200,7 +225,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">RandomTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/RandomTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">RDNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/RDNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
@@ -210,35 +235,19 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<td class="colLast"><span class="typeNameLabel">Tag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/Tag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
+                     int&nbsp;lineNumber,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
+<div class="block">Performs any initialization for this tag that may be needed while parsing
+ a template definition.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">FileTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/FileTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
-                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
-                     int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">UnderscoreDNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/UnderscoreDNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
-                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
-                     int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ParentDNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/ParentDNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
-                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
-                     int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
-<div class="block">Performs any initialization for this tag that may be needed while parsing
- a template definition.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">GUIDTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/GUIDTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
@@ -254,18 +263,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ListTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/ListTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">FirstNameTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/FirstNameTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
-<div class="block">Performs any initialization for this tag that may be needed while parsing
- a template definition.</div>
-</td>
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">RDNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/RDNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">ListTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/ListTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
@@ -276,7 +282,23 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">StaticTextTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/StaticTextTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">UnderscoreDNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/UnderscoreDNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
+                     int&nbsp;lineNumber,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">GUIDTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/GUIDTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
+                     int&nbsp;lineNumber,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ParentDNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/ParentDNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
@@ -295,33 +317,11 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">DNTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/DNTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
+<td class="colLast"><span class="typeNameLabel">AttributeValueTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/AttributeValueTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
                      <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
                      int&nbsp;lineNumber,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">IfPresentTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/IfPresentTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
-                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
-                     int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
-<div class="block">Performs any initialization for this tag that may be needed while parsing
- a template definition.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SequentialTag.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/tools/makeldif/SequentialTag.html#initializeForTemplate-org.opends.server.tools.makeldif.TemplateFile-org.opends.server.tools.makeldif.Template-java.lang.String:A-int-java.util.List-">initializeForTemplate</a></span>(<a href="../../../../../../org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a>&nbsp;templateFile,
-                     <a href="../../../../../../org/opends/server/tools/makeldif/Template.html" title="class in org.opends.server.tools.makeldif">Template</a>&nbsp;template,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;arguments,
-                     int&nbsp;lineNumber,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;warnings)</code>
-<div class="block">Performs any initialization for this tag that may be needed while parsing
- a template definition.</div>
-</td>
 </tr>
 </tbody>
 </table>

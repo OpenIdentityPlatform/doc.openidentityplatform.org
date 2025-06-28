@@ -350,14 +350,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>abstract <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">LocalBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/api/LocalBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>
-<div class="block">Retrieves the requested entry from this backend.</div>
+<td class="colLast"><span class="typeNameLabel">EntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/api/EntryCache.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>
+<div class="block">Retrieves the entry with the specified DN from the cache.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/api/EntryCache.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>
-<div class="block">Retrieves the entry with the specified DN from the cache.</div>
+<td class="colLast"><span class="typeNameLabel">LocalBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/api/LocalBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>
+<div class="block">Retrieves the requested entry from this backend.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -981,23 +981,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
@@ -1005,7 +989,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
@@ -1013,11 +997,27 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <td class="colLast"><span class="typeNameLabel">TrustStoreBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/TrustStoreBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
@@ -1042,27 +1042,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -1072,7 +1052,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -1082,7 +1062,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -1092,31 +1072,27 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
-           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
-           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
-           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
-           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#addEntry-org.opends.server.types.Entry-org.opends.server.core.AddOperation-">addEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+        <a href="../../../../../org/opends/server/core/AddOperation.html" title="interface in org.opends.server.core">AddOperation</a>&nbsp;addOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
@@ -1128,7 +1104,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
@@ -1140,7 +1116,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
@@ -1152,31 +1128,31 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
-            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
-            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
-            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
-            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
-            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
-            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
-            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
-            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#renameEntry-org.forgerock.opendj.ldap.DN-org.opends.server.types.Entry-org.opends.server.core.ModifyDNOperation-">renameEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
+           <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+           <a href="../../../../../org/opends/server/core/ModifyDNOperation.html" title="interface in org.opends.server.core">ModifyDNOperation</a>&nbsp;modifyDNOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
             <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
             <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
 </tr>
@@ -1188,7 +1164,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">LDIFBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/LDIFBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
             <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
             <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
 </tr>
@@ -1200,13 +1176,37 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+<td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
             <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
             <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">TrustStoreBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/TrustStoreBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
+            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ChangelogBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ChangelogBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
+            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">RootDSEBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/RootDSEBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
+            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">NullBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/NullBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
+            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
+            <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#replaceEntry-org.opends.server.types.Entry-org.opends.server.types.Entry-org.opends.server.core.ModifyOperation-">replaceEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
             <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
             <a href="../../../../../org/opends/server/core/ModifyOperation.html" title="interface in org.opends.server.core">ModifyOperation</a>&nbsp;modifyOperation)</code>&nbsp;</td>
 </tr>
@@ -1474,11 +1474,11 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationWrapper.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationWrapper.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
@@ -1502,11 +1502,11 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationWrapper.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ModifyDNOperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationWrapper.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ModifyDNOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/ModifyDNOperationBasis.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
@@ -1634,17 +1634,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">SearchOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperationBasis.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">SearchOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperation.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls)</code>
 <div class="block">Used as a callback for backends to indicate that the provided entry matches
  the search criteria and that additional processing should be performed to
  potentially send it back to the client.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">SearchOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperationBasis.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -1653,12 +1653,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">SearchOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperationBasis.html#returnEntry-org.opends.server.types.Entry-java.util.List-boolean-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls,
-           boolean&nbsp;evaluateAci)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">SearchOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperation.html#returnEntry-org.opends.server.types.Entry-java.util.List-boolean-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls,
            boolean&nbsp;evaluateAci)</code>
@@ -1666,6 +1660,12 @@
  the search criteria and that additional processing should be performed to
  potentially send it back to the client.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">SearchOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperationBasis.html#returnEntry-org.opends.server.types.Entry-java.util.List-boolean-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls,
+           boolean&nbsp;evaluateAci)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -1724,11 +1724,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SoftReferenceEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SoftReferenceEntryCache.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">DefaultEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DefaultEntryCache.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DefaultEntryCache.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SoftReferenceEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SoftReferenceEntryCache.html#getEntry-org.forgerock.opendj.ldap.DN-">getEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
@@ -1775,11 +1775,11 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SimpleStaticGroupMemberList.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SimpleStaticGroupMemberList.html#nextMemberEntry--">nextMemberEntry</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">FilteredStaticGroupMemberList.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/FilteredStaticGroupMemberList.html#nextMemberEntry--">nextMemberEntry</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">FilteredStaticGroupMemberList.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/FilteredStaticGroupMemberList.html#nextMemberEntry--">nextMemberEntry</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SimpleStaticGroupMemberList.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SimpleStaticGroupMemberList.html#nextMemberEntry--">nextMemberEntry</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -1792,7 +1792,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#addMember-org.opends.server.types.Entry-">addMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#addMember-org.opends.server.types.Entry-">addMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -1800,11 +1800,23 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#addMember-org.opends.server.types.Entry-">addMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#addMember-org.opends.server.types.Entry-">addMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -1816,7 +1828,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntityTagVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntityTagVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -1828,25 +1840,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntityTagVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntityTagVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -1858,7 +1858,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#approximatelyEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">approximatelyEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -1871,12 +1871,22 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">UserDefinedVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/UserDefinedVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">PasswordExpirationTimeVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordExpirationTimeVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
+<td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -1886,17 +1896,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntityTagVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntityTagVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -1906,66 +1906,54 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntityTagVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntityTagVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
 <td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
 <td class="colLast"><span class="typeNameLabel">CollectiveAttributeSubentriesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CollectiveAttributeSubentriesVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
+</tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
+<td class="colLast"><span class="typeNameLabel">UserDefinedVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/UserDefinedVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SubschemaSubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SubschemaSubentryVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PasswordExpirationTimeVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordExpirationTimeVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
-</tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#getValues-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">getValues</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
          <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -1977,7 +1965,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -1989,18 +1977,30 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SubschemaSubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SubschemaSubentryVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                    <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                    <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#greaterThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">greaterThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                     <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                     <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">PasswordExpirationTimeVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordExpirationTimeVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -2010,12 +2010,12 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -2025,7 +2025,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -2035,23 +2035,35 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">PasswordExpirationTimeVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordExpirationTimeVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
         <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+        <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+        <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+        <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+        <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
         <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -2063,19 +2075,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-        <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-        <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#hasValue-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">hasValue</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-        <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-        <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#isGroupDefinition-org.opends.server.types.Entry-">isGroupDefinition</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#isGroupDefinition-org.opends.server.types.Entry-">isGroupDefinition</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -2083,11 +2083,11 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#isGroupDefinition-org.opends.server.types.Entry-">isGroupDefinition</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#isGroupDefinition-org.opends.server.types.Entry-">isGroupDefinition</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#isMember-org.opends.server.types.Entry-java.util.concurrent.atomic.AtomicReference-">isMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#isMember-org.opends.server.types.Entry-java.util.concurrent.atomic.AtomicReference-">isMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReference.html?is-external=true" title="class or interface in java.util.concurrent.atomic">AtomicReference</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&gt;&nbsp;examinedGroups)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -2097,36 +2097,24 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#isMember-org.opends.server.types.Entry-java.util.concurrent.atomic.AtomicReference-">isMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#isMember-org.opends.server.types.Entry-java.util.concurrent.atomic.AtomicReference-">isMember</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReference.html?is-external=true" title="class or interface in java.util.concurrent.atomic">AtomicReference</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&gt;&nbsp;examinedGroups)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                  <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                  <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                  <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                  <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                  <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                  <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -2138,7 +2126,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                  <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                  <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -2150,7 +2138,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SubschemaSubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SubschemaSubentryVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#lessThanOrEqualTo-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-">lessThanOrEqualTo</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                  <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                  <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
@@ -2162,7 +2162,23 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
+                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
+                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
@@ -2178,7 +2194,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntryUUIDVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryUUIDVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">EntityTagVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntityTagVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
@@ -2194,31 +2210,15 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
-                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntityTagVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntityTagVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
-                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
-                <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
-                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+                <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
+                <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
@@ -2234,15 +2234,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#matchesSubstring-org.opends.server.types.Entry-org.opends.server.types.VirtualAttributeRule-org.forgerock.opendj.ldap.ByteString-java.util.List-org.forgerock.opendj.ldap.ByteString-">matchesSubstring</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                 <a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subInitial,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;subAny,
                 <a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;subFinal)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html" title="class in org.opends.server.extensions">VirtualStaticGroup</a></code></td>
-<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#newInstance-org.opends.server.core.ServerContext-org.opends.server.types.Entry-">newInstance</a></span>(<a href="../../../../../org/opends/server/core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext,
+<td class="colFirst"><code><a href="../../../../../org/opends/server/extensions/StaticGroup.html" title="class in org.opends.server.extensions">StaticGroup</a></code></td>
+<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#newInstance-org.opends.server.core.ServerContext-org.opends.server.types.Entry-">newInstance</a></span>(<a href="../../../../../org/opends/server/core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext,
            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;groupEntry)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -2251,29 +2251,13 @@
            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;groupEntry)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/extensions/StaticGroup.html" title="class in org.opends.server.extensions">StaticGroup</a></code></td>
-<td class="colLast"><span class="typeNameLabel">StaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StaticGroup.html#newInstance-org.opends.server.core.ServerContext-org.opends.server.types.Entry-">newInstance</a></span>(<a href="../../../../../org/opends/server/core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext,
+<td class="colFirst"><code><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html" title="class in org.opends.server.extensions">VirtualStaticGroup</a></code></td>
+<td class="colLast"><span class="typeNameLabel">VirtualStaticGroup.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/VirtualStaticGroup.html#newInstance-org.opends.server.core.ServerContext-org.opends.server.types.Entry-">newInstance</a></span>(<a href="../../../../../org/opends/server/core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext,
            <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;groupEntry)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">LengthBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/LengthBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
-                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
-                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
-                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">DictionaryPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DictionaryPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
-                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
-                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
-                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">SimilarityBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SimilarityBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+<td class="colLast"><span class="typeNameLabel">AttributeValuePasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/AttributeValuePasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
                     <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
@@ -2289,21 +2273,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeValuePasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/AttributeValuePasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
-                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
-                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
-                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">RepeatedCharactersPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/RepeatedCharactersPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
                     <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
                     org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">CharacterSetPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CharacterSetPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
@@ -2311,15 +2287,39 @@
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
                     org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">LengthBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/LengthBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
+                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
+                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">SimilarityBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SimilarityBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
+                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
+                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">DictionaryPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DictionaryPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
+                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
+                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SoftReferenceEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SoftReferenceEntryCache.html#putEntry-org.opends.server.types.Entry-java.lang.String-long-">putEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">DefaultEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DefaultEntryCache.html#putEntry-org.opends.server.types.Entry-java.lang.String-long-">putEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;backendID,
         long&nbsp;entryID)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DefaultEntryCache.html#putEntry-org.opends.server.types.Entry-java.lang.String-long-">putEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">SoftReferenceEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SoftReferenceEntryCache.html#putEntry-org.opends.server.types.Entry-java.lang.String-long-">putEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;backendID,
         long&nbsp;entryID)</code>&nbsp;</td>
 </tr>
@@ -2331,13 +2331,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">SoftReferenceEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SoftReferenceEntryCache.html#putEntryIfAbsent-org.opends.server.types.Entry-java.lang.String-long-">putEntryIfAbsent</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">DefaultEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DefaultEntryCache.html#putEntryIfAbsent-org.opends.server.types.Entry-java.lang.String-long-">putEntryIfAbsent</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;backendID,
                 long&nbsp;entryID)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DefaultEntryCache.html#putEntryIfAbsent-org.opends.server.types.Entry-java.lang.String-long-">putEntryIfAbsent</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">SoftReferenceEntryCache.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SoftReferenceEntryCache.html#putEntryIfAbsent-org.opends.server.types.Entry-java.lang.String-long-">putEntryIfAbsent</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;backendID,
                 long&nbsp;entryID)</code>&nbsp;</td>
 </tr>
@@ -2494,17 +2494,17 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttrHistoricalMultiple.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalMultiple.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
-               <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
-               <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
-               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;m)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">AttrHistoricalSingle.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalSingle.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
                <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
                <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
                <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">AttrHistoricalMultiple.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/replication/plugin/AttrHistoricalMultiple.html#replayOperation-java.util.Iterator-org.opends.server.replication.common.CSN-org.opends.server.types.Entry-org.opends.server.types.Modification-">replayOperation</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;modsIterator,
+               <a href="../../../../../org/opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;csn,
+               <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;modifiedEntry,
+               <a href="../../../../../org/opends/server/types/Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;m)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -2679,6 +2679,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">Operation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/Operation.html#getAuthorizationEntry--">getAuthorizationEntry</a></span>()</code>
+<div class="block">Retrieves the entry for the user that should be considered the
+ authorization identity for this operation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#getAuthorizationEntry--">getAuthorizationEntry</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuthenticationInfo.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AuthenticationInfo.html#getAuthorizationEntry--">getAuthorizationEntry</a></span>()</code>
 <div class="block">Retrieves the entry for the user that should be used as the
  default authorization identity.</div>
@@ -2686,25 +2697,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Operation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/Operation.html#getAuthorizationEntry--">getAuthorizationEntry</a></span>()</code>
-<div class="block">Retrieves the entry for the user that should be considered the
- authorization identity for this operation.</div>
+<td class="colLast"><span class="typeNameLabel">SubEntry.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/SubEntry.html#getEntry--">getEntry</a></span>()</code>
+<div class="block">Getter to retrieve the actual entry object for this subentry.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#getAuthorizationEntry--">getAuthorizationEntry</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <td class="colLast"><span class="typeNameLabel">CacheEntry.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/CacheEntry.html#getEntry--">getEntry</a></span>()</code>
 <div class="block">Retrieves the entry for this cache entry.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SubEntry.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/SubEntry.html#getEntry--">getEntry</a></span>()</code>
-<div class="block">Getter to retrieve the actual entry object for this subentry.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -2907,13 +2907,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#getCurrentEntry--">getCurrentEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html#getCurrentEntry--">getCurrentEntry</a></span>()</code>
 <div class="block">Retrieves the current entry before any modifications are applied.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html#getCurrentEntry--">getCurrentEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#getCurrentEntry--">getCurrentEntry</a></span>()</code>
 <div class="block">Retrieves the current entry before any modifications are applied.</div>
 </td>
 </tr>
@@ -2925,7 +2925,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html#getCurrentEntry--">getCurrentEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html#getCurrentEntry--">getCurrentEntry</a></span>()</code>
 <div class="block">Retrieves the current entry before any modifications are applied.</div>
 </td>
 </tr>
@@ -2937,7 +2937,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationAddOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationAddOperation.html#getEntryToAdd--">getEntryToAdd</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostOperationAddOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationAddOperation.html#getEntryToAdd--">getEntryToAdd</a></span>()</code>
 <div class="block">Retrieves the entry to be added to the server.</div>
 </td>
 </tr>
@@ -2949,19 +2949,19 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationAddOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationAddOperation.html#getEntryToAdd--">getEntryToAdd</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationAddOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationAddOperation.html#getEntryToAdd--">getEntryToAdd</a></span>()</code>
 <div class="block">Retrieves the entry to be added to the server.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationCompareOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationCompareOperation.html#getEntryToCompare--">getEntryToCompare</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostOperationCompareOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationCompareOperation.html#getEntryToCompare--">getEntryToCompare</a></span>()</code>
 <div class="block">Retrieves the entry to target with the compare operation.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationCompareOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationCompareOperation.html#getEntryToCompare--">getEntryToCompare</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationCompareOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationCompareOperation.html#getEntryToCompare--">getEntryToCompare</a></span>()</code>
 <div class="block">Retrieves the entry to target with the compare operation.</div>
 </td>
 </tr>
@@ -2973,19 +2973,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostResponseDeleteOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostResponseDeleteOperation.html#getEntryToDelete--">getEntryToDelete</a></span>()</code>
-<div class="block">Retrieves the entry to be deleted.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <td class="colLast"><span class="typeNameLabel">PostSynchronizationDeleteOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationDeleteOperation.html#getEntryToDelete--">getEntryToDelete</a></span>()</code>
-<div class="block">Retrieves the entry to be deleted.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationDeleteOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationDeleteOperation.html#getEntryToDelete--">getEntryToDelete</a></span>()</code>
 <div class="block">Retrieves the entry to be deleted.</div>
 </td>
 </tr>
@@ -2997,14 +2985,26 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#getModifiedEntry--">getModifiedEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostResponseDeleteOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostResponseDeleteOperation.html#getEntryToDelete--">getEntryToDelete</a></span>()</code>
+<div class="block">Retrieves the entry to be deleted.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">PostOperationDeleteOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationDeleteOperation.html#getEntryToDelete--">getEntryToDelete</a></span>()</code>
+<div class="block">Retrieves the entry to be deleted.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
+<td class="colLast"><span class="typeNameLabel">PostOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html#getModifiedEntry--">getModifiedEntry</a></span>()</code>
 <div class="block">Retrieves the modified entry that is to be written to the
  backend.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html#getModifiedEntry--">getModifiedEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyOperation.html#getModifiedEntry--">getModifiedEntry</a></span>()</code>
 <div class="block">Retrieves the modified entry that is to be written to the
  backend.</div>
 </td>
@@ -3018,14 +3018,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PostOperationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostOperationModifyOperation.html#getModifiedEntry--">getModifiedEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PostSynchronizationModifyOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PostSynchronizationModifyOperation.html#getModifiedEntry--">getModifiedEntry</a></span>()</code>
 <div class="block">Retrieves the modified entry that is to be written to the
  backend.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyDNOperation.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">SubordinateModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/SubordinateModifyDNOperation.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>
 <div class="block">Retrieves the current entry, before it is renamed.</div>
 </td>
 </tr>
@@ -3043,7 +3043,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SubordinateModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/SubordinateModifyDNOperation.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyDNOperation.html#getOriginalEntry--">getOriginalEntry</a></span>()</code>
 <div class="block">Retrieves the current entry, before it is renamed.</div>
 </td>
 </tr>
@@ -3069,7 +3069,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyDNOperation.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">SubordinateModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/SubordinateModifyDNOperation.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>
 <div class="block">Retrieves the new entry, as it will appear after it is renamed.</div>
 </td>
 </tr>
@@ -3087,7 +3087,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SubordinateModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/SubordinateModifyDNOperation.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">PreOperationModifyDNOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationModifyDNOperation.html#getUpdatedEntry--">getUpdatedEntry</a></span>()</code>
 <div class="block">Retrieves the new entry, as it will appear after it is renamed.</div>
 </td>
 </tr>
@@ -3108,14 +3108,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">PreParseSearchOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreParseSearchOperation.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">PreOperationSearchOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationSearchOperation.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls)</code>
 <div class="block">Returns the provided entry to the client.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">PreOperationSearchOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreOperationSearchOperation.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
+<td class="colLast"><span class="typeNameLabel">PreParseSearchOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/operation/PreParseSearchOperation.html#returnEntry-org.opends.server.types.Entry-java.util.List-">returnEntry</a></span>(<a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/opends/server/types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls)</code>
 <div class="block">Returns the provided entry to the client.</div>
 </td>

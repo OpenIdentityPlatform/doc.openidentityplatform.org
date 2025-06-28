@@ -267,13 +267,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;C extends <a href="../../../../../../org/forgerock/opendj/config/ConfigurationClient.html" title="interface in org.forgerock.opendj.config">ConfigurationClient</a>,S extends <a href="../../../../../../org/forgerock/opendj/config/Configuration.html" title="interface in org.forgerock.opendj.config">Configuration</a>&gt;<br><a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;? extends C&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html#getManagedObject-org.forgerock.opendj.config.ManagedObjectPath-">getManagedObject</a></span>(<a href="../../../../../../org/forgerock/opendj/config/ManagedObjectPath.html" title="class in org.forgerock.opendj.config">ManagedObjectPath</a>&lt;C,S&gt;&nbsp;path)</code>
-<div class="block">Gets the named managed object.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">DriverBasedManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/DriverBasedManagementContext.html#getManagedObject-org.forgerock.opendj.config.ManagedObjectPath-">getManagedObject</a></span>(<a href="../../../../../../org/forgerock/opendj/config/ManagedObjectPath.html" title="class in org.forgerock.opendj.config">ManagedObjectPath</a>&lt;C,S&gt;&nbsp;path)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;C extends <a href="../../../../../../org/forgerock/opendj/config/ConfigurationClient.html" title="interface in org.forgerock.opendj.config">ConfigurationClient</a>,S extends <a href="../../../../../../org/forgerock/opendj/config/Configuration.html" title="interface in org.forgerock.opendj.config">Configuration</a>&gt;<br><a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;? extends C&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">DriverBasedManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/DriverBasedManagementContext.html#getManagedObject-org.forgerock.opendj.config.ManagedObjectPath-">getManagedObject</a></span>(<a href="../../../../../../org/forgerock/opendj/config/ManagedObjectPath.html" title="class in org.forgerock.opendj.config">ManagedObjectPath</a>&lt;C,S&gt;&nbsp;path)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html#getManagedObject-org.forgerock.opendj.config.ManagedObjectPath-">getManagedObject</a></span>(<a href="../../../../../../org/forgerock/opendj/config/ManagedObjectPath.html" title="class in org.forgerock.opendj.config">ManagedObjectPath</a>&lt;C,S&gt;&nbsp;path)</code>
+<div class="block">Gets the named managed object.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;?&gt;</code></td>
@@ -285,14 +285,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;<a href="../../../../../../org/forgerock/opendj/server/config/client/RootCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">RootCfgClient</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">DriverBasedManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/DriverBasedManagementContext.html#getRootConfigurationManagedObject--">getRootConfigurationManagedObject</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;<a href="../../../../../../org/forgerock/opendj/server/config/client/RootCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">RootCfgClient</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html#getRootConfigurationManagedObject--">getRootConfigurationManagedObject</a></span>()</code>
 <div class="block">Gets the root configuration managed object associated with this
  management context.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;<a href="../../../../../../org/forgerock/opendj/server/config/client/RootCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">RootCfgClient</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">DriverBasedManagementContext.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/client/DriverBasedManagementContext.html#getRootConfigurationManagedObject--">getRootConfigurationManagedObject</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -441,7 +441,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">ContainsCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/ContainsCondition.html#evaluate-org.forgerock.opendj.config.client.ManagementContext-org.forgerock.opendj.config.client.ManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html" title="interface in org.forgerock.opendj.config.client">ManagementContext</a>&nbsp;context,
+<td class="colLast"><span class="typeNameLabel">NOTCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/NOTCondition.html#evaluate-org.forgerock.opendj.config.client.ManagementContext-org.forgerock.opendj.config.client.ManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html" title="interface in org.forgerock.opendj.config.client">ManagementContext</a>&nbsp;context,
         <a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -456,15 +456,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">NOTCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/NOTCondition.html#evaluate-org.forgerock.opendj.config.client.ManagementContext-org.forgerock.opendj.config.client.ManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html" title="interface in org.forgerock.opendj.config.client">ManagementContext</a>&nbsp;context,
-        <a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">Condition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/Condition.html#evaluate-org.forgerock.opendj.config.client.ManagementContext-org.forgerock.opendj.config.client.ManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html" title="interface in org.forgerock.opendj.config.client">ManagementContext</a>&nbsp;context,
         <a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>
 <div class="block">Evaluates this condition against the provided client managed object.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">ContainsCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/ContainsCondition.html#evaluate-org.forgerock.opendj.config.client.ManagementContext-org.forgerock.opendj.config.client.ManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/client/ManagementContext.html" title="interface in org.forgerock.opendj.config.client">ManagementContext</a>&nbsp;context,
+        <a href="../../../../../../org/forgerock/opendj/config/client/ManagedObject.html" title="interface in org.forgerock.opendj.config.client">ManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
