@@ -131,19 +131,6 @@
       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;exclude)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/sun/identity/sm/SMSDataEntry.html" title="class in com.sun.identity.sm">SMSDataEntry</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SMSObject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/SMSObject.html#search-com.iplanet.sso.SSOToken-java.lang.String-java.lang.String-int-int-boolean-boolean-java.util.Set-">search</a></span>(<a href="../../../../../com/iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;token,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;startDN,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filter,
-      int&nbsp;numOfEntries,
-      int&nbsp;timeLimit,
-      boolean&nbsp;sortResults,
-      boolean&nbsp;ascendingOrder,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;excludes)</code>
-<div class="block">Searchs the data store for objects that match the filter</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/sun/identity/sm/SMSDataEntry.html" title="class in com.sun.identity.sm">SMSDataEntry</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ServiceManagementDAO.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/ServiceManagementDAO.html#search-com.iplanet.sso.SSOToken-java.lang.String-java.lang.String-int-int-boolean-boolean-java.util.Set-">search</a></span>(<a href="../../../../../com/iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;token,
       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;dn,
@@ -154,6 +141,19 @@
       boolean&nbsp;ascendingOrder,
       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;exclude)</code>
 <div class="block">Returns the DNs and its attribute values that match the filter.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/sun/identity/sm/SMSDataEntry.html" title="class in com.sun.identity.sm">SMSDataEntry</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">SMSObject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/SMSObject.html#search-com.iplanet.sso.SSOToken-java.lang.String-java.lang.String-int-int-boolean-boolean-java.util.Set-">search</a></span>(<a href="../../../../../com/iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;token,
+      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;startDN,
+      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filter,
+      int&nbsp;numOfEntries,
+      int&nbsp;timeLimit,
+      boolean&nbsp;sortResults,
+      boolean&nbsp;ascendingOrder,
+      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;excludes)</code>
+<div class="block">Searchs the data store for objects that match the filter</div>
 </td>
 </tr>
 </tbody>
@@ -226,11 +226,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/sm/SMSDataEntry.html" title="class in com.sun.identity.sm">SMSDataEntry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SearchResultIterator.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/ldap/SearchResultIterator.html#next--">next</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">EmbeddedSearchResultIterator.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/ldap/EmbeddedSearchResultIterator.html#next--">next</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/sm/SMSDataEntry.html" title="class in com.sun.identity.sm">SMSDataEntry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EmbeddedSearchResultIterator.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/ldap/EmbeddedSearchResultIterator.html#next--">next</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SearchResultIterator.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/sm/ldap/SearchResultIterator.html#next--">next</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>

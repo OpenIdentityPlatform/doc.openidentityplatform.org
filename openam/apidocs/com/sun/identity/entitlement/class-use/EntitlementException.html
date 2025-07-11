@@ -317,7 +317,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">Entitlement.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Entitlement.html#canonicalizeResources-javax.security.auth.Subject-java.lang.String-">canonicalizeResources</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#canonicalizeResources-javax.security.auth.Subject-java.lang.String-">canonicalizeResources</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Canonicalizes resource name before persistence.</div>
 </td>
@@ -332,7 +332,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#canonicalizeResources-javax.security.auth.Subject-java.lang.String-">canonicalizeResources</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">Entitlement.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Entitlement.html#canonicalizeResources-javax.security.auth.Subject-java.lang.String-">canonicalizeResources</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Canonicalizes resource name before persistence.</div>
 </td>
@@ -386,6 +386,46 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NotSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NotSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>SubjectDecision</code> of
+ <code>EntitlementSubject</code> evaluation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">EntitlementSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/EntitlementSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>SubjectDecision</code> of <code>EntitlementSubject</code> evaluation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">OrSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/OrSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>SubjectDecision</code> of
+ <code>EntitlementSubject</code> evaluation</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NoSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NoSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AndSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AndSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
@@ -397,62 +437,23 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NotSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NotSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">UserSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/UserSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns <code>SubjectDecision</code> of
- <code>EntitlementSubject</code> evaluation.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NoSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NoSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">OrSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/OrSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns <code>SubjectDecision</code> of
  <code>EntitlementSubject</code> evaluation</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntitlementSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/EntitlementSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns <code>SubjectDecision</code> of <code>EntitlementSubject</code> evaluation.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">JwtClaimSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/JwtClaimSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AttributeSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns <code>SubjectDecision</code> of
- <code>EntitlementSubject</code> evaluation</div>
-</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
@@ -466,18 +467,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">UserSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/UserSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns <code>SubjectDecision</code> of
- <code>EntitlementSubject</code> evaluation</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">GroupSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/GroupSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
@@ -488,6 +477,17 @@
  <code>EntitlementSubject</code> evaluation.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AttributeSubject.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AttributeSubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>SubjectDecision</code> of
+ <code>EntitlementSubject</code> evaluation</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Evaluator.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Evaluator.html#evaluate-java.lang.String-javax.security.auth.Subject-java.util.Set-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
@@ -495,6 +495,45 @@
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;resourceNames,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
 <div class="block">Returns a list of entitlements for a given subject, resource names and environment.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">LogicalCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/LogicalCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>ConditionDecision</code> of
+ <code>EntitlementCondition</code> evaluation</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AndCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AndCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>ConditionDecision</code> of
+ <code>EntitlementCondition</code> evaluation</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NotCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NotCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns <code>ConditionDecision</code> of
+ <code>EntitlementCondition</code> evaluation</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">EntitlementCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/EntitlementCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
+<div class="block">Returns condition decision.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -510,58 +549,12 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NotCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NotCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns <code>ConditionDecision</code> of
- <code>EntitlementCondition</code> evaluation</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntitlementCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/EntitlementCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns condition decision.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract <a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">LogicalCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/LogicalCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns <code>ConditionDecision</code> of
- <code>EntitlementCondition</code> evaluation</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AndCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AndCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>
-<div class="block">Returns <code>ConditionDecision</code> of
- <code>EntitlementCondition</code> evaluation</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">StringAttributeCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/StringAttributeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">NumericAttributeCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NumericAttributeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AttributeLookupCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AttributeLookupCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
@@ -570,6 +563,13 @@
 <div class="block">Returns <code>ConditionDecision</code> of
  <code>EntitlementCondition</code> evaluation.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">NumericAttributeCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NumericAttributeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
@@ -593,7 +593,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">StaticAttributes.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/StaticAttributes.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">UserAttributes.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/UserAttributes.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
@@ -613,7 +613,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">UserAttributes.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/UserAttributes.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">StaticAttributes.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/StaticAttributes.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
@@ -635,6 +635,22 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;normalisedResourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;requestedResourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;actionNames,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment,
+        boolean&nbsp;recursive,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>
+<div class="block">Returns a list of entitlement for a given subject, resource name
+ and environment.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ReferralPrivilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/ReferralPrivilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
@@ -649,25 +665,9 @@
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 &nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">IPrivilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/IPrivilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;normalisedResourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;requestedResourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;actionNames,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment,
-        boolean&nbsp;recursive,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>
-<div class="block">Returns a list of entitlement for a given subject, resource name
- and environment.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationName,
@@ -759,7 +759,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectAttributesCollector.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesCollector.html#getAttributes-javax.security.auth.Subject-java.util.Set-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">SubjectAttributesManager.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html#getAttributes-javax.security.auth.Subject-java.util.Set-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrNames)</code>
 <div class="block">Returns the attribute values of the given user represented by
  <class>Subject</class> object.</div>
@@ -767,7 +767,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectAttributesManager.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html#getAttributes-javax.security.auth.Subject-java.util.Set-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">SubjectAttributesCollector.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesCollector.html#getAttributes-javax.security.auth.Subject-java.util.Set-">getAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrNames)</code>
 <div class="block">Returns the attribute values of the given user represented by
  <class>Subject</class> object.</div>
@@ -783,13 +783,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectAttributesCollector.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesCollector.html#getAvailableSubjectAttributeNames--">getAvailableSubjectAttributeNames</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">SubjectAttributesManager.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html#getAvailableSubjectAttributeNames--">getAvailableSubjectAttributeNames</a></span>()</code>
 <div class="block">Returns available subject attribute names.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectAttributesManager.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html#getAvailableSubjectAttributeNames--">getAvailableSubjectAttributeNames</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">SubjectAttributesCollector.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesCollector.html#getAvailableSubjectAttributeNames--">getAvailableSubjectAttributeNames</a></span>()</code>
 <div class="block">Returns available subject attribute names.</div>
 </td>
 </tr>
@@ -863,7 +863,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ResourceSaveIndexes.html" title="class in com.sun.identity.entitlement">ResourceSaveIndexes</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Entitlement.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Entitlement.html#getResourceSaveIndexes-javax.security.auth.Subject-java.lang.String-">getResourceSaveIndexes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#getResourceSaveIndexes-javax.security.auth.Subject-java.lang.String-">getResourceSaveIndexes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Returns resource save indexes.</div>
 </td>
@@ -878,30 +878,30 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ResourceSaveIndexes.html" title="class in com.sun.identity.entitlement">ResourceSaveIndexes</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IPrivilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/IPrivilege.html#getResourceSaveIndexes-javax.security.auth.Subject-java.lang.String-">getResourceSaveIndexes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">Entitlement.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Entitlement.html#getResourceSaveIndexes-javax.security.auth.Subject-java.lang.String-">getResourceSaveIndexes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Returns resource save indexes.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ResourceSaveIndexes.html" title="class in com.sun.identity.entitlement">ResourceSaveIndexes</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#getResourceSaveIndexes-javax.security.auth.Subject-java.lang.String-">getResourceSaveIndexes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+<td class="colLast"><span class="typeNameLabel">IPrivilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/IPrivilege.html#getResourceSaveIndexes-javax.security.auth.Subject-java.lang.String-">getResourceSaveIndexes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Returns resource save indexes.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ResourceSearchIndexes.html" title="class in com.sun.identity.entitlement">ResourceSearchIndexes</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ApplicationType.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/ApplicationType.html#getResourceSearchIndex-java.lang.String-java.lang.String-">getResourceSearchIndex</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
+<td class="colLast"><span class="typeNameLabel">Application.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Application.html#getResourceSearchIndex-java.lang.String-java.lang.String-">getResourceSearchIndex</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
-<div class="block">Returns search indexes for a give resource name.</div>
+<div class="block">Returns search indexes for a given resource.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ResourceSearchIndexes.html" title="class in com.sun.identity.entitlement">ResourceSearchIndexes</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Application.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Application.html#getResourceSearchIndex-java.lang.String-java.lang.String-">getResourceSearchIndex</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
+<td class="colLast"><span class="typeNameLabel">ApplicationType.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/ApplicationType.html#getResourceSearchIndex-java.lang.String-java.lang.String-">getResourceSearchIndex</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
-<div class="block">Returns search indexes for a given resource.</div>
+<div class="block">Returns search indexes for a give resource name.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -938,7 +938,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectAttributesCollector.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesCollector.html#getUserAttributes-javax.security.auth.Subject-java.util.Set-">getUserAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">SubjectAttributesManager.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html#getUserAttributes-javax.security.auth.Subject-java.util.Set-">getUserAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrNames)</code>
 <div class="block">Returns the attribute values of the given user represented by
  <class>Subject</class> object.</div>
@@ -946,7 +946,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SubjectAttributesManager.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html#getUserAttributes-javax.security.auth.Subject-java.util.Set-">getUserAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">SubjectAttributesCollector.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/SubjectAttributesCollector.html#getUserAttributes-javax.security.auth.Subject-java.util.Set-">getUserAttributes</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;attrNames)</code>
 <div class="block">Returns the attribute values of the given user represented by
  <class>Subject</class> object.</div>
@@ -1243,17 +1243,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">NotCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NotCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">LogicalCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/LogicalCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">NotCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NotCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">EntitlementCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/EntitlementCondition.html#validate--">validate</a></span>()</code>
 <div class="block">Checks that this condition is configured correctly.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">LogicalCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/LogicalCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -1261,11 +1261,11 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">NumericAttributeCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NumericAttributeCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">AttributeLookupCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AttributeLookupCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeLookupCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/AttributeLookupCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">NumericAttributeCondition.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/NumericAttributeCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
@@ -2154,7 +2154,25 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">LDAPFilterCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/LDAPFilterCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
+<div class="block">Returns condition decision.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SessionPropertyCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SessionPropertyCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
+<div class="block">Returns condition decision.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceEnvIPCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ResourceEnvIPCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
@@ -2172,57 +2190,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthLevelCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AuthLevelCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
-<div class="block">Returns condition decision.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceEnvIPCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ResourceEnvIPCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
-<div class="block">Returns condition decision.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ScriptCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ScriptCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuthenticateToRealmCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AuthenticateToRealmCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
-<div class="block">Returns condition decision.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">LDAPFilterCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/LDAPFilterCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
-<div class="block">Returns condition decision.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AMIdentityMembershipCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AMIdentityMembershipCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">OAuth2ScopeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/OAuth2ScopeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
@@ -2240,7 +2208,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SessionCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SessionCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">SimpleTimeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SimpleTimeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
@@ -2249,7 +2217,39 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SimpleTimeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SimpleTimeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">AMIdentityMembershipCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AMIdentityMembershipCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AuthLevelCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AuthLevelCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
+<div class="block">Returns condition decision.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">OAuth2ScopeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/OAuth2ScopeCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
+<div class="block">Returns condition decision.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ScriptCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ScriptCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SessionCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SessionCondition.html#evaluate-java.lang.String-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;env)</code>
@@ -2286,7 +2286,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">LDAPFilterCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/LDAPFilterCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">SessionPropertyCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SessionPropertyCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceEnvIPCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ResourceEnvIPCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -2294,31 +2302,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AuthLevelCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AuthLevelCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceEnvIPCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ResourceEnvIPCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ScriptCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ScriptCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">AuthenticateToRealmCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AuthenticateToRealmCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">LDAPFilterCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/LDAPFilterCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AMIdentityMembershipCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AMIdentityMembershipCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">OAuth2ScopeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/OAuth2ScopeCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -2326,11 +2310,27 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SessionCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SessionCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SimpleTimeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SimpleTimeCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SimpleTimeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SimpleTimeCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">AMIdentityMembershipCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AMIdentityMembershipCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AuthLevelCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/AuthLevelCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">OAuth2ScopeCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/OAuth2ScopeCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ScriptCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/ScriptCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">SessionCondition.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/environment/SessionCondition.html#validate--">validate</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -2374,7 +2374,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IdentitySubject.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/subject/IdentitySubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">AuthenticatedUsers.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/subject/AuthenticatedUsers.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
@@ -2384,7 +2384,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/sun/identity/entitlement/SubjectDecision.html" title="class in com.sun.identity.entitlement">SubjectDecision</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthenticatedUsers.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/subject/AuthenticatedUsers.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+<td class="colLast"><span class="typeNameLabel">IdentitySubject.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/conditions/subject/IdentitySubject.html#evaluate-java.lang.String-com.sun.identity.entitlement.SubjectAttributesManager-javax.security.auth.Subject-java.lang.String-java.util.Map-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
         <a href="../../../../../com/sun/identity/entitlement/SubjectAttributesManager.html" title="class in com.sun.identity.entitlement">SubjectAttributesManager</a>&nbsp;mgr,
         <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resourceName,
@@ -2408,29 +2408,21 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#containsName-javax.security.auth.Subject-java.lang.String-java.lang.String-">containsName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
-<div class="block">Check to see if a resource type with the given name already exists in this realm.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#containsName-javax.security.auth.Subject-java.lang.String-java.lang.String-">containsName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
 <div class="block">Check to see if a resource type with the given name already exists in this realm.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#containsUUID-javax.security.auth.Subject-java.lang.String-java.lang.String-">containsUUID</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#containsName-javax.security.auth.Subject-java.lang.String-java.lang.String-">containsName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uuid)</code>
-<div class="block">Check to see if a resource type with the given UUID already exists in this realm.</div>
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Check to see if a resource type with the given name already exists in this realm.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#containsUUID-javax.security.auth.Subject-java.lang.String-java.lang.String-">containsUUID</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
@@ -2438,15 +2430,15 @@
 <div class="block">Check to see if a resource type with the given UUID already exists in this realm.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#getResourceType-javax.security.auth.Subject-java.lang.String-java.lang.String-">getResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uuid)</code>
-<div class="block">Retrieve a registered resource type by id.</div>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#containsUUID-javax.security.auth.Subject-java.lang.String-java.lang.String-">containsUUID</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uuid)</code>
+<div class="block">Check to see if a resource type with the given UUID already exists in this realm.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a></code></td>
 <td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#getResourceType-javax.security.auth.Subject-java.lang.String-java.lang.String-">getResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
@@ -2454,13 +2446,15 @@
 <div class="block">Retrieve a registered resource type by id.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#getResourceTypes-org.forgerock.util.query.QueryFilter-javax.security.auth.Subject-java.lang.String-">getResourceTypes</a></span>(org.forgerock.util.query.QueryFilter&lt;<a href="../../../../../org/forgerock/openam/entitlement/configuration/SmsAttribute.html" title="class in org.forgerock.openam.entitlement.configuration">SmsAttribute</a>&gt;&nbsp;queryFilter,
-                <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>&nbsp;</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#getResourceType-javax.security.auth.Subject-java.lang.String-java.lang.String-">getResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uuid)</code>
+<div class="block">Retrieve a registered resource type by id.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#getResourceTypes-org.forgerock.util.query.QueryFilter-javax.security.auth.Subject-java.lang.String-">getResourceTypes</a></span>(org.forgerock.util.query.QueryFilter&lt;<a href="../../../../../org/forgerock/openam/entitlement/configuration/SmsAttribute.html" title="class in org.forgerock.openam.entitlement.configuration">SmsAttribute</a>&gt;&nbsp;filter,
                 <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
@@ -2468,27 +2462,25 @@
 <div class="block">Retrieves a set of resource types based on the passed query filter.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#getResourceTypesData-javax.security.auth.Subject-java.lang.String-">getResourceTypesData</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>&nbsp;</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#getResourceTypes-org.forgerock.util.query.QueryFilter-javax.security.auth.Subject-java.lang.String-">getResourceTypes</a></span>(org.forgerock.util.query.QueryFilter&lt;<a href="../../../../../org/forgerock/openam/entitlement/configuration/SmsAttribute.html" title="class in org.forgerock.openam.entitlement.configuration">SmsAttribute</a>&gt;&nbsp;queryFilter,
+                <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#getResourceTypesData-javax.security.auth.Subject-java.lang.String-">getResourceTypesData</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Retrieve the resource types stored under the specified realm from the data store.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#removeResourceType-javax.security.auth.Subject-java.lang.String-java.lang.String-">removeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uuid)</code>
-<div class="block">Remove a resource type.</div>
-</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#getResourceTypesData-javax.security.auth.Subject-java.lang.String-">getResourceTypesData</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#removeResourceType-javax.security.auth.Subject-java.lang.String-java.lang.String-">removeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
@@ -2496,9 +2488,17 @@
 <div class="block">Remove a resource type.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#removeResourceType-javax.security.auth.Subject-java.lang.String-java.lang.String-">removeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uuid)</code>
+<div class="block">Remove a resource type.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#storeResourceType-javax.security.auth.Subject-java.lang.String-org.forgerock.openam.entitlement.ResourceType-">storeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#storeResourceType-javax.security.auth.Subject-java.lang.String-org.forgerock.openam.entitlement.ResourceType-">storeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
                  <a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a>&nbsp;resourceType)</code>
 <div class="block">Stores the resource type to the data store.</div>
@@ -2506,7 +2506,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ResourceTypeConfiguration.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfiguration.html#storeResourceType-javax.security.auth.Subject-java.lang.String-org.forgerock.openam.entitlement.ResourceType-">storeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+<td class="colLast"><span class="typeNameLabel">ResourceTypeConfigurationImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/configuration/ResourceTypeConfigurationImpl.html#storeResourceType-javax.security.auth.Subject-java.lang.String-org.forgerock.openam.entitlement.ResourceType-">storeResourceType</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
                  <a href="../../../../../org/forgerock/openam/entitlement/ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a>&nbsp;resourceType)</code>
 <div class="block">Stores the resource type to the data store.</div>
@@ -2558,14 +2558,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">IndexTreeServiceImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/indextree/IndexTreeServiceImpl.html#searchTree-java.lang.String-java.lang.String-">searchTree</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
+<td class="colLast"><span class="typeNameLabel">IndexTreeService.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/indextree/IndexTreeService.html#searchTree-java.lang.String-java.lang.String-">searchTree</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Given a resource searches the tree for all matching index rules with the specified realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">IndexTreeService.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/indextree/IndexTreeService.html#searchTree-java.lang.String-java.lang.String-">searchTree</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
+<td class="colLast"><span class="typeNameLabel">IndexTreeServiceImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/indextree/IndexTreeServiceImpl.html#searchTree-java.lang.String-java.lang.String-">searchTree</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;resource,
           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm)</code>
 <div class="block">Given a resource searches the tree for all matching index rules with the specified realm.</div>
 </td>
@@ -2677,16 +2677,16 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluator.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyEvaluator</a></code></td>
-<td class="colLast"><span class="typeNameLabel">EntitlementEvaluatorFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/EntitlementEvaluatorFactory.html#getEvaluator-javax.security.auth.Subject-java.lang.String-">getEvaluator</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;application)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluator.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyEvaluator</a></code></td>
 <td class="colLast"><span class="typeNameLabel">PolicyEvaluatorFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluatorFactory.html#getEvaluator-javax.security.auth.Subject-java.lang.String-">getEvaluator</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;application)</code>
 <div class="block">Given the subject looking to request policy decisions within an
  application context, retrieve the relevant policy evaluator.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluator.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyEvaluator</a></code></td>
+<td class="colLast"><span class="typeNameLabel">EntitlementEvaluatorFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/EntitlementEvaluatorFactory.html#getEvaluator-javax.security.auth.Subject-java.lang.String-">getEvaluator</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;application)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyStore.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyStore</a></code></td>
@@ -2928,13 +2928,13 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>org.forgerock.json.JsonValue</code></td>
-<td class="colLast"><span class="typeNameLabel">ApplicationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/wrappers/ApplicationWrapper.html#toJsonValue--">toJsonValue</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>org.forgerock.json.JsonValue</code></td>
 <td class="colLast"><span class="typeNameLabel">JsonResourceType.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/wrappers/JsonResourceType.html#toJsonValue--">toJsonValue</a></span>()</code>
 <div class="block">Focus of this class.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>org.forgerock.json.JsonValue</code></td>
+<td class="colLast"><span class="typeNameLabel">ApplicationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/wrappers/ApplicationWrapper.html#toJsonValue--">toJsonValue</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>

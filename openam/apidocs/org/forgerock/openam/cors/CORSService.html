@@ -242,7 +242,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>handleRequest</h4>
 <pre>public&nbsp;boolean&nbsp;handleRequest(javax.servlet.http.HttpServletRequest&nbsp;req,
-                             javax.servlet.http.HttpServletResponse&nbsp;res)</pre>
+                             javax.servlet.http.HttpServletResponse&nbsp;res)
+                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Entry point for classes using the service. Validates requests against the
  CORS specification, and add headers required to the response.</div>
 <dl>
@@ -251,6 +252,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code>res</code> - HTTP response</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the caller is to continue processing the request</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an I/O error occurs while handling the response</dd>
 </dl>
 </li>
 </ul>

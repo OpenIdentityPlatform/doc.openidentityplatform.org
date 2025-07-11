@@ -106,6 +106,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/AttributeMapper.html#getAttributes-com.sun.identity.saml.protocol.AttributeQuery-java.lang.String-java.lang.Object-">getAttributes</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query,
+             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceID,
+             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;token)</code>
+<div class="block">Returns Attributes for the user.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a></code></td>
 <td class="colLast"><span class="typeNameLabel">DefaultAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultAttributeMapper.html#getAttributes-com.sun.identity.saml.protocol.AttributeQuery-java.lang.String-java.lang.Object-">getAttributes</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceID,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;token)</code>
@@ -113,39 +121,31 @@
  account using the AccountMapper defined in the SAML Service.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/AttributeMapper.html#getAttributes-com.sun.identity.saml.protocol.AttributeQuery-java.lang.String-java.lang.Object-">getAttributes</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceID,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;token)</code>
-<div class="block">Returns Attributes for the user.</div>
-</td>
-</tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/Assertion.html" title="class in com.sun.identity.saml.assertion">Assertion</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultAttributeMapper.html#getSSOAssertion-com.sun.identity.saml.protocol.AttributeQuery-">getSSOAssertion</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
-<div class="block">This method exams the SubjectConfirmationData of the Subject in the
- AttributeQuery.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/Assertion.html" title="class in com.sun.identity.saml.assertion">Assertion</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/AttributeMapper.html#getSSOAssertion-com.sun.identity.saml.protocol.AttributeQuery-">getSSOAssertion</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
 <div class="block">Returns the Assertion that contains Authentication information that
  can be used to obtain single sign on token.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml/assertion/Assertion.html" title="class in com.sun.identity.saml.assertion">Assertion</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DefaultAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultAttributeMapper.html#getSSOAssertion-com.sun.identity.saml.protocol.AttributeQuery-">getSSOAssertion</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
+<div class="block">This method exams the SubjectConfirmationData of the Subject in the
+ AttributeQuery.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultAttributeMapper.html#getSSOTokenID-com.sun.identity.saml.protocol.AttributeQuery-">getSSOTokenID</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
-<div class="block">This method exams the SubjectConfirmation of the Subject in the
- AttributeQuery.</div>
+<td class="colLast"><span class="typeNameLabel">AttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/AttributeMapper.html#getSSOTokenID-com.sun.identity.saml.protocol.AttributeQuery-">getSSOTokenID</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
+<div class="block">Returns the single sign on token ID to OpenAM from the query.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/AttributeMapper.html#getSSOTokenID-com.sun.identity.saml.protocol.AttributeQuery-">getSSOTokenID</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
-<div class="block">Returns the single sign on token ID to OpenAM from the query.</div>
+<td class="colLast"><span class="typeNameLabel">DefaultAttributeMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml/plugins/DefaultAttributeMapper.html#getSSOTokenID-com.sun.identity.saml.protocol.AttributeQuery-">getSSOTokenID</a></span>(<a href="../../../../../../com/sun/identity/saml/protocol/AttributeQuery.html" title="class in com.sun.identity.saml.protocol">AttributeQuery</a>&nbsp;query)</code>
+<div class="block">This method exams the SubjectConfirmation of the Subject in the
+ AttributeQuery.</div>
 </td>
 </tr>
 </tbody>
