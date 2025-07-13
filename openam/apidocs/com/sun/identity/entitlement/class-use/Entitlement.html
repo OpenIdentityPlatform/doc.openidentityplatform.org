@@ -162,6 +162,21 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ReferralPrivilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/ReferralPrivilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;normalisedResourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;requestedResourceName,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;actionNames,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment,
+        boolean&nbsp;recursive,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Privilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/Privilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
@@ -176,21 +191,6 @@
 <div class="block">Returns a list of entitlement for a given subject, resource name
  and environment.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ReferralPrivilege.</span><code><span class="memberNameLink"><a href="../../../../../com/sun/identity/entitlement/ReferralPrivilege.html#evaluate-javax.security.auth.Subject-java.lang.String-javax.security.auth.Subject-java.lang.String-java.lang.String-java.lang.String-java.util.Set-java.util.Map-boolean-java.lang.Object-">evaluate</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;adminSubject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-        <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth">Subject</a>&nbsp;subject,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;applicationName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;normalisedResourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;requestedResourceName,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;actionNames,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;environment,
-        boolean&nbsp;recursive,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
@@ -413,14 +413,14 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">BatchPolicyRequest.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/model/json/BatchPolicyRequest.html#dispatch-org.forgerock.openam.entitlement.rest.PolicyEvaluator-">dispatch</a></span>(<a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluator.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyEvaluator</a>&nbsp;evaluator)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">PolicyRequest.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/model/json/PolicyRequest.html#dispatch-org.forgerock.openam.entitlement.rest.PolicyEvaluator-">dispatch</a></span>(<a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluator.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyEvaluator</a>&nbsp;evaluator)</code>
 <div class="block">Given the policy evaluator dispatch oneself as one knows best.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BatchPolicyRequest.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/rest/model/json/BatchPolicyRequest.html#dispatch-org.forgerock.openam.entitlement.rest.PolicyEvaluator-">dispatch</a></span>(<a href="../../../../../org/forgerock/openam/entitlement/rest/PolicyEvaluator.html" title="interface in org.forgerock.openam.entitlement.rest">PolicyEvaluator</a>&nbsp;evaluator)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../com/sun/identity/entitlement/Entitlement.html" title="class in com.sun.identity.entitlement">Entitlement</a>&gt;</code></td>

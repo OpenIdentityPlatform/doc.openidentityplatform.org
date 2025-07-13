@@ -291,13 +291,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a></code></td>
-<td class="colLast"><span class="typeNameLabel">TokenRequestMarshaller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshaller.html#getTokenType-org.forgerock.json.JsonValue-">getTokenType</a></span>(org.forgerock.json.JsonValue&nbsp;token)</code>
-<div class="block">Returns the TokenType corresponding to the JsonValue.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">TokenRequestMarshallerImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshallerImpl.html#getTokenType-org.forgerock.json.JsonValue-">getTokenType</a></span>(org.forgerock.json.JsonValue&nbsp;receivedToken)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a></code></td>
-<td class="colLast"><span class="typeNameLabel">TokenRequestMarshallerImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshallerImpl.html#getTokenType-org.forgerock.json.JsonValue-">getTokenType</a></span>(org.forgerock.json.JsonValue&nbsp;receivedToken)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">TokenRequestMarshaller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshaller.html#getTokenType-org.forgerock.json.JsonValue-">getTokenType</a></span>(org.forgerock.json.JsonValue&nbsp;token)</code>
+<div class="block">Returns the TokenType corresponding to the JsonValue.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -310,6 +310,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/RestTokenProviderParameters.html" title="interface in org.forgerock.openam.sts.rest.token.provider">RestTokenProviderParameters</a>&lt;?&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">TokenRequestMarshallerImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshallerImpl.html#buildTokenProviderParameters-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">buildTokenProviderParameters</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
+                            org.forgerock.json.JsonValue&nbsp;inputToken,
+                            <a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;desiredTokenType,
+                            org.forgerock.json.JsonValue&nbsp;desiredTokenState)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/RestTokenProviderParameters.html" title="interface in org.forgerock.openam.sts.rest.token.provider">RestTokenProviderParameters</a>&lt;?&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">TokenRequestMarshaller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshaller.html#buildTokenProviderParameters-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">buildTokenProviderParameters</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
                             org.forgerock.json.JsonValue&nbsp;inputToken,
                             <a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;desiredTokenType,
@@ -317,13 +324,6 @@
 <div class="block">Marshals state from a token translate invocation into the RestTokenProviderParameters necessary to create a token
  of the specified type</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/RestTokenProviderParameters.html" title="interface in org.forgerock.openam.sts.rest.token.provider">RestTokenProviderParameters</a>&lt;?&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">TokenRequestMarshallerImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/TokenRequestMarshallerImpl.html#buildTokenProviderParameters-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">buildTokenProviderParameters</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
-                            org.forgerock.json.JsonValue&nbsp;inputToken,
-                            <a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;desiredTokenType,
-                            org.forgerock.json.JsonValue&nbsp;desiredTokenState)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -475,11 +475,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestIssuedTokenValidator.html" title="interface in org.forgerock.openam.sts.rest.token.validator">RestIssuedTokenValidator</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IssuedTokenValidatorFactoryImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/validate/IssuedTokenValidatorFactoryImpl.html#getTokenValidator-org.forgerock.openam.sts.TokenTypeId-">getTokenValidator</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">IssuedTokenValidatorFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/validate/IssuedTokenValidatorFactory.html#getTokenValidator-org.forgerock.openam.sts.TokenTypeId-">getTokenValidator</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestIssuedTokenValidator.html" title="interface in org.forgerock.openam.sts.rest.token.validator">RestIssuedTokenValidator</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IssuedTokenValidatorFactory.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/validate/IssuedTokenValidatorFactory.html#getTokenValidator-org.forgerock.openam.sts.TokenTypeId-">getTokenValidator</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">IssuedTokenValidatorFactoryImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/operation/validate/IssuedTokenValidatorFactoryImpl.html#getTokenValidator-org.forgerock.openam.sts.TokenTypeId-">getTokenValidator</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -510,11 +510,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">RestSAML2IssuedTokenCanceller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/canceller/RestSAML2IssuedTokenCanceller.html#canCancelToken-org.forgerock.openam.sts.TokenTypeId-">canCancelToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RestOpenIdConnectIssuedTokenCanceller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/canceller/RestOpenIdConnectIssuedTokenCanceller.html#canCancelToken-org.forgerock.openam.sts.TokenTypeId-">canCancelToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">RestOpenIdConnectIssuedTokenCanceller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/canceller/RestOpenIdConnectIssuedTokenCanceller.html#canCancelToken-org.forgerock.openam.sts.TokenTypeId-">canCancelToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RestSAML2IssuedTokenCanceller.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/canceller/RestSAML2IssuedTokenCanceller.html#canCancelToken-org.forgerock.openam.sts.TokenTypeId-">canCancelToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -556,15 +556,15 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultOpenIdConnectTokenAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/oidc/DefaultOpenIdConnectTokenAuthnContextMapper.html#getAuthnContextClassReference-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">getAuthnContextClassReference</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
-                             org.forgerock.json.JsonValue&nbsp;inputToken)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="typeNameLabel">OpenIdConnectTokenAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/oidc/OpenIdConnectTokenAuthnContextMapper.html#getAuthnContextClassReference-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">getAuthnContextClassReference</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
                              org.forgerock.json.JsonValue&nbsp;inputToken)</code>
 <div class="block">Returns the AuthnContext value corresponding to the TokenType inputToken.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DefaultOpenIdConnectTokenAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/oidc/DefaultOpenIdConnectTokenAuthnContextMapper.html#getAuthnContextClassReference-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">getAuthnContextClassReference</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
+                             org.forgerock.json.JsonValue&nbsp;inputToken)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
@@ -594,15 +594,15 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="typeNameLabel">Saml2JsonTokenAuthnContextMapperImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/saml/Saml2JsonTokenAuthnContextMapperImpl.html#getAuthnContext-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">getAuthnContext</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
+               org.forgerock.json.JsonValue&nbsp;inputToken)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Saml2JsonTokenAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/saml/Saml2JsonTokenAuthnContextMapper.html#getAuthnContext-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">getAuthnContext</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
                org.forgerock.json.JsonValue&nbsp;inputToken)</code>
 <div class="block">Returns the AuthnContext value corresponding to the TokenType inputToken.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Saml2JsonTokenAuthnContextMapperImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/provider/saml/Saml2JsonTokenAuthnContextMapperImpl.html#getAuthnContext-org.forgerock.openam.sts.TokenTypeId-org.forgerock.json.JsonValue-">getAuthnContext</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;inputTokenType,
-               org.forgerock.json.JsonValue&nbsp;inputToken)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -620,15 +620,15 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">RestSAML2IssuedTokenValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestSAML2IssuedTokenValidator.html#canValidateToken-org.forgerock.openam.sts.TokenTypeId-">canValidateToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RestOpenIdConnectIssuedTokenValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestOpenIdConnectIssuedTokenValidator.html#canValidateToken-org.forgerock.openam.sts.TokenTypeId-">canValidateToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">RestOpenIdConnectIssuedTokenValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestOpenIdConnectIssuedTokenValidator.html#canValidateToken-org.forgerock.openam.sts.TokenTypeId-">canValidateToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RestIssuedTokenValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestIssuedTokenValidator.html#canValidateToken-org.forgerock.openam.sts.TokenTypeId-">canValidateToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">RestIssuedTokenValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestIssuedTokenValidator.html#canValidateToken-org.forgerock.openam.sts.TokenTypeId-">canValidateToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">RestSAML2IssuedTokenValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/rest/token/validator/RestSAML2IssuedTokenValidator.html#canValidateToken-org.forgerock.openam.sts.TokenTypeId-">canValidateToken</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenType)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -669,12 +669,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthenticationHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html#authenticate-T-org.forgerock.openam.sts.TokenTypeId-">authenticate</a></span>(<a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html" title="type parameter in AuthenticationHandler">T</a>&nbsp;token,
+<td class="colLast"><span class="typeNameLabel">AuthenticationHandlerImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandlerImpl.html#authenticate-T-org.forgerock.openam.sts.TokenTypeId-">authenticate</a></span>(<a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandlerImpl.html" title="type parameter in AuthenticationHandlerImpl">T</a>&nbsp;token,
             <a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenTypeId)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthenticationHandlerImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandlerImpl.html#authenticate-T-org.forgerock.openam.sts.TokenTypeId-">authenticate</a></span>(<a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandlerImpl.html" title="type parameter in AuthenticationHandlerImpl">T</a>&nbsp;token,
+<td class="colLast"><span class="typeNameLabel">AuthenticationHandler.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html#authenticate-T-org.forgerock.openam.sts.TokenTypeId-">authenticate</a></span>(<a href="../../../../../org/forgerock/openam/sts/token/validator/AuthenticationHandler.html" title="type parameter in AuthenticationHandler">T</a>&nbsp;token,
             <a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenTypeId)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -693,13 +693,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthenticationUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/url/AuthenticationUrlProvider.html#authenticationUrl-org.forgerock.openam.sts.TokenTypeId-">authenticationUrl</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenTypeId)</code>
-<div class="block">Returns the String representing the URL against which the authentication invocation will be made.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">AuthenticationUrlProviderImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/url/AuthenticationUrlProviderImpl.html#authenticationUrl-org.forgerock.openam.sts.TokenTypeId-">authenticationUrl</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenTypeId)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AuthenticationUrlProviderImpl.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/url/AuthenticationUrlProviderImpl.html#authenticationUrl-org.forgerock.openam.sts.TokenTypeId-">authenticationUrl</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenTypeId)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">AuthenticationUrlProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/sts/token/validator/url/AuthenticationUrlProvider.html#authenticationUrl-org.forgerock.openam.sts.TokenTypeId-">authenticationUrl</a></span>(<a href="../../../../../org/forgerock/openam/sts/TokenTypeId.html" title="interface in org.forgerock.openam.sts">TokenTypeId</a>&nbsp;tokenTypeId)</code>
+<div class="block">Returns the String representing the URL against which the authentication invocation will be made.</div>
+</td>
 </tr>
 </tbody>
 </table>

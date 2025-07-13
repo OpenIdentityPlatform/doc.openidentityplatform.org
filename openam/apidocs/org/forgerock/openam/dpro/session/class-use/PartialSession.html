@@ -173,7 +173,10 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/forgerock/openam/dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">LocalOperations.</span><code><span class="memberNameLink"><a href="../../../../../../com/iplanet/dpro/session/operations/strategies/LocalOperations.html#getMatchingSessions-org.forgerock.openam.utils.CrestQuery-">getMatchingSessions</a></span>(<a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">StatelessOperations.</span><code><span class="memberNameLink"><a href="../../../../../../com/iplanet/dpro/session/operations/strategies/StatelessOperations.html#getMatchingSessions-org.forgerock.openam.utils.CrestQuery-">getMatchingSessions</a></span>(<a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code>
+<div class="block">This implementation will forward the query call to the local operations in order to allow the return of stateful
+ sessions even when the request was initiated using a stateless session.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/forgerock/openam/dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;</code></td>
@@ -181,10 +184,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../../org/forgerock/openam/dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">StatelessOperations.</span><code><span class="memberNameLink"><a href="../../../../../../com/iplanet/dpro/session/operations/strategies/StatelessOperations.html#getMatchingSessions-org.forgerock.openam.utils.CrestQuery-">getMatchingSessions</a></span>(<a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code>
-<div class="block">This implementation will forward the query call to the local operations in order to allow the return of stateful
- sessions even when the request was initiated using a stateless session.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">LocalOperations.</span><code><span class="memberNameLink"><a href="../../../../../../com/iplanet/dpro/session/operations/strategies/LocalOperations.html#getMatchingSessions-org.forgerock.openam.utils.CrestQuery-">getMatchingSessions</a></span>(<a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
