@@ -470,7 +470,9 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">NOTCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/NOTCondition.html#evaluate-org.forgerock.opendj.config.server.ServerManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/server/ServerManagedObject.html" title="class in org.forgerock.opendj.config.server">ServerManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">Condition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/Condition.html#evaluate-org.forgerock.opendj.config.server.ServerManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/server/ServerManagedObject.html" title="class in org.forgerock.opendj.config.server">ServerManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>
+<div class="block">Evaluates this condition against the provided server managed object.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -478,13 +480,11 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">ORCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/ORCondition.html#evaluate-org.forgerock.opendj.config.server.ServerManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/server/ServerManagedObject.html" title="class in org.forgerock.opendj.config.server">ServerManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">NOTCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/NOTCondition.html#evaluate-org.forgerock.opendj.config.server.ServerManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/server/ServerManagedObject.html" title="class in org.forgerock.opendj.config.server">ServerManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">Condition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/Condition.html#evaluate-org.forgerock.opendj.config.server.ServerManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/server/ServerManagedObject.html" title="class in org.forgerock.opendj.config.server">ServerManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>
-<div class="block">Evaluates this condition against the provided server managed object.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">ORCondition.</span><code><span class="memberNameLink"><a href="../../../../../../org/forgerock/opendj/config/conditions/ORCondition.html#evaluate-org.forgerock.opendj.config.server.ServerManagedObject-">evaluate</a></span>(<a href="../../../../../../org/forgerock/opendj/config/server/ServerManagedObject.html" title="class in org.forgerock.opendj.config.server">ServerManagedObject</a>&lt;?&gt;&nbsp;managedObject)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -1460,15 +1460,15 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../../../org/forgerock/opendj/ldap/schema/Schema.html" title="class in org.forgerock.opendj.ldap.schema">Schema</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ConfigReader.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/guitools/controlpanel/util/ConfigReader.html#readSchema--">readSchema</a></span>()</code>
-<div class="block">Reads the schema from the files.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../org/forgerock/opendj/ldap/schema/Schema.html" title="class in org.forgerock.opendj.ldap.schema">Schema</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SchemaLoader.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/guitools/controlpanel/util/SchemaLoader.html#readSchema--">readSchema</a></span>()</code>
 <div class="block">Reads and returns the schema.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../../../org/forgerock/opendj/ldap/schema/Schema.html" title="class in org.forgerock.opendj.ldap.schema">Schema</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ConfigReader.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/guitools/controlpanel/util/ConfigReader.html#readSchema--">readSchema</a></span>()</code>
+<div class="block">Reads the schema from the files.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1669,13 +1669,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="typeNameLabel">Backend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/api/Backend.html#openBackend--">openBackend</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">LocalBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/api/LocalBackend.html#openBackend--">openBackend</a></span>()</code>
 <div class="block">Opens this backend based on the information provided when the backend was configured.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="typeNameLabel">LocalBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/api/LocalBackend.html#openBackend--">openBackend</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">Backend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/api/Backend.html#openBackend--">openBackend</a></span>()</code>
 <div class="block">Opens this backend based on the information provided when the backend was configured.</div>
 </td>
 </tr>
@@ -1810,14 +1810,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/backends/SchemaBackend.html#openBackend--">openBackend</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MemoryBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/backends/MemoryBackend.html#openBackend--">openBackend</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">TrustStoreBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/backends/TrustStoreBackend.html#openBackend--">openBackend</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -1830,7 +1822,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">MemoryBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/backends/MemoryBackend.html#openBackend--">openBackend</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/backends/MonitorBackend.html#openBackend--">openBackend</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/backends/SchemaBackend.html#openBackend--">openBackend</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -3100,13 +3100,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">ServerHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/replication/server/ServerHandler.html#initializeMonitorProvider-org.forgerock.opendj.server.config.server.MonitorProviderCfg-">initializeMonitorProvider</a></span>(<a href="../../../../../../org/forgerock/opendj/server/config/server/MonitorProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">MonitorProviderCfg</a>&nbsp;configuration)</code>
+<td class="colLast"><span class="typeNameLabel">LightweightServerHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/replication/server/LightweightServerHandler.html#initializeMonitorProvider-org.forgerock.opendj.server.config.server.MonitorProviderCfg-">initializeMonitorProvider</a></span>(<a href="../../../../../../org/forgerock/opendj/server/config/server/MonitorProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">MonitorProviderCfg</a>&nbsp;configuration)</code>
 <div class="block">Initializes this monitor provider based on the information in the provided configuration entry.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">LightweightServerHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/replication/server/LightweightServerHandler.html#initializeMonitorProvider-org.forgerock.opendj.server.config.server.MonitorProviderCfg-">initializeMonitorProvider</a></span>(<a href="../../../../../../org/forgerock/opendj/server/config/server/MonitorProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">MonitorProviderCfg</a>&nbsp;configuration)</code>
+<td class="colLast"><span class="typeNameLabel">ServerHandler.</span><code><span class="memberNameLink"><a href="../../../../../../org/opends/server/replication/server/ServerHandler.html#initializeMonitorProvider-org.forgerock.opendj.server.config.server.MonitorProviderCfg-">initializeMonitorProvider</a></span>(<a href="../../../../../../org/forgerock/opendj/server/config/server/MonitorProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">MonitorProviderCfg</a>&nbsp;configuration)</code>
 <div class="block">Initializes this monitor provider based on the information in the provided configuration entry.</div>
 </td>
 </tr>

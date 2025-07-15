@@ -610,18 +610,6 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logConnect-org.opends.server.api.ClientConnection-">logConnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection)</code>
-<div class="block">Writes a message to the access logger with information about a
- new client connection that has been established, regardless of
- whether it will be immediately terminated.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logConnect-org.opends.server.api.ClientConnection-">logConnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logConnect-org.opends.server.api.ClientConnection-">logConnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection)</code>
 <div class="block">Writes a message to the access logger with information about a new client
@@ -631,7 +619,19 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logDisconnect-org.opends.server.api.ClientConnection-org.opends.server.types.DisconnectReason-org.forgerock.i18n.LocalizableMessage-">logDisconnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection,
+<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logConnect-org.opends.server.api.ClientConnection-">logConnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logConnect-org.opends.server.api.ClientConnection-">logConnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection)</code>
+<div class="block">Writes a message to the access logger with information about a
+ new client connection that has been established, regardless of
+ whether it will be immediately terminated.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logDisconnect-org.opends.server.api.ClientConnection-org.opends.server.types.DisconnectReason-org.forgerock.i18n.LocalizableMessage-">logDisconnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection,
              <a href="../../../../../org/opends/server/types/DisconnectReason.html" title="enum in org.opends.server.types">DisconnectReason</a>&nbsp;disconnectReason,
              org.forgerock.i18n.LocalizableMessage&nbsp;message)</code>
 <div class="block">Writes a message to the access logger with information about the
@@ -645,8 +645,8 @@
              org.forgerock.i18n.LocalizableMessage&nbsp;message)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logDisconnect-org.opends.server.api.ClientConnection-org.opends.server.types.DisconnectReason-org.forgerock.i18n.LocalizableMessage-">logDisconnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection,
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logDisconnect-org.opends.server.api.ClientConnection-org.opends.server.types.DisconnectReason-org.forgerock.i18n.LocalizableMessage-">logDisconnect</a></span>(<a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&nbsp;clientConnection,
              <a href="../../../../../org/opends/server/types/DisconnectReason.html" title="enum in org.opends.server.types">DisconnectReason</a>&nbsp;disconnectReason,
              org.forgerock.i18n.LocalizableMessage&nbsp;message)</code>
 <div class="block">Writes a message to the access logger with information about the
@@ -928,14 +928,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#getClientConnection--">getClientConnection</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Operation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/Operation.html#getClientConnection--">getClientConnection</a></span>()</code>
 <div class="block">Retrieves the client connection with which this operation is
  associated.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#getClientConnection--">getClientConnection</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>

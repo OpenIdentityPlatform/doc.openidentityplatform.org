@@ -308,14 +308,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#search-org.opends.server.core.SearchOperation-">search</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MemoryBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MemoryBackend.html#search-org.opends.server.core.SearchOperation-">search</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#search-org.opends.server.core.SearchOperation-">search</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -338,7 +330,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">MemoryBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MemoryBackend.html#search-org.opends.server.core.SearchOperation-">search</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#search-org.opends.server.core.SearchOperation-">search</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#search-org.opends.server.core.SearchOperation-">search</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -489,7 +489,22 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
+            boolean&nbsp;isPreIndexed)</code>
+<div class="block">Indicates whether this attribute may be included in search
+ filters as part of the criteria for locating entries.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">CollectiveAttributeSubentriesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CollectiveAttributeSubentriesVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
+            boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
             boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
 </tr>
@@ -507,13 +522,13 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
             boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
             boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
 </tr>
@@ -525,39 +540,9 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">PasswordPolicySubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordPolicySubentryVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
             boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
-            boolean&nbsp;isPreIndexed)</code>
-<div class="block">Indicates whether this attribute may be included in search
- filters as part of the criteria for locating entries.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
-            boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">CollectiveAttributeSubentriesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CollectiveAttributeSubentriesVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
-            boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
-            boolean&nbsp;isPreIndexed)</code>
-<div class="block">Indicates whether this attribute may be included in search
- filters as part of the criteria for locating entries.</div>
-</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -573,13 +558,38 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
+            boolean&nbsp;isPreIndexed)</code>
+<div class="block">Indicates whether this attribute may be included in search
+ filters as part of the criteria for locating entries.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+            <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
+            boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">PasswordPolicySubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordPolicySubentryVirtualAttributeProvider.html#isSearchable-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-boolean-">isSearchable</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation,
             boolean&nbsp;isPreIndexed)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">CollectiveAttributeSubentriesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CollectiveAttributeSubentriesVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
              <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -594,12 +604,12 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">NumSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/NumSubordinatesVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
              <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">MemberVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/MemberVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
              <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -609,27 +619,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">PasswordPolicySubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordPolicySubentryVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">EntryDNVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/EntryDNVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">StructuralObjectClassVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/StructuralObjectClassVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CollectiveAttributeSubentriesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/CollectiveAttributeSubentriesVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
-             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
              <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -644,7 +634,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">HasSubordinatesVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/HasSubordinatesVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+<td class="colLast"><span class="typeNameLabel">IsMemberOfVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/IsMemberOfVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">GoverningStructureRuleVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/GoverningStructureRuleVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
+             <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">PasswordPolicySubentryVirtualAttributeProvider.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/PasswordPolicySubentryVirtualAttributeProvider.html#processSearch-org.opends.server.types.VirtualAttributeRule-org.opends.server.core.SearchOperation-">processSearch</a></span>(<a href="../../../../../org/opends/server/types/VirtualAttributeRule.html" title="class in org.opends.server.types">VirtualAttributeRule</a>&nbsp;rule,
              <a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -662,17 +662,6 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logSearchRequest-org.opends.server.core.SearchOperation-">logSearchRequest</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
-<div class="block">Writes a message to the access logger with information about the
- search request associated with the provided search operation.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logSearchRequest-org.opends.server.core.SearchOperation-">logSearchRequest</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logSearchRequest-org.opends.server.core.SearchOperation-">logSearchRequest</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
 <div class="block">Writes a message to the access logger with information about the search
@@ -681,9 +670,20 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logSearchResultDone-org.opends.server.core.SearchOperation-">logSearchResultDone</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
+<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logSearchRequest-org.opends.server.core.SearchOperation-">logSearchRequest</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logSearchRequest-org.opends.server.core.SearchOperation-">logSearchRequest</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
 <div class="block">Writes a message to the access logger with information about the
- completion of the provided search operation.</div>
+ search request associated with the provided search operation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logSearchResultDone-org.opends.server.core.SearchOperation-">logSearchResultDone</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
+<div class="block">Writes a message to the access logger with information about the completion
+ of the provided search operation.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -691,10 +691,10 @@
 <td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logSearchResultDone-org.opends.server.core.SearchOperation-">logSearchResultDone</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logSearchResultDone-org.opends.server.core.SearchOperation-">logSearchResultDone</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
-<div class="block">Writes a message to the access logger with information about the completion
- of the provided search operation.</div>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logSearchResultDone-org.opends.server.core.SearchOperation-">logSearchResultDone</a></span>(<a href="../../../../../org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code>
+<div class="block">Writes a message to the access logger with information about the
+ completion of the provided search operation.</div>
 </td>
 </tr>
 <tr class="altColor">

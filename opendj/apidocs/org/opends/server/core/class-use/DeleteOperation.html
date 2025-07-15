@@ -227,16 +227,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#deleteEntry-org.forgerock.opendj.ldap.DN-org.opends.server.core.DeleteOperation-">deleteEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
-           <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">MemoryBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MemoryBackend.html#deleteEntry-org.forgerock.opendj.ldap.DN-org.opends.server.core.DeleteOperation-">deleteEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
-           <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">ConfigurationBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/ConfigurationBackend.html#deleteEntry-org.forgerock.opendj.ldap.DN-org.opends.server.core.DeleteOperation-">deleteEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
            <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
 </tr>
@@ -262,7 +252,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">MemoryBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MemoryBackend.html#deleteEntry-org.forgerock.opendj.ldap.DN-org.opends.server.core.DeleteOperation-">deleteEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
+           <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">MonitorBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/MonitorBackend.html#deleteEntry-org.forgerock.opendj.ldap.DN-org.opends.server.core.DeleteOperation-">deleteEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
+           <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">SchemaBackend.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/backends/SchemaBackend.html#deleteEntry-org.forgerock.opendj.ldap.DN-org.opends.server.core.DeleteOperation-">deleteEntry</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
            <a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -375,17 +375,6 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logDeleteRequest-org.opends.server.core.DeleteOperation-">logDeleteRequest</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>
-<div class="block">Writes a message to the access logger with information about the
- delete request associated with the provided delete operation.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logDeleteRequest-org.opends.server.core.DeleteOperation-">logDeleteRequest</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logDeleteRequest-org.opends.server.core.DeleteOperation-">logDeleteRequest</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>
 <div class="block">Writes a message to the access logger with information about the delete
@@ -394,14 +383,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logDeleteResponse-org.opends.server.core.DeleteOperation-">logDeleteResponse</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>
-<div class="block">Writes a message to the access logger with information about the
- delete response associated with the provided delete operation.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logDeleteRequest-org.opends.server.core.DeleteOperation-">logDeleteRequest</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logDeleteResponse-org.opends.server.core.DeleteOperation-">logDeleteResponse</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logDeleteRequest-org.opends.server.core.DeleteOperation-">logDeleteRequest</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>
+<div class="block">Writes a message to the access logger with information about the
+ delete request associated with the provided delete operation.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -412,6 +401,17 @@
 <td class="colLast"><span class="typeNameLabel">AccessLogger.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogger.html#logDeleteResponse-org.opends.server.core.DeleteOperation-">logDeleteResponse</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>
 <div class="block">Writes a message to the access logger with information about the delete
  response associated with the provided delete operation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">TextAccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/TextAccessLogPublisher.html#logDeleteResponse-org.opends.server.core.DeleteOperation-">logDeleteResponse</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AccessLogPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/loggers/AccessLogPublisher.html#logDeleteResponse-org.opends.server.core.DeleteOperation-">logDeleteResponse</a></span>(<a href="../../../../../org/opends/server/core/DeleteOperation.html" title="interface in org.opends.server.core">DeleteOperation</a>&nbsp;deleteOperation)</code>
+<div class="block">Writes a message to the access logger with information about the
+ delete response associated with the provided delete operation.</div>
 </td>
 </tr>
 </tbody>

@@ -231,11 +231,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SearchOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperationBasis.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">OperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/OperationWrapper.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">OperationWrapper.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/OperationWrapper.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SearchOperationBasis.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SearchOperationBasis.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelResult.html" title="class in org.opends.server.types">CancelResult</a></code></td>
@@ -377,10 +377,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a></code></td>
-<td class="colLast"><span class="typeNameLabel">CanceledOperationException.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/CanceledOperationException.html#getCancelRequest--">getCancelRequest</a></span>()</code>
-<div class="block">Retrieves the cancel request for this cancelled operation
- exception.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#getCancelRequest--">getCancelRequest</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a></code></td>
@@ -391,7 +388,10 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#getCancelRequest--">getCancelRequest</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">CanceledOperationException.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/CanceledOperationException.html#getCancelRequest--">getCancelRequest</a></span>()</code>
+<div class="block">Retrieves the cancel request for this cancelled operation
+ exception.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -404,25 +404,25 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">Operation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/Operation.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>
 <div class="block">Attempts to abort this operation before processing has
  completed.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#abort-org.opends.server.types.CancelRequest-">abort</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelResult.html" title="class in org.opends.server.types">CancelResult</a></code></td>
+<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#cancel-org.opends.server.types.CancelRequest-">cancel</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelResult.html" title="class in org.opends.server.types">CancelResult</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Operation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/Operation.html#cancel-org.opends.server.types.CancelRequest-">cancel</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>
 <div class="block">Attempts to cancel this operation before processing has
  completed.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/opends/server/types/CancelResult.html" title="class in org.opends.server.types">CancelResult</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractOperation.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/types/AbstractOperation.html#cancel-org.opends.server.types.CancelRequest-">cancel</a></span>(<a href="../../../../../org/opends/server/types/CancelRequest.html" title="class in org.opends.server.types">CancelRequest</a>&nbsp;cancelRequest)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
