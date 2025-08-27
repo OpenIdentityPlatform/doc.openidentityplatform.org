@@ -820,20 +820,20 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">SynchronousStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SynchronousStrategy.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
-<div class="block">Run the request synchronously.</div>
+<td class="colLast"><span class="typeNameLabel">WorkQueueStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/WorkQueueStrategy.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
+<div class="block">Put the request in the work queue.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">BoundedWorkQueueStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/BoundedWorkQueueStrategy.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><span class="typeNameLabel">DirectoryServer.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/DirectoryServer.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
 <div class="block">Adds the provided operation to the work queue so that it will be processed
  by one of the worker threads.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">BoundedWorkQueueStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/BoundedWorkQueueStrategy.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -843,8 +843,8 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">WorkQueueStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/WorkQueueStrategy.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
-<div class="block">Put the request in the work queue.</div>
+<td class="colLast"><span class="typeNameLabel">SynchronousStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/SynchronousStrategy.html#enqueueRequest-org.opends.server.types.Operation-">enqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
+<div class="block">Run the request synchronously.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -858,15 +858,15 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">BoundedWorkQueueStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/BoundedWorkQueueStrategy.html#tryEnqueueRequest-org.opends.server.types.Operation-">tryEnqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;op)</code>
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">DirectoryServer.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/DirectoryServer.html#tryEnqueueRequest-org.opends.server.types.Operation-">tryEnqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
 <div class="block">Tries to add the provided operation to the work queue if not full so that
  it will be processed by one of the worker threads.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">DirectoryServer.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/DirectoryServer.html#tryEnqueueRequest-org.opends.server.types.Operation-">tryEnqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code>
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">BoundedWorkQueueStrategy.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/core/BoundedWorkQueueStrategy.html#tryEnqueueRequest-org.opends.server.types.Operation-">tryEnqueueRequest</a></span>(<a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;op)</code>
 <div class="block">Tries to add the provided operation to the work queue if not full so that
  it will be processed by one of the worker threads.</div>
 </td>
@@ -910,7 +910,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">UniqueCharactersPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/UniqueCharactersPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+<td class="colLast"><span class="typeNameLabel">DictionaryPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DictionaryPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
                     <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
@@ -926,31 +926,15 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">DictionaryPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/DictionaryPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
-                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
-                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
-                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">RepeatedCharactersPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/RepeatedCharactersPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
                     <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
                     org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">SimilarityBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SimilarityBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
-                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
-                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
-                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
-</tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">AttributeValuePasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/AttributeValuePasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+<td class="colLast"><span class="typeNameLabel">UniqueCharactersPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/UniqueCharactersPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
                     <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
@@ -959,6 +943,22 @@
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">LengthBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/LengthBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
+                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
+                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">SimilarityBasedPasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/SimilarityBasedPasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
+                    <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
+                    <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,
+                    org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><span class="typeNameLabel">AttributeValuePasswordValidator.</span><code><span class="memberNameLink"><a href="../../../../../org/opends/server/extensions/AttributeValuePasswordValidator.html#passwordIsAcceptable-org.forgerock.opendj.ldap.ByteString-java.util.Set-org.opends.server.types.Operation-org.opends.server.types.Entry-org.forgerock.i18n.LocalizableMessageBuilder-">passwordIsAcceptable</a></span>(<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;newPassword,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../../org/forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;currentPasswords,
                     <a href="../../../../../org/opends/server/types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation,
                     <a href="../../../../../org/opends/server/types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;userEntry,

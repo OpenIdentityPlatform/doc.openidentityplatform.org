@@ -83,7 +83,7 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="#org.opends.server.backends.jdbc">org.opends.server.backends.jdbc</a></td>
+<td class="colFirst"><a href="#org.opends.server.backends.cassandra">org.opends.server.backends.cassandra</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -116,54 +116,19 @@
 </tbody>
 </table>
 </li>
-<li class="blockList"><a name="org.opends.server.backends.jdbc">
+<li class="blockList"><a name="org.opends.server.backends.cassandra">
 <!--   -->
 </a>
 <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
-<caption><span>Classes in <a href="../../../../../../org/opends/server/backends/pluggable/spi/package-summary.html">org.opends.server.backends.pluggable.spi</a> used by <a href="../../../../../../org/opends/server/backends/jdbc/package-summary.html">org.opends.server.backends.jdbc</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Classes in <a href="../../../../../../org/opends/server/backends/pluggable/spi/package-summary.html">org.opends.server.backends.pluggable.spi</a> used by <a href="../../../../../../org/opends/server/backends/cassandra/package-summary.html">org.opends.server.backends.cassandra</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colOne" scope="col">Class and Description</th>
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/AccessMode.html#org.opends.server.backends.jdbc">AccessMode</a>
-<div class="block">Defines access modes of a Storage.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/Importer.html#org.opends.server.backends.jdbc">Importer</a>
-<div class="block">Allows to run an import.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/ReadOperation.html#org.opends.server.backends.jdbc">ReadOperation</a>
-<div class="block">Function performing a read operation.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/Storage.html#org.opends.server.backends.jdbc">Storage</a>
+<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/Storage.html#org.opends.server.backends.cassandra">Storage</a>
 <div class="block">This interface abstracts the underlying storage engine,
  isolating the pluggable backend generic code from a particular storage engine implementation.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/StorageRuntimeException.html#org.opends.server.backends.jdbc">StorageRuntimeException</a>
-<div class="block">Runtime exception for problems happening in the storage engine.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/StorageStatus.html#org.opends.server.backends.jdbc">StorageStatus</a>
-<div class="block">Represents the current status of a storage with respect to its resources.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/TreeName.html#org.opends.server.backends.jdbc">TreeName</a>
-<div class="block">Represents the name of a tree (key-value store) in a database.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/WriteOperation.html#org.opends.server.backends.jdbc">WriteOperation</a>
-<div class="block">Function performing a write operation.</div>
 </td>
 </tr>
 </tbody>
@@ -318,8 +283,18 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/Importer.html#org.opends.server.backends.pluggable.spi">Importer</a>
+<div class="block">Allows to run an import.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/ReadableTransaction.html#org.opends.server.backends.pluggable.spi">ReadableTransaction</a>
 <div class="block">Represents a readable transaction on a storage engine.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/ReadOperation.html#org.opends.server.backends.pluggable.spi">ReadOperation</a>
+<div class="block">Function performing a read operation.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -350,6 +325,11 @@
 <tr class="altColor">
 <td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/WriteableTransaction.html#org.opends.server.backends.pluggable.spi">WriteableTransaction</a>
 <div class="block">Represents a writeable transaction on a storage engine.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../../../org/opends/server/backends/pluggable/spi/class-use/WriteOperation.html#org.opends.server.backends.pluggable.spi">WriteOperation</a>
+<div class="block">Function performing a write operation.</div>
 </td>
 </tr>
 </tbody>
