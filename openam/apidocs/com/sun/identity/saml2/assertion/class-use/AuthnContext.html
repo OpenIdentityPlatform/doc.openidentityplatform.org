@@ -235,7 +235,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml2/assertion/AuthnContext.html" title="interface in com.sun.identity.saml2.assertion">AuthnContext</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultIDPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/DefaultIDPAuthnContextMapper.html#getAuthnContextFromAuthLevel-java.lang.String-java.lang.String-java.lang.String-">getAuthnContextFromAuthLevel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authLevel,
+<td class="colLast"><span class="typeNameLabel">IDPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/IDPAuthnContextMapper.html#getAuthnContextFromAuthLevel-java.lang.String-java.lang.String-java.lang.String-">getAuthnContextFromAuthLevel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authLevel,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpEntityID)</code>
 <div class="block">Returns <code>AuthnContext</code> that matches the authenticated level.</div>
@@ -243,7 +243,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/sun/identity/saml2/assertion/AuthnContext.html" title="interface in com.sun.identity.saml2.assertion">AuthnContext</a></code></td>
-<td class="colLast"><span class="typeNameLabel">IDPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/IDPAuthnContextMapper.html#getAuthnContextFromAuthLevel-java.lang.String-java.lang.String-java.lang.String-">getAuthnContextFromAuthLevel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authLevel,
+<td class="colLast"><span class="typeNameLabel">DefaultIDPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/DefaultIDPAuthnContextMapper.html#getAuthnContextFromAuthLevel-java.lang.String-java.lang.String-java.lang.String-">getAuthnContextFromAuthLevel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;authLevel,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpEntityID)</code>
 <div class="block">Returns <code>AuthnContext</code> that matches the authenticated level.</div>
@@ -260,22 +260,22 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">DefaultSPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/DefaultSPAuthnContextMapper.html#getAuthLevel-com.sun.identity.saml2.protocol.RequestedAuthnContext-com.sun.identity.saml2.assertion.AuthnContext-java.lang.String-java.lang.String-java.lang.String-">getAuthLevel</a></span>(<a href="../../../../../../com/sun/identity/saml2/protocol/RequestedAuthnContext.html" title="interface in com.sun.identity.saml2.protocol">RequestedAuthnContext</a>&nbsp;reqCtx,
-            <a href="../../../../../../com/sun/identity/saml2/assertion/AuthnContext.html" title="interface in com.sun.identity.saml2.assertion">AuthnContext</a>&nbsp;authnContext,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostEntityID,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpEntityID)</code>
-<div class="block">Returns the auth level for the AuthContext</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>int</code></td>
 <td class="colLast"><span class="typeNameLabel">SPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/SPAuthnContextMapper.html#getAuthLevel-com.sun.identity.saml2.protocol.RequestedAuthnContext-com.sun.identity.saml2.assertion.AuthnContext-java.lang.String-java.lang.String-java.lang.String-">getAuthLevel</a></span>(<a href="../../../../../../com/sun/identity/saml2/protocol/RequestedAuthnContext.html" title="interface in com.sun.identity.saml2.protocol">RequestedAuthnContext</a>&nbsp;reqCtx,
             <a href="../../../../../../com/sun/identity/saml2/assertion/AuthnContext.html" title="interface in com.sun.identity.saml2.assertion">AuthnContext</a>&nbsp;authContext,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostEntityID,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpEntityID)</code>
 <div class="block">Returns the Auth Level for the <code>AuthContext</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><span class="typeNameLabel">DefaultSPAuthnContextMapper.</span><code><span class="memberNameLink"><a href="../../../../../../com/sun/identity/saml2/plugins/DefaultSPAuthnContextMapper.html#getAuthLevel-com.sun.identity.saml2.protocol.RequestedAuthnContext-com.sun.identity.saml2.assertion.AuthnContext-java.lang.String-java.lang.String-java.lang.String-">getAuthLevel</a></span>(<a href="../../../../../../com/sun/identity/saml2/protocol/RequestedAuthnContext.html" title="interface in com.sun.identity.saml2.protocol">RequestedAuthnContext</a>&nbsp;reqCtx,
+            <a href="../../../../../../com/sun/identity/saml2/assertion/AuthnContext.html" title="interface in com.sun.identity.saml2.assertion">AuthnContext</a>&nbsp;authnContext,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;realm,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostEntityID,
+            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idpEntityID)</code>
+<div class="block">Returns the auth level for the AuthContext</div>
 </td>
 </tr>
 </tbody>
