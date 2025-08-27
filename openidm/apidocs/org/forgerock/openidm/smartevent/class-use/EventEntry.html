@@ -163,11 +163,9 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">PluggablePublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/PluggablePublisher.html#start-org.forgerock.openidm.smartevent.Name-java.lang.Object-java.lang.Object-">start</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
+<td class="colLast"><span class="typeNameLabel">DisruptorReferringPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/DisruptorReferringPublisher.html#start-org.forgerock.openidm.smartevent.Name-java.lang.Object-java.lang.Object-">start</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;payload,
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>
-<div class="block">Pluggable implementation of the start event handling, used internally</div>
-</td>
+     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a></code></td>
@@ -185,9 +183,11 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DisruptorReferringPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/DisruptorReferringPublisher.html#start-org.forgerock.openidm.smartevent.Name-java.lang.Object-java.lang.Object-">start</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
+<td class="colLast"><span class="typeNameLabel">PluggablePublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/PluggablePublisher.html#start-org.forgerock.openidm.smartevent.Name-java.lang.Object-java.lang.Object-">start</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;payload,
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>&nbsp;</td>
+     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;context)</code>
+<div class="block">Pluggable implementation of the start event handling, used internally</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a></code></td>
@@ -206,10 +206,8 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">PluggablePublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/PluggablePublisher.html#end-org.forgerock.openidm.smartevent.Name-org.forgerock.openidm.smartevent.EventEntry-">end</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
-   <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;callingEntry)</code>
-<div class="block">Pluggable implementation of the end event handling, used internally.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">DisruptorReferringPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/DisruptorReferringPublisher.html#end-org.forgerock.openidm.smartevent.Name-org.forgerock.openidm.smartevent.EventEntry-">end</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
+   <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;delegate)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -225,8 +223,10 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">DisruptorReferringPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/DisruptorReferringPublisher.html#end-org.forgerock.openidm.smartevent.Name-org.forgerock.openidm.smartevent.EventEntry-">end</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
-   <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;delegate)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">PluggablePublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/PluggablePublisher.html#end-org.forgerock.openidm.smartevent.Name-org.forgerock.openidm.smartevent.EventEntry-">end</a></span>(<a href="../../../../../org/forgerock/openidm/smartevent/Name.html" title="class in org.forgerock.openidm.smartevent">Name</a>&nbsp;eventName,
+   <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;callingEntry)</code>
+<div class="block">Pluggable implementation of the end event handling, used internally.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -241,10 +241,8 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">PluggablePublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/PluggablePublisher.html#setResult-java.lang.Object-org.forgerock.openidm.smartevent.EventEntry-">setResult</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;result,
-         <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;callingEntry)</code>
-<div class="block">Pluggable implementation of the result event handling, used internally.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">DisruptorReferringPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/DisruptorReferringPublisher.html#setResult-java.lang.Object-org.forgerock.openidm.smartevent.EventEntry-">setResult</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;result,
+         <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;delegate)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -260,8 +258,10 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">DisruptorReferringPublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/DisruptorReferringPublisher.html#setResult-java.lang.Object-org.forgerock.openidm.smartevent.EventEntry-">setResult</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;result,
-         <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;delegate)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">PluggablePublisher.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openidm/smartevent/core/PluggablePublisher.html#setResult-java.lang.Object-org.forgerock.openidm.smartevent.EventEntry-">setResult</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;result,
+         <a href="../../../../../org/forgerock/openidm/smartevent/EventEntry.html" title="interface in org.forgerock.openidm.smartevent">EventEntry</a>&nbsp;callingEntry)</code>
+<div class="block">Pluggable implementation of the result event handling, used internally.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
