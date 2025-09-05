@@ -1,0 +1,2719 @@
+:table-caption!:
+:leveloffset: -1"
+
+[#chap-user-data-stores]
+== User Data Stores Reference
+
+[#generic-ldapv3-datastore-ref]
+=== Generic LDAPv3
+
+LDAPv3 Repository Plug-in Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+LDAPv3 Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+LDAP Server::
++
+--
+
+Format: LDAP server host name:port | server_ID | site_ID
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+LDAP Bind DN::
++
+--
+
+A user or admin with sufficient access rights to perform the supported operations.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+LDAP Bind Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-timeunit`
+
+--
+
+LDAP Organization DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-config-secure-protocol-version`
+
+--
+
+LDAP Connection Pool Maximum Size::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection_pool_max_size`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-max-result`
+
+--
+
+Search Timeout::
++
+--
+
+In seconds.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-time-limit`
+
+--
+
+LDAPv3 Plug-in Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-search-scope`
+
+--
+
+LDAP Users  Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-attribute`
+
+--
+
+LDAP Users  Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-filter`
+
+--
+
+LDAP User Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-objectclass`
+
+--
+
+LDAP User Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Create User Attribute Mapping::
++
+--
+
+Format: attribute name or TargetAttributeName=SourceAttributeName
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-createuser-attr-mapping`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+User Status Inactive Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-inactive`
+
+--
+
+LDAP Groups Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-attribute`
+
+--
+
+LDAP Groups Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-filter`
+
+--
+
+LDAP Groups Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-name`
+
+--
+
+LDAP Groups Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-value`
+
+--
+
+LDAP Groups Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-objectclass`
+
+--
+
+LDAP Groups Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-attributes`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+
+Attribute Name of Unique Member::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-uniquemember`
+
+--
+
+Attribute Name of Group Member URL::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberurl`
+
+--
+
+Default Group Member's User DN::
++
+--
+
+User automatically added when group is created.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-dftgroupmember`
+
+--
+
+LDAP People Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-name`
+
+--
+
+LDAP People Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-value`
+
+--
+
+Authentication Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-naming-attr`
+
+--
+
+Persistent Search Base DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearchbase`
+
+--
+
+Persistent Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-filter`
+
+--
+
+Persistent Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-scope`
+
+--
+
+The Delay Time Between Retries::
++
+--
+
+In milliseconds.
+
+`ssoadm` attribute: `com.iplanet.am.ldap.connection.delay.between.retries`
+
+--
+
+DN Cache::
++
+--
+
+Used to enable/disable the DN Cache within the OpenAM repository implementation.
+
+The DN Cache is used to cache DN lookups which tend to happen in bursts during authentication. The DN Cache can become out of date when a user is moved or renamed in the underlying LDAP store and this is not reflected in a persistent search result. Enable when the underlying LDAP store supports persistent search and move/rename (mod_dn) results are available.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-enabled`
+
+--
+
+DN Cache Size::
++
+--
+
+In DN items, only used when DN Cache is enabled.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-size`
+
+--
+
+[#sun-ds-with-openam-schema-datastore-ref]
+=== Sun DS with OpenAM schema
+
+LDAPv3 Repository Plug-in Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+LDAPv3 Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+LDAP Server::
++
+--
+
+Format: LDAP server host name:port | server_ID | site_ID
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+LDAP Bind DN::
++
+--
+
+A user or admin with sufficient access rights to perform the supported operations.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+LDAP Bind Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-timeunit`
+
+--
+
+LDAP Organization DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-config-secure-protocol-version`
+
+--
+
+LDAP Connection Pool Maximum Size::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection_pool_max_size`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-max-result`
+
+--
+
+Search Timeout::
++
+--
+
+In seconds.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-time-limit`
+
+--
+
+LDAPv3 Plug-in Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-search-scope`
+
+--
+
+LDAP Users  Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-attribute`
+
+--
+
+LDAP Users  Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-filter`
+
+--
+
+LDAP User Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-objectclass`
+
+--
+
+LDAP User Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Create User Attribute Mapping::
++
+--
+
+Format: attribute name or TargetAttributeName=SourceAttributeName
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-createuser-attr-mapping`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+User Status Inactive Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-inactive`
+
+--
+
+LDAP Groups Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-attribute`
+
+--
+
+LDAP Groups Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-filter`
+
+--
+
+LDAP Groups Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-name`
+
+--
+
+LDAP Groups Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-value`
+
+--
+
+LDAP Groups Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-objectclass`
+
+--
+
+LDAP Groups Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-attributes`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+
+Attribute Name of Unique Member::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-uniquemember`
+
+--
+
+Attribute Name of Group Member URL::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberurl`
+
+--
+
+LDAP Roles Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-roles-search-attribute`
+
+--
+
+LDAP Roles Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-roles-search-filter`
+
+--
+
+LDAP Roles Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-role-objectclass`
+
+--
+
+LDAP Roles Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-role-attributes`
+
+--
+
+LDAP Filter Roles Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-filterroles-search-attribute`
+
+--
+
+LDAP Filter Roles Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-filterroles-search-filter`
+
+--
+
+LDAP Filter Roles Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-filterrole-objectclass`
+
+--
+
+LDAP Filter Roles Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-filterrole-attributes`
+
+--
+
+Attribute Name for Filtered Role Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-nsrole`
+
+--
+
+Attribute Name of Role Membership.::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-nsroledn`
+
+--
+
+Attribute Name of Filtered Role Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-nsrolefilter`
+
+--
+
+LDAP People Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-name`
+
+--
+
+LDAP People Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-value`
+
+--
+
+Authentication Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-naming-attr`
+
+--
+
+Knowledge Based Authentication Attribute Name::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-attr`
+
+--
+
+Knowledge Based Authentication Active Index::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-index-attr`
+
+--
+
+Persistent Search Base DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearchbase`
+
+--
+
+Persistent Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-filter`
+
+--
+
+Persistent Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-scope`
+
+--
+
+The Delay Time Between Retries::
++
+--
+
+In milliseconds.
+
+`ssoadm` attribute: `com.iplanet.am.ldap.connection.delay.between.retries`
+
+--
+
+DN Cache::
++
+--
+
+Used to enable/disable the DN Cache within the OpenAM repository implementation.
+
+The DN Cache is used to cache DN lookups which tend to happen in bursts during authentication. The DN Cache can become out of date when a user is moved or renamed in the underlying LDAP store and this is not reflected in a persistent search result. Enable when the underlying LDAP store supports persistent search and move/rename (mod_dn) results are available.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-enabled`
+
+--
+
+DN Cache Size::
++
+--
+
+In DN items, only used when DN Cache is enabled.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-size`
+
+--
+
+[#opendj-datastore-ref]
+=== OpenDJ
+
+LDAPv3 Repository Plug-in Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+LDAPv3 Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+LDAP Server::
++
+--
+
+Format: LDAP server host name:port | server_ID | site_ID
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+LDAP Bind DN::
++
+--
+
+A user or admin with sufficient access rights to perform the supported operations.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+LDAP Bind Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-timeunit`
+
+--
+
+LDAP Organization DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-config-secure-protocol-version`
+
+--
+
+LDAP Connection Pool Maximum Size::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection_pool_max_size`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-max-result`
+
+--
+
+Search Timeout::
++
+--
+
+In seconds.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-time-limit`
+
+--
+
+LDAPv3 Plug-in Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-search-scope`
+
+--
+
+LDAP Users  Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-attribute`
+
+--
+
+LDAP Users  Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-filter`
+
+--
+
+LDAP User Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-objectclass`
+
+--
+
+LDAP User Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Create User Attribute Mapping::
++
+--
+
+Format: attribute name or TargetAttributeName=SourceAttributeName
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-createuser-attr-mapping`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+User Status Inactive Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-inactive`
+
+--
+
+LDAP Groups Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-attribute`
+
+--
+
+LDAP Groups Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-filter`
+
+--
+
+LDAP Groups Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-name`
+
+--
+
+LDAP Groups Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-value`
+
+--
+
+LDAP Groups Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-objectclass`
+
+--
+
+LDAP Groups Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-attributes`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+
+Attribute Name of Unique Member::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-uniquemember`
+
+--
+
+Attribute Name of Group Member URL::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberurl`
+
+--
+
+LDAP People Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-name`
+
+--
+
+LDAP People Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-value`
+
+--
+
+Authentication Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-naming-attr`
+
+--
+
+Knowledge Based Authentication Attribute Name::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-attr`
+
+--
+
+Knowledge Based Authentication Active Index::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-index-attr`
+
+--
+
+Persistent Search Base DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearchbase`
+
+--
+
+Persistent Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-filter`
+
+--
+
+Persistent Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-scope`
+
+--
+
+The Delay Time Between Retries::
++
+--
+
+In milliseconds.
+
+`ssoadm` attribute: `com.iplanet.am.ldap.connection.delay.between.retries`
+
+--
+
+DN Cache::
++
+--
+
+Used to enable/disable the DN Cache within the OpenAM repository implementation.
+
+The DN Cache is used to cache DN lookups which tend to happen in bursts during authentication. The DN Cache can become out of date when a user is moved or renamed in the underlying LDAP store and this is not reflected in a persistent search result. Enable when the underlying LDAP store supports persistent search and move/rename (mod_dn) results are available.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-enabled`
+
+--
+
+DN Cache Size::
++
+--
+
+In DN items, only used when DN Cache is enabled.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-size`
+
+--
+
+[#tivoli-directory-server-datastore-ref]
+=== Tivoli Directory Server
+
+LDAPv3 Repository Plug-in Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+LDAPv3 Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+LDAP Server::
++
+--
+
+Format: LDAP server host name:port | server_ID | site_ID
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+LDAP Bind DN::
++
+--
+
+A user or admin with sufficient access rights to perform the supported operations.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+LDAP Bind Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-timeunit`
+
+--
+
+LDAP Organization DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-config-secure-protocol-version`
+
+--
+
+LDAP Connection Pool Maximum Size::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection_pool_max_size`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-max-result`
+
+--
+
+Search Timeout::
++
+--
+
+In seconds.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-time-limit`
+
+--
+
+LDAPv3 Plug-in Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-search-scope`
+
+--
+
+LDAP Users  Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-attribute`
+
+--
+
+LDAP Users  Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-filter`
+
+--
+
+LDAP User Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-objectclass`
+
+--
+
+LDAP User Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Create User Attribute Mapping::
++
+--
+
+Format: attribute name or TargetAttributeName=SourceAttributeName
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-createuser-attr-mapping`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+User Status Inactive Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-inactive`
+
+--
+
+LDAP Groups Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-attribute`
+
+--
+
+LDAP Groups Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-filter`
+
+--
+
+LDAP Groups Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-name`
+
+--
+
+LDAP Groups Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-value`
+
+--
+
+LDAP Groups Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-objectclass`
+
+--
+
+LDAP Groups Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-attributes`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+
+Attribute Name of Unique Member::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-uniquemember`
+
+--
+
+Default Group Member's User DN::
++
+--
+
+User automatically added when group is created.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-dftgroupmember`
+
+--
+
+LDAP People Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-name`
+
+--
+
+LDAP People Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-value`
+
+--
+
+Authentication Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-naming-attr`
+
+--
+
+Knowledge Based Authentication Attribute Name::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-attr`
+
+--
+
+Knowledge Based Authentication Active Index::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-index-attr`
+
+--
+
+Persistent Search Base DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearchbase`
+
+--
+
+Persistent Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-filter`
+
+--
+
+Persistent Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-scope`
+
+--
+
+The Delay Time Between Retries::
++
+--
+
+In milliseconds.
+
+`ssoadm` attribute: `com.iplanet.am.ldap.connection.delay.between.retries`
+
+--
+
+DN Cache::
++
+--
+
+Used to enable/disable the DN Cache within the OpenAM repository implementation.
+
+The DN Cache is used to cache DN lookups which tend to happen in bursts during authentication. The DN Cache can become out of date when a user is moved or renamed in the underlying LDAP store and this is not reflected in a persistent search result. Enable when the underlying LDAP store supports persistent search and move/rename (mod_dn) results are available.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-enabled`
+
+--
+
+DN Cache Size::
++
+--
+
+In DN items, only used when DN Cache is enabled.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-size`
+
+--
+
+[#active-directory-datastore-ref]
+=== Active Directory
+
+LDAPv3 Repository Plug-in Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+LDAPv3 Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+LDAP Server::
++
+--
+
+Format: LDAP server host name:port | server_ID | site_ID
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+LDAP Bind DN::
++
+--
+
+A user or admin with sufficient access rights to perform the supported operations.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+LDAP Bind Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-timeunit`
+
+--
+
+LDAP Organization DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-config-secure-protocol-version`
+
+--
+
+LDAP Connection Pool Maximum Size::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection_pool_max_size`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-max-result`
+
+--
+
+Search Timeout::
++
+--
+
+In seconds.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-time-limit`
+
+--
+
+LDAPv3 Plug-in Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-search-scope`
+
+--
+
+LDAP Users  Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-attribute`
+
+--
+
+LDAP Users  Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-filter`
+
+--
+
+LDAP User Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-objectclass`
+
+--
+
+LDAP User Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Create User Attribute Mapping::
++
+--
+
+Format: attribute name or TargetAttributeName=SourceAttributeName
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-createuser-attr-mapping`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+User Status Inactive Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-inactive`
+
+--
+
+LDAP Groups Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-attribute`
+
+--
+
+LDAP Groups Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-filter`
+
+--
+
+LDAP Groups Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-name`
+
+--
+
+LDAP Groups Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-value`
+
+--
+
+LDAP Groups Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-objectclass`
+
+--
+
+LDAP Groups Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-attributes`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+
+Attribute Name of Unique Member::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-uniquemember`
+
+--
+
+LDAP People Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-name`
+
+--
+
+LDAP People Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-value`
+
+--
+
+Authentication Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-naming-attr`
+
+--
+
+Knowledge Based Authentication Attribute Name::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-attr`
+
+--
+
+Knowledge Based Authentication Active Index::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-index-attr`
+
+--
+
+Persistent Search Base DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearchbase`
+
+--
+
+Persistent Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-scope`
+
+--
+
+The Delay Time Between Retries::
++
+--
+
+In milliseconds.
+
+`ssoadm` attribute: `com.iplanet.am.ldap.connection.delay.between.retries`
+
+--
+
+DN Cache::
++
+--
+
+Used to enable/disable the DN Cache within the OpenAM repository implementation.
+
+The DN Cache is used to cache DN lookups which tend to happen in bursts during authentication. The DN Cache can become out of date when a user is moved or renamed in the underlying LDAP store and this is not reflected in a persistent search result. Enable when the underlying LDAP store supports persistent search and move/rename (mod_dn) results are available.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-enabled`
+
+--
+
+DN Cache Size::
++
+--
+
+In DN items, only used when DN Cache is enabled.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-size`
+
+--
+
+[#active-directory-application-mode-(adam)-datastore-ref]
+=== Active Directory Application Mode (ADAM)
+
+LDAPv3 Repository Plug-in Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+LDAPv3 Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+LDAP Server::
++
+--
+
+Format: LDAP server host name:port | server_ID | site_ID
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+LDAP Bind DN::
++
+--
+
+A user or admin with sufficient access rights to perform the supported operations.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+LDAP Bind Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-heartbeat-timeunit`
+
+--
+
+LDAP Organization DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-idrepo-ldapv3-config-secure-protocol-version`
+
+--
+
+LDAP Connection Pool Maximum Size::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-connection_pool_max_size`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-max-result`
+
+--
+
+Search Timeout::
++
+--
+
+In seconds.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-time-limit`
+
+--
+
+LDAPv3 Plug-in Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-search-scope`
+
+--
+
+LDAP Users  Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-attribute`
+
+--
+
+LDAP Users  Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-users-search-filter`
+
+--
+
+LDAP User Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-objectclass`
+
+--
+
+LDAP User Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Create User Attribute Mapping::
++
+--
+
+Format: attribute name or TargetAttributeName=SourceAttributeName
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-createuser-attr-mapping`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+User Status Inactive Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-inactive`
+
+--
+
+LDAP Groups Search Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-attribute`
+
+--
+
+LDAP Groups Search Filter::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-groups-search-filter`
+
+--
+
+LDAP Groups Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-name`
+
+--
+
+LDAP Groups Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-container-value`
+
+--
+
+LDAP Groups Object Class::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-objectclass`
+
+--
+
+LDAP Groups Attributes::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-group-attributes`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+
+Attribute Name of Unique Member::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-uniquemember`
+
+--
+
+LDAP People Container Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-name`
+
+--
+
+LDAP People Container Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-people-container-value`
+
+--
+
+Authentication Naming Attribute::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-naming-attr`
+
+--
+
+Knowledge Based Authentication Attribute Name::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-attr`
+
+--
+
+Knowledge Based Authentication Active Index::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-auth-kba-index-attr`
+
+--
+
+Persistent Search Base DN::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearchbase`
+
+--
+
+Persistent Search Scope::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-psearch-scope`
+
+--
+
+The Delay Time Between Retries::
++
+--
+
+In milliseconds.
+
+`ssoadm` attribute: `com.iplanet.am.ldap.connection.delay.between.retries`
+
+--
+
+DN Cache::
++
+--
+
+Used to enable/disable the DN Cache within the OpenAM repository implementation.
+
+The DN Cache is used to cache DN lookups which tend to happen in bursts during authentication. The DN Cache can become out of date when a user is moved or renamed in the underlying LDAP store and this is not reflected in a persistent search result. Enable when the underlying LDAP store supports persistent search and move/rename (mod_dn) results are available.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-enabled`
+
+--
+
+DN Cache Size::
++
+--
+
+In DN items, only used when DN Cache is enabled.
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-dncache-size`
+
+--
+
+[#files-datastore-ref]
+=== files
+
+Files Repository Plugin Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Files Repository Directory::
++
+--
+
+`ssoadm` attribute: `sunFilesIdRepoDirectory`
+
+--
+
+Caching::
++
+--
+
+`ssoadm` attribute: `sunFilesMonitorForChanges`
+
+--
+
+Cache Update Interval::
++
+--
+
+In minutes.
+
+`ssoadm` attribute: `sunFilesMonitoringTime`
+
+--
+
+User Object Classes::
++
+--
+
+`ssoadm` attribute: `sunFilesObjectClasses`
+
+--
+
+Password Attribute::
++
+--
+
+`ssoadm` attribute: `sunFilesPasswordAttr`
+
+--
+
+Status Attribute::
++
+--
+
+`ssoadm` attribute: `sunFilesStatusAttr`
+
+--
+
+Hashed Attributes::
++
+--
+
+`ssoadm` attribute: `sunFilesHashAttrs`
+
+--
+
+Encrypted Attributes::
++
+--
+
+`ssoadm` attribute: `sunFilesEncryptAttrs`
+
+--
+
+[#database-repository-(early-access)-datastore-ref]
+=== Database Repository (Early Access)
+
+Database Repository Plugin Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Attribute Name Mapping::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+Database Plug-in Supported Types and Operations::
++
+--
+
+`ssoadm` attribute: `sun-opensso-database-sunIdRepoSupportedOperations`
+
+--
+
+Database Data Access Object Plugin Class Name::
++
+--
+
+`ssoadm` attribute: `sun-opensso-database-dao-class-name`
+
+--
+
+Connection Type::
++
+--
+
+`ssoadm` attribute: `sun-opensso-database-dao-JDBCConnectionType`
+
+--
+
+Database DataSource Name::
++
+--
+
+Name specified when configuring a DataSource in the application server for connections
+
+`ssoadm` attribute: `sun-opensso-database-DataSourceJndiName`
+
+--
+
+JDBC Driver Class Name::
++
+--
+
+Class name of JDBC driver to use to get connections. URL, JDBC username and password paramters also needed
+
+`ssoadm` attribute: `sun-opensso-database-JDBCDriver`
+
+--
+
+JDBC Driver URL::
++
+--
+
+URL used as parameter by JDBC driver
+
+`ssoadm` attribute: `sun-opensso-database-JDBCUrl`
+
+--
+
+Connect This User to Database::
++
+--
+
+Connection user name used as parameter by JDBC driver
+
+`ssoadm` attribute: `sun-opensso-database-JDBCDbuser`
+
+--
+
+Password for Connecting to Database::
++
+--
+
+Password used as parameter by JDBC driver
+
+`ssoadm` attribute: `sun-opensso-database-JDBCDbpassword`
+
+--
+
+Database User Table Name::
++
+--
+
+`ssoadm` attribute: `sun-opensso-database-UserTableName`
+
+--
+
+List of User Attributes Names in Database::
++
+--
+
+`ssoadm` attribute: `sun-opensso-database-UserAttrs`
+
+--
+
+User Password Attribute Name::
++
+--
+
+Name of attribute column name in DB table for user password
+
+`ssoadm` attribute: `sun-opensso-database-UserPasswordAttr`
+
+--
+
+User ID Attribute Name::
++
+--
+
+Name of attribute column name in DB table for user id
+
+`ssoadm` attribute: `sun-opensso-database-UserIDAttr`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+Name of attribute column name in DB table to determine if user is active or inactive
+
+`ssoadm` attribute: `sun-opensso-database-UserStatusAttr`
+
+--
+
+User Status Active Value::
++
+--
+
+Value stored in the db table's user status column to represent an Active user
+
+`ssoadm` attribute: `sun-opensso-database-activeValue`
+
+--
+
+User Status Inactive Value::
++
+--
+
+Value stored in the db table's user status column to represent an Inactive user
+
+`ssoadm` attribute: `sun-opensso-database-inactiveValue`
+
+--
+
+Maximum Results Returned from Search::
++
+--
+
+Value to determine the maximum number of search results to fetch
+
+`ssoadm` attribute: `sun-opensso-database-config-max-result`
+
+--
+
+Users Search Attribute in Database::
++
+--
+
+Name of attribute column name in DB table for users LIKE search queries
+
+`ssoadm` attribute: `sun-opensso-database-config-users-search-attribute`
+
+--
+
+Database Membership table name::
++
+--
+
+`ssoadm` attribute: `sun-opensso-database-MembershipTableName`
+
+--
+
+Membership ID Attribute Name::
++
+--
+
+Name of attribute column name in DB membership table to uniquely identify a group
+
+`ssoadm` attribute: `sun-opensso-database-MembershipIDAttr`
+
+--
+
+Membership Search Attribute in Database::
++
+--
+
+Name of attribute column name in DB table for membership LIKE search queries
+
+`ssoadm` attribute: `sun-opensso-database-membership-search-attribute`
+
+--
+
+[#cassandra-datastore-ref]
+=== Cassandra
+
+Database Repository Plugin Class Name::
++
+--
+
+`ssoadm` attribute: `sunIdRepoClass`
+
+--
+
+Servers::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-ldap-server`
+
+--
+
+Keyspace::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-organization_name`
+
+--
+
+Username::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authid`
+
+--
+
+Password::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-authpw`
+
+--
+
+Operations::
++
+--
+
+`ssoadm` attribute: `sunIdRepoSupportedOperations`
+
+--
+
+Tables::
++
+--
+
+`ssoadm` attribute: `sunIdRepoAttributeMapping`
+
+--
+
+TTL::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-user-attributes`
+
+--
+
+Attribute Name of User Status::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-isactive`
+
+--
+
+User Status Active Value::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-active`
+
+--
+
+Attribute Name for Group Membership::
++
+--
+
+`ssoadm` attribute: `sun-idrepo-ldapv3-config-memberof`
+
+--
+

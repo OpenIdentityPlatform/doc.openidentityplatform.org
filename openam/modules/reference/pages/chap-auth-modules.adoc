@@ -1,0 +1,7542 @@
+:table-caption!:
+:leveloffset: -1"
+
+[#chap-auth-modules]
+== Authentication Modules Reference
+
+[#http-basic-module-ref]
+=== HTTP Basic
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/httpbasic/HTTPBasic.html[com.sun.identity.authentication.modules.httpbasic.HTTPBasic, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthHTTPBasicService`
+
+Backend Module Name::
++
+--
+
+The name of the module that will be used to perform the authentication
+
+The HTTP Basic authentication module collect the credentials from the user and will then supply said credentials to the backend authentication module using the shared state. 
+
+`ssoadm` attribute: `iplanet-am-auth-http-basic-module-configured`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-httpbasic-auth-level`
+
+--
+
+Backend Module Name::
++
+--
+
+The name of the module that will be used to perform the authentication
+
+The HTTP Basic authentication module collect the credentials from the user and will then supply said credentials to the backend authentication module using the shared state. 
+
+`ssoadm` attribute: `iplanet-am-auth-http-basic-module-configured`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-httpbasic-auth-level`
+
+--
+
+[#active-directory-module-ref]
+=== Active Directory
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/ad/AD.html[com.sun.identity.authentication.modules.ad.AD, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthADService`
+
+Primary Active Directory Server ::
++
+--
+
+Use this list to set the primary Active Directory server used for authentication. 
+
+The Active Directory authentication module will use this list as the primary server for authentication. A single entry must be in the format:
+
+`server:port`
+
+Multiple entries allow associations between OpenAM servers and an Active Directory server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server`
+
+--
+
+Secondary Active Directory Server::
++
+--
+
+Use this list to set the secondary (failover) Active Directory server used for authentication.
+
+If the primary Active Directory server fails, the Active Directory authentication module will failover to the secondary server. A single entry must be in the format:
+
+`server:port`
+
+Multiple entries allow associations between OpenAM servers and an Active Directory server. The format is:
+
+`local server name | server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server2`
+
+--
+
+Users Domain::
++
+--
+
+If set appended to a username via `@` symbol for authentication
+
+`ssoadm` attribute: `openam-binding-user-domain`
+
+--
+
+DN to Start User Search::
++
+--
+
+The search for accounts to be authenticated start from this base DN 
+
+For a single server just enter the Base DN to be searched. Multiple OpenAM servers can have different base DNs for the search The format is as follows:
+
+`local server name | search DN`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-base-dn`
+
+--
+
+Bind User DN::
++
+--
+
+The DN of an admin user used by the module to authentication to the LDAP server
+
+The LDAP module requires an administration account in order to perform functionality such as password reset.
+
+__NB __`cn=Directory Manager` should not be used in production systems.
+
+If empty, using LDAP bind request for authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-dn`
+
+--
+
+Bind User Password::
++
+--
+
+The password of the administration account.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-passwd`
+
+--
+
+Attribute Used to Retrieve User Profile::
++
+--
+
+The LDAP module will use this attribute to search of the profile of an authenticated user.
+
+This is the attribute used to find the profile of the authenticated user. Normally this will be the same attribute used to find the user account. The value will be the name of the user used for authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-naming-attribute`
+
+--
+
+Attributes Used to Search for a User to be Authenticated::
++
+--
+
+The attributes specified in this list form the LDAP search filter.
+
+The default value of uid will form the following search filter of `uid=__user__`, if there are multiple values such as uid and cn, the module will create a search filter as follows `(|(uid=__user__)(cn=__user__))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-search-attributes`
+
+--
+
+User Search Filter::
++
+--
+
+This search filter will be appended to the standard user search filter.
+
+This attribute can be used to append a custom search filter to the standard filter. For example: `(objectClass=person)`would result in the following user search filter:
+
+`(&(uid=__user__)(objectClass=person))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-filter`
+
+--
+
+Search Scope::
++
+--
+
+The level in the Directory Server that will be searched for a matching user profile.
+
+This attribute controls how the directory is searched.
+
+
+* `OBJECT`: Only the Base DN is searched.
+* `ONELEVEL`: Only the single level below (and not the Base DN) is searched
+* `SUBTREE`: The Base DN and all levels below are searched
+
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-scope`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `openam-auth-ldap-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-auth-ldap-secure-protocol-version`
+
+--
+
+Trust All Server Certificates::
++
+--
+
+Enables a `X509TrustManager` that trusts all certificates.
+
+This feature will allow the LDAP authentication module to connect to LDAP servers protected by self signed or invalid certificates (such as invalid hostname).
+
+__NB __Use this feature with care as it bypasses the normal certificate verification process
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-ssl-trust-all`
+
+--
+
+Return User DN to DataStore::
++
+--
+
+Controls whether the DN or the username is returned as the authentication principal.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-return-user-dn`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `sunAMAuthADAuthLevel`
+
+--
+
+User Creation Attributes::
++
+--
+
+Controls the mapping of local attribute to external attribute for dynamic profile creation.
+
+If dynamic profile creation is enabled; this feature allows for a mapping between the attribute/values retrieved from the users authenticated profile and the attribute/values that will be provisioned into their matching account in the data store.
+
+The format of this property is: 
+
+` local attr1|external attr1`
+
+`ssoadm` attribute: `iplanet-am-ldap-user-creation-attr-list`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+Use this option in case a firewall/loadbalancer can close idle connections, since the heartbeat requests will ensure that the connections won't become idle. Use along with the Heartbeat Time Unit parameter to define the correct interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+Use this option in case a firewall/loadbalancer can close idle connections, since the heartbeat requests will ensure that the connections won't become idle.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-timeunit`
+
+--
+
+LDAP operations timeout::
++
+--
+
+Defines the timeout in seconds OpenAM should wait for a response of the Directory Server - `0` means no timeout.
+
+If the Directory Server's host is down completely or the TCP connection became stale OpenAM waits until operation timeouts from the OS or the JVM are applied. However this setting allows more granular control within OpenAM itself. A value of `0` means NO timeout is applied on OpenAM level and the timeouts from the JVM or OS will apply.
+
+`ssoadm` attribute: `openam-auth-ldap-operation-timeout`
+
+--
+
+Primary Active Directory Server ::
++
+--
+
+Use this list to set the primary Active Directory server used for authentication. 
+
+The Active Directory authentication module will use this list as the primary server for authentication. A single entry must be in the format:
+
+`server:port`
+
+Multiple entries allow associations between OpenAM servers and an Active Directory server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server`
+
+--
+
+Secondary Active Directory Server::
++
+--
+
+Use this list to set the secondary (failover) Active Directory server used for authentication.
+
+If the primary Active Directory server fails, the Active Directory authentication module will failover to the secondary server. A single entry must be in the format:
+
+`server:port`
+
+Multiple entries allow associations between OpenAM servers and an Active Directory server. The format is:
+
+`local server name | server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server2`
+
+--
+
+Users Domain::
++
+--
+
+If set appended to a username via `@` symbol for authentication
+
+`ssoadm` attribute: `openam-binding-user-domain`
+
+--
+
+DN to Start User Search::
++
+--
+
+The search for accounts to be authenticated start from this base DN 
+
+For a single server just enter the Base DN to be searched. Multiple OpenAM servers can have different base DNs for the search The format is as follows:
+
+`local server name | search DN`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-base-dn`
+
+--
+
+Bind User DN::
++
+--
+
+The DN of an admin user used by the module to authentication to the LDAP server
+
+The LDAP module requires an administration account in order to perform functionality such as password reset.
+
+__NB __`cn=Directory Manager` should not be used in production systems.
+
+If empty, using LDAP bind request for authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-dn`
+
+--
+
+Bind User Password::
++
+--
+
+The password of the administration account.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-passwd`
+
+--
+
+Attribute Used to Retrieve User Profile::
++
+--
+
+The LDAP module will use this attribute to search of the profile of an authenticated user.
+
+This is the attribute used to find the profile of the authenticated user. Normally this will be the same attribute used to find the user account. The value will be the name of the user used for authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-naming-attribute`
+
+--
+
+Attributes Used to Search for a User to be Authenticated::
++
+--
+
+The attributes specified in this list form the LDAP search filter.
+
+The default value of uid will form the following search filter of `uid=__user__`, if there are multiple values such as uid and cn, the module will create a search filter as follows `(|(uid=__user__)(cn=__user__))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-search-attributes`
+
+--
+
+User Search Filter::
++
+--
+
+This search filter will be appended to the standard user search filter.
+
+This attribute can be used to append a custom search filter to the standard filter. For example: `(objectClass=person)`would result in the following user search filter:
+
+`(&(uid=__user__)(objectClass=person))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-filter`
+
+--
+
+Search Scope::
++
+--
+
+The level in the Directory Server that will be searched for a matching user profile.
+
+This attribute controls how the directory is searched.
+
+
+* `OBJECT`: Only the Base DN is searched.
+* `ONELEVEL`: Only the single level below (and not the Base DN) is searched
+* `SUBTREE`: The Base DN and all levels below are searched
+
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-scope`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `openam-auth-ldap-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-auth-ldap-secure-protocol-version`
+
+--
+
+Trust All Server Certificates::
++
+--
+
+Enables a `X509TrustManager` that trusts all certificates.
+
+This feature will allow the LDAP authentication module to connect to LDAP servers protected by self signed or invalid certificates (such as invalid hostname).
+
+__NB __Use this feature with care as it bypasses the normal certificate verification process
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-ssl-trust-all`
+
+--
+
+Return User DN to DataStore::
++
+--
+
+Controls whether the DN or the username is returned as the authentication principal.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-return-user-dn`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `sunAMAuthADAuthLevel`
+
+--
+
+User Creation Attributes::
++
+--
+
+Controls the mapping of local attribute to external attribute for dynamic profile creation.
+
+If dynamic profile creation is enabled; this feature allows for a mapping between the attribute/values retrieved from the users authenticated profile and the attribute/values that will be provisioned into their matching account in the data store.
+
+The format of this property is: 
+
+` local attr1|external attr1`
+
+`ssoadm` attribute: `iplanet-am-ldap-user-creation-attr-list`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+Use this option in case a firewall/loadbalancer can close idle connections, since the heartbeat requests will ensure that the connections won't become idle. Use along with the Heartbeat Time Unit parameter to define the correct interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+Use this option in case a firewall/loadbalancer can close idle connections, since the heartbeat requests will ensure that the connections won't become idle.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-timeunit`
+
+--
+
+LDAP operations timeout::
++
+--
+
+Defines the timeout in seconds OpenAM should wait for a response of the Directory Server - `0` means no timeout.
+
+If the Directory Server's host is down completely or the TCP connection became stale OpenAM waits until operation timeouts from the OS or the JVM are applied. However this setting allows more granular control within OpenAM itself. A value of `0` means NO timeout is applied on OpenAM level and the timeouts from the JVM or OS will apply.
+
+`ssoadm` attribute: `openam-auth-ldap-operation-timeout`
+
+--
+
+[#adaptive-risk--module-ref]
+=== Adaptive Risk 
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/adaptive/Adaptive.html[org.forgerock.openam.authentication.modules.adaptive.Adaptive, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthAdaptiveService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `openam-auth-adaptive-auth-level`
+
+--
+
+Risk Threshold::
++
+--
+
+If the risk threshold value is not reached after executing the different tests, the authentication is considered to be successful.
+
+Associated with many of the adaptive risk checks is a score; if a check does not passes then the score is added to the current running total. The final score is then compared with the __Risk Threshold__, if the score is lesser than said threshold the module will be successful. 
+
+`ssoadm` attribute: `openam-auth-adaptive-auth-threshold`
+
+--
+
+Failed Authentication Check::
++
+--
+
+Checks if the user has past authentication failures.
+
+Check if the OpenAM account lockout mechanism has recorded past authentication failures for the user.
+
+__NB __For this check to function, Account Lockout must be enabled.
+
+`ssoadm` attribute: `openam-auth-adaptive-failure-check`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-failure-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-failure-invert`
+
+--
+
+IP Range Check::
++
+--
+
+Enables the checking of the client IP address against a list of IP addresses.
+
+The IP range check compares the IP of the client against a list of IP addresses, if the client IP is found within said list the check is successful.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-check`
+
+--
+
+IP Range::
++
+--
+
+The list of IP address to compare against the client IP address.
+
+The format of the IP address is as follows:
+
+
+* Single IP address: `172.16.90.1`
+* CIDR notation: `172.16.90.0/24`
+* IP net-block with netmask: `172.16.90.0:255.255.255.0`
+
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-range`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-invert`
+
+--
+
+IP History Check::
++
+--
+
+Enables the checking of client IP address against a list of past IP addresses.
+
+If this check is enabled; a set number of past IP addresses used by the client to access OpenAM is recorded in the user profile. This check passes if the current client IP address is present in the history list. If the IP address is not present, the check fails and the IP address is added to list if the overall authentication is successful (causing the oldest IP address to be removed).
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-check`
+
+--
+
+History size::
++
+--
+
+The number of client IP addresses to save in the history list.
+
+`ssoadm` attribute: `openam-auth-ip-adaptive-history-count`
+
+--
+
+Profile Attribute Name::
++
+--
+
+The name of the attribute used to store the IP history list in the data store.
+
+IP history list is stored in the Data Store meaning your Data Store should be able to store values under the configured attribute name. If you're using a directory server as backend, make sure your Data Store configuration contains the necessary objectclass and attribute related settings.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-attribute`
+
+--
+
+Save Successful IP Address::
++
+--
+
+The IP History list will be updated in the data store
+
+The Adaptive Risk Post Authentication Plug-in will update the IP history list if the overall authentication is successful.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-invert`
+
+--
+
+Cookie Value Check::
++
+--
+
+Enables the checking of a known cookie value in the client request
+
+If this check is enabled, the check looks for a known cookie in the client request. If the cookie exists and has the correct value then the check will pass. 
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-check`
+
+--
+
+Cookie Name::
++
+--
+
+The name of the cookie to set on the client.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-name`
+
+--
+
+Cookie Value::
++
+--
+
+The value to be set on the cookie.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-value`
+
+--
+
+Save Cookie Value on Successful Login::
++
+--
+
+The cookie will be created on the client after successful login
+
+The Adaptive Risk Post Authentication Plug-in will set the cookie on the client response
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-invert`
+
+--
+
+Device Registration Cookie Check::
++
+--
+
+Enables the checking of the client request for a known cookie.
+
+If this check is enabled, the check will pass if the client request contains the named cookie.
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-check`
+
+--
+
+Cookie Name::
++
+--
+
+The name of the cookie to be checked for (and optionally set) on the client request
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-name`
+
+--
+
+Save Device Registration on Successful Login::
++
+--
+
+Set the device cookie on the client response
+
+The Adaptive Risk Post Authentication Plug-in will set the device cookie on the client response
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-invert`
+
+--
+
+Time since Last login Check::
++
+--
+
+Enables the checking of the last time the user successfully authenticated.
+
+If this check is enabled, the check ensures the user has successfully authenticated within a given interval. If the interval has been exceeded the check will fail. The last authentication for the user is stored in a client cookie.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-check`
+
+--
+
+Cookie Name::
++
+--
+
+The name of the cookie used to store the time of the last successful authentication.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-cookie-name`
+
+--
+
+Max Time since Last login::
++
+--
+
+The maximum number of days that can elapse before this test.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-value`
+
+--
+
+Save time of Successful Login::
++
+--
+
+The last login time will be saved in a client cookie
+
+The Adaptive Risk Post Authentication Plug-in will update the last login time
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-invert`
+
+--
+
+Profile Risk Attribute check::
++
+--
+
+Enables the checking of the user profile for a matching attribute and value.
+
+If this check is enabled, the check will pass if the users profile contains the required risk attribute and value.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-check`
+
+--
+
+Attribute Name::
++
+--
+
+The name of the attribute to retrieve from the user profile in the data store.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-name`
+
+--
+
+Attribute Value::
++
+--
+
+The required value of the named attribute.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-value`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-invert`
+
+--
+
+Geolocation Country Code Check::
++
+--
+
+Enables the checking of the client IP address against the geolocation database.
+
+The geolocation database associates IP addresses against their known location. This check passes if the country associated with the client IP address is matched against the list of valid country codes.
+
+The geolocation database is available in binary format at http://www.maxmind.com/app/country[MaxMind].
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-check`
+
+--
+
+Geolocation Database location::
++
+--
+
+The path to the location of the GEO location database.
+
+The Geolocation database is not distributed with OpenAM, you can get it in binary format from http://www.maxmind.com/app/country[MaxMind].
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-database`
+
+--
+
+Valid Country Codes::
++
+--
+
+The list of country codes that are considered as valid locations for client IPs.
+
+The list is made up of country codes separated by a | character; for example:
+
+`gb|us|no|fr`
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-values`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-invert`
+
+--
+
+Request Header Check::
++
+--
+
+Enables the checking of the client request for a known header name and value.
+
+The request header check will pass if the client request contains the required named header and value.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-check`
+
+--
+
+Request Header Name::
++
+--
+
+The name of the required HTTP header 
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-name`
+
+--
+
+Request Header Value::
++
+--
+
+The required value of the named HTTP header.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-value`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-invert`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `openam-auth-adaptive-auth-level`
+
+--
+
+Risk Threshold::
++
+--
+
+If the risk threshold value is not reached after executing the different tests, the authentication is considered to be successful.
+
+Associated with many of the adaptive risk checks is a score; if a check does not passes then the score is added to the current running total. The final score is then compared with the __Risk Threshold__, if the score is lesser than said threshold the module will be successful. 
+
+`ssoadm` attribute: `openam-auth-adaptive-auth-threshold`
+
+--
+
+Failed Authentication Check::
++
+--
+
+Checks if the user has past authentication failures.
+
+Check if the OpenAM account lockout mechanism has recorded past authentication failures for the user.
+
+__NB __For this check to function, Account Lockout must be enabled.
+
+`ssoadm` attribute: `openam-auth-adaptive-failure-check`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-failure-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-failure-invert`
+
+--
+
+IP Range Check::
++
+--
+
+Enables the checking of the client IP address against a list of IP addresses.
+
+The IP range check compares the IP of the client against a list of IP addresses, if the client IP is found within said list the check is successful.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-check`
+
+--
+
+IP Range::
++
+--
+
+The list of IP address to compare against the client IP address.
+
+The format of the IP address is as follows:
+
+
+* Single IP address: `172.16.90.1`
+* CIDR notation: `172.16.90.0/24`
+* IP net-block with netmask: `172.16.90.0:255.255.255.0`
+
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-range`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-range-invert`
+
+--
+
+IP History Check::
++
+--
+
+Enables the checking of client IP address against a list of past IP addresses.
+
+If this check is enabled; a set number of past IP addresses used by the client to access OpenAM is recorded in the user profile. This check passes if the current client IP address is present in the history list. If the IP address is not present, the check fails and the IP address is added to list if the overall authentication is successful (causing the oldest IP address to be removed).
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-check`
+
+--
+
+History size::
++
+--
+
+The number of client IP addresses to save in the history list.
+
+`ssoadm` attribute: `openam-auth-ip-adaptive-history-count`
+
+--
+
+Profile Attribute Name::
++
+--
+
+The name of the attribute used to store the IP history list in the data store.
+
+IP history list is stored in the Data Store meaning your Data Store should be able to store values under the configured attribute name. If you're using a directory server as backend, make sure your Data Store configuration contains the necessary objectclass and attribute related settings.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-attribute`
+
+--
+
+Save Successful IP Address::
++
+--
+
+The IP History list will be updated in the data store
+
+The Adaptive Risk Post Authentication Plug-in will update the IP history list if the overall authentication is successful.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-ip-history-invert`
+
+--
+
+Cookie Value Check::
++
+--
+
+Enables the checking of a known cookie value in the client request
+
+If this check is enabled, the check looks for a known cookie in the client request. If the cookie exists and has the correct value then the check will pass. 
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-check`
+
+--
+
+Cookie Name::
++
+--
+
+The name of the cookie to set on the client.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-name`
+
+--
+
+Cookie Value::
++
+--
+
+The value to be set on the cookie.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-value`
+
+--
+
+Save Cookie Value on Successful Login::
++
+--
+
+The cookie will be created on the client after successful login
+
+The Adaptive Risk Post Authentication Plug-in will set the cookie on the client response
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-known-cookie-invert`
+
+--
+
+Device Registration Cookie Check::
++
+--
+
+Enables the checking of the client request for a known cookie.
+
+If this check is enabled, the check will pass if the client request contains the named cookie.
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-check`
+
+--
+
+Cookie Name::
++
+--
+
+The name of the cookie to be checked for (and optionally set) on the client request
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-name`
+
+--
+
+Save Device Registration on Successful Login::
++
+--
+
+Set the device cookie on the client response
+
+The Adaptive Risk Post Authentication Plug-in will set the device cookie on the client response
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-device-cookie-invert`
+
+--
+
+Time since Last login Check::
++
+--
+
+Enables the checking of the last time the user successfully authenticated.
+
+If this check is enabled, the check ensures the user has successfully authenticated within a given interval. If the interval has been exceeded the check will fail. The last authentication for the user is stored in a client cookie.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-check`
+
+--
+
+Cookie Name::
++
+--
+
+The name of the cookie used to store the time of the last successful authentication.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-cookie-name`
+
+--
+
+Max Time since Last login::
++
+--
+
+The maximum number of days that can elapse before this test.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-value`
+
+--
+
+Save time of Successful Login::
++
+--
+
+The last login time will be saved in a client cookie
+
+The Adaptive Risk Post Authentication Plug-in will update the last login time
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-save`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-time-since-last-login-invert`
+
+--
+
+Profile Risk Attribute check::
++
+--
+
+Enables the checking of the user profile for a matching attribute and value.
+
+If this check is enabled, the check will pass if the users profile contains the required risk attribute and value.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-check`
+
+--
+
+Attribute Name::
++
+--
+
+The name of the attribute to retrieve from the user profile in the data store.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-name`
+
+--
+
+Attribute Value::
++
+--
+
+The required value of the named attribute.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-value`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-risk-attribute-invert`
+
+--
+
+Geolocation Country Code Check::
++
+--
+
+Enables the checking of the client IP address against the geolocation database.
+
+The geolocation database associates IP addresses against their known location. This check passes if the country associated with the client IP address is matched against the list of valid country codes.
+
+The geolocation database is available in binary format at http://www.maxmind.com/app/country[MaxMind].
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-check`
+
+--
+
+Geolocation Database location::
++
+--
+
+The path to the location of the GEO location database.
+
+The Geolocation database is not distributed with OpenAM, you can get it in binary format from http://www.maxmind.com/app/country[MaxMind].
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-database`
+
+--
+
+Valid Country Codes::
++
+--
+
+The list of country codes that are considered as valid locations for client IPs.
+
+The list is made up of country codes separated by a | character; for example:
+
+`gb|us|no|fr`
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-values`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-geo-location-invert`
+
+--
+
+Request Header Check::
++
+--
+
+Enables the checking of the client request for a known header name and value.
+
+The request header check will pass if the client request contains the required named header and value.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-check`
+
+--
+
+Request Header Name::
++
+--
+
+The name of the required HTTP header 
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-name`
+
+--
+
+Request Header Value::
++
+--
+
+The required value of the named HTTP header.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-value`
+
+--
+
+Score::
++
+--
+
+The amount to increment the score if this check fails.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-score`
+
+--
+
+Invert Result::
++
+--
+
+If the check succeeds the score will be included in the total, for failure the score will not be incremented.
+
+`ssoadm` attribute: `openam-auth-adaptive-req-header-invert`
+
+--
+
+[#anonymous-module-ref]
+=== Anonymous
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/anonymous/Anonymous.html[com.sun.identity.authentication.modules.anonymous.Anonymous, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthAnonymousService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-auth-level`
+
+--
+
+Valid Anonymous Users::
++
+--
+
+List of accounts that are allowed to login without providing credentials.
+
+Any username on this list will be allows anonymous access to OpenAM. Usernames listed here must have matching profiles in the data store or the user profile requirement must be disabled. The username can be specified during anonymous authentication as follows:
+
+`/openam/UI/Login?module=anonymous&IDToken1=__username__`
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-users-list`
+
+--
+
+Default Anonymous User Name::
++
+--
+
+The default username to use if no username is supplied during authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-default-user-name`
+
+--
+
+Case Sensitive User IDs::
++
+--
+
+If enabled, username matching will be case sensitive.
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-case-sensitive`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-auth-level`
+
+--
+
+Valid Anonymous Users::
++
+--
+
+List of accounts that are allowed to login without providing credentials.
+
+Any username on this list will be allows anonymous access to OpenAM. Usernames listed here must have matching profiles in the data store or the user profile requirement must be disabled. The username can be specified during anonymous authentication as follows:
+
+`/openam/UI/Login?module=anonymous&IDToken1=__username__`
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-users-list`
+
+--
+
+Default Anonymous User Name::
++
+--
+
+The default username to use if no username is supplied during authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-default-user-name`
+
+--
+
+Case Sensitive User IDs::
++
+--
+
+If enabled, username matching will be case sensitive.
+
+`ssoadm` attribute: `iplanet-am-auth-anonymous-case-sensitive`
+
+--
+
+[#certificate-module-ref]
+=== Certificate
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/cert/Cert.html[com.sun.identity.authentication.modules.cert.Cert, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthCertService`
+
+Match Certificate in LDAP::
++
+--
+
+The client certificate must exist in the directory for the authentication to be successful.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-check-cert-in-ldap`
+
+--
+
+Subject DN Attribute Used to Search LDAP for Certificates::
++
+--
+
+This is the attribute used to search the directory for the certificate
+
+The Certificate module will search the directory for the certificate using the search filter based on this attribute and the value of the Subject DN taken from the certificate.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-attr-check-ldap`
+
+--
+
+Match Certificate to CRL::
++
+--
+
+The Client Certificate will be checked against the Certificate Revocation list held in the directory
+
+A Certificate Revocation List can be provisioned into the directory. Having this option enabled will cause all client certificates to be checked against this list.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-check-crl`
+
+--
+
+Match CA Certificate to CRL::
++
+--
+
+The CA certificate that issued the client certificate will also be checked against the CRL.
+
+`ssoadm` attribute: `sunAMValidateCACert`
+
+--
+
+Issuer DN Attribute(s) Used to Search LDAP for CRLs::
++
+--
+
+This is the name of the attribute taken from the CA certificate that will be used to search the CRL.
+
+If only one attribute name is specified, the ldap searchfilter will be (attrName=Value_of_the_corresponding_Attribute_from_SubjectDN)
+
+e.g. SubjectDN of issuer cert 'C=US, CN=Some CA, serialNumber=123456',attribute name specified is 'CN', searchfilter used will be `(CN=Some CA)`
+
+If serveral attribute names are specified, they have to separated by `,`. The resulting ldap searchfilter value will be a comma separated list of name attribute values, the search attribute will be `cn`
+
+e.g. SubjectDN of issuer cert 'C=US, CN=Some CA, serialNumber=123456',attribute names specified are 'CN,serialNumber', searchfilter used will be `cn=CN=Some CA,serialNumber=123456`
+
+The order of the values of the attribute names matter as they must match the value of the `cn` attribute of a crlDistributionPoint entry in the directory server.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-attr-check-crl`
+
+--
+
+Cache CRLs in memory::
++
+--
+
+The CRLs will be cached in memory
+
+`ssoadm` attribute: `openam-am-auth-cert-attr-cache-crl`
+
+--
+
+HTTP Parameters for CRL Update::
++
+--
+
+These parameters will be included in any HTTP CRL call to the Certificate Authority
+
+If the Client or CA certificate contains the Issuing Distribution Point Extension then OpenAM will use this information to retrieve the CRL from the distribution point. This property allow custom HTTP parameters to be included in the CRL request.
+
+The format of the parameter is as follows:
+
+`param1=value1,param2=value`
+
+`ssoadm` attribute: `iplanet-am-auth-cert-param-get-crl`
+
+--
+
+Update CA CRLs from CRLDistributionPoint::
++
+--
+
+Fetch new CA CRLs from CRLDistributionPoint and update it in Directory Server
+
+If the CA certificate includes an IssuingDistributionPoint or has an CRLDistributionPoint extension set OpenAM tries to update the CRLs if neeed (i.e. CRL is out-of-date). 
+
+This property controls if the update should be performed.
+
+This property is only used if CA CRL checking is enabled.
+
+`ssoadm` attribute: `openam-am-auth-cert-update-crl`
+
+--
+
+OCSP Validation::
++
+--
+
+Enable Online Certificate Status Protocol validation for OCSP aware certificates
+
+If the certificate contains OCSP validation information then OpenAM will use this information to check the validity of the certificate as part of the authentication process.
+
+__NB __The OpenAM server must have Internet connectivity for OCSP to work
+
+`ssoadm` attribute: `iplanet-am-auth-cert-check-ocsp`
+
+--
+
+LDAP Server Where Certificates are Stored::
++
+--
+
+Use this list to set the LDAP server used to search for certificates. 
+
+The Certificate authentication module will use this list for the LDAP server used to search for certificates. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-ldap-provider-url`
+
+--
+
+LDAP Search Start or Base DN::
++
+--
+
+The start point in the LDAP server for the certificate search
+
+When entering multiple entries, each entry must be prefixed with a local server name. Multiple entries allow different search Base DNs depending on the OpenAM server in use. The format is:
+
+`local server name | base dn`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-start-search-loc`
+
+--
+
+LDAP Server Authentication User::
++
+--
+
+DN of the user used by the module to authenticate to the LDAP server
+
+The Certificate module authenticates to the LDAP server in order to search for a matching certificate. The DN entered here represents the account used for said authentication and must have read/search access to the LDAP server.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-principal-user`
+
+--
+
+LDAP Server Authentication Password::
++
+--
+
+The password for the authentication user
+
+`ssoadm` attribute: `iplanet-am-auth-cert-principal-passwd`
+
+--
+
+Use SSL/TLS for LDAP Access::
++
+--
+
+The certificate module will use SSL/TLS to access the LDAP server
+
+`ssoadm` attribute: `iplanet-am-auth-cert-use-ssl`
+
+--
+
+Certificate Field Used to Access User Profile::
++
+--
+
+The certificate module needs to read a value from the client certificate that can be used to search the LDAP server for a matching certificate. 
+
+`ssoadm` attribute: `iplanet-am-auth-cert-user-profile-mapper`
+
+--
+
+Other Certificate Field Used to Access User Profile::
++
+--
+
+This field is only used if the __Certificate Field Used to Access User Profile__ attribute is set to __other__. This field allows a custom certificate field to be used as the basis of the user search.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-user-profile-mapper-other`
+
+--
+
+SubjectAltNameExt Value Type to Access User Profile::
++
+--
+
+Use the Subject Alternative Name Field in preference to one of the standard certificate fields.
+
+Selecting RFC822Name or UPN will cause this field to have have precedence over the __Certificate Field Used to Access User Profile__ or __Other Certificate Field Used to Access User Profile__ attribute.
+
+__NB __The client certificate must contain the __Subject Alternate Name Extension__ for this function to operate.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-user-profile-mapper-ext`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-cert-auth-level`
+
+--
+
+Trusted Remote Hosts::
++
+--
+
+A list of IP addresses trusted to supply client certificates.
+
+If SSL/TLS is being terminated at a load balancer or at the Distributed Authentication server then this option can be used to ensure that only specified __trusted__ hosts (identified by IP address) are allowed to supply client certificates to the certificate module,
+
+Valid values for this list are as follows:
+* none
+* any
+* multiple IP addresses
+
+
+The default value of __none__ disables this functionality
+
+`ssoadm` attribute: `iplanet-am-auth-cert-gw-cert-auth-enabled`
+
+--
+
+HTTP Header Name for Client Certificate::
++
+--
+
+The name of the HTTP request header containing the certificate, only used when __Trusted Remote Hosts__ mode is enabled.
+
+`ssoadm` attribute: `sunAMHttpParamName`
+
+--
+
+Use only Certificate from HTTP request header::
++
+--
+
+Strictly use client cert from HTTP header over cert from HTTPS connection/servlet attribute
+
+`ssoadm` attribute: `iplanet-am-auth-cert-gw-cert-preferred`
+
+--
+
+Match Certificate in LDAP::
++
+--
+
+The client certificate must exist in the directory for the authentication to be successful.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-check-cert-in-ldap`
+
+--
+
+Subject DN Attribute Used to Search LDAP for Certificates::
++
+--
+
+This is the attribute used to search the directory for the certificate
+
+The Certificate module will search the directory for the certificate using the search filter based on this attribute and the value of the Subject DN taken from the certificate.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-attr-check-ldap`
+
+--
+
+Match Certificate to CRL::
++
+--
+
+The Client Certificate will be checked against the Certificate Revocation list held in the directory
+
+A Certificate Revocation List can be provisioned into the directory. Having this option enabled will cause all client certificates to be checked against this list.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-check-crl`
+
+--
+
+Match CA Certificate to CRL::
++
+--
+
+The CA certificate that issued the client certificate will also be checked against the CRL.
+
+`ssoadm` attribute: `sunAMValidateCACert`
+
+--
+
+Issuer DN Attribute(s) Used to Search LDAP for CRLs::
++
+--
+
+This is the name of the attribute taken from the CA certificate that will be used to search the CRL.
+
+If only one attribute name is specified, the ldap searchfilter will be (attrName=Value_of_the_corresponding_Attribute_from_SubjectDN)
+
+e.g. SubjectDN of issuer cert 'C=US, CN=Some CA, serialNumber=123456',attribute name specified is 'CN', searchfilter used will be `(CN=Some CA)`
+
+If serveral attribute names are specified, they have to separated by `,`. The resulting ldap searchfilter value will be a comma separated list of name attribute values, the search attribute will be `cn`
+
+e.g. SubjectDN of issuer cert 'C=US, CN=Some CA, serialNumber=123456',attribute names specified are 'CN,serialNumber', searchfilter used will be `cn=CN=Some CA,serialNumber=123456`
+
+The order of the values of the attribute names matter as they must match the value of the `cn` attribute of a crlDistributionPoint entry in the directory server.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-attr-check-crl`
+
+--
+
+Cache CRLs in memory::
++
+--
+
+The CRLs will be cached in memory
+
+`ssoadm` attribute: `openam-am-auth-cert-attr-cache-crl`
+
+--
+
+HTTP Parameters for CRL Update::
++
+--
+
+These parameters will be included in any HTTP CRL call to the Certificate Authority
+
+If the Client or CA certificate contains the Issuing Distribution Point Extension then OpenAM will use this information to retrieve the CRL from the distribution point. This property allow custom HTTP parameters to be included in the CRL request.
+
+The format of the parameter is as follows:
+
+`param1=value1,param2=value`
+
+`ssoadm` attribute: `iplanet-am-auth-cert-param-get-crl`
+
+--
+
+Update CA CRLs from CRLDistributionPoint::
++
+--
+
+Fetch new CA CRLs from CRLDistributionPoint and update it in Directory Server
+
+If the CA certificate includes an IssuingDistributionPoint or has an CRLDistributionPoint extension set OpenAM tries to update the CRLs if neeed (i.e. CRL is out-of-date). 
+
+This property controls if the update should be performed.
+
+This property is only used if CA CRL checking is enabled.
+
+`ssoadm` attribute: `openam-am-auth-cert-update-crl`
+
+--
+
+OCSP Validation::
++
+--
+
+Enable Online Certificate Status Protocol validation for OCSP aware certificates
+
+If the certificate contains OCSP validation information then OpenAM will use this information to check the validity of the certificate as part of the authentication process.
+
+__NB __The OpenAM server must have Internet connectivity for OCSP to work
+
+`ssoadm` attribute: `iplanet-am-auth-cert-check-ocsp`
+
+--
+
+LDAP Server Where Certificates are Stored::
++
+--
+
+Use this list to set the LDAP server used to search for certificates. 
+
+The Certificate authentication module will use this list for the LDAP server used to search for certificates. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-ldap-provider-url`
+
+--
+
+LDAP Search Start or Base DN::
++
+--
+
+The start point in the LDAP server for the certificate search
+
+When entering multiple entries, each entry must be prefixed with a local server name. Multiple entries allow different search Base DNs depending on the OpenAM server in use. The format is:
+
+`local server name | base dn`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-start-search-loc`
+
+--
+
+LDAP Server Authentication User::
++
+--
+
+DN of the user used by the module to authenticate to the LDAP server
+
+The Certificate module authenticates to the LDAP server in order to search for a matching certificate. The DN entered here represents the account used for said authentication and must have read/search access to the LDAP server.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-principal-user`
+
+--
+
+LDAP Server Authentication Password::
++
+--
+
+The password for the authentication user
+
+`ssoadm` attribute: `iplanet-am-auth-cert-principal-passwd`
+
+--
+
+Use SSL/TLS for LDAP Access::
++
+--
+
+The certificate module will use SSL/TLS to access the LDAP server
+
+`ssoadm` attribute: `iplanet-am-auth-cert-use-ssl`
+
+--
+
+Certificate Field Used to Access User Profile::
++
+--
+
+The certificate module needs to read a value from the client certificate that can be used to search the LDAP server for a matching certificate. 
+
+`ssoadm` attribute: `iplanet-am-auth-cert-user-profile-mapper`
+
+--
+
+Other Certificate Field Used to Access User Profile::
++
+--
+
+This field is only used if the __Certificate Field Used to Access User Profile__ attribute is set to __other__. This field allows a custom certificate field to be used as the basis of the user search.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-user-profile-mapper-other`
+
+--
+
+SubjectAltNameExt Value Type to Access User Profile::
++
+--
+
+Use the Subject Alternative Name Field in preference to one of the standard certificate fields.
+
+Selecting RFC822Name or UPN will cause this field to have have precedence over the __Certificate Field Used to Access User Profile__ or __Other Certificate Field Used to Access User Profile__ attribute.
+
+__NB __The client certificate must contain the __Subject Alternate Name Extension__ for this function to operate.
+
+`ssoadm` attribute: `iplanet-am-auth-cert-user-profile-mapper-ext`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-cert-auth-level`
+
+--
+
+Trusted Remote Hosts::
++
+--
+
+A list of IP addresses trusted to supply client certificates.
+
+If SSL/TLS is being terminated at a load balancer or at the Distributed Authentication server then this option can be used to ensure that only specified __trusted__ hosts (identified by IP address) are allowed to supply client certificates to the certificate module,
+
+Valid values for this list are as follows:
+* none
+* any
+* multiple IP addresses
+
+
+The default value of __none__ disables this functionality
+
+`ssoadm` attribute: `iplanet-am-auth-cert-gw-cert-auth-enabled`
+
+--
+
+HTTP Header Name for Client Certificate::
++
+--
+
+The name of the HTTP request header containing the certificate, only used when __Trusted Remote Hosts__ mode is enabled.
+
+`ssoadm` attribute: `sunAMHttpParamName`
+
+--
+
+Use only Certificate from HTTP request header::
++
+--
+
+Strictly use client cert from HTTP header over cert from HTTPS connection/servlet attribute
+
+`ssoadm` attribute: `iplanet-am-auth-cert-gw-cert-preferred`
+
+--
+
+[#data-store-module-ref]
+=== Data Store
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/datastore/DataStore.html[com.sun.identity.authentication.modules.datastore.DataStore, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthDataStoreService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthDataStoreAuthLevel`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthDataStoreAuthLevel`
+
+--
+
+[#persistent-cookie-module-ref]
+=== Persistent Cookie
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/persistentcookie/PersistentCookie.html[org.forgerock.openam.authentication.modules.persistentcookie.PersistentCookie, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthPersistentCookieService`
+
+Idle Timeout::
++
+--
+
+The maximum idle time between requests before the cookie is invalidated, in hours.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-idle-time`
+
+--
+
+Max Life::
++
+--
+
+The maximum length of time the persistent cookie is valid for, in hours.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-max-life`
+
+--
+
+Enforce Client IP::
++
+--
+
+Enforces that the persistent cookie can only be used from the same client IP to which the cookie was issued.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-enforce-ip`
+
+--
+
+Use secure cookie::
++
+--
+
+Sets the persistent cookie as "Secure"
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-secure-cookie`
+
+--
+
+Use HTTP only cookie::
++
+--
+
+Sets the persistent cookie as "HttpOnly"
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-http-only-cookie`
+
+--
+
+HMAC Signing Key::
++
+--
+
+Base64-encoded 256-bit key to use for HMAC signing of the cookie.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-hmac-key`
+
+--
+
+Cookie name::
++
+--
+
+default session-jwt
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-name`
+
+--
+
+Check box name::
++
+--
+
+The name of the check box, which means that the function is enabled by the user
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-input`
+
+--
+
+Repository field::
++
+--
+
+The name of the field in the repository in which the issued tokens are stored
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-field`
+
+--
+
+Maximum devices::
++
+--
+
+Maximum number of tokens (devices) per user
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-field-max`
+
+--
+
+Idle Timeout::
++
+--
+
+The maximum idle time between requests before the cookie is invalidated, in hours.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-idle-time`
+
+--
+
+Max Life::
++
+--
+
+The maximum length of time the persistent cookie is valid for, in hours.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-max-life`
+
+--
+
+Enforce Client IP::
++
+--
+
+Enforces that the persistent cookie can only be used from the same client IP to which the cookie was issued.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-enforce-ip`
+
+--
+
+Use secure cookie::
++
+--
+
+Sets the persistent cookie as "Secure"
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-secure-cookie`
+
+--
+
+Use HTTP only cookie::
++
+--
+
+Sets the persistent cookie as "HttpOnly"
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-http-only-cookie`
+
+--
+
+HMAC Signing Key::
++
+--
+
+Base64-encoded 256-bit key to use for HMAC signing of the cookie.
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-hmac-key`
+
+--
+
+Cookie name::
++
+--
+
+default session-jwt
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-name`
+
+--
+
+Check box name::
++
+--
+
+The name of the check box, which means that the function is enabled by the user
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-input`
+
+--
+
+Repository field::
++
+--
+
+The name of the field in the repository in which the issued tokens are stored
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-field`
+
+--
+
+Maximum devices::
++
+--
+
+Maximum number of tokens (devices) per user
+
+`ssoadm` attribute: `openam-auth-persistent-cookie-field-max`
+
+--
+
+[#jdbc-module-ref]
+=== JDBC
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/jdbc/JDBC.html[com.sun.identity.authentication.modules.jdbc.JDBC, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthJDBCService`
+
+Connection Type::
++
+--
+
+Controls how the authentication module will obtain the JDBC connection to the database.
+
+If the connection type is non-persistent JDBC connection then the JDBC driver must be available to the OpenAM web-app. If the connection type is JNDI, the OpenAM web application deployment descriptor `web.xml` must be updated to include the correct JNDI JDBC resource information. The J2EE container must also be configured with the correct JNDI JDBC configuration.
+
+`ssoadm` attribute: `sunAMAuthJDBCConnectionType`
+
+--
+
+Connection Pool JNDI Name::
++
+--
+
+The JNDI URL to the JDBC connection pool
+
+The JNDI URL refers to the JDBC connection pool created in the J2EE container for the authentication database.
+
+__NB __Only used when connection type is JNDI
+
+`ssoadm` attribute: `sunAMAuthJDBCJndiName`
+
+--
+
+JDBC Driver::
++
+--
+
+The classname of the JDBC driver to use.
+
+The fully qualified class name of the JDBC driver to use to connect to the database. Only Oracle or MySQL drivers are supported. JDBC drivers for other database may work, but the database will be treated as if it was Oracle.
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCDriver`
+
+--
+
+JDBC URL::
++
+--
+
+The JDBC URL used to initialise the JDBC driver
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCUrl`
+
+--
+
+Database Username::
++
+--
+
+This username will be used to authenticate to the database
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCDbuser`
+
+--
+
+Database Password::
++
+--
+
+The password used to authenticate to the database
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCDbpassword`
+
+--
+
+Password Column Name::
++
+--
+
+The name of the column in the database containing the user passwords
+
+This property will be used to retrieve the correct column containing the password from the results table returned by the database
+
+`ssoadm` attribute: `sunAMAuthJDBCPasswordColumn`
+
+--
+
+Prepared Statement::
++
+--
+
+The SQL statement used to search the database for user passwords
+
+The SQL statement used to search the database for the user password. A single property of the supplied username is provided by the module. The result of the search should be a single row that contains the password for the user under the specified column.
+
+`ssoadm` attribute: `sunAMAuthJDBCStatement`
+
+--
+
+Class to Transform Password Syntax::
++
+--
+
+This class is used to transform the password retrieved from the database.
+
+The default implementation for this property is `ClearTextTransform` that performs no transformation. If the password field retrieved from the database needs to be transformed before comparing with the supplied credentials; a custom implementation should be provided. Any custom implementation must implement the following interface `com.sun.identity.authentication.modules.jdbc.JDBCPasswordSyntaxTransform`
+
+`ssoadm` attribute: `sunAMAuthJDBCPasswordSyntaxTransformPlugin`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthJDBCAuthLevel`
+
+--
+
+Connection Type::
++
+--
+
+Controls how the authentication module will obtain the JDBC connection to the database.
+
+If the connection type is non-persistent JDBC connection then the JDBC driver must be available to the OpenAM web-app. If the connection type is JNDI, the OpenAM web application deployment descriptor `web.xml` must be updated to include the correct JNDI JDBC resource information. The J2EE container must also be configured with the correct JNDI JDBC configuration.
+
+`ssoadm` attribute: `sunAMAuthJDBCConnectionType`
+
+--
+
+Connection Pool JNDI Name::
++
+--
+
+The JNDI URL to the JDBC connection pool
+
+The JNDI URL refers to the JDBC connection pool created in the J2EE container for the authentication database.
+
+__NB __Only used when connection type is JNDI
+
+`ssoadm` attribute: `sunAMAuthJDBCJndiName`
+
+--
+
+JDBC Driver::
++
+--
+
+The classname of the JDBC driver to use.
+
+The fully qualified class name of the JDBC driver to use to connect to the database. Only Oracle or MySQL drivers are supported. JDBC drivers for other database may work, but the database will be treated as if it was Oracle.
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCDriver`
+
+--
+
+JDBC URL::
++
+--
+
+The JDBC URL used to initialise the JDBC driver
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCUrl`
+
+--
+
+Database Username::
++
+--
+
+This username will be used to authenticate to the database
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCDbuser`
+
+--
+
+Database Password::
++
+--
+
+The password used to authenticate to the database
+
+__NB __Only used when connection type is JDBC
+
+`ssoadm` attribute: `sunAMAuthJDBCDbpassword`
+
+--
+
+Password Column Name::
++
+--
+
+The name of the column in the database containing the user passwords
+
+This property will be used to retrieve the correct column containing the password from the results table returned by the database
+
+`ssoadm` attribute: `sunAMAuthJDBCPasswordColumn`
+
+--
+
+Prepared Statement::
++
+--
+
+The SQL statement used to search the database for user passwords
+
+The SQL statement used to search the database for the user password. A single property of the supplied username is provided by the module. The result of the search should be a single row that contains the password for the user under the specified column.
+
+`ssoadm` attribute: `sunAMAuthJDBCStatement`
+
+--
+
+Class to Transform Password Syntax::
++
+--
+
+This class is used to transform the password retrieved from the database.
+
+The default implementation for this property is `ClearTextTransform` that performs no transformation. If the password field retrieved from the database needs to be transformed before comparing with the supplied credentials; a custom implementation should be provided. Any custom implementation must implement the following interface `com.sun.identity.authentication.modules.jdbc.JDBCPasswordSyntaxTransform`
+
+`ssoadm` attribute: `sunAMAuthJDBCPasswordSyntaxTransformPlugin`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthJDBCAuthLevel`
+
+--
+
+[#ldap-module-ref]
+=== LDAP
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/ldap/LDAP.html[com.sun.identity.authentication.modules.ldap.LDAP, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthLDAPService`
+
+Primary LDAP Server::
++
+--
+
+Use this list to set the primary LDAP server used for authentication.
+
+The LDAP authentication module will use this list as the primary server for authentication. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server`
+
+--
+
+Secondary LDAP Server::
++
+--
+
+Use this list to set the secondary (failover) LDAP server used for authentication.
+
+If the primary LDAP server fails, the LDAP authentication module will failover to the secondary server. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server2`
+
+--
+
+DN to Start User Search::
++
+--
+
+The search for accounts to be authenticated start from this base DN
+
+For a single server just enter the Base DN to be searched. Multiple OpenAM servers can have different base DNs for the search The format is as follows:
+
+`local server name | search DN`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-base-dn`
+
+--
+
+Bind User DN::
++
+--
+
+The DN of an admin user used by the module to authentication to the LDAP server
+
+The LDAP module requires an administration account in order to perform functionality such as password reset.
+
+__NB __`cn=Directory Manager` should not be used in production systems.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-dn`
+
+--
+
+Bind User Password::
++
+--
+
+The password of the administration account.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-passwd`
+
+--
+
+Attribute Used to Retrieve User Profile::
++
+--
+
+The LDAP module will use this attribute to search of the profile of an authenticated user.
+
+This is the attribute used to find the profile of the authenticated user. Normally this will be the same attribute used to find the user account. The value will be the name of the user used for authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-naming-attribute`
+
+--
+
+Attributes Used to Search for a User to be Authenticated::
++
+--
+
+The attributes specified in this list form the LDAP search filter.
+
+The default value of uid will form the following search filter of `uid=__user__`, if there are multiple values such as uid and cn, the module will create a search filter as follows `(|(uid=__user__)(cn=__user__))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-search-attributes`
+
+--
+
+User Search Filter::
++
+--
+
+This search filter will be appended to the standard user search filter.
+
+This attribute can be used to append a custom search filter to the standard filter. For example: `(objectClass=person)`would result in the following user search filter:
+
+`(&(uid=__user__)(objectClass=person))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-filter`
+
+--
+
+Search Scope::
++
+--
+
+The level in the Directory Server that will be searched for a matching user profile.
+
+This attribute controls how the directory is searched.
+
+
+* `OBJECT`: Only the Base DN is searched.
+* `ONELEVEL`: Only the single level below (and not the Base DN) is searched
+* `SUBTREE`: The Base DN and all levels below are searched
+
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-scope`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `openam-auth-ldap-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-auth-ldap-secure-protocol-version`
+
+--
+
+Trust All Server Certificates::
++
+--
+
+Enables a `X509TrustManager` that trusts all certificates.
+
+This feature will allow the LDAP authentication module to connect to LDAP servers protected by self signed or invalid certificates (such as invalid hostname).
+
+__NB __Use this feature with care as it bypasses the normal certificate verification process
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-ssl-trust-all`
+
+--
+
+Return User DN to DataStore::
++
+--
+
+Controls whether the DN or the username is returned as the authentication principal.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-return-user-dn`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-auth-level`
+
+--
+
+User Creation Attributes::
++
+--
+
+Controls the mapping of local attribute to external attribute for dynamic profile creation.
+
+If dynamic profile creation is enabled; this feature allows for a mapping between the attribute/values retrieved from the users authenticated profile and the attribute/values that will be provisioned into their matching account in the data store.
+
+The format of this property is: 
+
+` local attr1|external attr1`
+
+`ssoadm` attribute: `iplanet-am-ldap-user-creation-attr-list`
+
+--
+
+Minimum Password Length::
++
+--
+
+Enforced when the user is resetting their password as part of the authentication.
+
+If the user needs to reset their password as part of the authentication process, the authentication module can enforce a minimum password length. This is separate from any password length controls from the underlying LDAP server. If the external LDAP server password policy is enforcing password length, set this value to 0 to avoid confusion.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-min-password-length`
+
+--
+
+LDAP Behera Password Policy Support::
++
+--
+
+Enables support for modern LDAP password policies
+
+LDAP Behera Password policies are supported by modern LDAP servers such as OpenDJ. If this functionality is disabled then only the older Netscape VCHU password policy standard will be enforced.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-behera-password-policy-enabled`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-timeunit`
+
+--
+
+LDAP operations timeout::
++
+--
+
+Defines the timeout in seconds OpenAM should wait for a response of the Directory Server - `0` means no timeout.
+
+If the Directory Server's host is down completely or the TCP connection became stale OpenAM waits until operation timeouts from the OS or the JVM are applied. However this setting allows more granular control within OpenAM itself. A value of `0` means NO timeout is applied on OpenAM level and the timeouts from the JVM or OS will apply.
+
+`ssoadm` attribute: `openam-auth-ldap-operation-timeout`
+
+--
+
+Overwrite User Name in sharedState upon Authentication Success::
++
+--
+
+Overwrite the user name in the sharedState with the value of the attribute used to retrieve the user profile when authentication succeeds. If this functionality is disabled, the value entered on the login screen will remain unchanged.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-override-sharedstate-username-enabled`
+
+--
+
+Primary LDAP Server::
++
+--
+
+Use this list to set the primary LDAP server used for authentication.
+
+The LDAP authentication module will use this list as the primary server for authentication. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server`
+
+--
+
+Secondary LDAP Server::
++
+--
+
+Use this list to set the secondary (failover) LDAP server used for authentication.
+
+If the primary LDAP server fails, the LDAP authentication module will failover to the secondary server. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-server2`
+
+--
+
+DN to Start User Search::
++
+--
+
+The search for accounts to be authenticated start from this base DN
+
+For a single server just enter the Base DN to be searched. Multiple OpenAM servers can have different base DNs for the search The format is as follows:
+
+`local server name | search DN`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-base-dn`
+
+--
+
+Bind User DN::
++
+--
+
+The DN of an admin user used by the module to authentication to the LDAP server
+
+The LDAP module requires an administration account in order to perform functionality such as password reset.
+
+__NB __`cn=Directory Manager` should not be used in production systems.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-dn`
+
+--
+
+Bind User Password::
++
+--
+
+The password of the administration account.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-bind-passwd`
+
+--
+
+Attribute Used to Retrieve User Profile::
++
+--
+
+The LDAP module will use this attribute to search of the profile of an authenticated user.
+
+This is the attribute used to find the profile of the authenticated user. Normally this will be the same attribute used to find the user account. The value will be the name of the user used for authentication.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-naming-attribute`
+
+--
+
+Attributes Used to Search for a User to be Authenticated::
++
+--
+
+The attributes specified in this list form the LDAP search filter.
+
+The default value of uid will form the following search filter of `uid=__user__`, if there are multiple values such as uid and cn, the module will create a search filter as follows `(|(uid=__user__)(cn=__user__))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-user-search-attributes`
+
+--
+
+User Search Filter::
++
+--
+
+This search filter will be appended to the standard user search filter.
+
+This attribute can be used to append a custom search filter to the standard filter. For example: `(objectClass=person)`would result in the following user search filter:
+
+`(&(uid=__user__)(objectClass=person))`
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-filter`
+
+--
+
+Search Scope::
++
+--
+
+The level in the Directory Server that will be searched for a matching user profile.
+
+This attribute controls how the directory is searched.
+
+
+* `OBJECT`: Only the Base DN is searched.
+* `ONELEVEL`: Only the single level below (and not the Base DN) is searched
+* `SUBTREE`: The Base DN and all levels below are searched
+
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-search-scope`
+
+--
+
+LDAP Connection Mode::
++
+--
+
+Defines which protocol/operation is used to establish the connection to the LDAP Directory Server.
+
+If 'LDAP' is selected, the connection *won't be secured* and passwords are transferred in *cleartext* over the network.
+
+ If 'LDAPS' is selected, the connection is secured via SSL or TLS. 
+
+ If 'StartTLS' is selected, the connection is secured by using StartTLS extended operation.
+
+`ssoadm` attribute: `openam-auth-ldap-connection-mode`
+
+--
+
+LDAPS Server Protocol Version::
++
+--
+
+Defines which protocol version is used to establish the secure connection to the LDAP Directory Server.
+
+`ssoadm` attribute: `openam-auth-ldap-secure-protocol-version`
+
+--
+
+Trust All Server Certificates::
++
+--
+
+Enables a `X509TrustManager` that trusts all certificates.
+
+This feature will allow the LDAP authentication module to connect to LDAP servers protected by self signed or invalid certificates (such as invalid hostname).
+
+__NB __Use this feature with care as it bypasses the normal certificate verification process
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-ssl-trust-all`
+
+--
+
+Return User DN to DataStore::
++
+--
+
+Controls whether the DN or the username is returned as the authentication principal.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-return-user-dn`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-auth-level`
+
+--
+
+User Creation Attributes::
++
+--
+
+Controls the mapping of local attribute to external attribute for dynamic profile creation.
+
+If dynamic profile creation is enabled; this feature allows for a mapping between the attribute/values retrieved from the users authenticated profile and the attribute/values that will be provisioned into their matching account in the data store.
+
+The format of this property is: 
+
+` local attr1|external attr1`
+
+`ssoadm` attribute: `iplanet-am-ldap-user-creation-attr-list`
+
+--
+
+Minimum Password Length::
++
+--
+
+Enforced when the user is resetting their password as part of the authentication.
+
+If the user needs to reset their password as part of the authentication process, the authentication module can enforce a minimum password length. This is separate from any password length controls from the underlying LDAP server. If the external LDAP server password policy is enforcing password length, set this value to 0 to avoid confusion.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-min-password-length`
+
+--
+
+LDAP Behera Password Policy Support::
++
+--
+
+Enables support for modern LDAP password policies
+
+LDAP Behera Password policies are supported by modern LDAP servers such as OpenDJ. If this functionality is disabled then only the older Netscape VCHU password policy standard will be enforced.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-behera-password-policy-enabled`
+
+--
+
+LDAP Connection Heartbeat Interval::
++
+--
+
+Specifies how often should OpenAM send a heartbeat request to the directory.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Time Unit parameter to define the exact interval. Zero or negative value will result in disabling heartbeat requests.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-interval`
+
+--
+
+LDAP Connection Heartbeat Time Unit::
++
+--
+
+Defines the time unit corresponding to the Heartbeat Interval setting.
+
+This setting controls how often OpenAM *should* send a heartbeat search request to the configured directory. If a connection becomes unresponsive (e.g. due to a network error) then it may take up to the interval period before the problem is detected. Use along with the Heartbeat Interval parameter to define the exact interval.
+
+`ssoadm` attribute: `openam-auth-ldap-heartbeat-timeunit`
+
+--
+
+LDAP operations timeout::
++
+--
+
+Defines the timeout in seconds OpenAM should wait for a response of the Directory Server - `0` means no timeout.
+
+If the Directory Server's host is down completely or the TCP connection became stale OpenAM waits until operation timeouts from the OS or the JVM are applied. However this setting allows more granular control within OpenAM itself. A value of `0` means NO timeout is applied on OpenAM level and the timeouts from the JVM or OS will apply.
+
+`ssoadm` attribute: `openam-auth-ldap-operation-timeout`
+
+--
+
+Overwrite User Name in sharedState upon Authentication Success::
++
+--
+
+Overwrite the user name in the sharedState with the value of the attribute used to retrieve the user profile when authentication succeeds. If this functionality is disabled, the value entered on the login screen will remain unchanged.
+
+`ssoadm` attribute: `iplanet-am-auth-ldap-override-sharedstate-username-enabled`
+
+--
+
+[#msisdn-module-ref]
+=== MSISDN
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/msisdn/MSISDN.html[com.sun.identity.authentication.modules.msisdn.MSISDN, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthMSISDNService`
+
+Trusted Gateway IP Address::
++
+--
+
+The list of IP address that are trusted to send MSISDN authentication requests.
+
+The client IP address of the authentication request is checked against this list, if the client IP is not listed then the authentication module will fail.
+
+__NB __If the list is empty then all hosts will be trusted.
+
+`ssoadm` attribute: `sunAMAuthMSISDNTrustedGatewayList`
+
+--
+
+MSISDN Number Search Parameter Name::
++
+--
+
+Name of the HTTP cookie, header or query parameter containing the MSISDN number
+
+The MSISDN authentication module will check the incoming HTTP cookie, header or query parameter of the request for the MSISDN number. The order of checking is as follows:
+
+
+. Cookie
+. Header
+. Query
+
+
+__NB __The __MSISDN Header Search Attribute__ controls what elements of the request is searched
+
+`ssoadm` attribute: `sunAMAuthMSISDNParameterNameList`
+
+--
+
+LDAP Server and Port ::
++
+--
+
+Use this list to set the LDAP server used to search for the MSISDN number. 
+
+The MSISDN authentication module will use this list as the server that is searched for a matching MSISDN number. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `sunAMAuthMSISDNLdapProviderUrl`
+
+--
+
+LDAP Start Search DN::
++
+--
+
+The start point in the LDAP server for the MSISDN search
+
+When entering multiple entries, each entry must be prefixed with a local server name. Multiple entries allow different search Base DNs depending on the OpenAM server in use. The format is:
+
+`local server name | base dn`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `sunAMAuthMSISDNBaseDn`
+
+--
+
+Attribute To Use To Search LDAP::
++
+--
+
+The name of the attribute searched in the user profiles for the MSISDN number
+
+`ssoadm` attribute: `sunAMAuthMSISDNUserSearchAttribute`
+
+--
+
+LDAP Server Authentication User ::
++
+--
+
+DN of the user used by the module to authenticate to the LDAP server
+
+The MSISDN module authenticates to the LDAP server in order to search for a matching number. The DN entered here represents the account used for said authentication and must have read/search access to the LDAP server.
+
+`ssoadm` attribute: `sunAMAuthMSISDNPrincipalUser`
+
+--
+
+LDAP Server Authentication Password::
++
+--
+
+The password for the authentication user
+
+`ssoadm` attribute: `sunAMAuthMSISDNPrincipalPasswd`
+
+--
+
+SSL/TLS for LDAP Access::
++
+--
+
+`ssoadm` attribute: `sunAMAuthMSISDNUseSsl`
+
+--
+
+MSISDN Header Search Attribute::
++
+--
+
+Controls the elements that are searched by the authentication module 
+
+`ssoadm` attribute: `sunAMAuthMSISDNHeaderSearch`
+
+--
+
+LDAP Attribute Used to Retrieve User Profile::
++
+--
+
+The name of the attribute returned from the user profile matched against the supplied MSISDN number
+
+`ssoadm` attribute: `sunAMAuthMSISDNUserNamingAttribute`
+
+--
+
+Return User DN to DataStore::
++
+--
+
+Controls whether the DN or the username is returned as the authentication principal.
+
+`ssoadm` attribute: `sunAMAuthMSISDNReturnUserDN`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthMSISDNAuthLevel`
+
+--
+
+Trusted Gateway IP Address::
++
+--
+
+The list of IP address that are trusted to send MSISDN authentication requests.
+
+The client IP address of the authentication request is checked against this list, if the client IP is not listed then the authentication module will fail.
+
+__NB __If the list is empty then all hosts will be trusted.
+
+`ssoadm` attribute: `sunAMAuthMSISDNTrustedGatewayList`
+
+--
+
+MSISDN Number Search Parameter Name::
++
+--
+
+Name of the HTTP cookie, header or query parameter containing the MSISDN number
+
+The MSISDN authentication module will check the incoming HTTP cookie, header or query parameter of the request for the MSISDN number. The order of checking is as follows:
+
+
+. Cookie
+. Header
+. Query
+
+
+__NB __The __MSISDN Header Search Attribute__ controls what elements of the request is searched
+
+`ssoadm` attribute: `sunAMAuthMSISDNParameterNameList`
+
+--
+
+LDAP Server and Port ::
++
+--
+
+Use this list to set the LDAP server used to search for the MSISDN number. 
+
+The MSISDN authentication module will use this list as the server that is searched for a matching MSISDN number. A single entry must be in the format:
+
+`ldap_server:port`
+
+Multiple entries allow associations between OpenAM servers and a LDAP server. The format is:
+
+`local server name | server:port`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `sunAMAuthMSISDNLdapProviderUrl`
+
+--
+
+LDAP Start Search DN::
++
+--
+
+The start point in the LDAP server for the MSISDN search
+
+When entering multiple entries, each entry must be prefixed with a local server name. Multiple entries allow different search Base DNs depending on the OpenAM server in use. The format is:
+
+`local server name | base dn`
+
+The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `sunAMAuthMSISDNBaseDn`
+
+--
+
+Attribute To Use To Search LDAP::
++
+--
+
+The name of the attribute searched in the user profiles for the MSISDN number
+
+`ssoadm` attribute: `sunAMAuthMSISDNUserSearchAttribute`
+
+--
+
+LDAP Server Authentication User ::
++
+--
+
+DN of the user used by the module to authenticate to the LDAP server
+
+The MSISDN module authenticates to the LDAP server in order to search for a matching number. The DN entered here represents the account used for said authentication and must have read/search access to the LDAP server.
+
+`ssoadm` attribute: `sunAMAuthMSISDNPrincipalUser`
+
+--
+
+LDAP Server Authentication Password::
++
+--
+
+The password for the authentication user
+
+`ssoadm` attribute: `sunAMAuthMSISDNPrincipalPasswd`
+
+--
+
+SSL/TLS for LDAP Access::
++
+--
+
+`ssoadm` attribute: `sunAMAuthMSISDNUseSsl`
+
+--
+
+MSISDN Header Search Attribute::
++
+--
+
+Controls the elements that are searched by the authentication module 
+
+`ssoadm` attribute: `sunAMAuthMSISDNHeaderSearch`
+
+--
+
+LDAP Attribute Used to Retrieve User Profile::
++
+--
+
+The name of the attribute returned from the user profile matched against the supplied MSISDN number
+
+`ssoadm` attribute: `sunAMAuthMSISDNUserNamingAttribute`
+
+--
+
+Return User DN to DataStore::
++
+--
+
+Controls whether the DN or the username is returned as the authentication principal.
+
+`ssoadm` attribute: `sunAMAuthMSISDNReturnUserDN`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthMSISDNAuthLevel`
+
+--
+
+[#membership-module-ref]
+=== Membership
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/membership/Membership.html[com.sun.identity.authentication.modules.membership.Membership, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthMembershipService`
+
+Minimum Password Length::
++
+--
+
+The minimum length of the user password.
+
+Setting this value to 0 disables this functionality.
+
+__NB __This feature is separate from any password policy in the underlying data store
+
+`ssoadm` attribute: `iplanet-am-auth-membership-min-password-length`
+
+--
+
+Default User Roles::
++
+--
+
+The role DN's that will be assigned to the user.
+
+__NB __Roles are only supported in Sun Directory Server Enterprise Edition
+
+`ssoadm` attribute: `iplanet-am-auth-membership-default-roles`
+
+--
+
+User Status After Registration::
++
+--
+
+Determines if the user account should be automatically active after registration completes.
+
+`ssoadm` attribute: `iplanet-am-auth-membership-default-user-status`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-membership-auth-level`
+
+--
+
+Minimum Password Length::
++
+--
+
+The minimum length of the user password.
+
+Setting this value to 0 disables this functionality.
+
+__NB __This feature is separate from any password policy in the underlying data store
+
+`ssoadm` attribute: `iplanet-am-auth-membership-min-password-length`
+
+--
+
+Default User Roles::
++
+--
+
+The role DN's that will be assigned to the user.
+
+__NB __Roles are only supported in Sun Directory Server Enterprise Edition
+
+`ssoadm` attribute: `iplanet-am-auth-membership-default-roles`
+
+--
+
+User Status After Registration::
++
+--
+
+Determines if the user account should be automatically active after registration completes.
+
+`ssoadm` attribute: `iplanet-am-auth-membership-default-user-status`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-membership-auth-level`
+
+--
+
+[#windows-nt-module-ref]
+=== Windows NT
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/nt/NT.html[com.sun.identity.authentication.modules.nt.NT, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthNTService`
+
+Authentication Domain::
++
+--
+
+The name of the Windows Domain used for authentication
+
+`ssoadm` attribute: `iplanet-am-auth-nt-domain`
+
+--
+
+Authentication Host::
++
+--
+
+The name of the Windows NT Domain Controller.
+
+`ssoadm` attribute: `iplanet-am-auth-nt-host`
+
+--
+
+Samba Configuration File Name::
++
+--
+
+The path to the Samba configuration file.
+
+The Windows NT authentication module uses the `smbclient` command to validate the user credentials against the Windows domain controller. 
+
+For example: `/opt/openam/smb.conf`
+
+__NB __The `smbclient` command must be available in the `PATH` environmental variable associated with OpenAM.
+
+`ssoadm` attribute: `iplanet-am-auth-samba-config-file-name`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-nt-auth-level`
+
+--
+
+Authentication Domain::
++
+--
+
+The name of the Windows Domain used for authentication
+
+`ssoadm` attribute: `iplanet-am-auth-nt-domain`
+
+--
+
+Authentication Host::
++
+--
+
+The name of the Windows NT Domain Controller.
+
+`ssoadm` attribute: `iplanet-am-auth-nt-host`
+
+--
+
+Samba Configuration File Name::
++
+--
+
+The path to the Samba configuration file.
+
+The Windows NT authentication module uses the `smbclient` command to validate the user credentials against the Windows domain controller. 
+
+For example: `/opt/openam/smb.conf`
+
+__NB __The `smbclient` command must be available in the `PATH` environmental variable associated with OpenAM.
+
+`ssoadm` attribute: `iplanet-am-auth-samba-config-file-name`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-nt-auth-level`
+
+--
+
+[#oauth-2.0-/-openid-connect-module-ref]
+=== OAuth 2.0 / OpenID Connect
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/oauth2/OAuth.html[org.forgerock.openam.authentication.modules.oauth2.OAuth, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthOAuthService`
+
+Client Id::
++
+--
+
+OAuth client_id parameter
+
+For more information on the OAuth client_id parameter refer to the http://tools.ietf.org/html/rfc6749#section-2.3.1[RFC 6749], section 2.3.1
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-client-id`
+
+--
+
+Client Secret::
++
+--
+
+OAuth client_secret parameter
+
+For more information on the OAuth client_secret parameter refer to the http://tools.ietf.org/html/rfc6749#section-2.3.1[RFC 6749], section 2.3.1
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-client-secret`
+
+--
+
+Authentication Endpoint URL::
++
+--
+
+OAuth authentication endpoint URL
+
+This is the URL endpoint for OAuth authentication provided by the OAuth Identity Provider
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-auth-service`
+
+--
+
+Access Token Endpoint URL::
++
+--
+
+OAuth access token endpoint URL
+
+This is the URL endpoint for access token retrieval provided by the OAuth Identity Provider. Refer to the http://tools.ietf.org/html/rfc6749#section-3.2[RFC 6749], section 3.2
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-token-service`
+
+--
+
+User Profile Service URL::
++
+--
+
+User profile information URL
+
+This URL endpoint provides user profile information and is provided by the OAuth Identity Provider
+
+__NB __This URL should return JSON objects in response
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-user-profile-service`
+
+--
+
+Scope::
++
+--
+
+OAuth scope; list of user profile properties
+
+According to the OAuth 2.0 Authorization Framework, scope is a space-separated list of user profile attributes that the client application requires. The list depends on the permissions that the resource owner grants to the client application.
+
+Some authorization servers use non-standard separators for scopes. For example, Facebook takes a comma-separated list.
+
+Default: `email, read_stream` (Facebook example)
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-scope`
+
+--
+
+OAuth2 Access Token Profile Service Parameter name::
++
+--
+
+The name of the parameter that will contain the access token value when accessing the profile service
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-user-profile-param`
+
+--
+
+Proxy URL::
++
+--
+
+The URL to the OpenAM OAuth proxy JSP
+
+This URL should only be changed from the default, if an external server is performing the GET to POST proxying. The default is `/openam/oauth2c/OAuthProxy.jsp`
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-sso-proxy-url`
+
+--
+
+Account Provider::
++
+--
+
+Name of the class implementing the account provider.
+
+This class is used by the module to find the account from the attributes mapped by the Account Mapper `org.forgerock.openam.authentication.modules.common.mapping.AccountProvider` interface.
+
+String constructor parameters can be provided by appending `|` separated values.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-account-provider`
+
+--
+
+Account Mapper::
++
+--
+
+Name of the class implementing the attribute mapping for the account search.
+
+This class is used by the module to map from the account information received from the OAuth Identity Provider into OpenAM.
+
+The class must implement the `org.forgerock.openam.authentication.modules.common.mapping.AttributeMapper` interface.
+
+Provided implementations are:
+* org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper
+* org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper (can only be used when using the openid scope)
+String constructor parameters can be provided by appending `|` separated values.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-account-mapper`
+
+--
+
+Account Mapper Configuration::
++
+--
+
+Mapping of OAuth account to local OpenAM account
+
+Attribute configuration that will be used to map the account of the user authenticated in the OAuth 2.0 Provider to the local data store in the OpenAM. Example: `OAuth2.0_attribute=local_attribute`
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-account-mapper-configuration`
+
+--
+
+Attribute Mapper::
++
+--
+
+Name of the class that implements the attribute mapping
+
+This class maps the OAuth properties into OpenAM properties. A custom attribute mapper can be provided.
+
+A custom attribute mapper must implement the `org.forgerock.openam.authentication.modules.common.mapping.AttributeMapper` interface.
+
+Provided implementations are:
+* org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper
+* org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper (can only be used when using the openid scope)
+String constructor parameters can be provided by appending `|` separated values.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-attribute-mapper`
+
+--
+
+Attribute Mapper Configuration::
++
+--
+
+Mapping of OAuth attributes to local OpenAM attributes
+
+Attribute configuration that will be used to map the user info obtained from the OAuth 2.0 Provider to the local user data store in the OpenAM.
+
+Example: `OAuth2.0_attribute=local_attribute`
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-attribute-mapper-configuration`
+
+--
+
+Save attributes in the session::
++
+--
+
+If this option is enabled, the attributes configured in the attribute mapper will be saved into the OpenAM session
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-save-attributes-to-session-flag`
+
+--
+
+Email attribute in OAuth2 Response::
++
+--
+
+Attribute from the OAuth2 response used to send activation code emails.
+
+The attribute in the response from the profile service in the OAuth 2.0 Provider that contains the email address of the authenticated user. This address will be used to send an email with an activation code when the accounts are allowed to be created dynamically.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-mail-attribute`
+
+--
+
+Create account if it does not exist::
++
+--
+
+If the OAuth2 account does not exist in the local OpenAM data store, an account will be created dynamically.
+
+If this is enabled, the account mapper could create the account dynamically if there is no account mapped. Before creating the account, a dialog prompting for a password and asking for an activation code can be shown if the parameter "Prompt for password setting and activation code" is enabled.
+
+If this flag is not enabled, 3 alternative options exist:
+
+
+. The accounts need to have a user profile in the OpenAM User Data Store
+. The user does not have a user profile and the "Ignore Profile" is set in the Authentication Service of the realm.
+. The account is mapped to an anonymous account (see parameter "Map to anonymous user" and "Anonymous User")
+
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-createaccount-flag`
+
+--
+
+Prompt for password setting and activation code::
++
+--
+
+Users must set a password and complete the activation flow during dynamic profile creation.
+
+If this is enabled, the user must set a password before the system creates an account dynamically and an activation code will be sent to the user's email address. The account will be created only if the password and activation code are properly set. 
+
+If this is disabled, the account will be created transparently without prompting the user.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-prompt-password-flag`
+
+--
+
+Map to anonymous user::
++
+--
+
+Enabled anonymous user access to OpenAM for OAuth authenticated users
+
+If selected, the authenticated users in the OAuth 2.0 Provider will be mapped to the anonymous user configured in the next parameter.
+
+If not selected the users authenticated will be mapped by the parameters configured in the account mapper.
+
+__NB __If __Create account if it does not exist__ is enabled, that parameter takes precedence.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-map-to-anonymous-flag`
+
+--
+
+Anonymous User::
++
+--
+
+Username of the OpenAM anonymous user
+
+The username of the user that will represent the anonymous user. This user account must already exist in the realm.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-anonymous-user`
+
+--
+
+OAuth 2.0 Provider logout service::
++
+--
+
+The URL of the OAuth Identity Providers Logout service
+
+OAuth 2.0 Identity Providers can have a logout service. If this logout functionality is required then the URL of the Logout endpoint should configured here.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-logout-service-url`
+
+--
+
+Logout options::
++
+--
+
+Controls how Logout options will be presented to the user.
+
+The OAuth module has the following logout options for the user:
+
+
+* Prompt: Prompt the user to logout from the OAuth 2.0 Provider
+* Logout: Logout from the OAuth 2.0 Provider and do not prompt
+* Do not logout: Do not logout the user from the OAuth 2.0 Provider and do not prompt
+
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-logout-behaviour`
+
+--
+
+Mail Server Gateway implementation class::
++
+--
+
+The class used by the module to send email.
+
+This class is used by the module to send email. A custom implementation can be provided.
+
+The custom implementation must implement the `org.forgerock.openam.authentication.modules.oauth2.EmailGateway`
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-email-gwy-impl`
+
+--
+
+SMTP host::
++
+--
+
+The mail host that will be used by the Email Gateway implementation
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-hostname`
+
+--
+
+SMTP port::
++
+--
+
+The TCP port that will be used by the SMTP gateway
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-port`
+
+--
+
+SMTP User Name::
++
+--
+
+If the SMTP Service requires authentication, configure the user name here
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-username`
+
+--
+
+SMTP User Password::
++
+--
+
+The Password of the SMTP User Name
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-password`
+
+--
+
+SMTP SSL Enabled::
++
+--
+
+Tick this option if the SMTP Server provides SSL
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-ssl_enabled`
+
+--
+
+SMTP From address::
++
+--
+
+The email address on behalf of whom the messages will be sent
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-email-from`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-auth-level`
+
+--
+
+Name of OpenID Connect ID Token Issuer::
++
+--
+
+Required when the 'openid' scope is included. Value must match the iss field in issued ID Token
+
+e.g. accounts.google.com
+
+`ssoadm` attribute: `openam-auth-openidconnect-issuer-name`
+
+--
+
+OpenID Connect validation configuration type::
++
+--
+
+Required when the 'openid' scope is included. Please select either 1. the issuer discovery url, 2. the issuer jwk url, or 3. the client_secret.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-type`
+
+--
+
+OpenID Connect validation configuration value::
++
+--
+
+Required when the 'openid' scope is included. The discovery url, or jwk url, or the client_secret, corresponding to the selection above.
+
+If discovery or jwk url entered, entry must be in valid url format, 
+
+e.g. https://accounts.google.com/.well-known/openid-configuration
+
+__NB __If client_secret entered, entry is ignored and the value of the Client Secret is used.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-value`
+
+--
+
+Custom Properties::
++
+--
+
+`ssoadm` attribute: `openam-auth-oauth2-custom-properties`
+
+--
+
+Client Id::
++
+--
+
+OAuth client_id parameter
+
+For more information on the OAuth client_id parameter refer to the http://tools.ietf.org/html/rfc6749#section-2.3.1[RFC 6749], section 2.3.1
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-client-id`
+
+--
+
+Client Secret::
++
+--
+
+OAuth client_secret parameter
+
+For more information on the OAuth client_secret parameter refer to the http://tools.ietf.org/html/rfc6749#section-2.3.1[RFC 6749], section 2.3.1
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-client-secret`
+
+--
+
+Authentication Endpoint URL::
++
+--
+
+OAuth authentication endpoint URL
+
+This is the URL endpoint for OAuth authentication provided by the OAuth Identity Provider
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-auth-service`
+
+--
+
+Access Token Endpoint URL::
++
+--
+
+OAuth access token endpoint URL
+
+This is the URL endpoint for access token retrieval provided by the OAuth Identity Provider. Refer to the http://tools.ietf.org/html/rfc6749#section-3.2[RFC 6749], section 3.2
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-token-service`
+
+--
+
+User Profile Service URL::
++
+--
+
+User profile information URL
+
+This URL endpoint provides user profile information and is provided by the OAuth Identity Provider
+
+__NB __This URL should return JSON objects in response
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-user-profile-service`
+
+--
+
+Scope::
++
+--
+
+OAuth scope; list of user profile properties
+
+According to the OAuth 2.0 Authorization Framework, scope is a space-separated list of user profile attributes that the client application requires. The list depends on the permissions that the resource owner grants to the client application.
+
+Some authorization servers use non-standard separators for scopes. For example, Facebook takes a comma-separated list.
+
+Default: `email, read_stream` (Facebook example)
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-scope`
+
+--
+
+OAuth2 Access Token Profile Service Parameter name::
++
+--
+
+The name of the parameter that will contain the access token value when accessing the profile service
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-user-profile-param`
+
+--
+
+Proxy URL::
++
+--
+
+The URL to the OpenAM OAuth proxy JSP
+
+This URL should only be changed from the default, if an external server is performing the GET to POST proxying. The default is `/openam/oauth2c/OAuthProxy.jsp`
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-sso-proxy-url`
+
+--
+
+Account Provider::
++
+--
+
+Name of the class implementing the account provider.
+
+This class is used by the module to find the account from the attributes mapped by the Account Mapper `org.forgerock.openam.authentication.modules.common.mapping.AccountProvider` interface.
+
+String constructor parameters can be provided by appending `|` separated values.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-account-provider`
+
+--
+
+Account Mapper::
++
+--
+
+Name of the class implementing the attribute mapping for the account search.
+
+This class is used by the module to map from the account information received from the OAuth Identity Provider into OpenAM.
+
+The class must implement the `org.forgerock.openam.authentication.modules.common.mapping.AttributeMapper` interface.
+
+Provided implementations are:
+* org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper
+* org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper (can only be used when using the openid scope)
+String constructor parameters can be provided by appending `|` separated values.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-account-mapper`
+
+--
+
+Account Mapper Configuration::
++
+--
+
+Mapping of OAuth account to local OpenAM account
+
+Attribute configuration that will be used to map the account of the user authenticated in the OAuth 2.0 Provider to the local data store in the OpenAM. Example: `OAuth2.0_attribute=local_attribute`
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-account-mapper-configuration`
+
+--
+
+Attribute Mapper::
++
+--
+
+Name of the class that implements the attribute mapping
+
+This class maps the OAuth properties into OpenAM properties. A custom attribute mapper can be provided.
+
+A custom attribute mapper must implement the `org.forgerock.openam.authentication.modules.common.mapping.AttributeMapper` interface.
+
+Provided implementations are:
+* org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper
+* org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper (can only be used when using the openid scope)
+String constructor parameters can be provided by appending `|` separated values.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-attribute-mapper`
+
+--
+
+Attribute Mapper Configuration::
++
+--
+
+Mapping of OAuth attributes to local OpenAM attributes
+
+Attribute configuration that will be used to map the user info obtained from the OAuth 2.0 Provider to the local user data store in the OpenAM.
+
+Example: `OAuth2.0_attribute=local_attribute`
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-attribute-mapper-configuration`
+
+--
+
+Save attributes in the session::
++
+--
+
+If this option is enabled, the attributes configured in the attribute mapper will be saved into the OpenAM session
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-save-attributes-to-session-flag`
+
+--
+
+Email attribute in OAuth2 Response::
++
+--
+
+Attribute from the OAuth2 response used to send activation code emails.
+
+The attribute in the response from the profile service in the OAuth 2.0 Provider that contains the email address of the authenticated user. This address will be used to send an email with an activation code when the accounts are allowed to be created dynamically.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-mail-attribute`
+
+--
+
+Create account if it does not exist::
++
+--
+
+If the OAuth2 account does not exist in the local OpenAM data store, an account will be created dynamically.
+
+If this is enabled, the account mapper could create the account dynamically if there is no account mapped. Before creating the account, a dialog prompting for a password and asking for an activation code can be shown if the parameter "Prompt for password setting and activation code" is enabled.
+
+If this flag is not enabled, 3 alternative options exist:
+
+
+. The accounts need to have a user profile in the OpenAM User Data Store
+. The user does not have a user profile and the "Ignore Profile" is set in the Authentication Service of the realm.
+. The account is mapped to an anonymous account (see parameter "Map to anonymous user" and "Anonymous User")
+
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-createaccount-flag`
+
+--
+
+Prompt for password setting and activation code::
++
+--
+
+Users must set a password and complete the activation flow during dynamic profile creation.
+
+If this is enabled, the user must set a password before the system creates an account dynamically and an activation code will be sent to the user's email address. The account will be created only if the password and activation code are properly set. 
+
+If this is disabled, the account will be created transparently without prompting the user.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-prompt-password-flag`
+
+--
+
+Map to anonymous user::
++
+--
+
+Enabled anonymous user access to OpenAM for OAuth authenticated users
+
+If selected, the authenticated users in the OAuth 2.0 Provider will be mapped to the anonymous user configured in the next parameter.
+
+If not selected the users authenticated will be mapped by the parameters configured in the account mapper.
+
+__NB __If __Create account if it does not exist__ is enabled, that parameter takes precedence.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-map-to-anonymous-flag`
+
+--
+
+Anonymous User::
++
+--
+
+Username of the OpenAM anonymous user
+
+The username of the user that will represent the anonymous user. This user account must already exist in the realm.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-anonymous-user`
+
+--
+
+OAuth 2.0 Provider logout service::
++
+--
+
+The URL of the OAuth Identity Providers Logout service
+
+OAuth 2.0 Identity Providers can have a logout service. If this logout functionality is required then the URL of the Logout endpoint should configured here.
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-logout-service-url`
+
+--
+
+Logout options::
++
+--
+
+Controls how Logout options will be presented to the user.
+
+The OAuth module has the following logout options for the user:
+
+
+* Prompt: Prompt the user to logout from the OAuth 2.0 Provider
+* Logout: Logout from the OAuth 2.0 Provider and do not prompt
+* Do not logout: Do not logout the user from the OAuth 2.0 Provider and do not prompt
+
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-logout-behaviour`
+
+--
+
+Mail Server Gateway implementation class::
++
+--
+
+The class used by the module to send email.
+
+This class is used by the module to send email. A custom implementation can be provided.
+
+The custom implementation must implement the `org.forgerock.openam.authentication.modules.oauth2.EmailGateway`
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-email-gwy-impl`
+
+--
+
+SMTP host::
++
+--
+
+The mail host that will be used by the Email Gateway implementation
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-hostname`
+
+--
+
+SMTP port::
++
+--
+
+The TCP port that will be used by the SMTP gateway
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-port`
+
+--
+
+SMTP User Name::
++
+--
+
+If the SMTP Service requires authentication, configure the user name here
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-username`
+
+--
+
+SMTP User Password::
++
+--
+
+The Password of the SMTP User Name
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-password`
+
+--
+
+SMTP SSL Enabled::
++
+--
+
+Tick this option if the SMTP Server provides SSL
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-ssl_enabled`
+
+--
+
+SMTP From address::
++
+--
+
+The email address on behalf of whom the messages will be sent
+
+`ssoadm` attribute: `org-forgerock-auth-oauth-smtp-email-from`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-oauth-auth-level`
+
+--
+
+Name of OpenID Connect ID Token Issuer::
++
+--
+
+Required when the 'openid' scope is included. Value must match the iss field in issued ID Token
+
+e.g. accounts.google.com
+
+`ssoadm` attribute: `openam-auth-openidconnect-issuer-name`
+
+--
+
+OpenID Connect validation configuration type::
++
+--
+
+Required when the 'openid' scope is included. Please select either 1. the issuer discovery url, 2. the issuer jwk url, or 3. the client_secret.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-type`
+
+--
+
+OpenID Connect validation configuration value::
++
+--
+
+Required when the 'openid' scope is included. The discovery url, or jwk url, or the client_secret, corresponding to the selection above.
+
+If discovery or jwk url entered, entry must be in valid url format, 
+
+e.g. https://accounts.google.com/.well-known/openid-configuration
+
+__NB __If client_secret entered, entry is ignored and the value of the Client Secret is used.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-value`
+
+--
+
+Custom Properties::
++
+--
+
+`ssoadm` attribute: `openam-auth-oauth2-custom-properties`
+
+--
+
+[#windows-desktop-sso-module-ref]
+=== Windows Desktop SSO
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/windowsdesktopsso/WindowsDesktopSSO.html[com.sun.identity.authentication.modules.windowsdesktopsso.WindowsDesktopSSO, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthWindowsDesktopSSOService`
+
+Service Principal::
++
+--
+
+The name of the Kerberos principal used during authentication
+
+This principal must match the name used in the keytab file created from the Active Directory server.
+
+The format of the field is as follows:
+
+`HTTP/openam.forgerock.com@AD_DOMAIN.COM`
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-principal-name`
+
+--
+
+Keytab File Name::
++
+--
+
+The path of the AD keytab file
+
+This is the absolute pathname of the AD keytab file. The keytab file is generated by the Active Directory server.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-keytab-file`
+
+--
+
+Kerberos Realm::
++
+--
+
+The name of the Kerberos (Active Directory) realm used for authentication
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-kerberos-realm`
+
+--
+
+Kerberos Server Name::
++
+--
+
+The hostname/IP address of the Kerberos (Active Directory) server.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-kdc`
+
+--
+
+Return Principal with Domain Name::
++
+--
+
+Returns the fully qualified name of the authenticated user rather than just the username.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-returnRealm`
+
+--
+
+Search for the user in the realm::
++
+--
+
+Validate that the user has a matched user profile configured in the data store.
+
+If this option is enabled, the module validates whether the account corresponds to a user profile in the Data Store for the realm. The attributes to perform the search are configured under __Access Control > Realm Name > Authentication > All Core settings > Alias Search Attribute Name__.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-lookupUserInRealm`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-auth-level`
+
+--
+
+Trusted Kerberos realms::
++
+--
+
+List of trusted Kerberos realms for User Kerberos tickets.
+
+If realms are configured, then Kerberos tickets are only accepted if the realm part of the UserPrincipalName of the Users Kerberos ticket matches a realm from the list.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-kerberos-realms-trusted`
+
+--
+
+Service Principal::
++
+--
+
+The name of the Kerberos principal used during authentication
+
+This principal must match the name used in the keytab file created from the Active Directory server.
+
+The format of the field is as follows:
+
+`HTTP/openam.forgerock.com@AD_DOMAIN.COM`
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-principal-name`
+
+--
+
+Keytab File Name::
++
+--
+
+The path of the AD keytab file
+
+This is the absolute pathname of the AD keytab file. The keytab file is generated by the Active Directory server.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-keytab-file`
+
+--
+
+Kerberos Realm::
++
+--
+
+The name of the Kerberos (Active Directory) realm used for authentication
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-kerberos-realm`
+
+--
+
+Kerberos Server Name::
++
+--
+
+The hostname/IP address of the Kerberos (Active Directory) server.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-kdc`
+
+--
+
+Return Principal with Domain Name::
++
+--
+
+Returns the fully qualified name of the authenticated user rather than just the username.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-returnRealm`
+
+--
+
+Search for the user in the realm::
++
+--
+
+Validate that the user has a matched user profile configured in the data store.
+
+If this option is enabled, the module validates whether the account corresponds to a user profile in the Data Store for the realm. The attributes to perform the search are configured under __Access Control > Realm Name > Authentication > All Core settings > Alias Search Attribute Name__.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-lookupUserInRealm`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-auth-level`
+
+--
+
+Trusted Kerberos realms::
++
+--
+
+List of trusted Kerberos realms for User Kerberos tickets.
+
+If realms are configured, then Kerberos tickets are only accepted if the realm part of the UserPrincipalName of the Users Kerberos ticket matches a realm from the list.
+
+`ssoadm` attribute: `iplanet-am-auth-windowsdesktopsso-kerberos-realms-trusted`
+
+--
+
+[#openid-connect-id_token-bearer-module-ref]
+=== OpenID Connect id_token bearer
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/oidc/OpenIdConnect.html[org.forgerock.openam.authentication.modules.oidc.OpenIdConnect, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthOpenIdConnectService`
+
+Name of header referencing the ID Token::
++
+--
+
+`ssoadm` attribute: `openam-auth-openidconnect-header-name`
+
+--
+
+Name of OpenID Connect ID Token Issuer::
++
+--
+
+Value must match the iss field in issued ID Token
+
+`ssoadm` attribute: `openam-auth-openidconnect-issuer-name`
+
+--
+
+OpenID Connect validation configuration type::
++
+--
+
+Please select either 1. the issuer discovery url, 2. the issuer jwk url, or 3. the client_secret.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-type`
+
+--
+
+OpenID Connect validation configuration value::
++
+--
+
+The discovery url, or jwk url, or the client_secret, corresponding to the selection above.
+
+If discovery or jwk url entered, entry must be in valid url format.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-value`
+
+--
+
+Account provider class::
++
+--
+
+Name of the class implementing the account provider.
+
+This class is used by the module to find the account from the attributes mapped by the Account Mapper `org.forgerock.openam.authentication.modules.common.mapping.AccountProvider` interface.
+
+`ssoadm` attribute: `openam-auth-openidconnect-account-provider-class`
+
+--
+
+Principal mapper class::
++
+--
+
+Class which implements mapping of jwt state to a Principal in the local identity repository
+
+Any custom implementation must implement the `org.forgerock.openam.authentication.modules.common.mapping.AttributeMapper` interface.
+
+`ssoadm` attribute: `openam-auth-openidconnect-principal-mapper-class`
+
+--
+
+Mapping of jwt attributes to local LDAP attributes::
++
+--
+
+Format: jwt_attribute=local_ldap_attribute
+
+Mappings allow jwt entries to drive principal lookup. This entry determines how to translate between local LDAP attributes and the entries in the jwt. See http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims[OpenID Connect Core 1.0 Specification] section 5.4 on how to request the inclusion of additional attributes in issued ID Tokens.
+
+`ssoadm` attribute: `openam-auth-openidconnect-jwt-to-local-attribute-mappings`
+
+--
+
+Audience name::
++
+--
+
+A case sensitive string
+
+The audience name for this OpenID Conenct module. This will be used to check that the ID token received is intended for this module as an audience.
+
+`ssoadm` attribute: `openam-auth-openidconnect-audience-name`
+
+--
+
+List of accepted authorized parties::
++
+--
+
+A list of case sensitive strings which can be either string or URI values
+
+A list of authorized parties which this module will accept ID tokens from. This will be checked against the authorized party claim of the ID token.
+
+`ssoadm` attribute: `openam-auth-openidconnect-accepted-authorized-parties`
+
+--
+
+Name of header referencing the ID Token::
++
+--
+
+`ssoadm` attribute: `openam-auth-openidconnect-header-name`
+
+--
+
+Name of OpenID Connect ID Token Issuer::
++
+--
+
+Value must match the iss field in issued ID Token
+
+`ssoadm` attribute: `openam-auth-openidconnect-issuer-name`
+
+--
+
+OpenID Connect validation configuration type::
++
+--
+
+Please select either 1. the issuer discovery url, 2. the issuer jwk url, or 3. the client_secret.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-type`
+
+--
+
+OpenID Connect validation configuration value::
++
+--
+
+The discovery url, or jwk url, or the client_secret, corresponding to the selection above.
+
+If discovery or jwk url entered, entry must be in valid url format.
+
+`ssoadm` attribute: `openam-auth-openidconnect-crypto-context-value`
+
+--
+
+Account provider class::
++
+--
+
+Name of the class implementing the account provider.
+
+This class is used by the module to find the account from the attributes mapped by the Account Mapper `org.forgerock.openam.authentication.modules.common.mapping.AccountProvider` interface.
+
+`ssoadm` attribute: `openam-auth-openidconnect-account-provider-class`
+
+--
+
+Principal mapper class::
++
+--
+
+Class which implements mapping of jwt state to a Principal in the local identity repository
+
+Any custom implementation must implement the `org.forgerock.openam.authentication.modules.common.mapping.AttributeMapper` interface.
+
+`ssoadm` attribute: `openam-auth-openidconnect-principal-mapper-class`
+
+--
+
+Mapping of jwt attributes to local LDAP attributes::
++
+--
+
+Format: jwt_attribute=local_ldap_attribute
+
+Mappings allow jwt entries to drive principal lookup. This entry determines how to translate between local LDAP attributes and the entries in the jwt. See http://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims[OpenID Connect Core 1.0 Specification] section 5.4 on how to request the inclusion of additional attributes in issued ID Tokens.
+
+`ssoadm` attribute: `openam-auth-openidconnect-jwt-to-local-attribute-mappings`
+
+--
+
+Audience name::
++
+--
+
+A case sensitive string
+
+The audience name for this OpenID Conenct module. This will be used to check that the ID token received is intended for this module as an audience.
+
+`ssoadm` attribute: `openam-auth-openidconnect-audience-name`
+
+--
+
+List of accepted authorized parties::
++
+--
+
+A list of case sensitive strings which can be either string or URI values
+
+A list of authorized parties which this module will accept ID tokens from. This will be checked against the authorized party claim of the ID token.
+
+`ssoadm` attribute: `openam-auth-openidconnect-accepted-authorized-parties`
+
+--
+
+[#radius-module-ref]
+=== RADIUS
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/radius/RADIUS.html[com.sun.identity.authentication.modules.radius.RADIUS, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthRadiusService`
+
+Primary Radius Servers::
++
+--
+
+A list of primary Radius servers that will be used for authentication
+
+The module will use these servers in preference to the secondary servers. A single entry must be in the format:
+
+`radius_server:port`
+
+Multiple entries allow associations between OpenAM servers and a Radius server. The format is:
+
+`local server name | radius_server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-server1`
+
+--
+
+Secondary Radius Servers::
++
+--
+
+A list of secondary Radius servers that will be used for authentication, in case the primary servers are unavailable.
+
+The module will use secondary servers for authentication if all primary servers are unavailable. A single entry must be in the format:
+
+`radius_server:port`
+
+Multiple entries allow associations between OpenAM servers and a Radius server. The format is:
+
+`local server name | radius_server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-server2`
+
+--
+
+Shared Secret::
++
+--
+
+The secret shared between the RADIUS server and the authentication module.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-secret`
+
+--
+
+Port Number::
++
+--
+
+Port number on which the RADIUS server is listening.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-server-port`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-radius-auth-level`
+
+--
+
+Timeout::
++
+--
+
+Amount of time in seconds to wait for the RADIUS server response.
+
+This sets the `SO_TIMEOUT` timeout on the packet. 
+
+`ssoadm` attribute: `iplanet-am-auth-radius-timeout`
+
+--
+
+Health check interval::
++
+--
+
+The interval between checks to unavailable RADIUS servers, in minutes. 
+
+Determines how often OpenAM checks an offline server's status. The check will send an invalid authentication request to the RADIUS server. Offline servers will not be used until the healthcheck was successful. Primary servers that become available will be used in preference to secondary servers.
+
+`ssoadm` attribute: `openam-auth-radius-healthcheck-interval`
+
+--
+
+Primary Radius Servers::
++
+--
+
+A list of primary Radius servers that will be used for authentication
+
+The module will use these servers in preference to the secondary servers. A single entry must be in the format:
+
+`radius_server:port`
+
+Multiple entries allow associations between OpenAM servers and a Radius server. The format is:
+
+`local server name | radius_server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-server1`
+
+--
+
+Secondary Radius Servers::
++
+--
+
+A list of secondary Radius servers that will be used for authentication, in case the primary servers are unavailable.
+
+The module will use secondary servers for authentication if all primary servers are unavailable. A single entry must be in the format:
+
+`radius_server:port`
+
+Multiple entries allow associations between OpenAM servers and a Radius server. The format is:
+
+`local server name | radius_server:port`
+
+__NB __The local server name is the full name of the server from the list of servers and sites.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-server2`
+
+--
+
+Shared Secret::
++
+--
+
+The secret shared between the RADIUS server and the authentication module.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-secret`
+
+--
+
+Port Number::
++
+--
+
+Port number on which the RADIUS server is listening.
+
+`ssoadm` attribute: `iplanet-am-auth-radius-server-port`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-radius-auth-level`
+
+--
+
+Timeout::
++
+--
+
+Amount of time in seconds to wait for the RADIUS server response.
+
+This sets the `SO_TIMEOUT` timeout on the packet. 
+
+`ssoadm` attribute: `iplanet-am-auth-radius-timeout`
+
+--
+
+Health check interval::
++
+--
+
+The interval between checks to unavailable RADIUS servers, in minutes. 
+
+Determines how often OpenAM checks an offline server's status. The check will send an invalid authentication request to the RADIUS server. Offline servers will not be used until the healthcheck was successful. Primary servers that become available will be used in preference to secondary servers.
+
+`ssoadm` attribute: `openam-auth-radius-healthcheck-interval`
+
+--
+
+[#hotp-module-ref]
+=== HOTP
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/hotp/HOTP.html[com.sun.identity.authentication.modules.hotp.HOTP, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthHOTPService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthHOTPAuthLevel`
+
+--
+
+SMS Gateway Implementation Class::
++
+--
+
+The HOTP authentication module uses this class to send SMS messages.
+
+The SMS gateway class must implement the following interface
+
+`com.sun.identity.authentication.modules.hotp.SMSGateway`
+
+`ssoadm` attribute: `sunAMAuthHOTPSMSGatewayImplClassName`
+
+--
+
+Mail Server Host Name::
++
+--
+
+The name of the mail server; OpenAM will use SMTP to send the messages.
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPHostName`
+
+--
+
+Mail Server Host Port::
++
+--
+
+The port of the mail server.
+
+The default port for SMTP is 25, if using SSL the default port is 465.
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPHostPort`
+
+--
+
+Mail Server Authentication Username::
++
+--
+
+The username to use if the mail server is using SMTP authentication
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPUserName`
+
+--
+
+Mail Server Authentication Password::
++
+--
+
+The password to use if the mail server is using SMTP authentication
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPUserPassword`
+
+--
+
+Mail Server Secure Connection ::
++
+--
+
+This setting controls whether the authentication module communicates with the mail server using SSL/TLS
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPSSLEnabled`
+
+--
+
+Email From Address::
++
+--
+
+Emails from the HOTP Authentication module will come from this address.
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPFromAddress`
+
+--
+
+One Time Password Validity Length::
++
+--
+
+This One Time Password will remain valid for this period (in minutes)
+
+`ssoadm` attribute: `sunAMAuthHOTPPasswordValidityDuration`
+
+--
+
+One Time Password Length ::
++
+--
+
+The length of the generated One Time Password (in digits)
+
+`ssoadm` attribute: `sunAMAuthHOTPPasswordLength`
+
+--
+
+One Time Password Delivery::
++
+--
+
+The mechanism used to deliver the One Time Password
+
+`ssoadm` attribute: `sunAMAuthHOTPasswordDelivery`
+
+--
+
+Auto Send OTP Code::
++
+--
+
+Select this checkbox if the OTP should be sent automatically
+
+`ssoadm` attribute: `sunAMAuthHOTPAutoClicking`
+
+--
+
+Mobile Phone Number Attribute Name::
++
+--
+
+This is the attribute name used for a requested text message
+
+`ssoadm` attribute: `openamTelephoneAttribute`
+
+--
+
+Mobile Carrier Attribute Name::
++
+--
+
+This is the attribute name used for a mobile carrier domain for sending SMS messages
+
+`ssoadm` attribute: `openamSMSCarrierAttribute`
+
+--
+
+Email Attribute Name::
++
+--
+
+This is the attribute name used by the OTP to email the user
+
+`ssoadm` attribute: `openamEmailAttribute`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `sunAMAuthHOTPAuthLevel`
+
+--
+
+SMS Gateway Implementation Class::
++
+--
+
+The HOTP authentication module uses this class to send SMS messages.
+
+The SMS gateway class must implement the following interface
+
+`com.sun.identity.authentication.modules.hotp.SMSGateway`
+
+`ssoadm` attribute: `sunAMAuthHOTPSMSGatewayImplClassName`
+
+--
+
+Mail Server Host Name::
++
+--
+
+The name of the mail server; OpenAM will use SMTP to send the messages.
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPHostName`
+
+--
+
+Mail Server Host Port::
++
+--
+
+The port of the mail server.
+
+The default port for SMTP is 25, if using SSL the default port is 465.
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPHostPort`
+
+--
+
+Mail Server Authentication Username::
++
+--
+
+The username to use if the mail server is using SMTP authentication
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPUserName`
+
+--
+
+Mail Server Authentication Password::
++
+--
+
+The password to use if the mail server is using SMTP authentication
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPUserPassword`
+
+--
+
+Mail Server Secure Connection ::
++
+--
+
+This setting controls whether the authentication module communicates with the mail server using SSL/TLS
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPSSLEnabled`
+
+--
+
+Email From Address::
++
+--
+
+Emails from the HOTP Authentication module will come from this address.
+
+`ssoadm` attribute: `sunAMAuthHOTPSMTPFromAddress`
+
+--
+
+One Time Password Validity Length::
++
+--
+
+This One Time Password will remain valid for this period (in minutes)
+
+`ssoadm` attribute: `sunAMAuthHOTPPasswordValidityDuration`
+
+--
+
+One Time Password Length ::
++
+--
+
+The length of the generated One Time Password (in digits)
+
+`ssoadm` attribute: `sunAMAuthHOTPPasswordLength`
+
+--
+
+One Time Password Delivery::
++
+--
+
+The mechanism used to deliver the One Time Password
+
+`ssoadm` attribute: `sunAMAuthHOTPasswordDelivery`
+
+--
+
+Auto Send OTP Code::
++
+--
+
+Select this checkbox if the OTP should be sent automatically
+
+`ssoadm` attribute: `sunAMAuthHOTPAutoClicking`
+
+--
+
+Mobile Phone Number Attribute Name::
++
+--
+
+This is the attribute name used for a requested text message
+
+`ssoadm` attribute: `openamTelephoneAttribute`
+
+--
+
+Mobile Carrier Attribute Name::
++
+--
+
+This is the attribute name used for a mobile carrier domain for sending SMS messages
+
+`ssoadm` attribute: `openamSMSCarrierAttribute`
+
+--
+
+Email Attribute Name::
++
+--
+
+This is the attribute name used by the OTP to email the user
+
+`ssoadm` attribute: `openamEmailAttribute`
+
+--
+
+[#authenticator-(oath)-module-ref]
+=== Authenticator (OATH)
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/fr/oath/AuthenticatorOATH.html[org.forgerock.openam.authentication.modules.fr.oath.AuthenticatorOATH, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthAuthenticatorOATHService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-authenticatoroath-auth-level`
+
+--
+
+One Time Password Length ::
++
+--
+
+The length of the generated OTP in digits, must be at least 6 and compatible with the hardware/software OTP generators you expect your end-users to use. For example, Google and ForgeRock authenticators support values of 6 and 8.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-password-length`
+
+--
+
+Minimum Secret Key Length::
++
+--
+
+Number of hexadecimal characters allowed for the Secret Key.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-min-secret-key-length`
+
+--
+
+OATH Algorithm to Use::
++
+--
+
+Choose the algorithm your device uses to generate the OTP.
+
+HOTP uses a counter value that is incremented every time a new OTP is generated. TOTP generates a new OTP every few seconds as specified by the time step interval.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-algorithm`
+
+--
+
+HOTP Window Size::
++
+--
+
+The size of the window to resynchronize with the client.
+
+This sets the window that the OTP device and the server counter can be out of sync. For example, if the window size is 100 and the servers last successful login was at counter value 2, then the server will accept a OTP from the OTP device that is from device counter 3 to 102.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-hotp-window-size`
+
+--
+
+Add Checksum Digit::
++
+--
+
+This adds a checksum digit to the OTP.
+
+This adds a digit to the end of the OTP generated to be used as a checksum to verify the OTP was generated correctly. This is in addition to the actual password length. You should only set this if your device supports it.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-add-checksum`
+
+--
+
+Truncation Offset::
++
+--
+
+This adds an offset to the generation of the OTP.
+
+This is an option used by the HOTP algorithm that not all devices support. This should be left default unless you know your device uses a offset.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-truncation-offset`
+
+--
+
+TOTP Time Step Interval::
++
+--
+
+The TOTP time step in seconds that the OTP device uses to generate the OTP.
+
+This is the time interval that one OTP is valid for. For example, if the time step is 30 seconds, then a new OTP will be generated every 30 seconds. This makes a single OTP valid for only 30 seconds.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-size-of-time-step`
+
+--
+
+TOTP Time Steps::
++
+--
+
+The number of time steps to check before and after receiving a OTP.
+
+This is the number of time step intervals to check the received OTP against both forward in time and back in time. For example, with 1 time steps and a time step interval of 30 seconds the server will allow a code between the previous code, the current code and the next code.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-steps-in-window`
+
+--
+
+Maximum Allowed Clock Drift::
++
+--
+
+Number of time steps a client is allowed to get out of sync with the server before manual resynchronisation is required. For example, with 3 allowed drifts and a time step interval of 30 seconds the server will allow codes from up to 90 seconds from the current time to be treated as the current time step. The drift for a user's device is calculated each time they enter a new code. If the drift exceeds this value, the user's authentication code will be rejected.
+
+`ssoadm` attribute: `openam-auth-fr-oath-maximum-clock-drift`
+
+--
+
+Name of the Issuer::
++
+--
+
+Name to identify the OTP issuer.
+
+`ssoadm` attribute: `openam-auth-fr-oath-issuer-name`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-authenticatoroath-auth-level`
+
+--
+
+One Time Password Length ::
++
+--
+
+The length of the generated OTP in digits, must be at least 6 and compatible with the hardware/software OTP generators you expect your end-users to use. For example, Google and ForgeRock authenticators support values of 6 and 8.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-password-length`
+
+--
+
+Minimum Secret Key Length::
++
+--
+
+Number of hexadecimal characters allowed for the Secret Key.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-min-secret-key-length`
+
+--
+
+OATH Algorithm to Use::
++
+--
+
+Choose the algorithm your device uses to generate the OTP.
+
+HOTP uses a counter value that is incremented every time a new OTP is generated. TOTP generates a new OTP every few seconds as specified by the time step interval.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-algorithm`
+
+--
+
+HOTP Window Size::
++
+--
+
+The size of the window to resynchronize with the client.
+
+This sets the window that the OTP device and the server counter can be out of sync. For example, if the window size is 100 and the servers last successful login was at counter value 2, then the server will accept a OTP from the OTP device that is from device counter 3 to 102.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-hotp-window-size`
+
+--
+
+Add Checksum Digit::
++
+--
+
+This adds a checksum digit to the OTP.
+
+This adds a digit to the end of the OTP generated to be used as a checksum to verify the OTP was generated correctly. This is in addition to the actual password length. You should only set this if your device supports it.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-add-checksum`
+
+--
+
+Truncation Offset::
++
+--
+
+This adds an offset to the generation of the OTP.
+
+This is an option used by the HOTP algorithm that not all devices support. This should be left default unless you know your device uses a offset.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-truncation-offset`
+
+--
+
+TOTP Time Step Interval::
++
+--
+
+The TOTP time step in seconds that the OTP device uses to generate the OTP.
+
+This is the time interval that one OTP is valid for. For example, if the time step is 30 seconds, then a new OTP will be generated every 30 seconds. This makes a single OTP valid for only 30 seconds.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-size-of-time-step`
+
+--
+
+TOTP Time Steps::
++
+--
+
+The number of time steps to check before and after receiving a OTP.
+
+This is the number of time step intervals to check the received OTP against both forward in time and back in time. For example, with 1 time steps and a time step interval of 30 seconds the server will allow a code between the previous code, the current code and the next code.
+
+`ssoadm` attribute: `iplanet-am-auth-fr-oath-steps-in-window`
+
+--
+
+Maximum Allowed Clock Drift::
++
+--
+
+Number of time steps a client is allowed to get out of sync with the server before manual resynchronisation is required. For example, with 3 allowed drifts and a time step interval of 30 seconds the server will allow codes from up to 90 seconds from the current time to be treated as the current time step. The drift for a user's device is calculated each time they enter a new code. If the drift exceeds this value, the user's authentication code will be rejected.
+
+`ssoadm` attribute: `openam-auth-fr-oath-maximum-clock-drift`
+
+--
+
+Name of the Issuer::
++
+--
+
+Name to identify the OTP issuer.
+
+`ssoadm` attribute: `openam-auth-fr-oath-issuer-name`
+
+--
+
+[#scripted-module-module-ref]
+=== Scripted Module
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/scripted/Scripted.html[org.forgerock.openam.authentication.modules.scripted.Scripted, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthScriptedService`
+
+Client-side Script Enabled::
++
+--
+
+Enable this setting if the client-side script should be executed.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script-enabled`
+
+--
+
+Client-side Script::
++
+--
+
+The client-side script.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script`
+
+--
+
+Server-side Script::
++
+--
+
+The server-side script to execute.
+
+This script will be run on the server, subsequent to any client script having returned.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-server-script`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with the authentication module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-auth-level`
+
+--
+
+Client-side Script Enabled::
++
+--
+
+Enable this setting if the client-side script should be executed.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script-enabled`
+
+--
+
+Client-side Script::
++
+--
+
+The client-side script.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script`
+
+--
+
+Server-side Script::
++
+--
+
+The server-side script to execute.
+
+This script will be run on the server, subsequent to any client script having returned.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-server-script`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with the authentication module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-auth-level`
+
+--
+
+[#device-id-(match)-module-ref]
+=== Device Id (Match)
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/deviceprint/DeviceIdMatch.html[org.forgerock.openam.authentication.modules.deviceprint.DeviceIdMatch, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthDeviceIdMatchService`
+
+Client-side Script Enabled::
++
+--
+
+Enable this setting if the client-side script should be executed.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script-enabled`
+
+--
+
+Client-side Script::
++
+--
+
+The client-side script.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script`
+
+--
+
+Server-side Script::
++
+--
+
+The server-side script to execute.
+
+This script will be run on the server, subsequent to any client script having returned. It can be written in the selected language.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-server-script`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with the authentication module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-auth-level`
+
+--
+
+Client-side Script Enabled::
++
+--
+
+Enable this setting if the client-side script should be executed.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script-enabled`
+
+--
+
+Client-side Script::
++
+--
+
+The client-side script.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-client-script`
+
+--
+
+Server-side Script::
++
+--
+
+The server-side script to execute.
+
+This script will be run on the server, subsequent to any client script having returned. It can be written in the selected language.
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-server-script`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with the authentication module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-scripted-auth-level`
+
+--
+
+[#device-id-(save)-module-ref]
+=== Device Id (Save)
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/deviceprint/DeviceIdSave.html[org.forgerock.openam.authentication.modules.deviceprint.DeviceIdSave, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthDeviceIdSaveService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with the authentication module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-device-id-save-auth-level`
+
+--
+
+Automatically store new profiles::
++
+--
+
+Select this checkbox to assume user consent to store every new profile
+
+If this checkbox is selected user won't be prompted for storing new profiles. After successful OTP confirmation profile will be stored automatically.
+
+`ssoadm` attribute: `iplanet-am-auth-device-id-save-auto-store-profile`
+
+--
+
+Maximum stored profile quantity::
++
+--
+
+No more than specified profiles quantity will be stored in user record
+
+`ssoadm` attribute: `iplanet-am-auth-device-id-save-max-profiles-allowed`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with the authentication module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-device-id-save-auth-level`
+
+--
+
+Automatically store new profiles::
++
+--
+
+Select this checkbox to assume user consent to store every new profile
+
+If this checkbox is selected user won't be prompted for storing new profiles. After successful OTP confirmation profile will be stored automatically.
+
+`ssoadm` attribute: `iplanet-am-auth-device-id-save-auto-store-profile`
+
+--
+
+Maximum stored profile quantity::
++
+--
+
+No more than specified profiles quantity will be stored in user record
+
+`ssoadm` attribute: `iplanet-am-auth-device-id-save-max-profiles-allowed`
+
+--
+
+[#oath-module-ref]
+=== OATH
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/oath/OATH.html[org.forgerock.openam.authentication.modules.oath.OATH, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthOATHService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-oath-auth-level`
+
+--
+
+One Time Password Length ::
++
+--
+
+The length of the generated OTP in digits. Must be 6 digits or longer.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-password-length`
+
+--
+
+Minimum Secret Key Length::
++
+--
+
+Number of hexadecimal characters allowed for the Secret Key.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-min-secret-key-length`
+
+--
+
+Secret Key Attribute Name::
++
+--
+
+The name of the attribute in the user profile to store the user secret key.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-secret-key-attribute`
+
+--
+
+The Shared Secret Provider Class::
++
+--
+
+The fully qualified class name for the Shared Secret Provider extension.
+
+The class that is used to process the user profile attribute used to store the user secret key.
+
+`ssoadm` attribute: `forgerock-oath-sharedsecret-implementation-class`
+
+--
+
+Clock Drift Attribute Name::
++
+--
+
+The name of the attribute in the user profile to store the clock drift. If left empty then clock drift checking is disabled.
+
+The name of the attribute used to store the last observed clock drift which is used to indicated when a manual resynchronisation is required.
+
+`ssoadm` attribute: `forgerock-oath-observed-clock-drift-attribute-name`
+
+--
+
+Maximum Allowed Clock Drift::
++
+--
+
+Number of time steps a client is allowed to get out of sync with the server before manual resynchronisation is required. This should be greater than the TOTP Time Steps value.
+
+As this checks the time drift over multiple requests it needs to be greater than the value specified in TOTP Time Steps.
+
+`ssoadm` attribute: `forgerock-oath-maximum-clock-drift`
+
+--
+
+OATH Algorithm to Use::
++
+--
+
+Choose the algorithm your device uses to generate the OTP.
+
+HOTP uses a counter value that is incremented every time a new OTP is generated. TOTP generates a new OTP every few seconds as specified by the time step interval.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-algorithm`
+
+--
+
+HOTP Window Size::
++
+--
+
+The size of the window to resynchronize with the client.
+
+This sets the window that the OTP device and the server counter can be out of sync. For example, if the window size is 100 and the servers last successful login was at counter value 2, then the server will accept a OTP from the OTP device that is from device counter 3 to 102.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-hotp-window-size`
+
+--
+
+Counter Attribute Name::
++
+--
+
+The name of the attribute in the user profile to store the user counter. This is required if HOTP is chosen as the OATH algorithm.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-hotp-counter-attribute`
+
+--
+
+Add Checksum Digit::
++
+--
+
+This adds a checksum digit to the OTP.
+
+This adds a digit to the end of the OTP generated to be used as a checksum to verify the OTP was generated correctly. This is in addition to the actual password length. You should only set this if your device supports it.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-add-checksum`
+
+--
+
+Truncation Offset::
++
+--
+
+This adds an offset to the generation of the OTP.
+
+This is an option used by the HOTP algorithm that not all devices support. This should be left default unless you know your device uses a offset.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-truncation-offset`
+
+--
+
+TOTP Time Step Interval::
++
+--
+
+The TOTP time step in seconds that the OTP device uses to generate the OTP.
+
+This is the time interval that one OTP is valid for. For example, if the time step is 30 seconds, then a new OTP will be generated every 30 seconds. This makes a single OTP valid for only 30 seconds.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-size-of-time-step`
+
+--
+
+TOTP Time Steps::
++
+--
+
+The number of time steps to check before and after receiving a OTP.
+
+This is the number of time step intervals to check the received OTP against both forward in time and back in time. For example, with 2 time steps and a time step interval of 30 seconds the server will allow a clock drift between client and server of 89 seconds. (2-30 second steps and 29 seconds for the interval that the OTP arrived in)
+
+`ssoadm` attribute: `iplanet-am-auth-oath-steps-in-window`
+
+--
+
+Last Login Time Attribute::
++
+--
+
+Attribute to store the time of the users last login. This is required if TOTP is chosen as the OATH algorithm.
+
+This attribute stores the last time a user logged in to prevent time based attacks. The value is stored as a number (Unix Time).
+
+`ssoadm` attribute: `iplanet-am-auth-oath-last-login-time-attribute-name`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `iplanet-am-auth-oath-auth-level`
+
+--
+
+One Time Password Length ::
++
+--
+
+The length of the generated OTP in digits. Must be 6 digits or longer.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-password-length`
+
+--
+
+Minimum Secret Key Length::
++
+--
+
+Number of hexadecimal characters allowed for the Secret Key.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-min-secret-key-length`
+
+--
+
+Secret Key Attribute Name::
++
+--
+
+The name of the attribute in the user profile to store the user secret key.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-secret-key-attribute`
+
+--
+
+The Shared Secret Provider Class::
++
+--
+
+The fully qualified class name for the Shared Secret Provider extension.
+
+The class that is used to process the user profile attribute used to store the user secret key.
+
+`ssoadm` attribute: `forgerock-oath-sharedsecret-implementation-class`
+
+--
+
+Clock Drift Attribute Name::
++
+--
+
+The name of the attribute in the user profile to store the clock drift. If left empty then clock drift checking is disabled.
+
+The name of the attribute used to store the last observed clock drift which is used to indicated when a manual resynchronisation is required.
+
+`ssoadm` attribute: `forgerock-oath-observed-clock-drift-attribute-name`
+
+--
+
+Maximum Allowed Clock Drift::
++
+--
+
+Number of time steps a client is allowed to get out of sync with the server before manual resynchronisation is required. This should be greater than the TOTP Time Steps value.
+
+As this checks the time drift over multiple requests it needs to be greater than the value specified in TOTP Time Steps.
+
+`ssoadm` attribute: `forgerock-oath-maximum-clock-drift`
+
+--
+
+OATH Algorithm to Use::
++
+--
+
+Choose the algorithm your device uses to generate the OTP.
+
+HOTP uses a counter value that is incremented every time a new OTP is generated. TOTP generates a new OTP every few seconds as specified by the time step interval.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-algorithm`
+
+--
+
+HOTP Window Size::
++
+--
+
+The size of the window to resynchronize with the client.
+
+This sets the window that the OTP device and the server counter can be out of sync. For example, if the window size is 100 and the servers last successful login was at counter value 2, then the server will accept a OTP from the OTP device that is from device counter 3 to 102.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-hotp-window-size`
+
+--
+
+Counter Attribute Name::
++
+--
+
+The name of the attribute in the user profile to store the user counter. This is required if HOTP is chosen as the OATH algorithm.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-hotp-counter-attribute`
+
+--
+
+Add Checksum Digit::
++
+--
+
+This adds a checksum digit to the OTP.
+
+This adds a digit to the end of the OTP generated to be used as a checksum to verify the OTP was generated correctly. This is in addition to the actual password length. You should only set this if your device supports it.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-add-checksum`
+
+--
+
+Truncation Offset::
++
+--
+
+This adds an offset to the generation of the OTP.
+
+This is an option used by the HOTP algorithm that not all devices support. This should be left default unless you know your device uses a offset.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-truncation-offset`
+
+--
+
+TOTP Time Step Interval::
++
+--
+
+The TOTP time step in seconds that the OTP device uses to generate the OTP.
+
+This is the time interval that one OTP is valid for. For example, if the time step is 30 seconds, then a new OTP will be generated every 30 seconds. This makes a single OTP valid for only 30 seconds.
+
+`ssoadm` attribute: `iplanet-am-auth-oath-size-of-time-step`
+
+--
+
+TOTP Time Steps::
++
+--
+
+The number of time steps to check before and after receiving a OTP.
+
+This is the number of time step intervals to check the received OTP against both forward in time and back in time. For example, with 2 time steps and a time step interval of 30 seconds the server will allow a clock drift between client and server of 89 seconds. (2-30 second steps and 29 seconds for the interval that the OTP arrived in)
+
+`ssoadm` attribute: `iplanet-am-auth-oath-steps-in-window`
+
+--
+
+Last Login Time Attribute::
++
+--
+
+Attribute to store the time of the users last login. This is required if TOTP is chosen as the OATH algorithm.
+
+This attribute stores the last time a user logged in to prevent time based attacks. The value is stored as a number (Unix Time).
+
+`ssoadm` attribute: `iplanet-am-auth-oath-last-login-time-attribute-name`
+
+--
+
+[#saml2-module-ref]
+=== SAML2
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/saml2/SAML2.html[org.forgerock.openam.authentication.modules.saml2.SAML2, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthSAML2Service`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-auth-level`
+
+--
+
+IdP Entity ID::
++
+--
+
+The entity name of the SAML2 IdP Service to use for this module (must be configured).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-entity-name`
+
+--
+
+SP MetaAlias::
++
+--
+
+MetaAlias for Service Provider. The format of this parameter is `/realm_name/SP`
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-meta-alias`
+
+--
+
+Allow IdP to Create NameID::
++
+--
+
+Use this parameter to indicate whether the identity provider can create a new identifier for the principal if none exists (true) or not (false).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-allow-create`
+
+--
+
+Linking Authentication Chain::
++
+--
+
+The authentication chain that will be executed when a user is required to be authenticated locally to match their user account with that of a remotely authenticated assertion.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-login-chain`
+
+--
+
+Comparison Type::
++
+--
+
+(Optional) Use this parameter to specify a comparison method to evaluate the requested context classes or statements. OpenAM accepts the following values: `better`, `exact`, `maximum`, and `minimum`.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-auth-comparison`
+
+--
+
+Authentication Context Class Reference::
++
+--
+
+(Optional) Use this parameter to specify authentication context class references. Separate multiple values with pipe characters (|).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-authn-context-class-ref`
+
+--
+
+Authentication Context Declaration Reference::
++
+--
+
+(Optional) Use this parameter to specify authentication context declaration references. Separate multiple values with pipe characters (|).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-authn-context-decl-ref`
+
+--
+
+Request Binding::
++
+--
+
+Use this parameter to indicate what binding the SP should use when communicating with the IdP.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-req-binding`
+
+--
+
+Response Binding::
++
+--
+
+Use this parameter to indicate what binding the IdP should use when communicating with this SP.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-binding`
+
+--
+
+Force IdP Authentication::
++
+--
+
+Use this parameter to indicate whether the identity provider should force authentication (true) or can reuse existing security contexts (false).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-force-authn`
+
+--
+
+Passive Authentication::
++
+--
+
+Use this parameter to indicate whether the identity provider should authenticate passively (true) or not (false).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-is-passive`
+
+--
+
+NameID Format::
++
+--
+
+(Optional) Use this parameter to specify a SAML Name Identifier format identifier such as `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` `urn:oasis:names:tc:SAML:2.0:nameid-format:transient` `urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified`
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-name-id-format`
+
+--
+
+Single Logout Enabled::
++
+--
+
+Enable to attempt logout of the user's IdP session at the point of session logout. Required the `org.forgerock.openam.authentication.modules.saml2.SAML2PostAuthenticationPlugin` to be active on the chain that includes this SAML2 module.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-slo-enabled`
+
+--
+
+Single Logout URL::
++
+--
+
+If Single Logout is enabled, this is the URL to which the user should be forwarded after successful IdP logout. This must be a fully-qualified URL (start with http...), or the redirect will not function.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-slo-relay`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-auth-level`
+
+--
+
+IdP Entity ID::
++
+--
+
+The entity name of the SAML2 IdP Service to use for this module (must be configured).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-entity-name`
+
+--
+
+SP MetaAlias::
++
+--
+
+MetaAlias for Service Provider. The format of this parameter is `/realm_name/SP`
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-meta-alias`
+
+--
+
+Allow IdP to Create NameID::
++
+--
+
+Use this parameter to indicate whether the identity provider can create a new identifier for the principal if none exists (true) or not (false).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-allow-create`
+
+--
+
+Linking Authentication Chain::
++
+--
+
+The authentication chain that will be executed when a user is required to be authenticated locally to match their user account with that of a remotely authenticated assertion.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-login-chain`
+
+--
+
+Comparison Type::
++
+--
+
+(Optional) Use this parameter to specify a comparison method to evaluate the requested context classes or statements. OpenAM accepts the following values: `better`, `exact`, `maximum`, and `minimum`.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-auth-comparison`
+
+--
+
+Authentication Context Class Reference::
++
+--
+
+(Optional) Use this parameter to specify authentication context class references. Separate multiple values with pipe characters (|).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-authn-context-class-ref`
+
+--
+
+Authentication Context Declaration Reference::
++
+--
+
+(Optional) Use this parameter to specify authentication context declaration references. Separate multiple values with pipe characters (|).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-authn-context-decl-ref`
+
+--
+
+Request Binding::
++
+--
+
+Use this parameter to indicate what binding the SP should use when communicating with the IdP.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-req-binding`
+
+--
+
+Response Binding::
++
+--
+
+Use this parameter to indicate what binding the IdP should use when communicating with this SP.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-binding`
+
+--
+
+Force IdP Authentication::
++
+--
+
+Use this parameter to indicate whether the identity provider should force authentication (true) or can reuse existing security contexts (false).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-force-authn`
+
+--
+
+Passive Authentication::
++
+--
+
+Use this parameter to indicate whether the identity provider should authenticate passively (true) or not (false).
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-is-passive`
+
+--
+
+NameID Format::
++
+--
+
+(Optional) Use this parameter to specify a SAML Name Identifier format identifier such as `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` `urn:oasis:names:tc:SAML:2.0:nameid-format:transient` `urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified`
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-name-id-format`
+
+--
+
+Single Logout Enabled::
++
+--
+
+Enable to attempt logout of the user's IdP session at the point of session logout. Required the `org.forgerock.openam.authentication.modules.saml2.SAML2PostAuthenticationPlugin` to be active on the chain that includes this SAML2 module.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-slo-enabled`
+
+--
+
+Single Logout URL::
++
+--
+
+If Single Logout is enabled, this is the URL to which the user should be forwarded after successful IdP logout. This must be a fully-qualified URL (start with http...), or the redirect will not function.
+
+`ssoadm` attribute: `forgerock-am-auth-saml2-slo-relay`
+
+--
+
+[#authenticator-(push)-module-ref]
+=== Authenticator (Push)
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/push/AuthenticatorPush.html[org.forgerock.openam.authentication.modules.push.AuthenticatorPush, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthAuthenticatorPushService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `forgerock-am-auth-push-auth-level`
+
+--
+
+Return Message Timeout (ms)::
++
+--
+
+The period of time (in milliseconds) within which a push notification should be replied to.
+
+`ssoadm` attribute: `forgerock-am-auth-push-message-response-timeout`
+
+--
+
+Login Message::
++
+--
+
+Message transmitted over Push. Use the label {{user}} to replace with the registered login's username, and {{issuer}} to replace with the name of the issuer stored at registration.
+
+`ssoadm` attribute: `forgerock-am-auth-push-message`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `forgerock-am-auth-push-auth-level`
+
+--
+
+Return Message Timeout (ms)::
++
+--
+
+The period of time (in milliseconds) within which a push notification should be replied to.
+
+`ssoadm` attribute: `forgerock-am-auth-push-message-response-timeout`
+
+--
+
+Login Message::
++
+--
+
+Message transmitted over Push. Use the label {{user}} to replace with the registered login's username, and {{issuer}} to replace with the name of the issuer stored at registration.
+
+`ssoadm` attribute: `forgerock-am-auth-push-message`
+
+--
+
+[#authenticator-(push)-registration-module-ref]
+=== Authenticator (Push) Registration
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/push/registration/AuthenticatorPushRegistration.html[org.forgerock.openam.authentication.modules.push.registration.AuthenticatorPushRegistration, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthAuthenticatorPushRegistrationService`
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `forgerock-am-auth-push-reg-auth-level`
+
+--
+
+Issuer Name::
++
+--
+
+The Name of the service as it will appear on the registered device.
+
+`ssoadm` attribute: `forgerock-am-auth-push-reg-issuer`
+
+--
+
+Registration Response Timeout (ms)::
++
+--
+
+The period of time (in milliseconds) within which the registration QR code should be replied to.
+
+`ssoadm` attribute: `forgerock-am-auth-push-message-registration-response-timeout`
+
+--
+
+Background Colour::
++
+--
+
+The background colour of the image to display behind your identity issuer's logo within the mobile app.
+
+`ssoadm` attribute: `forgerock-am-auth-hex-bgcolour`
+
+--
+
+Image URL::
++
+--
+
+The location of the image to download and display as your identity issuer's logo within the mobile app.
+
+`ssoadm` attribute: `forgerock-am-auth-img-url`
+
+--
+
+App Store App URL::
++
+--
+
+URL of the app to download on the App Store.
+
+`ssoadm` attribute: `forgerock-am-auth-apple-link`
+
+--
+
+Google Play URL::
++
+--
+
+URL of the app to download on Google Play.
+
+`ssoadm` attribute: `forgerock-am-auth-google-link`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default).
+
+`ssoadm` attribute: `forgerock-am-auth-push-reg-auth-level`
+
+--
+
+Issuer Name::
++
+--
+
+The Name of the service as it will appear on the registered device.
+
+`ssoadm` attribute: `forgerock-am-auth-push-reg-issuer`
+
+--
+
+Registration Response Timeout (ms)::
++
+--
+
+The period of time (in milliseconds) within which the registration QR code should be replied to.
+
+`ssoadm` attribute: `forgerock-am-auth-push-message-registration-response-timeout`
+
+--
+
+Background Colour::
++
+--
+
+The background colour of the image to display behind your identity issuer's logo within the mobile app.
+
+`ssoadm` attribute: `forgerock-am-auth-hex-bgcolour`
+
+--
+
+Image URL::
++
+--
+
+The location of the image to download and display as your identity issuer's logo within the mobile app.
+
+`ssoadm` attribute: `forgerock-am-auth-img-url`
+
+--
+
+App Store App URL::
++
+--
+
+URL of the app to download on the App Store.
+
+`ssoadm` attribute: `forgerock-am-auth-apple-link`
+
+--
+
+Google Play URL::
++
+--
+
+URL of the app to download on Google Play.
+
+`ssoadm` attribute: `forgerock-am-auth-google-link`
+
+--
+
+[#forgerock-amster-module-ref]
+=== ForgeRock Amster
+
+Java class: `link:../apidocs/index.html?org/forgerock/openam/authentication/modules/amster/Amster.html[org.forgerock.openam.authentication.modules.amster.Amster, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthAmsterService`
+
+SSH Authorized Keys::
++
+--
+
+The location of the SSH authorized_keys file to use to validate remote Amster connections.
+
+`ssoadm` attribute: `forgerock-am-auth-amster-ssh-keys`
+
+--
+
+SSH Authorized Keys::
++
+--
+
+The location of the SSH authorized_keys file to use to validate remote Amster connections.
+
+`ssoadm` attribute: `forgerock-am-auth-amster-ssh-keys`
+
+--
+
+[#recaptcha-module-ref]
+=== ReCaptcha
+
+Java class: `link:../apidocs/index.html?org/openidentityplatform/openam/authentication/modules/recaptcha/ReCaptcha.html[org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthReCaptchaService`
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.authlevel`
+
+--
+
+Secret Key::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.secret`
+
+--
+
+Key::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.key`
+
+--
+
+ReCaptcha JavaScript URL::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.jsUrl`
+
+--
+
+ReCaptcha Verify URL::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.verifyUrl`
+
+--
+
+Invisible::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.invisible`
+
+--
+
+IP network ignore CIDR::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.ip.ignore`
+
+--
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.authlevel`
+
+--
+
+Secret Key::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.secret`
+
+--
+
+Key::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.key`
+
+--
+
+ReCaptcha JavaScript URL::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.jsUrl`
+
+--
+
+ReCaptcha Verify URL::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.verifyUrl`
+
+--
+
+Invisible::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.invisible`
+
+--
+
+IP network ignore CIDR::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.recaptcha.ReCaptcha.ip.ignore`
+
+--
+
+[#securid-module-ref]
+=== SecurID
+
+Java class: `link:../apidocs/index.html?com/sun/identity/authentication/modules/securid/SecurID.html[com.sun.identity.authentication.modules.securid.SecurID, window=\_blank]`
+
+`ssoadm` service name: `iPlanetAMAuthSecurIDService`
+
+ACE/Server Configuration Path::
++
+--
+
+The path to the ACE/Server configuration files
+
+`ssoadm` attribute: `iplanet-am-auth-securid-server-config-path`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-securid-auth-level`
+
+--
+
+ACE/Server Configuration Path::
++
+--
+
+The path to the ACE/Server configuration files
+
+`ssoadm` attribute: `iplanet-am-auth-securid-server-config-path`
+
+--
+
+Authentication Level::
++
+--
+
+The authentication level associated with this module.
+
+Each authentication module has an authentication level that can be used to indicate the level of security associated with the module; 0 is the lowest (and the default). 
+
+`ssoadm` attribute: `iplanet-am-auth-securid-auth-level`
+
+--
+
+[#webauthn-registration-module-ref]
+=== WebAuthn Registration
+
+Java class: `link:../apidocs/index.html?org/openidentityplatform/openam/authentication/modules/webauthn/WebAuthnRegistration.html[org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthWebAuthnRegistrationService`
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.authlevel`
+
+--
+
+Attestation Type::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.attestation`
+
+--
+
+Authenticator Type::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.authType`
+
+--
+
+Timeout::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.timeout`
+
+--
+
+User attribute to store Public Keys::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.userAttribute`
+
+--
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.authlevel`
+
+--
+
+Attestation Type::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.attestation`
+
+--
+
+Authenticator Type::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.authType`
+
+--
+
+Timeout::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.timeout`
+
+--
+
+User attribute to store Public Keys::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnRegistration.userAttribute`
+
+--
+
+[#webauthn-authentication-module-ref]
+=== WebAuthn Authentication
+
+Java class: `link:../apidocs/index.html?org/openidentityplatform/openam/authentication/modules/webauthn/WebAuthnAuthentication.html[org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthWebAuthnAuthenticationService`
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication.authlevel`
+
+--
+
+Timeout::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication.timeout`
+
+--
+
+User attribute to retrieve Public Keys::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication.userAttribute`
+
+--
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication.authlevel`
+
+--
+
+Timeout::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication.timeout`
+
+--
+
+User attribute to retrieve Public Keys::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.webauthn.WebAuthnAuthentication.userAttribute`
+
+--
+
+[#qr-code-confirm-from-other-session-module-ref]
+=== QR code confirm from other session
+
+Java class: `link:../apidocs/index.html?org/openidentityplatform/openam/authentication/modules/QR.html[org.openidentityplatform.openam.authentication.modules.QR, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthQRService`
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.QR.authlevel`
+
+--
+
+Maximum secret live (minutes)::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.QR.maxSecretTime`
+
+--
+
+Auth Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.QR.authlevel`
+
+--
+
+Maximum secret live (minutes)::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.QR.maxSecretTime`
+
+--
+
+[#ntlm-module-ref]
+=== NTLM
+
+Java class: `link:../apidocs/index.html?org/openidentityplatform/openam/authentication/modules/Ntlm.html[org.openidentityplatform.openam.authentication.modules.Ntlm, window=\_blank]`
+
+`ssoadm` service name: `sunAMAuthNtlmService`
+
+Authentication Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.authlevel`
+
+--
+
+domain::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.domain`
+
+--
+
+domainController::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.domainController`
+
+--
+
+domainControllerHostName::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.domainControllerHostName`
+
+--
+
+serviceAccount::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.serviceAccount`
+
+--
+
+servicePassword::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.servicePassword`
+
+--
+
+Authentication Level::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.authlevel`
+
+--
+
+domain::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.domain`
+
+--
+
+domainController::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.domainController`
+
+--
+
+domainControllerHostName::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.domainControllerHostName`
+
+--
+
+serviceAccount::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.serviceAccount`
+
+--
+
+servicePassword::
++
+--
+
+`ssoadm` attribute: `org.openidentityplatform.openam.authentication.modules.ntlm.servicePassword`
+
+--
+
