@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":10,"i2":9,"i3":9};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":9,"i1":9,"i2":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -170,7 +170,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="altColor">
 <th class="colFirst" scope="row"><code><span class="memberNameLink"><a href="#EC">EC</a></span></code></th>
 <td class="colLast">
-<div class="block">Elliptic Curve key algorithm with 233 bits size and SHA256withECDSA signing algorithm.</div>
+<div class="block">Elliptic Curve key algorithm with 256 bits size and SHA256withECDSA signing algorithm.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -216,7 +216,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -230,20 +230,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSupported()">isSupported</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Check whether this key type is supported by the current JVM.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="Platform.KeyType.html" title="enum in org.opends.server.util">Platform.KeyType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#valueOf(java.lang.String)">valueOf</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Returns the enum constant of this type with the specified name.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="Platform.KeyType.html" title="enum in org.opends.server.util">Platform.KeyType</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#values()">values</a></span>()</code></th>
 <td class="colLast">
@@ -299,7 +292,7 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>EC</h4>
 <pre>public static final&nbsp;<a href="Platform.KeyType.html" title="enum in org.opends.server.util">Platform.KeyType</a> EC</pre>
-<div class="block">Elliptic Curve key algorithm with 233 bits size and SHA256withECDSA signing algorithm.</div>
+<div class="block">Elliptic Curve key algorithm with 256 bits size and SHA256withECDSA signing algorithm.</div>
 </li>
 </ul>
 </li>
@@ -371,20 +364,6 @@ not permitted.)</div>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if this enum type has no constant with the specified name</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if the argument is null</dd>
-</dl>
-</li>
-</ul>
-<a id="isSupported()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isSupported</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;isSupported()</pre>
-<div class="block">Check whether this key type is supported by the current JVM.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if this key type is supported, false otherwise.</dd>
 </dl>
 </li>
 </ul>
