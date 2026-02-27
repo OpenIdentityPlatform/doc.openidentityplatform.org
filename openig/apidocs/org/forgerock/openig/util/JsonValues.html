@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -164,6 +164,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;org.forgerock.util.Function&lt;<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;T&gt;,&#8203;<a href="../el/ExpressionException.html" title="class in org.forgerock.openig.el">ExpressionException</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#asFunction(org.forgerock.json.JsonValue,java.lang.Class,org.forgerock.openig.el.Bindings)">asFunction</a></span>&#8203;(org.forgerock.json.JsonValue&nbsp;node,
+          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;expectedType,
+          <a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;initialBindings)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#asNewInstance(org.forgerock.json.JsonValue,java.lang.Class)">asNewInstance</a></span>&#8203;(org.forgerock.json.JsonValue&nbsp;value,
              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;type)</code></th>
@@ -171,42 +178,42 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Creates a new instance of a named class.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bindings()">bindings</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will create some bindings based of a Map-based <code>JsonValue</code>.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bindings(org.forgerock.openig.el.Bindings)">bindings</a></span>&#8203;(<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings)</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will create some bindings based of a Map-based <code>JsonValue</code>.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#evaluated()">evaluated</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will evaluate all String nodes.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#evaluated(org.forgerock.openig.el.Bindings)">evaluated</a></span>&#8203;(<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings)</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will evaluate all String nodes.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;<a href="../el/Expression.html" title="class in org.forgerock.openig.el">Expression</a>&lt;T&gt;,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#expression(java.lang.Class)">expression</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;type)</code></th>
 <td class="colLast">
 <div class="block">Returns a function for transforming JsonValues to expressions.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;<a href="../el/Expression.html" title="class in org.forgerock.openig.el">Expression</a>&lt;T&gt;,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#expression(java.lang.Class,org.forgerock.openig.el.Bindings)">expression</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;type,
           <a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings)</code></th>
@@ -214,7 +221,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns a function for transforming JsonValues to expressions.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static org.forgerock.json.JsonValue</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#firstOf(org.forgerock.json.JsonValue,java.lang.String...)">firstOf</a></span>&#8203;(org.forgerock.json.JsonValue&nbsp;config,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>...&nbsp;names)</code></th>
@@ -224,7 +231,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  of the names, then a JsonValue encapsulating null is returned.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static org.forgerock.json.JsonValue</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWithDeprecation(org.forgerock.json.JsonValue,org.slf4j.Logger,java.lang.String,java.lang.String...)">getWithDeprecation</a></span>&#8203;(org.forgerock.json.JsonValue&nbsp;config,
                   org.slf4j.Logger&nbsp;logger,
@@ -235,21 +242,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  zero or more deprecated property names.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#heapObjectNameOrPointer()">heapObjectNameOrPointer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will look for the name of the object.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;<a href="../el/LeftValueExpression.html" title="class in org.forgerock.openig.el">LeftValueExpression</a>&lt;T&gt;,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#leftValueExpression(java.lang.Class)">leftValueExpression</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;type)</code></th>
 <td class="colLast">
 <div class="block">Returns a function for transforming JsonValues to left-value expressions.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;T,&#8203;<a href="../heap/HeapException.html" title="class in org.forgerock.openig.heap">HeapException</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#optionalHeapObject(org.forgerock.openig.heap.Heap,java.lang.Class)">optionalHeapObject</a></span>&#8203;(<a href="../heap/Heap.html" title="interface in org.forgerock.openig.heap">Heap</a>&nbsp;heap,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;type)</code></th>
@@ -258,14 +265,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  objects.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static org.forgerock.json.JsonValue</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#readJson(java.net.URL)">readJson</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink">URL</a>&nbsp;resource)</code></th>
 <td class="colLast">
 <div class="block">Builds a <code>JsonValue</code> from the given URL.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;T,&#8203;<a href="../heap/HeapException.html" title="class in org.forgerock.openig.heap">HeapException</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#requiredHeapObject(org.forgerock.openig.heap.Heap,java.lang.Class)">requiredHeapObject</a></span>&#8203;(<a href="../heap/Heap.html" title="interface in org.forgerock.openig.heap">Heap</a>&nbsp;heap,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;type)</code></th>
@@ -274,28 +281,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  objects.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resolvedLocation()">resolvedLocation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will resolve the field $location.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resolvedLocation(org.forgerock.openig.el.Bindings)">resolvedLocation</a></span>&#8203;(<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings)</code></th>
 <td class="colLast">
 <div class="block">Returns a function that will resolve the field $location.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static org.forgerock.util.Function&lt;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValue,&#8203;org.forgerock.json.JsonValueException&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#slashEnded()">slashEnded</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the JsonValue with its value ended by a slash.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#warnForDeprecation(org.forgerock.json.JsonValue,org.slf4j.Logger,java.lang.String,java.lang.String)">warnForDeprecation</a></span>&#8203;(org.forgerock.json.JsonValue&nbsp;config,
                   org.slf4j.Logger&nbsp;logger,
@@ -715,7 +722,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="readJson(java.net.URL)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>readJson</h4>
 <pre class="methodSignature">public static&nbsp;org.forgerock.json.JsonValue&nbsp;readJson&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink">URL</a>&nbsp;resource)
@@ -729,6 +736,17 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - If an error occurs while trying to read the JSON</dd>
 </dl>
+</li>
+</ul>
+<a id="asFunction(org.forgerock.json.JsonValue,java.lang.Class,org.forgerock.openig.el.Bindings)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>asFunction</h4>
+<pre class="methodSignature">public static&nbsp;&lt;T&gt;&nbsp;org.forgerock.util.Function&lt;<a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;T&gt;,&#8203;<a href="../el/ExpressionException.html" title="class in org.forgerock.openig.el">ExpressionException</a>&gt;&nbsp;asFunction&#8203;(org.forgerock.json.JsonValue&nbsp;node,
+                                                                                                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;expectedType,
+                                                                                                                       <a href="../el/Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;initialBindings)</pre>
 </li>
 </ul>
 </li>
