@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -124,16 +124,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>org.assertj.core.api.AbstractAssert&lt;S,&#8203;A&gt;</li>
+<li>org.assertj.core.api.AbstractAssert&lt;SELF,&#8203;ACTUAL&gt;</li>
 <li>
 <ul class="inheritance">
-<li>org.assertj.core.api.AbstractIterableAssert&lt;S,&#8203;A,&#8203;T&gt;</li>
+<li>org.assertj.core.api.AbstractIterableAssert&lt;SELF,&#8203;ACTUAL,&#8203;ELEMENT,&#8203;ELEMENT_ASSERT&gt;</li>
 <li>
 <ul class="inheritance">
-<li>org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.api.annotations.Schema&gt;,&#8203;org.forgerock.api.annotations.Schema&gt;</li>
+<li>org.assertj.core.api.AbstractCollectionAssert&lt;SELF,&#8203;ACTUAL,&#8203;ELEMENT,&#8203;ELEMENT_ASSERT&gt;</li>
+<li>
+<ul class="inheritance">
+<li>org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.api.annotations.Schema&gt;,&#8203;org.forgerock.api.annotations.Schema,&#8203;org.assertj.core.api.ObjectAssert&lt;org.forgerock.api.annotations.Schema&gt;&gt;</li>
 <li>
 <ul class="inheritance">
 <li>org.forgerock.openam.test.apidescriptor.ApiSchemaAssert</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -152,7 +157,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public final class <span class="typeNameLabel">ApiSchemaAssert</span>
-extends org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.api.annotations.Schema&gt;,&#8203;org.forgerock.api.annotations.Schema&gt;</pre>
+extends org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.api.annotations.Schema&gt;,&#8203;org.forgerock.api.annotations.Schema,&#8203;org.assertj.core.api.ObjectAssert&lt;org.forgerock.api.annotations.Schema&gt;&gt;</pre>
 <div class="block">This class represents the <code>Schema</code> annotation.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -172,11 +177,18 @@ extends org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html
 </a>
 <h3>Field Summary</h3>
 <ul class="blockList">
+<li class="blockList"><a id="fields.inherited.from.class.org.assertj.core.api.AbstractIterableAssert">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.assertj.core.api.AbstractIterableAssert</h3>
+<code>iterables</code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a id="fields.inherited.from.class.org.assertj.core.api.AbstractAssert">
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;org.assertj.core.api.AbstractAssert</h3>
-<code>actual, info, myself</code></li>
+<code>actual, info, myself, objects, throwUnsupportedExceptionOnEquals</code></li>
 </ul>
 </li>
 </ul>
@@ -217,27 +229,45 @@ extends org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html
  it conforms to the OpenAM conventions.</div>
 </td>
 </tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected <a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newAbstractIterableAssert(java.lang.Iterable)">newAbstractIterableAssert</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Iterable</a>&lt;? extends org.forgerock.api.annotations.Schema&gt;&nbsp;iterable)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected org.assertj.core.api.ObjectAssert&lt;org.forgerock.api.annotations.Schema&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toAssert(org.forgerock.api.annotations.Schema,java.lang.String)">toAssert</a></span>&#8203;(org.forgerock.api.annotations.Schema&nbsp;value,
+        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;description)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.AbstractListAssert">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.assertj.core.api.AbstractListAssert</h3>
-<code>as, as, contains, describedAs, describedAs, doesNotContain, doesNotHave, doesNotHaveSameClassAs, has, has, hasSameClassAs, hasToString, is, is, isEqualTo, isExactlyInstanceOf, isIn, isIn, isInstanceOf, isInstanceOfAny, isNot, isNotEqualTo, isNotExactlyInstanceOf, isNotIn, isNotIn, isNotInstanceOf, isNotInstanceOfAny, isNotNull, isNotOfAnyClassIn, isNotSameAs, isOfAnyClassIn, isSameAs, isSorted, isSortedAccordingTo, overridingErrorMessage, usingComparator, usingComparisonStrategy, usingDefaultComparator, usingDefaultElementComparator, usingElementComparator, withFailMessage, withThreadDumpOnError</code></li>
+<code>as, as, contains, describedAs, describedAs, doesNotContain, doesNotHave, doesNotHaveSameClassAs, has, has, hasSameClassAs, hasToString, is, is, isEqualTo, isExactlyInstanceOf, isIn, isIn, isInstanceOf, isInstanceOfAny, isNot, isNotEqualTo, isNotExactlyInstanceOf, isNotIn, isNotIn, isNotInstanceOf, isNotInstanceOfAny, isNotNull, isNotOfAnyClassIn, isNotSameAs, isOfAnyClassIn, isSameAs, isSorted, isSortedAccordingTo, overridingErrorMessage, satisfies, usingComparator, usingComparator, usingComparisonStrategy, usingDefaultComparator, usingDefaultElementComparator, usingElementComparator, withFailMessage, withThreadDumpOnError</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.AbstractCollectionAssert">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.assertj.core.api.AbstractCollectionAssert</h3>
+<code>isUnmodifiable</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.AbstractIterableAssert">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.assertj.core.api.AbstractIterableAssert</h3>
-<code>are, areAtLeast, areAtLeastOne, areAtMost, areExactly, areNot, contains, containsAll, containsExactly, containsExactlyElementsOf, containsExactlyInAnyOrder, containsNull, containsOnly, containsOnlyElementsOf, containsOnlyOnce, containsSequence, containsSubsequence, doesNotContain, doesNotContainAnyElementsOf, doesNotContainNull, doesNotHaveDuplicates, doNotHave, endsWith, extracting, extracting, extracting, extracting, extractingResultOf, extractingResultOf, filteredOn, filteredOn, filteredOn, filteredOnNull, flatExtracting, flatExtracting, hasAtLeastOneElementOfType, hasOnlyElementsOfType, hasSameElementsAs, hasSameSizeAs, hasSameSizeAs, hasSize, have, haveAtLeast, haveAtLeastOne, haveAtMost, haveExactly, inBinary, inHexadecimal, isEmpty, isNotEmpty, isNullOrEmpty, isSubsetOf, isSubsetOf, startsWith, usingElementComparatorIgnoringFields, usingElementComparatorOnFields, usingFieldByFieldElementComparator</code></li>
+<code>allMatch, allMatch, allSatisfy, allSatisfy, anyMatch, anyMatch, anySatisfy, anySatisfy, are, areAtLeast, areAtLeastOne, areAtMost, areExactly, areNot, contains, containsAll, containsAnyElementsOf, containsAnyOf, containsAnyOfForProxy, containsExactly, containsExactlyElementsOf, containsExactlyForProxy, containsExactlyInAnyOrder, containsExactlyInAnyOrderElementsOf, containsExactlyInAnyOrderForProxy, containsForProxy, containsNull, containsOnly, containsOnlyElementsOf, containsOnlyForProxy, containsOnlyNulls, containsOnlyOnce, containsOnlyOnceElementsOf, containsOnlyOnceForProxy, containsSequence, containsSequence, containsSequenceForProxy, containsSubsequence, containsSubsequence, containsSubsequenceForProxy, doesNotContain, doesNotContainAnyElementsOf, doesNotContainForProxy, doesNotContainNull, doesNotContainSequence, doesNotContainSequence, doesNotContainSequenceForProxy, doesNotContainSubsequence, doesNotContainSubsequence, doesNotContainSubsequenceForProxy, doesNotHaveAnyElementsOfTypes, doesNotHaveDuplicates, doNotHave, element, element, elements, endsWith, endsWith, endsWithForProxy, extracting, extracting, extracting, extracting, extracting, extracting, extractingForProxy, extractingResultOf, extractingResultOf, filteredOn, filteredOn, filteredOn, filteredOn, filteredOn, filteredOnAssertions, filteredOnAssertions, filteredOnNull, first, first, flatExtracting, flatExtracting, flatExtracting, flatExtracting, flatExtracting, flatExtracting, flatExtractingForProxy, flatMap, flatMap, flatMap, flatMap, getComparatorsByType, getComparatorsForElementPropertyOrFieldTypes, hasAtLeastOneElementOfType, hasExactlyElementsOfTypes, hasOnlyElementsOfType, hasOnlyElementsOfTypes, hasOnlyOneElementSatisfying, hasSameElementsAs, hasSameSizeAs, hasSameSizeAs, hasSize, hasSizeBetween, hasSizeGreaterThan, hasSizeGreaterThanOrEqualTo, hasSizeLessThan, hasSizeLessThanOrEqualTo, have, haveAtLeast, haveAtLeastOne, haveAtMost, haveExactly, inBinary, inHexadecimal, isEmpty, isNotEmpty, isNullOrEmpty, isSubsetOf, isSubsetOf, isSubsetOfForProxy, last, last, map, map, map, navigationDescription, newAbstractIterableAssertForProxy, noneMatch, noneMatch, noneSatisfy, noneSatisfy, satisfiesExactly, satisfiesExactly, satisfiesExactlyForProxy, satisfiesExactlyInAnyOrder, satisfiesExactlyInAnyOrder, satisfiesExactlyInAnyOrderForProxy, satisfiesOnlyOnce, satisfiesOnlyOnce, satisfiesOnlyOnceForProxy, singleElement, singleElement, size, startsWith, startsWithForProxy, usingComparatorForElementFieldsWithNames, usingComparatorForElementFieldsWithType, usingComparatorForType, usingElementComparatorIgnoringFields, usingElementComparatorOnFields, usingFieldByFieldElementComparator, usingRecursiveAssertion, usingRecursiveAssertion, usingRecursiveComparison, usingRecursiveComparison, usingRecursiveFieldByFieldElementComparator, usingRecursiveFieldByFieldElementComparator, usingRecursiveFieldByFieldElementComparatorIgnoringFields, usingRecursiveFieldByFieldElementComparatorOnFields, zipSatisfy</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.AbstractAssert">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.assertj.core.api.AbstractAssert</h3>
-<code>asList, asString, descriptionText, equals, failWithMessage, getWritableAssertionInfo, hashCode, isNull</code></li>
+<code>actual, areEqual, asInstanceOf, asList, assertionError, asString, descriptionText, doesNotHaveSameHashCodeAs, doesNotHaveToString, doesNotHaveToString, doesNotMatch, doesNotMatch, equals, extracting, extracting, failure, failureWithActualExpected, failWithActualExpectedAndMessage, failWithMessage, getWritableAssertionInfo, hashCode, hasSameHashCodeAs, hasToString, isElementOfCustomAssert, isInstanceOfSatisfying, isNull, matches, matches, newListAssertInstance, overridingErrorMessage, satisfies, satisfies, satisfies, satisfiesAnyOf, satisfiesAnyOf, satisfiesAnyOfForProxy, satisfiesForProxy, setCustomRepresentation, setDescriptionConsumer, setPrintAssertionsDescription, throwAssertionError, usingEquals, usingEquals, withFailMessage, withRepresentation</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -247,18 +277,25 @@ extends org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html
 <code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 <ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.Descriptable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.assertj.core.api.Descriptable</h3>
+<code>as, describedAs</code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.EnumerableAssert">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.assertj.core.api.EnumerableAssert</h3>
-<code>hasSameSizeAs, hasSameSizeAs, hasSize, isEmpty, isNotEmpty, isNullOrEmpty</code></li>
+<code>hasSameSizeAs, hasSameSizeAs, hasSize, hasSizeBetween, hasSizeGreaterThan, hasSizeGreaterThanOrEqualTo, hasSizeLessThan, hasSizeLessThanOrEqualTo, isEmpty, isNotEmpty, isNullOrEmpty</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.assertj.core.api.ObjectEnumerableAssert">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;org.assertj.core.api.ObjectEnumerableAssert</h3>
-<code>are, areAtLeast, areAtLeastOne, areAtMost, areExactly, areNot, contains, containsAll, containsExactly, containsExactlyElementsOf, containsExactlyInAnyOrder, containsNull, containsOnly, containsOnlyElementsOf, containsOnlyOnce, containsSequence, containsSubsequence, doesNotContain, doesNotContainAnyElementsOf, doesNotContainNull, doesNotHaveDuplicates, doNotHave, endsWith, hasAtLeastOneElementOfType, hasOnlyElementsOfType, hasSameElementsAs, have, haveAtLeast, haveAtLeastOne, haveAtMost, haveExactly, isSubsetOf, isSubsetOf, startsWith</code></li>
+<code>allMatch, allMatch, allSatisfy, allSatisfy, anyMatch, anyMatch, anySatisfy, anySatisfy, are, areAtLeast, areAtLeastOne, areAtMost, areExactly, areNot, contains, containsAll, containsAnyElementsOf, containsAnyOf, containsExactly, containsExactlyElementsOf, containsExactlyInAnyOrder, containsExactlyInAnyOrderElementsOf, containsNull, containsOnly, containsOnlyElementsOf, containsOnlyNulls, containsOnlyOnce, containsOnlyOnceElementsOf, containsSequence, containsSequence, containsSubsequence, containsSubsequence, doesNotContain, doesNotContainAnyElementsOf, doesNotContainNull, doesNotContainSequence, doesNotContainSequence, doesNotContainSubsequence, doesNotContainSubsequence, doesNotHaveAnyElementsOfTypes, doesNotHaveDuplicates, doNotHave, endsWith, endsWith, hasAtLeastOneElementOfType, hasExactlyElementsOfTypes, hasOnlyElementsOfType, hasOnlyElementsOfTypes, hasOnlyOneElementSatisfying, hasSameElementsAs, have, haveAtLeast, haveAtLeastOne, haveAtMost, haveExactly, isSubsetOf, isSubsetOf, noneMatch, noneMatch, noneSatisfy, noneSatisfy, satisfiesExactly, satisfiesExactly, satisfiesExactlyInAnyOrder, satisfiesExactlyInAnyOrder, satisfiesOnlyOnce, satisfiesOnlyOnce, startsWith</code></li>
 </ul>
 </li>
 </ul>
@@ -276,6 +313,33 @@ extends org.assertj.core.api.AbstractListAssert&lt;<a href="ApiSchemaAssert.html
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="toAssert(org.forgerock.api.annotations.Schema,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toAssert</h4>
+<pre class="methodSignature">protected&nbsp;org.assertj.core.api.ObjectAssert&lt;org.forgerock.api.annotations.Schema&gt;&nbsp;toAssert&#8203;(org.forgerock.api.annotations.Schema&nbsp;value,
+                                                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;description)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>toAssert</code>&nbsp;in class&nbsp;<code>org.assertj.core.api.AbstractIterableAssert&lt;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.api.annotations.Schema&gt;,&#8203;org.forgerock.api.annotations.Schema,&#8203;org.assertj.core.api.ObjectAssert&lt;org.forgerock.api.annotations.Schema&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a id="newAbstractIterableAssert(java.lang.Iterable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>newAbstractIterableAssert</h4>
+<pre class="methodSignature">protected&nbsp;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>&nbsp;newAbstractIterableAssert&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Iterable</a>&lt;? extends org.forgerock.api.annotations.Schema&gt;&nbsp;iterable)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code>newAbstractIterableAssert</code>&nbsp;in class&nbsp;<code>org.assertj.core.api.AbstractIterableAssert&lt;<a href="ApiSchemaAssert.html" title="class in org.forgerock.openam.test.apidescriptor">ApiSchemaAssert</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.api.annotations.Schema&gt;,&#8203;org.forgerock.api.annotations.Schema,&#8203;org.assertj.core.api.ObjectAssert&lt;org.forgerock.api.annotations.Schema&gt;&gt;</code></dd>
+</dl>
+</li>
+</ul>
 <a id="hasI18nTitles()">
 <!--   -->
 </a>
