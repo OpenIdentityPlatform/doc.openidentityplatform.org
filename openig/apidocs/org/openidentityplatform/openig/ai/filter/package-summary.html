@@ -100,12 +100,53 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <table class="typeSummary">
+<caption><span>Interface Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Interface</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="InjectionDetector.html" title="interface in org.openidentityplatform.openig.ai.filter">InjectionDetector</a></th>
+<td class="colLast">
+<div class="block">Strategy interface for prompt-injection detection.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="typeSummary">
 <caption><span>Class Summary</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Class</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tbody>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="CompositeDetector.html" title="class in org.openidentityplatform.openig.ai.filter">CompositeDetector</a></th>
+<td class="colLast">
+<div class="block">Composite injection detector that chains multiple <a href="InjectionDetector.html" title="interface in org.openidentityplatform.openig.ai.filter"><code>InjectionDetector</code></a>
+ implementations in priority order, short-circuiting on the first positive.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="DetectionResult.html" title="class in org.openidentityplatform.openig.ai.filter">DetectionResult</a></th>
+<td class="colLast">
+<div class="block">Immutable result produced by any <a href="InjectionDetector.html" title="interface in org.openidentityplatform.openig.ai.filter"><code>InjectionDetector</code></a> implementation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="LLMPromptGuardFilter.html" title="class in org.openidentityplatform.openig.ai.filter">LLMPromptGuardFilter</a></th>
+<td class="colLast">
+<div class="block">Detects and blocks prompt-injection attacks
+ before they reach the downstream LLM API.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="LLMPromptGuardFilter.Heaplet.html" title="class in org.openidentityplatform.openig.ai.filter">LLMPromptGuardFilter.Heaplet</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="LLMProxyFilter.html" title="class in org.openidentityplatform.openig.ai.filter">LLMProxyFilter</a></th>
 <td class="colLast">
@@ -130,9 +171,29 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="RegexDetector.html" title="class in org.openidentityplatform.openig.ai.filter">RegexDetector</a></th>
+<td class="colLast">
+<div class="block">Layer-1 injection detector: deterministic, sub-millisecond regex matching.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="RegexDetector.PatternEntry.html" title="class in org.openidentityplatform.openig.ai.filter">RegexDetector.PatternEntry</a></th>
+<td class="colLast">
+<div class="block">Raw pattern entry before compilation (maps to injection-patterns.json).</div>
+</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="TokenRateLimiter.html" title="class in org.openidentityplatform.openig.ai.filter">TokenRateLimiter</a></th>
 <td class="colLast">
 <div class="block">Identity-aware, in-memory token-bucket rate limiter for LLM prompt tokens.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="TypoglycemiaDetector.html" title="class in org.openidentityplatform.openig.ai.filter">TypoglycemiaDetector</a></th>
+<td class="colLast">
+<div class="block">Layer-2 Injection detector: catches prompt-injection keywords that have been
+ <em>typoglycemia-obfuscated</em> — i.e. their interior letters are scrambled
+ while the first and last characters are preserved.</div>
 </td>
 </tr>
 </tbody>
@@ -147,6 +208,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="LLMPromptGuardFilter.Action.html" title="enum in org.openidentityplatform.openig.ai.filter">LLMPromptGuardFilter.Action</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="MCPServerFeaturesFilter.MCPFeature.html" title="enum in org.openidentityplatform.openig.ai.filter">MCPServerFeaturesFilter.MCPFeature</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
