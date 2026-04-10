@@ -62,6 +62,12 @@ DN to use to bind to the server.
 Default: cn=Directory Manager
 +
 
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
 `-j | --bindPasswordFile {bindPasswordFile}`::
 Bind password file.
 +
@@ -76,6 +82,12 @@ Nickname of the certificate that the server should use when accepting SSL-based 
 
 `-o | --saslOption {name=value}`::
 SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server administration port number.
++
+Default: 4444
 +
 
 `-P | --trustStorePath {trustStorePath}`::
