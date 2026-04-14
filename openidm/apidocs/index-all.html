@@ -7917,6 +7917,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/forgerock/openidm/provisioner/openicf/commons/ConnectorUtil.html#normalizeConnectorName(java.lang.String)" class="member-name-link">normalizeConnectorName(String)</a> - Static method in class org.forgerock.openidm.provisioner.openicf.commons.<a href="org/forgerock/openidm/provisioner/openicf/commons/ConnectorUtil.html" title="class in org.forgerock.openidm.provisioner.openicf.commons">ConnectorUtil</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/core/ServerConstants.html#normalizeContextPath(java.lang.String)" class="member-name-link">normalizeContextPath(String)</a> - Static method in class org.forgerock.openidm.core.<a href="org/forgerock/openidm/core/ServerConstants.html" title="class in org.forgerock.openidm.core">ServerConstants</a></dt>
+<dd>
+<div class="block">Normalizes a REST context path value so that it always starts with <code>/</code> and never
+ ends with <code>/</code> (unless the path is exactly <code>/</code>).</div>
+</dd>
 <dt><a href="org/forgerock/openidm/repo/util/Clause.html#not()" class="member-name-link">not()</a> - Method in interface org.forgerock.openidm.repo.util.<a href="org/forgerock/openidm/repo/util/Clause.html" title="interface in org.forgerock.openidm.repo.util">Clause</a></dt>
 <dd>
 <div class="block">Model a composite clause as in 'NOT a'.</div>
@@ -8209,6 +8214,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/ActivitiConstants.html#OPENIDM_CONTEXT" class="member-name-link">OPENIDM_CONTEXT</a> - Static variable in class org.forgerock.openidm.workflow.activiti.<a href="org/forgerock/openidm/workflow/activiti/ActivitiConstants.html" title="class in org.forgerock.openidm.workflow.activiti">ActivitiConstants</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/core/ServerConstants.html#OPENIDM_CONTEXT_PATH_DEFAULT" class="member-name-link">OPENIDM_CONTEXT_PATH_DEFAULT</a> - Static variable in class org.forgerock.openidm.core.<a href="org/forgerock/openidm/core/ServerConstants.html" title="class in org.forgerock.openidm.core">ServerConstants</a></dt>
+<dd>
+<div class="block">The default REST context path used when <a href="org/forgerock/openidm/core/ServerConstants.html#OPENIDM_CONTEXT_PATH_PROPERTY"><code>ServerConstants.OPENIDM_CONTEXT_PATH_PROPERTY</code></a> is not set.</div>
+</dd>
+<dt><a href="org/forgerock/openidm/core/ServerConstants.html#OPENIDM_CONTEXT_PATH_PROPERTY" class="member-name-link">OPENIDM_CONTEXT_PATH_PROPERTY</a> - Static variable in class org.forgerock.openidm.core.<a href="org/forgerock/openidm/core/ServerConstants.html" title="class in org.forgerock.openidm.core">ServerConstants</a></dt>
+<dd>
+<div class="block">The name of the system property that specifies the REST context path.</div>
+</dd>
 <dt><a href="org/forgerock/openidm/config/persistence/ConfigBootstrapHelper.html#OPENIDM_FILEINSTALL_BUNDLES_NEW_START" class="member-name-link">OPENIDM_FILEINSTALL_BUNDLES_NEW_START</a> - Static variable in class org.forgerock.openidm.config.persistence.<a href="org/forgerock/openidm/config/persistence/ConfigBootstrapHelper.html" title="class in org.forgerock.openidm.config.persistence">ConfigBootstrapHelper</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/config/persistence/ConfigBootstrapHelper.html#OPENIDM_FILEINSTALL_DIR" class="member-name-link">OPENIDM_FILEINSTALL_DIR</a> - Static variable in class org.forgerock.openidm.config.persistence.<a href="org/forgerock/openidm/config/persistence/ConfigBootstrapHelper.html" title="class in org.forgerock.openidm.config.persistence">ConfigBootstrapHelper</a></dt>
@@ -10939,7 +10952,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">A component to create and register the "API" Servlet; that is, the CHF Servlet that
 
- 1) listens on /openidm,
+ 1) listens on /openidm (or the path configured via openidm.context.path system property),
  2) dispatches to the HttpApplication, that is composed of
     a) the auth filter
     b) the JSON resource HTTP Handler, that

@@ -199,6 +199,16 @@ loadScripts(document, 'script');</script>
  tools.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#OPENIDM_CONTEXT_PATH_DEFAULT" class="member-name-link">OPENIDM_CONTEXT_PATH_DEFAULT</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">The default REST context path used when <a href="#OPENIDM_CONTEXT_PATH_PROPERTY"><code>OPENIDM_CONTEXT_PATH_PROPERTY</code></a> is not set.</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#OPENIDM_CONTEXT_PATH_PROPERTY" class="member-name-link">OPENIDM_CONTEXT_PATH_PROPERTY</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The name of the system property that specifies the REST context path.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#PROPERTY_BOOT_FILE_LOCATION" class="member-name-link">PROPERTY_BOOT_FILE_LOCATION</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The name of the system property that can be used to specify the location
@@ -305,6 +315,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVersion()" class="member-name-link">getVersion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#normalizeContextPath(java.lang.String)" class="member-name-link">normalizeContextPath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Normalizes a REST context path value so that it always starts with <code>/</code> and never
+ ends with <code>/</code> (unless the path is exactly <code>/</code>).</div>
+</div>
 </div>
 </div>
 </div>
@@ -870,6 +886,38 @@ loadScripts(document, 'script');</script>
 </dl>
 </section>
 </li>
+<li>
+<section class="detail" id="OPENIDM_CONTEXT_PATH_PROPERTY">
+<h3>OPENIDM_CONTEXT_PATH_PROPERTY</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">OPENIDM_CONTEXT_PATH_PROPERTY</span></div>
+<div class="block">The name of the system property that specifies the REST context path.
+ For example, setting <code>-Dopenidm.context.path=/myidm</code> will make the REST API
+ available under <code>/myidm</code> instead of the default <code>/openidm</code>.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../../constant-values.html#org.forgerock.openidm.core.ServerConstants.OPENIDM_CONTEXT_PATH_PROPERTY">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="OPENIDM_CONTEXT_PATH_DEFAULT">
+<h3>OPENIDM_CONTEXT_PATH_DEFAULT</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">OPENIDM_CONTEXT_PATH_DEFAULT</span></div>
+<div class="block">The default REST context path used when <a href="#OPENIDM_CONTEXT_PATH_PROPERTY"><code>OPENIDM_CONTEXT_PATH_PROPERTY</code></a> is not set.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../../constant-values.html#org.forgerock.openidm.core.ServerConstants.OPENIDM_CONTEXT_PATH_DEFAULT">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -906,6 +954,23 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getDisplayVersion()">
 <h3>getDisplayVersion</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getDisplayVersion</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="normalizeContextPath(java.lang.String)">
+<h3>normalizeContextPath</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">normalizeContextPath</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</span></div>
+<div class="block">Normalizes a REST context path value so that it always starts with <code>/</code> and never
+ ends with <code>/</code> (unless the path is exactly <code>/</code>).
+ <p>
+ For example: <code>"openidm"</code> → <code>"/openidm"</code>,
+ <code>"/myidm/"</code> → <code>"/myidm"</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>path</code> - the raw context path value (from a system property, config, etc.)</dd>
+<dt>Returns:</dt>
+<dd>the normalized path</dd>
+</dl>
 </section>
 </li>
 </ul>
