@@ -153,7 +153,8 @@ implements org.forgerock.http.Handler</pre>
        "scanInterval": 2 or "2 seconds"
        "openApiValidation": {
            "enabled": true,
-           "failOnResponseViolation": false
+           "failOnResponseViolation": false,
+           "mockMode": false
        }
      }
    }
@@ -170,7 +171,11 @@ implements org.forgerock.http.Handler</pre>
  In both cases, the default value is 10 seconds.
  <br/>
  <p>In addition to regular route JSON files, this handler now also recognises OpenAPI spec files
- (<code>.json</code>, <code>.yaml</code>, <code>.yml</code>) dropped into the same routes directory.</div>
+ (<code>.json</code>, <code>.yaml</code>, <code>.yml</code>) dropped into the same routes directory.
+ When <code>openApiValidation.mockMode</code> is <code>true</code>, auto-generated routes use an
+ <a href="../OpenApiMockResponseHandler.html" title="class in org.forgerock.openig.handler"><code>OpenApiMockResponseHandler</code></a> instead of a
+ <code>ClientHandler</code>, so requests are served with generated mock data instead of being
+ forwarded upstream.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>2.2</dd>
