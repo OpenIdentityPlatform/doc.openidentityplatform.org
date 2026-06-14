@@ -181,7 +181,7 @@ implements <a href="../../oauth2/core/TokenStore.html" title="interface in org.f
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.openam.oauth2.StatefulTokenStore,org.forgerock.json.jose.builders.JwtBuilderFactory,org.forgerock.oauth2.core.OAuth2ProviderSettingsFactory,com.sun.identity.shared.debug.Debug,org.forgerock.openidconnect.OpenIdConnectClientRegistrationStore,org.forgerock.openam.utils.RealmNormaliser,org.forgerock.openam.oauth2.OAuth2UrisFactory,org.forgerock.openam.blacklist.Blacklist,org.forgerock.openam.cts.CTSPersistentStore,org.forgerock.openam.cts.adapters.TokenAdapter,org.forgerock.openam.oauth2.OAuth2Utils)">StatelessTokenStore</a></span>&#8203;(<a href="StatefulTokenStore.html" title="class in org.forgerock.openam.oauth2">StatefulTokenStore</a>&nbsp;statefulTokenStore,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.openam.oauth2.StatefulTokenStore,org.forgerock.json.jose.builders.JwtBuilderFactory,org.forgerock.oauth2.core.OAuth2ProviderSettingsFactory,com.sun.identity.shared.debug.Debug,org.forgerock.openidconnect.OpenIdConnectClientRegistrationStore,org.forgerock.openam.utils.RealmNormaliser,org.forgerock.openam.oauth2.OAuth2UrisFactory,org.forgerock.openam.blacklist.Blacklist,org.forgerock.openam.cts.CTSPersistentStore,org.forgerock.openam.cts.adapters.TokenAdapter,org.forgerock.openam.oauth2.OAuth2Utils,org.forgerock.openam.oauth2.OAuth2AccessTokenModifier)">StatelessTokenStore</a></span>&#8203;(<a href="StatefulTokenStore.html" title="class in org.forgerock.openam.oauth2">StatefulTokenStore</a>&nbsp;statefulTokenStore,
                    org.forgerock.json.jose.builders.JwtBuilderFactory&nbsp;jwtBuilder,
                    <a href="../../oauth2/core/OAuth2ProviderSettingsFactory.html" title="class in org.forgerock.oauth2.core">OAuth2ProviderSettingsFactory</a>&nbsp;providerSettingsFactory,
                    <a href="../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;logger,
@@ -191,7 +191,8 @@ implements <a href="../../oauth2/core/TokenStore.html" title="interface in org.f
                    <a href="../blacklist/Blacklist.html" title="interface in org.forgerock.openam.blacklist">Blacklist</a>&lt;<a href="../blacklist/Blacklistable.html" title="interface in org.forgerock.openam.blacklist">Blacklistable</a>&gt;&nbsp;tokenBlacklist,
                    <a href="../cts/CTSPersistentStore.html" title="interface in org.forgerock.openam.cts">CTSPersistentStore</a>&nbsp;cts,
                    <a href="../cts/adapters/TokenAdapter.html" title="interface in org.forgerock.openam.cts.adapters">TokenAdapter</a>&lt;<a href="StatelessTokenMetadata.html" title="class in org.forgerock.openam.oauth2">StatelessTokenMetadata</a>&gt;&nbsp;tokenAdapter,
-                   <a href="OAuth2Utils.html" title="class in org.forgerock.openam.oauth2">OAuth2Utils</a>&nbsp;utils)</code></th>
+                   <a href="OAuth2Utils.html" title="class in org.forgerock.openam.oauth2">OAuth2Utils</a>&nbsp;utils,
+                   <a href="OAuth2AccessTokenModifier.html" title="class in org.forgerock.openam.oauth2">OAuth2AccessTokenModifier</a>&nbsp;accessTokenModifier)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new StatelessTokenStore.</div>
 </td>
@@ -503,7 +504,7 @@ implements <a href="../../oauth2/core/TokenStore.html" title="interface in org.f
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(org.forgerock.openam.oauth2.StatefulTokenStore,org.forgerock.json.jose.builders.JwtBuilderFactory,org.forgerock.oauth2.core.OAuth2ProviderSettingsFactory,com.sun.identity.shared.debug.Debug,org.forgerock.openidconnect.OpenIdConnectClientRegistrationStore,org.forgerock.openam.utils.RealmNormaliser,org.forgerock.openam.oauth2.OAuth2UrisFactory,org.forgerock.openam.blacklist.Blacklist,org.forgerock.openam.cts.CTSPersistentStore,org.forgerock.openam.cts.adapters.TokenAdapter,org.forgerock.openam.oauth2.OAuth2Utils)">
+<a id="&lt;init&gt;(org.forgerock.openam.oauth2.StatefulTokenStore,org.forgerock.json.jose.builders.JwtBuilderFactory,org.forgerock.oauth2.core.OAuth2ProviderSettingsFactory,com.sun.identity.shared.debug.Debug,org.forgerock.openidconnect.OpenIdConnectClientRegistrationStore,org.forgerock.openam.utils.RealmNormaliser,org.forgerock.openam.oauth2.OAuth2UrisFactory,org.forgerock.openam.blacklist.Blacklist,org.forgerock.openam.cts.CTSPersistentStore,org.forgerock.openam.cts.adapters.TokenAdapter,org.forgerock.openam.oauth2.OAuth2Utils,org.forgerock.openam.oauth2.OAuth2AccessTokenModifier)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -521,7 +522,8 @@ public&nbsp;StatelessTokenStore&#8203;(<a href="StatefulTokenStore.html" title="
                            <a href="../blacklist/Blacklist.html" title="interface in org.forgerock.openam.blacklist">Blacklist</a>&lt;<a href="../blacklist/Blacklistable.html" title="interface in org.forgerock.openam.blacklist">Blacklistable</a>&gt;&nbsp;tokenBlacklist,
                            <a href="../cts/CTSPersistentStore.html" title="interface in org.forgerock.openam.cts">CTSPersistentStore</a>&nbsp;cts,
                            <a href="../cts/adapters/TokenAdapter.html" title="interface in org.forgerock.openam.cts.adapters">TokenAdapter</a>&lt;<a href="StatelessTokenMetadata.html" title="class in org.forgerock.openam.oauth2">StatelessTokenMetadata</a>&gt;&nbsp;tokenAdapter,
-                           <a href="OAuth2Utils.html" title="class in org.forgerock.openam.oauth2">OAuth2Utils</a>&nbsp;utils)</pre>
+                           <a href="OAuth2Utils.html" title="class in org.forgerock.openam.oauth2">OAuth2Utils</a>&nbsp;utils,
+                           <a href="OAuth2AccessTokenModifier.html" title="class in org.forgerock.openam.oauth2">OAuth2AccessTokenModifier</a>&nbsp;accessTokenModifier)</pre>
 <div class="block">Constructs a new StatelessTokenStore.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -536,6 +538,7 @@ public&nbsp;StatelessTokenStore&#8203;(<a href="StatefulTokenStore.html" title="
 <dd><code>cts</code> - An instance of the CTSPersistentStoreImpl</dd>
 <dd><code>tokenAdapter</code> - An instance of the StatelessTokenCtsAdapter</dd>
 <dd><code>utils</code> - OAuth2 utilities</dd>
+<dd><code>accessTokenModifier</code> - Runs the OAuth2 Access Token Modification script.</dd>
 </dl>
 </li>
 </ul>

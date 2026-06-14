@@ -1738,6 +1738,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">OAuth2AccessTokenModifier.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OAuth2AccessTokenModifier.html#getModifiedClaims(org.forgerock.oauth2.core.OAuth2Request,java.lang.String,java.lang.String,java.lang.String,java.util.Set,java.util.Map)">getModifiedClaims</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;resourceOwnerId,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;clientId,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;scope,
+                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;contextValues)</code></th>
+<td class="colLast">
+<div class="block">Runs the configured OAuth2 Access Token Modification script (if any) and returns the additional
+ claims to be merged into the token being issued.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../UserInfoClaims.html" title="class in org.forgerock.oauth2.core">UserInfoClaims</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMScopeValidator.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMScopeValidator.html#getUserInfo(org.forgerock.oauth2.core.ClientRegistration,org.forgerock.oauth2.core.AccessToken,org.forgerock.oauth2.core.OAuth2Request)">getUserInfo</a></span>&#8203;(<a href="../ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration,
            <a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;token,
@@ -1746,13 +1759,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Gets the resource owners information based on an issued access token.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#readAccessToken(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readAccessToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenId)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#readAccessToken(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readAccessToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenId)</code></th>
@@ -1760,19 +1773,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Reads an Access Token from the OAuth2 Provider's store with the specified identifier.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#readAccessToken(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readAccessToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;jwtString)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../AuthorizationCode.html" title="class in org.forgerock.oauth2.core">AuthorizationCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#readAuthorizationCode(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readAuthorizationCode</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;code)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../AuthorizationCode.html" title="class in org.forgerock.oauth2.core">AuthorizationCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#readAuthorizationCode(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readAuthorizationCode</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;code)</code></th>
@@ -1780,58 +1793,58 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Creates an Authorization Code and stores it in the OAuth2 Provider's store.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../AuthorizationCode.html" title="class in org.forgerock.oauth2.core">AuthorizationCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#readAuthorizationCode(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readAuthorizationCode</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;code)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#readDeviceCode(java.lang.String,java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">readDeviceCode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;clientId,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;code,
               <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#readDeviceCode(java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">readDeviceCode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userCode,
               <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#readDeviceCode(java.lang.String,java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">readDeviceCode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;clientId,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;code,
               <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#readDeviceCode(java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">readDeviceCode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userCode,
               <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#readDeviceCode(java.lang.String,java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">readDeviceCode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;clientId,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;code,
               <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#readDeviceCode(java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">readDeviceCode</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userCode,
               <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../RefreshToken.html" title="interface in org.forgerock.oauth2.core">RefreshToken</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#readRefreshToken(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readRefreshToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenId)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../RefreshToken.html" title="interface in org.forgerock.oauth2.core">RefreshToken</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#readRefreshToken(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readRefreshToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenId)</code></th>
@@ -1839,44 +1852,44 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Reads a Refresh Token from the OAuth2 Provider's store with the specified identifier.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../RefreshToken.html" title="interface in org.forgerock.oauth2.core">RefreshToken</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#readRefreshToken(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">readRefreshToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;jwtString)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OAuth2RealmResolver.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OAuth2RealmResolver.html#resolveFrom(org.forgerock.oauth2.core.OAuth2Request)">resolveFrom</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">
 <div class="block">Resolve realm from the request</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#updateAccessToken(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.oauth2.core.AccessToken)">updateAccessToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                  <a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#updateAccessToken(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.oauth2.core.AccessToken)">updateAccessToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                  <a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#updateAccessToken(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.oauth2.core.AccessToken)">updateAccessToken</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                  <a href="../AccessToken.html" title="interface in org.forgerock.oauth2.core">AccessToken</a>&nbsp;accessToken)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#updateAuthorizationCode(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.oauth2.core.AuthorizationCode)">updateAuthorizationCode</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                        <a href="../AuthorizationCode.html" title="class in org.forgerock.oauth2.core">AuthorizationCode</a>&nbsp;authorizationCode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#updateAuthorizationCode(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.oauth2.core.AuthorizationCode)">updateAuthorizationCode</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                        <a href="../AuthorizationCode.html" title="class in org.forgerock.oauth2.core">AuthorizationCode</a>&nbsp;authorizationCode)</code></th>
@@ -1884,31 +1897,31 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Updates an Authorization Code.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#updateAuthorizationCode(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.oauth2.core.AuthorizationCode)">updateAuthorizationCode</a></span>&#8203;(<a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
                        <a href="../AuthorizationCode.html" title="class in org.forgerock.oauth2.core">AuthorizationCode</a>&nbsp;authorizationCode)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMTokenStore.html#updateDeviceCode(org.forgerock.oauth2.core.DeviceCode,org.forgerock.oauth2.core.OAuth2Request)">updateDeviceCode</a></span>&#8203;(<a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a>&nbsp;code,
                 <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#updateDeviceCode(org.forgerock.oauth2.core.DeviceCode,org.forgerock.oauth2.core.OAuth2Request)">updateDeviceCode</a></span>&#8203;(<a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a>&nbsp;code,
                 <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#updateDeviceCode(org.forgerock.oauth2.core.DeviceCode,org.forgerock.oauth2.core.OAuth2Request)">updateDeviceCode</a></span>&#8203;(<a href="../DeviceCode.html" title="class in org.forgerock.oauth2.core">DeviceCode</a>&nbsp;code,
                 <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMScopeValidator.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMScopeValidator.html#validateAccessTokenScope(org.forgerock.oauth2.core.ClientRegistration,java.util.Set,org.forgerock.oauth2.core.OAuth2Request)">validateAccessTokenScope</a></span>&#8203;(<a href="../ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;client,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;scope,
@@ -1918,7 +1931,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  is requested.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMScopeValidator.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMScopeValidator.html#validateAuthorizationScope(org.forgerock.oauth2.core.ClientRegistration,java.util.Set,org.forgerock.oauth2.core.OAuth2Request)">validateAuthorizationScope</a></span>&#8203;(<a href="../ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;client,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;scope,
@@ -1928,7 +1941,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  is requested.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenAMScopeValidator.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/OpenAMScopeValidator.html#validateRefreshTokenScope(org.forgerock.oauth2.core.ClientRegistration,java.util.Set,java.util.Set,org.forgerock.oauth2.core.OAuth2Request)">validateRefreshTokenScope</a></span>&#8203;(<a href="../ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration,
                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;requestedScope,
@@ -1939,13 +1952,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  is requested.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatefulTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatefulTokenStore.html#validateTokenRealm(java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">validateTokenRealm</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenRealm,
                   <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">StatelessTokenStore.</span><code><span class="memberNameLink"><a href="../../../openam/oauth2/StatelessTokenStore.html#validateTokenRealm(java.lang.String,org.forgerock.oauth2.core.OAuth2Request)">validateTokenRealm</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenRealm,
                   <a href="../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
