@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -210,6 +210,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeAttributesByType(org.forgerock.openam.radius.common.AttributeType)">removeAttributesByType</a></span>&#8203;(<a href="AttributeType.html" title="enum in org.forgerock.openam.radius.common">AttributeType</a>&nbsp;type)</code></th>
+<td class="colLast">
+<div class="block">Removes every attribute whose type matches the given type code.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates the number of attributes held in the container.</div>
@@ -320,7 +327,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <a id="getAttributeAt(int)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getAttributeAt</h4>
 <pre class="methodSignature">public&nbsp;<a href="Attribute.html" title="class in org.forgerock.openam.radius.common">Attribute</a>&nbsp;getAttributeAt&#8203;(int&nbsp;pos)</pre>
@@ -330,6 +337,25 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code>pos</code> - the position of the attribute instance to be retrieved.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the instance of the attribute being retrieved</dd>
+</dl>
+</li>
+</ul>
+<a id="removeAttributesByType(org.forgerock.openam.radius.common.AttributeType)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>removeAttributesByType</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;removeAttributesByType&#8203;(<a href="AttributeType.html" title="enum in org.forgerock.openam.radius.common">AttributeType</a>&nbsp;type)</pre>
+<div class="block">Removes every attribute whose type matches the given type code. Useful when a packet is
+ re-transmitted (for example during RADIUS failover) and an attribute that must appear at most
+ once - such as RFC 3579 Message-Authenticator (one per packet) - has to be regenerated from
+ scratch instead of being appended a second time.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>type</code> - the attribute type code whose instances should be evicted.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of attribute instances that were removed.</dd>
 </dl>
 </li>
 </ul>

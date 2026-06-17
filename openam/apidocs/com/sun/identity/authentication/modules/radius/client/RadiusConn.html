@@ -200,6 +200,19 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.Set,java.util.Set,java.lang.String,int,byte%5B%5D,int,boolean)">RadiusConn</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;primaries,
+          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;secondaries,
+          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;secret,
+          int&nbsp;timeout,
+          byte[]&nbsp;seed,
+          int&nbsp;healthCheckInterval,
+          boolean&nbsp;requireMessageAuthenticator)</code></th>
+<td class="colLast">
+<div class="block">Full-featured constructor that allows the caller to opt-in to the strict RFC 3579 /
+ BlastRADIUS-mitigation profile.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.util.Set,java.util.Set,java.lang.String,int,int)">RadiusConn</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;primaries,
           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;secondaries,
           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;secret,
@@ -239,7 +252,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disconnect()">disconnect</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Disconnects the underlying datagram socket.</div>
+<div class="block">Closes the underlying datagram socket, releasing the associated file descriptor and
+ ephemeral UDP port back to the operating system.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -350,7 +364,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <a id="&lt;init&gt;(java.util.Set,java.util.Set,java.lang.String,int,byte[],int)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>RadiusConn</h4>
 <pre>public&nbsp;RadiusConn&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;primaries,
@@ -374,6 +388,42 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </dl>
 </li>
 </ul>
+<a id="&lt;init&gt;(java.util.Set,java.util.Set,java.lang.String,int,byte[],int,boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>RadiusConn</h4>
+<pre>public&nbsp;RadiusConn&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;primaries,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../RADIUSServer.html" title="class in com.sun.identity.authentication.modules.radius">RADIUSServer</a>&gt;&nbsp;secondaries,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;secret,
+                  int&nbsp;timeout,
+                  byte[]&nbsp;seed,
+                  int&nbsp;healthCheckInterval,
+                  boolean&nbsp;requireMessageAuthenticator)
+           throws <a href="https://docs.oracle.com/javase/8/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net" class="externalLink">SocketException</a></pre>
+<div class="block">Full-featured constructor that allows the caller to opt-in to the strict RFC 3579 /
+ BlastRADIUS-mitigation profile.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>primaries</code> - the primary servers to connect to.</dd>
+<dd><code>secondaries</code> - the secondary servers to connect to.</dd>
+<dd><code>secret</code> - the secret shared between this client and the remote servers.</dd>
+<dd><code>timeout</code> - the timeout value, in seconds.</dd>
+<dd><code>seed</code> - optional <a href="https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html?is-external=true" title="class or interface in java.security" class="externalLink"><code>SecureRandom</code></a> seed; <code>null</code> for default entropy.</dd>
+<dd><code>healthCheckInterval</code> - the health check interval, in minutes.</dd>
+<dd><code>requireMessageAuthenticator</code> - when <code>true</code>, every Access-Accept/Reject/Challenge
+                                     received from the server MUST carry a verifiable
+                                     Message-Authenticator (RFC 3579 attribute 80). This is
+                                     the fully protected flow recommended by Cisco's
+                                     BlastRADIUS guidance. When <code>false</code>, the client
+                                     verifies MA only when the server happens to include it,
+                                     remaining interoperable with legacy servers.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net" class="externalLink">SocketException</a></code> - if a socket exception occurs.</dd>
+</dl>
+</li>
+</ul>
 </li>
 </ul>
 </section>
@@ -392,7 +442,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>disconnect</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;disconnect()
                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
-<div class="block">Disconnects the underlying datagram socket.</div>
+<div class="block">Closes the underlying datagram socket, releasing the associated file descriptor and
+ ephemeral UDP port back to the operating system.
+
+ <p>Historically this method only invoked <a href="https://docs.oracle.com/javase/8/docs/api/java/net/DatagramSocket.html?is-external=true#disconnect--" title="class or interface in java.net" class="externalLink"><code>DatagramSocket.disconnect()</code></a>, which merely
+ removes the peer association but keeps the socket (and therefore its file descriptor and
+ ephemeral port) allocated until the JVM finaliser eventually reclaims it. Because
+ <code>RADIUS.shutdown()</code> discards its <code>RadiusConn</code> reference right after calling
+ this method, that behaviour leaked one FD / one ephemeral port per authentication attempt
+ under load. The method is now an idempotent close, which is what every caller in the
+ tree actually wants.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - if an io exception occurs.</dd>

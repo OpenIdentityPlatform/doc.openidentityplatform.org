@@ -148,8 +148,9 @@ extends <a href="../../spi/AMLoginModule.html" title="class in com.sun.identity.
  <code>ServletRequest</code>. If the values cannot be retrieved then
  callbacks to get <code>msisdn</code> number and wap gateway are sent back to
  the client. The WAP Gateway is validated against a list of valid gateways in
- the gateway list attribute. If the gateway list attribute is empty then all
- gateways will trusted , if it is "none" then no gateways will be trusted and
+ the gateway list attribute. If the gateway list attribute is empty then no
+ gateways will be trusted, if it is "none" then no gateways will be trusted,
+ if it is "any" then all gateways will be trusted, and
  if specific values are specified only those gateways will be trusted. Once
  the gateway is validated the <code>msisdn</code> number is searched for in
  the repository. This module is written to lookup the <code>msisdn</code>

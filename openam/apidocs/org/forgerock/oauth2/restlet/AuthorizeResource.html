@@ -196,7 +196,7 @@ extends <a href="ConsentRequiredResource.html" title="class in org.forgerock.oau
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.oauth2.core.AuthorizationService,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.oauth2.restlet.OAuth2Representation,java.util.Set,org.forgerock.openam.xui.XUIState,org.restlet.routing.Router,org.forgerock.openam.services.baseurl.BaseURLProviderFactory,org.forgerock.oauth2.core.RedirectUriResolver,org.forgerock.oauth2.core.ResourceOwnerSessionValidator)">AuthorizeResource</a></span>&#8203;(<a href="../core/OAuth2RequestFactory.html" title="class in org.forgerock.oauth2.core">OAuth2RequestFactory</a>&nbsp;requestFactory,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.oauth2.core.AuthorizationService,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.oauth2.restlet.OAuth2Representation,java.util.Set,org.forgerock.openam.xui.XUIState,org.restlet.routing.Router,org.forgerock.openam.services.baseurl.BaseURLProviderFactory,org.forgerock.oauth2.core.RedirectUriResolver,org.forgerock.oauth2.core.ResourceOwnerSessionValidator,org.forgerock.oauth2.core.CsrfProtection)">AuthorizeResource</a></span>&#8203;(<a href="../core/OAuth2RequestFactory.html" title="class in org.forgerock.oauth2.core">OAuth2RequestFactory</a>&nbsp;requestFactory,
                  <a href="../core/AuthorizationService.html" title="class in org.forgerock.oauth2.core">AuthorizationService</a>&nbsp;authorizationService,
                  <a href="ExceptionHandler.html" title="class in org.forgerock.oauth2.restlet">ExceptionHandler</a>&nbsp;exceptionHandler,
                  <a href="OAuth2Representation.html" title="class in org.forgerock.oauth2.restlet">OAuth2Representation</a>&nbsp;representation,
@@ -205,7 +205,8 @@ extends <a href="ConsentRequiredResource.html" title="class in org.forgerock.oau
                  org.restlet.routing.Router&nbsp;router,
                  <a href="../../openam/services/baseurl/BaseURLProviderFactory.html" title="class in org.forgerock.openam.services.baseurl">BaseURLProviderFactory</a>&nbsp;baseURLProviderFactory,
                  <a href="../core/RedirectUriResolver.html" title="class in org.forgerock.oauth2.core">RedirectUriResolver</a>&nbsp;redirectUriResolver,
-                 <a href="../core/ResourceOwnerSessionValidator.html" title="class in org.forgerock.oauth2.core">ResourceOwnerSessionValidator</a>&nbsp;resourceOwnerSessionValidator)</code></th>
+                 <a href="../core/ResourceOwnerSessionValidator.html" title="class in org.forgerock.oauth2.core">ResourceOwnerSessionValidator</a>&nbsp;resourceOwnerSessionValidator,
+                 <a href="../core/CsrfProtection.html" title="class in org.forgerock.oauth2.core">CsrfProtection</a>&nbsp;csrfProtection)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new AuthorizeResource.</div>
 </td>
@@ -301,7 +302,7 @@ extends <a href="ConsentRequiredResource.html" title="class in org.forgerock.oau
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.oauth2.core.AuthorizationService,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.oauth2.restlet.OAuth2Representation,java.util.Set,org.forgerock.openam.xui.XUIState,org.restlet.routing.Router,org.forgerock.openam.services.baseurl.BaseURLProviderFactory,org.forgerock.oauth2.core.RedirectUriResolver,org.forgerock.oauth2.core.ResourceOwnerSessionValidator)">
+<a id="&lt;init&gt;(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.oauth2.core.AuthorizationService,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.oauth2.restlet.OAuth2Representation,java.util.Set,org.forgerock.openam.xui.XUIState,org.restlet.routing.Router,org.forgerock.openam.services.baseurl.BaseURLProviderFactory,org.forgerock.oauth2.core.RedirectUriResolver,org.forgerock.oauth2.core.ResourceOwnerSessionValidator,org.forgerock.oauth2.core.CsrfProtection)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -318,7 +319,8 @@ public&nbsp;AuthorizeResource&#8203;(<a href="../core/OAuth2RequestFactory.html"
                          org.restlet.routing.Router&nbsp;router,
                          <a href="../../openam/services/baseurl/BaseURLProviderFactory.html" title="class in org.forgerock.openam.services.baseurl">BaseURLProviderFactory</a>&nbsp;baseURLProviderFactory,
                          <a href="../core/RedirectUriResolver.html" title="class in org.forgerock.oauth2.core">RedirectUriResolver</a>&nbsp;redirectUriResolver,
-                         <a href="../core/ResourceOwnerSessionValidator.html" title="class in org.forgerock.oauth2.core">ResourceOwnerSessionValidator</a>&nbsp;resourceOwnerSessionValidator)</pre>
+                         <a href="../core/ResourceOwnerSessionValidator.html" title="class in org.forgerock.oauth2.core">ResourceOwnerSessionValidator</a>&nbsp;resourceOwnerSessionValidator,
+                         <a href="../core/CsrfProtection.html" title="class in org.forgerock.oauth2.core">CsrfProtection</a>&nbsp;csrfProtection)</pre>
 <div class="block">Constructs a new AuthorizeResource.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

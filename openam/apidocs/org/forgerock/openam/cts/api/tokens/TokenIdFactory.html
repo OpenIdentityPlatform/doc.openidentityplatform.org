@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -227,22 +227,29 @@ implements <a href="TokenIdGenerator.html" title="interface in org.forgerock.ope
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toOAuthTokenStoreId(java.lang.String)">toOAuthTokenStoreId</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenId)</code></th>
+<td class="colLast">
+<div class="block">Converts an OAuth2 token ID to the CTS storage key used by the OAuth2 token store.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toSAMLPrimaryTokenId(java.lang.String)">toSAMLPrimaryTokenId</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;requestId)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toSAMLSecondaryTokenId(java.lang.String)">toSAMLSecondaryTokenId</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;secondaryKey)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toSessionTokenId(com.iplanet.dpro.session.service.InternalSession)">toSessionTokenId</a></span>&#8203;(<a href="../../../../../../com/iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a>&nbsp;session)</code></th>
 <td class="colLast">
 <div class="block">Extract a suitable Id from the InternalSession to use as a Token Id.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toSessionTokenId(com.iplanet.dpro.session.SessionID)">toSessionTokenId</a></span>&#8203;(<a href="../../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;sessionID)</code></th>
 <td class="colLast">
@@ -371,6 +378,22 @@ public&nbsp;TokenIdFactory&#8203;(<a href="../../utils/KeyConversion.html" title
 <dd><code>secondaryId</code> - The secondary token ID for the SAML token. May not be null.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Non null ID.</dd>
+</dl>
+</li>
+</ul>
+<a id="toOAuthTokenStoreId(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toOAuthTokenStoreId</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toOAuthTokenStoreId&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tokenId)</pre>
+<div class="block">Converts an OAuth2 token ID to the CTS storage key used by the OAuth2 token store.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tokenId</code> - The OAuth2 token ID to convert. May not be null.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Non null token storage key.</dd>
 </dl>
 </li>
 </ul>

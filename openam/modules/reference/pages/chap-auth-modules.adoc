@@ -1728,7 +1728,7 @@ The list of IP address that are trusted to send MSISDN authentication requests.
 
 The client IP address of the authentication request is checked against this list, if the client IP is not listed then the authentication module will fail.
 
-__NB __If the list is empty then all hosts will be trusted.
+__NB __If the list is empty then no hosts will be trusted. Use the explicit value `any` only if all hosts must be trusted. Use `none` to deny all hosts.
 
 `ssoadm` attribute: `sunAMAuthMSISDNTrustedGatewayList`
 
@@ -2721,6 +2721,18 @@ The interval between checks to unavailable RADIUS servers, in minutes.
 Determines how often OpenAM checks an offline server's status. The check will send an invalid authentication request to the RADIUS server. Offline servers will not be used until the healthcheck was successful. Primary servers that become available will be used in preference to secondary servers.
 
 `ssoadm` attribute: `openam-auth-radius-healthcheck-interval`
+
+--
+
+Require Message-Authenticator on responses::
++
+--
+
+Enforce the strict RFC 3579 / Cisco BlastRADIUS-mitigation profile.
+
+When enabled, every Access-Accept, Access-Reject and Access-Challenge received from the RADIUS server MUST carry a verifiable Message-Authenticator (attribute 80). Responses without Message-Authenticator are rejected and the authentication fails. This is the fully protected flow recommended by Cisco's BlastRADIUS guidance. When disabled (the default), Message-Authenticator is still sent on outgoing Access-Requests and verified when the server includes it on the response, but legacy servers that never echo Message-Authenticator remain interoperable.
+
+`ssoadm` attribute: `openam-auth-radius-require-message-authenticator`
 
 --
 
