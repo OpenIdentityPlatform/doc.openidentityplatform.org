@@ -1,0 +1,294 @@
+////
+ # The contents of this file are subject to the terms of the Common Development and
+ # Distribution License (the License). You may not use this file except in compliance with the
+ # License.
+ #
+ # You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ # specific language governing permission and limitations under the License.
+ #
+ # When distributing Covered Software, include this CDDL Header Notice in each file and include
+ # the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ # Header, with the fields enclosed by brackets [] replaced by your own identifying
+ # information: "Portions Copyright [year] [name of copyright owner]".
+ #
+ # Copyright 2015 ForgeRock AS.
+ # Portions Copyright 2024-2026 3A Systems LLC.
+ #
+////
+
+[#searchrate-1]
+= searchrate(1)
+
+:doctype: manpage
+:manmanual: Directory Server Tools
+:mansource: OpenDJ
+
+== Name
+searchrate - measure search throughput and response time
+
+== Synopsis
+`searchrate` `[filter format string] [attributes ...]`
+
+[#searchrate-description]
+== Description
+
+This utility can be used to measure search throughput and response time of a directory service using user-defined searches.
+
+Example:
+
+  searchrate -p 1389 -D "cn=directory manager" -w password \
+    -F -c 4 -t 4 -b "dc=example,dc=com" -g "rand(0,2000)" "(uid=user.%d)"
+
+Before trying the example, import 2000 randomly generated users.
+
+include::./_description-rate-tools.adoc[]
+
+
+[#searchrate-options]
+== Options
+
+The `searchrate` command takes the following options:
+
+.Command options:
+
+--
+`-a | --dereferencePolicy {dereferencePolicy}`::
+Alias dereference policy ('never', 'always', 'search', or 'find').
++
+Default: never
++
+
+`-b | --baseDN {baseDN}`::
+Base DN format string.
++
+
+`-B | --warmUpDuration {warmUpDuration}`::
+Warm up duration in seconds.
++
+Default: 0
++
+
+`-c | --numConnections {numConnections}`::
+Number of connections.
++
+Default: 1
++
+
+`--connectTimeout {timeout}`::
+Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
++
+Default: 30000
++
+
+`-d | --maxDuration {maxDuration}`::
+Maximum duration in seconds, 0 for unlimited.
++
+Default: 0
++
+
+`-e | --percentile {percentile}`::
+Calculate max response time for a percentile of operations.
++
+
+`-f | --keepConnectionsOpen`::
+Keep connections open.
++
+Default: false
++
+
+`-F | --noRebind`::
+Keep connections open and do not rebind.
++
+Default: false
++
+
+`-g | --argument {generator function or static string}`::
+Argument used to evaluate the Java style format strings in program parameters (ie. Base DN, Search Filter). The set of all arguments provided form the the argument list in order. Besides static string arguments, they can be generated per iteration with the following functions: 
+"inc({filename})" Consecutive, incremental line from file
+"inc({min},{max})" Consecutive, incremental number
+"rand({filename})" Random line from file
+"rand({min},{max})" Random number
+"randstr({length},_charSet_)" Random string of specified length and optionally from characters in the charSet string. A range of character can be specified with [start-end] charSet notation. If no charSet is specified, the default charSet of [A-Z][a-z][0-9] will be used.
++
+
+`-i | --statInterval {statInterval}`::
+Display results each specified number of seconds.
++
+Default: 5
++
+
+`-m | --maxIterations {maxIterations}`::
+Max iterations, 0 for unlimited.
++
+Default: 0
++
+
+`-M | --targetThroughput {targetThroughput}`::
+Target average throughput to achieve.
++
+Default: 0
++
+
+`-s | --searchScope {searchScope}`::
+Search scope ('base', 'one', 'sub', or 'subordinates'). Note: 'subordinates' is an LDAP extension that might not work with all LDAP servers.
++
+Default: sub
++
+
+`-S | --scriptFriendly`::
+Use script-friendly mode.
++
+Default: false
++
+
+`-t | --numThreads {numThreads}`::
+Number of worker threads per connection.
++
+Default: 1
++
+
+
+--
+.LDAP connection options:
+
+--
+`-D | --bindDN {bindDN}`::
+DN to use to bind to the server.
++
+Default: 
++
+
+`-E | --reportAuthzID`::
+Use the authorization identity control.
++
+Default: false
++
+
+`-h | --hostname {host}`::
+The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
++
+Default: localhost.localdomain
++
+
+`-j | --bindPasswordFile {bindPasswordFile}`::
+Bind password file.
++
+
+`-K | --keyStorePath {keyStorePath}`::
+Certificate key store path.
++
+
+`-N | --certNickname {nickname}`::
+Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
++
+
+`-o | --saslOption {name=value}`::
+SASL bind options.
++
+
+`-p | --port {port}`::
+Directory server port number.
++
+Default: 389
++
+
+`-P | --trustStorePath {trustStorePath}`::
+Certificate trust store path.
++
+
+`-q | --useStartTLS`::
+Use StartTLS to secure communication with the server.
++
+Default: false
++
+
+`-T | --trustStorePassword {trustStorePassword}`::
+Certificate trust store PIN.
++
+
+`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-U | --trustStorePasswordFile {path}`::
+Certificate trust store PIN file.
++
+
+`--usePasswordPolicyControl`::
+Use the password policy request control.
++
+Default: false
++
+
+`-w | --bindPassword {bindPassword}`::
+Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
++
+
+`-W | --keyStorePassword {keyStorePassword}`::
+Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
++
+
+`-X | --trustAll`::
+Trust all server SSL certificates.
++
+Default: false
++
+
+`-Z | --useSSL`::
+Use SSL for secure communication with the server.
++
+Default: false
++
+
+
+--
+.Utility input/output options:
+
+--
+`--noPropertiesFile`::
+No properties file will be used to get default command line argument values.
++
+Default: false
++
+
+`--propertiesFilePath {propertiesFilePath}`::
+Path to the file containing default property values used for command line arguments.
++
+
+`-v | --verbose`::
+Use verbose mode.
++
+Default: false
++
+
+
+--
+.General options:
+
+--
+`-V | --version`::
+Display Directory Server version information.
++
+Default: false
++
+
+
+--
+
+--
+`-H | --help`::
+Display this usage information.
++
+Default: false
++
+
+
+--
+
+
+
+include::./_exit-codes-0-89.adoc[]
+
+include::./_searchrate-examples.adoc[]
+
+
