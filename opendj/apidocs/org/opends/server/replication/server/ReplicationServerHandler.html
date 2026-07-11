@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -365,6 +365,15 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 </td>
 </tr>
 <tr id="i17" class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLastMessageFromLateQueue()">isLastMessageFromLateQueue</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Indicates whether the last update message returned by
+ <a href="#getNextMessage()"><code>getNextMessage()</code></a> was re-read from the changelog DB (catch-up
+ path) rather than taken from the in-memory queue.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRemoteLDAPServer(int)">isRemoteLDAPServer</a></span>&#8203;(int&nbsp;serverId)</code></th>
 <td class="colLast">
@@ -372,7 +381,7 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
  a wanted server is connected to this replication server.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processTopoInfoFromRS(org.opends.server.replication.protocol.TopologyMsg)">processTopoInfoFromRS</a></span>&#8203;(<a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;topoMsg)</code></th>
 <td class="colLast">
@@ -380,14 +389,14 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
  in RS handler.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receiveTopoInfoFromRS(org.opends.server.replication.protocol.TopologyMsg)">receiveTopoInfoFromRS</a></span>&#8203;(<a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;topoMsg)</code></th>
 <td class="colLast">
 <div class="block">Receives a topology msg.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBaseDNAndDomain(org.forgerock.opendj.ldap.DN,boolean)">setBaseDNAndDomain</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                   boolean&nbsp;isDataServer)</code></th>
@@ -395,7 +404,7 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 <div class="block">Set the baseDN for this handler.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setConsumerActive(boolean)">setConsumerActive</a></span>&#8203;(boolean&nbsp;active)</code></th>
 <td class="colLast">
@@ -403,21 +412,21 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
  should not return any UpdateMsg any more.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInitialServerState(org.opends.server.replication.common.ServerState)">setInitialServerState</a></span>&#8203;(<a href="../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a>&nbsp;serverState)</code></th>
 <td class="colLast">
 <div class="block">Set the initial value of the serverState for this handler.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shutdown()">shutdown</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Shutdown This ServerHandler.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startFromRemoteRS(org.opends.server.replication.protocol.ReplServerStartMsg)">startFromRemoteRS</a></span>&#8203;(<a href="../protocol/ReplServerStartMsg.html" title="class in org.opends.server.replication.protocol">ReplServerStartMsg</a>&nbsp;inReplServerStartMsg)</code></th>
 <td class="colLast">
@@ -425,7 +434,7 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
  the remote replication server.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 </tr>
@@ -778,6 +787,25 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></code> - when it occurs.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - when it occurs.</dd>
+</dl>
+</li>
+</ul>
+<a id="isLastMessageFromLateQueue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isLastMessageFromLateQueue</h4>
+<pre class="methodSignature">protected&nbsp;boolean&nbsp;isLastMessageFromLateQueue()</pre>
+<div class="block">Indicates whether the last update message returned by
+ <a href="#getNextMessage()"><code>getNextMessage()</code></a> was re-read from the changelog DB (catch-up
+ path) rather than taken from the in-memory queue.
+ <p>
+ Must only be called from the consumer thread calling
+ <a href="#getNextMessage()"><code>getNextMessage()</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the last returned update message came from the late queue</dd>
 </dl>
 </li>
 </ul>

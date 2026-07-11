@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":6,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":6,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":6,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":6,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":6,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":6,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -621,6 +621,15 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 </td>
 </tr>
 <tr id="i42" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLastMessageFromLateQueue()">isLastMessageFromLateQueue</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Indicates whether the last update message returned by
+ <a href="#getNextMessage()"><code>getNextMessage()</code></a> was re-read from the changelog DB (catch-up
+ path) rather than taken from the in-memory queue.</div>
+</td>
+</tr>
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReplicationServer()">isReplicationServer</a></span>()</code></th>
 <td class="colLast">
@@ -628,21 +637,21 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  server.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lockDomainNoTimeout()">lockDomainNoTimeout</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Lock the domain without a timeout.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lockDomainWithTimeout()">lockDomainWithTimeout</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Lock the domain with a timeout.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logStartHandshakeRCVandSND(org.opends.server.replication.protocol.StartMsg,org.opends.server.replication.protocol.StartMsg)">logStartHandshakeRCVandSND</a></span>&#8203;(<a href="../protocol/StartMsg.html" title="class in org.opends.server.replication.protocol">StartMsg</a>&nbsp;inStartMsg,
                           <a href="../protocol/StartMsg.html" title="class in org.opends.server.replication.protocol">StartMsg</a>&nbsp;outStartMsg)</code></th>
@@ -650,7 +659,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Log the messages involved in the start handshake.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logStartHandshakeSNDandRCV(org.opends.server.replication.protocol.StartMsg,org.opends.server.replication.protocol.StartMsg)">logStartHandshakeSNDandRCV</a></span>&#8203;(<a href="../protocol/StartMsg.html" title="class in org.opends.server.replication.protocol">StartMsg</a>&nbsp;outStartMsg,
                           <a href="../protocol/StartMsg.html" title="class in org.opends.server.replication.protocol">StartMsg</a>&nbsp;inStartMsg)</code></th>
@@ -658,7 +667,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Log the messages involved in the start handshake.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logStartSessionHandshake(org.opends.server.replication.protocol.StartSessionMsg,org.opends.server.replication.protocol.TopologyMsg)">logStartSessionHandshake</a></span>&#8203;(<a href="../protocol/StartSessionMsg.html" title="class in org.opends.server.replication.protocol">StartSessionMsg</a>&nbsp;inStartSessionMsg,
                         <a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;outTopoMsg)</code></th>
@@ -666,14 +675,14 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Log the messages involved in the Topology/StartSession handshake.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logStopReceived()">logStopReceived</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Log stop message has been received.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logTopoHandshakeRCVandSND(org.opends.server.replication.protocol.TopologyMsg,org.opends.server.replication.protocol.TopologyMsg)">logTopoHandshakeRCVandSND</a></span>&#8203;(<a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;inTopoMsg,
                          <a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;outTopoMsg)</code></th>
@@ -681,7 +690,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Log the messages involved in the Topology handshake.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logTopoHandshakeSNDandRCV(org.opends.server.replication.protocol.TopologyMsg,org.opends.server.replication.protocol.TopologyMsg)">logTopoHandshakeSNDandRCV</a></span>&#8203;(<a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;outTopoMsg,
                          <a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;inTopoMsg)</code></th>
@@ -689,42 +698,42 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Log the messages involved in the Topology handshake.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#put(org.opends.server.replication.protocol.UpdateMsg)">put</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;update)</code></th>
 <td class="colLast">
 <div class="block">Put a new update message received.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#releaseDomainLock()">releaseDomainLock</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Releases the lock on the replication server domain if it was held.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replyToWindowProbe()">replyToWindowProbe</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Process the reception of a WindowProbeMsg message.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#send(org.opends.server.replication.protocol.ReplicationMsg)">send</a></span>&#8203;(<a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg)</code></th>
 <td class="colLast">
 <div class="block">Sends a message.</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendTopoInfo(org.opends.server.replication.protocol.TopologyMsg)">sendTopoInfo</a></span>&#8203;(<a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;topoMsg)</code></th>
 <td class="colLast">
 <div class="block">Sends the provided TopologyMsg to the peer server.</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBaseDNAndDomain(org.forgerock.opendj.ldap.DN,boolean)">setBaseDNAndDomain</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                   boolean&nbsp;isDataServer)</code></th>
@@ -732,7 +741,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Set the baseDN for this handler.</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setConsumerActive(boolean)">setConsumerActive</a></span>&#8203;(boolean&nbsp;active)</code></th>
 <td class="colLast">
@@ -740,35 +749,35 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  should not return any UpdateMsg any more.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setGenerationId(long)">setGenerationId</a></span>&#8203;(long&nbsp;generationId)</code></th>
 <td class="colLast">
 <div class="block">Set a new generation ID.</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInitialServerState(org.opends.server.replication.common.ServerState)">setInitialServerState</a></span>&#8203;(<a href="../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a>&nbsp;serverState)</code></th>
 <td class="colLast">
 <div class="block">Set the initial value of the serverState for this handler.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSendWindowSize(int)">setSendWindowSize</a></span>&#8203;(int&nbsp;size)</code></th>
 <td class="colLast">
 <div class="block">Sets the window size when used when sending to the remote.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shutdown()">shutdown</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Shutdown This ServerHandler.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code><a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#take()">take</a></span>()</code></th>
 <td class="colLast">
@@ -776,19 +785,19 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  ServerHandler.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code><a href="../common/RSInfo.html" title="class in org.opends.server.replication.common">RSInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toRSInfo()">toRSInfo</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Creates a RSInfo structure representing this remote RS.</div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateWindow(org.opends.server.replication.protocol.WindowMsg)">updateWindow</a></span>&#8203;(<a href="../protocol/WindowMsg.html" title="class in org.opends.server.replication.protocol">WindowMsg</a>&nbsp;windowMsg)</code></th>
 <td class="colLast">
@@ -1830,6 +1839,25 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a "badly disconnected" error message for this server handler</dd>
+</dl>
+</li>
+</ul>
+<a id="isLastMessageFromLateQueue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isLastMessageFromLateQueue</h4>
+<pre class="methodSignature">protected&nbsp;boolean&nbsp;isLastMessageFromLateQueue()</pre>
+<div class="block">Indicates whether the last update message returned by
+ <a href="#getNextMessage()"><code>getNextMessage()</code></a> was re-read from the changelog DB (catch-up
+ path) rather than taken from the in-memory queue.
+ <p>
+ Must only be called from the consumer thread calling
+ <a href="#getNextMessage()"><code>getNextMessage()</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the last returned update message came from the late queue</dd>
 </dl>
 </li>
 </ul>

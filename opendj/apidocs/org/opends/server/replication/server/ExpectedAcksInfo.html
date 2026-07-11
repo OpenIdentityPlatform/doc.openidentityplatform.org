@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":10,"i5":10,"i6":6};
+var data = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -281,6 +281,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isExpectedServer(int)">isExpectedServer</a></span>&#8203;(int&nbsp;serverId)</code></th>
+<td class="colLast">
+<div class="block">Indicates whether the provided server is one of the servers an ack is
+ expected from for the matching update message.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processReceivedAck(org.opends.server.replication.server.ServerHandler,org.opends.server.replication.protocol.AckMsg)">processReceivedAck</a></span>&#8203;(<a href="ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a>&nbsp;ackingServer,
                   <a href="../protocol/AckMsg.html" title="class in org.opends.server.replication.protocol">AckMsg</a>&nbsp;ackMsg)</code></th>
@@ -393,6 +401,25 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="isExpectedServer(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isExpectedServer</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isExpectedServer&#8203;(int&nbsp;serverId)</pre>
+<div class="block">Indicates whether the provided server is one of the servers an ack is
+ expected from for the matching update message. Reads an immutable snapshot
+ taken at construction time, so it is safe to call without holding the lock
+ on this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>serverId</code> - The serverId of the server.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if an ack is expected from the provided server.</dd>
+</dl>
+</li>
+</ul>
 <a id="getRequesterServer()">
 <!--   -->
 </a>
