@@ -218,7 +218,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>input</code> - The string representation of the bind rule.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A BindRule class representing the bind rule.</dd>
+<dd>A BindRule class representing the bind rule, or <code>null</code> if
+ <code>input</code> is null or blank. This null is the recursion base case for
+ an empty group; callers must reject it rather than dereference it.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="AciException.html" title="class in org.opends.server.authorization.dseecompat">AciException</a></code> - If the string is an invalid bind rule.</dd>
 </dl>
