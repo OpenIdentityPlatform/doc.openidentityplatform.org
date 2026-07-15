@@ -138,19 +138,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  instance by calling <a href="#rest2Ldap(org.forgerock.util.Options,java.util.Collection)"><code>rest2Ldap(org.forgerock.util.Options, java.util.Collection&lt;org.forgerock.opendj.rest2ldap.Resource&gt;)</code></a> passing in a list of <a href="Resource.html" title="class in org.forgerock.opendj.rest2ldap"><code>resources</code></a> which together define
  the data model being exposed by the gateway. Call <a href="#newRequestHandlerFor(java.lang.String)"><code>newRequestHandlerFor(String)</code></a> in order to obtain
  a request handler for a specific resource. The methods in this class can be categorized as follows:
- <p/>
+ <p>
  Creating Rest2Ldap gateways:
  <ul>
  <li><a href="#rest2Ldap(org.forgerock.util.Options,java.util.Collection)"><code>rest2Ldap(org.forgerock.util.Options, java.util.Collection&lt;org.forgerock.opendj.rest2ldap.Resource&gt;)</code></a> - creates a gateway for a given set of resources</li>
  <li><a href="#newRequestHandlerFor(java.lang.String)"><code>newRequestHandlerFor(java.lang.String)</code></a> - obtains a request handler for the specified endpoint resource.</li>
  </ul>
- <p/>
+ <p>
  Defining resource types, e.g. users, groups, devices, etc:
  <ul>
  <li><a href="#resource(java.lang.String)"><code>resource(java.lang.String)</code></a> - creates a resource having a fluent API for defining additional characteristics
  such as the resource's inheritance, sub-resources, and properties</li>
  </ul>
- <p/>
+ <p>
  Defining a resource's sub-resources. A sub-resource is a resource which is subordinate to another resource. Or, to
  put it another way, sub-resources define parent child relationships where the life-cycle of a child resource is
  constrained by the life-cycle of the parent: deleting the parent implies that all children are deleted as well. An
@@ -163,7 +163,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  top-level entry points into REST APIs.
  </li>
  </ul>
- <p/>
+ <p>
  Defining a resource's properties:
  <ul>
  <li><a href="#resourceType()"><code>resourceType()</code></a> - defines a property whose JSON value will be the name of the resource, e.g. "user"</li>

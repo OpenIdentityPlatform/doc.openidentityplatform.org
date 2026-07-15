@@ -13013,7 +13013,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i1925" class="rowColor">
 <td class="colFirst"><a href="org/opends/quicksetup/ui/QuickSetup.html" title="class in org.opends.quicksetup.ui">QuickSetup</a></td>
 <th class="colLast" scope="row">
-<div class="block">This class is responsible for doing the following:</div>
+<div class="block">This class is responsible for doing the following:
+ 
+ Check whether we are installing or uninstalling.
+ Performs all the checks and validation of the data provided by the user
+ during the setup.
+ It will launch also the installation once the user clicks on 'Finish' if
+ we are installing the product.
+ </div>
 </th>
 </tr>
 <tr id="i1926" class="altColor">
@@ -13151,19 +13158,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i1945" class="rowColor">
 <td class="colFirst"><a href="com/forgerock/reactive/ReactiveFilter.html" title="class in com.forgerock.reactive">ReactiveFilter</a>&lt;<a href="com/forgerock/reactive/ReactiveFilter.html" title="type parameter in ReactiveFilter">C</a>,&#8203;<a href="com/forgerock/reactive/ReactiveFilter.html" title="type parameter in ReactiveFilter">I1</a>,&#8203;<a href="com/forgerock/reactive/ReactiveFilter.html" title="type parameter in ReactiveFilter">O1</a>,&#8203;<a href="com/forgerock/reactive/ReactiveFilter.html" title="type parameter in ReactiveFilter">I2</a>,&#8203;<a href="com/forgerock/reactive/ReactiveFilter.html" title="type parameter in ReactiveFilter">O2</a>&gt;</td>
 <th class="colLast" scope="row">
-<div class="block">Filters and/or transforms the request and/or response of an exchange.
-
-                +--------+              +---------+
-   ---> I1 ---> |        | ---> I2 ---> |         |
-                | Filter |              | Handler |
-   <--- O1 --<  |        | <--- O2 <--- |         |
-                +--------+              +---------+
-
-                +--------+              +---------+              +---------+
-   ---> I1 ---> |  One   | ---> I2 ---> | AndThen | ---> I3 ---> |         |
-                | Filter |              | Filter  |              | Handler |
-   <--- O1 --<  |        | <--- O2 <--- |         | <--- O3 ---< |         |
-                +--------+              +---------+              +---------+</div>
+<div class="block">Filters and/or transforms the request and/or response of an exchange.</div>
 </th>
 </tr>
 <tr id="i1946" class="altColor">
@@ -15898,10 +15893,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">This message is used by DS to confirm a RS he wants to connect to him (open
  a session):
  Handshake sequence between DS and RS is like this:
- DS --- ServerStartMsg ---> RS
- DS <--- ReplServerStartMsg --- RS
- DS --- StartSessionMsg ---> RS
- DS <--- TopologyMsg --- RS
+ DS --- ServerStartMsg ---&gt; RS
+ DS &lt;--- ReplServerStartMsg --- RS
+ DS --- StartSessionMsg ---&gt; RS
+ DS &lt;--- TopologyMsg --- RS
 
  This message contains:
  - status: the status we are entering the topology with

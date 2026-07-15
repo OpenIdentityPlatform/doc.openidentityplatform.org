@@ -345,7 +345,7 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLastMessageFromLateQueue()">isLastMessageFromLateQueue</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the last update message returned by
- <a href="#getNextMessage()"><code>getNextMessage()</code></a> was re-read from the changelog DB (catch-up
+ <code>getNextMessage()</code> was re-read from the changelog DB (catch-up
  path) rather than taken from the in-memory queue.</div>
 </td>
 </tr>
@@ -726,11 +726,11 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 <h4>isLastMessageFromLateQueue</h4>
 <pre class="methodSignature">protected&nbsp;boolean&nbsp;isLastMessageFromLateQueue()</pre>
 <div class="block">Indicates whether the last update message returned by
- <a href="#getNextMessage()"><code>getNextMessage()</code></a> was re-read from the changelog DB (catch-up
+ <code>getNextMessage()</code> was re-read from the changelog DB (catch-up
  path) rather than taken from the in-memory queue.
  <p>
  Must only be called from the consumer thread calling
- <a href="#getNextMessage()"><code>getNextMessage()</code></a>.</div>
+ <code>getNextMessage()</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the last returned update message came from the late queue</dd>

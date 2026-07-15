@@ -102,7 +102,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <div class="block">An LDAP based security provider having the name "OpenDJ" and exposing an LDAP/LDIF based <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink"><code>KeyStore</code></a> service. The key store has the type "LDAP" and alias "OPENDJ" and can be created
  using a number of approaches. Firstly, by directly calling one of the factory methods in <a href="OpenDJProvider.html" title="class in org.forgerock.opendj.security"><code>OpenDJProvider</code></a>:
- <p>
  <pre>
  ConnectionFactory ldapServer = ...;
  DN keyStoreBaseDN = DN.valueOf("ou=key store,dc=example,dc=com");
@@ -113,7 +112,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>
  Alternatively, if the OpenDJ security provider is registered with the JVM's JCA framework together with a suitable
  configuration file, then an LDAP key store can be created like this:
- <p>
  <pre>
  KeyStore ldapKeyStore = KeyStore.getInstance("LDAP");
  ldapKeyStore.load(null);
@@ -138,7 +136,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>
  Interacting with an LDAP/LDIF key store using Java's "keytool" command is a little complicated if the OpenDJ provider
  is not configured in the JVM due to the need to specify the class-path:
- <p>
  <pre>
  # Generate an RSA private key entry:
  keytool -J-cp -J/path/to/opendj/server/lib/bootstrap-client.jar \

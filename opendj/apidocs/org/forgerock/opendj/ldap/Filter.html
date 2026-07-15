@@ -148,7 +148,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <p>
  Filters can be constructed using the various factory methods. For example,
  the following code illustrates how to create a filter having the string
- representation "<code>(&amp;(cn=bjensen)(age&gt;=21))</code>":
+ representation "<code>(&amp;(cn=bjensen)(age&amp;gt;=21))</code>":
 
  <pre>
  import static org.forgerock.opendj.Filter.*;
@@ -156,7 +156,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  Filter filter = and(equality("cn", "bjensen"), greaterOrEqual("age", 21));
 
  // Alternatively use a filter template:
- Filter filter = Filter.format("(&(cn=%s)(age>=%s))", "bjensen", 21);
+ Filter filter = Filter.format("(&amp;(cn=%s)(age&gt;=%s))", "bjensen", 21);
  </pre></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>

@@ -160,7 +160,7 @@ extends <a href="../api/LocalBackend.html" title="class in org.opends.server.api
  <code>changeNumber</code> attribute value is set from the content of
  ChangeNumberIndexDB.</li>
  </ul>
- <h3>Searches flow</h3>
+ <h2>Searches flow</h2>
  <p>
  Here is the flow of searches within the changelog backend APIs:
  <ul>
@@ -175,7 +175,7 @@ extends <a href="../api/LocalBackend.html" title="class in org.opends.server.api
  (once, single threaded),</li>
  <li>
  <a href="#search(org.opends.server.core.SearchOperation)"><code>search(SearchOperation)</code></a> (once, single threaded)</li>
- <li>{@link ChangelogBackend#notify*EntryAdded()} (multiple times, multi
+ <li><code>notify*EntryAdded()</code> (multiple times, multi
  threaded)</li>
  </ol>
  </li>
@@ -184,7 +184,7 @@ extends <a href="../api/LocalBackend.html" title="class in org.opends.server.api
  <li><a href="#registerPersistentSearch(org.opends.server.core.PersistentSearch)"><code>registerPersistentSearch(PersistentSearch)</code></a>
  (once, single threaded)</li>
  <li>
- {@link ChangelogBackend#notify*EntryAdded()} (multiple times, multi
+ <code>notify*EntryAdded()</code> (multiple times, multi
  threaded)</li>
  </ol>
  </li>
@@ -689,8 +689,7 @@ public static&nbsp;<a href="ChangelogBackend.html" title="class in org.opends.se
  any suffixes that it manages with the Directory Server.
  <p>
  It will be called as final step of <code>finalizeBackend()</code>,
- so subclasses might override it.
- </p></div>
+ so subclasses might override it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../api/LocalBackend.html#closeBackend()">closeBackend</a></code>&nbsp;in class&nbsp;<code><a href="../api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;<a href="../../../forgerock/opendj/server/config/server/LocalBackendCfg.html" title="interface in org.forgerock.opendj.server.config.server">LocalBackendCfg</a>&gt;</code></dd>

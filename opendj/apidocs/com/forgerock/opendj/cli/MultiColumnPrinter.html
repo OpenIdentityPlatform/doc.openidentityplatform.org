@@ -168,7 +168,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <p>
  The following code sample presents how to create a <a href="MultiColumnPrinter.html" title="class in com.forgerock.opendj.cli"><code>MultiColumnPrinter</code></a> to write CSV data:
  <pre>
- final List<MultiColumnPrinter.Column> columns = new ArrayList&lt;&gt;();
+ final List&lt;MultiColumnPrinter.Column&gt; columns = new ArrayList&lt;&gt;();
  columns.add(MultiColumnPrinter.column("CountryNameColumnId", "country_name", 0));
  columns.add(MultiColumnPrinter.column("populationDensityId", "population_density", 1));
  columns.add(MultiColumnPrinter.column("GiniId", "gini", 1));
@@ -190,7 +190,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  The following code sample presents how to configure a <a href="MultiColumnPrinter.html" title="class in com.forgerock.opendj.cli"><code>MultiColumnPrinter</code></a>
  to print the same data on console with some title headers.
  <pre>
-     final List<MultiColumnPrinter.Column> columns = new ArrayList&lt;&gt;();
+     final List&lt;MultiColumnPrinter.Column&gt; columns = new ArrayList&lt;&gt;();
      columns.add(MultiColumnPrinter.separatorColumn());
      columns.add(MultiColumnPrinter.column("CountryNameColumnId", "Country Name", 15, 0));
      columns.add(MultiColumnPrinter.column("populationDensityId", "Density", 10, 1));

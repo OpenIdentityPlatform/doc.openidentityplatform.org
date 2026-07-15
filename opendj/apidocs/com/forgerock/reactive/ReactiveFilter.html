@@ -148,17 +148,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">Filters and/or transforms the request and/or response of an exchange.
 
+ <pre><code>
                 +--------+              +---------+
-   ---> I1 ---> |        | ---> I2 ---> |         |
+   ---&gt; I1 ---&gt; |        | ---&gt; I2 ---&gt; |         |
                 | Filter |              | Handler |
-   <--- O1 --<  |        | <--- O2 <--- |         |
+   &lt;--- O1 --&lt;  |        | &lt;--- O2 &lt;--- |         |
                 +--------+              +---------+
 
                 +--------+              +---------+              +---------+
-   ---> I1 ---> |  One   | ---> I2 ---> | AndThen | ---> I3 ---> |         |
+   ---&gt; I1 ---&gt; |  One   | ---&gt; I2 ---&gt; | AndThen | ---&gt; I3 ---&gt; |         |
                 | Filter |              | Filter  |              | Handler |
-   <--- O1 --<  |        | <--- O2 <--- |         | <--- O3 ---< |         |
-                +--------+              +---------+              +---------+</div>
+   &lt;--- O1 --&lt;  |        | &lt;--- O2 &lt;--- |         | &lt;--- O3 ---&lt; |         |
+                +--------+              +---------+              +---------+
+ </code></pre></div>
 </li>
 </ul>
 </div>

@@ -161,7 +161,7 @@ implements <a href="Control.html" title="interface in org.forgerock.opendj.ldap.
 
  ServerSideSortResponseControl control = result.getControl(
          ServerSideSortResponseControl.DECODER, new DecodeOptions());
- if (control != null && control.getResult() == ResultCode.SUCCESS) {
+ if (control != null &amp;&amp; control.getResult() == ResultCode.SUCCESS) {
      // Entries are sorted.
  } else {
      // Entries not sorted.
