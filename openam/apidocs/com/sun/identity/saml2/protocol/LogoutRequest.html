@@ -140,26 +140,26 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
  message to indicate that a session has been terminated.
 
  <pre>
- &lt;element name="LogoutRequest" type="{urn:oasis:names:tc:SAML:2.0:protocol}LogoutRequestType"/>
+ &lt;element name="LogoutRequest" type="{urn:oasis:names:tc:SAML:2.0:protocol}LogoutRequestType"/&gt;
  </pre>
 
  <pre>
- &lt;complexType name="LogoutRequestType">
-   &lt;complexContent>
-     &lt;extension base="{urn:oasis:names:tc:SAML:2.0:protocol}RequestAbstractType">
-       &lt;sequence>
-         &lt;choice>
-           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}BaseID"/>
-           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}NameID"/>
-           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}EncryptedID"/>
-         &lt;/choice>
-         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:protocol}SessionIndex" maxOccurs="unbounded" minOccurs="0"/>
-       &lt;/sequence>
-       &lt;attribute name="NotOnOrAfter" type="{http://www.w3.org/2001/XMLSchema}dateTime" />
-       &lt;attribute name="Reason" type="{http://www.w3.org/2001/XMLSchema}string" />
-     &lt;/extension>
-   &lt;/complexContent>
- &lt;/complexType>
+ &lt;complexType name="LogoutRequestType"&gt;
+   &lt;complexContent&gt;
+     &lt;extension base="{urn:oasis:names:tc:SAML:2.0:protocol}RequestAbstractType"&gt;
+       &lt;sequence&gt;
+         &lt;choice&gt;
+           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}BaseID"/&gt;
+           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}NameID"/&gt;
+           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}EncryptedID"/&gt;
+         &lt;/choice&gt;
+         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:protocol}SessionIndex" maxOccurs="unbounded" minOccurs="0"/&gt;
+       &lt;/sequence&gt;
+       &lt;attribute name="NotOnOrAfter" type="{http://www.w3.org/2001/XMLSchema}dateTime" /&gt;
+       &lt;attribute name="Reason" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     &lt;/extension&gt;
+   &lt;/complexContent&gt;
+ &lt;/complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -203,21 +203,21 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNotOnOrAfter()">getNotOnOrAfter</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the notOnOrAfter property.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReason()">getReason</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the reason property.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSessionIndex()">getSessionIndex</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the SessionIndex property.</div>
@@ -246,21 +246,21 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNotOnOrAfter(java.util.Date)">setNotOnOrAfter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNotOnOrAfter(java.util.Date)">setNotOnOrAfter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the notOnOrAfter property.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReason(java.lang.String)">setReason</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReason(java.lang.String)">setReason</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the reason property.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSessionIndex(java.util.List)">setSessionIndex</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;sessionIndexList)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSessionIndex(java.util.List)">setSessionIndex</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;sessionIndexList)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the SessionIndex property.</div>
 </td>
@@ -295,7 +295,7 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 <ul class="blockList">
 <li class="blockList">
 <h4>getNotOnOrAfter</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;getNotOnOrAfter()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;getNotOnOrAfter()</pre>
 <div class="block">Returns the value of the notOnOrAfter property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -311,7 +311,7 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 <ul class="blockList">
 <li class="blockList">
 <h4>setNotOnOrAfter</h4>
-<pre class="methodSignature">void&nbsp;setNotOnOrAfter&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value)
+<pre class="methodSignature">void&nbsp;setNotOnOrAfter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;value)
               throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the notOnOrAfter property.</div>
 <dl>
@@ -331,7 +331,7 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 <ul class="blockList">
 <li class="blockList">
 <h4>getReason</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getReason()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getReason()</pre>
 <div class="block">Returns the value of the reason property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -347,7 +347,7 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 <ul class="blockList">
 <li class="blockList">
 <h4>setReason</h4>
-<pre class="methodSignature">void&nbsp;setReason&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
+<pre class="methodSignature">void&nbsp;setReason&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
         throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the reason property.</div>
 <dl>
@@ -471,7 +471,7 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 <ul class="blockList">
 <li class="blockList">
 <h4>getSessionIndex</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getSessionIndex()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getSessionIndex()</pre>
 <div class="block">Returns the value of the SessionIndex property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -487,7 +487,7 @@ extends <a href="RequestAbstract.html" title="interface in com.sun.identity.saml
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setSessionIndex</h4>
-<pre class="methodSignature">void&nbsp;setSessionIndex&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;sessionIndexList)
+<pre class="methodSignature">void&nbsp;setSessionIndex&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;sessionIndexList)
               throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the SessionIndex property.</div>
 <dl>

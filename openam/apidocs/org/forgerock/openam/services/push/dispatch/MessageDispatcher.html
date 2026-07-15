@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>org.forgerock.openam.services.push.dispatch.MessageDispatcher</li>
@@ -133,7 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">MessageDispatcher</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">The MessageDispatcher acts to forward messages between disparate locations in OpenAM via
  a unique identifier and an aysnc interface. The MessageDispatcher should initially be
  told to expect to receive a message with a given id - this will return an incomplete promise which
@@ -169,7 +169,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.google.common.cache.Cache,com.sun.identity.shared.debug.Debug)">MessageDispatcher</a></span>&#8203;(com.google.common.cache.Cache&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a>&gt;&nbsp;dispatch,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.google.common.cache.Cache,com.sun.identity.shared.debug.Debug)">MessageDispatcher</a></span>&#8203;(com.google.common.cache.Cache&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a>&gt;&nbsp;dispatch,
                  <a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug)</code></th>
 <td class="colLast">
 <div class="block">A message dispatcher which holds a Cache (a timeout-based Map) which contains the
@@ -196,22 +196,22 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#expect(java.lang.String,java.util.Set)">expect</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;predicates)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#expect(java.lang.String,java.util.Set)">expect</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
+      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;predicates)</code></th>
 <td class="colLast">
 <div class="block">Tells the message dispatcher to expect a message to be handled with the given messageId.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#forget(java.lang.String)">forget</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#forget(java.lang.String)">forget</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId)</code></th>
 <td class="colLast">
 <div class="block">Forgets any promise returned by this cache for the provided messageId.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handle(java.lang.String,org.forgerock.json.JsonValue)">handle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handle(java.lang.String,org.forgerock.json.JsonValue)">handle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
       org.forgerock.json.JsonValue&nbsp;content)</code></th>
 <td class="colLast">
 <div class="block">Handles the message passed to the dispatcher with the provided messageId.</div>
@@ -222,8 +222,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -248,7 +248,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>MessageDispatcher</h4>
 <pre>@Inject
-public&nbsp;MessageDispatcher&#8203;(com.google.common.cache.Cache&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a>&gt;&nbsp;dispatch,
+public&nbsp;MessageDispatcher&#8203;(com.google.common.cache.Cache&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a>&gt;&nbsp;dispatch,
                          <a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug)</pre>
 <div class="block">A message dispatcher which holds a Cache (a timeout-based Map) which contains the
  promises which have yet to be returned to their instantiators.</div>
@@ -275,7 +275,7 @@ public&nbsp;MessageDispatcher&#8203;(com.google.common.cache.Cache&lt;<a href="h
 <ul class="blockList">
 <li class="blockList">
 <h4>handle</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;handle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
+<pre class="methodSignature">public&nbsp;void&nbsp;handle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
                    org.forgerock.json.JsonValue&nbsp;content)
             throws org.forgerock.json.resource.NotFoundException,
                    <a href="PredicateNotMetException.html" title="class in org.forgerock.openam.services.push.dispatch">PredicateNotMetException</a></pre>
@@ -296,8 +296,8 @@ public&nbsp;MessageDispatcher&#8203;(com.google.common.cache.Cache&lt;<a href="h
 <ul class="blockList">
 <li class="blockList">
 <h4>expect</h4>
-<pre class="methodSignature">public&nbsp;<a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a>&nbsp;expect&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;predicates)</pre>
+<pre class="methodSignature">public&nbsp;<a href="MessagePromise.html" title="class in org.forgerock.openam.services.push.dispatch">MessagePromise</a>&nbsp;expect&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId,
+                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;predicates)</pre>
 <div class="block">Tells the message dispatcher to expect a message to be handled with the given messageId. This returns
  an incomplete promise.</div>
 <dl>
@@ -315,7 +315,7 @@ public&nbsp;MessageDispatcher&#8203;(com.google.common.cache.Cache&lt;<a href="h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>forget</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;forget&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;forget&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;messageId)</pre>
 <div class="block">Forgets any promise returned by this cache for the provided messageId. Removes the promise from
  the cache. Returns true if all of this occurred, false if the provided messageId was not found.</div>
 <dl>

@@ -130,7 +130,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public interface <span class="typeNameLabel">InstanceConfigMarshaller&lt;T extends <a href="config/user/STSInstanceConfig.html" title="class in org.forgerock.openam.sts.config.user">STSInstanceConfig</a>&gt;</span></pre>
 <div class="block">Interface to represent the concerns of marshalling to RestSTSInstanceConfig and SoapSTSInstanceConfig instances to/from either
- the Map<String, Set<String>> SMS representation or the json representation. Simply wraps the static methods in the
+ the <code>Map&lt;String, Set&lt;String&gt;&gt;</code> SMS representation or the json representation. Simply wraps the static methods in the
  RestSTSInstanceConfig and SoapSTSInstanceConfig classes, so that they can be easily mocked.</div>
 </li>
 </ul>
@@ -166,16 +166,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="InstanceConfigMarshaller.html" title="type parameter in InstanceConfigMarshaller">T</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fromMapAttributes(java.util.Map)">fromMapAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributes)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#fromMapAttributes(java.util.Map)">fromMapAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributes)</code></th>
 <td class="colLast">
 <div class="block">Marshal STSInstanceConfig subclass instance from the SMS representation</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toMap(T)">toMap</a></span>&#8203;(<a href="InstanceConfigMarshaller.html" title="type parameter in InstanceConfigMarshaller">T</a>&nbsp;instance)</code></th>
 <td class="colLast">
-<div class="block">Called to marshal an STSInstanceConfig subclass instance to the Map<String, Set<String>> required for SMS persistence.</div>
+<div class="block">Called to marshal an STSInstanceConfig subclass instance to the <code>Map&lt;String, Set&lt;String&gt;&gt;</code> required for SMS persistence.</div>
 </td>
 </tr>
 </table>
@@ -203,9 +203,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>toMap</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;toMap&#8203;(<a href="InstanceConfigMarshaller.html" title="type parameter in InstanceConfigMarshaller">T</a>&nbsp;instance)
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;toMap&#8203;(<a href="InstanceConfigMarshaller.html" title="type parameter in InstanceConfigMarshaller">T</a>&nbsp;instance)
                              throws <a href="STSPublishException.html" title="class in org.forgerock.openam.sts">STSPublishException</a></pre>
-<div class="block">Called to marshal an STSInstanceConfig subclass instance to the Map<String, Set<String>> required for SMS persistence.</div>
+<div class="block">Called to marshal an STSInstanceConfig subclass instance to the <code>Map&lt;String, Set&lt;String&gt;&gt;</code> required for SMS persistence.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>instance</code> - the to-be-marshaled instance</dd>
@@ -222,7 +222,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>fromMapAttributes</h4>
-<pre class="methodSignature"><a href="InstanceConfigMarshaller.html" title="type parameter in InstanceConfigMarshaller">T</a>&nbsp;fromMapAttributes&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributes)
+<pre class="methodSignature"><a href="InstanceConfigMarshaller.html" title="type parameter in InstanceConfigMarshaller">T</a>&nbsp;fromMapAttributes&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributes)
              throws <a href="STSPublishException.html" title="class in org.forgerock.openam.sts">STSPublishException</a></pre>
 <div class="block">Marshal STSInstanceConfig subclass instance from the SMS representation</div>
 <dl>
@@ -245,12 +245,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                 throws <a href="STSPublishException.html" title="class in org.forgerock.openam.sts">STSPublishException</a></pre>
 <div class="block">Marshal STSInstanceConfig subclass instance from the SMS representation, wrapped in json. The ViewBean classes
  which allow AdminConsole users to configure Soap and Rest STS instances ultimately call the sts publish service
- to publish the Rest or Soap STS instance. The invocation payload is the SMS Map<String, Set<String>> representation
+ to publish the Rest or Soap STS instance. The invocation payload is the SMS <code>Map&lt;String, Set&lt;String&gt;&gt;</code> representation
  native to the ViewBean context, wrapped in a JsonValue, so that it may be posted to CREST. This method defines the
  contract to marshal this representation back to a STSInstanceConfig subclass.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>jsonMapAttributes</code> - the Map<String, Set<String>> native to the ViewBean context and to SMS persistence, wrapped
+<dd><code>jsonMapAttributes</code> - the <code>Map&lt;String, Set&lt;String&gt;&gt;</code> native to the ViewBean context and to SMS persistence, wrapped
                           in a JsonValue</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a STSInstanceConfig subclass</dd>

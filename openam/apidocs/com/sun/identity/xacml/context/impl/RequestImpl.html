@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.identity.xacml.context.impl.RequestImpl</li>
@@ -137,22 +137,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">RequestImpl</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements <a href="../Request.html" title="interface in com.sun.identity.xacml.context">Request</a></pre>
 <div class="block">The <code>Request</code> element is the top-level element in the XACML
  context schema. Its an abstraction layer used by the policy language.
  It contains <code>Subject</code>, <code>Resource</code>, <code>Action
- </code> and <code>Environment<code> elements.
- <p>
+ </code> and <code>Environment</code> elements.
  <pre>
- &lt;xs:complexType name="RequestType">
-   &lt;xs:sequence>
-     &lt;xs:element ref="xacml-context:Subject" maxOccurs="unbounded"/>
-     &lt;xs:element ref="xacml-context:Resource" maxOccurs="unbounded"/>
-     &lt;xs:element ref="xacml-context:Action"/>
-     &lt;xs:element ref="xacml-context:Environment"/>
-   &lt;xs:sequence>
- &lt;xs:complexType>
+ &lt;xs:complexType name="RequestType"&gt;
+   &lt;xs:sequence&gt;
+     &lt;xs:element ref="xacml-context:Subject" maxOccurs="unbounded"/&gt;
+     &lt;xs:element ref="xacml-context:Resource" maxOccurs="unbounded"/&gt;
+     &lt;xs:element ref="xacml-context:Action"/&gt;
+     &lt;xs:element ref="xacml-context:Environment"/&gt;
+   &lt;xs:sequence&gt;
+ &lt;xs:complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -180,14 +179,14 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">RequestImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">RequestImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)</code></th>
 <td class="colLast">
 <div class="block">This constructor is used to build <code>Request</code> object from a
  XML string.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">RequestImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">RequestImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
 <td class="colLast">
 <div class="block">This constructor is used to build <code>Request</code> object from a
  block of existing XML that has already been built into a DOM.</div>
@@ -226,14 +225,14 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResources()">getResources</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the one to many <code>Resource</code> elements of this object</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSubjects()">getSubjects</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the one to many <code>Subject</code> elements of this object</div>
@@ -269,27 +268,27 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setResources(java.util.List)">setResources</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;resources)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setResources(java.util.List)">setResources</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;resources)</code></th>
 <td class="colLast">
 <div class="block">Sets the one to many <code>Resource</code> elements of this object</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSubjects(java.util.List)">setSubjects</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;subjects)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSubjects(java.util.List)">setSubjects</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;subjects)</code></th>
 <td class="colLast">
 <div class="block">Sets the one to many <code>Subject</code> elements of this object</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString()">toXMLString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a string representation of this object</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString(boolean,boolean)">toXMLString</a></span>&#8203;(boolean&nbsp;includeNSPrefix,
            boolean&nbsp;declareNS)</code></th>
 <td class="colLast">
@@ -301,8 +300,8 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -336,7 +335,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>RequestImpl</h4>
-<pre>public&nbsp;RequestImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)
+<pre>public&nbsp;RequestImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)
             throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">This constructor is used to build <code>Request</code> object from a
  XML string.</div>
@@ -355,7 +354,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>RequestImpl</h4>
-<pre>public&nbsp;RequestImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
+<pre>public&nbsp;RequestImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
             throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">This constructor is used to build <code>Request</code> object from a
  block of existing XML that has already been built into a DOM.</div>
@@ -364,8 +363,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <dd><code>element</code> - A <code>org.w3c.dom.Element</code> representing
         DOM tree for <code>Request</code> object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>XACML2Exception</code> - if it could not process the Element</dd>
-<dd><code><a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></code></dd>
+<dd><code><a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></code> - if it could not process the Element</dd>
 </dl>
 </li>
 </ul>
@@ -385,7 +383,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>getSubjects</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getSubjects()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getSubjects()</pre>
 <div class="block">Returns the one to many <code>Subject</code> elements of this object</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -401,7 +399,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>setSubjects</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setSubjects&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;subjects)
+<pre class="methodSignature">public&nbsp;void&nbsp;setSubjects&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;subjects)
                  throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Sets the one to many <code>Subject</code> elements of this object</div>
 <dl>
@@ -424,7 +422,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>getResources</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getResources()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getResources()</pre>
 <div class="block">Returns the one to many <code>Resource</code> elements of this object</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -440,7 +438,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>setResources</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setResources&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;resources)
+<pre class="methodSignature">public&nbsp;void&nbsp;setResources&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;resources)
                   throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Sets the one to many <code>Resource</code> elements of this object</div>
 <dl>
@@ -539,7 +537,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
                           boolean&nbsp;declareNS)
                    throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a <code>String</code> representation of this object</div>
@@ -564,7 +562,7 @@ implements <a href="../Request.html" title="interface in com.sun.identity.xacml.
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
                    throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a string representation of this object</div>
 <dl>

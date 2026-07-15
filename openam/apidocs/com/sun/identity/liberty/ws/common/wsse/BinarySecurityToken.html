@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.identity.liberty.ws.common.wsse.BinarySecurityToken</li>
@@ -133,37 +133,36 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">BinarySecurityToken</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">The class <code>BinarySecurityToken</code> provides interface to parse and
  create X.509 Security Token depicted by Web Service Security : X.509 
  Certificate Token Profile and Liberty ID-WSF Security Mechanisms 
  specifications.
   <p>The following schema fragment specifies the expected content within the BinarySecurityToken object.
- <p>
  <pre>
- &lt;element name="BinarySecurityToken" type="wsse:BinarySecurityTokenType/>
- &lt;complexType name="BinarySecurityTokenType">
-   &lt;simpleContent>
-     &lt;extension base="&lt;http://schemas.xmlsoap.org/ws/2003/06/secext>EncodedString">
-       &lt;attribute name="ValueType" type="{http://www.w3.org/2001/XMLSchema}QName" />
-     &lt;/extension>
-   &lt;/simpleContent>
- &lt;/complexType>
- &lt;xsd:complexType name="EncodedString">
-   &lt;xsd:simpleContent>
-     &lt;xsd:extension base="wsse:AttributedString">
-       &lt;xsd:attribute name="EncodingType" type="xsd:QName"/>
-     &lt;/xsd:extension>
-   &lt;/xsd:simpleContent>
- &lt;/xsd:complexType>
- &lt;xsd:complexType name="AttributedString">
-   &lt;xsd:simpleContent>
-     &lt;xsd:extension base="xsd:string">
-       &lt;xsd:attribute ref="wsu:Id"/>
-         &lt;xsd:anyAttribute namespace="##other" processContents="lax"/>
-     &lt;/xsd:extension>
-   &lt;/xsd:simpleContent>
- &lt;/xsd:complexType>
+ &lt;element name="BinarySecurityToken" type="wsse:BinarySecurityTokenType/&gt;
+ &lt;complexType name="BinarySecurityTokenType"&gt;
+   &lt;simpleContent&gt;
+     &lt;extension base="&lt;http://schemas.xmlsoap.org/ws/2003/06/secext&gt;EncodedString"&gt;
+       &lt;attribute name="ValueType" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+     &lt;/extension&gt;
+   &lt;/simpleContent&gt;
+ &lt;/complexType&gt;
+ &lt;xsd:complexType name="EncodedString"&gt;
+   &lt;xsd:simpleContent&gt;
+     &lt;xsd:extension base="wsse:AttributedString"&gt;
+       &lt;xsd:attribute name="EncodingType" type="xsd:QName"/&gt;
+     &lt;/xsd:extension&gt;
+   &lt;/xsd:simpleContent&gt;
+ &lt;/xsd:complexType&gt;
+ &lt;xsd:complexType name="AttributedString"&gt;
+   &lt;xsd:simpleContent&gt;
+     &lt;xsd:extension base="xsd:string"&gt;
+       &lt;xsd:attribute ref="wsu:Id"/&gt;
+         &lt;xsd:anyAttribute namespace="##other" processContents="lax"/&gt;
+     &lt;/xsd:extension&gt;
+   &lt;/xsd:simpleContent&gt;
+ &lt;/xsd:complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -186,7 +185,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#BASE64BINARY">BASE64BINARY</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>BASE64BINARY</code> encoding type indicates that the encoding
@@ -194,7 +193,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#HEXBINARY">HEXBINARY</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>HEXBINARY</code> encoding type indicates that
@@ -203,7 +202,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#KERBEROSV5ST">KERBEROSV5ST</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>KERBEROSV5ST</code> value type indicates
@@ -211,7 +210,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#KERBEROSV5TGT">KERBEROSV5TGT</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>KERBEROSV5TGT</code> value type indicates that
@@ -219,7 +218,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#PKCS7">PKCS7</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>PKCS7</code> value type indicates
@@ -228,7 +227,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#PKIPath">PKIPath</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>PKIPATH</code> value type indicates
@@ -237,7 +236,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#X509V3">X509V3</a></span></code></th>
 <td class="colLast">
 <div class="block">The <code>X509V3</code> value type indicates that
@@ -262,15 +261,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,javax.xml.namespace.QName,javax.xml.namespace.QName)">BinarySecurityToken</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;valueType,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;encodingType)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,javax.xml.namespace.QName,javax.xml.namespace.QName)">BinarySecurityToken</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;valueType,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;encodingType)</code></th>
 <td class="colLast">
 <div class="block">Constructor.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">BinarySecurityToken</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;token)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">BinarySecurityToken</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;token)</code></th>
 <td class="colLast">
 <div class="block">Constructor.</div>
 </td>
@@ -295,41 +294,41 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addToParent(org.w3c.dom.Element)">addToParent</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;headerE)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addToParent(org.w3c.dom.Element)">addToParent</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;headerE)</code></th>
 <td class="colLast">
 <div class="block">Adds th binary security token to the header element.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEncodingType()">getEncodingType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets encoding type for the token.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets id attribute for the tokens.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTokenValue()">getTokenValue</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets value of the token.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getValueType()">getValueType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets value type for the token.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWSFVersion()">getWSFVersion</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the web services version.</div>
@@ -337,13 +336,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWSFVersion(java.lang.String)">setWSFVersion</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;version)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWSFVersion(java.lang.String)">setWSFVersion</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;version)</code></th>
 <td class="colLast">
 <div class="block">Sets the web services version.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a String representation of the token.</div>
@@ -354,8 +353,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -379,7 +378,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>X509V3</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> X509V3</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> X509V3</pre>
 <div class="block">The <code>X509V3</code> value type indicates that
  the value name given corresponds to a X509 Certificate.</div>
 </li>
@@ -390,7 +389,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>KERBEROSV5TGT</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> KERBEROSV5TGT</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> KERBEROSV5TGT</pre>
 <div class="block">The <code>KERBEROSV5TGT</code> value type indicates that
  the value name given corresponds to a Kerberos V5 TGT.</div>
 </li>
@@ -401,7 +400,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>KERBEROSV5ST</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> KERBEROSV5ST</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> KERBEROSV5ST</pre>
 <div class="block">The <code>KERBEROSV5ST</code> value type indicates
  that the value name given corresponds to a Kerberos V5 service ticket.</div>
 </li>
@@ -412,7 +411,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>PKCS7</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> PKCS7</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> PKCS7</pre>
 <div class="block">The <code>PKCS7</code> value type indicates
  that the value name given corresponds to a
  PKCS7 object.</div>
@@ -424,7 +423,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>PKIPath</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> PKIPath</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> PKIPath</pre>
 <div class="block">The <code>PKIPATH</code> value type indicates
  that the value name given corresponds to a
  PKI Path object.</div>
@@ -436,7 +435,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>BASE64BINARY</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> BASE64BINARY</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> BASE64BINARY</pre>
 <div class="block">The <code>BASE64BINARY</code> encoding type indicates that the encoding
  name given corresponds to base64 encoding of a binary value.</div>
 </li>
@@ -447,7 +446,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>HEXBINARY</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> HEXBINARY</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a> HEXBINARY</pre>
 <div class="block">The <code>HEXBINARY</code> encoding type indicates that
  the encoding name given corresponds to Hex encoding of
  a binary value.</div>
@@ -469,10 +468,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>BinarySecurityToken</h4>
-<pre>public&nbsp;BinarySecurityToken&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
-                           <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;valueType,
-                           <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;encodingType)
-                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
+<pre>public&nbsp;BinarySecurityToken&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
+                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;valueType,
+                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;encodingType)
+                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block">Constructor.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -481,7 +480,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code>valueType</code> - type of the value</dd>
 <dd><code>encodingType</code> - encoding type of the value</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if any input parameter is null</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if any input parameter is null</dd>
 </dl>
 </li>
 </ul>
@@ -491,14 +490,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>BinarySecurityToken</h4>
-<pre>public&nbsp;BinarySecurityToken&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;token)
-                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
+<pre>public&nbsp;BinarySecurityToken&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;token)
+                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block">Constructor.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>token</code> - Binary Security Token Element</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if token Element is not a valid binary 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if token Element is not a valid binary 
      security token</dd>
 </dl>
 </li>
@@ -519,7 +518,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getEncodingType</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;getEncodingType()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;getEncodingType()</pre>
 <div class="block">Gets encoding type for the token.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -533,7 +532,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getValueType</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;getValueType()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/javax/xml/namespace/QName.html?is-external=true" title="class or interface in javax.xml.namespace" class="externalLink">QName</a>&nbsp;getValueType()</pre>
 <div class="block">Gets value type for the token.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -547,7 +546,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getId</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
 <div class="block">Gets id attribute for the tokens.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -561,7 +560,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getTokenValue</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTokenValue()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTokenValue()</pre>
 <div class="block">Gets value of the token.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -575,11 +574,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
 <div class="block">Returns a String representation of the token.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A string containing the valid XML for this element</dd>
 </dl>
@@ -591,14 +590,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>addToParent</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addToParent&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;headerE)
-                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;addToParent&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;headerE)
+                 throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block">Adds th binary security token to the header element.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>headerE</code> - the security header element.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if there is a failure in adding to the header.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if there is a failure in adding to the header.</dd>
 </dl>
 </li>
 </ul>
@@ -608,7 +607,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getWSFVersion</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWSFVersion()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWSFVersion()</pre>
 <div class="block">Returns the web services version.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -622,7 +621,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setWSFVersion</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setWSFVersion&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;version)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setWSFVersion&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;version)</pre>
 <div class="block">Sets the web services version.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -125,7 +125,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang" class="externalLink">AutoCloseable</a></code>, <code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang" class="externalLink">AutoCloseable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></code></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -133,13 +133,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">PushNotificationDelegate</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></pre>
 <div class="block">The <a href="PushNotificationService.html" title="class in org.forgerock.openam.services.push"><code>PushNotificationService</code></a> is responsible for monitoring configuration changes and detecting
  when it should create new instances of any given <a href="PushNotificationDelegate.html" title="interface in org.forgerock.openam.services.push"><code>PushNotificationDelegate</code></a>. If a configuration
  change takes place, the service will ascertain whether a new instance is required by calling
  <a href="#isRequireNewDelegate(org.forgerock.openam.services.push.PushNotificationServiceConfig)"><code>isRequireNewDelegate(PushNotificationServiceConfig)</code></a>.
 
- If a new instance is required, the previous instance will be shutdown by calling the <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io" class="externalLink"><code>Closeable.close()</code></a>
+ If a new instance is required, the previous instance will be shutdown by calling the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true#close()" title="class or interface in java.io" class="externalLink"><code>Closeable.close()</code></a>
  method before creating a new instance.
 
  If a new instance is not required then the existing instance will be updated by calling
@@ -165,14 +165,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthenticationMessagePredicates()">getAuthenticationMessagePredicates</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a set of authentication message predicates required by this delegate.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthServiceLocation()">getAuthServiceLocation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the (public, relative) authentication service location of this delegate - if appropriate.</div>
@@ -186,14 +186,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegistrationMessagePredicates()">getRegistrationMessagePredicates</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a set of registration message predicates required by this delegate.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegServiceLocation()">getRegServiceLocation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the (public, relative) registration service location of this delegate - if appropriate.</div>
@@ -233,8 +233,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <li class="blockList"><a id="methods.inherited.from.class.java.io.Closeable">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;java.io.<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io" class="externalLink">close</a></code></li>
+<h3>Methods inherited from interface&nbsp;java.io.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true#close()" title="class or interface in java.io" class="externalLink">close</a></code></li>
 </ul>
 </li>
 </ul>
@@ -323,13 +323,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getRegServiceLocation</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getRegServiceLocation()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getRegServiceLocation()</pre>
 <div class="block">Returns the (public, relative) registration service location of this delegate - if appropriate.
  Otherwise returns null.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The (public, relative) service location of this delegate as exposed to the world, may be relative to the
- OpenAM server instance ID {@see WebtopNaming}.</dd>
+ OpenAM server instance ID <code>WebtopNaming</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -339,13 +339,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthServiceLocation</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthServiceLocation()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthServiceLocation()</pre>
 <div class="block">Returns the (public, relative) authentication service location of this delegate - if appropriate.
  Otherwise returns null.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The (public, relative) service location of this delegate as exposed to the world, may be relative to the
- OpenAM server instance ID {@see WebtopNaming}.</dd>
+ OpenAM server instance ID <code>WebtopNaming</code>.</dd>
 </dl>
 </li>
 </ul>
@@ -355,7 +355,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getRegistrationMessagePredicates</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getRegistrationMessagePredicates()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getRegistrationMessagePredicates()</pre>
 <div class="block">Returns a set of registration message predicates required by this delegate. Must return an empty set
  if there are no predicates to be run.</div>
 <dl>
@@ -370,7 +370,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthenticationMessagePredicates</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getAuthenticationMessagePredicates()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getAuthenticationMessagePredicates()</pre>
 <div class="block">Returns a set of authentication message predicates required by this delegate. Must return an empty set
  if there are no predicates to be run.</div>
 <dl>

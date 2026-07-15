@@ -130,28 +130,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public interface <span class="typeNameLabel">ConfigService</span></pre>
 <div class="block">Provides a Click application configuration service interface.
- <p/>
+ <p>
  A single application ConfigService instance is created by the ClickServlet at
  startup. Once the ConfigService has been initialized it is stored in the
  ServletContext using the key <a href="#CONTEXT_NAME">"org.openidentityplatform.openam.click.service.ConfigService"</a>.
 
- <a href="#" name="config"></a>
- <h3>Configuration</h3>
+ <a href="#" id="config"></a>
+ <h2>Configuration</h2>
  The default ConfigService is <a href="XmlConfigService.html" title="class in org.openidentityplatform.openam.click.service"><code>XmlConfigService</code></a>.
- <p/>
+ <p>
  However it is possible to specify a different implementation.
- <p/>
+ <p>
  For example you can subclass XmlConfigService and override methods such as
  <a href="#onInit(jakarta.servlet.ServletContext)"><code>onInit(jakarta.servlet.ServletContext)</code></a> to alter initialization
  behavior.
- <p/>
+ <p>
  For Click to recognize your custom service class you must set the
  context initialization parameter,
  <code>config-service-class</code>
- in your <tt>web.xml</tt> file.
- <p/>
+ in your <code>web.xml</code> file.
+ <p>
  Below is an example of a custom service class
- <tt>com.mycorp.service.CustomConfigService</tt>:
+ <code>com.mycorp.service.CustomConfigService</code>:
 
  <pre class="prettyprint">
  package com.mycorp.service;
@@ -173,8 +173,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 
  <b>Please note</b> that the custom ConfigService implementation must have a
  no-argument constructor so Click can instantiate the service.
- <p/>
- Also define the new service in your <tt>web.xml</tt> as follows:
+ <p>
+ Also define the new service in your <code>web.xml</code> as follows:
 
  <pre class="prettyprint">
  <code>
@@ -239,59 +239,59 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CONTEXT_NAME">CONTEXT_NAME</a></span></code></th>
 <td class="colLast">
 <div class="block">The servlet context attribute name.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ERROR_PATH">ERROR_PATH</a></span></code></th>
 <td class="colLast">
-<div class="block">The error page file path: &nbsp; "<tt>/click/error.htm</tt>".</div>
+<div class="block">The error page file path: &nbsp; "<code>/click/error.htm</code>".</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MODE_DEBUG">MODE_DEBUG</a></span></code></th>
 <td class="colLast">
 <div class="block">The debug application mode.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MODE_DEVELOPMENT">MODE_DEVELOPMENT</a></span></code></th>
 <td class="colLast">
 <div class="block">The development application mode.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MODE_PRODUCTION">MODE_PRODUCTION</a></span></code></th>
 <td class="colLast">
 <div class="block">The profile application mode.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MODE_PROFILE">MODE_PROFILE</a></span></code></th>
 <td class="colLast">
 <div class="block">The profile application mode.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MODE_TRACE">MODE_TRACE</a></span></code></th>
 <td class="colLast">
 <div class="block">The trace application mode.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#NOT_FOUND_PATH">NOT_FOUND_PATH</a></span></code></th>
 <td class="colLast">
-<div class="block">The page not found file path: &nbsp; "<tt>/click/not-found.htm</tt>".</div>
+<div class="block">The page not found file path: &nbsp; "<code>/click/not-found.htm</code>".</div>
 </td>
 </tr>
 </table>
@@ -320,11 +320,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getApplicationMode()">getApplicationMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Click application mode value: &nbsp;
- <tt>["production", "profile", "development", "debug", "trace"]</tt>.</div>
+ <code>["production", "profile", "development", "debug", "trace"]</code>.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -335,17 +335,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCharset()">getCharset</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Click application charset or null if not defined.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getErrorPageClass()">getErrorPageClass</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the error handling page <tt>Page</tt> <tt>Class</tt>.</div>
+<div class="block">Return the error handling page <code>Page</code> <code>Class</code>.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -357,7 +357,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util" class="externalLink">Locale</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html?is-external=true" title="class or interface in java.util" class="externalLink">Locale</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLocale()">getLocale</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Click application locale or null if not defined.</div>
@@ -378,66 +378,66 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNotFoundPageClass()">getNotFoundPageClass</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the page not found <tt>Page</tt> <tt>Class</tt>.</div>
+<div class="block">Return the page not found <code>Page</code> <code>Class</code>.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageClass(java.lang.String)">getPageClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageClass(java.lang.String)">getPageClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
-<div class="block">Return the page <tt>Class</tt> for the given path.</div>
+<div class="block">Return the page <code>Class</code> for the given path.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageClassList()">getPageClassList</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the list of configured page classes.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageField(java.lang.Class,java.lang.String)">getPageField</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fieldName)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageField(java.lang.Class,java.lang.String)">getPageField</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fieldName)</code></th>
 <td class="colLast">
 <div class="block">Return the bindable field of the given name for the pageClass,
  or null if not defined.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>[]</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageFieldArray(java.lang.Class)">getPageFieldArray</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageFieldArray(java.lang.Class)">getPageFieldArray</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</code></th>
 <td class="colLast">
 <div class="block">Return an array bindable for the given page class.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageFields(java.lang.Class)">getPageFields</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageFields(java.lang.Class)">getPageFields</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</code></th>
 <td class="colLast">
 <div class="block">Return Map of bindable fields for the given page class.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageHeaders(java.lang.String)">getPageHeaders</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageHeaders(java.lang.String)">getPageHeaders</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Return the headers of the page for the given path.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.PageInterceptor&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.PageInterceptor&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageInterceptors()">getPageInterceptors</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the list of configured PageInterceptors instances.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPagePath(java.lang.Class)">getPagePath</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPagePath(java.lang.Class)">getPagePath</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</code></th>
 <td class="colLast">
 <div class="block">Return the path for the given page Class.</div>
 </td>
@@ -465,7 +465,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJspPage(java.lang.String)">isJspPage</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJspPage(java.lang.String)">isJspPage</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Return true if JSP exists for the given ".htm" path.</div>
 </td>
@@ -486,7 +486,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isTemplate(java.lang.String)">isTemplate</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isTemplate(java.lang.String)">isTemplate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Return true if the given resource is a Page class template, false
  otherwise.</div>
@@ -529,7 +529,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>MODE_TRACE</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_TRACE</pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_TRACE</pre>
 <div class="block">The trace application mode.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -543,7 +543,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>MODE_DEBUG</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_DEBUG</pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_DEBUG</pre>
 <div class="block">The debug application mode.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -557,7 +557,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>MODE_DEVELOPMENT</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_DEVELOPMENT</pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_DEVELOPMENT</pre>
 <div class="block">The development application mode.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -571,7 +571,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>MODE_PROFILE</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_PROFILE</pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_PROFILE</pre>
 <div class="block">The profile application mode.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -585,7 +585,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>MODE_PRODUCTION</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_PRODUCTION</pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MODE_PRODUCTION</pre>
 <div class="block">The profile application mode.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -599,8 +599,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>ERROR_PATH</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> ERROR_PATH</pre>
-<div class="block">The error page file path: &nbsp; "<tt>/click/error.htm</tt>".</div>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> ERROR_PATH</pre>
+<div class="block">The error page file path: &nbsp; "<code>/click/error.htm</code>".</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.service.ConfigService.ERROR_PATH">Constant Field Values</a></dd>
@@ -613,8 +613,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>NOT_FOUND_PATH</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> NOT_FOUND_PATH</pre>
-<div class="block">The page not found file path: &nbsp; "<tt>/click/not-found.htm</tt>".</div>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> NOT_FOUND_PATH</pre>
+<div class="block">The page not found file path: &nbsp; "<code>/click/not-found.htm</code>".</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.service.ConfigService.NOT_FOUND_PATH">Constant Field Values</a></dd>
@@ -627,7 +627,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CONTEXT_NAME</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CONTEXT_NAME</pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CONTEXT_NAME</pre>
 <div class="block">The servlet context attribute name. The ClickServlet stores the
  application ConfigService instance in the ServletContext using this
  context attribute name. The value of this constant is "org.openidentityplatform.openam.click.service.ConfigService".</div>
@@ -654,15 +654,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>onInit</h4>
 <pre class="methodSignature">void&nbsp;onInit&#8203;(jakarta.servlet.ServletContext&nbsp;servletContext)
-     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
+     throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block">Initialize the ConfigurationService with the given application servlet context.
- <p/>
+ <p>
  This method is invoked after the ConfigurationService has been constructed.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>servletContext</code> - the application servlet context</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if an error occurs initializing the ConfigurationService</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if an error occurs initializing the ConfigurationService</dd>
 </dl>
 </li>
 </ul>
@@ -674,9 +674,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h4>onDestroy</h4>
 <pre class="methodSignature">void&nbsp;onDestroy()</pre>
 <div class="block">Destroy the ConfigurationService. This method will also invoke the
- <tt>onDestroy()</tt> methods on the <tt>FileUploadService</tt>,
- <tt>TemplateService</tt>, <tt>ResourceService</tt> and the
- <tt>LogService</tt> in that order.</div>
+ <code>onDestroy()</code> methods on the <code>FileUploadService</code>,
+ <code>TemplateService</code>, <code>ResourceService</code> and the
+ <code>LogService</code> in that order.</div>
 </li>
 </ul>
 <a id="getFileUploadService()">
@@ -756,9 +756,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getApplicationMode</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getApplicationMode()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getApplicationMode()</pre>
 <div class="block">Return the Click application mode value: &nbsp;
- <tt>["production", "profile", "development", "debug", "trace"]</tt>.</div>
+ <code>["production", "profile", "development", "debug", "trace"]</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the application mode value</dd>
@@ -771,7 +771,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getCharset</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCharset()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCharset()</pre>
 <div class="block">Return the Click application charset or null if not defined.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -785,11 +785,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getErrorPageClass</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;getErrorPageClass()</pre>
-<div class="block">Return the error handling page <tt>Page</tt> <tt>Class</tt>.</div>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;getErrorPageClass()</pre>
+<div class="block">Return the error handling page <code>Page</code> <code>Class</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the error handling page <tt>Page</tt> <tt>Class</tt></dd>
+<dd>the error handling page <code>Page</code> <code>Class</code></dd>
 </dl>
 </li>
 </ul>
@@ -813,7 +813,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>isJspPage</h4>
-<pre class="methodSignature">boolean&nbsp;isJspPage&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
+<pre class="methodSignature">boolean&nbsp;isJspPage&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
 <div class="block">Return true if JSP exists for the given ".htm" path.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -829,11 +829,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>isTemplate</h4>
-<pre class="methodSignature">boolean&nbsp;isTemplate&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
+<pre class="methodSignature">boolean&nbsp;isTemplate&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
 <div class="block">Return true if the given resource is a Page class template, false
  otherwise.
- <p/>
- Below is an example showing how to map <tt>.htm</tt> and <tt>.jsp</tt>
+ <p>
+ Below is an example showing how to map <code>.htm</code> and <code>.jsp</code>
  files as Page class templates.
 
  <pre class="prettyprint">
@@ -909,7 +909,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getLocale</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util" class="externalLink">Locale</a>&nbsp;getLocale()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html?is-external=true" title="class or interface in java.util" class="externalLink">Locale</a>&nbsp;getLocale()</pre>
 <div class="block">Return the Click application locale or null if not defined.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -923,7 +923,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPagePath</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getPagePath&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getPagePath&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</pre>
 <div class="block">Return the path for the given page Class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -931,7 +931,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the path for the given page Class</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the Page Class is not configured
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the Page Class is not configured
  with a unique path</dd>
 </dl>
 </li>
@@ -942,16 +942,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageClass</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;getPageClass&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
-<div class="block">Return the page <tt>Class</tt> for the given path. The path must start
- with a <tt>"/"</tt>.</div>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;getPageClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
+<div class="block">Return the page <code>Class</code> for the given path. The path must start
+ with a <code>"/"</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>path</code> - the page path</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the page class for the given path</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the Page Class for the path is not
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the Page Class for the path is not
  found</dd>
 </dl>
 </li>
@@ -962,7 +962,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageClassList</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&gt;&nbsp;getPageClassList()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&gt;&nbsp;getPageClassList()</pre>
 <div class="block">Return the list of configured page classes.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -976,7 +976,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageFields</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>&gt;&nbsp;getPageFields&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>&gt;&nbsp;getPageFields&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</pre>
 <div class="block">Return Map of bindable fields for the given page class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -992,8 +992,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageField</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>&nbsp;getPageField&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fieldName)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>&nbsp;getPageField&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fieldName)</pre>
 <div class="block">Return the bindable field of the given name for the pageClass,
  or null if not defined.</div>
 <dl>
@@ -1011,7 +1011,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageHeaders</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;getPageHeaders&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;getPageHeaders&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
 <div class="block">Return the headers of the page for the given path.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1027,7 +1027,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageFieldArray</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>[]&nbsp;getPageFieldArray&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect" class="externalLink">Field</a>[]&nbsp;getPageFieldArray&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;pageClass)</pre>
 <div class="block">Return an array bindable for the given page class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1043,7 +1043,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getPageInterceptors</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.PageInterceptor&gt;&nbsp;getPageInterceptors()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.PageInterceptor&gt;&nbsp;getPageInterceptors()</pre>
 <div class="block">Return the list of configured PageInterceptors instances.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1057,11 +1057,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getNotFoundPageClass</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;getNotFoundPageClass()</pre>
-<div class="block">Return the page not found <tt>Page</tt> <tt>Class</tt>.</div>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends org.openidentityplatform.openam.click.Page&gt;&nbsp;getNotFoundPageClass()</pre>
+<div class="block">Return the page not found <code>Page</code> <code>Class</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the page not found <tt>Page</tt> <tt>Class</tt></dd>
+<dd>the page not found <code>Page</code> <code>Class</code></dd>
 </dl>
 </li>
 </ul>

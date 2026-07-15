@@ -135,25 +135,24 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
  subject tot he specified resource has resulted in the specified authorization
  decision on the basis of some optionally specified evidence. Its type is
  <code>AuthzDecisionStatementType</code>.
- <p>
  <pre>
- &lt;complexType name="AuthzDecisionStatementType">
-   &lt;complexContent>
+ &lt;complexType name="AuthzDecisionStatementType"&gt;
+   &lt;complexContent&gt;
      &lt;extension base="{urn:oasis:names:tc:SAML:2.0:assertion}
-     StatementAbstractType">
-       &lt;sequence>
+     StatementAbstractType"&gt;
+       &lt;sequence&gt;
          &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}Action"
-         maxOccurs="unbounded"/>
+         maxOccurs="unbounded"/&gt;
          &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}Evidence"
-         minOccurs="0"/>
-       &lt;/sequence>
+         minOccurs="0"/&gt;
+       &lt;/sequence&gt;
        &lt;attribute name="Decision" use="required"
-       type="{urn:oasis:names:tc:SAML:2.0:assertion}DecisionType" />
+       type="{urn:oasis:names:tc:SAML:2.0:assertion}DecisionType" /&gt;
        &lt;attribute name="Resource" use="required"
-       type="{http://www.w3.org/2001/XMLSchema}anyURI" />
-     &lt;/extension>
-   &lt;/complexContent>
- &lt;/complexType>
+       type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+     &lt;/extension&gt;
+   &lt;/complexContent&gt;
+ &lt;/complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -176,14 +175,14 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAction()">getAction</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the <code>Action</code>(s) of the statement.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDecision()">getDecision</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the <code>Decision</code> attribute of the statement.</div>
@@ -197,7 +196,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResource()">getResource</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the <code>Resource</code> of the statement.</div>
@@ -205,14 +204,14 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAction(java.util.List)">setAction</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAction(java.util.List)">setAction</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the <code>Action</code>(s) of the statement.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDecision(java.lang.String)">setDecision</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDecision(java.lang.String)">setDecision</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the <code>Decision</code> attribute.</div>
 </td>
@@ -226,7 +225,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setResource(java.lang.String)">setResource</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setResource(java.lang.String)">setResource</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the <code>Resource</code> of the statement.</div>
 </td>
@@ -261,7 +260,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <ul class="blockList">
 <li class="blockList">
 <h4>getAction</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getAction()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getAction()</pre>
 <div class="block">Returns the <code>Action</code>(s) of the statement.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -277,7 +276,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <ul class="blockList">
 <li class="blockList">
 <h4>setAction</h4>
-<pre class="methodSignature">void&nbsp;setAction&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)
+<pre class="methodSignature">void&nbsp;setAction&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)
         throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the <code>Action</code>(s) of the statement.</div>
 <dl>
@@ -331,7 +330,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <ul class="blockList">
 <li class="blockList">
 <h4>getResource</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getResource()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getResource()</pre>
 <div class="block">Returns the <code>Resource</code> of the statement.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -347,7 +346,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <ul class="blockList">
 <li class="blockList">
 <h4>setResource</h4>
-<pre class="methodSignature">void&nbsp;setResource&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
+<pre class="methodSignature">void&nbsp;setResource&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
           throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the <code>Resource</code> of the statement.</div>
 <dl>
@@ -366,7 +365,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <ul class="blockList">
 <li class="blockList">
 <h4>getDecision</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDecision()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDecision()</pre>
 <div class="block">Returns the <code>Decision</code> attribute of the statement.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -382,7 +381,7 @@ extends <a href="Statement.html" title="interface in com.sun.identity.saml2.asse
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setDecision</h4>
-<pre class="methodSignature">void&nbsp;setDecision&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
+<pre class="methodSignature">void&nbsp;setDecision&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
           throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the <code>Decision</code> attribute.</div>
 <dl>

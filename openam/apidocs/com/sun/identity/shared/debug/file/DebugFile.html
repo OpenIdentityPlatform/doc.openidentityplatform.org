@@ -133,17 +133,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  The implementation of this interface as well as the
  <code>com.sun.identity.shared.debug.file.DebugFileProvider</code> interface together
  provide the necessary functionality to replace or enhance the Debug File service.
- <p/>
  Because of specific features that are only related to the log file and not the debugger,
  the debugger and the log file management can't be manage in a same class.
  For example, two debugger could write on the same log file with the merge mapping.
  They could have a different debug level but should have the same log rotation.
  This interface manages the log rotation, and the debugger the log level.
- <p/>
- <p/>
  Even if this interface was dedicated to debugger, it could be used for managing a
  different kind of log file (example : access, statistics, etc.).
- <p/>
  Every features that are related to the file should be implemented by classes that
  implement this interface.
  </p></div>
@@ -169,9 +165,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#writeIt(java.lang.String,java.lang.String,java.lang.Throwable)">writeIt</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;prefix,
-       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;msg,
-       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Throwable</a>&nbsp;th)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#writeIt(java.lang.String,java.lang.String,java.lang.Throwable)">writeIt</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;prefix,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;msg,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Throwable</a>&nbsp;th)</code></th>
 <td class="colLast">
 <div class="block">Write message into file</div>
 </td>
@@ -199,10 +195,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>writeIt</h4>
-<pre class="methodSignature">void&nbsp;writeIt&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;prefix,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;msg,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Throwable</a>&nbsp;th)
-      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
+<pre class="methodSignature">void&nbsp;writeIt&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;prefix,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;msg,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Throwable</a>&nbsp;th)
+      throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
 <div class="block">Write message into file</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -211,7 +207,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>th</code> - the optional <code>java.lang.Throwable</code> which if
                present will be used to record the stack trace.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - if an error occurs while writing the message to the file.</dd>
 </dl>
 </li>
 </ul>

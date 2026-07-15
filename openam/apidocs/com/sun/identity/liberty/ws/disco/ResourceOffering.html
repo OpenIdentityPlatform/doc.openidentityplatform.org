@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.identity.liberty.ws.disco.ResourceOffering</li>
@@ -133,55 +133,54 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">ResourceOffering</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">The class <code>ResourceOffering</code> associates a resource with a service
  instance that provides access to that resource.
  <p>The following schema fragment specifies the expected content within the
  <code>ResourceOffering</code> object.
- <p>
  <pre>
- &lt;complexType name="ResourceOfferingType">
-   &lt;complexContent>
-     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-       &lt;sequence>
-         &lt;group ref="{urn:liberty:disco:2003-08}ResourceIDGroup"/>
-         &lt;element name="ServiceInstance" type="{urn:liberty:disco:2003-08}ServiceInstanceType"/>
-         &lt;element ref="{urn:liberty:disco:2003-08}Options" minOccurs="0"/>
-         &lt;element name="Abstract" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-       &lt;/sequence>
-       &lt;attribute name="entryID" type="{urn:liberty:disco:2003-08}IDType" />
-     &lt;/restriction>
-   &lt;/complexContent>
- &lt;/complexType>
+ &lt;complexType name="ResourceOfferingType"&gt;
+   &lt;complexContent&gt;
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+       &lt;sequence&gt;
+         &lt;group ref="{urn:liberty:disco:2003-08}ResourceIDGroup"/&gt;
+         &lt;element name="ServiceInstance" type="{urn:liberty:disco:2003-08}ServiceInstanceType"/&gt;
+         &lt;element ref="{urn:liberty:disco:2003-08}Options" minOccurs="0"/&gt;
+         &lt;element name="Abstract" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+       &lt;/sequence&gt;
+       &lt;attribute name="entryID" type="{urn:liberty:disco:2003-08}IDType" /&gt;
+     &lt;/restriction&gt;
+   &lt;/complexContent&gt;
+ &lt;/complexType&gt;
  </pre>
  An example of the <code>ResourceOffering</code> is :
  <pre>
- &lt;ResourceOffering xmlns="urn:liberty:disco:2003-08">
-     &lt;ResourceID>http://profile-provider.com/profiles/l4m0B82k15csaUxs&lt;/ResourceID>
-     &lt;ServiceInstance xmlns="urn:liberty:disco:2003-08">
-         &lt;ServiceType>urn:liberty:idpp:2003-08&lt;/ServiceType>
-         &lt;ProviderID>http://profile-provider.com/&lt;/ProviderID>
-         &lt;Description>
-             &lt;SecurityMechID>urn:liberty:disco:2003-08:anonymous&lt;/SecurityMechID>
-             &lt;SecurityMechID>urn:liberty:security:2003-08:x509&lt;/SecurityMechID>
-             &lt;SecurityMechID>urn:liberty:security:2003-08:saml&lt;/SecurityMechID>
-             &lt;Endpoint>https://soap.profile-provider.com/soap/&lt;/Endpoint>
-         &lt;/Description>
-         &lt;Description>
-             &lt;SecurityMechID>urn:ietf:rfc:2246&lt;/SecurityMechID>
-             &lt;Endpoint>https://soap-auth.profile-provider.com/soap/&lt;/Endpoint>
-         &lt;/Description>
-      &lt;/ServiceInstance>
-      &lt;Options>
-          &lt;Option>urn:liberty:idpp&lt;/Option>
-          &lt;Option>urn:liberty:idpp:cn&lt;/Option>
-          &lt;Option>urn:liberty:idpp:can&lt;/Option>
-          &lt;Option>urn:liberty:idpp:can:cn&lt;/Option>
-      &lt;/Options>
-      &lt;Abstract>
+ &lt;ResourceOffering xmlns="urn:liberty:disco:2003-08"&gt;
+     &lt;ResourceID&gt;http://profile-provider.com/profiles/l4m0B82k15csaUxs&lt;/ResourceID&gt;
+     &lt;ServiceInstance xmlns="urn:liberty:disco:2003-08"&gt;
+         &lt;ServiceType&gt;urn:liberty:idpp:2003-08&lt;/ServiceType&gt;
+         &lt;ProviderID&gt;http://profile-provider.com/&lt;/ProviderID&gt;
+         &lt;Description&gt;
+             &lt;SecurityMechID&gt;urn:liberty:disco:2003-08:anonymous&lt;/SecurityMechID&gt;
+             &lt;SecurityMechID&gt;urn:liberty:security:2003-08:x509&lt;/SecurityMechID&gt;
+             &lt;SecurityMechID&gt;urn:liberty:security:2003-08:saml&lt;/SecurityMechID&gt;
+             &lt;Endpoint&gt;https://soap.profile-provider.com/soap/&lt;/Endpoint&gt;
+         &lt;/Description&gt;
+         &lt;Description&gt;
+             &lt;SecurityMechID&gt;urn:ietf:rfc:2246&lt;/SecurityMechID&gt;
+             &lt;Endpoint&gt;https://soap-auth.profile-provider.com/soap/&lt;/Endpoint&gt;
+         &lt;/Description&gt;
+      &lt;/ServiceInstance&gt;
+      &lt;Options&gt;
+          &lt;Option&gt;urn:liberty:idpp&lt;/Option&gt;
+          &lt;Option&gt;urn:liberty:idpp:cn&lt;/Option&gt;
+          &lt;Option&gt;urn:liberty:idpp:can&lt;/Option&gt;
+          &lt;Option&gt;urn:liberty:idpp:can:cn&lt;/Option&gt;
+      &lt;/Options&gt;
+      &lt;Abstract&gt;
           This is a personal profile containing common name information. 
-      &lt;/Abstract>
- &lt;/ResourceOffering>
+      &lt;/Abstract&gt;
+ &lt;/ResourceOffering&gt;
  </pre></div>
 </li>
 </ul>
@@ -217,7 +216,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">ResourceOffering</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;elem)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">ResourceOffering</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;elem)</code></th>
 <td class="colLast">
 <div class="block">Constructor.</div>
 </td>
@@ -241,7 +240,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAbstract()">getAbstract</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets abstract of the resource offering</div>
@@ -255,14 +254,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntryID()">getEntryID</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets entry ID.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOptions()">getOptions</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets options of the resource offering, which expresses the options 
@@ -287,7 +286,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAbstract(java.lang.String)">setAbstract</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAbstract(java.lang.String)">setAbstract</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets abstract.</div>
 </td>
@@ -301,14 +300,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEntryID(java.lang.String)">setEntryID</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEntryID(java.lang.String)">setEntryID</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets entry ID.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOptions(java.util.List)">setOptions</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;options)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOptions(java.util.List)">setOptions</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;options)</code></th>
 <td class="colLast">
 <div class="block">Sets options.</div>
 </td>
@@ -328,7 +327,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns string representation of object <code>ResourceOffering</code>.</div>
@@ -339,8 +338,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -396,7 +395,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ResourceOffering</h4>
-<pre>public&nbsp;ResourceOffering&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;elem)
+<pre>public&nbsp;ResourceOffering&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;elem)
                  throws <a href="DiscoveryException.html" title="class in com.sun.identity.liberty.ws.disco">DiscoveryException</a></pre>
 <div class="block">Constructor.</div>
 <dl>
@@ -423,7 +422,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getOptions</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getOptions()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getOptions()</pre>
 <div class="block">Gets options of the resource offering, which expresses the options 
  available for the resource offering, that is provides hints to a
  potential requester whether certain data or operations may be available
@@ -442,7 +441,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>setOptions</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setOptions&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;options)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setOptions&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;options)</pre>
 <div class="block">Sets options.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -522,7 +521,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getEntryID</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getEntryID()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getEntryID()</pre>
 <div class="block">Gets entry ID.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -538,7 +537,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>setEntryID</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setEntryID&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setEntryID&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Sets entry ID.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -586,7 +585,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getAbstract</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAbstract()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAbstract()</pre>
 <div class="block">Gets abstract of the resource offering</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -602,7 +601,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>setAbstract</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAbstract&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setAbstract&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Sets abstract.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -618,11 +617,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
 <div class="block">Returns string representation of object <code>ResourceOffering</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>string representation</dd>
 </dl>

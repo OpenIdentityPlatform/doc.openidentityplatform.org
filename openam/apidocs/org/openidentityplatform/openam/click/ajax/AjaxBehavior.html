@@ -132,16 +132,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends org.openidentityplatform.openam.click.Behavior</pre>
 <div class="block">AjaxBehavior extends the basic Behavior functionality to allow Controls to
  handle and process incoming Ajax requests.
- <p/>
+ <p>
  To handle an Ajax request, AjaxBehavior exposes the listener method:
  <a href="#onAction(org.openidentityplatform.openam.click.Control)"><code>onAction</code></a>.
- The <tt>onAction</tt> method returns an ActionResult that is rendered back
+ The <code>onAction</code> method returns an ActionResult that is rendered back
  to the browser.
- <p/>
- Before Click invokes the <tt>onAction</tt> method it checks whether the request
+ <p>
+ Before Click invokes the <code>onAction</code> method it checks whether the request
  is targeted at the AjaxBehavior by invoking the method
  <a href="#isAjaxTarget(org.openidentityplatform.openam.click.Context)"><code>Behavior.isAjaxTarget()</code></a>.
- Click will only invoke <tt>onAction</tt> if <tt>isAjaxTarget</tt> returns true.</div>
+ Click will only invoke <code>onAction</code> if <code>isAjaxTarget</code> returns true.</div>
 </li>
 </ul>
 </div>
@@ -237,15 +237,15 @@ extends org.openidentityplatform.openam.click.Behavior</pre>
 <h4>isAjaxTarget</h4>
 <pre class="methodSignature">boolean&nbsp;isAjaxTarget&#8203;(org.openidentityplatform.openam.click.Context&nbsp;context)</pre>
 <div class="block">Return true if the behavior is the request target, false otherwise.
- <p/>
+ <p>
  This method is queried by Click to determine if the behavior's
  <a href="#onAction(org.openidentityplatform.openam.click.Control)"><code>onAction(org.openidentityplatform.openam.click.Control)</code></a> method should be called in
  response to a request.
- <p/>
+ <p>
  By exposing this method through the Behavior interface it provides
  implementers with fine grained control over whether the Behavior's
  <a href="#onAction(org.openidentityplatform.openam.click.Control)"><code>onAction(org.openidentityplatform.openam.click.Control)</code></a> method should be invoked or not.
- <p/>
+ <p>
  Below is an example implementation:
 
  <pre class="prettyprint">

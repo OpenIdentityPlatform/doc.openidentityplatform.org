@@ -117,7 +117,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">org.forgerock.openam.core.rest.authn.callbackhandlers</a></div>
-<h2 title="Interface JsonCallbackParser" class="title">Interface JsonCallbackParser&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback" class="externalLink">Callback</a>&gt;</h2>
+<h2 title="Interface JsonCallbackParser" class="title">Interface JsonCallbackParser&lt;T extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback" class="externalLink">Callback</a>&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -136,7 +136,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="AbstractRestAuthCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">AbstractRestAuthCallbackHandler</a></code>, <code><a href="RestAuthChoiceCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthChoiceCallbackHandler</a></code>, <code><a href="RestAuthConfirmationCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthConfirmationCallbackHandler</a></code>, <code><a href="RestAuthHiddenValueCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthHiddenValueCallbackHandler</a></code>, <code><a href="RestAuthHttpCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthHttpCallbackHandler</a></code>, <code><a href="RestAuthLanguageCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthLanguageCallbackHandler</a></code>, <code><a href="RestAuthNameCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthNameCallbackHandler</a></code>, <code><a href="RestAuthNameValueOutputCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthNameValueOutputCallbackHandler</a></code>, <code><a href="RestAuthPasswordCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthPasswordCallbackHandler</a></code>, <code><a href="RestAuthPollingWaitCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthPollingWaitCallbackHandler</a></code>, <code><a href="RestAuthRedirectCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthRedirectCallbackHandler</a></code>, <code><a href="RestAuthTextInputCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthTextInputCallbackHandler</a></code>, <code><a href="RestAuthTextOutputCallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthTextOutputCallbackHandler</a></code>, <code><a href="RestAuthX509CallbackHandler.html" title="class in org.forgerock.openam.core.rest.authn.callbackhandlers">RestAuthX509CallbackHandler</a></code></dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">JsonCallbackParser&lt;T extends <a href="https://docs.oracle.com/javase/8/docs/api/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback" class="externalLink">Callback</a>&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">JsonCallbackParser&lt;T extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/security/auth/callback/Callback.html?is-external=true" title="class or interface in javax.security.auth.callback" class="externalLink">Callback</a>&gt;</span></pre>
 <div class="block">Implementations of this interface define how to convert a Callback into and from a JSON representation.
 
  See the javadoc for the <code>convertToJson</code> method for details on the required JSON representation.</div>
@@ -177,7 +177,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCallbackClassName()">getCallbackClassName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the class name of the Callback the implementation of this interface is for.</div>
@@ -206,7 +206,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getCallbackClassName</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCallbackClassName()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCallbackClassName()</pre>
 <div class="block">Returns the class name of the Callback the implementation of this interface is for.
 
  Should only return the simple name of the class not the FQDN.</div>
@@ -230,7 +230,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Converts the given Callback into JSON format.
 
  The JSON representation of the Callback MUST be in the following form:
- <p></p>
  <code>
  {
       type : "NameCallback",
@@ -248,7 +247,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
       ]
  }
  </code>
- <p></p>
 
  The type field MUST be the name of the Callback class.
  Output fields detail information that the client can use to display to the user.

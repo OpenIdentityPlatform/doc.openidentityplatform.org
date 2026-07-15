@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li><a href="../../../saml2/protocol/impl/RequestAbstractImpl.html" title="class in com.sun.identity.saml2.protocol.impl">com.sun.identity.saml2.protocol.impl.RequestAbstractImpl</a></li>
@@ -151,45 +151,44 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
  extends SAML Protocol schema type <code>RequestAbstractType</code>.
  It allows an XACML PEP to submit an XACML Request Context in a  SAML
  Query along with other information. This element is an alternative to 
- SAML defined <code><samlp:AuthzDecisionQuery></code> that allows an 
+ SAML defined <code>&lt;samlp:AuthzDecisionQuery&gt;</code> that allows an
  XACML PEP  to communicate with an XACML PDP using SAML2 protocol.
- <p>
  <pre>
 &lt;xs:element name="XACMLAuthzDecisionQuery"
-         type="XACMLAuthzDecisionQueryType"/>
-&lt;xs:complexType name="XACMLAuthzDecisionQueryType">
-  &lt;xs:complexContent>
-    &lt;xs:extension base="samlp:RequestAbstractType">
-      &lt;xs:sequence>
-        &lt;xs:element ref="xacml-context:Request"/>
-      &lt;xs:sequence>
+         type="XACMLAuthzDecisionQueryType"/&gt;
+&lt;xs:complexType name="XACMLAuthzDecisionQueryType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="samlp:RequestAbstractType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element ref="xacml-context:Request"/&gt;
+      &lt;xs:sequence&gt;
       &lt;xs:attribute name="InputContextOnly"
                     type="boolean"
                     use="optional"
-                    default="false"/>
+                    default="false"/&gt;
       &lt;xs:attribute name="ReturnContext"
                     type="boolean"
                     use="optional"
-                    default="false"/>
-    &lt;xs:extension>
-  &lt;xs:complexContent>
-&lt;xs:complexType>
+                    default="false"/&gt;
+    &lt;xs:extension&gt;
+  &lt;xs:complexContent&gt;
+&lt;xs:complexType&gt;
  </pre>
 
  Schema for Base:
  <pre>
-  &lt;complexType name="RequestAbstractType" abstract="true">
-      &lt;sequence>
-          &lt;element ref="saml:Issuer" minOccurs="0"/>
-          &lt;element ref="ds:Signature" minOccurs="0"/>
-          &lt;element ref="samlp:Extensions" minOccurs="0"/>
-      &lt;sequence>
-      &lt;attribute name="ID" type="ID" use="required"/>
-      &lt;attribute name="Version" type="string" use="required"/>
-      &lt;attribute name="IssueInstant" type="dateTime" use="required"/>
-      &lt;attribute name="Destination" type="anyURI" use="optional"/>
-        &lt;attribute name="Consent" type="anyURI" use="optional"/>
-  &lt;complexType>
+  &lt;complexType name="RequestAbstractType" abstract="true"&gt;
+      &lt;sequence&gt;
+          &lt;element ref="saml:Issuer" minOccurs="0"/&gt;
+          &lt;element ref="ds:Signature" minOccurs="0"/&gt;
+          &lt;element ref="samlp:Extensions" minOccurs="0"/&gt;
+      &lt;sequence&gt;
+      &lt;attribute name="ID" type="ID" use="required"/&gt;
+      &lt;attribute name="Version" type="string" use="required"/&gt;
+      &lt;attribute name="IssueInstant" type="dateTime" use="required"/&gt;
+      &lt;attribute name="Destination" type="anyURI" use="optional"/&gt;
+        &lt;attribute name="Consent" type="anyURI" use="optional"/&gt;
+  &lt;complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -234,14 +233,14 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">XACMLAuthzDecisionQueryImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">XACMLAuthzDecisionQueryImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)</code></th>
 <td class="colLast">
 <div class="block">This constructor is used to build <code>XACMLAuthzDecisionQuery</code>
  object from a XML string.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">XACMLAuthzDecisionQueryImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">XACMLAuthzDecisionQueryImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
 <td class="colLast">
 <div class="block">This constructor is used to build <code>XACMLAuthzDecisionQuery</code> 
  object from a block of existing XML that has already been built into a
@@ -287,7 +286,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReturnContext()">getReturnContext</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the XML attribute boolean value which provides means
- to PEP to request that an <code>xacml-context>Request</code>
+ to PEP to request that an <code>xacml-context:Request</code>
  element be included in the <code>XACMlAuthzdecisionStatement</code>
  resulting from the request.</div>
 </td>
@@ -301,7 +300,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parseDOMElement(org.w3c.dom.Element)">parseDOMElement</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parseDOMElement(org.w3c.dom.Element)">parseDOMElement</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
 <td class="colLast">
 <div class="block">Parses the Docuemnt Element for this object.</div>
 </td>
@@ -330,14 +329,14 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString()">toXMLString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a string representation of this object</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString(boolean,boolean)">toXMLString</a></span>&#8203;(boolean&nbsp;includeNSPrefix,
            boolean&nbsp;declareNS)</code></th>
 <td class="colLast">
@@ -361,8 +360,8 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.sun.identity.saml2.protocol.RequestAbstract">
@@ -410,7 +409,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <ul class="blockList">
 <li class="blockList">
 <h4>XACMLAuthzDecisionQueryImpl</h4>
-<pre>public&nbsp;XACMLAuthzDecisionQueryImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
+<pre>public&nbsp;XACMLAuthzDecisionQueryImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
                             throws <a href="../../../saml2/common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">This constructor is used to build <code>XACMLAuthzDecisionQuery</code> 
  object from a block of existing XML that has already been built into a
@@ -430,7 +429,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <ul class="blockListLast">
 <li class="blockList">
 <h4>XACMLAuthzDecisionQueryImpl</h4>
-<pre>public&nbsp;XACMLAuthzDecisionQueryImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)
+<pre>public&nbsp;XACMLAuthzDecisionQueryImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)
                             throws <a href="../../../saml2/common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">This constructor is used to build <code>XACMLAuthzDecisionQuery</code>
  object from a XML string.</div>
@@ -518,10 +517,10 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <h4>getReturnContext</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;getReturnContext()</pre>
 <div class="block">Returns the XML attribute boolean value which provides means
- to PEP to request that an <code>xacml-context>Request</code>
+ to PEP to request that an <code>xacml-context:Request</code>
  element be included in the <code>XACMlAuthzdecisionStatement</code>
  resulting from the request. It also governs the contents of that
- <code.Request</code> element. If this attribite is "true" then the
+ <code>Request</code> element. If this attribite is "true" then the
  PDP SHALL include the <code>xacml-context:Request</code> element in the
  <code>XACMLAuthzDecisionStatement</code> element in the 
  <code>XACMLResponse</code>.
@@ -531,7 +530,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
  have been used by the PDP may be included.
  If this attribute is "false" then the PDP SHALL NOT include the
  <code>xacml-context:Request</code> element in the 
- <code>XACMLAuthzDecisionStatement<code>.</div>
+ <code>XACMLAuthzDecisionStatement</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../XACMLAuthzDecisionQuery.html#getReturnContext()">getReturnContext</a></code>&nbsp;in interface&nbsp;<code><a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun.identity.xacml.saml2">XACMLAuthzDecisionQuery</a></code></dd>
@@ -611,7 +610,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
                    throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a string representation of this object</div>
 <dl>
@@ -634,7 +633,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
                           boolean&nbsp;declareNS)
                    throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a <code>String</code> representation of this object</div>
@@ -663,7 +662,7 @@ implements <a href="../XACMLAuthzDecisionQuery.html" title="interface in com.sun
 <ul class="blockList">
 <li class="blockList">
 <h4>parseDOMElement</h4>
-<pre class="methodSignature">protected&nbsp;void&nbsp;parseDOMElement&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
+<pre class="methodSignature">protected&nbsp;void&nbsp;parseDOMElement&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
                         throws <a href="../../../saml2/common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../saml2/protocol/impl/RequestAbstractImpl.html#parseDOMElement(org.w3c.dom.Element)">RequestAbstractImpl</a></code></span></div>
 <div class="block">Parses the Docuemnt Element for this object.</div>

@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>org.openidentityplatform.openam.click.control.AbstractControl</li>
@@ -133,7 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.openidentityplatform.openam.click.Control</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.openidentityplatform.openam.click.Control</code></dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
@@ -141,17 +141,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">AbstractControl</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements org.openidentityplatform.openam.click.Control</pre>
 <div class="block">Provides a default implementation of the <code>Control</code> interface
  to make it easier for developers to create their own controls.
- <p/>
+ <p>
  Subclasses are expected to at least override <a href="#getTag()"><code>getTag()</code></a>
  to differentiate the control. However some controls do not map cleanly
  to an html <em>tag</em>, in which case you can override
  <a href="#render(org.openidentityplatform.openam.click.util.HtmlStringBuffer)"><code>render(org.openidentityplatform.openam.click.util.HtmlStringBuffer)</code></a> for complete control
  over the output.
- <p/>
+ <p>
  Below is an example of creating a new control called MyField:
  <pre class="prettyprint">
  public class MyField extends AbstractControl {
@@ -182,12 +182,12 @@ implements org.openidentityplatform.openam.click.Control</pre>
  }
  </pre>
  By overriding <a href="#getTag()"><code>getTag()</code></a> one can specify the html tag to render.
- <p/>
+ <p>
  Overriding <a href="#onProcess()"><code>onProcess()</code></a> allows one to bind the servlet request
  parameter to MyField value. The <a href="#dispatchActionEvent()"><code>dispatchActionEvent()</code></a> method
  registers the listener for this control on the Context. Once the onProcess
  event has finished, all registered listeners will be fired.
- <p/>
+ <p>
  To view the html rendered by MyField invoke the control's <a href="#toString()"><code>toString()</code></a>
  method:
 
@@ -212,7 +212,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
  Also see <code>Control</code> javadoc for an explanation of the
  Control execution sequence.
 
- <h3><a name="message-resources"></a>Message Resources and Internationalization (i18n)</h3>
+ <h2><a id="message-resources"></a>Message Resources and Internationalization (i18n)</h2>
 
  Controls support a hierarchy of resource bundles for displaying messages.
  These localized messages can be accessed through the methods:
@@ -257,21 +257,21 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#attributes">attributes</a></span></code></th>
 <td class="colLast">
 <div class="block">The Control attributes Map.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#behaviors">behaviors</a></span></code></th>
 <td class="colLast">
 <div class="block">The control's list of <code>behaviors</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#headElements">headElements</a></span></code></th>
 <td class="colLast">
 <div class="block">The list of page HTML HEAD elements including: Javascript imports,
@@ -279,42 +279,42 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listener">listener</a></span></code></th>
 <td class="colLast">
 <div class="block">The listener target object.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listenerMethod">listenerMethod</a></span></code></th>
 <td class="colLast">
 <div class="block">The listener method name.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#messages">messages</a></span></code></th>
 <td class="colLast">
 <div class="block">The Control localized messages Map.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name">name</a></span></code></th>
 <td class="colLast">
 <div class="block">The Control name.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parent">parent</a></span></code></th>
 <td class="colLast">
 <div class="block">The control's parent.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#styles">styles</a></span></code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>
@@ -354,7 +354,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">AbstractControl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">AbstractControl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Create a control with the given name.</div>
 </td>
@@ -381,13 +381,13 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addBehavior(org.openidentityplatform.openam.click.Behavior)">addBehavior</a></span>&#8203;(org.openidentityplatform.openam.click.Behavior&nbsp;behavior)</code></th>
 <td class="colLast">
-<div class="block">Add the given <tt>Behavior</tt> to the control's Set of
+<div class="block">Add the given <code>Behavior</code> to the control's Set of
  <a href="#getBehaviors()"><code>Behaviors</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addStyleClass(java.lang.String)">addStyleClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addStyleClass(java.lang.String)">addStyleClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Add the CSS class attribute.</div>
 </td>
@@ -414,25 +414,25 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(java.lang.String)">getAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(java.lang.String)">getAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the control HTML attribute with the given name, or null if the
  attribute does not exist.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributes()">getAttributes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the control's attributes Map.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBehaviors()">getBehaviors</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the Set of <tt>Behaviors</tt> for this control.</div>
+<div class="block">Returns the Set of <code>Behaviors</code> for this control.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -450,7 +450,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeadElements()">getHeadElements</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the list of HEAD <code>elements</code>
@@ -458,7 +458,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHtmlImports()">getHtmlImports</a></span>()</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>
@@ -467,37 +467,37 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the "id" attribute value if defined, or the control name otherwise.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessage(java.lang.String)">getMessage</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessage(java.lang.String)">getMessage</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the localized message for the given key or null if not found.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessage(java.lang.String,java.lang.Object...)">getMessage</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;args)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessage(java.lang.String,java.lang.Object...)">getMessage</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;args)</code></th>
 <td class="colLast">
 <div class="block">Return the formatted message for the given resource name and message
  format arguments or null if no message was found.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessages()">getMessages</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return a Map of localized messages for the control.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the name of the Control.</div>
@@ -511,21 +511,21 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr id="i18" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParent()">getParent</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the parent of the Control.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStyle(java.lang.String)">getStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStyle(java.lang.String)">getStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the control CSS style for the given name.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStyles()">getStyles</a></span>()</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>
@@ -534,7 +534,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTag()">getTag</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the controls html tag.</div>
@@ -542,7 +542,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAttribute(java.lang.String)">hasAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAttribute(java.lang.String)">hasAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Returns true if specified attribute is defined, false otherwise.</div>
 </td>
@@ -558,8 +558,8 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasBehaviors()">hasBehaviors</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns <tt>true</tt> if this control has any
- <tt>Behavior</tt>s registered, <tt>false</tt> otherwise.</div>
+<div class="block">Returns <code>true</code> if this control has any
+ <code>Behavior</code>s registered, <code>false</code> otherwise.</div>
 </td>
 </tr>
 <tr id="i25" class="rowColor">
@@ -575,7 +575,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAjaxTarget(org.openidentityplatform.openam.click.Context)">isAjaxTarget</a></span>&#8203;(org.openidentityplatform.openam.click.Context&nbsp;context)</code></th>
 <td class="colLast">
-<div class="block">Returns <tt>true</tt> if this control is an AJAX target, <tt>false</tt>
+<div class="block">Returns <code>true</code> if this control is an AJAX target, <code>false</code>
  otherwise.</div>
 </td>
 </tr>
@@ -618,13 +618,13 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeBehavior(org.openidentityplatform.openam.click.Behavior)">removeBehavior</a></span>&#8203;(org.openidentityplatform.openam.click.Behavior&nbsp;behavior)</code></th>
 <td class="colLast">
-<div class="block">Remove the given <tt>Behavior</tt> from the Control's Set of
+<div class="block">Remove the given <code>Behavior</code> from the Control's Set of
  <a href="#getBehaviors()"><code>Behaviors</code></a>.</div>
 </td>
 </tr>
 <tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeStyleClass(java.lang.String)">removeStyleClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeStyleClass(java.lang.String)">removeStyleClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Removes the CSS class attribute.</div>
 </td>
@@ -638,16 +638,16 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </tr>
 <tr id="i35" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTagBegin(java.lang.String,org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderTagBegin</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTagBegin(java.lang.String,org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderTagBegin</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
               <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</code></th>
 <td class="colLast">
 <div class="block">Render the tag and common attributes including <a href="#getId()"><code>id</code></a>,
- <tt>class</tt> and <tt>style</tt>.</div>
+ <code>class</code> and <code>style</code>.</div>
 </td>
 </tr>
 <tr id="i36" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTagEnd(java.lang.String,org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderTagEnd</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTagEnd(java.lang.String,org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderTagEnd</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
             <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</code></th>
 <td class="colLast">
 <div class="block">Closes the specified tag.</div>
@@ -662,51 +662,51 @@ implements org.openidentityplatform.openam.click.Control</pre>
 </tr>
 <tr id="i38" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttribute(java.lang.String,java.lang.String)">setAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttribute(java.lang.String,java.lang.String)">setAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the control attribute with the given attribute name and value.</div>
 </td>
 </tr>
 <tr id="i39" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setId(java.lang.String)">setId</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;id)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setId(java.lang.String)">setId</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;id)</code></th>
 <td class="colLast">
 <div class="block">Set the HTML id attribute for the control with the given value.</div>
 </td>
 </tr>
 <tr id="i40" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setListener(java.lang.Object,java.lang.String)">setListener</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;listener,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;method)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setListener(java.lang.Object,java.lang.String)">setListener</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;listener,
+           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;method)</code></th>
 <td class="colLast">
 <div class="block">Set the controls event listener.</div>
 </td>
 </tr>
 <tr id="i41" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Set the name of the Control.</div>
 </td>
 </tr>
 <tr id="i42" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParent(java.lang.Object)">setParent</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParent(java.lang.Object)">setParent</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</code></th>
 <td class="colLast">
 <div class="block">Set the parent of the  Control.</div>
 </td>
 </tr>
 <tr id="i43" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStyle(java.lang.String,java.lang.String)">setStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStyle(java.lang.String,java.lang.String)">setStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the control CSS style name and value pair.</div>
 </td>
 </tr>
 <tr id="i44" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the HTML representation of this control.</div>
@@ -717,8 +717,8 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -752,7 +752,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>behaviors</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt; behaviors</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt; behaviors</pre>
 <div class="block">The control's list of <code>behaviors</code>.</div>
 </li>
 </ul>
@@ -762,7 +762,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>headElements</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt; headElements</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt; headElements</pre>
 <div class="block">The list of page HTML HEAD elements including: Javascript imports,
  Css imports, inline Javascript and inline Css.</div>
 </li>
@@ -773,7 +773,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>attributes</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; attributes</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; attributes</pre>
 <div class="block">The Control attributes Map.</div>
 </li>
 </ul>
@@ -783,7 +783,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>messages</h4>
-<pre>protected transient&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; messages</pre>
+<pre>protected transient&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; messages</pre>
 <div class="block">The Control localized messages Map.</div>
 </li>
 </ul>
@@ -793,7 +793,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> name</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> name</pre>
 <div class="block">The Control name.</div>
 </li>
 </ul>
@@ -803,7 +803,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>parent</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a> parent</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a> parent</pre>
 <div class="block">The control's parent.</div>
 </li>
 </ul>
@@ -813,7 +813,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>styles</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; styles</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; styles</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
 <div class="deprecationComment">use <a href="#addStyleClass(java.lang.String)"><code>addStyleClass(String)</code></a> and
  <a href="#removeStyleClass(java.lang.String)"><code>removeStyleClass(String)</code></a> instead.</div>
@@ -827,7 +827,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>listener</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a> listener</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a> listener</pre>
 <div class="block">The listener target object.</div>
 </li>
 </ul>
@@ -837,7 +837,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>listenerMethod</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> listenerMethod</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> listenerMethod</pre>
 <div class="block">The listener method name.</div>
 </li>
 </ul>
@@ -867,7 +867,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractControl</h4>
-<pre>public&nbsp;AbstractControl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;AbstractControl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Create a control with the given name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -891,15 +891,15 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getTag</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
 <div class="block">Returns the controls html tag.
- <p/>
+ <p>
  Subclasses should override this method and return the correct tag.
- <p/>
- This method returns <tt>null</tt> by default.
- <p/>
- Example tags include <tt>table</tt>, <tt>form</tt>, <tt>a</tt> and
- <tt>input</tt>.</div>
+ <p>
+ This method returns <code>null</code> by default.
+ <p>
+ Example tags include <code>table</code>, <code>form</code>, <code>a</code> and
+ <code>input</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>this controls html tag</dd>
@@ -943,14 +943,14 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <li class="blockList">
 <h4>hasBehaviors</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;hasBehaviors()</pre>
-<div class="block">Returns <tt>true</tt> if this control has any
- <tt>Behavior</tt>s registered, <tt>false</tt> otherwise.</div>
+<div class="block">Returns <code>true</code> if this control has any
+ <code>Behavior</code>s registered, <code>false</code> otherwise.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>hasBehaviors</code>&nbsp;in interface&nbsp;<code>org.openidentityplatform.openam.click.Control</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><tt>true</tt> if this control has any <tt>Behavior</tt>s registered,
- <tt>false</tt> otherwise</dd>
+<dd><code>true</code> if this control has any <code>Behavior</code>s registered,
+ <code>false</code> otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -961,16 +961,16 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <li class="blockList">
 <h4>addBehavior</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addBehavior&#8203;(org.openidentityplatform.openam.click.Behavior&nbsp;behavior)</pre>
-<div class="block">Add the given <tt>Behavior</tt> to the control's Set of
+<div class="block">Add the given <code>Behavior</code> to the control's Set of
  <a href="#getBehaviors()"><code>Behaviors</code></a>.
- <p/>
+ <p>
  In addition, the Control will be registered with the
  <code>ControlRegistry</code>
- as a potential <tt>Ajax target control</tt> and to have it's
- <tt>Behaviors</tt> processed by the Click runtime.</div>
+ as a potential <code>Ajax target control</code> and to have it's
+ <code>Behaviors</code> processed by the Click runtime.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>behavior</code> - the <tt>Behavior</tt> to add</dd>
+<dd><code>behavior</code> - the <code>Behavior</code> to add</dd>
 </dl>
 </li>
 </ul>
@@ -981,11 +981,11 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <li class="blockList">
 <h4>removeBehavior</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeBehavior&#8203;(org.openidentityplatform.openam.click.Behavior&nbsp;behavior)</pre>
-<div class="block">Remove the given <tt>Behavior</tt> from the Control's Set of
+<div class="block">Remove the given <code>Behavior</code> from the Control's Set of
  <a href="#getBehaviors()"><code>Behaviors</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>behavior</code> - the <tt>Behavior</tt> to remove</dd>
+<dd><code>behavior</code> - the <code>Behavior</code> to remove</dd>
 </dl>
 </li>
 </ul>
@@ -995,13 +995,13 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getBehaviors</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt;&nbsp;getBehaviors()</pre>
-<div class="block">Returns the Set of <tt>Behaviors</tt> for this control.</div>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;org.openidentityplatform.openam.click.Behavior&gt;&nbsp;getBehaviors()</pre>
+<div class="block">Returns the Set of <code>Behaviors</code> for this control.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getBehaviors</code>&nbsp;in interface&nbsp;<code>org.openidentityplatform.openam.click.Control</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the Set of <tt>Behaviors</tt> for this control</dd>
+<dd>the Set of <code>Behaviors</code> for this control</dd>
 </dl>
 </li>
 </ul>
@@ -1012,9 +1012,9 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <li class="blockList">
 <h4>isAjaxTarget</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isAjaxTarget&#8203;(org.openidentityplatform.openam.click.Context&nbsp;context)</pre>
-<div class="block">Returns <tt>true</tt> if this control is an AJAX target, <tt>false</tt>
+<div class="block">Returns <code>true</code> if this control is an AJAX target, <code>false</code>
  otherwise.
- <p/>
+ <p>
  The control is defined as an Ajax target if the control <a href="#getId()"><code>ID</code></a>
  is send as a request parameter.</div>
 <dl>
@@ -1023,7 +1023,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>context</code> - the request context</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><tt>true</tt> if this control is an AJAX target, <tt>false</tt>
+<dd><code>true</code> if this control is an AJAX target, <code>false</code>
  otherwise</dd>
 </dl>
 </li>
@@ -1034,7 +1034,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttribute</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the control HTML attribute with the given name, or null if the
  attribute does not exist.</div>
 <dl>
@@ -1051,12 +1051,12 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setAttribute</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the control attribute with the given attribute name and value. You would
  generally use attributes if you were creating the entire Control
  programmatically and rendering it with the <a href="#toString()"><code>toString()</code></a> method.
- <p/>
+ <p>
  For example given the ActionLink:
 
  <pre class="codeJava">
@@ -1067,7 +1067,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
  <pre class="codeHtml">
  &lt;a href=".." <span class="st">target</span>=<span class="st">"_blank"</span>&gt;<span class="st">Add</span>&lt;/a&gt; </pre>
 
- <b>Note:</b> for <tt>style</tt> and <tt>class</tt> attributes you can
+ <b>Note:</b> for <code>style</code> and <code>class</code> attributes you can
  also use the methods <a href="#setStyle(java.lang.String,java.lang.String)"><code>setStyle(String, String)</code></a> and
  <a href="#addStyleClass(java.lang.String)"><code>addStyleClass(String)</code></a>.</div>
 <dl>
@@ -1075,7 +1075,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <dd><code>name</code> - the attribute name</dd>
 <dd><code>value</code> - the attribute value</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if name parameter is null</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if name parameter is null</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#setStyle(java.lang.String,java.lang.String)"><code>setStyle(String, String)</code></a>, 
 <a href="#addStyleClass(java.lang.String)"><code>addStyleClass(String)</code></a>, 
@@ -1089,7 +1089,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttributes</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAttributes()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAttributes()</pre>
 <div class="block">Return the control's attributes Map.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1117,7 +1117,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>hasAttribute</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;hasAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Returns true if specified attribute is defined, false otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1152,7 +1152,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getName()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getName()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">Return the name of the Control. Each control name must be unique in the
  containing Page model or the containing Form.</div>
@@ -1172,11 +1172,11 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setName</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setName&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setName&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">Set the name of the Control. Each control name must be unique in the
  containing Page model or the parent container.
- <p/>
+ <p>
  <b>Please note:</b> changing the name of a Control after it has been
  added to its parent container is undefined. Thus it is  best <b>not</b>
  to change the name of a Control once its been set.</div>
@@ -1186,7 +1186,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - of the control</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is null</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is null</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Control.setName(String)</code></dd>
 </dl>
@@ -1198,7 +1198,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getId</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
 <div class="block">Return the "id" attribute value if defined, or the control name otherwise.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -1216,7 +1216,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setId</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setId&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;id)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setId&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;id)</pre>
 <div class="block">Set the HTML id attribute for the control with the given value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1230,18 +1230,18 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getMessage</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getMessage&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getMessage&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the localized message for the given key or null if not found.
  The resource message returned will use the Locale obtained from the
  Context.
- <p/>
+ <p>
  This method will attempt to lookup the localized message in the
  parent's messages, which resolves to the Page's resource bundle.
- <p/>
+ <p>
  If the message was not found, this method will attempt to look up the
- value in the <tt>/click-control.properties</tt> message properties file,
+ value in the <code>/click-control.properties</code> message properties file,
  through the method <a href="#getMessages()"><code>getMessages()</code></a>.
- <p/>
+ <p>
  If still not found, this method will return null.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1257,12 +1257,12 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getMessage</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getMessage&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;args)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getMessage&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>...&nbsp;args)</pre>
 <div class="block">Return the formatted message for the given resource name and message
  format arguments or null if no message was found. The resource
  message returned will use the Locale obtained from the Context.
- <p/>
+ <p>
  <a href="#getMessage(java.lang.String)"><code>getMessage(java.lang.String)</code></a> is invoked to retrieve the message
  for the specified name.</div>
 <dl>
@@ -1281,7 +1281,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getMessages</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getMessages()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getMessages()</pre>
 <div class="block">Return a Map of localized messages for the control. The messages returned
  will use the Locale obtained from the Context.</div>
 <dl>
@@ -1290,7 +1290,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a Map of localized messages for the control</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if the context for the control has not be set</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if the context for the control has not be set</dd>
 </dl>
 </li>
 </ul>
@@ -1300,7 +1300,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getParent</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getParent()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getParent()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">Return the parent of the Control.</div>
 <dl>
@@ -1319,7 +1319,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setParent</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setParent&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setParent&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">Set the parent of the  Control.</div>
 <dl>
@@ -1328,8 +1328,8 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>parent</code> - the parent of the Control</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given parent instance is
- referencing <tt>this</tt> object: <tt>if (parent == this)</tt></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given parent instance is
+ referencing <code>this</code> object: <code>if (parent == this)</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Control.setParent(Object)</code></dd>
 </dl>
@@ -1345,20 +1345,20 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">The on process event handler. Each control will be processed when the
  Page is requested.
- <p/>
+ <p>
  ClickServlet will process all Page controls in the order they were added
  to the Page.
- <p/>
+ <p>
  <code>Container</code> implementations should recursively
  invoke the onProcess method on each of their child controls ensuring that
  all controls receive this event. However when a control onProcess method
  return false, no other controls onProcess method should be invoked.
- <p/>
+ <p>
  When a control is processed it should return true if the Page should
  continue event processing, or false if no other controls should be
  processed and the <code>Page.onGet()</code> or <code>Page.onPost()</code> methods
  should not be invoked.
- <p/>
+ <p>
  <b>Please note:</b> a common problem when overriding onProcess in
  subclasses is forgetting to call <em>super.onProcess()</em>. Consider
  carefully whether you should call <em>super.onProcess()</em> or not,
@@ -1380,16 +1380,16 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setListener</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setListener&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;listener,
-                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;method)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setListener&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;listener,
+                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;method)</pre>
 <div class="block">Set the controls event listener.
- <p/>
+ <p>
  The method signature of the listener is:<ul>
  <li>must have a valid Java method name</li>
  <li>takes no arguments</li>
  <li>returns a boolean value</li>
  </ul>
- <p/>
+ <p>
  An example event listener method would be:
 
  <pre class="codeJava">
@@ -1482,7 +1482,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHtmlImports</h4>
-<pre class="methodSignature">public final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHtmlImports()</pre>
+<pre class="methodSignature">public final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHtmlImports()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
 <div class="deprecationComment">use the new <a href="#getHeadElements()"><code>getHeadElements()</code></a> instead</div>
 </div>
@@ -1499,7 +1499,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeadElements</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;&nbsp;getHeadElements()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;&nbsp;getHeadElements()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">Return the list of HEAD <code>elements</code>
  to be included in the page. Example HEAD elements include
@@ -1507,13 +1507,13 @@ implements org.openidentityplatform.openam.click.Control</pre>
  <code>JsScript</code>,
  <code>CssImport</code> and
  <code>CssStyle</code>.
- <p/>
+ <p>
  Controls can contribute their own list of HEAD elements by implementing
  this method.
- <p/>
+ <p>
  The recommended approach when implementing this method is to use
- <tt>lazy loading</tt> to ensure the HEAD elements are only added
- <tt>once</tt> and when <tt>needed</tt>. For example:
+ <code>lazy loading</code> to ensure the HEAD elements are only added
+ <code>once</code> and when <code>needed</code>. For example:
 
  <pre class="prettyprint">
  public MyControl extends AbstractControl {
@@ -1555,13 +1555,13 @@ implements org.openidentityplatform.openam.click.Control</pre>
  One can also add HEAD elements from event handler methods such as
  <code>Control.onInit()</code>, <code>Control.onProcess()</code>, <code>Control.onRender()</code>
  etc.
- <p/>
+ <p>
  The order in which JS and CSS files are included will be preserved in the
  page.
- <p/>
+ <p>
  <b>Note:</b> this method must never return null. If no HEAD elements
- are available this method must return an empty <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>List</code></a>.
- <p/>
+ are available this method must return an empty <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>List</code></a>.
+ <p>
  <b>Also note:</b> a common problem when overriding getHeadElements in
  subclasses is forgetting to call <em>super.getHeadElements</em>. Consider
  carefully whether you should call <em>super.getHeadElements</em> or not.</div>
@@ -1595,7 +1595,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStyle</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the control CSS style for the given name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1611,10 +1611,10 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setStyle</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the control CSS style name and value pair.
- <p/>
+ <p>
  For example given the ActionLink:
 
  <pre class="codeJava">
@@ -1626,7 +1626,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
  <pre class="codeHtml">
  &lt;a href=".." <span class="st">style</span>=<span class="st">"color:red;border:1px solid black;"</span>&gt;<span class="st">Add</span>&lt;/a&gt;
  </pre>
- To remove an existing style, set the value to <tt>null</tt>.</div>
+ To remove an existing style, set the value to <code>null</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - the CSS style name</dd>
@@ -1657,7 +1657,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStyles</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getStyles()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getStyles()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
 <div class="deprecationComment">use <a href="#getAttribute(java.lang.String)"><code>getAttribute(String)</code></a> instead</div>
 </div>
@@ -1674,9 +1674,9 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>addStyleClass</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addStyleClass&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;addStyleClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Add the CSS class attribute. Null values will be ignored.
- <p/>
+ <p>
  For example given the ActionLink:
 
  <pre class="prettyprint">
@@ -1698,7 +1698,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeStyleClass</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;removeStyleClass&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;removeStyleClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Removes the CSS class attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1714,10 +1714,9 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <h4>render</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;render&#8203;(<a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
 <div class="block">Render the control's output to the specified buffer.
- <p/>
+ <p>
  If <a href="#getTag()"><code>getTag()</code></a> returns null, this method will return an empty
- string.
- <p/></div>
+ string.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>render</code>&nbsp;in interface&nbsp;<code>org.openidentityplatform.openam.click.Control</code></dd>
@@ -1734,19 +1733,19 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
 <div class="block">Returns the HTML representation of this control.
- <p/>
+ <p>
  This method delegates the rendering to the method
  <a href="#render(org.openidentityplatform.openam.click.util.HtmlStringBuffer)"><code>render(org.openidentityplatform.openam.click.util.HtmlStringBuffer)</code></a>. The size of buffer
  is determined by <a href="#getControlSizeEst()"><code>getControlSizeEst()</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the HTML representation of this control</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink"><code>Object.toString()</code></a></dd>
+<dd><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink"><code>Object.toString()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1785,17 +1784,17 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>renderTagBegin</h4>
-<pre class="methodSignature">protected&nbsp;void&nbsp;renderTagBegin&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
+<pre class="methodSignature">protected&nbsp;void&nbsp;renderTagBegin&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
                               <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
 <div class="block">Render the tag and common attributes including <a href="#getId()"><code>id</code></a>,
- <tt>class</tt> and <tt>style</tt>. The <a href="#getName()"><code>name</code></a> attribute
+ <code>class</code> and <code>style</code>. The <a href="#getName()"><code>name</code></a> attribute
  is <em>not</em> rendered by this control. It is up to subclasses
  whether to render the name attribute or not. Generally only
  <code>Field</code> controls render the name attribute.
- <p/>
+ <p>
  <b>Please note:</b> the tag will not be closed by this method. This
  enables callers of this method to append extra attributes as needed.
- <p/>
+ <p>
  For example the following example:
 
  <pre class="prettyprint">
@@ -1823,7 +1822,7 @@ implements org.openidentityplatform.openam.click.Control</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>renderTagEnd</h4>
-<pre class="methodSignature">protected&nbsp;void&nbsp;renderTagEnd&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
+<pre class="methodSignature">protected&nbsp;void&nbsp;renderTagEnd&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tagName,
                             <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
 <div class="block">Closes the specified tag.</div>
 <dl>

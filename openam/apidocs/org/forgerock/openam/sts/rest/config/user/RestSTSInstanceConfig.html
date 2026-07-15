@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li><a href="../../../config/user/STSInstanceConfig.html" title="class in org.forgerock.openam.sts.config.user">org.forgerock.openam.sts.config.user.STSInstanceConfig</a></li>
@@ -147,7 +147,11 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
  For an explanation of what's going on with the builders in this class,
  see https://weblogs.java.net/blog/emcmanus/archive/2010/10/25/using-builder-pattern-subclasses
 
- Also attempted to marshal the RestSTSInstanceConfig to/from json with the jackson ObjectMapper. But I was adding</div>
+ Also attempted to marshal the RestSTSInstanceConfig to/from json with the jackson ObjectMapper. But I was adding
+ <code>@JsonSerialize</code> and <code>@JsonDeserialize</code> annotations, and because builder-based classes don't expose ctors which
+ take the complete field set, I would have to create <code>@JsonCreator</code> instances which would have to pull all of the
+ values out of a map anyway, which is 75% of the way towards a hand-rolled json marshalling implementation based on
+ json-fluent. So a hand-rolled implementation it is.</div>
 </li>
 </ul>
 </div>
@@ -204,22 +208,22 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CUSTOM_TOKEN_PROVIDERS">CUSTOM_TOKEN_PROVIDERS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CUSTOM_TOKEN_TRANSFORMS">CUSTOM_TOKEN_TRANSFORMS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CUSTOM_TOKEN_VALIDATORS">CUSTOM_TOKEN_VALIDATORS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SUPPORTED_TOKEN_TRANSFORMS">SUPPORTED_TOKEN_TRANSFORMS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -255,7 +259,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;other)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;other)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -264,17 +268,17 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCustomTokenProviders()">getCustomTokenProviders</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCustomTokenTransforms()">getCustomTokenTransforms</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCustomTokenValidators()">getCustomTokenValidators</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -284,12 +288,12 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDeploymentSubPath()">getDeploymentSubPath</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSupportedTokenTransforms()">getSupportedTokenTransforms</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -300,7 +304,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="RestSTSInstanceConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">RestSTSInstanceConfig</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#marshalFromAttributeMap(java.util.Map)">marshalFromAttributeMap</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributeMap)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#marshalFromAttributeMap(java.util.Map)">marshalFromAttributeMap</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributeMap)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -309,7 +313,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#marshalToAttributeMap()">marshalToAttributeMap</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -319,7 +323,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -335,8 +339,8 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -360,7 +364,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>SUPPORTED_TOKEN_TRANSFORMS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> SUPPORTED_TOKEN_TRANSFORMS</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> SUPPORTED_TOKEN_TRANSFORMS</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../../constant-values.html#org.forgerock.openam.sts.rest.config.user.RestSTSInstanceConfig.SUPPORTED_TOKEN_TRANSFORMS">Constant Field Values</a></dd>
@@ -373,7 +377,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>CUSTOM_TOKEN_PROVIDERS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CUSTOM_TOKEN_PROVIDERS</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CUSTOM_TOKEN_PROVIDERS</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../../constant-values.html#org.forgerock.openam.sts.rest.config.user.RestSTSInstanceConfig.CUSTOM_TOKEN_PROVIDERS">Constant Field Values</a></dd>
@@ -386,7 +390,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>CUSTOM_TOKEN_VALIDATORS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CUSTOM_TOKEN_VALIDATORS</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CUSTOM_TOKEN_VALIDATORS</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../../constant-values.html#org.forgerock.openam.sts.rest.config.user.RestSTSInstanceConfig.CUSTOM_TOKEN_VALIDATORS">Constant Field Values</a></dd>
@@ -399,7 +403,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CUSTOM_TOKEN_TRANSFORMS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CUSTOM_TOKEN_TRANSFORMS</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CUSTOM_TOKEN_TRANSFORMS</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../../constant-values.html#org.forgerock.openam.sts.rest.config.user.RestSTSInstanceConfig.CUSTOM_TOKEN_TRANSFORMS">Constant Field Values</a></dd>
@@ -445,7 +449,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>getSupportedTokenTransforms</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;&nbsp;getSupportedTokenTransforms()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;&nbsp;getSupportedTokenTransforms()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The set of token transformation operations supported by this STS instance.</dd>
@@ -458,7 +462,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>getCustomTokenTransforms</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;&nbsp;getCustomTokenTransforms()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="TokenTransformConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">TokenTransformConfig</a>&gt;&nbsp;getCustomTokenTransforms()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The set of custom token transformation operations supported by this STS instance.</dd>
@@ -471,7 +475,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>getCustomTokenValidators</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;&nbsp;getCustomTokenValidators()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;&nbsp;getCustomTokenValidators()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the set of custom token validators supported by this STS instance.</dd>
@@ -484,7 +488,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>getCustomTokenProviders</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;&nbsp;getCustomTokenProviders()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../config/user/CustomTokenOperation.html" title="class in org.forgerock.openam.sts.config.user">CustomTokenOperation</a>&gt;&nbsp;getCustomTokenProviders()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the set of custom token providers supported by this STS instance.</dd>
@@ -497,7 +501,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>getDeploymentSubPath</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDeploymentSubPath()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDeploymentSubPath()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>This method will return the sub-path at which the rest STS instance will be deployed (sub-path relative to the
@@ -518,7 +522,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../config/user/STSInstanceConfig.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../config/user/STSInstanceConfig.html" title="class in org.forgerock.openam.sts.config.user">STSInstanceConfig</a></code></dd>
@@ -531,7 +535,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;other)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;other)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../config/user/STSInstanceConfig.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../config/user/STSInstanceConfig.html" title="class in org.forgerock.openam.sts.config.user">STSInstanceConfig</a></code></dd>
@@ -547,7 +551,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <pre class="methodSignature">public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -579,7 +583,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>marshalToAttributeMap</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;marshalToAttributeMap()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;marshalToAttributeMap()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../config/user/STSInstanceConfig.html#marshalToAttributeMap()">marshalToAttributeMap</a></code>&nbsp;in class&nbsp;<code><a href="../../../config/user/STSInstanceConfig.html" title="class in org.forgerock.openam.sts.config.user">STSInstanceConfig</a></code></dd>
@@ -592,7 +596,7 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <ul class="blockList">
 <li class="blockList">
 <h4>marshalFromAttributeMap</h4>
-<pre class="methodSignature">public static&nbsp;<a href="RestSTSInstanceConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">RestSTSInstanceConfig</a>&nbsp;marshalFromAttributeMap&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributeMap)</pre>
+<pre class="methodSignature">public static&nbsp;<a href="RestSTSInstanceConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">RestSTSInstanceConfig</a>&nbsp;marshalFromAttributeMap&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;attributeMap)</pre>
 </li>
 </ul>
 <a id="marshalFromJsonAttributeMap(org.forgerock.json.JsonValue)">
@@ -602,10 +606,10 @@ extends <a href="../../../config/user/STSInstanceConfig.html" title="class in or
 <li class="blockList">
 <h4>marshalFromJsonAttributeMap</h4>
 <pre class="methodSignature">public static&nbsp;<a href="RestSTSInstanceConfig.html" title="class in org.forgerock.openam.sts.rest.config.user">RestSTSInstanceConfig</a>&nbsp;marshalFromJsonAttributeMap&#8203;(org.forgerock.json.JsonValue&nbsp;jsonValue)
-                                                         throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></pre>
+                                                         throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code></dd>
 </dl>
 </li>
 </ul>

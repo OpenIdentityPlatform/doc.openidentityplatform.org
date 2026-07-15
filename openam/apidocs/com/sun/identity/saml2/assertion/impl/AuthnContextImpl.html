@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.identity.saml2.assertion.impl.AuthnContextImpl</li>
@@ -137,7 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">AuthnContextImpl</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements <a href="../AuthnContext.html" title="interface in com.sun.identity.saml2.assertion">AuthnContext</a></pre>
 <div class="block">This is the default implementation of interface <code>AuthnContext</code>.
 
@@ -145,36 +145,35 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
  authentication event. The element can contain an authentication context
  class reference, an authentication declaration or declaration reference,
  or both. Its type is <code>AuthnContextType</code>.
- <p>
  <pre>
- &lt;complexType name="AuthnContextType">
-   &lt;complexContent>
-     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-       &lt;sequence>
-         &lt;choice>
-           &lt;sequence>
+ &lt;complexType name="AuthnContextType"&gt;
+   &lt;complexContent&gt;
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+       &lt;sequence&gt;
+         &lt;choice&gt;
+           &lt;sequence&gt;
              &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-             AuthnContextClassRef"/>
-             &lt;choice minOccurs="0">
+             AuthnContextClassRef"/&gt;
+             &lt;choice minOccurs="0"&gt;
                &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-               AuthnContextDecl"/>
+               AuthnContextDecl"/&gt;
                &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-               AuthnContextDeclRef"/>
-             &lt;/choice>
-           &lt;/sequence>
-           &lt;choice>
+               AuthnContextDeclRef"/&gt;
+             &lt;/choice&gt;
+           &lt;/sequence&gt;
+           &lt;choice&gt;
              &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-             AuthnContextDecl"/>
+             AuthnContextDecl"/&gt;
              &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-             AuthnContextDeclRef"/>
-           &lt;/choice>
-         &lt;/choice>
+             AuthnContextDeclRef"/&gt;
+           &lt;/choice&gt;
+         &lt;/choice&gt;
          &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-         AuthenticatingAuthority" maxOccurs="unbounded" minOccurs="0"/>
-       &lt;/sequence>
-     &lt;/restriction>
-   &lt;/complexContent>
- &lt;/complexType>
+         AuthenticatingAuthority" maxOccurs="unbounded" minOccurs="0"/&gt;
+       &lt;/sequence&gt;
+     &lt;/restriction&gt;
+   &lt;/complexContent&gt;
+ &lt;/complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -202,13 +201,13 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">AuthnContextImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">AuthnContextImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)</code></th>
 <td class="colLast">
 <div class="block">Class constructor with <code>AuthnContext</code> in xml string format.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">AuthnContextImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">AuthnContextImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
 <td class="colLast">
 <div class="block">Class constructor with <code>AuthnContext</code> in <code>Element</code>
  format.</div>
@@ -233,28 +232,28 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthenticatingAuthority()">getAuthenticatingAuthority</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>AuthenticatingAuthority</code> property.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContextClassRef()">getAuthnContextClassRef</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>AuthnContextClassRef</code> property.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContextDecl()">getAuthnContextDecl</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>AuthnContextDecl</code> property.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContextDeclRef()">getAuthnContextDeclRef</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the value of the <code>AuthnContextDeclRef</code> property.</div>
@@ -276,41 +275,41 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthenticatingAuthority(java.util.List)">setAuthenticatingAuthority</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthenticatingAuthority(java.util.List)">setAuthenticatingAuthority</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the <code>AuthenticatingAuthority</code> property.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthnContextClassRef(java.lang.String)">setAuthnContextClassRef</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthnContextClassRef(java.lang.String)">setAuthnContextClassRef</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the <code>AuthnContextClassRef</code> property.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthnContextDecl(java.lang.String)">setAuthnContextDecl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthnContextDecl(java.lang.String)">setAuthnContextDecl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the <code>AuthnContextDecl</code> property.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthnContextDeclRef(java.lang.String)">setAuthnContextDeclRef</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAuthnContextDeclRef(java.lang.String)">setAuthnContextDeclRef</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the <code>AuthnContextDeclRef</code> property.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString()">toXMLString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a String representation of the element.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString(boolean,boolean)">toXMLString</a></span>&#8203;(boolean&nbsp;includeNS,
            boolean&nbsp;declareNS)</code></th>
 <td class="colLast">
@@ -322,8 +321,8 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -358,7 +357,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>AuthnContextImpl</h4>
-<pre>public&nbsp;AuthnContextImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
+<pre>public&nbsp;AuthnContextImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
                  throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Class constructor with <code>AuthnContext</code> in <code>Element</code>
  format.</div>
@@ -374,7 +373,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AuthnContextImpl</h4>
-<pre>public&nbsp;AuthnContextImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)
+<pre>public&nbsp;AuthnContextImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)
                  throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Class constructor with <code>AuthnContext</code> in xml string format.</div>
 <dl>
@@ -430,7 +429,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthnContextClassRef</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextClassRef()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextClassRef()</pre>
 <div class="block">Returns the value of the <code>AuthnContextClassRef</code> property.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -448,7 +447,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>setAuthnContextClassRef</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAuthnContextClassRef&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
+<pre class="methodSignature">public&nbsp;void&nbsp;setAuthnContextClassRef&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
                              throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the <code>AuthnContextClassRef</code> property.</div>
 <dl>
@@ -457,7 +456,8 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - new <code>AuthenticationContextClassRef</code>.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the object is immutable.</dd>
+<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if a SAML2 error occurs
+                if the object is immutable.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../AuthnContext.html#getAuthnContextClassRef()"><code>AuthnContext.getAuthnContextClassRef()</code></a></dd>
 </dl>
@@ -469,7 +469,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthnContextDeclRef</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextDeclRef()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextDeclRef()</pre>
 <div class="block">Returns the value of the <code>AuthnContextDeclRef</code> property.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -488,7 +488,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>setAuthnContextDeclRef</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAuthnContextDeclRef&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
+<pre class="methodSignature">public&nbsp;void&nbsp;setAuthnContextDeclRef&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
                             throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the <code>AuthnContextDeclRef</code> property.</div>
 <dl>
@@ -498,7 +498,8 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <dd><code>value</code> - A String representation of authentication context
                 declaration reference.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the object is immutable.</dd>
+<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if a SAML2 error occurs
+                if the object is immutable.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../AuthnContext.html#getAuthnContextDeclRef()"><code>AuthnContext.getAuthnContextDeclRef()</code></a></dd>
 </dl>
@@ -510,7 +511,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthnContextDecl</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextDecl()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextDecl()</pre>
 <div class="block">Returns the value of the <code>AuthnContextDecl</code> property.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -528,7 +529,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>setAuthnContextDecl</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAuthnContextDecl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
+<pre class="methodSignature">public&nbsp;void&nbsp;setAuthnContextDecl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
                          throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the <code>AuthnContextDecl</code> property.</div>
 <dl>
@@ -538,7 +539,8 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <dd><code>value</code> - An XML String representing authentication context
                 declaration.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the object is immutable.</dd>
+<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if a SAML2 error occurs
+                if the object is immutable.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../AuthnContext.html#getAuthnContextDecl()"><code>AuthnContext.getAuthnContextDecl()</code></a></dd>
 </dl>
@@ -550,7 +552,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>setAuthenticatingAuthority</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAuthenticatingAuthority&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;value)
+<pre class="methodSignature">public&nbsp;void&nbsp;setAuthenticatingAuthority&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;value)
                                 throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets the value of the <code>AuthenticatingAuthority</code> property.</div>
 <dl>
@@ -571,7 +573,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthenticatingAuthority</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAuthenticatingAuthority()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAuthenticatingAuthority()</pre>
 <div class="block">Returns the value of the <code>AuthenticatingAuthority</code> property.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -590,7 +592,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
                    throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Returns a String representation of the element.</div>
 <dl>
@@ -600,7 +602,8 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <dd>A string containing the valid XML for this element.
          By default name space name is prepended to the element name.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the object does not conform to the schema.</dd>
+<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if a SAML2 error occurs
+          if the object does not conform to the schema.</dd>
 </dl>
 </li>
 </ul>
@@ -610,7 +613,7 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNS,
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNS,
                           boolean&nbsp;declareNS)
                    throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Returns a String representation of the element.</div>
@@ -625,7 +628,8 @@ implements <a href="../AuthnContext.html" title="interface in com.sun.identity.s
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A string containing the valid XML for this element</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the object does not conform to the schema.</dd>
+<dd><code><a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if a SAML2 error occurs
+          if the object does not conform to the schema.</dd>
 </dl>
 </li>
 </ul>

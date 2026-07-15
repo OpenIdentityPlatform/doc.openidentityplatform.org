@@ -156,8 +156,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAuditing(java.lang.String,java.lang.String,org.forgerock.openam.audit.AuditConstants.EventName)">isAuditing</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAuditing(java.lang.String,java.lang.String,org.forgerock.openam.audit.AuditConstants.EventName)">isAuditing</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
           <a href="AuditConstants.EventName.html" title="enum in org.forgerock.openam.audit">AuditConstants.EventName</a>&nbsp;eventName)</code></th>
 <td class="colLast">
 <div class="block">Determines if the audit service is auditing the specified topic in the specified realm.</div>
@@ -165,7 +165,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tryPublish(java.lang.String,org.forgerock.audit.events.AuditEvent)">tryPublish</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tryPublish(java.lang.String,org.forgerock.audit.events.AuditEvent)">tryPublish</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
           org.forgerock.audit.events.AuditEvent&nbsp;auditEvent)</code></th>
 <td class="colLast">
 <div class="block">Tries to publish the provided AuditEvent to the specified topic of the AuditService.</div>
@@ -194,10 +194,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>tryPublish</h4>
-<pre class="methodSignature">void&nbsp;tryPublish&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
+<pre class="methodSignature">void&nbsp;tryPublish&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
                 org.forgerock.audit.events.AuditEvent&nbsp;auditEvent)</pre>
 <div class="block">Tries to publish the provided AuditEvent to the specified topic of the AuditService.
- <p/>
+ <p>
  If an error occurs that prevents the AuditEvent from being published, then details regarding the error
  are recorded in the debug logs. However, only details relating to the error are logged; the debug logs
  are not treated as the fallback destination for audit information.</div>
@@ -214,8 +214,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isAuditing</h4>
-<pre class="methodSignature">boolean&nbsp;isAuditing&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
+<pre class="methodSignature">boolean&nbsp;isAuditing&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;topic,
                    <a href="AuditConstants.EventName.html" title="enum in org.forgerock.openam.audit">AuditConstants.EventName</a>&nbsp;eventName)</pre>
 <div class="block">Determines if the audit service is auditing the specified topic in the specified realm. If
  the realm is either <code>null</code> or empty, the check will be done against the default audit service.

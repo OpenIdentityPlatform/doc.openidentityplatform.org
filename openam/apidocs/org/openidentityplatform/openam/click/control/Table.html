@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li><a href="AbstractControl.html" title="class in org.openidentityplatform.openam.click.control">org.openidentityplatform.openam.click.control.AbstractControl</a></li>
@@ -138,7 +138,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.apache.click.Stateful</code>, <code>org.openidentityplatform.openam.click.Control</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.apache.click.Stateful</code>, <code>org.openidentityplatform.openam.click.Control</code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Table</span>
@@ -146,10 +146,11 @@ extends <a href="AbstractControl.html" title="class in org.openidentityplatform.
 implements org.apache.click.Stateful</pre>
 <div class="block">Provides a HTML Table control: &lt;table&gt;.
 
- <table class='htmlHeader' cellspacing='10'>
+ <table class='htmlHeader'>
+ <caption>Example</caption>
  <tr>
  <td>
- <img align='middle' hspace='2' src='table.png' title='Table'/>
+ <img src='table.png' alt='Table'>
  </td>
  </tr>
  </table>
@@ -159,7 +160,7 @@ implements org.apache.click.Stateful</pre>
  like functionality. The design of the Table control has been informed by
  the excellent DisplayTag library.
 
- <h3>Table Example</h3>
+ <h2>Table Example</h2>
 
  An example Table usage is provided below:
 
@@ -204,21 +205,21 @@ implements org.apache.click.Stateful</pre>
      }
  } </pre>
 
- <h3><a name="dataprovider"></a>DataProvider</h3>
+ <h2><a id="dataprovider"></a>DataProvider</h2>
  In the example above a <code>DataProvider</code>
  is used to populate the Table <a href="#setRowList(java.util.List)"><code>row list</code></a>
  from. DataProviders are used to provide data on demand to controls. For very
- <tt>large data sets</tt> use a <code>PagingDataProvider</code>
+ <code>large data sets</code> use a <code>PagingDataProvider</code>
  instead. See the section <a href="#large-datasets">large data sets</a> for
  details.
 
- <h3><a name="resources"></a>CSS and JavaScript resources</h3>
+ <h2><a id="resources"></a>CSS and JavaScript resources</h2>
 
  The Table control makes use of the following resources (which Click automatically
- deploys to the application directory, <tt>/click</tt>):
+ deploys to the application directory, <code>/click</code>):
 
  <ul>
- <li><tt>click/table.css</tt></li>
+ <li><code>click/table.css</code></li>
  </ul>
 
  To import the Table CSS styles and any control JavaScript simply reference
@@ -238,9 +239,9 @@ implements org.apache.click.Stateful</pre>
  &lt;/body&gt;
  &lt;/html&gt; </pre>
 
- <h3><a name="styles"></a>Table Styles</h3>
+ <h2><a id="styles"></a>Table Styles</h2>
 
- The table CSS style sheet is adapted from the DisplayTag <tt>screen.css</tt>
+ The table CSS style sheet is adapted from the DisplayTag <code>screen.css</code>
  style sheet and includes the styles:
 
  <ul style="margin-top:0.5em;">
@@ -268,36 +269,36 @@ implements org.apache.click.Stateful</pre>
  } </pre>
 
  An alternative method of specifying the table class to use globally for your
- application is to define a <tt>table-default-class</tt> message property
- in your applications <tt>click-pages.properties</tt> file. For example:
+ application is to define a <code>table-default-class</code> message property
+ in your applications <code>click-pages.properties</code> file. For example:
 
  <pre class="codeConfig">
  table-default-class=blue2 </pre>
 
- <h3><a name="paging"></a>Paging</h3>
+ <h2><a id="paging"></a>Paging</h2>
 
  Table provides out-of-the-box paging.
- <p/>
+ <p>
  To enable Paging set the table's page size: <a href="#setPageSize(int)"><code>setPageSize(int)</code></a> and
  optionally make the Table Banner visible: <a href="#setShowBanner(boolean)"><code>setShowBanner(boolean)</code></a>.
- <p/>
+ <p>
  Table supports rendering different paginators through the method
  <a href="#setPaginator(org.openidentityplatform.openam.click.control.Renderable)"><code>setPaginator</code></a>.
  The default Table Paginator is <a href="TablePaginator.html" title="class in org.openidentityplatform.openam.click.control"><code>TablePaginator</code></a>.
 
- <h3><a name="sorting"></a>Sorting</h3>
+ <h2><a id="sorting"></a>Sorting</h2>
  Table also has built in column sorting.
- <p/>
+ <p>
  To enable/disable sorting use <a href="#setSortable(boolean)"><code>setSortable(boolean)</code></a>.
 
- <h3><a name="custom-parameters"></a>Custom Parameters - preserve state when paging and sorting</h3>
+ <h2><a id="custom-parameters"></a>Custom Parameters - preserve state when paging and sorting</h2>
 
  Its often necessary to add extra parameters on the Table links in order to
  preserve state when navigating between pages or sorting columns.
- <p/>
+ <p>
  One can easily add extra parameters to links generated by the Table through
  the Table's <a href="#getControlLink()"><code>controlLink</code></a>.
- <p/>
+ <p>
  For example:
 
  <pre class="prettyprint">
@@ -327,30 +328,30 @@ implements org.apache.click.Stateful</pre>
       ...
  } </pre>
 
- <h3><a name="row-attributes"></a>Row Attributes</h3>
+ <h2><a id="row-attributes"></a>Row Attributes</h2>
 
  Sometimes it is useful to add HTML attributes on individual rows. For these
  cases one can override the method <a href="#addRowAttributes(java.util.Map,java.lang.Object,int)"><code>addRowAttributes(Map, Object, int)</code></a>
  and add custom attributes to the row's attribute Map.
 
- <h3><a name="large-datasets"></a>Large Datasets</h3>
+ <h2><a id="large-datasets"></a>Large Datasets</h2>
 
  For large data sets use a <code>PagingDataProvider</code>.
- <p/>
+ <p>
  A PagingDataProvider has two responsibilities. First, it must load
  only those rows to be displayed on the current page e.g. rows 50 - 59.
- Second, it must return the <tt>total number of rows</tt> represented by the
+ Second, it must return the <code>total number of rows</code> represented by the
  PagingDataProvider.
- <p/>
+ <p>
  The Table methods <a href="#getFirstRow()"><code>getFirstRow()</code></a>, <a href="#getLastRow()"><code>getLastRow()</code></a>
  and <a href="#getPageSize()"><code>getPageSize()</code></a> provides the necessary information to limit
  the rows to the selected page. For sorting, the Table methods
  <a href="#getSortedColumn()"><code>getSortedColumn()</code></a> and <a href="#isSortedAscending()"><code>isSortedAscending()</code></a> provides the
  necessary information to sort the data.
- <p/>
+ <p>
  <b>Please note</b>: when using a PagingDataProvider, you are responsible
  for sorting the data, as the Table does not have access to all the data.
- <p/>
+ <p>
  Example usage:
 
  <pre class="prettyprint">
@@ -383,12 +384,12 @@ implements org.apache.click.Stateful</pre>
 
  For a live demonstration see the
  <a href="http://click.avoka.com/click-examples/table/large-dataset-demo.htm">Large Dataset Demo</a>.
- <p/>
+ <p>
 
  See the W3C HTML reference
- <a class="external" target="_blank" title="W3C HTML 4.01 Specification" href="http://www.w3.org/TR/html401/struct/tables.html">Tables</a>
+ <a class="external" target="_blank" href="http://www.w3.org/TR/html401/struct/tables.html">Tables</a>
  and the W3C CSS reference
- <a class="external" target="_blank" title="W3C CSS 2.1 Specification" href="http://www.w3.org/TR/CSS21/tables.html">Tables</a>.</div>
+ <a class="external" target="_blank" href="http://www.w3.org/TR/CSS21/tables.html">Tables</a>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="Column.html" title="class in org.openidentityplatform.openam.click.control"><code>Column</code></a>, 
@@ -416,10 +417,10 @@ implements org.apache.click.Stateful</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ASCENDING">ASCENDING</a></span></code></th>
 <td class="colLast">
-<div class="block">The control ActionLink page number parameter name: <tt>"ascending"</tt>.</div>
+<div class="block">The control ActionLink page number parameter name: <code>"ascending"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -427,116 +428,116 @@ implements org.apache.click.Stateful</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bannerPosition">bannerPosition</a></span></code></th>
 <td class="colLast">
 <div class="block">The table pagination banner position:
- <tt>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</tt>.</div>
+ <code>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#caption">caption</a></span></code></th>
 <td class="colLast">
 <div class="block">The table HTML &lt;caption&gt; element.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_BLUE1">CLASS_BLUE1</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"blue1"</tt>.</div>
+<div class="block">The table CSS style: <code>"blue1"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_BLUE2">CLASS_BLUE2</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"blue2"</tt>.</div>
+<div class="block">The table CSS style: <code>"blue2"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_COMPLEX">CLASS_COMPLEX</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"complex"</tt>.</div>
+<div class="block">The table CSS style: <code>"complex"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_ISI">CLASS_ISI</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"isi"</tt>.</div>
+<div class="block">The table CSS style: <code>"isi"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_ITS">CLASS_ITS</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"its"</tt>.</div>
+<div class="block">The table CSS style: <code>"its"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_MARS">CLASS_MARS</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"mars"</tt>.</div>
+<div class="block">The table CSS style: <code>"mars"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_NOCOL">CLASS_NOCOL</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"nocol"</tt>.</div>
+<div class="block">The table CSS style: <code>"nocol"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_ORANGE1">CLASS_ORANGE1</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"orange1"</tt>.</div>
+<div class="block">The table CSS style: <code>"orange1"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_ORANGE2">CLASS_ORANGE2</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"orange2"</tt>.</div>
+<div class="block">The table CSS style: <code>"orange2"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_REPORT">CLASS_REPORT</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"report"</tt>.</div>
+<div class="block">The table CSS style: <code>"report"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_SIMPLE">CLASS_SIMPLE</a></span></code></th>
 <td class="colLast">
-<div class="block">The table CSS style: <tt>"simple"</tt>.</div>
+<div class="block">The table CSS style: <code>"simple"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]</code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#CLASS_STYLES">CLASS_STYLES</a></span></code></th>
 <td class="colLast">
 <div class="block">The array of pre-defined table CSS class styles.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#COLUMN">COLUMN</a></span></code></th>
 <td class="colLast">
-<div class="block">The control ActionLink sorted column parameter name: <tt>"column"</tt>.</div>
+<div class="block">The control ActionLink sorted column parameter name: <code>"column"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#columnList">columnList</a></span></code></th>
 <td class="colLast">
 <div class="block">The list of table Columns.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#columns">columns</a></span></code></th>
 <td class="colLast">
 <div class="block">The map of table columns keyed by column name.</div>
@@ -550,7 +551,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#controlList">controlList</a></span></code></th>
 <td class="colLast">
 <div class="block">The list of table controls.</div>
@@ -564,7 +565,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#height">height</a></span></code></th>
 <td class="colLast">
 <div class="block">The table HTML &lt;td&gt; height attribute.</div>
@@ -588,10 +589,10 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#PAGE">PAGE</a></span></code></th>
 <td class="colLast">
-<div class="block">The control ActionLink page number parameter name: <tt>"page"</tt>.</div>
+<div class="block">The control ActionLink page number parameter name: <code>"page"</code>.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -641,7 +642,7 @@ implements org.apache.click.Stateful</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#paginatorAttachment">paginatorAttachment</a></span></code></th>
 <td class="colLast">
 <div class="block">The paginator attachment style:
- <tt>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</tt>.</div>
+ <code>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -680,7 +681,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rowList">rowList</a></span></code></th>
 <td class="colLast">
 <div class="block">The list Table rows.</div>
@@ -695,10 +696,10 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SORT">SORT</a></span></code></th>
 <td class="colLast">
-<div class="block">The control ActionLink sort number parameter name: <tt>"sort"</tt>.</div>
+<div class="block">The control ActionLink sort number parameter name: <code>"sort"</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -723,14 +724,14 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortedColumn">sortedColumn</a></span></code></th>
 <td class="colLast">
 <div class="block">The name of the sorted column.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#width">width</a></span></code></th>
 <td class="colLast">
 <div class="block">The table HTML &lt;td&gt; width attribute.</div>
@@ -774,7 +775,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Table</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Table</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Create an Table for the given name.</div>
 </td>
@@ -822,15 +823,15 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addRowAttributes(java.util.Map,java.lang.Object,int)">addRowAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;attributes,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addRowAttributes(java.util.Map,java.lang.Object,int)">addRowAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;attributes,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
                 int&nbsp;rowIndex)</code></th>
 <td class="colLast">
 <div class="block">Override this method to set HTML attributes for each Table row.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createRowList()">createRowList</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Create a new table row list.</div>
@@ -844,29 +845,29 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCaption()">getCaption</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the content of the table <tt>&lt;caption&gt;</tt> element, or null
+<div class="block">Return the content of the table <code>&lt;caption&gt;</code> element, or null
  if not defined.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getColumn(java.lang.String)">getColumn</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getColumn(java.lang.String)">getColumn</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the Column for the given name.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getColumnList()">getColumnList</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the list of table columns.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getColumns()">getColumns</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Map of table Columns, keyed on column name.</div>
@@ -880,7 +881,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getControls()">getControls</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the list of Controls added to the table.</div>
@@ -908,13 +909,13 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeadElements()">getHeadElements</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Table HTML HEAD elements for the following resource:
 
  
- <tt>click/table.css</tt>
+ <code>click/table.css</code>
  
 
  Additionally, the HEAD elements of the <a href="#getControlLink()"><code>getControlLink()</code></a> will
@@ -922,7 +923,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeight()">getHeight</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the table HTML &lt;td&gt; height attribute.</div>
@@ -947,8 +948,8 @@ implements org.apache.click.Stateful</pre>
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNullifyRowListOnDestroy()">getNullifyRowListOnDestroy</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return true if the Table will nullify the <tt>rowList</tt> when the
- <tt>onDestroy()</tt> method is invoked.</div>
+<div class="block">Return true if the Table will nullify the <code>rowList</code> when the
+ <code>onDestroy()</code> method is invoked.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
@@ -1001,7 +1002,7 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr id="i27" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRowList()">getRowList</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the list of table rows.</div>
@@ -1023,28 +1024,28 @@ implements org.apache.click.Stateful</pre>
 </td>
 </tr>
 <tr id="i30" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSortedColumn()">getSortedColumn</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the name of the sorted column, or null if not defined.</div>
 </td>
 </tr>
 <tr id="i31" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getState()">getState</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Table state.</div>
 </td>
 </tr>
 <tr id="i32" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTag()">getTag</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the table's html tag: <tt>table</tt>.</div>
+<div class="block">Return the table's html tag: <code>table</code>.</div>
 </td>
 </tr>
 <tr id="i33" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWidth()">getWidth</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the table HTML &lt;td&gt; width attribute.</div>
@@ -1075,8 +1076,8 @@ implements org.apache.click.Stateful</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onDestroy()">onDestroy</a></span>()</code></th>
 <td class="colLast">
-<div class="block">This method will clear the <tt>rowList</tt>, if the property
- <tt>nullifyRowListOnDestroy</tt> is true, set the sorted flag to false and
+<div class="block">This method will clear the <code>rowList</code>, if the property
+ <code>nullifyRowListOnDestroy</code> is true, set the sorted flag to false and
  will invoke the onDestroy() method of any child controls.</div>
 </td>
 </tr>
@@ -1105,7 +1106,7 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i41" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeColumn(java.lang.String)">removeColumn</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeColumn(java.lang.String)">removeColumn</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Remove the named column from the Table.</div>
 </td>
@@ -1119,7 +1120,7 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i43" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeColumns(java.util.List)">removeColumns</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;columnNames)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeColumns(java.util.List)">removeColumns</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;columnNames)</code></th>
 <td class="colLast">
 <div class="block">Remove the list of named columns from the table.</div>
 </td>
@@ -1157,7 +1158,7 @@ implements org.apache.click.Stateful</pre>
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderBodyRows(org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderBodyRows</a></span>&#8203;(<a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</code></th>
 <td class="colLast">
-<div class="block">Render the table body rows for each of the rows in <tt>getRowList</tt>.</div>
+<div class="block">Render the table body rows for each of the rows in <code>getRowList</code>.</div>
 </td>
 </tr>
 <tr id="i49" class="rowColor">
@@ -1226,14 +1227,14 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i57" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCaption(java.lang.String)">setCaption</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;caption)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCaption(java.lang.String)">setCaption</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;caption)</code></th>
 <td class="colLast">
-<div class="block">Set the content of the table <tt>&lt;caption&gt;</tt> element.</div>
+<div class="block">Set the content of the table <code>&lt;caption&gt;</code> element.</div>
 </td>
 </tr>
 <tr id="i58" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setClass(java.lang.String)">setClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setClass(java.lang.String)">setClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the HTML class attribute.</div>
 </td>
@@ -1247,7 +1248,7 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i60" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeight(java.lang.String)">setHeight</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeight(java.lang.String)">setHeight</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the table HTML &lt;td&gt; height attribute.</div>
 </td>
@@ -1262,7 +1263,7 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i62" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Set the name of the Control.</div>
 </td>
@@ -1271,7 +1272,7 @@ implements org.apache.click.Stateful</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNullifyRowListOnDestroy(boolean)">setNullifyRowListOnDestroy</a></span>&#8203;(boolean&nbsp;value)</code></th>
 <td class="colLast">
-<div class="block">Set the flag to nullify the <tt>rowList</tt> when the <tt>onDestroy()</tt>
+<div class="block">Set the flag to nullify the <code>rowList</code> when the <code>onDestroy()</code>
  method is invoked.</div>
 </td>
 </tr>
@@ -1305,7 +1306,7 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i68" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParent(java.lang.Object)">setParent</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setParent(java.lang.Object)">setParent</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</code></th>
 <td class="colLast">
 <div class="block">Set the parent of the Table.</div>
 </td>
@@ -1319,7 +1320,7 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i70" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRowList(java.util.List)">setRowList</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;rowList)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRowList(java.util.List)">setRowList</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;rowList)</code></th>
 <td class="colLast">
 <div class="block">Set the list of table rows.</div>
 </td>
@@ -1355,21 +1356,21 @@ implements org.apache.click.Stateful</pre>
 </tr>
 <tr id="i75" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSortedColumn(java.lang.String)">setSortedColumn</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;columnName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSortedColumn(java.lang.String)">setSortedColumn</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;columnName)</code></th>
 <td class="colLast">
 <div class="block">Set the name of the sorted column, or null if not defined.</div>
 </td>
 </tr>
 <tr id="i76" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setState(java.lang.Object)">setState</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;state)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setState(java.lang.Object)">setState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;state)</code></th>
 <td class="colLast">
 <div class="block">Set the Table state.</div>
 </td>
 </tr>
 <tr id="i77" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWidth(java.lang.String)">setWidth</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWidth(java.lang.String)">setWidth</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the table HTML &lt;td&gt; width attribute.</div>
 </td>
@@ -1394,8 +1395,8 @@ implements org.apache.click.Stateful</pre>
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -1503,8 +1504,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>ASCENDING</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> ASCENDING</pre>
-<div class="block">The control ActionLink page number parameter name: <tt>"ascending"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> ASCENDING</pre>
+<div class="block">The control ActionLink page number parameter name: <code>"ascending"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.ASCENDING">Constant Field Values</a></dd>
@@ -1517,8 +1518,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>COLUMN</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> COLUMN</pre>
-<div class="block">The control ActionLink sorted column parameter name: <tt>"column"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> COLUMN</pre>
+<div class="block">The control ActionLink sorted column parameter name: <code>"column"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.COLUMN">Constant Field Values</a></dd>
@@ -1531,8 +1532,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>PAGE</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> PAGE</pre>
-<div class="block">The control ActionLink page number parameter name: <tt>"page"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> PAGE</pre>
+<div class="block">The control ActionLink page number parameter name: <code>"page"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.PAGE">Constant Field Values</a></dd>
@@ -1545,8 +1546,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>SORT</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> SORT</pre>
-<div class="block">The control ActionLink sort number parameter name: <tt>"sort"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> SORT</pre>
+<div class="block">The control ActionLink sort number parameter name: <code>"sort"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.SORT">Constant Field Values</a></dd>
@@ -1559,8 +1560,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_BLUE1</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_BLUE1</pre>
-<div class="block">The table CSS style: <tt>"blue1"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_BLUE1</pre>
+<div class="block">The table CSS style: <code>"blue1"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_BLUE1">Constant Field Values</a></dd>
@@ -1573,8 +1574,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_BLUE2</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_BLUE2</pre>
-<div class="block">The table CSS style: <tt>"blue2"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_BLUE2</pre>
+<div class="block">The table CSS style: <code>"blue2"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_BLUE2">Constant Field Values</a></dd>
@@ -1587,8 +1588,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_COMPLEX</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_COMPLEX</pre>
-<div class="block">The table CSS style: <tt>"complex"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_COMPLEX</pre>
+<div class="block">The table CSS style: <code>"complex"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_COMPLEX">Constant Field Values</a></dd>
@@ -1601,8 +1602,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_ISI</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ISI</pre>
-<div class="block">The table CSS style: <tt>"isi"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ISI</pre>
+<div class="block">The table CSS style: <code>"isi"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_ISI">Constant Field Values</a></dd>
@@ -1615,8 +1616,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_ITS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ITS</pre>
-<div class="block">The table CSS style: <tt>"its"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ITS</pre>
+<div class="block">The table CSS style: <code>"its"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_ITS">Constant Field Values</a></dd>
@@ -1629,8 +1630,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_MARS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_MARS</pre>
-<div class="block">The table CSS style: <tt>"mars"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_MARS</pre>
+<div class="block">The table CSS style: <code>"mars"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_MARS">Constant Field Values</a></dd>
@@ -1643,8 +1644,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_NOCOL</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_NOCOL</pre>
-<div class="block">The table CSS style: <tt>"nocol"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_NOCOL</pre>
+<div class="block">The table CSS style: <code>"nocol"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_NOCOL">Constant Field Values</a></dd>
@@ -1657,8 +1658,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_ORANGE1</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ORANGE1</pre>
-<div class="block">The table CSS style: <tt>"orange1"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ORANGE1</pre>
+<div class="block">The table CSS style: <code>"orange1"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_ORANGE1">Constant Field Values</a></dd>
@@ -1671,8 +1672,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_ORANGE2</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ORANGE2</pre>
-<div class="block">The table CSS style: <tt>"orange2"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_ORANGE2</pre>
+<div class="block">The table CSS style: <code>"orange2"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_ORANGE2">Constant Field Values</a></dd>
@@ -1685,8 +1686,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_REPORT</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_REPORT</pre>
-<div class="block">The table CSS style: <tt>"report"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_REPORT</pre>
+<div class="block">The table CSS style: <code>"report"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_REPORT">Constant Field Values</a></dd>
@@ -1699,8 +1700,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_SIMPLE</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_SIMPLE</pre>
-<div class="block">The table CSS style: <tt>"simple"</tt>.</div>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> CLASS_SIMPLE</pre>
+<div class="block">The table CSS style: <code>"simple"</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.control.Table.CLASS_SIMPLE">Constant Field Values</a></dd>
@@ -1713,7 +1714,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CLASS_STYLES</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[] CLASS_STYLES</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[] CLASS_STYLES</pre>
 <div class="block">The array of pre-defined table CSS class styles.</div>
 </li>
 </ul>
@@ -1725,8 +1726,8 @@ implements org.apache.click.Stateful</pre>
 <h4>bannerPosition</h4>
 <pre>protected&nbsp;int bannerPosition</pre>
 <div class="block">The table pagination banner position:
- <tt>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</tt>.
- The default position is <tt>POSITION_BOTTOM</tt>.</div>
+ <code>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</code>.
+ The default position is <code>POSITION_BOTTOM</code>.</div>
 </li>
 </ul>
 <a id="caption">
@@ -1735,7 +1736,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>caption</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> caption</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> caption</pre>
 <div class="block">The table HTML &lt;caption&gt; element.</div>
 </li>
 </ul>
@@ -1745,7 +1746,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>columns</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt; columns</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt; columns</pre>
 <div class="block">The map of table columns keyed by column name.</div>
 </li>
 </ul>
@@ -1755,7 +1756,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>columnList</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt; columnList</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt; columnList</pre>
 <div class="block">The list of table Columns.</div>
 </li>
 </ul>
@@ -1775,7 +1776,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>controlList</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt; controlList</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt; controlList</pre>
 <div class="block">The list of table controls.</div>
 </li>
 </ul>
@@ -1785,7 +1786,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>height</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> height</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> height</pre>
 <div class="block">The table HTML &lt;td&gt; height attribute.</div>
 </li>
 </ul>
@@ -1833,9 +1834,9 @@ implements org.apache.click.Stateful</pre>
 <div class="deprecationComment">stateful pages are not supported anymore, use stateful
  Controls instead</div>
 </div>
-<div class="block">Flag indicating if <tt>rowList</tt> is nullified when
- <tt>onDestroy()</tt> is invoked, default is true. This flag only applies
- to <tt>stateful</tt> pages.</div>
+<div class="block">Flag indicating if <code>rowList</code> is nullified when
+ <code>onDestroy()</code> is invoked, default is true. This flag only applies
+ to <code>stateful</code> pages.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#setNullifyRowListOnDestroy(boolean)"><code>setNullifyRowListOnDestroy(boolean)</code></a></dd>
@@ -1882,8 +1883,8 @@ implements org.apache.click.Stateful</pre>
 <h4>paginatorAttachment</h4>
 <pre>protected&nbsp;int paginatorAttachment</pre>
 <div class="block">The paginator attachment style:
- <tt>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</tt>.
- The default paginator attachment type is <tt>PAGINATOR_ATTACHED</tt>.</div>
+ <code>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</code>.
+ The default paginator attachment type is <code>PAGINATOR_ATTACHED</code>.</div>
 </li>
 </ul>
 <a id="renderId">
@@ -1903,7 +1904,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>rowList</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a> rowList</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a> rowList</pre>
 <div class="block">The list Table rows. Please note the rowList is cleared in table
  <a href="#onDestroy()"><code>onDestroy()</code></a> method at the end of each request.</div>
 </li>
@@ -1956,7 +1957,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sortedColumn</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> sortedColumn</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> sortedColumn</pre>
 <div class="block">The name of the sorted column.</div>
 </li>
 </ul>
@@ -1966,7 +1967,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>width</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> width</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> width</pre>
 <div class="block">The table HTML &lt;td&gt; width attribute.</div>
 </li>
 </ul>
@@ -1986,13 +1987,13 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>Table</h4>
-<pre>public&nbsp;Table&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;Table&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Create an Table for the given name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - the table name</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is null</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is null</dd>
 </dl>
 </li>
 </ul>
@@ -2004,7 +2005,7 @@ implements org.apache.click.Stateful</pre>
 <h4>Table</h4>
 <pre>public&nbsp;Table()</pre>
 <div class="block">Create a Table with no name defined.
- <p/>
+ <p>
  <b>Please note</b> the control's name must be defined before it is valid.</div>
 </li>
 </ul>
@@ -2024,8 +2025,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getTag</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
-<div class="block">Return the table's html tag: <tt>table</tt>.</div>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
+<div class="block">Return the table's html tag: <code>table</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="AbstractControl.html#getTag()">getTag</a></code>&nbsp;in class&nbsp;<code><a href="AbstractControl.html" title="class in org.openidentityplatform.openam.click.control">AbstractControl</a></code></dd>
@@ -2042,7 +2043,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setParent</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setParent&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setParent&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;parent)</pre>
 <div class="block">Set the parent of the Table.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2052,9 +2053,9 @@ implements org.apache.click.Stateful</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>parent</code> - the parent of the Table</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if <a href="AbstractControl.html#name"><code>AbstractControl.name</code></a> is not defined</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given parent instance is
- referencing <tt>this</tt> object: <tt>if (parent == this)</tt></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if <a href="AbstractControl.html#name"><code>AbstractControl.name</code></a> is not defined</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the given parent instance is
+ referencing <code>this</code> object: <code>if (parent == this)</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Control.setParent(Object)</code></dd>
 </dl>
@@ -2068,8 +2069,8 @@ implements org.apache.click.Stateful</pre>
 <h4>getBannerPosition</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBannerPosition()</pre>
 <div class="block">Return the Table pagination banner position. Banner position values:
- <tt>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</tt>.
- The default banner position is <tt>POSITION_BOTTOM</tt>.</div>
+ <code>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</code>.
+ The default banner position is <code>POSITION_BOTTOM</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the table pagination banner position</dd>
@@ -2084,7 +2085,7 @@ implements org.apache.click.Stateful</pre>
 <h4>setBannerPosition</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setBannerPosition&#8203;(int&nbsp;value)</pre>
 <div class="block">Set Table pagination banner position. Banner position values:
- <tt>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</tt>.</div>
+ <code>[ POSITION_TOP | POSITION_BOTTOM | POSITION_BOTH ]</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - the table pagination banner position</dd>
@@ -2097,12 +2098,12 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getCaption</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCaption()</pre>
-<div class="block">Return the content of the table <tt>&lt;caption&gt;</tt> element, or null
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCaption()</pre>
+<div class="block">Return the content of the table <code>&lt;caption&gt;</code> element, or null
  if not defined.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the content of the table caption element, or <tt>null</tt> if not
+<dd>the content of the table caption element, or <code>null</code> if not
  defined.</dd>
 </dl>
 </li>
@@ -2113,8 +2114,8 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setCaption</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setCaption&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;caption)</pre>
-<div class="block">Set the content of the table <tt>&lt;caption&gt;</tt> element.</div>
+<pre class="methodSignature">public&nbsp;void&nbsp;setCaption&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;caption)</pre>
+<div class="block">Set the content of the table <code>&lt;caption&gt;</code> element.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>caption</code> - the content of the caption element.</dd>
@@ -2127,12 +2128,12 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setClass</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setClass&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the HTML class attribute.
- <p/>
- <b>Note:</b> this method will replace the existing <tt>"class"</tt>
+ <p>
+ <b>Note:</b> this method will replace the existing <code>"class"</code>
  attribute value.
- <p/>
+ <p>
  Predefined table CSS classes include:
  <ul>
   <li>complex</li>
@@ -2164,7 +2165,7 @@ implements org.apache.click.Stateful</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the added column</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the table already contains a column
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the table already contains a column
  with the same name, or the column name is not defined</dd>
 </dl>
 </li>
@@ -2189,7 +2190,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeColumn</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;removeColumn&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;removeColumn&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Remove the named column from the Table.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2203,7 +2204,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeColumns</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;removeColumns&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;columnNames)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;removeColumns&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;columnNames)</pre>
 <div class="block">Remove the list of named columns from the table.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2218,8 +2219,8 @@ implements org.apache.click.Stateful</pre>
 <li class="blockList">
 <h4>getNullifyRowListOnDestroy</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;getNullifyRowListOnDestroy()</pre>
-<div class="block">Return true if the Table will nullify the <tt>rowList</tt> when the
- <tt>onDestroy()</tt> method is invoked.</div>
+<div class="block">Return true if the Table will nullify the <code>rowList</code> when the
+ <code>onDestroy()</code> method is invoked.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the rowList is nullified when onDestroy is invoked</dd>
@@ -2233,13 +2234,13 @@ implements org.apache.click.Stateful</pre>
 <li class="blockList">
 <h4>setNullifyRowListOnDestroy</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setNullifyRowListOnDestroy&#8203;(boolean&nbsp;value)</pre>
-<div class="block">Set the flag to nullify the <tt>rowList</tt> when the <tt>onDestroy()</tt>
+<div class="block">Set the flag to nullify the <code>rowList</code> when the <code>onDestroy()</code>
  method is invoked.
- <p/>
- This option only applies to <tt>stateful</tt> pages.
- <p/>
+ <p>
+ This option only applies to <code>stateful</code> pages.
+ <p>
  If this option is false, the rowList will be persisted between requests.
- If this option is true (<tt>the default</tt>), the rowList must be set
+ If this option is true (<code>the default</code>), the rowList must be set
  each request.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2254,7 +2255,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getColumn</h4>
-<pre class="methodSignature">public&nbsp;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&nbsp;getColumn&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&nbsp;getColumn&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the Column for the given name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2270,7 +2271,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getColumnList</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;&nbsp;getColumnList()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;&nbsp;getColumnList()</pre>
 <div class="block">Return the list of table columns.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2284,7 +2285,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getColumns</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;&nbsp;getColumns()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="Column.html" title="class in org.openidentityplatform.openam.click.control">Column</a>&gt;&nbsp;getColumns()</pre>
 <div class="block">Return the Map of table Columns, keyed on column name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2335,7 +2336,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getControls</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt;&nbsp;getControls()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.openidentityplatform.openam.click.Control&gt;&nbsp;getControls()</pre>
 <div class="block">Return the list of Controls added to the table. Note table paging control
  will not be returned in this list.</div>
 <dl>
@@ -2366,7 +2367,7 @@ implements org.apache.click.Stateful</pre>
 <h4>getControlLink</h4>
 <pre class="methodSignature">public&nbsp;<a href="ActionLink.html" title="class in org.openidentityplatform.openam.click.control">ActionLink</a>&nbsp;getControlLink()</pre>
 <div class="block">Return the table paging and sorting control action link.
- <p/>
+ <p>
  <b>Note</b> you can set parameters on the returned ActionLink in order
  to preserve state when paging or sorting columns. A common use case is
  to filter out Table rows on specified criteria. See
@@ -2400,10 +2401,10 @@ implements org.apache.click.Stateful</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;setDataProvider&#8203;(org.apache.click.dataprovider.DataProvider&nbsp;dataProvider)</pre>
 <div class="block">Set the table row list <code>DataProvider</code>.
  The Table will retrieve its data from the DataProvider on demand.
- <p/>
+ <p>
  <b>Please note</b>: setting the dataProvider will nullify the table
  <a href="#setRowList(java.util.List)"><code>rowList</code></a>.
- <p/>
+ <p>
  Example usage:
 
  <pre class="prettyprint">
@@ -2422,16 +2423,16 @@ implements org.apache.click.Stateful</pre>
 
  For <b>large</b> data sets use a <code>PagingDataProvider</code>
  instead.
- <p/>
+ <p>
  The Table methods <a href="#getFirstRow()"><code>getFirstRow()</code></a>, <a href="#getLastRow()"><code>getLastRow()</code></a>
  and <a href="#getPageSize()"><code>getPageSize()</code></a> provides the necessary information to limit
  the rows to the selected page. For sorting, the Table methods
  <a href="#getSortedColumn()"><code>getSortedColumn()</code></a> and <a href="#isSortedAscending()"><code>isSortedAscending()</code></a> provides the
  necessary information to sort the data.
- <p/>
+ <p>
  <b>Please note</b>: when using a PagingDataProvider, you are responsible
  for sorting the data, as the Table does not have access to all the data.
- <p/>
+ <p>
  Example usage:
 
  <pre class="prettyprint">
@@ -2475,7 +2476,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeight</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeight()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeight()</pre>
 <div class="block">Return the table HTML &lt;td&gt; height attribute.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2489,7 +2490,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setHeight</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setHeight&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setHeight&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the table HTML &lt;td&gt; height attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2542,11 +2543,11 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeadElements</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;&nbsp;getHeadElements()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../element/Element.html" title="class in org.openidentityplatform.openam.click.element">Element</a>&gt;&nbsp;getHeadElements()</pre>
 <div class="block">Return the Table HTML HEAD elements for the following resource:
 
  <ul>
- <li><tt>click/table.css</tt></li>
+ <li><code>click/table.css</code></li>
  </ul>
 
  Additionally, the HEAD elements of the <a href="#getControlLink()"><code>getControlLink()</code></a> will
@@ -2569,11 +2570,11 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setName</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setName&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setName&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code>org.openidentityplatform.openam.click.Control</code></span></div>
 <div class="block">Set the name of the Control. Each control name must be unique in the
  containing Page model or the parent container.
- <p/>
+ <p>
  <b>Please note:</b> changing the name of a Control after it has been
  added to its parent container is undefined. Thus it is  best <b>not</b>
  to change the name of a Control once its been set.</div>
@@ -2585,7 +2586,7 @@ implements org.apache.click.Stateful</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - of the control</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is null</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is null</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Control.setName(String)</code></dd>
 </dl>
@@ -2686,8 +2687,8 @@ implements org.apache.click.Stateful</pre>
 <h4>getPaginatorAttachment</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getPaginatorAttachment()</pre>
 <div class="block">Return the paginator attachment style. Renderable attachment style values:
- <tt>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</tt>.
- The default paginator attachment type is <tt>PAGINATOR_ATTACHED</tt>.</div>
+ <code>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</code>.
+ The default paginator attachment type is <code>PAGINATOR_ATTACHED</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the paginator attachment style</dd>
@@ -2702,7 +2703,7 @@ implements org.apache.click.Stateful</pre>
 <h4>setPaginatorAttachment</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setPaginatorAttachment&#8203;(int&nbsp;value)</pre>
 <div class="block">Set Table pagination attachment style. Renderable attachment style values:
- <tt>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</tt>.</div>
+ <code>[ PAGINATOR_ATTACHED | PAGINATOR_DETACHED | PAGINATOR_INLINE ]</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - the table pagination attachment style</dd>
@@ -2759,10 +2760,10 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getRowList</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getRowList()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getRowList()</pre>
 <div class="block">Return the list of table rows. Please note the rowList is cleared in
  table <a href="#onDestroy()"><code>onDestroy()</code></a> method at the end of each request.
- <p/>
+ <p>
  If the rowList is null, this method delegates to <a href="#createRowList()"><code>createRowList()</code></a>
  to create a new row list.</div>
 <dl>
@@ -2777,14 +2778,14 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setRowList</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setRowList&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;rowList)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setRowList&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;rowList)</pre>
 <div class="block">Set the list of table rows. Each row can either be a value object
- (JavaBean) or an instance of a <tt>Map</tt>.
- <p/>
+ (JavaBean) or an instance of a <code>Map</code>.
+ <p>
  Although possible to set the table rows directly with this method, best
  practice is to use a <a href="#setDataProvider(org.apache.click.dataprovider.DataProvider)"><code>setDataProvider(DataProvider)</code></a>
  instead.
- <p/>
+ <p>
  Please note the rowList is cleared in table <a href="#onDestroy()"><code>onDestroy()</code></a> method
  at the end of each request.</div>
 <dl>
@@ -2914,7 +2915,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getSortedColumn</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getSortedColumn()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getSortedColumn()</pre>
 <div class="block">Return the name of the sorted column, or null if not defined.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2928,7 +2929,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setSortedColumn</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setSortedColumn&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;columnName)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setSortedColumn&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;columnName)</pre>
 <div class="block">Set the name of the sorted column, or null if not defined.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2942,7 +2943,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getState</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getState()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getState()</pre>
 <div class="block">Return the Table state. The following state is returned:
  <ul>
  <li><a href="#getPageNumber()"><code>getPageNumber()</code></a></li>
@@ -2964,7 +2965,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setState</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setState&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;state)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setState&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;state)</pre>
 <div class="block">Set the Table state.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -2980,7 +2981,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getWidth</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWidth()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWidth()</pre>
 <div class="block">Return the table HTML &lt;td&gt; width attribute.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2994,7 +2995,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setWidth</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setWidth&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setWidth&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the table HTML &lt;td&gt; width attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -3012,7 +3013,7 @@ implements org.apache.click.Stateful</pre>
 <div class="block">The total possible number of rows of the table. This value
  could be much larger than the number of entries in the <a href="#rowList"><code>rowList</code></a>,
  indicating that some rows have not been loaded yet.
- <p/>
+ <p>
  This property is automatically set by the table to the appropriate value.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -3028,7 +3029,7 @@ implements org.apache.click.Stateful</pre>
 <h4>getFirstRow</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getFirstRow()</pre>
 <div class="block">Return the index of the first row to display. Index starts from 0.
- <p/>
+ <p>
  <b>Note:</b> <a href="#setPageSize(int)"><code>page size</code></a> must be set for this
  method to correctly calculate the first row, otherwise this method will
  return 0.</div>
@@ -3046,7 +3047,7 @@ implements org.apache.click.Stateful</pre>
 <h4>getLastRow</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getLastRow()</pre>
 <div class="block">Return the index of the last row to display. Index starts from 0.
- <p/>
+ <p>
  <b>Note:</b> the Table <a href="#setRowList(java.util.List)"><code>row list</code></a> and
  <a href="#setPageSize(int)"><code>page size</code></a> must be set for this method to
  correctly calculate the last row, otherwise this method will return 0.</div>
@@ -3121,8 +3122,8 @@ implements org.apache.click.Stateful</pre>
 <li class="blockList">
 <h4>onDestroy</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;onDestroy()</pre>
-<div class="block">This method will clear the <tt>rowList</tt>, if the property
- <tt>nullifyRowListOnDestroy</tt> is true, set the sorted flag to false and
+<div class="block">This method will clear the <code>rowList</code>, if the property
+ <code>nullifyRowListOnDestroy</code> is true, set the sorted flag to false and
  will invoke the onDestroy() method of any child controls.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -3198,7 +3199,7 @@ implements org.apache.click.Stateful</pre>
 <h4>restoreState</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;restoreState&#8203;(org.openidentityplatform.openam.click.Context&nbsp;context)</pre>
 <div class="block">Restore the Table state from the session for the given request context.
- <p/>
+ <p>
  This method delegates to <a href="#setState(java.lang.Object)"><code>setState(Object)</code></a> to set the
  table restored state.</div>
 <dl>
@@ -3218,7 +3219,7 @@ implements org.apache.click.Stateful</pre>
 <h4>saveState</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;saveState&#8203;(org.openidentityplatform.openam.click.Context&nbsp;context)</pre>
 <div class="block">Save the Table state to the session for the given request context.
- <p/>
+ <p>
  * This method delegates to <a href="#getState()"><code>getState()</code></a> to retrieve the table state
  to save.</div>
 <dl>
@@ -3236,7 +3237,7 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>createRowList</h4>
-<pre class="methodSignature">protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;createRowList()</pre>
+<pre class="methodSignature">protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;createRowList()</pre>
 <div class="block">Create a new table row list. If a <a href="#getDataProvider()"><code>dataProvider</code></a>
  is specified the new row list will be populated from the data provider.</div>
 <dl>
@@ -3266,7 +3267,7 @@ implements org.apache.click.Stateful</pre>
 <li class="blockList">
 <h4>renderBodyRows</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;renderBodyRows&#8203;(<a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
-<div class="block">Render the table body rows for each of the rows in <tt>getRowList</tt>.</div>
+<div class="block">Render the table body rows for each of the rows in <code>getRowList</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>buffer</code> - the StringBuffer to render the table body rows in</dd>
@@ -3279,11 +3280,11 @@ implements org.apache.click.Stateful</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>addRowAttributes</h4>
-<pre class="methodSignature">protected&nbsp;void&nbsp;addRowAttributes&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;attributes,
-                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
+<pre class="methodSignature">protected&nbsp;void&nbsp;addRowAttributes&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;attributes,
+                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
                                 int&nbsp;rowIndex)</pre>
 <div class="block">Override this method to set HTML attributes for each Table row.
- <p/>
+ <p>
  For example:
 
  <pre class="prettyprint">
@@ -3306,8 +3307,8 @@ implements org.apache.click.Stateful</pre>
  } </pre>
 
  <b>Please note</b> that in order to enable alternate background colors
- for rows, Click will automatically add a CSS <tt>class</tt> attribute
- to each row with a value of either <tt>odd</tt> or <tt>even</tt>. You are
+ for rows, Click will automatically add a CSS <code>class</code> attribute
+ to each row with a value of either <code>odd</code> or <code>even</code>. You are
  free to add other CSS class attributes as illustrated in the example
  above.</div>
 <dl>
@@ -3327,9 +3328,9 @@ implements org.apache.click.Stateful</pre>
 <pre class="methodSignature">protected&nbsp;void&nbsp;renderFooterRow&#8203;(<a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
 <div class="block">Render the table header footer row. This method is designed to be
  overridden by Table subclasses which include a custom footer row.
- <p/>
+ <p>
  By default this method does not render a table footer.
- <p/>
+ <p>
  An example:
  <pre class="prettyprint">
  private Table table;
@@ -3349,7 +3350,7 @@ implements org.apache.click.Stateful</pre>
 
  public void renderTotalHoldingsFooter(HtmlStringBuffer buffer,) {
      double total = 0;
-     for (int i = 0; i < table.getRowList().size(); i++) {
+     for (int i = 0; i &lt; table.getRowList().size(); i++) {
          Customer customer = (Customer) table.getRowList().get(i);
          if (customer.getHoldings() != null) {
              total += customer.getHoldings().doubleValue();
@@ -3359,9 +3360,9 @@ implements org.apache.click.Stateful</pre>
      String format = "&lt;b&gt;Total Holdings&lt;/b&gt;: &nbsp; ${0,number,#,##0.00}";
      String totalDisplay = MessageFormat.format(format, new Object[] { new Double(total) });
 
-     buffer.append("&lt;foot&gt;&lt;tr&gt;&lt;td colspan='4' style='text-align:right'&gt");
+     buffer.append("&lt;foot&gt;&lt;tr&gt;&lt;td colspan='4' style='text-align:right'&gt;");
      buffer.append(totalDisplay);
-     buffer.append("&lt/td&gt&lt/tr&gt&lt/tfoot&gt");
+     buffer.append("&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;");
  }
  </pre></div>
 <dl>
@@ -3428,9 +3429,9 @@ implements org.apache.click.Stateful</pre>
  method to invoke <a href="#renderTableBanner(org.openidentityplatform.openam.click.util.HtmlStringBuffer)"><code>renderTableBanner(HtmlStringBuffer)</code></a> and <a href="#renderPagingControls(org.openidentityplatform.openam.click.util.HtmlStringBuffer)"><code>renderPagingControls(HtmlStringBuffer)</code></a>.</div>
 </div>
 <div class="block">Render the table banner detailing number of rows and number displayed.
- <p/>
- See the <tt>/click-controls.properties</tt> for the HTML templates:
- <tt>table-page-banner</tt> and <tt>table-page-banner-nolinks</tt></div>
+ <p>
+ See the <code>/click-controls.properties</code> for the HTML templates:
+ <code>table-page-banner</code> and <code>table-page-banner-nolinks</code></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>buffer</code> - the StringBuffer to render the paging controls to</dd>
@@ -3451,9 +3452,9 @@ implements org.apache.click.Stateful</pre>
  method to invoke <a href="#renderTableBanner(org.openidentityplatform.openam.click.util.HtmlStringBuffer)"><code>renderTableBanner(HtmlStringBuffer)</code></a> and <a href="#renderPagingControls(org.openidentityplatform.openam.click.util.HtmlStringBuffer)"><code>renderPagingControls(HtmlStringBuffer)</code></a>.</div>
 </div>
 <div class="block">Render the table paging action link controls.
- <p/>
- See the <tt>/click-controls.properties</tt> for the HTML templates:
- <tt>table-page-links</tt> and <tt>table-page-links-nobanner</tt></div>
+ <p>
+ See the <code>/click-controls.properties</code> for the HTML templates:
+ <code>table-page-links</code> and <code>table-page-links-nobanner</code></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>buffer</code> - the StringBuffer to render the paging controls to</dd>

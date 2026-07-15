@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>org.openidentityplatform.openam.click.control.Column</li>
@@ -133,19 +133,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Column</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
-implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></pre>
 <div class="block">Provides the Column table data &lt;td&gt; and table header &lt;th&gt;
  renderer.
 
- <table class='htmlHeader' cellspacing='10'>
+ <table class='htmlHeader'>
+ <caption>Example</caption>
  <tr><td>
 
  <table id="table" class="isi">
+ <caption>Example</caption>
  <thead>
  <tr>
  <th>Id</th>
@@ -171,11 +173,11 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 
  </td></tr></table>
 
- <p/>
+ <p>
 
  The Column object provide column definitions for the <code>Table</code> object.
 
- <h3>Column Options</h3>
+ <h2>Column Options</h2>
 
  The Column class supports a number of rendering options which include:
 
@@ -186,7 +188,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
  <li><a href="#dataClass"><code>dataClass</code></a> - the CSS class for the table data cell</li>
  <li><a href="#dataStyles"><code>dataStyles</code></a> - the CSS styles for the table data cell</li>
  <li><a href="#decorator"><code>decorator</code></a> - the custom column value renderer</li>
- <li><a href="#format"><code>format</code></a> - the <tt>MessageFormat</tt> pattern rendering
+ <li><a href="#format"><code>format</code></a> - the <code>MessageFormat</code> pattern rendering
       the column value</li>
  <li><a href="#headerClass"><code>headerClass</code></a> - the CSS class for the table header cell</li>
  <li><a href="#headerStyles"><code>headerStyles</code></a> - the CSS styles for the table header cell</li>
@@ -195,9 +197,9 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
  <li><a href="#width"><code>width</code></a> - the table cell width property</li>
  </ul>
 
- <h4>Format Pattern</h4>
+ <h2>Format Pattern</h2>
 
- The <a href="#format"><code>format</code></a> property which specifies <a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink"><code>MessageFormat</code></a> pattern
+ The <a href="#format"><code>format</code></a> property which specifies <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink"><code>MessageFormat</code></a> pattern
  a is very useful for formatting column values. For example to render
  formatted number and date values you simply specify:
 
@@ -221,10 +223,10 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
  Column orderIdColumn = <span class="kw">new</span> Column(<span class="st">"order.id"</span>, <span class="st">"Order ID"</span>);
  table.addColumn(orderIdColumn);  </pre>
 
- <h4>Column Decorators</h4>
+ <h2>Column Decorators</h2>
 
  The support custom column value rendering you can specify a <a href="Decorator.html" title="interface in org.openidentityplatform.openam.click.control"><code>Decorator</code></a>
- class on columns. The decorator <tt>render</tt> method is passed the table
+ class on columns. The decorator <code>render</code> method is passed the table
  row object and the page request Context. Using the table row you can access
  all the column values enabling you to render a compound value composed of
  multiple column values. For example:
@@ -243,7 +245,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 
  table.addColumn(column); </pre>
 
- The <tt>Context</tt> parameter of the decorator <tt>render()</tt> method enables you to
+ The <code>Context</code> parameter of the decorator <code>render()</code> method enables you to
  render controls to provide additional functionality. For example:
 
  <pre class="codeJava">
@@ -284,19 +286,18 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
      }
  } </pre>
 
- <h4>Internationalization</h4>
+ <h2>Internationalization</h2>
 
  Column header titles can be localized using the controls parent messages.
  If the column header title value is null, the column will attempt to find a
  localized message in the parent messages using the key:
  <blockquote>
- <tt>getName() + ".headerTitle"</tt>
+ <code>getName() + ".headerTitle"</code>
  </blockquote>
  If not found then the message will be looked up in the
- <tt>/click-control.properties</tt> file using the same key.
+ <code>/click-control.properties</code> file using the same key.
  If a value still cannot be found then the Column name will be converted
- into a header title using the method: <a href="../util/ClickUtils.html#toLabel(java.lang.String)"><code>ClickUtils.toLabel(String)</code></a>.
- <p/></div>
+ into a header title using the method: <a href="../util/ClickUtils.html#toLabel(java.lang.String)"><code>ClickUtils.toLabel(String)</code></a>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="Decorator.html" title="interface in org.openidentityplatform.openam.click.control"><code>Decorator</code></a>, 
@@ -324,7 +325,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#attributes">attributes</a></span></code></th>
 <td class="colLast">
 <div class="block">The Column attributes Map.</div>
@@ -335,18 +336,18 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#autolink">autolink</a></span></code></th>
 <td class="colLast">
 <div class="block">The automatically hyperlink column URL and email address values flag,
- default value is <tt>false</tt>.</div>
+ default value is <code>false</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dataClass">dataClass</a></span></code></th>
 <td class="colLast">
 <div class="block">The column table data &lt;td&gt; CSS class attribute.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dataStyles">dataStyles</a></span></code></th>
 <td class="colLast">
 <div class="block">The Map of column table data &lt;td&gt; CSS style attributes.</div>
@@ -367,28 +368,28 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#format">format</a></span></code></th>
 <td class="colLast">
 <div class="block">The column message format pattern.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#headerClass">headerClass</a></span></code></th>
 <td class="colLast">
 <div class="block">The CSS class attribute of the column header.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#headerStyles">headerStyles</a></span></code></th>
 <td class="colLast">
 <div class="block">The Map of column table header &lt;th&gt; CSS style attributes.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#headerTitle">headerTitle</a></span></code></th>
 <td class="colLast">
 <div class="block">The title of the column header.</div>
@@ -402,35 +403,35 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#messageFormat">messageFormat</a></span></code></th>
 <td class="colLast">
 <div class="block">The optional MessageFormat used to render the column table cell value.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#methodCache">methodCache</a></span></code></th>
 <td class="colLast">
 <div class="block">The method cached for rendering column values.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#name">name</a></span></code></th>
 <td class="colLast">
 <div class="block">The property name of the row object to render.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderId">renderId</a></span></code></th>
 <td class="colLast">
 <div class="block">The column render id attribute status.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sortable">sortable</a></span></code></th>
 <td class="colLast">
 <div class="block">The column sortable status.</div>
@@ -444,14 +445,14 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#titleProperty">titleProperty</a></span></code></th>
 <td class="colLast">
 <div class="block">The property name used to populate the &lt;td&gt; "title" attribute.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#width">width</a></span></code></th>
 <td class="colLast">
 <div class="block">The column HTML &lt;td&gt; width attribute.</div>
@@ -481,14 +482,14 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Column</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Column</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Create a table column with the given property name.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String)">Column</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String)">Column</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</code></th>
 <td class="colLast">
 <div class="block">Create a table column with the given property name and header title.</div>
 </td>
@@ -512,15 +513,15 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(java.lang.String)">getAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(java.lang.String)">getAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the Column HTML attribute with the given name, or null if the
  attribute does not exist.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributes()">getAttributes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Column attributes Map.</div>
@@ -535,7 +536,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getComparator()">getComparator</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the column comparator object, which is used to sort column row
@@ -543,21 +544,21 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDataClass()">getDataClass</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the table data &lt;td&gt; CSS class.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDataStyle(java.lang.String)">getDataStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDataStyle(java.lang.String)">getDataStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the table data &lt;td&gt; CSS style.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDataStyles()">getDataStyles</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Map of table data &lt;td&gt; CSS styles.</div>
@@ -579,45 +580,45 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFormat()">getFormat</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the row column message format pattern.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeaderClass()">getHeaderClass</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the table header &lt;th&gt; CSS class.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeaderStyle(java.lang.String)">getHeaderStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeaderStyle(java.lang.String)">getHeaderStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Return the table header &lt;th&gt; CSS style.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeaderStyles()">getHeaderStyles</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the Map of table header &lt;th&gt; CSS styles.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHeaderTitle()">getHeaderTitle</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the table header &lt;th&gt; title.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the Table and Column id appended: &nbsp; "<tt>table-column</tt>"</div>
+<div class="block">Return the Table and Column id appended: &nbsp; "<code>table-column</code>"</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
@@ -628,30 +629,30 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessageFormat()">getMessageFormat</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the MessageFormat instance used to format the table cell value.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the property name.</div>
 </td>
 </tr>
 <tr id="i18" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProperty(java.lang.Object)">getProperty</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProperty(java.lang.Object)">getProperty</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</code></th>
 <td class="colLast">
 <div class="block">Return the column name property value from the given row object.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProperty(java.lang.String,java.lang.Object)">getProperty</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProperty(java.lang.String,java.lang.Object)">getProperty</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</code></th>
 <td class="colLast">
 <div class="block">Return the column property value from the given row object and property name.</div>
 </td>
@@ -678,14 +679,14 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </td>
 </tr>
 <tr id="i23" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTitleProperty()">getTitleProperty</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the property name used to populate the &lt;td&gt; "title" attribute.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWidth()">getWidth</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the column HTML &lt;td&gt; width attribute.</div>
@@ -714,17 +715,17 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderLink(java.lang.Object,org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderLink</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderLink(java.lang.Object,org.openidentityplatform.openam.click.util.HtmlStringBuffer)">renderLink</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value,
           <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</code></th>
 <td class="colLast">
-<div class="block">Render the given table cell value to the buffer as a <tt>mailto:</tt>
- or <tt>http:</tt> hyperlink, or as an ordinary string if the value is
+<div class="block">Render the given table cell value to the buffer as a <code>mailto:</code>
+ or <code>http:</code> hyperlink, or as an ordinary string if the value is
  determined not be linkable.</div>
 </td>
 </tr>
 <tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTableData(java.lang.Object,org.openidentityplatform.openam.click.util.HtmlStringBuffer,org.openidentityplatform.openam.click.Context,int)">renderTableData</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTableData(java.lang.Object,org.openidentityplatform.openam.click.util.HtmlStringBuffer,org.openidentityplatform.openam.click.Context,int)">renderTableData</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
                <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer,
                org.openidentityplatform.openam.click.Context&nbsp;context,
                int&nbsp;rowIndex)</code></th>
@@ -735,7 +736,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i30" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTableDataContent(java.lang.Object,org.openidentityplatform.openam.click.util.HtmlStringBuffer,org.openidentityplatform.openam.click.Context,int)">renderTableDataContent</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTableDataContent(java.lang.Object,org.openidentityplatform.openam.click.util.HtmlStringBuffer,org.openidentityplatform.openam.click.Context,int)">renderTableDataContent</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
                       <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer,
                       org.openidentityplatform.openam.click.Context&nbsp;context,
                       int&nbsp;rowIndex)</code></th>
@@ -753,8 +754,8 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttribute(java.lang.String,java.lang.String)">setAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttribute(java.lang.String,java.lang.String)">setAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the Column with the given HTML attribute name and value.</div>
 </td>
@@ -769,7 +770,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setComparator(java.util.Comparator)">setComparator</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a>&nbsp;comparator)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setComparator(java.util.Comparator)">setComparator</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a>&nbsp;comparator)</code></th>
 <td class="colLast">
 <div class="block">Set the column comparator object, which is used to sort column row
  values.</div>
@@ -777,15 +778,15 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDataClass(java.lang.String)">setDataClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dataClass)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDataClass(java.lang.String)">setDataClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dataClass)</code></th>
 <td class="colLast">
 <div class="block">Set the table data &lt;td&gt; CSS class.</div>
 </td>
 </tr>
 <tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDataStyle(java.lang.String,java.lang.String)">setDataStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDataStyle(java.lang.String,java.lang.String)">setDataStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the table data &lt;td&gt; CSS style name and value pair.</div>
 </td>
@@ -806,29 +807,29 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i39" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFormat(java.lang.String)">setFormat</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pattern)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFormat(java.lang.String)">setFormat</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pattern)</code></th>
 <td class="colLast">
 <div class="block">Set the row column message format pattern.</div>
 </td>
 </tr>
 <tr id="i40" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderClass(java.lang.String)">setHeaderClass</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;headerClass)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderClass(java.lang.String)">setHeaderClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;headerClass)</code></th>
 <td class="colLast">
 <div class="block">Set the table header &lt;th&gt; CSS class.</div>
 </td>
 </tr>
 <tr id="i41" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderStyle(java.lang.String,java.lang.String)">setHeaderStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderStyle(java.lang.String,java.lang.String)">setHeaderStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the table header &lt;th&gt; CSS style name and value pair.</div>
 </td>
 </tr>
 <tr id="i42" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderTitle(java.lang.String)">setHeaderTitle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHeaderTitle(java.lang.String)">setHeaderTitle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</code></th>
 <td class="colLast">
 <div class="block">Set the table header &lt;th&gt; title.</div>
 </td>
@@ -842,14 +843,14 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i44" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMessageFormat(java.text.MessageFormat)">setMessageFormat</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a>&nbsp;messageFormat)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMessageFormat(java.text.MessageFormat)">setMessageFormat</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a>&nbsp;messageFormat)</code></th>
 <td class="colLast">
 <div class="block">Set the MessageFormat instance used to format the table cell value.</div>
 </td>
 </tr>
 <tr id="i45" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setName(java.lang.String)">setName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Set the property name.</div>
 </td>
@@ -872,12 +873,12 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTable(org.openidentityplatform.openam.click.control.Table)">setTable</a></span>&#8203;(<a href="Table.html" title="class in org.openidentityplatform.openam.click.control">Table</a>&nbsp;table)</code></th>
 <td class="colLast">
-<div class="block">Set the Column's the parent <tt>Table</tt>.</div>
+<div class="block">Set the Column's the parent <code>Table</code>.</div>
 </td>
 </tr>
 <tr id="i49" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTextAlign(java.lang.String)">setTextAlign</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTextAlign(java.lang.String)">setTextAlign</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</code></th>
 <td class="colLast">
 <div class="block">Set the column CSS "text-align" style for the header &lt;th&gt; and
  data &lt;td&gt; elements.</div>
@@ -885,14 +886,14 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i50" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTitleProperty(java.lang.String)">setTitleProperty</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;property)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTitleProperty(java.lang.String)">setTitleProperty</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;property)</code></th>
 <td class="colLast">
 <div class="block">Set the property name used to populate the &lt;td&gt; "title" attribute.</div>
 </td>
 </tr>
 <tr id="i51" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVerticalAlign(java.lang.String)">setVerticalAlign</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVerticalAlign(java.lang.String)">setVerticalAlign</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</code></th>
 <td class="colLast">
 <div class="block">Set the column CSS "vertical-align" style for the header &lt;th&gt; and
  data &lt;td&gt; elements.</div>
@@ -900,7 +901,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 </tr>
 <tr id="i52" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWidth(java.lang.String)">setWidth</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWidth(java.lang.String)">setWidth</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the column HTML &lt;td&gt; width attribute.</div>
 </td>
@@ -910,8 +911,8 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -935,7 +936,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>attributes</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; attributes</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; attributes</pre>
 <div class="block">The Column attributes Map.</div>
 </li>
 </ul>
@@ -947,7 +948,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <h4>autolink</h4>
 <pre>protected&nbsp;boolean autolink</pre>
 <div class="block">The automatically hyperlink column URL and email address values flag,
- default value is <tt>false</tt>.</div>
+ default value is <code>false</code>.</div>
 </li>
 </ul>
 <a id="dataClass">
@@ -956,7 +957,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>dataClass</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> dataClass</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> dataClass</pre>
 <div class="block">The column table data &lt;td&gt; CSS class attribute.</div>
 </li>
 </ul>
@@ -966,7 +967,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>dataStyles</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; dataStyles</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; dataStyles</pre>
 <div class="block">The Map of column table data &lt;td&gt; CSS style attributes.</div>
 </li>
 </ul>
@@ -996,7 +997,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>format</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> format</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> format</pre>
 <div class="block">The column message format pattern.</div>
 </li>
 </ul>
@@ -1006,7 +1007,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>headerClass</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> headerClass</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> headerClass</pre>
 <div class="block">The CSS class attribute of the column header.</div>
 </li>
 </ul>
@@ -1016,7 +1017,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>headerStyles</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; headerStyles</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt; headerStyles</pre>
 <div class="block">The Map of column table header &lt;th&gt; CSS style attributes.</div>
 </li>
 </ul>
@@ -1026,7 +1027,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>headerTitle</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> headerTitle</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> headerTitle</pre>
 <div class="block">The title of the column header.</div>
 </li>
 </ul>
@@ -1040,9 +1041,9 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <div class="block">The maximum column length. If maxLength is greater than 0 and the column
  data string length is greater than maxLength, the rendered value will be
  truncated with an eclipse(...).
- <p/>
+ <p>
  Autolinked email or URL values will not be constrained.
- <p/>
+ <p>
  The default value is 0.</div>
 </li>
 </ul>
@@ -1052,7 +1053,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>messageFormat</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a> messageFormat</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a> messageFormat</pre>
 <div class="block">The optional MessageFormat used to render the column table cell value.</div>
 </li>
 </ul>
@@ -1062,7 +1063,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> name</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> name</pre>
 <div class="block">The property name of the row object to render.</div>
 </li>
 </ul>
@@ -1072,7 +1073,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>renderId</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a> renderId</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a> renderId</pre>
 <div class="block">The column render id attribute status. The default value is false.</div>
 </li>
 </ul>
@@ -1082,7 +1083,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>methodCache</h4>
-<pre>protected transient&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt; methodCache</pre>
+<pre>protected transient&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt; methodCache</pre>
 <div class="block">The method cached for rendering column values.</div>
 </li>
 </ul>
@@ -1092,7 +1093,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>sortable</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a> sortable</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang" class="externalLink">Boolean</a> sortable</pre>
 <div class="block">The column sortable status. The default value is false.</div>
 </li>
 </ul>
@@ -1112,7 +1113,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>titleProperty</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> titleProperty</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> titleProperty</pre>
 <div class="block">The property name used to populate the &lt;td&gt; "title" attribute.
  The default value is null.</div>
 </li>
@@ -1123,7 +1124,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>width</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> width</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> width</pre>
 <div class="block">The column HTML &lt;td&gt; width attribute.</div>
 </li>
 </ul>
@@ -1143,7 +1144,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>Column</h4>
-<pre>public&nbsp;Column&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;Column&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Create a table column with the given property name. The table header
  title will be set as the capitalized property name.</div>
 <dl>
@@ -1158,8 +1159,8 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>Column</h4>
-<pre>public&nbsp;Column&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</pre>
+<pre>public&nbsp;Column&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</pre>
 <div class="block">Create a table column with the given property name and header title.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1176,7 +1177,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <h4>Column</h4>
 <pre>public&nbsp;Column()</pre>
 <div class="block">Create a Column with no name defined.
- <p/>
+ <p>
  <b>Please note</b> the control's name must be defined before it is valid.</div>
 </li>
 </ul>
@@ -1196,7 +1197,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttribute</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the Column HTML attribute with the given name, or null if the
  attribute does not exist.</div>
 <dl>
@@ -1213,11 +1214,11 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setAttribute</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the Column with the given HTML attribute name and value. These
  attributes will be rendered as HTML attributes, for example:
- <p/>
+ <p>
  If there is an existing named attribute in the Column it will be replaced
  with the new value. If the given attribute value is null, any existing
  attribute will be removed.</div>
@@ -1226,7 +1227,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <dd><code>name</code> - the name of the column HTML attribute</dd>
 <dd><code>value</code> - the value of the column HTML attribute</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if attribute name is null</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if attribute name is null</dd>
 </dl>
 </li>
 </ul>
@@ -1236,7 +1237,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttributes</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAttributes()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAttributes()</pre>
 <div class="block">Return the Column attributes Map.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1295,7 +1296,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getComparator</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a>&nbsp;getComparator()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a>&nbsp;getComparator()</pre>
 <div class="block">Return the column comparator object, which is used to sort column row
  values.</div>
 <dl>
@@ -1310,7 +1311,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setComparator</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setComparator&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a>&nbsp;comparator)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setComparator&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html?is-external=true" title="class or interface in java.util" class="externalLink">Comparator</a>&nbsp;comparator)</pre>
 <div class="block">Set the column comparator object, which is used to sort column row
  values.</div>
 <dl>
@@ -1325,7 +1326,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getDataClass</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDataClass()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDataClass()</pre>
 <div class="block">Return the table data &lt;td&gt; CSS class.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1339,7 +1340,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setDataClass</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setDataClass&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dataClass)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDataClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dataClass)</pre>
 <div class="block">Set the table data &lt;td&gt; CSS class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1353,7 +1354,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getDataStyle</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDataStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDataStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the table data &lt;td&gt; CSS style.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1369,8 +1370,8 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setDataStyle</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setDataStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setDataStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the table data &lt;td&gt; CSS style name and value pair.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1399,7 +1400,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getDataStyles</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getDataStyles()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getDataStyles()</pre>
 <div class="block">Return the Map of table data &lt;td&gt; CSS styles.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1470,7 +1471,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getFormat</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getFormat()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getFormat()</pre>
 <div class="block">Return the row column message format pattern.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1484,7 +1485,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setFormat</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setFormat&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pattern)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setFormat&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pattern)</pre>
 <div class="block">Set the row column message format pattern. For example:
 
  <pre class="javaClass">
@@ -1497,15 +1498,16 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
  Column dateColumn = <span class="kw">new</span> Column(<span class="st">"purchaseDate"</span>, <span class="st">"Date"</span>);
  dateColumn.setFormat(<span class="st">"{0,date,dd MMM yyyy}"</span>); </pre>
 
- <h4>MesssageFormat Patterns</h4>
+ <b>MesssageFormat Patterns</b>
 
- <table border='1' cellspacing='0' cellpadding='3'>
-  <tr bgcolor="#ccccff">
+ <table border='1'>
+ <caption>Example</caption>
+  <tr>
    <th id="ft">Format Type
    <th id="fs">Format Style
    <th id="sc">Subformat Created
-  <tr bgcolor="#ffffff">
-   <td bgcolor="#eeeeff" headers="ft" rowspan=5><code>number</code>
+  <tr>
+   <td headers="ft" rowspan=5><code>number</code>
    <td headers="fs"><i>(none)</i>
    <td headers="sc"><code>NumberFormat.getInstance(getLocale())</code>
   <tr>
@@ -1521,7 +1523,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
    <td headers="fs"><i>SubformatPattern</i>
    <td headers="sc"><code>new DecimalFormat(subformatPattern, new DecimalFormatSymbols(getLocale()))</code>
   <tr>
-   <td bgcolor="#eeeeff" headers="ft" rowspan=6><code>date</code>
+   <td headers="ft" rowspan=6><code>date</code>
    <td headers="fs"><i>(none)</i>
    <td headers="sc"><code>DateFormat.getDateInstance(DateFormat.DEFAULT, getLocale())</code>
   <tr>
@@ -1540,7 +1542,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
    <td headers="fs"><i>SubformatPattern</i>
    <td headers="sc"><code>new SimpleDateFormat(subformatPattern, getLocale())</code>
   <tr>
-   <td bgcolor="#eeeeff" headers="ft" rowspan=6><code>time</code>
+   <td headers="ft" rowspan=6><code>time</code>
    <td headers="fs"><i>(none)</i>
    <td headers="sc"><code>DateFormat.getTimeInstance(DateFormat.DEFAULT, getLocale())</code>
   <tr>
@@ -1559,66 +1561,67 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
    <td headers="fs"><i>SubformatPattern</i>
    <td headers="sc"><code>new SimpleDateFormat(subformatPattern, getLocale())</code>
   <tr>
-   <td bgcolor="#eeeeff" headers="ft"><code>choice</code>
+   <td headers="ft"><code>choice</code>
    <td headers="fs"><i>SubformatPattern</i>
    <td headers="sc"><code>new ChoiceFormat(subformatPattern)</code>
  </table>
 
- <h4>DecimalFormat Pattern Characters</h4>
+ <b>DecimalFormat Pattern Characters</b>
 
-  <table border='1' cellspacing='0' cellpadding='3'>
-      <tr bgcolor="#ccccff">
-           <th align=left>Symbol
-           <th align=left>Location
-           <th align=left>Localized?
-           <th align=left>Meaning
-      <tr valign=top>
+  <table border='1'>
+ <caption>Example</caption>
+      <tr>
+           <th>Symbol
+           <th>Location
+           <th>Localized?
+           <th>Meaning
+      <tr>
            <td><code>0</code>
            <td>Number
            <td>Yes
            <td>Digit
-      <tr valign=top bgcolor="#eeeeff">
+      <tr>
            <td><code>#</code>
            <td>Number
            <td>Yes
            <td>Digit, zero shows as absent
-      <tr valign=top>
+      <tr>
            <td><code>.</code>
            <td>Number
            <td>Yes
            <td>Decimal separator or monetary decimal separator
-      <tr valign=top bgcolor="#eeeeff">
+      <tr>
            <td><code>-</code>
            <td>Number
            <td>Yes
            <td>Minus sign
-      <tr valign=top>
+      <tr>
            <td><code>,</code>
            <td>Number
            <td>Yes
            <td>Grouping separator
-      <tr valign=top bgcolor="#eeeeff">
+      <tr>
            <td><code>E</code>
            <td>Number
            <td>Yes
            <td>Separates mantissa and exponent in scientific notation.
                <em>Need not be quoted in prefix or suffix.</em>
-      <tr valign=top>
+      <tr>
            <td><code>;</code>
            <td>Subpattern boundary
            <td>Yes
            <td>Separates positive and negative subpatterns
-      <tr valign=top bgcolor="#eeeeff">
+      <tr>
            <td><code>%</code>
            <td>Prefix or suffix
            <td>Yes
            <td>Multiply by 100 and show as percentage
-      <tr valign=top>
+      <tr>
            <td><code>&#92;u2030</code>
            <td>Prefix or suffix
            <td>Yes
            <td>Multiply by 1000 and show as per mille
-      <tr valign=top bgcolor="#eeeeff">
+      <tr>
            <td><code>&#164;</code> (<code>&#92;u00A4</code>)
            <td>Prefix or suffix
            <td>No
@@ -1626,7 +1629,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
                doubled, replaced by international currency symbol.
                If present in a pattern, the monetary decimal separator
                is used instead of the decimal separator.
-      <tr valign=top>
+      <tr>
            <td><code>'</code>
            <td>Prefix or suffix
            <td>No
@@ -1636,20 +1639,21 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
                itself, use two in a row: <code>"# o''clock"</code>.
   </table>
 
- <h4>SimpleDateFormat Pattern Characters</h4>
+ <b>SimpleDateFormat Pattern Characters</b>
 
-  <table border="1" cellspacing="0" cellpadding="3">
-  <tr bgcolor="#ccccff">
-           <th align=left>Letter
-           <th align=left>Date or Time Component
-           <th align=left>Presentation
-           <th align=left>Examples
+  <table border="1">
+ <caption>Example</caption>
+  <tr>
+           <th>Letter
+           <th>Date or Time Component
+           <th>Presentation
+           <th>Examples
        <tr>
            <td><code>G</code>
            <td>Era designator
            <td>Text
            <td><code>AD</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>y</code>
            <td>Year
            <td>Year
@@ -1659,7 +1663,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Month in year
            <td>Month
            <td><code>July</code>; <code>Jul</code>; <code>07</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>w</code>
            <td>Week in year
            <td>Number
@@ -1669,7 +1673,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Week in month
            <td>Number
            <td><code>2</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>D</code>
            <td>Day in year
            <td>Number
@@ -1679,7 +1683,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Day in month
            <td>Number
            <td><code>10</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>F</code>
            <td>Day of week in month
            <td>Number
@@ -1689,7 +1693,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Day in week
            <td>Text
            <td><code>Tuesday</code>; <code>Tue</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>a</code>
            <td>Am/pm marker
            <td>Text
@@ -1699,7 +1703,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Hour in day (0-23)
            <td>Number
            <td><code>0</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>k</code>
            <td>Hour in day (1-24)
            <td>Number
@@ -1709,7 +1713,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Hour in am/pm (0-11)
            <td>Number
            <td><code>0</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>h</code>
            <td>Hour in am/pm (1-12)
            <td>Number
@@ -1719,7 +1723,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Minute in hour
            <td>Number
            <td><code>30</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>s</code>
            <td>Second in minute
            <td>Number
@@ -1729,7 +1733,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
            <td>Millisecond
            <td>Number
            <td><code>978</code>
-       <tr bgcolor="#eeeeff">
+       <tr>
            <td><code>z</code>
            <td>Time zone
            <td>General time zone
@@ -1784,7 +1788,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getMessageFormat</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a>&nbsp;getMessageFormat()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a>&nbsp;getMessageFormat()</pre>
 <div class="block">Return the MessageFormat instance used to format the table cell value.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1798,7 +1802,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setMessageFormat</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setMessageFormat&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a>&nbsp;messageFormat)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setMessageFormat&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">MessageFormat</a>&nbsp;messageFormat)</pre>
 <div class="block">Set the MessageFormat instance used to format the table cell value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1813,7 +1817,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getName()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getName()</pre>
 <div class="block">Return the property name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1827,7 +1831,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setName</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setName&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setName&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Set the property name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1841,7 +1845,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeaderClass</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeaderClass()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeaderClass()</pre>
 <div class="block">Return the table header &lt;th&gt; CSS class.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1855,7 +1859,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setHeaderClass</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setHeaderClass&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;headerClass)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setHeaderClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;headerClass)</pre>
 <div class="block">Set the table header &lt;th&gt; CSS class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1869,7 +1873,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeaderStyle</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeaderStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeaderStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Return the table header &lt;th&gt; CSS style.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1885,8 +1889,8 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setHeaderStyle</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setHeaderStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setHeaderStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the table header &lt;th&gt; CSS style name and value pair.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1915,7 +1919,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeaderStyles</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getHeaderStyles()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getHeaderStyles()</pre>
 <div class="block">Return the Map of table header &lt;th&gt; CSS styles.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1929,19 +1933,18 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeaderTitle</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeaderTitle()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHeaderTitle()</pre>
 <div class="block">Return the table header &lt;th&gt; title.
- <p/>
+ <p>
  If the header title value is null, this method will attempt to find a
  localized message in the parent messages using the key:
  <blockquote>
- <tt>getName() + ".headerTitle"</tt>
+ <code>getName() + ".headerTitle"</code>
  </blockquote>
  If not found then the message will be looked up in the
- <tt>/click-control.properties</tt> file using the same key.
+ <code>/click-control.properties</code> file using the same key.
  If a value still cannot be found then the Column name will be converted
- into a header title using the method: <a href="../util/ClickUtils.html#toLabel(java.lang.String)"><code>ClickUtils.toLabel(String)</code></a>
- <p/></div>
+ into a header title using the method: <a href="../util/ClickUtils.html#toLabel(java.lang.String)"><code>ClickUtils.toLabel(String)</code></a></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the table header title</dd>
@@ -1954,7 +1957,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setHeaderTitle</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setHeaderTitle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setHeaderTitle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;title)</pre>
 <div class="block">Set the table header &lt;th&gt; title.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1968,9 +1971,9 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getId</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
-<div class="block">Return the Table and Column id appended: &nbsp; "<tt>table-column</tt>"
- <p/>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getId()</pre>
+<div class="block">Return the Table and Column id appended: &nbsp; "<code>table-column</code>"
+ <p>
  Use the field the "id" attribute value if defined, or the name otherwise.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2059,10 +2062,10 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <li class="blockList">
 <h4>setTable</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setTable&#8203;(<a href="Table.html" title="class in org.openidentityplatform.openam.click.control">Table</a>&nbsp;table)</pre>
-<div class="block">Set the Column's the parent <tt>Table</tt>.</div>
+<div class="block">Set the Column's the parent <code>Table</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>table</code> - Column's parent <tt>Table</tt></dd>
+<dd><code>table</code> - Column's parent <code>Table</code></dd>
 </dl>
 </li>
 </ul>
@@ -2072,13 +2075,13 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setTextAlign</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setTextAlign&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTextAlign&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</pre>
 <div class="block">Set the column CSS "text-align" style for the header &lt;th&gt; and
  data &lt;td&gt; elements.  Valid values include:
- <tt>[left, right, center]</tt></div>
+ <code>[left, right, center]</code></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>align</code> - the CSS "text-align" value: <tt>[left, right, center]</tt></dd>
+<dd><code>align</code> - the CSS "text-align" value: <code>[left, right, center]</code></dd>
 </dl>
 </li>
 </ul>
@@ -2088,7 +2091,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getTitleProperty</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTitleProperty()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTitleProperty()</pre>
 <div class="block">Return the property name used to populate the &lt;td&gt; "title" attribute.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2102,7 +2105,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setTitleProperty</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setTitleProperty&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;property)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTitleProperty&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;property)</pre>
 <div class="block">Set the property name used to populate the &lt;td&gt; "title" attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2116,11 +2119,11 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setVerticalAlign</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setVerticalAlign&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setVerticalAlign&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;align)</pre>
 <div class="block">Set the column CSS "vertical-align" style for the header &lt;th&gt; and
  data &lt;td&gt; elements. Valid values include:
- <tt>[baseline | sub | super | top | text-top | middle | bottom |
- text-bottom | &lt;percentage&gt; | &lt;length&gt; | inherit]</tt></div>
+ <code>[baseline | sub | super | top | text-top | middle | bottom |
+ text-bottom | &lt;percentage&gt; | &lt;length&gt; | inherit]</code></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>align</code> - the CSS "vertical-align" value</dd>
@@ -2133,7 +2136,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getWidth</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWidth()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWidth()</pre>
 <div class="block">Return the column HTML &lt;td&gt; width attribute.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -2147,7 +2150,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setWidth</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setWidth&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setWidth&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Set the column HTML &lt;td&gt; width attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2161,7 +2164,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>renderTableData</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;renderTableData&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
+<pre class="methodSignature">public&nbsp;void&nbsp;renderTableData&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
                             <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer,
                             org.openidentityplatform.openam.click.Context&nbsp;context,
                             int&nbsp;rowIndex)</pre>
@@ -2198,16 +2201,16 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getProperty</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getProperty&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getProperty&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</pre>
 <div class="block">Return the column name property value from the given row object.
- <p/>
- If the row object is a <tt>Map</tt> this method will attempt to return
+ <p>
+ If the row object is a <code>Map</code> this method will attempt to return
  the map value for the column name. The row map lookup will be performed
  using the property name, if a value is not found the property name in
  uppercase will be used, if a value is still not found the property name
  in lowercase will be used. If a map value is still not found then this
  method will return null.
- <p/>
+ <p>
  Object property values can also be specified using a path expression.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2215,7 +2218,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the named row object property value</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang" class="externalLink">RuntimeException</a></code> - if an error occurred obtaining the property</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang" class="externalLink">RuntimeException</a></code> - if an error occurred obtaining the property</dd>
 </dl>
 </li>
 </ul>
@@ -2225,17 +2228,17 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getProperty</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getProperty&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;getProperty&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row)</pre>
 <div class="block">Return the column property value from the given row object and property name.
- <p/>
- If the row object is a <tt>Map</tt> this method will attempt to return
+ <p>
+ If the row object is a <code>Map</code> this method will attempt to return
  the map value for the column. The row map lookup will be performed using
  the property name, if a value is not found the property name in uppercase
  will be used, if a value is still not found the property name in lowercase
  will be used. If a map value is still not found then this method will
  return null.
- <p/>
+ <p>
  Object property values can also be specified using a path expression.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -2244,7 +2247,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the named row object property value</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang" class="externalLink">RuntimeException</a></code> - if an error occurred obtaining the property</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang" class="externalLink">RuntimeException</a></code> - if an error occurred obtaining the property</dd>
 </dl>
 </li>
 </ul>
@@ -2254,7 +2257,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>renderTableDataContent</h4>
-<pre class="methodSignature">protected&nbsp;void&nbsp;renderTableDataContent&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
+<pre class="methodSignature">protected&nbsp;void&nbsp;renderTableDataContent&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;row,
                                       <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer,
                                       org.openidentityplatform.openam.click.Context&nbsp;context,
                                       int&nbsp;rowIndex)</pre>
@@ -2274,10 +2277,10 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>renderLink</h4>
-<pre class="methodSignature">protected&nbsp;boolean&nbsp;renderLink&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value,
+<pre class="methodSignature">protected&nbsp;boolean&nbsp;renderLink&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;value,
                              <a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
-<div class="block">Render the given table cell value to the buffer as a <tt>mailto:</tt>
- or <tt>http:</tt> hyperlink, or as an ordinary string if the value is
+<div class="block">Render the given table cell value to the buffer as a <code>mailto:</code>
+ or <code>http:</code> hyperlink, or as an ordinary string if the value is
  determined not be linkable.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -156,8 +156,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bindVariableInGlobalScope(java.lang.String,java.lang.Object)">bindVariableInGlobalScope</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bindVariableInGlobalScope(java.lang.String,java.lang.Object)">bindVariableInGlobalScope</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Binds the given object to the given variable name in the global scope of all scripts evaluated via this
  script evaluator.</div>
@@ -166,7 +166,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#evaluateScript(org.forgerock.openam.scripting.ScriptObject,javax.script.Bindings)">evaluateScript</a></span>&#8203;(<a href="ScriptObject.html" title="class in org.forgerock.openam.scripting">ScriptObject</a>&nbsp;script,
-              <a href="https://docs.oracle.com/javase/8/docs/api/javax/script/Bindings.html?is-external=true" title="class or interface in javax.script" class="externalLink">Bindings</a>&nbsp;bindings)</code></th>
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.scripting/javax/script/Bindings.html?is-external=true" title="class or interface in javax.script" class="externalLink">Bindings</a>&nbsp;bindings)</code></th>
 <td class="colLast">
 <div class="block">Evaluates the given script object using an appropriate script engine for the language of the script.</div>
 </td>
@@ -195,11 +195,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>evaluateScript</h4>
 <pre class="methodSignature">&lt;T&gt;&nbsp;T&nbsp;evaluateScript&#8203;(<a href="ScriptObject.html" title="class in org.forgerock.openam.scripting">ScriptObject</a>&nbsp;script,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/javax/script/Bindings.html?is-external=true" title="class or interface in javax.script" class="externalLink">Bindings</a>&nbsp;bindings)
-              throws <a href="https://docs.oracle.com/javase/8/docs/api/javax/script/ScriptException.html?is-external=true" title="class or interface in javax.script" class="externalLink">ScriptException</a></pre>
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.scripting/javax/script/Bindings.html?is-external=true" title="class or interface in javax.script" class="externalLink">Bindings</a>&nbsp;bindings)
+              throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.scripting/javax/script/ScriptException.html?is-external=true" title="class or interface in javax.script" class="externalLink">ScriptException</a></pre>
 <div class="block">Evaluates the given script object using an appropriate script engine for the language of the script. Any
  bindings associated with the script will be passed to the engine when the script is evaluated.
- <p/>
+ <p>
  There are three scope levels at which variables can be set:
  <ol>
      <li><em>Global</em> variables are set using the <a href="#bindVariableInGlobalScope(java.lang.String,java.lang.Object)"><code>bindVariableInGlobalScope(String, Object)</code></a> method,
@@ -220,9 +220,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the result of evaluating the script, or null if no result produced.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/script/ScriptException.html?is-external=true" title="class or interface in javax.script" class="externalLink">ScriptException</a></code> - if an error occurs evaluating the script.</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ClassCastException</a></code> - if the result is not of the expected type.</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if no scripting engine can be located for the given scripting language.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.scripting/javax/script/ScriptException.html?is-external=true" title="class or interface in javax.script" class="externalLink">ScriptException</a></code> - if an error occurs evaluating the script.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassCastException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ClassCastException</a></code> - if the result is not of the expected type.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - if no scripting engine can be located for the given scripting language.</dd>
 </dl>
 </li>
 </ul>
@@ -232,8 +232,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>bindVariableInGlobalScope</h4>
-<pre class="methodSignature">void&nbsp;bindVariableInGlobalScope&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;object)</pre>
+<pre class="methodSignature">void&nbsp;bindVariableInGlobalScope&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;object)</pre>
 <div class="block">Binds the given object to the given variable name in the global scope of all scripts evaluated via this
  script evaluator. This is intended to be used to bind common API components such as HTTP clients etc that should
  be available to all scripts. For per-script state to initialise, use the bindings element on the script object
@@ -243,8 +243,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>name</code> - the name of the variable to bind the object to.</dd>
 <dd><code>object</code> - the object to bind into the global scope of all scripts.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if either name or object is empty.</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is an empty string.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if either name or object is empty.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if the name is an empty string.</dd>
 </dl>
 </li>
 </ul>

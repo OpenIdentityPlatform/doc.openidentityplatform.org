@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>org.forgerock.openam.blacklist.CTSBlacklist&lt;T&gt;</li>
@@ -141,12 +141,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public final class <span class="typeNameLabel">CTSBlacklist&lt;T extends <a href="Blacklistable.html" title="interface in org.forgerock.openam.blacklist">Blacklistable</a>&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements <a href="Blacklist.html" title="interface in org.forgerock.openam.blacklist">Blacklist</a>&lt;T&gt;</pre>
 <div class="block">Entry blacklist that stores blacklisted entries in the CTS until they expire. A stable ID is stored in the CTS
  for each entry that has been blacklisted. Normal CTS reaper process will remove entries from the blacklist
  after they have expired.
- <p/>
+ <p>
  The fields used by this class are:
  <ul>
      <li><a href="../tokens/CoreTokenField.html#TOKEN_TYPE"><code>CoreTokenField.TOKEN_TYPE</code></a> - the CTS token type.</li>
@@ -157,7 +157,7 @@ implements <a href="Blacklist.html" title="interface in org.forgerock.openam.bla
      <li><a href="../tokens/CoreTokenField.html#STRING_ONE"><code>CoreTokenField.STRING_ONE</code></a> - the ID of the <em>server</em> on which the entry was first
      blacklisted. From <a href="../../../../com/iplanet/services/naming/WebtopNamingQuery.html#getAMServerID()"><code>WebtopNamingQuery.getAMServerID()</code></a>.</li>
  </ul>
- <p/>
+ <p>
  In addition to blacklisting entries and checking the blacklist, this class also periodically polls the CTS for
  blacklist changes made on other servers since the last check. This is used to send local notifications to
  subscribed blacklist <a href="Blacklist.Listener.html" title="interface in org.forgerock.openam.blacklist"><code>Blacklist.Listener</code></a>s for <em>all</em> blacklist entries, not just local ones. This feature is
@@ -206,7 +206,7 @@ implements <a href="Blacklist.html" title="interface in org.forgerock.openam.bla
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.openam.cts.CTSPersistentStore,org.forgerock.openam.tokens.TokenType,java.util.concurrent.ScheduledExecutorService,org.forgerock.openam.shared.concurrency.ThreadMonitor,com.iplanet.services.naming.WebtopNamingQuery,long,long)">CTSBlacklist</a></span>&#8203;(<a href="../cts/CTSPersistentStore.html" title="interface in org.forgerock.openam.cts">CTSPersistentStore</a>&nbsp;cts,
             <a href="../tokens/TokenType.html" title="enum in org.forgerock.openam.tokens">TokenType</a>&nbsp;tokenType,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ScheduledExecutorService</a>&nbsp;scheduler,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ScheduledExecutorService</a>&nbsp;scheduler,
             <a href="../shared/concurrency/ThreadMonitor.html" title="class in org.forgerock.openam.shared.concurrency">ThreadMonitor</a>&nbsp;threadMonitor,
             <a href="../../../../com/iplanet/services/naming/WebtopNamingQuery.html" title="class in com.iplanet.services.naming">WebtopNamingQuery</a>&nbsp;serverConfig,
             long&nbsp;purgeDelayMs,
@@ -257,8 +257,8 @@ implements <a href="Blacklist.html" title="interface in org.forgerock.openam.bla
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +284,7 @@ implements <a href="Blacklist.html" title="interface in org.forgerock.openam.bla
 <h4>CTSBlacklist</h4>
 <pre>public&nbsp;CTSBlacklist&#8203;(<a href="../cts/CTSPersistentStore.html" title="interface in org.forgerock.openam.cts">CTSPersistentStore</a>&nbsp;cts,
                     <a href="../tokens/TokenType.html" title="enum in org.forgerock.openam.tokens">TokenType</a>&nbsp;tokenType,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ScheduledExecutorService</a>&nbsp;scheduler,
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ScheduledExecutorService</a>&nbsp;scheduler,
                     <a href="../shared/concurrency/ThreadMonitor.html" title="class in org.forgerock.openam.shared.concurrency">ThreadMonitor</a>&nbsp;threadMonitor,
                     <a href="../../../../com/iplanet/services/naming/WebtopNamingQuery.html" title="class in com.iplanet.services.naming">WebtopNamingQuery</a>&nbsp;serverConfig,
                     long&nbsp;purgeDelayMs,

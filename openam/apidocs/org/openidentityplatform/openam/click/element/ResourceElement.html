@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li><a href="Element.html" title="class in org.openidentityplatform.openam.click.element">org.openidentityplatform.openam.click.element.Element</a></li>
@@ -138,7 +138,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
@@ -150,28 +150,28 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <div class="block">Provides a base class for rendering HEAD resources of an HTML page, for
  example JavaScript (&lt;script&gt;) and Cascading Stylesheets
  (&lt;link&gt;/&lt;style&gt;).
- <p/>
+ <p>
  Subclasses should override <a href="Element.html#getTag()"><code>Element.getTag()</code></a> to return a specific HTML tag.
- <p/>
+ <p>
  Below are some example Resource elements:
  <ul>
- <li><code>JsImport</code>, for importing <tt>external</tt> JavaScript using the
+ <li><code>JsImport</code>, for importing <code>external</code> JavaScript using the
  &lt;script&gt; element.</li>
- <li><code>JsScript</code>, for including <tt>inline</tt> JavaScript using the
+ <li><code>JsScript</code>, for including <code>inline</code> JavaScript using the
  &lt;script&gt; element.</li>
- <li><code>CssImport</code>, for importing <tt>external</tt> Cascading Stylesheets
+ <li><code>CssImport</code>, for importing <code>external</code> Cascading Stylesheets
  using the &lt;link&gt; element.</li>
- <li><code>CssStyle</code>, for including <tt>inline</tt> Cascading Stylesheets
+ <li><code>CssStyle</code>, for including <code>inline</code> Cascading Stylesheets
  using the &lt;style&gt; element.</li>
  </ul>
 
- <a name="remove-duplicates"></a>
- <h3>Remove duplicates</h3>
+ <a id="remove-duplicates"></a>
+ <h2>Remove duplicates</h2>
  Click will ensure that duplicate Resource elements are removed by checking
  the <a href="#isUnique()"><code>isUnique()</code></a> property. Thus if the same Resource is imported
  multiple times by the Page or different Controls, only one Resource will be
- rendered, if <a href="#isUnique()"><code>isUnique()</code></a> returns <tt>true</tt>.
- <p/>
+ rendered, if <a href="#isUnique()"><code>isUnique()</code></a> returns <code>true</code>.
+ <p>
  The rules for defining a unique Resource is as follows:
  <ul>
  <li><code>JsImport</code> and <code>CssImport</code> is unique based on the
@@ -223,8 +223,8 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
      }
  } </pre>
 
- <a name="versioning"></a>
- <h3>Automatic Resource versioning</h3>
+ <a id="versioning"></a>
+ <h2>Automatic Resource versioning</h2>
 
  ResourceElement provides the ability to automatically version elements
  according to Yahoo Performance Rule: <a target="_blank" href="http://developer.yahoo.com/performance/rules.html#expires">Add an Expires or a Cache-Control Header</a>.
@@ -233,34 +233,34 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
  suggests <em>versioning</em> the resources so that each new release of the
  web application renders resources with different paths, forcing the browser
  to download the new resources.
- <p/>
+ <p>
  For detailed information on versioning JavaScript, Css and image resources
  see the <a href="../../../../extras-api/org/apache/click/extras/filter/PerformanceFilter.html">PerformanceFilter</a>.
- <p/>
+ <p>
  To enable versioning of JavaScript, Css and image resources the following
  conditions must be met:
  <ul>
  <li>the <code>ClickUtils.ENABLE_RESOURCE_VERSION</code>
- request attribute must be set to <tt>true</tt></li>
+ request attribute must be set to <code>true</code></li>
  <li>the application mode must be either "production" or "profile"</li>
  <li>the <code>application version</code> must be set</li>
  </ul>
  <b>Please note:</b> <a href="../../../../extras-api/org/apache/click/extras/filter/PerformanceFilter.html">PerformanceFilter</a>
  handles the above steps for you.
 
- <a name="conditional-comment"></a>
- <h3>Conditional comment support for Internet Explorer</h3>
+ <a id="conditional-comment"></a>
+ <h2>Conditional comment support for Internet Explorer</h2>
 
  Sometimes it is necessary to provide additional JavaScript and Css for
  Internet Explorer because it deviates quite often from the standards.
- <p/>
+ <p>
  Conditional comments allows you to wrap the resource in a special comment
  which only IE understands, meaning other browsers won't process the resource.
- <p/>
+ <p>
  You can read more about conditional comments
  <a target="_blank" href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx#syntax">here</a>
  and <a target="_blank" href="http://www.quirksmode.org/css/condcom.html">here</a>
- <p/>
+ <p>
  It has to be said that IE7 and up has much better support for Css, thus
  conditional comments are mostly used for IE6 and below.
  <pre class="prettyprint">
@@ -315,35 +315,35 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#IF_IE">IF_IE</a></span></code></th>
 <td class="colLast">
 <div class="block">A predefined conditional comment to test if browser is IE.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#IF_IE7">IF_IE7</a></span></code></th>
 <td class="colLast">
 <div class="block">A predefined conditional comment to test if browser is IE7.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#IF_LESS_THAN_IE7">IF_LESS_THAN_IE7</a></span></code></th>
 <td class="colLast">
 <div class="block">A predefined conditional comment to test if browser is less than IE7.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#IF_LESS_THAN_IE9">IF_LESS_THAN_IE9</a></span></code></th>
 <td class="colLast">
 <div class="block">A predefined conditional comment to test if browser is less than IE9.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#IF_LESS_THAN_OR_EQUAL_TO_IE7">IF_LESS_THAN_OR_EQUAL_TO_IE7</a></span></code></th>
 <td class="colLast">
 <div class="block">A predefined conditional comment to test if browser is less than
@@ -390,18 +390,18 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConditionalComment()">getConditionalComment</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return Internal Explorer's <tt>conditional comment</tt> to wrap the
+<div class="block">Return Internal Explorer's <code>conditional comment</code> to wrap the
  Resource with.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVersionIndicator()">getVersionIndicator</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the <tt>version indicator</tt> to be appended to the resource
+<div class="block">Return the <code>version indicator</code> to be appended to the resource
  path.</div>
 </td>
 </tr>
@@ -430,7 +430,7 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setConditionalComment(java.lang.String)">setConditionalComment</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;conditionalComment)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setConditionalComment(java.lang.String)">setConditionalComment</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;conditionalComment)</code></th>
 <td class="colLast">
 <div class="block">Set Internet Explorer's conditional comment to wrap the Resource with.</div>
 </td>
@@ -444,9 +444,9 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVersionIndicator(java.lang.String)">setVersionIndicator</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;versionIndicator)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVersionIndicator(java.lang.String)">setVersionIndicator</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;versionIndicator)</code></th>
 <td class="colLast">
-<div class="block">Set the <tt>version indicator</tt> to be appended to the resource path.</div>
+<div class="block">Set the <code>version indicator</code> to be appended to the resource path.</div>
 </td>
 </tr>
 </table>
@@ -461,8 +461,8 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -486,9 +486,9 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>IF_IE</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_IE</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_IE</pre>
 <div class="block">A predefined conditional comment to test if browser is IE. Value:
- <tt>[if IE]</tt>.</div>
+ <code>[if IE]</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.element.ResourceElement.IF_IE">Constant Field Values</a></dd>
@@ -501,9 +501,9 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>IF_LESS_THAN_IE7</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_LESS_THAN_IE7</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_LESS_THAN_IE7</pre>
 <div class="block">A predefined conditional comment to test if browser is less than IE7.
- Value: <tt>[if lt IE 7]</tt>.</div>
+ Value: <code>[if lt IE 7]</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.element.ResourceElement.IF_LESS_THAN_IE7">Constant Field Values</a></dd>
@@ -516,9 +516,9 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>IF_IE7</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_IE7</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_IE7</pre>
 <div class="block">A predefined conditional comment to test if browser is IE7. Value:
- <tt>[if IE 7]</tt>.</div>
+ <code>[if IE 7]</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.element.ResourceElement.IF_IE7">Constant Field Values</a></dd>
@@ -531,9 +531,9 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>IF_LESS_THAN_OR_EQUAL_TO_IE7</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_LESS_THAN_OR_EQUAL_TO_IE7</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_LESS_THAN_OR_EQUAL_TO_IE7</pre>
 <div class="block">A predefined conditional comment to test if browser is less than
- or equal to IE7. Value: <tt>[if lte IE 7]</tt>.</div>
+ or equal to IE7. Value: <code>[if lte IE 7]</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.element.ResourceElement.IF_LESS_THAN_OR_EQUAL_TO_IE7">Constant Field Values</a></dd>
@@ -546,9 +546,9 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockListLast">
 <li class="blockList">
 <h4>IF_LESS_THAN_IE9</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_LESS_THAN_IE9</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> IF_LESS_THAN_IE9</pre>
 <div class="block">A predefined conditional comment to test if browser is less than IE9.
- Value: <tt>[if lt IE 9]</tt>.</div>
+ Value: <code>[if lt IE 9]</code>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.openidentityplatform.openam.click.element.ResourceElement.IF_LESS_THAN_IE9">Constant Field Values</a></dd>
@@ -590,12 +590,12 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>getVersionIndicator</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getVersionIndicator()</pre>
-<div class="block">Return the <tt>version indicator</tt> to be appended to the resource
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getVersionIndicator()</pre>
+<div class="block">Return the <code>version indicator</code> to be appended to the resource
  path.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the <tt>version indicator</tt> to be appended to the resource
+<dd>the <code>version indicator</code> to be appended to the resource
  path.</dd>
 </dl>
 </li>
@@ -606,8 +606,8 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>setVersionIndicator</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setVersionIndicator&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;versionIndicator)</pre>
-<div class="block">Set the <tt>version indicator</tt> to be appended to the resource path.</div>
+<pre class="methodSignature">public&nbsp;void&nbsp;setVersionIndicator&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;versionIndicator)</pre>
+<div class="block">Set the <code>version indicator</code> to be appended to the resource path.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>versionIndicator</code> - the version indicator to be appended to the
@@ -623,7 +623,7 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <h4>isUnique</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isUnique()</pre>
 <div class="block">Returns whether or not the Resource unique. This method returns
- <tt>true</tt> if the <a href="Element.html#getId()"><code>ID</code></a> attribute is defined,
+ <code>true</code> if the <a href="Element.html#getId()"><code>ID</code></a> attribute is defined,
  false otherwise.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -656,7 +656,7 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <h4>setRenderId</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setRenderId&#8203;(boolean&nbsp;renderId)</pre>
 <div class="block">Set the element render <a href="Element.html#getId()"><code>ID</code></a> attribute status.
- <p/>
+ <p>
  If renderId is false the element <a href="Element.html#getId()"><code>ID</code></a> attribute will not
  be rendered.</div>
 <dl>
@@ -671,8 +671,8 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>getConditionalComment</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getConditionalComment()</pre>
-<div class="block">Return Internal Explorer's <tt>conditional comment</tt> to wrap the
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getConditionalComment()</pre>
+<div class="block">Return Internal Explorer's <code>conditional comment</code> to wrap the
  Resource with.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -686,7 +686,7 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <ul class="blockList">
 <li class="blockList">
 <h4>setConditionalComment</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setConditionalComment&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;conditionalComment)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setConditionalComment&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;conditionalComment)</pre>
 <div class="block">Set Internet Explorer's conditional comment to wrap the Resource with.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -704,7 +704,7 @@ extends <a href="Element.html" title="class in org.openidentityplatform.openam.c
 <pre class="methodSignature">public&nbsp;void&nbsp;render&#8203;(<a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
 <div class="block">Render the HTML representation of the Resource element to the specified
  buffer.
- <p/>
+ <p>
  If <a href="Element.html#getTag()"><code>Element.getTag()</code></a> returns null, this method will return an empty
  string.</div>
 <dl>

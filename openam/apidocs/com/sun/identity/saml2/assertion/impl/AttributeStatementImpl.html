@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.identity.saml2.assertion.impl.AttributeStatementImpl</li>
@@ -137,27 +137,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">AttributeStatementImpl</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements <a href="../AttributeStatement.html" title="interface in com.sun.identity.saml2.assertion">AttributeStatement</a></pre>
 <div class="block">This is a default implementation of <code>AttributeStatement</code>.
 
  The <code>AttributeStatement</code> element describes a statement by
  the SAML authority asserting that the assertion subject is associated with
  the specified attributes. It is of type <code>AttributeStatementType</code>.
- <p>
  <pre>
- &lt;complexType name="AttributeStatementType">
-   &lt;complexContent>
+ &lt;complexType name="AttributeStatementType"&gt;
+   &lt;complexContent&gt;
      &lt;extension base="{urn:oasis:names:tc:SAML:2.0:assertion}
-       StatementAbstractType">
-       &lt;choice maxOccurs="unbounded">
-         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}Attribute"/>
+       StatementAbstractType"&gt;
+       &lt;choice maxOccurs="unbounded"&gt;
+         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}Attribute"/&gt;
          &lt;element ref="{urn:oasis:names:tc:SAML:2.0:assertion}
-         EncryptedAttribute"/>
-       &lt;/choice>
-     &lt;/extension>
-   &lt;/complexContent>
- &lt;/complexType>
+         EncryptedAttribute"/&gt;
+       &lt;/choice&gt;
+     &lt;/extension&gt;
+   &lt;/complexContent&gt;
+ &lt;/complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -185,14 +184,14 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">AttributeStatementImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">AttributeStatementImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)</code></th>
 <td class="colLast">
 <div class="block">Class constructor with <code>AttributeStatement</code> in xml string
  format.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">AttributeStatementImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">AttributeStatementImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
 <td class="colLast">
 <div class="block">Class constructor with <code>AttributeStatement</code> in
  <code>Element</code> format.</div>
@@ -217,14 +216,14 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute()">getAttribute</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>Attribute</code>(s) of the statement.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../EncryptedAttribute.html" title="interface in com.sun.identity.saml2.assertion">EncryptedAttribute</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../EncryptedAttribute.html" title="interface in com.sun.identity.saml2.assertion">EncryptedAttribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEncryptedAttribute()">getEncryptedAttribute</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>EncryptedAttribute</code>(s) of the statement.</div>
@@ -246,27 +245,27 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttribute(java.util.List)">setAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttribute(java.util.List)">setAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets <code>Attribute</code>(s) of the statement.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEncryptedAttribute(java.util.List)">setEncryptedAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEncryptedAttribute(java.util.List)">setEncryptedAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets <code>EncryptedAttribute</code>(s) of the statement.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString()">toXMLString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a String representation of the element.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString(boolean,boolean)">toXMLString</a></span>&#8203;(boolean&nbsp;includeNS,
            boolean&nbsp;declareNS)</code></th>
 <td class="colLast">
@@ -278,8 +277,8 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -314,7 +313,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockList">
 <li class="blockList">
 <h4>AttributeStatementImpl</h4>
-<pre>public&nbsp;AttributeStatementImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
+<pre>public&nbsp;AttributeStatementImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
                        throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Class constructor with <code>AttributeStatement</code> in
  <code>Element</code> format.</div>
@@ -330,7 +329,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AttributeStatementImpl</h4>
-<pre>public&nbsp;AttributeStatementImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)
+<pre>public&nbsp;AttributeStatementImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xmlString)
                        throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Class constructor with <code>AttributeStatement</code> in xml string
  format.</div>
@@ -356,7 +355,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttribute</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;&nbsp;getAttribute()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;&nbsp;getAttribute()</pre>
 <div class="block">Returns <code>Attribute</code>(s) of the statement.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -374,7 +373,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockList">
 <li class="blockList">
 <h4>setAttribute</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;&nbsp;value)
+<pre class="methodSignature">public&nbsp;void&nbsp;setAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;&nbsp;value)
                   throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets <code>Attribute</code>(s) of the statement.</div>
 <dl>
@@ -395,7 +394,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockList">
 <li class="blockList">
 <h4>getEncryptedAttribute</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../EncryptedAttribute.html" title="interface in com.sun.identity.saml2.assertion">EncryptedAttribute</a>&gt;&nbsp;getEncryptedAttribute()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../EncryptedAttribute.html" title="interface in com.sun.identity.saml2.assertion">EncryptedAttribute</a>&gt;&nbsp;getEncryptedAttribute()</pre>
 <div class="block">Returns <code>EncryptedAttribute</code>(s) of the statement.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -413,7 +412,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockList">
 <li class="blockList">
 <h4>setEncryptedAttribute</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setEncryptedAttribute&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)
+<pre class="methodSignature">public&nbsp;void&nbsp;setEncryptedAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;value)
                            throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Sets <code>EncryptedAttribute</code>(s) of the statement.</div>
 <dl>
@@ -465,7 +464,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
                    throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Returns a String representation of the element.</div>
 <dl>
@@ -485,7 +484,7 @@ implements <a href="../AttributeStatement.html" title="interface in com.sun.iden
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNS,
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNS,
                           boolean&nbsp;declareNS)
                    throws <a href="../../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
 <div class="block">Returns a String representation of the element.</div>

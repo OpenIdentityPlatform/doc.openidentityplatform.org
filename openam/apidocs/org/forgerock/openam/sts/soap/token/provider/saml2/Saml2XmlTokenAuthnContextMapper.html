@@ -156,16 +156,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContext(java.util.List)">getAuthnContext</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContext(java.util.List)">getAuthnContext</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</code></th>
 <td class="colLast">
 <div class="block">Returns the SAML2 AuthnContext class reference corresponding the the SupportingToken specified in the SecurityPolicy
  bindings protecting a soap-sts instance.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContextForDelegatedToken(java.util.List,org.apache.cxf.sts.request.ReceivedToken)">getAuthnContextForDelegatedToken</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthnContextForDelegatedToken(java.util.List,org.apache.cxf.sts.request.ReceivedToken)">getAuthnContextForDelegatedToken</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
                                 org.apache.cxf.sts.request.ReceivedToken&nbsp;delegatedToken)</code></th>
 <td class="colLast">
 <div class="block">Returns the SAML2 AuthnContext class reference for delegated tokens (specified as part of the ActAs/OnBehalfOf
@@ -195,7 +195,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthnContext</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContext&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContext&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield)</pre>
 <div class="block">Returns the SAML2 AuthnContext class reference corresponding the the SupportingToken specified in the SecurityPolicy
  bindings protecting a soap-sts instance.</div>
 <dl>
@@ -204,6 +204,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                                             wss4j. See the DefaultSaml2XmlTokenAuthnContextMapper for details on
                                             how to parse the classes corresponding to this processing.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>A valid AuthnContext value, as defined here: http://docs.oasis-open.org/security/saml/v2.0/saml-authn-context-2.0-os.pdf</dd>
 </dl>
 </li>
 </ul>
@@ -213,7 +214,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getAuthnContextForDelegatedToken</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextForDelegatedToken&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthnContextForDelegatedToken&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.apache.wss4j.dom.handler.WSHandlerResult&gt;&nbsp;securityPolicyBindingTraversalYield,
                                         org.apache.cxf.sts.request.ReceivedToken&nbsp;delegatedToken)</pre>
 <div class="block">Returns the SAML2 AuthnContext class reference for delegated tokens (specified as part of the ActAs/OnBehalfOf
  element in the RequestSecurityToken). The <code>List&lt;WSHandlerResult&gt; </code> which is the yield of the SecurityPolicy binding
@@ -226,6 +227,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                                             how to parse the classes corresponding to this processing.</dd>
 <dd><code>delegatedToken</code> - The token provided as part of the ActAs/OnBehalfOf element specified in the RequestSecurityToken.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>A valid AuthnContext value, as defined here: http://docs.oasis-open.org/security/saml/v2.0/saml-authn-context-2.0-os.pdf</dd>
 </dl>
 </li>
 </ul>

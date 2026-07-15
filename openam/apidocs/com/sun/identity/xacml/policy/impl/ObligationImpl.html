@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.identity.xacml.policy.impl.ObligationImpl</li>
@@ -137,28 +137,27 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">ObligationImpl</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>
 implements <a href="../Obligation.html" title="interface in com.sun.identity.xacml.policy">Obligation</a></pre>
 <div class="block">The <code>Obligation</code> element is a container of 
  one or more <code>AttributeAssignment</code>s issuded by 
  authorization authority.
  
 
- <p>
  <pre>
 
-   &lt;xs:element name="Obligation" type="xacml:ObligationType"/>
-      &lt;xs:complexType name="ObligationType">
-          &lt;xs:sequence>
+   &lt;xs:element name="Obligation" type="xacml:ObligationType"/&gt;
+      &lt;xs:complexType name="ObligationType"&gt;
+          &lt;xs:sequence&gt;
               &lt;xs:element ref="xacml:AttributeAssignment" minOccurs="0" 
-                  maxOccurs="unbounded"/>
-              &lt;/xs:sequence>
+                  maxOccurs="unbounded"/&gt;
+              &lt;/xs:sequence&gt;
               &lt;xs:attribute name="ObligationId" type="xs:anyURI" 
-                  use="required"/>
+                  use="required"/&gt;
               &lt;xs:attribute name="FulfillOn" type="xacml:EffectType" 
-                  use="required"/>
-          &lt;/xs:complexType>
-   &lt;/xs:element>
+                  use="required"/&gt;
+          &lt;/xs:complexType&gt;
+   &lt;/xs:element&gt;
  </pre></div>
 </li>
 </ul>
@@ -186,14 +185,14 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">ObligationImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">ObligationImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)</code></th>
 <td class="colLast">
 <div class="block">This constructor is used to build <code>Obligation</code> object 
  from an XML string.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">ObligationImpl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.w3c.dom.Element)">ObligationImpl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)</code></th>
 <td class="colLast">
 <div class="block">This constructor is used to build <code>ObligationImpl</code> object 
  from a  block of existing XML that has already been built into a DOM.</div>
@@ -218,7 +217,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributeAssignments()">getAttributeAssignments</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns XML elements corresponding to 
@@ -226,14 +225,14 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFulfillOn()">getFulfillOn</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the FullFillOn effect type of this obligation</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObligationId()">getObligationId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the ObligationId of this <code>Obligation</code></div>
@@ -255,7 +254,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttributeAssignments(java.util.List)">setAttributeAssignments</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;attributeAssignments)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttributeAssignments(java.util.List)">setAttributeAssignments</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;attributeAssignments)</code></th>
 <td class="colLast">
 <div class="block">Sets XML elements corresponding to 
  <code>AttributeAssignment</code> elements for  this obligation.</div>
@@ -263,27 +262,27 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFulfillOn(java.lang.String)">setFulfillOn</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fulfillOn)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFulfillOn(java.lang.String)">setFulfillOn</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fulfillOn)</code></th>
 <td class="colLast">
 <div class="block">Sets the FullFillOn effect type of this obligation</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setObligationId(java.net.URI)">setObligationId</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;obligationId)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setObligationId(java.net.URI)">setObligationId</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;obligationId)</code></th>
 <td class="colLast">
 <div class="block">Sets the ObligationId of the <code>Obligation</code></div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString()">toXMLString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a string representation of this object</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString(boolean,boolean)">toXMLString</a></span>&#8203;(boolean&nbsp;includeNSPrefix,
            boolean&nbsp;declareNS)</code></th>
 <td class="colLast">
@@ -295,8 +294,8 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -330,7 +329,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>ObligationImpl</h4>
-<pre>public&nbsp;ObligationImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)
+<pre>public&nbsp;ObligationImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;xml)
                throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">This constructor is used to build <code>Obligation</code> object 
  from an XML string.</div>
@@ -349,7 +348,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ObligationImpl</h4>
-<pre>public&nbsp;ObligationImpl&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
+<pre>public&nbsp;ObligationImpl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Element.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Element</a>&nbsp;element)
                throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">This constructor is used to build <code>ObligationImpl</code> object 
  from a  block of existing XML that has already been built into a DOM.</div>
@@ -357,8 +356,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>element</code> - DOM tree for <code>Request</code> object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>XACML2Exception</code> - if it could not process the Element</dd>
-<dd><code><a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></code></dd>
+<dd><code><a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></code> - if it could not process the Element</dd>
 </dl>
 </li>
 </ul>
@@ -378,7 +376,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>getObligationId</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;getObligationId()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;getObligationId()</pre>
 <div class="block">Returns the ObligationId of this <code>Obligation</code></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -395,7 +393,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>setObligationId</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setObligationId&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;obligationId)
+<pre class="methodSignature">public&nbsp;void&nbsp;setObligationId&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;obligationId)
                      throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Sets the ObligationId of the <code>Obligation</code></div>
 <dl>
@@ -414,7 +412,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>getFulfillOn</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getFulfillOn()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getFulfillOn()</pre>
 <div class="block">Returns the FullFillOn effect type of this obligation</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -430,7 +428,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>setFulfillOn</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setFulfillOn&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fulfillOn)
+<pre class="methodSignature">public&nbsp;void&nbsp;setFulfillOn&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;fulfillOn)
                   throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Sets the FullFillOn effect type of this obligation</div>
 <dl>
@@ -449,7 +447,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttributeAssignments</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getAttributeAssignments()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getAttributeAssignments()</pre>
 <div class="block">Returns XML elements corresponding to 
  <code>AttributeAssignment</code> elements for  this obligation.</div>
 <dl>
@@ -467,7 +465,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>setAttributeAssignments</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setAttributeAssignments&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;attributeAssignments)
+<pre class="methodSignature">public&nbsp;void&nbsp;setAttributeAssignments&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;attributeAssignments)
                              throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Sets XML elements corresponding to 
  <code>AttributeAssignment</code> elements for  this obligation.</div>
@@ -488,7 +486,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
                           boolean&nbsp;declareNS)
                    throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a string representation of this object</div>
@@ -513,7 +511,7 @@ implements <a href="../Obligation.html" title="interface in com.sun.identity.xac
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
                    throws <a href="../../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a string representation of this object</div>
 <dl>

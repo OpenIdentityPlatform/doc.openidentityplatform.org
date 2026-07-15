@@ -107,10 +107,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<th class="colFirst" scope="row"><a href="#com.sun.identity.wsfederation.meta">com.sun.identity.wsfederation.meta</a></th>
+<th class="colFirst" scope="row"><a href="#com.sun.identity.console.federation.model">com.sun.identity.console.federation.model</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<th class="colFirst" scope="row"><a href="#com.sun.identity.wsfederation.meta">com.sun.identity.wsfederation.meta</a></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="#com.sun.identity.wsfederation.profile">com.sun.identity.wsfederation.profile</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -119,6 +123,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </li>
 <li class="blockList">
 <ul class="blockList">
+<li class="blockList">
+<section><a id="com.sun.identity.console.federation.model">
+<!--   -->
+</a>
+<h3>Uses of <a href="../WSFederationMetaException.html" title="class in com.sun.identity.wsfederation.meta">WSFederationMetaException</a> in <a href="../../../console/federation/model/package-summary.html">com.sun.identity.console.federation.model</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../../console/federation/model/package-summary.html">com.sun.identity.console.federation.model</a> that throw <a href="../WSFederationMetaException.html" title="class in com.sun.identity.wsfederation.meta">WSFederationMetaException</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../WSFederationMetaManager.html" title="class in com.sun.identity.wsfederation.meta">WSFederationMetaManager</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFedPropertiesModelImpl.</span><code><span class="memberNameLink"><a href="../../../console/federation/model/WSFedPropertiesModelImpl.html#getWSFederationMetaManager()">getWSFederationMetaManager</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
 <li class="blockList">
 <section><a id="com.sun.identity.wsfederation.meta">
 <!--   -->
@@ -133,15 +159,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#buildX509Certificate(java.lang.String)">buildX509Certificate</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;certAlias)</code></th>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#buildX509Certificate(java.lang.String)">buildX509Certificate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;certAlias)</code></th>
 <td class="colLast">
 <div class="block">Base64 encodes a certificate from the key store.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#createEntityConfig(java.lang.String,com.sun.identity.wsfederation.jaxb.entityconfig.FederationConfigElement)">createEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#createEntityConfig(java.lang.String,com.sun.identity.wsfederation.jaxb.entityconfig.FederationConfigElement)">createEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
                   <a href="../../jaxb/entityconfig/FederationConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">FederationConfigElement</a>&nbsp;config)</code></th>
 <td class="colLast">
 <div class="block">Creates the extended entity configuration under the realm.</div>
@@ -149,7 +175,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#createFederation(java.lang.String,com.sun.identity.wsfederation.jaxb.wsfederation.FederationElement)">createFederation</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#createFederation(java.lang.String,com.sun.identity.wsfederation.jaxb.wsfederation.FederationElement)">createFederation</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
                 <a href="../../jaxb/wsfederation/FederationElement.html" title="interface in com.sun.identity.wsfederation.jaxb.wsfederation">FederationElement</a>&nbsp;federation)</code></th>
 <td class="colLast">
 <div class="block">Creates the standard metadata entity descriptor under the realm.</div>
@@ -157,150 +183,150 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#deleteEntityConfig(java.lang.String,java.lang.String)">deleteEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#deleteEntityConfig(java.lang.String,java.lang.String)">deleteEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
 <td class="colLast">
 <div class="block">Deletes the extended entity configuration under the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#deleteFederation(java.lang.String,java.lang.String)">deleteFederation</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#deleteFederation(java.lang.String,java.lang.String)">deleteFederation</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
 <td class="colLast">
 <div class="block">Deletes the standard metadata entity descriptor under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllEntities(java.lang.String)">getAllEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllEntities(java.lang.String)">getAllEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all entities under the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedEntities(java.lang.String)">getAllHostedEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedEntities(java.lang.String)">getAllHostedEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all hosted entities under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedIdentityProviderEntities(java.lang.String)">getAllHostedIdentityProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedIdentityProviderEntities(java.lang.String)">getAllHostedIdentityProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all hosted identity provider entities under the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedIdentityProviderMetaAliases(java.lang.String)">getAllHostedIdentityProviderMetaAliases</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedIdentityProviderMetaAliases(java.lang.String)">getAllHostedIdentityProviderMetaAliases</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns metaAliases of all hosted identity providers under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedMetaAliasesByRealm(java.lang.String)">getAllHostedMetaAliasesByRealm</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedMetaAliasesByRealm(java.lang.String)">getAllHostedMetaAliasesByRealm</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all the hosted entity metaAliases for a realm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedServiceProviderEntities(java.lang.String)">getAllHostedServiceProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedServiceProviderEntities(java.lang.String)">getAllHostedServiceProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all hosted service provider entities under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedServiceProviderMetaAliases(java.lang.String)">getAllHostedServiceProviderMetaAliases</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllHostedServiceProviderMetaAliases(java.lang.String)">getAllHostedServiceProviderMetaAliases</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns metaAliases of all hosted service providers under the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllRemoteEntities(java.lang.String)">getAllRemoteEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllRemoteEntities(java.lang.String)">getAllRemoteEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all remote entities under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllRemoteIdentityProviderEntities(java.lang.String)">getAllRemoteIdentityProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllRemoteIdentityProviderEntities(java.lang.String)">getAllRemoteIdentityProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all remote identity provider entities under the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllRemoteServiceProviderEntities(java.lang.String)">getAllRemoteServiceProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getAllRemoteServiceProviderEntities(java.lang.String)">getAllRemoteServiceProviderEntities</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns all remote service provider entities under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../jaxb/entityconfig/BaseConfigType.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">BaseConfigType</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getBaseConfig(java.lang.String,java.lang.String)">getBaseConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getBaseConfig(java.lang.String,java.lang.String)">getBaseConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
 <td class="colLast">
 <div class="block">Returns first identity provider's SSO configuration in an entity under
  the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityByMetaAlias(java.lang.String)">getEntityByMetaAlias</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityByMetaAlias(java.lang.String)">getEntityByMetaAlias</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias)</code></th>
 <td class="colLast">
 <div class="block">Returns entity ID associated with the metaAlias.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityByTokenIssuerName(java.lang.String,java.lang.String)">getEntityByTokenIssuerName</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                          <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;issuer)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityByTokenIssuerName(java.lang.String,java.lang.String)">getEntityByTokenIssuerName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;issuer)</code></th>
 <td class="colLast">
 <div class="block">Returns entity ID associated with the token issuer name.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../jaxb/entityconfig/FederationConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">FederationConfigElement</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityConfig(java.lang.String,java.lang.String)">getEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityConfig(java.lang.String,java.lang.String)">getEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
 <td class="colLast">
 <div class="block">Returns extended entity configuration under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../jaxb/wsfederation/FederationElement.html" title="interface in com.sun.identity.wsfederation.jaxb.wsfederation">FederationElement</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityDescriptor(java.lang.String,java.lang.String)">getEntityDescriptor</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                   <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getEntityDescriptor(java.lang.String,java.lang.String)">getEntityDescriptor</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId)</code></th>
 <td class="colLast">
 <div class="block">Returns the standard metadata federation element under the realm.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../jaxb/entityconfig/IDPSSOConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">IDPSSOConfigElement</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getIDPSSOConfig(java.lang.String,java.lang.String)">getIDPSSOConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getIDPSSOConfig(java.lang.String,java.lang.String)">getIDPSSOConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
 <td class="colLast">
 <div class="block">Returns first identity provider's SSO configuration in an entity under
  the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getRoleByMetaAlias(java.lang.String)">getRoleByMetaAlias</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getRoleByMetaAlias(java.lang.String)">getRoleByMetaAlias</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias)</code></th>
 <td class="colLast">
 <div class="block">Returns role of an entity based on its metaAlias.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../jaxb/entityconfig/SPSSOConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">SPSSOConfigElement</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getSPSSOConfig(java.lang.String,java.lang.String)">getSPSSOConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#getSPSSOConfig(java.lang.String,java.lang.String)">getSPSSOConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId)</code></th>
 <td class="colLast">
 <div class="block">Returns first service provider's SSO configuration in an entity under
  the realm.</div>
@@ -308,9 +334,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#isTrustedProvider(java.lang.String,java.lang.String,java.lang.String)">isTrustedProvider</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;trustedEntityId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#isTrustedProvider(java.lang.String,java.lang.String,java.lang.String)">isTrustedProvider</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;federationId,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;trustedEntityId)</code></th>
 <td class="colLast">
 <div class="block">Determines whether two entities are in the same circle of trust
  under the realm.</div>
@@ -318,9 +344,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationCOTUtils.</span><code><span class="memberNameLink"><a href="../WSFederationCOTUtils.html#removeFromEntityConfig(java.lang.String,java.lang.String,java.lang.String)">removeFromEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationCOTUtils.</span><code><span class="memberNameLink"><a href="../WSFederationCOTUtils.html#removeFromEntityConfig(java.lang.String,java.lang.String,java.lang.String)">removeFromEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId)</code></th>
 <td class="colLast">
 <div class="block">Removes the circle of trust name passed from the <code>cotlist</code>
  attribute in the Entity Config.</div>
@@ -328,7 +354,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#setEntityConfig(java.lang.String,com.sun.identity.wsfederation.jaxb.entityconfig.FederationConfigElement)">setEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#setEntityConfig(java.lang.String,com.sun.identity.wsfederation.jaxb.entityconfig.FederationConfigElement)">setEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
                <a href="../../jaxb/entityconfig/FederationConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">FederationConfigElement</a>&nbsp;config)</code></th>
 <td class="colLast">
 <div class="block">Sets the extended entity configuration under the realm.</div>
@@ -336,14 +362,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#setFederation(java.lang.String,com.sun.identity.wsfederation.jaxb.wsfederation.FederationElement)">setFederation</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#setFederation(java.lang.String,com.sun.identity.wsfederation.jaxb.wsfederation.FederationElement)">setFederation</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
              <a href="../../jaxb/wsfederation/FederationElement.html" title="interface in com.sun.identity.wsfederation.jaxb.wsfederation">FederationElement</a>&nbsp;federation)</code></th>
 <td class="colLast">
 <div class="block">Sets the standard metadata entity descriptor under the realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Document.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Document</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Document.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Document</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#sign(com.sun.identity.wsfederation.jaxb.wsfederation.FederationElement,com.sun.identity.wsfederation.jaxb.entityconfig.SPSSOConfigElement,com.sun.identity.wsfederation.jaxb.entityconfig.IDPSSOConfigElement)">sign</a></span>&#8203;(<a href="../../jaxb/wsfederation/FederationElement.html" title="interface in com.sun.identity.wsfederation.jaxb.wsfederation">FederationElement</a>&nbsp;descriptor,
     <a href="../../jaxb/entityconfig/SPSSOConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">SPSSOConfigElement</a>&nbsp;spconfig,
     <a href="../../jaxb/entityconfig/IDPSSOConfigElement.html" title="interface in com.sun.identity.wsfederation.jaxb.entityconfig">IDPSSOConfigElement</a>&nbsp;idpconfig)</code></th>
@@ -356,9 +382,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationCOTUtils.</span><code><span class="memberNameLink"><a href="../WSFederationCOTUtils.html#updateEntityConfig(java.lang.String,java.lang.String,java.lang.String)">updateEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationCOTUtils.</span><code><span class="memberNameLink"><a href="../WSFederationCOTUtils.html#updateEntityConfig(java.lang.String,java.lang.String,java.lang.String)">updateEntityConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId)</code></th>
 <td class="colLast">
 <div class="block">Updates the entity config to add the circle of trust name to the
  <code>cotlist</code> attribute.</div>
@@ -366,9 +392,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#updateProviderKeyInfo(java.lang.String,java.lang.String,java.lang.String,boolean)">updateProviderKeyInfo</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityID,
-                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;certAlias,
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#updateProviderKeyInfo(java.lang.String,java.lang.String,java.lang.String,boolean)">updateProviderKeyInfo</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityID,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;certAlias,
                      boolean&nbsp;isIDP)</code></th>
 <td class="colLast">
 <div class="block">Updates signing or encryption key info for SP or IDP.</div>
@@ -376,15 +402,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#validateMetaAliasForNewEntity(java.lang.String,java.util.List)">validateMetaAliasForNewEntity</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;newMetaAliases)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaManager.</span><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#validateMetaAliasForNewEntity(java.lang.String,java.util.List)">validateMetaAliasForNewEntity</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;newMetaAliases)</code></th>
 <td class="colLast">
 <div class="block">Checks that the provided metaAliases are valid for a new hosted entity in the specified realm.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#verifySignature(org.w3c.dom.Document)">verifySignature</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Document.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Document</a>&nbsp;doc)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">WSFederationMetaSecurityUtils.</span><code><span class="memberNameLink"><a href="../WSFederationMetaSecurityUtils.html#verifySignature(org.w3c.dom.Document)">verifySignature</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.xml/org/w3c/dom/Document.html?is-external=true" title="class or interface in org.w3c.dom" class="externalLink">Document</a>&nbsp;doc)</code></th>
 <td class="colLast">
 <div class="block">Verifies signatures in entity descriptor represented by the 
  <code>Document</code>.</div>
@@ -404,7 +430,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#%3Cinit%3E(java.lang.Object)">WSFederationMetaManager</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;callerToken)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../WSFederationMetaManager.html#%3Cinit%3E(java.lang.Object)">WSFederationMetaManager</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;callerToken)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -425,10 +451,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">IDPSSOUtil.</span><code><span class="memberNameLink"><a href="../../profile/IDPSSOUtil.html#getACSurl(java.lang.String,java.lang.String,java.lang.String)">getACSurl</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply)</code></th>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">IDPSSOUtil.</span><code><span class="memberNameLink"><a href="../../profile/IDPSSOUtil.html#getACSurl(java.lang.String,java.lang.String,java.lang.String)">getACSurl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityId,
+         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply)</code></th>
 <td class="colLast">
 <div class="block">Returns the assertion consumer service (ACS) URL for the entity.</div>
 </td>

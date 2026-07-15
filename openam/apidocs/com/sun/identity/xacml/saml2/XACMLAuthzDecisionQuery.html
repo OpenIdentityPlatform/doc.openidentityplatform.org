@@ -138,46 +138,46 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
  extends SAML Protocol schema type <code>RequestAbstractType</code>.
  It allows an XACML PEP to submit an XACML Request Context in a  SAML
  Query along with other information. This element is an alternative to 
- SAML defined <code><samlp:AuthzDecisionQuery></code> that allows an 
+ SAML defined <code>&lt;samlp:AuthzDecisionQuery&gt;</code> that allows an
  XACML PEP  to communicate with an XACML PDP using SAML2 protocol.
  <p>
  Schema:
  <pre>
 &lt;xs:element name="XACMLAuthzDecisionQuery"
-         type="XACMLAuthzDecisionQueryType"/>
-&lt;xs:complexType name="XACMLAuthzDecisionQueryType">
-  &lt;xs:complexContent>
-    &lt;xs:extension base="samlp:RequestAbstractType">
-      &lt;xs:sequence>
-        &lt;xs:element ref="xacml-context:Request"/>
-      &lt;xs:sequence>
+         type="XACMLAuthzDecisionQueryType"/&gt;
+&lt;xs:complexType name="XACMLAuthzDecisionQueryType"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="samlp:RequestAbstractType"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element ref="xacml-context:Request"/&gt;
+      &lt;xs:sequence&gt;
       &lt;xs:attribute name="InputContextOnly"
                     type="boolean"
                     use="optional"
-                    default="false"/>
+                    default="false"/&gt;
       &lt;xs:attribute name="ReturnContext"
                     type="boolean"
                     use="optional"
-                    default="false"/>
-    &lt;xs:extension>
-  &lt;xs:complexContent>
-&lt;xs:complexType>
+                    default="false"/&gt;
+    &lt;xs:extension&gt;
+  &lt;xs:complexContent&gt;
+&lt;xs:complexType&gt;
  </pre>
 
  Schema for base:
  <pre>
-  &lt;complexType name="RequestAbstractType" abstract="true">
-      &lt;sequence>
-          &lt;element ref="saml:Issuer" minOccurs="0"/>
-          &lt;element ref="ds:Signature" minOccurs="0"/>
-          &lt;element ref="samlp:Extensions" minOccurs="0"/>
-      &lt;sequence>
-      &lt;attribute name="ID" type="ID" use="required"/>
-      &lt;attribute name="Version" type="string" use="required"/>
-      &lt;attribute name="IssueInstant" type="dateTime" use="required"/>
-      &lt;attribute name="Destination" type="anyURI" use="optional"/>
-        &lt;attribute name="Consent" type="anyURI" use="optional"/>
-  &lt;complexType>
+  &lt;complexType name="RequestAbstractType" abstract="true"&gt;
+      &lt;sequence&gt;
+          &lt;element ref="saml:Issuer" minOccurs="0"/&gt;
+          &lt;element ref="ds:Signature" minOccurs="0"/&gt;
+          &lt;element ref="samlp:Extensions" minOccurs="0"/&gt;
+      &lt;sequence&gt;
+      &lt;attribute name="ID" type="ID" use="required"/&gt;
+      &lt;attribute name="Version" type="string" use="required"/&gt;
+      &lt;attribute name="IssueInstant" type="dateTime" use="required"/&gt;
+      &lt;attribute name="Destination" type="anyURI" use="optional"/&gt;
+        &lt;attribute name="Consent" type="anyURI" use="optional"/&gt;
+  &lt;complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -220,7 +220,7 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReturnContext()">getReturnContext</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the XML attribute boolean value which provides means
- to PEP to request that an <code>xacml-context>Request</code>
+ to PEP to request that an <code>xacml-context:Request</code>
  element be included in the <code>XACMlAuthzdecisionStatement</code>
  resulting from the request.</div>
 </td>
@@ -263,14 +263,14 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString()">toXMLString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a string representation of this object</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toXMLString(boolean,boolean)">toXMLString</a></span>&#8203;(boolean&nbsp;includeNSPrefix,
            boolean&nbsp;declareNS)</code></th>
 <td class="colLast">
@@ -361,10 +361,10 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
 <h4>getReturnContext</h4>
 <pre class="methodSignature">boolean&nbsp;getReturnContext()</pre>
 <div class="block">Returns the XML attribute boolean value which provides means
- to PEP to request that an <code>xacml-context>Request</code>
+ to PEP to request that an <code>xacml-context:Request</code>
  element be included in the <code>XACMlAuthzdecisionStatement</code>
  resulting from the request. It also governs the contents of that
- <code.Request</code> element. If this attribite is "true" then the
+ <code>Request</code> element. If this attribite is "true" then the
  PDP SHALL include the <code>xacml-context:Request</code> element in the
  <code>XACMLAuthzDecisionStatement</code> element in the 
  <code>XACMLResponse</code>.  The <code>xacml-context:Request</code> SHALL
@@ -374,7 +374,7 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
  by the PDP may be included.
  If this attribute is "false" then the PDP SHALL NOT include the 
  <code>xacml-context:Request</code> element in the
- <code>XACMLAuthzDecisionStatement<code>.</div>
+ <code>XACMLAuthzDecisionStatement</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>boolean</code> indicating the value
@@ -396,11 +396,10 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
 <dd><code>returnContext</code> - <code>boolean</code> indicating the value
  of this attribute.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>XACMLExceptioXACMLException</code> - if the object is immutable
+<dd><code><a href="../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></code> - if the object is immutable
  An object is considered <code>immutable</code> if <code>
  makeImmutable()</code> has been invoked on it. It can
  be determined by calling <code>isMutable</code> on the object.</dd>
-<dd><code><a href="../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="#getReturnContext()"><code>getReturnContext()</code></a></dd>
 </dl>
@@ -447,7 +446,7 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString&#8203;(boolean&nbsp;includeNSPrefix,
                    boolean&nbsp;declareNS)
             throws <a href="../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a <code>String</code> representation of this object</div>
@@ -472,7 +471,7 @@ extends <a href="../../saml2/protocol/RequestAbstract.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>toXMLString</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toXMLString()
             throws <a href="../common/XACMLException.html" title="class in com.sun.identity.xacml.common">XACMLException</a></pre>
 <div class="block">Returns a string representation of this object</div>
 <dl>

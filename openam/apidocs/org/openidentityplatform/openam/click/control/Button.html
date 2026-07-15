@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li><a href="AbstractControl.html" title="class in org.openidentityplatform.openam.click.control">org.openidentityplatform.openam.click.control.AbstractControl</a></li>
@@ -143,16 +143,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.apache.click.Stateful</code>, <code>org.openidentityplatform.openam.click.Control</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code>, <code>org.apache.click.Stateful</code>, <code>org.openidentityplatform.openam.click.Control</code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Button</span>
 extends <a href="Field.html" title="class in org.openidentityplatform.openam.click.control">Field</a></pre>
 <div class="block">Provides a Button control: &nbsp; &lt;input type='button'/&gt;.
 
- <table class='htmlHeader' cellspacing='6'>
+ <table class='htmlHeader'>
+ <caption>Example</caption>
  <tr><td>
- <input type='button' value='Button' title='Button Control'/>
+ &lt;input type='button' value='Button'/&gt;
  </td></tr>
  </table>
 
@@ -160,24 +161,24 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
  perform client side logic. The Button control provides no server side
  processing. If server side processing is required use <code>Submit</code> instead.
 
- <h3>Button Example</h3>
+ <h2>Button Example</h2>
 
  The example below adds a back button to a form, which when clicked returns
  to the previous page.
 
  <pre class="codeJava">
- Button backButton = <span class="kw">new</span> Button(<span class="st">"back"</span>, <span class="st">" &lt Back "</span>);
+ Button backButton = <span class="kw">new</span> Button(<span class="st">"back"</span>, <span class="st">" &lt; Back "</span>);
  backButton.setOnClick(<span class="st">"history.back();"</span>);
  backButton.setTitle(<span class="st">"Return to previous page"</span>);
  form.add(backButton); </pre>
 
  HTML output:
  <pre class="codeHtml">
- &lt;input type='button' name='back' value=' &lt Back ' onclick='history.back();'
+ &lt;input type='button' name='back' value=' &lt; Back ' onclick='history.back();'
         title='Return to previous page'/&gt; </pre>
 
  See also W3C HTML reference
- <a class="external" target="_blank" title="W3C HTML 4.01 Specification" href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4">INPUT</a></div>
+ <a class="external" target="_blank" href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4">INPUT</a></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Reset</code>, 
@@ -241,14 +242,14 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Button</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Button</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Create a button with the given name.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String)">Button</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;label)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String)">Button</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;label)</code></th>
 <td class="colLast">
 <div class="block">Create a button with the given name and label.</div>
 </td>
@@ -279,24 +280,24 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOnClick()">getOnClick</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the button onclick attribute value, or null if not defined.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTag()">getTag</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the button's html tag: <tt>input</tt>.</div>
+<div class="block">Return the button's html tag: <code>input</code>.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getType()">getType</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Return the input type: '<tt>button</tt>'.</div>
+<div class="block">Return the input type: '<code>button</code>'.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -316,7 +317,7 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOnClick(java.lang.String)">setOnClick</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOnClick(java.lang.String)">setOnClick</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the button onclick attribute value.</div>
 </td>
@@ -340,8 +341,8 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -365,7 +366,7 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <ul class="blockList">
 <li class="blockList">
 <h4>Button</h4>
-<pre>public&nbsp;Button&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;Button&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
 <div class="block">Create a button with the given name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -379,8 +380,8 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <ul class="blockList">
 <li class="blockList">
 <h4>Button</h4>
-<pre>public&nbsp;Button&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;label)</pre>
+<pre>public&nbsp;Button&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;label)</pre>
 <div class="block">Create a button with the given name and label. The button label is
  rendered as the HTML "value" attribute.</div>
 <dl>
@@ -398,7 +399,7 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <h4>Button</h4>
 <pre>public&nbsp;Button()</pre>
 <div class="block">Create a button with no name defined.
- <p/>
+ <p>
  <b>Please note</b> the control's name must be defined before it is valid.</div>
 </li>
 </ul>
@@ -418,8 +419,8 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <ul class="blockList">
 <li class="blockList">
 <h4>getTag</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
-<div class="block">Return the button's html tag: <tt>input</tt>.</div>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
+<div class="block">Return the button's html tag: <code>input</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="AbstractControl.html#getTag()">getTag</a></code>&nbsp;in class&nbsp;<code><a href="AbstractControl.html" title="class in org.openidentityplatform.openam.click.control">AbstractControl</a></code></dd>
@@ -436,7 +437,7 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <ul class="blockList">
 <li class="blockList">
 <h4>getOnClick</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getOnClick()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getOnClick()</pre>
 <div class="block">Returns the button onclick attribute value, or null if not defined.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -450,7 +451,7 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <ul class="blockList">
 <li class="blockList">
 <h4>setOnClick</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setOnClick&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setOnClick&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Sets the button onclick attribute value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -464,11 +465,11 @@ extends <a href="Field.html" title="class in org.openidentityplatform.openam.cli
 <ul class="blockList">
 <li class="blockList">
 <h4>getType</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getType()</pre>
-<div class="block">Return the input type: '<tt>button</tt>'.</div>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getType()</pre>
+<div class="block">Return the input type: '<code>button</code>'.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the input type: '<tt>button</tt>'</dd>
+<dd>the input type: '<code>button</code>'</dd>
 </dl>
 </li>
 </ul>

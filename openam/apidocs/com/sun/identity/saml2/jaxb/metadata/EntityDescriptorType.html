@@ -135,40 +135,39 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public interface <span class="typeNameLabel">EntityDescriptorType</span></pre>
 <div class="block">Java content class for EntityDescriptorType complex type.
  <p>The following schema fragment specifies the expected content contained within this java content object. (defined at file:/Users/allan/A-SVN/trunk/opensso/products/federation/library/xsd/saml2/saml-schema-metadata-2.0.xsd line 129)
- <p>
  <pre>
- &lt;complexType name="EntityDescriptorType">
-   &lt;complexContent>
-     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-       &lt;sequence>
-         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}Signature" minOccurs="0"/>
-         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}Extensions" minOccurs="0"/>
-         &lt;choice>
-           &lt;choice maxOccurs="unbounded">
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}RoleDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}IDPSSODescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}SPSSODescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AuthnAuthorityDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AttributeAuthorityDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}PDPDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}XACMLPDPDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}QueryDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}XACMLAuthzDecisionQueryDescriptor"/>
-             &lt;element ref="{urn:oasis:names:tc:SAML:metadata:ext:query}AttributeQueryDescriptor"/>
-           &lt;/choice>
-           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AffiliationDescriptor"/>
-         &lt;/choice>
-         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}Organization" minOccurs="0"/>
-         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}ContactPerson" maxOccurs="unbounded" minOccurs="0"/>
-         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AdditionalMetadataLocation" maxOccurs="unbounded" minOccurs="0"/>
-       &lt;/sequence>
-       &lt;attribute name="ID" type="{http://www.w3.org/2001/XMLSchema}ID" />
-       &lt;attribute name="cacheDuration" type="{http://www.w3.org/2001/XMLSchema}duration" />
-       &lt;attribute name="entityID" use="required" type="{urn:oasis:names:tc:SAML:2.0:metadata}entityIDType" />
-       &lt;attribute name="validUntil" type="{http://www.w3.org/2001/XMLSchema}dateTime" />
-     &lt;/restriction>
-   &lt;/complexContent>
- &lt;/complexType>
+ &lt;complexType name="EntityDescriptorType"&gt;
+   &lt;complexContent&gt;
+     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+       &lt;sequence&gt;
+         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}Signature" minOccurs="0"/&gt;
+         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}Extensions" minOccurs="0"/&gt;
+         &lt;choice&gt;
+           &lt;choice maxOccurs="unbounded"&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}RoleDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}IDPSSODescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}SPSSODescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AuthnAuthorityDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AttributeAuthorityDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}PDPDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}XACMLPDPDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}QueryDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}XACMLAuthzDecisionQueryDescriptor"/&gt;
+             &lt;element ref="{urn:oasis:names:tc:SAML:metadata:ext:query}AttributeQueryDescriptor"/&gt;
+           &lt;/choice&gt;
+           &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AffiliationDescriptor"/&gt;
+         &lt;/choice&gt;
+         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}Organization" minOccurs="0"/&gt;
+         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}ContactPerson" maxOccurs="unbounded" minOccurs="0"/&gt;
+         &lt;element ref="{urn:oasis:names:tc:SAML:2.0:metadata}AdditionalMetadataLocation" maxOccurs="unbounded" minOccurs="0"/&gt;
+       &lt;/sequence&gt;
+       &lt;attribute name="ID" type="{http://www.w3.org/2001/XMLSchema}ID" /&gt;
+       &lt;attribute name="cacheDuration" type="{http://www.w3.org/2001/XMLSchema}duration" /&gt;
+       &lt;attribute name="entityID" use="required" type="{urn:oasis:names:tc:SAML:2.0:metadata}entityIDType" /&gt;
+       &lt;attribute name="validUntil" type="{http://www.w3.org/2001/XMLSchema}dateTime" /&gt;
+     &lt;/restriction&gt;
+   &lt;/complexContent&gt;
+ &lt;/complexType&gt;
  </pre></div>
 </li>
 </ul>
@@ -191,7 +190,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAdditionalMetadataLocation()">getAdditionalMetadataLocation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the AdditionalMetadataLocation property.</div>
@@ -205,21 +204,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCacheDuration()">getCacheDuration</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the cacheDuration property.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContactPerson()">getContactPerson</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the ContactPerson property.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntityID()">getEntityID</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the entityID property.</div>
@@ -233,7 +232,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getID()">getID</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the id property.</div>
@@ -247,7 +246,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor()">getRoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the RoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor property.</div>
@@ -261,7 +260,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getValidUntil()">getValidUntil</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the validUntil property.</div>
@@ -276,14 +275,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheDuration(java.lang.String)">setCacheDuration</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCacheDuration(java.lang.String)">setCacheDuration</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the cacheDuration property.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEntityID(java.lang.String)">setEntityID</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEntityID(java.lang.String)">setEntityID</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the entityID property.</div>
 </td>
@@ -297,7 +296,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setID(java.lang.String)">setID</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setID(java.lang.String)">setID</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the id property.</div>
 </td>
@@ -318,7 +317,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setValidUntil(java.util.Calendar)">setValidUntil</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setValidUntil(java.util.Calendar)">setValidUntil</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Sets the value of the validUntil property.</div>
 </td>
@@ -346,7 +345,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getRoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getRoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getRoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor()</pre>
 <div class="block">Gets the value of the RoleDescriptorOrIDPSSODescriptorOrSPSSODescriptor property.
  
  <p>
@@ -414,12 +413,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getValidUntil</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;getValidUntil()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;getValidUntil()</pre>
 <div class="block">Gets the value of the validUntil property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>possible object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>Calendar</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>Calendar</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -429,12 +428,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>setValidUntil</h4>
-<pre class="methodSignature">void&nbsp;setValidUntil&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value)</pre>
+<pre class="methodSignature">void&nbsp;setValidUntil&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink">Calendar</a>&nbsp;value)</pre>
 <div class="block">Sets the value of the validUntil property.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - allowed object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>Calendar</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>Calendar</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -444,7 +443,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getContactPerson</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getContactPerson()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getContactPerson()</pre>
 <div class="block">Gets the value of the ContactPerson property.
  
  <p>
@@ -472,12 +471,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getID()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getID()</pre>
 <div class="block">Gets the value of the id property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>possible object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -487,12 +486,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>setID</h4>
-<pre class="methodSignature">void&nbsp;setID&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">void&nbsp;setID&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Sets the value of the id property.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - allowed object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -534,12 +533,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getCacheDuration</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCacheDuration()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getCacheDuration()</pre>
 <div class="block">Gets the value of the cacheDuration property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>possible object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -549,12 +548,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>setCacheDuration</h4>
-<pre class="methodSignature">void&nbsp;setCacheDuration&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">void&nbsp;setCacheDuration&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Sets the value of the cacheDuration property.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - allowed object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -564,7 +563,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getAdditionalMetadataLocation</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getAdditionalMetadataLocation()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&nbsp;getAdditionalMetadataLocation()</pre>
 <div class="block">Gets the value of the AdditionalMetadataLocation property.
  
  <p>
@@ -592,12 +591,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getEntityID</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getEntityID()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getEntityID()</pre>
 <div class="block">Gets the value of the entityID property.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>possible object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -607,12 +606,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>setEntityID</h4>
-<pre class="methodSignature">void&nbsp;setEntityID&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
+<pre class="methodSignature">void&nbsp;setEntityID&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</pre>
 <div class="block">Sets the value of the entityID property.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>value</code> - allowed object is
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>String</code></a></dd>
 </dl>
 </li>
 </ul>

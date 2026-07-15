@@ -131,11 +131,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public interface <span class="typeNameLabel">TemplateService</span></pre>
 <div class="block">Provides a templating service interface.
 
- <h3>Configuration</h3>
+ <h2>Configuration</h2>
  The default TemplateService is <code>VelocityTemplateService</code>.
- <p/>
+ <p>
  However you can instruct Click to use a different implementation by adding
- the following element to your <tt>click.xml</tt> configuration file.
+ the following element to your <code>click.xml</code> configuration file.
 
  <pre class="codeConfig">
  &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
@@ -183,9 +183,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTemplate(java.lang.String,java.util.Map,java.io.Writer)">renderTemplate</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;templatePath,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTemplate(java.lang.String,java.util.Map,java.io.Writer)">renderTemplate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;templatePath,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)</code></th>
 <td class="colLast">
 <div class="block">Render the given template and model to the writer.</div>
 </td>
@@ -193,8 +193,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renderTemplate(org.openidentityplatform.openam.click.Page,java.util.Map,java.io.Writer)">renderTemplate</a></span>&#8203;(org.openidentityplatform.openam.click.Page&nbsp;page,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)</code></th>
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)</code></th>
 <td class="colLast">
 <div class="block">Render the given page to the writer.</div>
 </td>
@@ -223,19 +223,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>onInit</h4>
 <pre class="methodSignature">void&nbsp;onInit&#8203;(jakarta.servlet.ServletContext&nbsp;servletContext)
-     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
+     throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block">Initialize the TemplateService with the given application configuration
  service instance.
- <p/>
+ <p>
  This method is invoked after the TemplateService has been constructed.
- <p/>
+ <p>
  Note you can access <code>ConfigService</code> by invoking
  <a href="../util/ClickUtils.html#getConfigService(jakarta.servlet.ServletContext)"><code>ClickUtils.getConfigService(jakarta.servlet.ServletContext)</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>servletContext</code> - the application servlet context</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if an error occurs initializing the Template Service</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if an error occurs initializing the Template Service</dd>
 </dl>
 </li>
 </ul>
@@ -256,9 +256,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>renderTemplate</h4>
 <pre class="methodSignature">void&nbsp;renderTemplate&#8203;(org.openidentityplatform.openam.click.Page&nbsp;page,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)
-             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>,
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)
+             throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>,
                     org.apache.click.service.TemplateException</pre>
 <div class="block">Render the given page to the writer.</div>
 <dl>
@@ -267,7 +267,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>model</code> - the model to merge with the template and render</dd>
 <dd><code>writer</code> - the writer to send the merged template and model data to</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - if an IO error occurs</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - if an IO error occurs</dd>
 <dd><code>org.apache.click.service.TemplateException</code> - if template error occurs</dd>
 </dl>
 </li>
@@ -278,10 +278,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>renderTemplate</h4>
-<pre class="methodSignature">void&nbsp;renderTemplate&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;templatePath,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
-                    <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)
-             throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>,
+<pre class="methodSignature">void&nbsp;renderTemplate&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;templatePath,
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;?&gt;&nbsp;model,
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html?is-external=true" title="class or interface in java.io" class="externalLink">Writer</a>&nbsp;writer)
+             throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>,
                     org.apache.click.service.TemplateException</pre>
 <div class="block">Render the given template and model to the writer.</div>
 <dl>
@@ -290,7 +290,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>model</code> - the model to merge with the template and render</dd>
 <dd><code>writer</code> - the writer to send the merged template and model data to</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - if an IO error occurs</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - if an IO error occurs</dd>
 <dd><code>org.apache.click.service.TemplateException</code> - if template error occurs</dd>
 </dl>
 </li>

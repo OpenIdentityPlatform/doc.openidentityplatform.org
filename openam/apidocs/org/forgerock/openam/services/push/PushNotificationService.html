@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>org.forgerock.openam.services.push.PushNotificationService</li>
@@ -133,7 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">PushNotificationService</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">The PushNotificationManager holds a map of instantiated PushNotificationDelegates to their realm in which they exist.
  The PushNotificationManager produces PushNotificationDelegates in accordance with the PushNotificationDelegate
  interface, using a provided PushNotificationDelegateFactory per realm's instantiated service.
@@ -146,7 +146,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 
  If no delegate has been configured, the service will attempt to load the config for that realm before accessing
  the delegate instance. Updating the service config via the service interface (after the service has been
- instantiated) also causes the attempt to load the config & mint a delegate.
+ instantiated) also causes the attempt to load the config &amp; mint a delegate.
 
  Later changes in the config will update the delegateFactory and depending upon the delegate's implementation of
  the isRequireNewDelegate(PushNotificationServiceConfig) method may require the generation of a new delegate. If
@@ -175,8 +175,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.sun.identity.shared.debug.Debug,java.util.concurrent.ConcurrentMap,java.util.concurrent.ConcurrentMap,org.forgerock.openam.services.push.PushNotificationServiceConfigHelperFactory,org.forgerock.openam.services.push.dispatch.MessageDispatcherFactory)">PushNotificationService</a></span>&#8203;(<a href="../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegate.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegate</a>&gt;&nbsp;pushRealmMap,
-                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegateFactory.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegateFactory</a>&gt;&nbsp;pushFactoryMap,
+                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegate.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegate</a>&gt;&nbsp;pushRealmMap,
+                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegateFactory.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegateFactory</a>&gt;&nbsp;pushFactoryMap,
                        <a href="PushNotificationServiceConfigHelperFactory.html" title="class in org.forgerock.openam.services.push">PushNotificationServiceConfigHelperFactory</a>&nbsp;configHelperFactory,
                        <a href="dispatch/MessageDispatcherFactory.html" title="class in org.forgerock.openam.services.push.dispatch">MessageDispatcherFactory</a>&nbsp;messageDispatcherFactory)</code></th>
 <td class="colLast">
@@ -203,45 +203,45 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthenticationMessagePredicatesFor(java.lang.String)">getAuthenticationMessagePredicatesFor</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthenticationMessagePredicatesFor(java.lang.String)">getAuthenticationMessagePredicatesFor</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Retrieve the message predicates (if any) specific to the delegate implementation for the given realm,
  which must be passed during authentication message(s).</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthServiceAddress(java.lang.String)">getAuthServiceAddress</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAuthServiceAddress(java.lang.String)">getAuthServiceAddress</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns the relative location of the authentication service endpoint in this realm.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="dispatch/MessageDispatcher.html" title="class in org.forgerock.openam.services.push.dispatch">MessageDispatcher</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessageDispatcher(java.lang.String)">getMessageDispatcher</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessageDispatcher(java.lang.String)">getMessageDispatcher</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Retrieve the MessageDispatcher message return-route object for this realm's delegate.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegistrationMessagePredicatesFor(java.lang.String)">getRegistrationMessagePredicatesFor</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegistrationMessagePredicatesFor(java.lang.String)">getRegistrationMessagePredicatesFor</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Retrieve the message predicates (if any) specific to the delegate implementation for the given realm,
  which must be passed during registration message(s).</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegServiceAddress(java.lang.String)">getRegServiceAddress</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRegServiceAddress(java.lang.String)">getRegServiceAddress</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Returns the relative location of the registration service endpoint in this realm.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(java.lang.String)">init</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init(java.lang.String)">init</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Initializes the PushNotification system for this realm.</div>
 </td>
@@ -256,7 +256,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#send(org.forgerock.openam.services.push.PushMessage,java.lang.String)">send</a></span>&#8203;(<a href="PushMessage.html" title="class in org.forgerock.openam.services.push">PushMessage</a>&nbsp;message,
-    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">
 <div class="block">Primary method of this class.</div>
 </td>
@@ -266,8 +266,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -293,8 +293,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>PushNotificationService</h4>
 <pre>@Inject
 public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegate.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegate</a>&gt;&nbsp;pushRealmMap,
-                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegateFactory.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegateFactory</a>&gt;&nbsp;pushFactoryMap,
+                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegate.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegate</a>&gt;&nbsp;pushRealmMap,
+                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">ConcurrentMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="PushNotificationDelegateFactory.html" title="interface in org.forgerock.openam.services.push">PushNotificationDelegateFactory</a>&gt;&nbsp;pushFactoryMap,
                                <a href="PushNotificationServiceConfigHelperFactory.html" title="class in org.forgerock.openam.services.push">PushNotificationServiceConfigHelperFactory</a>&nbsp;configHelperFactory,
                                <a href="dispatch/MessageDispatcherFactory.html" title="class in org.forgerock.openam.services.push.dispatch">MessageDispatcherFactory</a>&nbsp;messageDispatcherFactory)</pre>
 <div class="block">Constructor (called by Guice), registers a listener for this class against all
@@ -336,7 +336,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <li class="blockList">
 <h4>send</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;send&#8203;(<a href="PushMessage.html" title="class in org.forgerock.openam.services.push">PushMessage</a>&nbsp;message,
-                 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
           throws <a href="PushNotificationException.html" title="class in org.forgerock.openam.services.push">PushNotificationException</a></pre>
 <div class="block">Primary method of this class. Used to communicate via the appropriate delegate for this realm out
  to a Push communication service such as SNS.</div>
@@ -355,7 +355,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <ul class="blockList">
 <li class="blockList">
 <h4>init</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;init&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+<pre class="methodSignature">public&nbsp;void&nbsp;init&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
           throws <a href="PushNotificationException.html" title="class in org.forgerock.openam.services.push">PushNotificationException</a></pre>
 <div class="block">Initializes the PushNotification system for this realm. If the system is already up-to-date and
  operational in the realm, this call will make no changes.</div>
@@ -373,7 +373,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <ul class="blockList">
 <li class="blockList">
 <h4>getRegServiceAddress</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getRegServiceAddress&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getRegServiceAddress&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
                             throws <a href="PushNotificationException.html" title="class in org.forgerock.openam.services.push">PushNotificationException</a></pre>
 <div class="block">Returns the relative location of the registration service endpoint in this realm.</div>
 <dl>
@@ -392,7 +392,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <ul class="blockList">
 <li class="blockList">
 <h4>getMessageDispatcher</h4>
-<pre class="methodSignature">public&nbsp;<a href="dispatch/MessageDispatcher.html" title="class in org.forgerock.openam.services.push.dispatch">MessageDispatcher</a>&nbsp;getMessageDispatcher&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+<pre class="methodSignature">public&nbsp;<a href="dispatch/MessageDispatcher.html" title="class in org.forgerock.openam.services.push.dispatch">MessageDispatcher</a>&nbsp;getMessageDispatcher&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
                                        throws org.forgerock.json.resource.NotFoundException</pre>
 <div class="block">Retrieve the MessageDispatcher message return-route object for this realm's delegate.</div>
 <dl>
@@ -411,7 +411,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <ul class="blockList">
 <li class="blockList">
 <h4>getAuthServiceAddress</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthServiceAddress&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getAuthServiceAddress&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
                              throws <a href="PushNotificationException.html" title="class in org.forgerock.openam.services.push">PushNotificationException</a></pre>
 <div class="block">Returns the relative location of the authentication service endpoint in this realm.</div>
 <dl>
@@ -430,7 +430,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <ul class="blockList">
 <li class="blockList">
 <h4>getRegistrationMessagePredicatesFor</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getRegistrationMessagePredicatesFor&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getRegistrationMessagePredicatesFor&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
                                                    throws <a href="PushNotificationException.html" title="class in org.forgerock.openam.services.push">PushNotificationException</a></pre>
 <div class="block">Retrieve the message predicates (if any) specific to the delegate implementation for the given realm,
  which must be passed during registration message(s).</div>
@@ -450,7 +450,7 @@ public&nbsp;PushNotificationService&#8203;(<a href="../../../../../com/sun/ident
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getAuthenticationMessagePredicatesFor</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getAuthenticationMessagePredicatesFor&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="dispatch/Predicate.html" title="interface in org.forgerock.openam.services.push.dispatch">Predicate</a>&gt;&nbsp;getAuthenticationMessagePredicatesFor&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)
                                                      throws <a href="PushNotificationException.html" title="class in org.forgerock.openam.services.push">PushNotificationException</a></pre>
 <div class="block">Retrieve the message predicates (if any) specific to the delegate implementation for the given realm,
  which must be passed during authentication message(s).</div>

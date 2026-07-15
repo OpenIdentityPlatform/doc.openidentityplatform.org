@@ -130,7 +130,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public interface <span class="typeNameLabel">CTSOperationsMonitoringStore</span></pre>
 <div class="block">A data structure for storing monitoring information about CTS operations.
- <br/>
+ <br>
  The CTS will use an instance of this data structure to store information about operations as and when they occur
  and then the CTS monitoring framework will us the same instance to pull information out to send to clients
  as monitoring requests are made.</div>
@@ -254,10 +254,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                        <a href="../CTSOperation.html" title="enum in org.forgerock.openam.cts">CTSOperation</a>&nbsp;operation,
                        boolean&nbsp;success)</pre>
 <div class="block">Adds a Token operation into the monitoring store.
- <br/>
+ <br>
  The operation is mapped to the type of the token. The operations per configurable period and cumulative count
  will be updated for the token type and operation.
- <br/>
+ <br>
  Passing in <code>null</code> as the token will mean that the operation is not mapped to a particular token
  type, this is for operations such as delete and list as the type of token cannot be determined.
  The operations per configurable period and cumulative count will be updated for the operation.</div>
@@ -278,10 +278,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature">double&nbsp;getAverageOperationsPerPeriod&#8203;(<a href="../../tokens/TokenType.html" title="enum in org.forgerock.openam.tokens">TokenType</a>&nbsp;type,
                                      <a href="../CTSOperation.html" title="enum in org.forgerock.openam.cts">CTSOperation</a>&nbsp;operation)</pre>
 <div class="block">Gets the average rate of operations made in a given period.
- <br/>
+ <br>
  Will return the number of the specified operation made on the specified type token in a given
  (configurable) period.
- <br/>
+ <br>
  Passing in <code>null</code> as the operation will mean that the method will return the number of the specified
  operation made on tokens, which the type cannot be determined, i.e. Delete and List operations.</div>
 <dl>
@@ -302,10 +302,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature">long&nbsp;getMinimumOperationsPerPeriod&#8203;(<a href="../../tokens/TokenType.html" title="enum in org.forgerock.openam.tokens">TokenType</a>&nbsp;type,
                                    <a href="../CTSOperation.html" title="enum in org.forgerock.openam.cts">CTSOperation</a>&nbsp;operation)</pre>
 <div class="block">Gets the minimum rate of operations made in a given period.
- <br/>
+ <br>
  Will return the number of the specified operation made on the specified type token in a given
  (configurable) period.
- <br/>
+ <br>
  Passing in <code>null</code> as the operation will mean that the method will return the number of the specified
  operation made on tokens, which the type cannot be determined, i.e. Delete and List operations.</div>
 <dl>
@@ -326,10 +326,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature">long&nbsp;getMaximumOperationsPerPeriod&#8203;(<a href="../../tokens/TokenType.html" title="enum in org.forgerock.openam.tokens">TokenType</a>&nbsp;type,
                                    <a href="../CTSOperation.html" title="enum in org.forgerock.openam.cts">CTSOperation</a>&nbsp;operation)</pre>
 <div class="block">Gets the maximum rate of operations made in a given period.
- <br/>
+ <br>
  Will return the number of the specified operation made on the specified type token in a given
  (configurable) period.
- <br/>
+ <br>
  Passing in <code>null</code> as the operation will mean that the method will return the number of the specified
  operation made on tokens, which the type cannot be determined, i.e. Delete and List operations.</div>
 <dl>
@@ -350,10 +350,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature">long&nbsp;getOperationsCumulativeCount&#8203;(<a href="../../tokens/TokenType.html" title="enum in org.forgerock.openam.tokens">TokenType</a>&nbsp;type,
                                   <a href="../CTSOperation.html" title="enum in org.forgerock.openam.cts">CTSOperation</a>&nbsp;operation)</pre>
 <div class="block">Gets the cumulative count of operations made since server start up.
- <br/>
+ <br>
  Will return the total number of the specified operation made on the specified type of token since the server
  stared.
- <br/>
+ <br>
  Passing in <code>null</code> as the operation will mean that the method will return the total number of
  the specified operation made on tokens, which the type cannot be determined, i.e. Delete and List operations.</div>
 <dl>
@@ -373,7 +373,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h4>getOperationFailuresCumulativeCount</h4>
 <pre class="methodSignature">long&nbsp;getOperationFailuresCumulativeCount&#8203;(<a href="../CTSOperation.html" title="enum in org.forgerock.openam.cts">CTSOperation</a>&nbsp;operation)</pre>
 <div class="block">Gets the cumulative count of failures of this operation type since server startup.
- <br/>
+ <br>
  Note that failure counts are not distinguished by token type as in most failure cases this information is not
  available.</div>
 <dl>

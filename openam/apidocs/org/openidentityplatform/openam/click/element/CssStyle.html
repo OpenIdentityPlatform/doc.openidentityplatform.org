@@ -121,7 +121,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li><a href="Element.html" title="class in org.openidentityplatform.openam.click.element">org.openidentityplatform.openam.click.element.Element</a></li>
@@ -143,14 +143,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html?is-external=true" title="class or interface in java.io" class="externalLink">Serializable</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">CssStyle</span>
 extends <a href="ResourceElement.html" title="class in org.openidentityplatform.openam.click.element">ResourceElement</a></pre>
-<div class="block">Provides a Css HEAD element for including <tt>inline</tt> Cascading
+<div class="block">Provides a Css HEAD element for including <code>inline</code> Cascading
  Stylesheets using the &lt;style&gt; tag.
- <p/>
+ <p>
  Example usage:
 
  <pre class="prettyprint">
@@ -170,7 +170,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
      }
  } </pre>
 
- The <tt>cssStyle</tt> instance will render as follows:
+ The <code>cssStyle</code> instance will render as follows:
 
  <pre class="prettyprint">
  &lt;style type="text/css"&gt;
@@ -179,10 +179,10 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 
  Below is an example showing how to render inline CSS from a Velocity
  template.
- <p/>
- First we create a Velocity template <tt>(/css/style-template.css)</tt> which
- contains the variable <tt>$context</tt> that must be replaced at runtime with
- the application <tt>context path</tt>:
+ <p>
+ First we create a Velocity template <code>(/css/style-template.css)</code> which
+ contains the variable <code>$context</code> that must be replaced at runtime with
+ the application <code>context path</code>:
 
  <pre class="prettyprint">
  .blue {
@@ -217,8 +217,8 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
      }
  } </pre>
 
- The <tt>Css</tt> above will render as follows (assuming the context path is
- <tt>myApp</tt>):
+ The <code>Css</code> above will render as follows (assuming the context path is
+ <code>myApp</code>):
 
  <pre class="prettyprint">
  &lt;style type="text/css"&gt;
@@ -227,9 +227,9 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
  }
  &lt;/style&gt; </pre>
 
- <h3>Character data (CDATA) support</h3>
+ <h2>Character data (CDATA) support</h2>
 
- Sometimes it is necessary to wrap <tt>inline</tt> <a href="CssStyle.html" title="class in org.openidentityplatform.openam.click.element"><code>Css</code></a> in
+ Sometimes it is necessary to wrap <code>inline</code> <a href="CssStyle.html" title="class in org.openidentityplatform.openam.click.element"><code>Css</code></a> in
  CDATA tags. Two use cases are common for doing this:
  <ul>
  <li>For XML parsing: When using Ajax one often send back partial
@@ -260,7 +260,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
  Notice the CDATA tags are commented out which ensures older browsers that
  don't understand the CDATA tag, will ignore it and only process the actual
  content.
- <p/>
+ <p>
  For an overview of XHTML validation and CDATA tags please see
  <a target="_blank" href="http://javascript.about.com/library/blxhtml.htm">http://javascript.about.com/library/blxhtml.htm</a>.</div>
 <dl>
@@ -310,14 +310,14 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">CssStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">CssStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</code></th>
 <td class="colLast">
 <div class="block">Construct a new Css style element with the given content.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.util.Map)">CssStyle</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template,
-        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.util.Map)">CssStyle</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template,
+        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</code></th>
 <td class="colLast">
 <div class="block">Construct a new Css style element for the given template path
  and template model.</div>
@@ -343,18 +343,18 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;o)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;o)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getContent()">getContent</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the CssStyle content.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getModel()">getModel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the model of the <a href="#setTemplate(java.lang.String)"><code>template</code></a>
@@ -362,14 +362,14 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTag()">getTag</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the Css HTML tag: &lt;style&gt;.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTemplate()">getTemplate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the path of the template to render.</div>
@@ -414,21 +414,21 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setContent(java.lang.String)">setContent</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setContent(java.lang.String)">setContent</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</code></th>
 <td class="colLast">
 <div class="block">Set the CssStyle content.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setModel(java.util.Map)">setModel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setModel(java.util.Map)">setModel</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</code></th>
 <td class="colLast">
 <div class="block">Set the model of the template to render.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTemplate(java.lang.String)">setTemplate</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTemplate(java.lang.String)">setTemplate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template)</code></th>
 <td class="colLast">
 <div class="block">Set the path of the template to render.</div>
 </td>
@@ -452,8 +452,8 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -487,7 +487,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>CssStyle</h4>
-<pre>public&nbsp;CssStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</pre>
+<pre>public&nbsp;CssStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</pre>
 <div class="block">Construct a new Css style element with the given content.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -501,15 +501,15 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CssStyle</h4>
-<pre>public&nbsp;CssStyle&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template,
-                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</pre>
+<pre>public&nbsp;CssStyle&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</pre>
 <div class="block">Construct a new Css style element for the given template path
  and template model.
- <p/>
+ <p>
  When the CssStyle is rendered the template and model will be merged and
  the result will be rendered together with any CssStyle
  <a href="#setContent(java.lang.String)"><code>content</code></a>.
- <p/>
+ <p>
 
  For example:
  <pre class="prettyprint">
@@ -550,7 +550,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>getTag</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTag()</pre>
 <div class="block">Returns the Css HTML tag: &lt;style&gt;.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
@@ -566,7 +566,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>getContent</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getContent()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getContent()</pre>
 <div class="block">Return the CssStyle content.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -580,7 +580,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>setContent</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setContent&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setContent&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;content)</pre>
 <div class="block">Set the CssStyle content.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -626,7 +626,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>getTemplate</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTemplate()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getTemplate()</pre>
 <div class="block">Return the path of the template to render.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -642,9 +642,9 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>setTemplate</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setTemplate&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTemplate&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;template)</pre>
 <div class="block">Set the path of the template to render.
- <p/>
+ <p>
  If the <code>template</code> property is set, the template and <code>model</code>
  will be merged and the result will be rendered together with any CssStyle
  <a href="#setContent(java.lang.String)"><code>content</code></a>.</div>
@@ -660,7 +660,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>getModel</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;getModel()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;getModel()</pre>
 <div class="block">Return the model of the <a href="#setTemplate(java.lang.String)"><code>template</code></a>
  to render.</div>
 <dl>
@@ -677,9 +677,9 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>setModel</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setModel&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setModel&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;model)</pre>
 <div class="block">Set the model of the template to render.
- <p/>
+ <p>
  If the <code>template</code> property is set, the template and <code>model</code>
  will be merged and the result will be rendered together with any CssStyle
  <a href="#setContent(java.lang.String)"><code>content</code></a>.</div>
@@ -712,16 +712,16 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;o)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>o</code> - the object with which to compare this instance with</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the specified object is the same as this object</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang" class="externalLink"><code>Object.equals(Object)</code></a></dd>
+<dd><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink"><code>Object.equals(Object)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -734,11 +734,11 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <pre class="methodSignature">public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a hash code value for this object</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang" class="externalLink"><code>Object.hashCode()</code></a></dd>
+<dd><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink"><code>Object.hashCode()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -751,7 +751,7 @@ extends <a href="ResourceElement.html" title="class in org.openidentityplatform.
 <pre class="methodSignature">protected&nbsp;void&nbsp;renderContent&#8203;(<a href="../util/HtmlStringBuffer.html" title="class in org.openidentityplatform.openam.click.util">HtmlStringBuffer</a>&nbsp;buffer)</pre>
 <div class="block">Render the CssStyle <a href="#setContent(java.lang.String)"><code>content</code></a>
  to the specified buffer.
- <p/>
+ <p>
  <b>Please note:</b> if the <a href="#setTemplate(java.lang.String)"><code>template</code></a>
  property is set, this method will merge the <a href="#setTemplate(java.lang.String)"><code>template</code></a>
  and <a href="#setModel(java.util.Map)"><code>model</code></a> and the result will be

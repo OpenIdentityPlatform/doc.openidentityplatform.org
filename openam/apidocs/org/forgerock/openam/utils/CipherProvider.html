@@ -129,7 +129,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">CipherProvider</span></pre>
-<div class="block">Abstract factory for obtaining <a href="https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html?is-external=true" title="class or interface in javax.crypto" class="externalLink"><code>Cipher</code></a> instances. Implementations may cache or pool ciphers to avoid
+<div class="block">Abstract factory for obtaining <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html?is-external=true" title="class or interface in javax.crypto" class="externalLink"><code>Cipher</code></a> instances. Implementations may cache or pool ciphers to avoid
  expensive initialisation overhead. Callers should ensure that they initialise ciphers returned from a cipher provider
  before making use of them.</div>
 <dl>
@@ -157,7 +157,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html?is-external=true" title="class or interface in javax.crypto" class="externalLink">Cipher</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html?is-external=true" title="class or interface in javax.crypto" class="externalLink">Cipher</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCipher()">getCipher</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns a cipher from the underlying mechanism.</div>
@@ -186,10 +186,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getCipher</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html?is-external=true" title="class or interface in javax.crypto" class="externalLink">Cipher</a>&nbsp;getCipher()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html?is-external=true" title="class or interface in javax.crypto" class="externalLink">Cipher</a>&nbsp;getCipher()</pre>
 <div class="block">Returns a cipher from the underlying mechanism. The algorithm, padding, and provider used by the cipher are
  determined by the underlying CipherProvider implementation.
- The caller should call <a href="https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html?is-external=true#init-int-java.security.Key-java.security.AlgorithmParameters-" title="class or interface in javax.crypto" class="externalLink"><code>Cipher.init(int, java.security.Key, java.security.AlgorithmParameters)</code></a>
+ The caller should call <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html?is-external=true#init(int,java.security.Key,java.security.AlgorithmParameters)" title="class or interface in javax.crypto" class="externalLink"><code>Cipher.init(int, java.security.Key, java.security.AlgorithmParameters)</code></a>
  before making use of the cipher to ensure it is properly initialised.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
