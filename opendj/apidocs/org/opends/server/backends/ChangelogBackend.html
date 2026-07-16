@@ -760,9 +760,13 @@ public static&nbsp;<a href="ChangelogBackend.html" title="class in org.opends.se
 <h4>getEntry</h4>
 <pre class="methodSignature">public&nbsp;<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;getEntry&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)
                throws <a href="../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../api/LocalBackend.html#getEntry(org.forgerock.opendj.ldap.DN)">LocalBackend</a></code></span></div>
 <div class="block">Retrieves the requested entry from this backend. The caller is not required to hold any locks
- on the specified DN.</div>
+ on the specified DN.
+ <p>
+ Only the base changelog entry can be retrieved by DN. Change records are streamed by
+ <a href="#search(org.opends.server.core.SearchOperation)"><code>search(SearchOperation)</code></a>, which needs the search filter and the change number range to
+ position its cursors, so they cannot be looked up individually and <code>null</code> is returned for
+ them. None of them is ever an alias, so callers dereferencing aliases get the answer they need.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../api/LocalBackend.html#getEntry(org.forgerock.opendj.ldap.DN)">getEntry</a></code>&nbsp;in class&nbsp;<code><a href="../api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;<a href="../../../forgerock/opendj/server/config/server/LocalBackendCfg.html" title="interface in org.forgerock.opendj.server.config.server">LocalBackendCfg</a>&gt;</code></dd>
