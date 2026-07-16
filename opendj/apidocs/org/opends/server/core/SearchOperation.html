@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6,"i46":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -174,27 +174,35 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#endSearchPhase()">endSearchPhase</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Indicates that the search phase is over and that any further entry comes from a persistent
+ search.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributes()">getAttributes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the set of requested attributes for this search operation.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBaseDN()">getBaseDN</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the base DN for this search operation.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/DereferenceAliasesPolicy.html" title="class in org.forgerock.opendj.ldap">DereferenceAliasesPolicy</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDerefPolicy()">getDerefPolicy</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the alias dereferencing policy for this search operation.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEntriesSent()">getEntriesSent</a></span>()</code></th>
 <td class="colLast">
@@ -202,21 +210,21 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  operation.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../types/SearchFilter.html" title="class in org.opends.server.types">SearchFilter</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFilter()">getFilter</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the filter for this search operation.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../controls/MatchedValuesControl.html" title="class in org.opends.server.controls">MatchedValuesControl</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMatchedValuesControl()">getMatchedValuesControl</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The matched values control associated with this search operation.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProxiedAuthorizationDN()">getProxiedAuthorizationDN</a></span>()</code></th>
 <td class="colLast">
@@ -224,7 +232,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  authorization has been requested.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRawBaseDN()">getRawBaseDN</a></span>()</code></th>
 <td class="colLast">
@@ -232,7 +240,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  client.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../types/RawFilter.html" title="class in org.opends.server.types">RawFilter</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRawFilter()">getRawFilter</a></span>()</code></th>
 <td class="colLast">
@@ -240,7 +248,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  from the client.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReferencesSent()">getReferencesSent</a></span>()</code></th>
 <td class="colLast">
@@ -248,49 +256,49 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  search operation.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/SearchScope.html" title="class in org.forgerock.opendj.ldap">SearchScope</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getScope()">getScope</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the scope for this search operation.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeLimit()">getSizeLimit</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the size limit for this search operation.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTimeLimit()">getTimeLimit</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the time limit for this search operation.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTimeLimitExpiration()">getTimeLimitExpiration</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the time after which the search time limit has expired.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTypesOnly()">getTypesOnly</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the typesOnly flag for this search operation.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isClientAcceptsReferrals()">isClientAcceptsReferrals</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the client is able to handle referrals.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIncludeUsableControl()">isIncludeUsableControl</a></span>()</code></th>
 <td class="colLast">
@@ -298,21 +306,21 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  search result entries or not.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRealAttributesOnly()">isRealAttributesOnly</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true if only real attributes should be returned.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReturnSubentriesOnly()">isReturnSubentriesOnly</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether LDAP subentries should be returned or not.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSendResponse()">isSendResponse</a></span>()</code></th>
 <td class="colLast">
@@ -320,14 +328,14 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  to the client, or not.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isVirtualAttributesOnly()">isVirtualAttributesOnly</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true if only virtual attributes should be returned.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#returnEntry(org.opends.server.types.Entry,java.util.List)">returnEntry</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls)</code></th>
@@ -337,7 +345,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  potentially send it back to the client.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#returnEntry(org.opends.server.types.Entry,java.util.List,boolean)">returnEntry</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../types/Control.html" title="class in org.opends.server.types">Control</a>&gt;&nbsp;controls,
@@ -348,7 +356,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  potentially send it back to the client.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#returnReference(org.forgerock.opendj.ldap.DN,org.opends.server.types.SearchResultReference)">returnReference</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;dn,
                <a href="../types/SearchResultReference.html" title="class in org.opends.server.types">SearchResultReference</a>&nbsp;reference)</code></th>
@@ -358,7 +366,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  should be performed to potentially send it back to the client.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#returnReference(org.forgerock.opendj.ldap.DN,org.opends.server.types.SearchResultReference,boolean)">returnReference</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;dn,
                <a href="../types/SearchResultReference.html" title="class in org.opends.server.types">SearchResultReference</a>&nbsp;reference,
@@ -369,56 +377,56 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  should be performed to potentially send it back to the client.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendSearchEntry(org.opends.server.types.SearchResultEntry)">sendSearchEntry</a></span>&#8203;(<a href="../types/SearchResultEntry.html" title="class in org.opends.server.types">SearchResultEntry</a>&nbsp;entry)</code></th>
 <td class="colLast">
 <div class="block">Sends the provided search result entry to the client.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendSearchReference(org.opends.server.types.SearchResultReference)">sendSearchReference</a></span>&#8203;(<a href="../types/SearchResultReference.html" title="class in org.opends.server.types">SearchResultReference</a>&nbsp;reference)</code></th>
 <td class="colLast">
 <div class="block">Sends the provided search result reference to the client.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendSearchResultDone()">sendSearchResultDone</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Sends the search result done message to the client.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttributes(java.util.Set)">setAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;attributes)</code></th>
 <td class="colLast">
 <div class="block">Specifies the set of requested attributes for this search operation.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBaseDN(org.forgerock.opendj.ldap.DN)">setBaseDN</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
 <td class="colLast">
 <div class="block">Specifies the base DN for this search operation.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setClientAcceptsReferrals(boolean)">setClientAcceptsReferrals</a></span>&#8203;(boolean&nbsp;clientAcceptReferrals)</code></th>
 <td class="colLast">
 <div class="block">Specify whether the client is able to handle referrals.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDerefPolicy(org.forgerock.opendj.ldap.DereferenceAliasesPolicy)">setDerefPolicy</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DereferenceAliasesPolicy.html" title="class in org.forgerock.opendj.ldap">DereferenceAliasesPolicy</a>&nbsp;derefPolicy)</code></th>
 <td class="colLast">
 <div class="block">Specifies the alias dereferencing policy for this search operation.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIncludeUsableControl(boolean)">setIncludeUsableControl</a></span>&#8203;(boolean&nbsp;includeUsableControl)</code></th>
 <td class="colLast">
@@ -426,14 +434,14 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  search result entries.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMatchedValuesControl(org.opends.server.controls.MatchedValuesControl)">setMatchedValuesControl</a></span>&#8203;(<a href="../controls/MatchedValuesControl.html" title="class in org.opends.server.controls">MatchedValuesControl</a>&nbsp;controls)</code></th>
 <td class="colLast">
 <div class="block">Set the match values control.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProxiedAuthorizationDN(org.forgerock.opendj.ldap.DN)">setProxiedAuthorizationDN</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;proxiedAuthorizationDN)</code></th>
 <td class="colLast">
@@ -441,7 +449,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  authorization has been requested.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRawBaseDN(org.forgerock.opendj.ldap.ByteString)">setRawBaseDN</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;rawBaseDN)</code></th>
 <td class="colLast">
@@ -449,7 +457,7 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  client.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRawFilter(org.opends.server.types.RawFilter)">setRawFilter</a></span>&#8203;(<a href="../types/RawFilter.html" title="class in org.opends.server.types">RawFilter</a>&nbsp;rawFilter)</code></th>
 <td class="colLast">
@@ -457,28 +465,28 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  from the client.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRealAttributesOnly(boolean)">setRealAttributesOnly</a></span>&#8203;(boolean&nbsp;realAttributesOnly)</code></th>
 <td class="colLast">
 <div class="block">Specify whether to only return real attributes.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReturnSubentriesOnly(boolean)">setReturnSubentriesOnly</a></span>&#8203;(boolean&nbsp;returnLDAPSubentries)</code></th>
 <td class="colLast">
 <div class="block">Set the flag indicating whether the LDAP subentries should be returned.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScope(org.forgerock.opendj.ldap.SearchScope)">setScope</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/SearchScope.html" title="class in org.forgerock.opendj.ldap">SearchScope</a>&nbsp;scope)</code></th>
 <td class="colLast">
 <div class="block">Specifies the scope for this search operation.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSendResponse(boolean)">setSendResponse</a></span>&#8203;(boolean&nbsp;sendResponse)</code></th>
 <td class="colLast">
@@ -486,35 +494,35 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
  to the client, or not.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSizeLimit(int)">setSizeLimit</a></span>&#8203;(int&nbsp;sizeLimit)</code></th>
 <td class="colLast">
 <div class="block">Specifies the size limit for this search operation.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTimeLimit(int)">setTimeLimit</a></span>&#8203;(int&nbsp;timeLimit)</code></th>
 <td class="colLast">
 <div class="block">Specifies the time limit for this search operation.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTimeLimitExpiration(long)">setTimeLimitExpiration</a></span>&#8203;(long&nbsp;timeLimitExpiration)</code></th>
 <td class="colLast">
 <div class="block">Set the time after which the search time limit has expired.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTypesOnly(boolean)">setTypesOnly</a></span>&#8203;(boolean&nbsp;typesOnly)</code></th>
 <td class="colLast">
 <div class="block">Specifies the typesOnly flag for this search operation.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setVirtualAttributesOnly(boolean)">setVirtualAttributesOnly</a></span>&#8203;(boolean&nbsp;virtualAttributesOnly)</code></th>
 <td class="colLast">
@@ -935,6 +943,19 @@ extends <a href="../types/Operation.html" title="interface in org.opends.server.
           <CODE>false</CODE> if not for some reason (e.g., the size limit
           has been reached or the search has been abandoned).</dd>
 </dl>
+</li>
+</ul>
+<a id="endSearchPhase()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>endSearchPhase</h4>
+<pre class="methodSignature">void&nbsp;endSearchPhase()</pre>
+<div class="block">Indicates that the search phase is over and that any further entry comes from a persistent
+ search. State kept to dereference aliases during the search phase is released, and no further
+ entry is matched against it: a persistent search must report every change it is notified of,
+ whether or not the entry was returned by the search phase.</div>
 </li>
 </ul>
 <a id="returnReference(org.forgerock.opendj.ldap.DN,org.opends.server.types.SearchResultReference)">
