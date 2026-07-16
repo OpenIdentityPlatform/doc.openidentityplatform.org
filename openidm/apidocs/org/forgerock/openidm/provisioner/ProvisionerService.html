@@ -172,7 +172,7 @@ loadScripts(document, 'script');</script>
 <h3>getSystemIdentifier</h3>
 <div class="member-signature"><span class="return-type"><a href="SystemIdentifier.html" title="interface in org.forgerock.openidm.provisioner">SystemIdentifier</a></span>&nbsp;<span class="element-name">getSystemIdentifier</span>()</div>
 <div class="block">Gets the unique <a href="SystemIdentifier.html" title="interface in org.forgerock.openidm.provisioner"><code>SystemIdentifier</code></a> of this instance.
- <p/>
+ <p>
  The service which refers to this service instance can distinguish between multiple instances by this value.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -185,7 +185,7 @@ loadScripts(document, 'script');</script>
 <h3>getStatus</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">getStatus</span><wbr><span class="parameters">(org.forgerock.services.context.Context&nbsp;context)</span></div>
 <div class="block">Gets a brief stats report about the current status of this service instance.
- &lt;/p/>
+ <p>
  TODO Provide a sample object</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -216,15 +216,15 @@ loadScripts(document, 'script');</script>
  org.forgerock.json.JsonValue&nbsp;previousStage)</span>
                                       throws <span class="exceptions">org.forgerock.json.resource.ResourceException</span></div>
 <div class="block">Synchronise the changes from the end system for the given <code>objectType</code>.
- <p/>
+ <p>
  OpenIDM takes active role in the synchronisation process by asking the end system to get all changed object.
  Not all systems are capable to fulfill this kind of request but if the end system is capable then the
  implementation sends each change to a new request on the router and when it is finished, it returns
  a new <b>stage</b> object.
- <p/>
+ <p>
  The <code>previousStage</code> object is the previously returned value of this method.
  Unhandled exception will result not to update the stage object in repository.
- <p/>
+ <p>
  All exceptions must be handled to save the the new stage object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

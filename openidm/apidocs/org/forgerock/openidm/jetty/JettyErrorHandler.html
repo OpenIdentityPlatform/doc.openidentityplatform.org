@@ -201,7 +201,6 @@ loadScripts(document, 'script');</script>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Handles Jetty errors originating from HTTP requests. Add the following entry to <code>jetty.xml</code> or directly
  to an <code>org.eclipse.jetty.server.Server</code> instance.
- <p>
  <pre>
  &lt;Configure id="Server" class="org.eclipse.jetty.server.Server">
    ...
@@ -219,8 +218,6 @@ loadScripts(document, 'script');</script>
 <dt>Overrides:</dt>
 <dd><code>handle</code>&nbsp;in class&nbsp;<code>org.eclipse.jetty.ee10.servlet.ErrorHandler</code></dd>
 <dt>Parameters:</dt>
-<dd><code>target</code> - The target of the request, which is either a URI, name, or <code>null</code>.</dd>
-<dd><code>baseRequest</code> - Jetty HTTP request</dd>
 <dd><code>request</code> - Servlet HTTP request</dd>
 <dd><code>response</code> - Servlet HTTP response</dd>
 <dt>Throws:</dt>

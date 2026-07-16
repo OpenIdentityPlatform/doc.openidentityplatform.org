@@ -123,7 +123,8 @@ implements org.forgerock.util.query.QueryFilterVisitor&lt;R,<wbr>P,<wbr>org.forg
      <li>@{link #visitAndFilter(Object, List&lt;QueryFilter&gt;, Object)} to dictate how the composite
      function AND behaves</li>
      <li>@{link #visitOrFilter(Object, List&lt;QueryFilter&gt;, Object)} to dictate how the composite
-     function OR behaves</li></div>
+     function OR behaves</li>
+ </ul></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -261,18 +262,18 @@ implements org.forgerock.util.query.QueryFilterVisitor&lt;R,<wbr>P,<wbr>org.forg
 <div class="block">A templating method that will generate the actual value assertion.
  <p>
  Example:
- <pre><blockquote>
+ <pre>
      ?_queryFilter=email+eq+"someone@example.com"
- </blockquote></pre>
+ </pre>
  is an QueryFilter stating the value assertion "email" equals "someone@example.com".  The correct SQL for that
  may vary depending on database variant and schema definition.  This method will be invoked as
- <pre><blockquote>
+ <pre>
      return visitValueAssertion(parameters, "=", JsonPointer(/email), "someone@example.com");
- </blockquote></pre>
+ </pre>
  A possible implementation for the above example may be
- <pre><blockquote>
+ <pre>
      return getDatabaseColumnFor("email") + "=" + ":email";
- </blockquote></pre>
+ </pre>
  The parameters argument is implementation-dependent as a way to store placeholder mapping throughout the query-filter visiting.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

@@ -85,8 +85,7 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../../ProvisionerService.html" title="interface in org.forgerock.openidm.provisioner">ProvisionerService</a>, org.forgerock.json.resource.SingletonResourceProvider</span></div>
 <div class="block">The OpenICFProvisionerService is the implementation of
- <code>CollectionResourceProvider</code> interface with <a href="http://openicf.forgerock.org">OpenICF</a>.
- <p/></div>
+ <code>CollectionResourceProvider</code> interface with <a href="http://openicf.forgerock.org">OpenICF</a>.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -385,7 +384,7 @@ implements <a href="../../ProvisionerService.html" title="interface in org.forge
 <h3>getSystemIdentifier</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../SystemIdentifier.html" title="interface in org.forgerock.openidm.provisioner">SystemIdentifier</a></span>&nbsp;<span class="element-name">getSystemIdentifier</span>()</div>
 <div class="block">Gets the unique <a href="../../SystemIdentifier.html" title="interface in org.forgerock.openidm.provisioner"><code>SystemIdentifier</code></a> of this instance.
- <p/>
+ <p>
  The service which refers to this service instance can distinguish between multiple instances by this value.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -493,35 +492,35 @@ implements <a href="../../ProvisionerService.html" title="interface in org.forge
                                              throws <span class="exceptions">org.forgerock.json.resource.ResourceException</span></div>
 <div class="block">This newBuilder and this method can not be scheduled. The call MUST go
  through the <code>org.forgerock.openidm.provisioner</code>
- <p/>
+ <p>
  Invoked by the scheduler when the scheduler triggers.
- <p/>
+ <p>
  Synchronization object: <code>"connectorData" : "syncToken" :
  "1305555929000", "nativeType" : "JAVA_TYPE_LONG" </code>,
  "synchronizationStatus" : { "errorStatus" : null, "lastKnownServer" :
  "localServer", "lastModDate" : "2011-05-16T14:47:58.587Z", "lastModNum" :
  668, "lastPollDate" : "2011-05-16T14:47:52.875Z", "lastStartTime" :
  "2011-05-16T14:29:07.863Z", "progressMessage" : "SUCCEEDED" } }}
- <p/>
+ <p>
  Synchronise the changes from the end system for the given <code>objectType</code>.
- <p/>
+ <p>
  OpenIDM takes active role in the synchronisation process by asking the end system to get all changed object.
  Not all systems are capable to fulfill this kind of request but if the end system is capable then the
  implementation sends each change to a new request on the router and when it is finished, it returns
  a new <b>stage</b> object.
- <p/>
+ <p>
  The <code>previousStage</code> object is the previously returned value of this method.
  Unhandled exception will result not to update the stage object in repository.
- <p/>
+ <p>
  All exceptions must be handled to save the the new stage object. Synchronize the changes from the end system for the given
  <code>objectType</code>.
- <p/>
+ <p>
  OpenIDM takes active role in the synchronization process by asking the
  end system to get all changed object. Not all systems are capable to
  fulfill this kind of request but if the end system is capable then the
  implementation sends each change to a new request on the router and when
  it is finished, it returns a new <b>stage</b> object.
- <p/>
+ <p>
  The <code>previousStage</code> object is the previously returned value of this
  method.</div>
 <dl class="notes">
@@ -541,6 +540,12 @@ implements <a href="../../ProvisionerService.html" title="interface in org.forge
              connector.</dd>
 <dd><code>org.forgerock.json.JsonValueException</code> - if the <code>previousStage</code> is not Map.</dd>
 <dd><code>org.forgerock.json.resource.ResourceException</code> - if a failure occurred during live sync</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="../commons/ConnectorUtil.html#convertToSyncToken(org.forgerock.json.JsonValue)"><code>ConnectorUtil.convertToSyncToken(org.forgerock.json.JsonValue)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>

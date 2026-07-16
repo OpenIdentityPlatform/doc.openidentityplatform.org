@@ -165,11 +165,11 @@ loadScripts(document, 'script');</script>
 <dd><code>operation</code> - </dd>
 <dt>Returns:</dt>
 <dd>if <code>denied</code> is true and the <code>onDeny</code> equals
-         <code>org.forgerock.openidm.provisioner.openicf.commons.OperationOptionInfoHelper.OnDenyAction#DO_NOTHING</code>
+         <code>OperationOptionInfoHelper.OnDenyAction.DO_NOTHING</code>
          returns false else true</dd>
 <dt>Throws:</dt>
 <dd><code>org.forgerock.json.resource.ResourceException</code> - if <code>denied</code> is true and the <code>onDeny</code> equals
-                            <code>org.forgerock.openidm.provisioner.openicf.commons.OperationOptionInfoHelper.OnDenyAction#THROW_EXCEPTION</code></dd>
+                            <code>OperationOptionInfoHelper.OnDenyAction.THROW_EXCEPTION</code></dd>
 </dl>
 </section>
 </li>
@@ -197,7 +197,7 @@ loadScripts(document, 'script');</script>
 <h3>resolveQualifiedId</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link">URI</a></span>&nbsp;<span class="element-name">resolveQualifiedId</span><wbr><span class="parameters">(org.identityconnectors.framework.common.objects.Uid&nbsp;uid)</span></div>
 <div class="block">Generate the fully qualified id from unqualified object <code>Uid</code>
- <p/>
+ <p>
  The result id will be system/<code>[endSystemName]</code>/<code>[objectType]</code>/<code>[escapedObjectId]</code></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -214,9 +214,6 @@ loadScripts(document, 'script');</script>
                                                                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Build new <code>Filter</code> instance form the <code>query</code> and <code>params</code> values.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>query</code> - </dd>
-<dd><code>params</code> - </dd>
 <dt>Returns:</dt>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
@@ -229,7 +226,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type">org.forgerock.json.JsonValue</span>&nbsp;<span class="element-name">build</span><wbr><span class="parameters">(org.identityconnectors.framework.common.objects.ConnectorObject&nbsp;source)</span>
                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Build a new Map object from the <code>source</code> object.
- <p/>
+ <p>
  This class uses the embedded schema to convert the <code>source</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

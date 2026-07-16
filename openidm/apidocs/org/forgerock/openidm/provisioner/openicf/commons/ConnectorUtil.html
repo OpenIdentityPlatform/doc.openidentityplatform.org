@@ -955,15 +955,16 @@ loadScripts(document, 'script');</script>
 <h3>findClassForName</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findClassForName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
 <div class="block">Get the Java Class for the <code>type</code> value in the schema.
- <p/>
+ <p>
  The Default mapping:
  <table>
+ <caption>Default type name to Java class mapping</caption>
  <tr><td>any</td><td><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link"><code>Object</code></a></td></tr>
  <tr><td>JAVA_TYPE_BIGDECIMAL</td><td><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link"><code>BigDecimal</code></a></td></tr>
  <tr><td>JAVA_TYPE_BIGINTEGER</td><td><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link"><code>BigInteger</code></a></td></tr>
  <tr><td>JAVA_TYPE_PRIMITIVE_BOOLEAN</td><td><code>boolean</code></td></tr>
  <tr><td>boolean</td><td><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link"><code>Boolean</code></a></td></tr>
- <tr><td>JAVA_TYPE_BYTE_ARRAY</td><td><code>byte</code></td></tr>
+ <tr><td>JAVA_TYPE_BYTE_ARRAY</td><td><code>byte[]</code></td></tr>
  <tr><td>JAVA_TYPE_CHAR</td><td><code>char</code></td></tr>
  <tr><td>JAVA_TYPE_CHARACTER</td><td><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html" title="class or interface in java.lang" class="external-link"><code>Character</code></a></td></tr>
  <tr><td>JAVA_TYPE_DATE</td><td><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a></td></tr>
@@ -1003,7 +1004,7 @@ loadScripts(document, 'script');</script>
 <h3>findNameForClass</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">findNameForClass</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</span></div>
 <div class="block">Find the string code of the given <code>clazz</code>.
- <p/>
+ <p>
  Encodes the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> to String code</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1023,7 +1024,7 @@ loadScripts(document, 'script');</script>
 <h3>findJSONTypeForClass</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">findJSONTypeForClass</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz)</span></div>
 <div class="block">Find the proper target simple class type for the source type.
- <p/>
+ <p>
  JSON schema has predefined types abd this method maps the <code>clazz</code> Class to proper representation</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1036,8 +1037,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getObjectPoolConfiguration(org.identityconnectors.common.pooling.ObjectPoolConfiguration)">
 <h3>getObjectPoolConfiguration</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">getObjectPoolConfiguration</span><wbr><span class="parameters">(org.identityconnectors.common.pooling.ObjectPoolConfiguration&nbsp;info)</span></div>
-<div class="block">Convert the <code>ObjectPoolConfiguration</code> to simple Map.
- <p/></div>
+<div class="block">Convert the <code>ObjectPoolConfiguration</code> to simple Map.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>info</code> - </dd>
@@ -1065,8 +1065,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getResultsHandlerConfiguration(org.identityconnectors.framework.api.ResultsHandlerConfiguration)">
 <h3>getResultsHandlerConfiguration</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">getResultsHandlerConfiguration</span><wbr><span class="parameters">(org.identityconnectors.framework.api.ResultsHandlerConfiguration&nbsp;info)</span></div>
-<div class="block">Convert the <code>ObjectPoolConfiguration</code> to simple Map.
- <p/></div>
+<div class="block">Convert the <code>ObjectPoolConfiguration</code> to simple Map.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>info</code> - </dd>
@@ -1169,7 +1168,7 @@ loadScripts(document, 'script');</script>
 <h3>getConnectorKey</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">getConnectorKey</span><wbr><span class="parameters">(org.identityconnectors.framework.api.ConnectorKey&nbsp;info)</span></div>
 <div class="block">Convert the <code>ConnectorKey</code> into a Map.
- <p/>
+ <p>
  The connector key is saved in a JSON object and this method converts it to simple Map.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -1184,7 +1183,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">org.identityconnectors.framework.api.ConnectorKey</span>&nbsp;<span class="element-name">getConnectorKey</span><wbr><span class="parameters">(org.forgerock.json.JsonValue&nbsp;configuration)</span>
                                                                          throws <span class="exceptions">org.forgerock.json.JsonValueException</span></div>
 <div class="block">Create a new <code>ConnectorKey</code> newBuilder form the <code>configuration</code> object.
- <p/>
+ <p>
  The Configuration object MUST contain the three required String properties.
  <ul>
  <li>bundleName</li>
@@ -1198,7 +1197,6 @@ loadScripts(document, 'script');</script>
 <dd>new newBuilder of <code>ConnectorKey</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - when one of the three required parameter is null.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - when the property value can not be converted to String.</dd>
 <dd><code>org.forgerock.json.JsonValueException</code></dd>
 </dl>
 </section>
@@ -1304,7 +1302,7 @@ org.forgerock.json.schema.validator.exceptions.SchemaException</span></div>
 <h3>getAttributeInfoMap</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">getAttributeInfoMap</span><wbr><span class="parameters">(org.identityconnectors.framework.common.objects.AttributeInfo&nbsp;info)</span></div>
 <div class="block">Build a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link"><code>Map</code></a> from the given <code>AttributeInfo</code>
- <p/>
+ <p>
  The result will look like this:
  {
  "type"    : "number",
@@ -1337,7 +1335,7 @@ org.forgerock.json.schema.validator.exceptions.SchemaException</span></div>
 <h3>convertToSyncToken</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">org.identityconnectors.framework.common.objects.SyncToken</span>&nbsp;<span class="element-name">convertToSyncToken</span><wbr><span class="parameters">(org.forgerock.json.JsonValue&nbsp;token)</span></div>
 <div class="block">Create a new <code>SyncToken</code> from the input.
- <p/>
+ <p>
  The source object:
  <code>
  {
@@ -1359,7 +1357,7 @@ org.forgerock.json.schema.validator.exceptions.SchemaException</span></div>
 <h3>convertFromSyncToken</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&gt;</span>&nbsp;<span class="element-name">convertFromSyncToken</span><wbr><span class="parameters">(org.identityconnectors.framework.common.objects.SyncToken&nbsp;token)</span></div>
 <div class="block">Create a new Map from the given <code>SyncToken</code>.
- <p/>
+ <p>
  The target object:
  <code>
  {
@@ -1387,8 +1385,7 @@ org.forgerock.json.schema.validator.exceptions.SchemaException</span></div>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">coercedTypeCasting</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</span>
                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></span></div>
-<div class="block">Coerce the <code>source</code> object to an object of <code>clazz</code> type.
- <p/></div>
+<div class="block">Coerce the <code>source</code> object to an object of <code>clazz</code> type.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><code>T</code> - </dd>
@@ -1398,7 +1395,6 @@ org.forgerock.json.schema.validator.exceptions.SchemaException</span></div>
 <dt>Returns:</dt>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NumberFormatException.html" title="class or interface in java.lang" class="external-link">NumberFormatException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URISyntaxException.html" title="class or interface in java.net" class="external-link">URISyntaxException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link">UnsupportedOperationException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>
 </dl>
