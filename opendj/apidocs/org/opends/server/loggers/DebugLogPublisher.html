@@ -341,7 +341,12 @@ implements <a href="LogPublisher.html" title="interface in org.opends.server.log
                    This should be a fully-qualified class name, or
                    <code>null</code> to set the trace settings for the
                    global scope.</dd>
-<dd><code>settings</code> - The trace settings for the specified scope.</dd>
+<dd><code>settings</code> - The trace settings for the specified scope.
+                   Must not be <code>null</code>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - If <code>settings</code> is <code>null</code>: the trace
+                   settings are held in concurrent maps, which do not accept
+                   null values.</dd>
 </dl>
 </li>
 </ul>

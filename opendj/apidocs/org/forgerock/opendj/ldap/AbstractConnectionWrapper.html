@@ -915,6 +915,10 @@ implements <a href="Connection.html" title="interface in org.forgerock.opendj.ld
  notified when this connection is closed by the application, receives an
  unsolicited notification, or experiences a fatal error.
  <p>
+ A listener registered once this connection has already failed and/or been
+ closed is notified of the events it has missed before this method
+ returns.
+ <p>
  The default implementation is to delegate.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>

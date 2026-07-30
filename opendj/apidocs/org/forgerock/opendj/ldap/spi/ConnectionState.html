@@ -317,14 +317,16 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public&nbsp;void&nbsp;addConnectionEventListener&#8203;(<a href="../ConnectionEventListener.html" title="interface in org.forgerock.opendj.ldap">ConnectionEventListener</a>&nbsp;listener)</pre>
 <div class="block">Registers the provided connection event listener so that it will be
  notified when this connection is closed by the application, receives an
- unsolicited notification, or experiences a fatal error.</div>
+ unsolicited notification, or experiences a fatal error.
+ <p>
+ A listener registered once the connection has already failed and/or been
+ closed is notified of the events it has missed before this method
+ returns.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>listener</code> - The listener which wants to be notified when events occur on
             this connection.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - If this connection has already been closed, i.e. if
-             <code>isClosed() == true</code>.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - If the <code>listener</code> was <code>null</code>.</dd>
 </dl>
 </li>

@@ -451,7 +451,11 @@ extends <a href="../../../../forgerock/opendj/ldap/AbstractAsynchronousConnectio
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../forgerock/opendj/ldap/Connection.html#addConnectionEventListener(org.forgerock.opendj.ldap.ConnectionEventListener)">Connection</a></code></span></div>
 <div class="block">Registers the provided connection event listener so that it will be
  notified when this connection is closed by the application, receives an
- unsolicited notification, or experiences a fatal error.</div>
+ unsolicited notification, or experiences a fatal error.
+ <p>
+ A listener registered once this connection has already failed and/or been
+ closed is notified of the events it has missed before this method
+ returns.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>listener</code> - The listener which wants to be notified when events occur on
