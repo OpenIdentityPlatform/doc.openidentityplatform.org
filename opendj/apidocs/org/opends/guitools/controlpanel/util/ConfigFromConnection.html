@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":9,"i9":10,"i10":10,"i11":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -96,7 +96,7 @@ loadScripts(document, 'script');</script>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -153,28 +153,6 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
 <!--   -->
 </a>
 <h3>Field Summary</h3>
-<table class="memberSummary">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colSecond" scope="col">Field</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">DateFormat</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#formatter">formatter</a></span></code></th>
-<td class="colLast">
-<div class="block">The date formatter to be used to format dates.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">SimpleDateFormat</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#utcParser">utcParser</a></span></code></th>
-<td class="colLast">
-<div class="block">The date formatter to be used to parse GMT dates.</div>
-</td>
-</tr>
-</table>
 <ul class="blockList">
 <li class="blockList"><a id="fields.inherited.from.class.org.opends.guitools.controlpanel.util.ConfigReader">
 <!--   -->
@@ -214,7 +192,7 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -271,6 +249,20 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">DateFormat</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newDateFormatter()">newDateFormatter</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns a date formatter to be used to format dates.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">SimpleDateFormat</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newUtcParser()">newUtcParser</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns a date formatter to be used to parse GMT dates.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#readConfiguration(org.opends.admin.ads.util.ConnectionWrapper)">readConfiguration</a></span>&#8203;(<a href="../../../admin/ads/util/ConnectionWrapper.html" title="class in org.opends.admin.ads.util">ConnectionWrapper</a>&nbsp;connWrapper)</code></th>
 <td class="colLast">
@@ -278,14 +270,14 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
  connection.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIsLocal(boolean)">setIsLocal</a></span>&#8203;(boolean&nbsp;isLocal)</code></th>
 <td class="colLast">
 <div class="block">Sets whether this server represents the local instance or a remote server.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateTaskInformation(org.opends.admin.ads.util.ConnectionWrapper,java.util.List,java.util.Collection)">updateTaskInformation</a></span>&#8203;(<a href="../../../admin/ads/util/ConnectionWrapper.html" title="class in org.opends.admin.ads.util">ConnectionWrapper</a>&nbsp;connWrapper,
                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a>&gt;&nbsp;ex,
@@ -319,36 +311,6 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a id="utcParser">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>utcParser</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">SimpleDateFormat</a> utcParser</pre>
-<div class="block">The date formatter to be used to parse GMT dates.</div>
-</li>
-</ul>
-<a id="formatter">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>formatter</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">DateFormat</a> formatter</pre>
-<div class="block">The date formatter to be used to format dates.</div>
-</li>
-</ul>
-</li>
-</ul>
-</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -375,6 +337,40 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="newUtcParser()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>newUtcParser</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">SimpleDateFormat</a>&nbsp;newUtcParser()</pre>
+<div class="block">Returns a date formatter to be used to parse GMT dates.
+ <p>
+ A new instance is returned by each call because <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink"><code>SimpleDateFormat</code></a> is not thread-safe and
+ this method is called from several threads.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a date formatter to be used to parse GMT dates</dd>
+</dl>
+</li>
+</ul>
+<a id="newDateFormatter()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>newDateFormatter</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink">DateFormat</a>&nbsp;newDateFormatter()</pre>
+<div class="block">Returns a date formatter to be used to format dates.
+ <p>
+ A new instance is returned by each call because <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/DateFormat.html?is-external=true" title="class or interface in java.text" class="externalLink"><code>DateFormat</code></a> is not thread-safe and this
+ method is called from several threads.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a date formatter to be used to format dates</dd>
+</dl>
+</li>
+</ul>
 <a id="getEntryCaches()">
 <!--   -->
 </a>
@@ -585,7 +581,7 @@ extends <a href="ConfigReader.html" title="class in org.opends.guitools.controlp
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
