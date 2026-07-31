@@ -195,6 +195,13 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 </a>
 <h3>Field Summary</h3>
 <ul class="blockList">
+<li class="blockList"><a id="fields.inherited.from.class.org.opends.server.api.ConnectionHandler">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;org.opends.server.api.<a href="../../api/ConnectionHandler.html" title="class in org.opends.server.api">ConnectionHandler</a></h3>
+<code><a href="../../api/ConnectionHandler.html#LISTEN_TIMEOUT_MS">LISTEN_TIMEOUT_MS</a></code></li>
+</ul>
+<ul class="blockList">
 <li class="blockList"><a id="fields.inherited.from.class.org.opends.server.api.DirectoryThread">
 <!--   -->
 </a>
@@ -403,7 +410,6 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -861,6 +867,12 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 <li class="blockList">
 <h4>start</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;start()</pre>
+<div class="block">
+ <p>
+ Deliberately left unsynchronized, unlike the overridden <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html?is-external=true#start()" title="class or interface in java.lang" class="externalLink"><code>Thread.start()</code></a>:
+ the state this method touches is guarded by the <code>waitListen</code> monitor, and
+ holding the thread's own monitor across <code>waitListen.wait()</code> would block
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html?is-external=true#join()" title="class or interface in java.lang" class="externalLink"><code>Thread.join()</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html?is-external=true#start()" title="class or interface in java.lang" class="externalLink">start</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html?is-external=true" title="class or interface in java.lang" class="externalLink">Thread</a></code></dd>

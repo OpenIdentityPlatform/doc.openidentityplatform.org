@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":9,"i22":10,"i23":10,"i24":10,"i25":9,"i26":9,"i27":9,"i28":10,"i29":10,"i30":10,"i31":10};
+var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":9,"i22":10,"i23":10,"i24":10,"i25":10,"i26":9,"i27":9,"i28":9,"i29":10,"i30":10,"i31":10,"i32":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -388,6 +388,14 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 </td>
 </tr>
 <tr id="i25" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isListening()">isListening</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Indicates whether this replication server has bound its listen port, i.e. whether it
+ can accept connections from directory servers and from other replication servers.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLocalReplicationServerPort(int)">isLocalReplicationServerPort</a></span>&#8203;(int&nbsp;port)</code></th>
 <td class="colLast">
@@ -395,21 +403,21 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  replication server is listening on.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onlyForTestsAddlocalReplicationServer(java.lang.String)">onlyForTestsAddlocalReplicationServer</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;server)</code></th>
 <td class="colLast">
 <div class="block">WARNING : only use this methods for tests purpose.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onlyForTestsClearLocalReplicationServerList()">onlyForTestsClearLocalReplicationServerList</a></span>()</code></th>
 <td class="colLast">
 <div class="block">WARNING : only use this methods for tests purpose.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove()">remove</a></span>()</code></th>
 <td class="colLast">
@@ -417,19 +425,19 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  is deleted from the server configuration.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shutdown()">shutdown</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Shutdown the Replication Server service and all its connections.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#validateCookie(org.opends.server.replication.common.MultiDomainServerState,java.util.Set)">validateCookie</a></span>&#8203;(<a href="../common/MultiDomainServerState.html" title="class in org.opends.server.replication.common">MultiDomainServerState</a>&nbsp;cookie,
               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&nbsp;ignoredBaseDNs)</code></th>
@@ -543,6 +551,21 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The list of every replication servers instantiated in the current
  VM.</dd>
+</dl>
+</li>
+</ul>
+<a id="isListening()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isListening</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isListening()</pre>
+<div class="block">Indicates whether this replication server has bound its listen port, i.e. whether it
+ can accept connections from directory servers and from other replication servers.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if this replication server is listening</dd>
 </dl>
 </li>
 </ul>

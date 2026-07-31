@@ -14075,6 +14075,13 @@ Severity: ERROR
 +
 Message: An error occurred while processing the request %s: %s.
 
+[#log-ref-log-ref-ERR_CONNHANDLER_TIMEOUT_WAITING_FOR_LISTENER_1540]
+ID: 1540::
+
+Severity: ERROR
++
+Message: The %s did not attempt to open its listen port within %d seconds. The Directory Server will stop waiting for it and continue, but that connection handler may never accept connections.
+
 --
 
 [#QUICKSETUP]
@@ -15241,6 +15248,27 @@ ID: 300::
 Severity: ERROR
 +
 Message: New replication connection from %s started with unexpected message %s and is being closed.
+
+[#log-ref-log-ref-ERR_COULD_NOT_BIND_CHANGELOG_LISTENING_303]
+ID: 303::
+
+Severity: ERROR
++
+Message: Another socket is listening on %s.
+
+[#log-ref-log-ref-ERR_COULD_NOT_BIND_CHANGELOG_NOT_ACCEPTING_304]
+ID: 304::
+
+Severity: ERROR
++
+Message: Nothing accepted a connection on %s : the port is held either by a socket bound to another address, or by a socket which does not accept connections.
+
+[#log-ref-log-ref-ERR_COULD_NOT_BIND_CHANGELOG_PORT_FREE_305]
+ID: 305::
+
+Severity: ERROR
++
+Message: Nothing holds %s anymore : the port was released after the last attempt to bind it.
 
 --
 

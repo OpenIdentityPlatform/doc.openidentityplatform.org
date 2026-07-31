@@ -96,7 +96,7 @@ loadScripts(document, 'script');</script>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -200,6 +200,22 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
 <!--   -->
 </a>
 <h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#LISTEN_TIMEOUT_MS">LISTEN_TIMEOUT_MS</a></span></code></th>
+<td class="colLast">
+<div class="block">Maximum time a <code>start()</code> implementation waits for its handler thread
+ to attempt to open the listen socket.</div>
+</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a id="fields.inherited.from.class.org.opends.server.api.DirectoryThread">
 <!--   -->
@@ -429,6 +445,35 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="LISTEN_TIMEOUT_MS">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LISTEN_TIMEOUT_MS</h4>
+<pre>protected static final&nbsp;long LISTEN_TIMEOUT_MS</pre>
+<div class="block">Maximum time a <code>start()</code> implementation waits for its handler thread
+ to attempt to open the listen socket. The wait is bounded so that a handler
+ thread dying before it reaches the listen code cannot hang the whole server
+ startup.
+ <p>
+ <code>DirectoryServer.startConnectionHandlers()</code> starts the handlers one
+ after another, so the worst case for a start is this value multiplied by
+ the number of configured handlers. It is therefore kept far below the
+ <code>start-ds</code> timeout (<code>DirectoryServer.DEFAULT_TIMEOUT</code>, 200
+ seconds), which is generous for a <code>bind()</code>.</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -841,7 +886,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

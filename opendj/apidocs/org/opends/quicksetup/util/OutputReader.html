@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":6,"i1":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -155,7 +155,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.io.BufferedReader)">OutputReader</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink">BufferedReader</a>&nbsp;reader)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.io.InputStream)">OutputReader</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;stream)</code></th>
 <td class="colLast">
 <div class="block">The protected constructor.</div>
 </td>
@@ -172,7 +172,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -183,6 +183,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processLine(java.lang.String)">processLine</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;line)</code></th>
 <td class="colLast">
 <div class="block">Called whenever new input is read from the reader.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="OutputReader.html" title="class in org.opends.quicksetup.util">OutputReader</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Starts consuming the reader in a background thread.</div>
 </td>
 </tr>
 </table>
@@ -209,17 +216,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(java.io.BufferedReader)">
+<a id="&lt;init&gt;(java.io.InputStream)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OutputReader</h4>
-<pre>public&nbsp;OutputReader&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html?is-external=true" title="class or interface in java.io" class="externalLink">BufferedReader</a>&nbsp;reader)</pre>
-<div class="block">The protected constructor.</div>
+<pre>public&nbsp;OutputReader&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;stream)</pre>
+<div class="block">The protected constructor.
+ <p>
+ The stream is consumed until end of stream and then closed by this reader's thread, which is
+ only launched by <a href="#start()"><code>start()</code></a>. Wrapping the stream is done by that thread as well, so that
+ this reader is the sole owner of every resource built on top of the stream.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>reader</code> - the BufferedReader of the stop process.</dd>
+<dd><code>stream</code> - the output stream of the process to read.</dd>
 </dl>
 </li>
 </ul>
@@ -236,7 +247,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="processLine(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>processLine</h4>
 <pre class="methodSignature">public abstract&nbsp;void&nbsp;processLine&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;line)</pre>
@@ -244,6 +255,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>line</code> - String representing new input</dd>
+</dl>
+</li>
+</ul>
+<a id="start()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>start</h4>
+<pre class="methodSignature">public&nbsp;<a href="OutputReader.html" title="class in org.opends.quicksetup.util">OutputReader</a>&nbsp;start()</pre>
+<div class="block">Starts consuming the reader in a background thread.
+ <p>
+ The thread is not started by the constructor so that <code>this</code> does not escape before
+ construction of the subclass has completed.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>this reader</dd>
 </dl>
 </li>
 </ul>

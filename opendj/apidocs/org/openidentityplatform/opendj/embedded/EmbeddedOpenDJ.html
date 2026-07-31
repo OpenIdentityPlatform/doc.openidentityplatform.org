@@ -187,13 +187,17 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#close()">close</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Stops this instance, if it is still running, and deletes its temporary directory.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getData(java.lang.String,java.io.OutputStream)">getData</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;baseDN,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;out)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Writes the entries below the given base DN to the given stream, as LDIF.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a></code></td>
@@ -205,7 +209,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importData(java.io.InputStream)">importData</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;inputStream)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Imports the LDIF read from the given stream.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -280,6 +286,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the server root directory</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - If this instance has been closed, and the directory therefore deleted.</dd>
 </dl>
 </li>
 </ul>
@@ -303,6 +311,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <li class="blockList">
 <h4>close</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;close()</pre>
+<div class="block">Stops this instance, if it is still running, and deletes its temporary directory.
+ <p>
+ This method is idempotent: it is also registered as a JVM shutdown hook.
+ <p>
+ When the server cannot be stopped, this instance stays open and keeps its shutdown hook
+ registered, so that a later call - or the hook at JVM exit - retries the stop.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true#close()" title="class or interface in java.lang" class="externalLink">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang" class="externalLink">AutoCloseable</a></code></dd>
@@ -320,8 +334,14 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <pre class="methodSignature">public&nbsp;void&nbsp;importData&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;inputStream)
                 throws <a href="../../../forgerock/opendj/server/embedded/EmbeddedDirectoryServerException.html" title="class in org.forgerock.opendj.server.embedded">EmbeddedDirectoryServerException</a>,
                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
+<div class="block">Imports the LDIF read from the given stream.
+ <p>
+ The stream is closed by this method, whether the import succeeds or not.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>inputStream</code> - the LDIF to import</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - If this instance has been closed.</dd>
 <dd><code><a href="../../../forgerock/opendj/server/embedded/EmbeddedDirectoryServerException.html" title="class in org.forgerock.opendj.server.embedded">EmbeddedDirectoryServerException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
 </dl>
@@ -337,8 +357,15 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;out)
              throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>,
                     <a href="../../../forgerock/opendj/server/embedded/EmbeddedDirectoryServerException.html" title="class in org.forgerock.opendj.server.embedded">EmbeddedDirectoryServerException</a></pre>
+<div class="block">Writes the entries below the given base DN to the given stream, as LDIF.
+ <p>
+ The stream is flushed and closed by this method, whether the export succeeds or not.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>baseDN</code> - the base DN of the subtree to export</dd>
+<dd><code>out</code> - where the LDIF is written</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink">IllegalStateException</a></code> - If this instance has been closed.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
 <dd><code><a href="../../../forgerock/opendj/server/embedded/EmbeddedDirectoryServerException.html" title="class in org.forgerock.opendj.server.embedded">EmbeddedDirectoryServerException</a></code></dd>
 </dl>
