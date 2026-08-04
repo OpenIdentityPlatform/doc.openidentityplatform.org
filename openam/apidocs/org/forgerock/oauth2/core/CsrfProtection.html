@@ -139,7 +139,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <p>The CSRF token used by the OAuth2/OIDC consent flow is a dedicated, random value bound to the authorization
  request. It is no longer derived from the SSO cookie, so the SSO cookie no longer needs to be script-readable
  and can be shipped as <code>HttpOnly</code>. For stateful sessions the token is stored as a protected session
- property; for stateless sessions a double-submit cookie is used as a fallback.</p></div>
+ property; for stateless sessions a double-submit cookie is used as a fallback.</p>
+
+ <p>Validation additionally accepts the resource owner's own session id, which is what a non-browser client
+ that posts its consent decision directly submits. That client has no consent page to read a minted token
+ from, and it already holds the session id from its authentication response.</p></div>
 </li>
 </ul>
 </div>
@@ -225,7 +229,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isCsrfAttack(org.forgerock.oauth2.core.OAuth2Request)">isCsrfAttack</a></span>&#8203;(<a href="OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">
 <div class="block">Checks if the request contains the required "csrf" parameter and that it matches the token bound to the
- resource owner's authorization request (either the protected session property or the double-submit cookie).</div>
+ resource owner's authorization request (either the protected session property or the double-submit cookie),
+ or failing that the resource owner's session id.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -330,7 +335,8 @@ public&nbsp;CsrfProtection&#8203;(<a href="ResourceOwnerSessionValidator.html" t
 <h4>isCsrfAttack</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isCsrfAttack&#8203;(<a href="OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</pre>
 <div class="block">Checks if the request contains the required "csrf" parameter and that it matches the token bound to the
- resource owner's authorization request (either the protected session property or the double-submit cookie).</div>
+ resource owner's authorization request (either the protected session property or the double-submit cookie),
+ or failing that the resource owner's session id.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - The request.</dd>
