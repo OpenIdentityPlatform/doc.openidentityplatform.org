@@ -11579,6 +11579,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Attempts to cancel all operations in progress on this connection
  except the operation with the specified message ID.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/core/PersistentSearch.html#cancelAndNotifyClient(org.forgerock.i18n.LocalizableMessage)">cancelAndNotifyClient(LocalizableMessage)</a></span> - Method in class org.opends.server.core.<a href="org/opends/server/core/PersistentSearch.html" title="class in org.opends.server.core">PersistentSearch</a></dt>
+<dd>
+<div class="block">Cancels this persistent search and tells the client that no more changes will be reported for
+ it.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/ui/BackupPanel.html#cancelClicked()">cancelClicked()</a></span> - Method in class org.opends.guitools.controlpanel.ui.<a href="org/opends/guitools/controlpanel/ui/BackupPanel.html" title="class in org.opends.guitools.controlpanel.ui">BackupPanel</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/ui/BaseDNPanel.html#cancelClicked()">cancelClicked()</a></span> - Method in class org.opends.guitools.controlpanel.ui.<a href="org/opends/guitools/controlpanel/ui/BaseDNPanel.html" title="class in org.opends.guitools.controlpanel.ui">BaseDNPanel</a></dt>
@@ -83794,6 +83799,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns whether the provided attribute has password syntax.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/api/ClientConnection.html#hasPersistentSearch(int)">hasPersistentSearch(int)</a></span> - Method in class org.opends.server.api.<a href="org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a></dt>
+<dd>
+<div class="block">Indicates whether a persistent search is registered on this connection for the provided message
+ ID.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/core/Operation.html#hasPrivilege(org.forgerock.opendj.server.core.Privilege)">hasPrivilege(Privilege)</a></span> - Method in interface org.forgerock.opendj.server.core.<a href="org/forgerock/opendj/server/core/Operation.html" title="interface in org.forgerock.opendj.server.core">Operation</a></dt>
 <dd>
 <div class="block">Indicates whether the authenticated client has the specified privilege.</div>
@@ -130587,6 +130597,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/core/SearchOperationWrapper.html#returnEntry(org.opends.server.types.Entry,java.util.List,boolean)">returnEntry(Entry, List&lt;Control&gt;, boolean)</a></span> - Method in class org.opends.server.core.<a href="org/opends/server/core/SearchOperationWrapper.html" title="class in org.opends.server.core">SearchOperationWrapper</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/core/SearchOperation.html#returnPersistentSearchEntry(org.opends.server.types.Entry,java.util.List)">returnPersistentSearchEntry(Entry, List&lt;Control&gt;)</a></span> - Method in interface org.opends.server.core.<a href="org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a></dt>
+<dd>
+<div class="block">Used as a callback for persistent searches to send an entry which has just changed to the
+ client.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/core/SearchOperationBasis.html#returnPersistentSearchEntry(org.opends.server.types.Entry,java.util.List)">returnPersistentSearchEntry(Entry, List&lt;Control&gt;)</a></span> - Method in class org.opends.server.core.<a href="org/opends/server/core/SearchOperationBasis.html" title="class in org.opends.server.core">SearchOperationBasis</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/core/SearchOperationWrapper.html#returnPersistentSearchEntry(org.opends.server.types.Entry,java.util.List)">returnPersistentSearchEntry(Entry, List&lt;Control&gt;)</a></span> - Method in class org.opends.server.core.<a href="org/opends/server/core/SearchOperationWrapper.html" title="class in org.opends.server.core">SearchOperationWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/core/SearchOperation.html#returnReference(org.forgerock.opendj.ldap.DN,org.opends.server.types.SearchResultReference)">returnReference(DN, SearchResultReference)</a></span> - Method in interface org.opends.server.core.<a href="org/opends/server/core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a></dt>
 <dd>
 <div class="block">Used as a callback for backends to indicate that the provided search
@@ -155290,6 +155309,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#WARN_PROMPTTM_NO_SERVER_CERT_CHAIN">WARN_PROMPTTM_NO_SERVER_CERT_CHAIN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">WARNING:  The server did not present a certificate chain.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#WARN_PSEARCH_BACKEND_UNAVAILABLE">WARN_PSEARCH_BACKEND_UNAVAILABLE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
+<dd>
+<div class="block">The persistent search is being terminated because backend %s is no longer available</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#WARN_QUEUE_UNABLE_TO_CANCEL">WARN_QUEUE_UNABLE_TO_CANCEL</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>

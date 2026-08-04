@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -244,27 +244,35 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../types/CancelResult.html" title="class in org.opends.server.types">CancelResult</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cancelAndNotifyClient(org.forgerock.i18n.LocalizableMessage)">cancelAndNotifyClient</a></span>&#8203;(org.forgerock.i18n.LocalizableMessage&nbsp;reason)</code></th>
+<td class="colLast">
+<div class="block">Cancels this persistent search and tells the client that no more changes will be reported for
+ it.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enable()">enable</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Enable this persistent search.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMessageID()">getMessageID</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the message ID associated with this persistent search.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSearchOperation()">getSearchOperation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the search operation associated with this persistent search.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isChangesOnly()">isChangesOnly</a></span>()</code></th>
 <td class="colLast">
@@ -272,28 +280,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  search should be returned.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processAdd(org.opends.server.types.Entry)">processAdd</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code></th>
 <td class="colLast">
 <div class="block">Notifies the persistent searches that an entry has been added.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processDelete(org.opends.server.types.Entry)">processDelete</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code></th>
 <td class="colLast">
 <div class="block">Notifies the persistent searches that an entry has been deleted.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processModify(org.opends.server.types.Entry)">processModify</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry)</code></th>
 <td class="colLast">
 <div class="block">Notifies the persistent searches that an entry has been modified.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processModify(org.opends.server.types.Entry,org.opends.server.types.Entry)">processModify</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
              <a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry)</code></th>
@@ -301,7 +309,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Notifies persistent searches that an entry has been modified.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processModifyDN(org.opends.server.types.Entry,org.forgerock.opendj.ldap.DN)">processModifyDN</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
                <a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;oldDN)</code></th>
@@ -309,21 +317,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Notifies the persistent searches that an entry has been renamed.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerCancellationCallback(org.opends.server.core.PersistentSearch.CancellationCallback)">registerCancellationCallback</a></span>&#8203;(<a href="PersistentSearch.CancellationCallback.html" title="interface in org.opends.server.core">PersistentSearch.CancellationCallback</a>&nbsp;callback)</code></th>
 <td class="colLast">
 <div class="block">Registers a cancellation callback with this persistent search.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a string representation of this persistent search.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString(java.lang.StringBuilder)">toString</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang" class="externalLink">StringBuilder</a>&nbsp;buffer)</code></th>
 <td class="colLast">
@@ -400,6 +408,25 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  searches that are associated with this persistent search will
  also be canceled.</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The result of the cancellation.</dd>
+</dl>
+</li>
+</ul>
+<a id="cancelAndNotifyClient(org.forgerock.i18n.LocalizableMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cancelAndNotifyClient</h4>
+<pre class="methodSignature">public&nbsp;<a href="../types/CancelResult.html" title="class in org.opends.server.types">CancelResult</a>&nbsp;cancelAndNotifyClient&#8203;(org.forgerock.i18n.LocalizableMessage&nbsp;reason)</pre>
+<div class="block">Cancels this persistent search and tells the client that no more changes will be reported for
+ it. Contrary to <a href="#cancel()"><code>cancel()</code></a>, which leaves the search open as far as the client can tell,
+ this is meant for cancellations decided by the server: without a search result done, the client
+ waits forever for changes on a search which no longer exists.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reason</code> - The reason why this persistent search is terminated, reported to the client.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The result of the cancellation.</dd>
 </dl>

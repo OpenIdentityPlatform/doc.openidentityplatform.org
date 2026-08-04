@@ -151,7 +151,13 @@ extends jakarta.servlet.http.HttpServlet</pre>
 <div class="block">This class provides the entry point for the DSML request.
  It parses the SOAP request, calls the appropriate class
  which performs the LDAP operation, and returns the response
- as a DSML response.</div>
+ as a DSML response.
+ <p>
+ Everything is logged through <code>getServletContext().log()</code>: it is the
+ only sink which survives at runtime, as
+ <code>LDAPConnection.connectToHost()</code> turns <code>java.util.logging</code> off
+ for the whole JVM on every non-verbose connection, and the war ships
+ <code>slf4j-api</code> without any provider.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../serialized-form.html#org.opends.dsml.protocol.DSMLServlet">Serialized Form</a></dd>
