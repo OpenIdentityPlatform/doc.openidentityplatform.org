@@ -226,10 +226,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>initializeDB</h4>
-<pre class="methodSignature">void&nbsp;initializeDB()</pre>
+<pre class="methodSignature">void&nbsp;initializeDB()
+           throws <a href="ChangelogException.html" title="class in org.opends.server.replication.server.changelog.api">ChangelogException</a></pre>
 <div class="block">Initializes the replication database by reading its previous state and
  building the relevant ReplicaDBs according to the previous state. This
  method must be called once before using the ChangelogDB.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="ChangelogException.html" title="class in org.opends.server.replication.server.changelog.api">ChangelogException</a></code> - If the previous state could not be read. The database is then
+           unusable, possibly half open, and the caller must release it by
+           calling <a href="#shutdownDB()"><code>shutdownDB()</code></a>.</dd>
+</dl>
 </li>
 </ul>
 <a id="setPurgeDelay(long)">

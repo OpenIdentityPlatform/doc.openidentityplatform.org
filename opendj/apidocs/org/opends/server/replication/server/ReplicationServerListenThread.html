@@ -219,7 +219,8 @@ extends <a href="../../api/DirectoryThread.html" title="class in org.opends.serv
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.opends.server.replication.server.ReplicationServer)">ReplicationServerListenThread</a></span>&#8203;(<a href="ReplicationServer.html" title="class in org.opends.server.replication.server">ReplicationServer</a>&nbsp;server)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.opends.server.replication.server.ReplicationServer,java.net.ServerSocket)">ReplicationServerListenThread</a></span>&#8203;(<a href="ReplicationServer.html" title="class in org.opends.server.replication.server">ReplicationServer</a>&nbsp;server,
+                             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net" class="externalLink">ServerSocket</a>&nbsp;listenSocket)</code></th>
 <td class="colLast">
 <div class="block">Creates a new instance of this directory thread with the
  specified name.</div>
@@ -285,19 +286,21 @@ extends <a href="../../api/DirectoryThread.html" title="class in org.opends.serv
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(org.opends.server.replication.server.ReplicationServer)">
+<a id="&lt;init&gt;(org.opends.server.replication.server.ReplicationServer,java.net.ServerSocket)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ReplicationServerListenThread</h4>
-<pre>public&nbsp;ReplicationServerListenThread&#8203;(<a href="ReplicationServer.html" title="class in org.opends.server.replication.server">ReplicationServer</a>&nbsp;server)</pre>
+<pre>public&nbsp;ReplicationServerListenThread&#8203;(<a href="ReplicationServer.html" title="class in org.opends.server.replication.server">ReplicationServer</a>&nbsp;server,
+                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net" class="externalLink">ServerSocket</a>&nbsp;listenSocket)</pre>
 <div class="block">Creates a new instance of this directory thread with the
  specified name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>server</code> - The ReplicationServer that will be called to
                      handle the connections.</dd>
+<dd><code>listenSocket</code> - The bound socket this thread will accept connections on.</dd>
 </dl>
 </li>
 </ul>

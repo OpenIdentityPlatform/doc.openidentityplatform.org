@@ -311,7 +311,10 @@ extends <a href="Argument.html" title="class in com.forgerock.opendj.cli">Argume
 <h4>getNameToValueMap</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getNameToValueMap()</pre>
 <div class="block">Retrieves a map between the filenames specified on the command line and
- the first lines read from those files.</div>
+ the first lines read from those files.
+ <p>
+ The returned map is the live one: the tools building an equivalent command line add
+ entries to it, so that a password read interactively is displayed as a password file.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A map between the filenames specified on the command line and the

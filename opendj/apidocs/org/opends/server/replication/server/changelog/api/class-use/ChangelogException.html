@@ -319,13 +319,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ChangelogDB.</span><code><span class="memberNameLink"><a href="../ChangelogDB.html#initializeDB()">initializeDB</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Initializes the replication database by reading its previous state and
+ building the relevant ReplicaDBs according to the previous state.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">DBCursor.</span><code><span class="memberNameLink"><a href="../DBCursor.html#next()">next</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Skip to the next record of the database.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationDomainDB.</span><code><span class="memberNameLink"><a href="../ReplicationDomainDB.html#notifyReplicaOffline(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">notifyReplicaOffline</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                     <a href="../../../../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</code></th>
@@ -333,7 +341,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Let the DB know this replica is going down.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationDomainDB.</span><code><span class="memberNameLink"><a href="../ReplicationDomainDB.html#publishUpdateMsg(org.forgerock.opendj.ldap.DN,org.opends.server.replication.protocol.UpdateMsg)">publishUpdateMsg</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                 <a href="../../../../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg)</code></th>
@@ -342,14 +350,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  serverId and replication domain.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ChangelogDB.</span><code><span class="memberNameLink"><a href="../ChangelogDB.html#removeDB()">removeDB</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Removes the changelog database directory.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationDomainDB.</span><code><span class="memberNameLink"><a href="../ReplicationDomainDB.html#removeDomain(org.forgerock.opendj.ldap.DN)">removeDomain</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
 <td class="colLast">
@@ -357,7 +365,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  shutdown all its replica databases.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationDomainDB.</span><code><span class="memberNameLink"><a href="../ReplicationDomainDB.html#replicaHeartbeat(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaHeartbeat</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                 <a href="../../../../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;heartbeatCSN)</code></th>
@@ -365,7 +373,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Let the DB know this replica is alive.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ChangeNumberIndexDB.</span><code><span class="memberNameLink"><a href="../ChangeNumberIndexDB.html#resetChangeNumberTo(long,org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">resetChangeNumberTo</a></span>&#8203;(long&nbsp;newFirstCN,
                    <a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
@@ -374,7 +382,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Resets ChangeNumber index to the given number and CSN.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ChangelogDB.</span><code><span class="memberNameLink"><a href="../ChangelogDB.html#setComputeChangeNumber(boolean)">setComputeChangeNumber</a></span>&#8203;(boolean&nbsp;computeChangeNumber)</code></th>
 <td class="colLast">
@@ -382,7 +390,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  replicated changes.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ChangelogDB.</span><code><span class="memberNameLink"><a href="../ChangelogDB.html#shutdownDB()">shutdownDB</a></span>()</code></th>
 <td class="colLast">
@@ -475,16 +483,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">ECLMultiDomainDBCursor.</span><code><span class="memberNameLink"><a href="../../file/ECLMultiDomainDBCursor.html#next()">next</a></span>()</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#initializeDB()">initializeDB</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">ReplicaCursor.</span><code><span class="memberNameLink"><a href="../../file/ReplicaCursor.html#next()">next</a></span>()</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ECLMultiDomainDBCursor.</span><code><span class="memberNameLink"><a href="../../file/ECLMultiDomainDBCursor.html#next()">next</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReplicaCursor.</span><code><span class="memberNameLink"><a href="../../file/ReplicaCursor.html#next()">next</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ChangeNumberIndexer.</span><code><span class="memberNameLink"><a href="../../file/ChangeNumberIndexer.html#notifyEntryAddedToChangelog(org.forgerock.opendj.ldap.DN,long,org.opends.server.replication.common.MultiDomainServerState,org.opends.server.replication.protocol.UpdateMsg)">notifyEntryAddedToChangelog</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                            long&nbsp;changeNumber,
@@ -494,13 +507,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Notifies the <a href="../../../../../backends/ChangelogBackend.html" title="class in org.opends.server.backends"><code>ChangelogBackend</code></a> that a new entry has been added.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#notifyReplicaOffline(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">notifyReplicaOffline</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                     <a href="../../../../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ChangeNumberIndexer.</span><code><span class="memberNameLink"><a href="../../file/ChangeNumberIndexer.html#publishUpdateMsg(org.forgerock.opendj.ldap.DN,org.opends.server.replication.protocol.UpdateMsg)">publishUpdateMsg</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                 <a href="../../../../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg)</code></th>
@@ -508,34 +521,34 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Ensures the medium consistency point is updated by UpdateMsg.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#publishUpdateMsg(org.forgerock.opendj.ldap.DN,org.opends.server.replication.protocol.UpdateMsg)">publishUpdateMsg</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                 <a href="../../../../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#removeDB()">removeDB</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#removeDomain(org.forgerock.opendj.ldap.DN)">removeDomain</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#replicaHeartbeat(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaHeartbeat</a></span>&#8203;(<a href="../../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                 <a href="../../../../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;heartbeatCSN)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#setComputeChangeNumber(boolean)">setComputeChangeNumber</a></span>&#8203;(boolean&nbsp;computeChangeNumber)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">FileChangelogDB.</span><code><span class="memberNameLink"><a href="../../file/FileChangelogDB.html#shutdownDB()">shutdownDB</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>

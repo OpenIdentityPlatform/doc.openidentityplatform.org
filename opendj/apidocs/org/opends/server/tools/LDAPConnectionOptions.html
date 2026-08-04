@@ -519,7 +519,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>getSASLProperties</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;getSASLProperties()</pre>
-<div class="block">Get the SASL options used for authentication.</div>
+<div class="block">Get the SASL options used for authentication.
+ <p>
+ The returned map is the live set of properties: callers may add or remove properties
+ through it, as the DSML gateway does when it drops the authorization identity.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The SASL options used for authentication.</dd>

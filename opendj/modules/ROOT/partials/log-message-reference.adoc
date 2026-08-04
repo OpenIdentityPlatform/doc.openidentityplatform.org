@@ -11725,6 +11725,13 @@ Severity: ERROR
 +
 Message: Error while processing common audit log publisher %s, the keystore file %s is empty.
 
+[#log-ref-log-ref-ERR_LOGGER_ERROR_ROTATING_FILE_34]
+ID: 34::
+
+Severity: ERROR
++
+Message: Error occurred while rotating log file %s to %s. The current log file will be kept and appended to, and the rotation will be retried on the next interval. Any further rotation errors will be ignored until a rotation succeeds.
+
 --
 
 [#PLUGIN]
@@ -12325,6 +12332,13 @@ ID: 129::
 Severity: ERROR
 +
 Message: The opration could not be processed due to an unexpected exception: '%s'.
+
+[#log-ref-log-ref-ERR_PLUGIN_REFERENT_CANNOT_REPLACE_LOGFILE_130]
+ID: 130::
+
+Severity: ERROR
++
+Message: The Referential Integrity plugin update log file %s could not be deleted and created again after its records were processed. Those records will be processed again the next time the log file is read.
 
 --
 

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":42,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":42,"i21":10,"i22":42,"i23":42,"i24":42,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":42,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10,"i73":10};
+var data = {"i0":10,"i1":10,"i2":42,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":42,"i22":10,"i23":42,"i24":42,"i25":42,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":42,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10,"i73":10,"i74":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -211,6 +211,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addAttribute(org.opends.server.types.Attribute)">addAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute)</code></th>
+<td class="colLast">
+<div class="block">Ensures that this entry contains the provided attribute and its
+ values, ignoring any duplicate value.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addAttribute(org.opends.server.types.Attribute,java.util.Collection)">addAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? super <a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;duplicateValues)</code></th>
 <td class="colLast">
@@ -218,7 +226,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  values.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addAttribute(org.opends.server.types.Attribute,java.util.List)">addAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;duplicateValues)</code></th>
@@ -226,21 +234,21 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addObjectClass(org.forgerock.opendj.ldap.schema.ObjectClass)">addObjectClass</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/ObjectClass.html" title="class in org.forgerock.opendj.ldap.schema">ObjectClass</a>&nbsp;oc)</code></th>
 <td class="colLast">
 <div class="block">Adds the provided objectClass to this entry.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#applyModification(org.opends.server.types.Modification)">applyModification</a></span>&#8203;(<a href="Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod)</code></th>
 <td class="colLast">
 <div class="block">Applies the provided modification to this entry.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#applyModification(org.opends.server.types.Modification,boolean)">applyModification</a></span>&#8203;(<a href="Modification.html" title="class in org.opends.server.types">Modification</a>&nbsp;mod,
                  boolean&nbsp;relaxConstraints)</code></th>
@@ -248,14 +256,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block">Applies the provided modification to this entry.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#applyModifications(java.util.List)">applyModifications</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Modification.html" title="class in org.opends.server.types">Modification</a>&gt;&nbsp;mods)</code></th>
 <td class="colLast">
 <div class="block">Applies all of the provided modifications to this entry.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#conformsToSchema(org.opends.server.types.Entry,boolean,boolean,boolean,org.forgerock.i18n.LocalizableMessageBuilder)">conformsToSchema</a></span>&#8203;(<a href="Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;parentEntry,
                 boolean&nbsp;parentProvided,
@@ -267,14 +275,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  requirements.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#decode(org.forgerock.opendj.ldap.ByteSequenceReader)">decode</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/ByteSequenceReader.html" title="class in org.forgerock.opendj.ldap">ByteSequenceReader</a>&nbsp;entryBuffer)</code></th>
 <td class="colLast">
 <div class="block">Decodes the provided byte array as an entry.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#decode(org.forgerock.opendj.ldap.ByteSequenceReader,org.opends.server.api.CompressedSchema)">decode</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/ByteSequenceReader.html" title="class in org.forgerock.opendj.ldap">ByteSequenceReader</a>&nbsp;entryBuffer,
       <a href="../api/CompressedSchema.html" title="class in org.opends.server.api">CompressedSchema</a>&nbsp;compressedSchema)</code></th>
@@ -283,7 +291,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  encoding.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#duplicate(boolean)">duplicate</a></span>&#8203;(boolean&nbsp;processVirtual)</code></th>
 <td class="colLast">
@@ -291,7 +299,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  impacting the information in this entry.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#encode(org.forgerock.opendj.ldap.ByteStringBuilder,org.opends.server.types.EntryEncodeConfig)">encode</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/ByteStringBuilder.html" title="class in org.forgerock.opendj.ldap">ByteStringBuilder</a>&nbsp;buffer,
       <a href="EntryEncodeConfig.html" title="class in org.opends.server.types">EntryEncodeConfig</a>&nbsp;config)</code></th>
@@ -300,14 +308,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  persistent storage.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;o)</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the provided object is equal to this entry.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="Entry.html" title="class in org.opends.server.types">Entry</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#filterEntry(java.util.Set,boolean,boolean,boolean)">filterEntry</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;attrNameList,
            boolean&nbsp;omitValues,
@@ -318,14 +326,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  which match the provided criteria.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAliasedDN()">getAliasedDN</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the DN of the entry referenced by this alias entry.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Iterable</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllAttributes()">getAllAttributes</a></span>()</code></th>
 <td class="colLast">
@@ -333,7 +341,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  excluding the objectClass attribute.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Iterable</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllAttributes(java.lang.String)">getAllAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;nameOrOID)</code></th>
 <td class="colLast">
@@ -341,7 +349,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  with the specified name or OID.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Iterable</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllAttributes(org.forgerock.opendj.ldap.AttributeDescription)">getAllAttributes</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/AttributeDescription.html" title="class in org.forgerock.opendj.ldap">AttributeDescription</a>&nbsp;attributeDescription)</code></th>
 <td class="colLast">
@@ -349,7 +357,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  attribute description.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllAttributes(org.forgerock.opendj.ldap.schema.AttributeType)">getAllAttributes</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
@@ -357,7 +365,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  attribute type.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllAttributes(org.forgerock.opendj.ldap.schema.AttributeType,boolean)">getAllAttributes</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType,
                 boolean&nbsp;includeSubordinates)</code></th>
@@ -366,21 +374,21 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  attribute type.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttachment()">getAttachment</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the attachment for this entry.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(java.lang.String)">getAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;nameOrOID)</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(org.forgerock.opendj.ldap.AttributeDescription)">getAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/AttributeDescription.html" title="class in org.forgerock.opendj.ldap">AttributeDescription</a>&nbsp;attributeDescription)</code></th>
 <td class="colLast">
@@ -390,14 +398,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  and options.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">getAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttribute(org.forgerock.opendj.ldap.schema.AttributeType,boolean)">getAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType,
             boolean&nbsp;includeSubordinates)</code></th>
@@ -405,21 +413,21 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributes()">getAttributes</a></span>()</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getName()">getName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the distinguished name for this entry.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectClassAttribute()">getObjectClassAttribute</a></span>()</code></th>
 <td class="colLast">
@@ -427,14 +435,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  this entry.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="../../../forgerock/opendj/ldap/schema/ObjectClass.html" title="class in org.forgerock.opendj.ldap.schema">ObjectClass</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectClasses()">getObjectClasses</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the set of objectclasses defined for this entry.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOperationalAttribute(org.forgerock.opendj.ldap.AttributeDescription)">getOperationalAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/AttributeDescription.html" title="class in org.forgerock.opendj.ldap">AttributeDescription</a>&nbsp;attributeDescription)</code></th>
 <td class="colLast">
@@ -442,7 +450,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  specified attribute type.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOperationalAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">getOperationalAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
@@ -450,7 +458,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  specified attribute type.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOperationalAttributes()">getOperationalAttributes</a></span>()</code></th>
 <td class="colLast">
@@ -458,7 +466,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  entry.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProtocolElementName()">getProtocolElementName</a></span>()</code></th>
 <td class="colLast">
@@ -466,7 +474,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  element.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReferralURLs()">getReferralURLs</a></span>()</code></th>
 <td class="colLast">
@@ -474,14 +482,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  referral entry.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/schema/ObjectClass.html" title="class in org.forgerock.opendj.ldap.schema">ObjectClass</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStructuralObjectClass()">getStructuralObjectClass</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the structural objectclass for this entry.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="../../../forgerock/opendj/ldap/ResultCode.html" title="class in org.forgerock.opendj.ldap">ResultCode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTypeConformsToSchemaError()">getTypeConformsToSchemaError</a></span>()</code></th>
 <td class="colLast">
@@ -489,7 +497,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  requirements.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUserAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">getUserAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
@@ -497,7 +505,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  specified attribute type.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUserAttributes()">getUserAttributes</a></span>()</code></th>
 <td class="colLast">
@@ -505,7 +513,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  attributes for this entry.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAttribute(org.forgerock.opendj.ldap.AttributeDescription)">hasAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/AttributeDescription.html" title="class in org.forgerock.opendj.ldap">AttributeDescription</a>&nbsp;attributeDescription)</code></th>
 <td class="colLast">
@@ -513,7 +521,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  with all of the options in the provided set.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAttribute(org.forgerock.opendj.ldap.AttributeDescription,boolean)">hasAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/AttributeDescription.html" title="class in org.forgerock.opendj.ldap">AttributeDescription</a>&nbsp;attributeDescription,
             boolean&nbsp;includeSubordinates)</code></th>
@@ -522,14 +530,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  provided set.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">hasAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
 <div class="block">Indicates whether this entry contains the specified attribute.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasAttribute(org.forgerock.opendj.ldap.schema.AttributeType,boolean)">hasAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType,
             boolean&nbsp;includeSubordinates)</code></th>
@@ -537,21 +545,21 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block">Indicates whether this entry contains the specified attribute.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a hash code for this entry.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasObjectClass(org.forgerock.opendj.ldap.schema.ObjectClass)">hasObjectClass</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/ObjectClass.html" title="class in org.forgerock.opendj.ldap.schema">ObjectClass</a>&nbsp;objectClass)</code></th>
 <td class="colLast">
 <div class="block">Indicates whether this entry has the specified objectclass.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasOperationalAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">hasOperationalAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
@@ -559,7 +567,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  attribute.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasUserAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">hasUserAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
@@ -567,7 +575,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  attribute.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasValue(org.forgerock.opendj.ldap.AttributeDescription,org.forgerock.opendj.ldap.ByteString)">hasValue</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/AttributeDescription.html" title="class in org.forgerock.opendj.ldap">AttributeDescription</a>&nbsp;attributeDescription,
         <a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code></th>
@@ -575,7 +583,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block">Indicates whether this entry contains the specified attribute value.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasValue(org.forgerock.opendj.ldap.schema.AttributeType,org.forgerock.opendj.ldap.ByteString)">hasValue</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType,
         <a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&nbsp;value)</code></th>
@@ -583,7 +591,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block">Indicates whether this entry contains the specified attribute value.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#incrementAttribute(org.opends.server.types.Attribute)">incrementAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute)</code></th>
 <td class="colLast">
@@ -591,7 +599,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  the provided attribute.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAlias()">isAlias</a></span>()</code></th>
 <td class="colLast">
@@ -600,7 +608,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  "alias" attribute).</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isCollectiveAttributeSubentry()">isCollectiveAttributeSubentry</a></span>()</code></th>
 <td class="colLast">
@@ -609,7 +617,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  the "collectiveAttributeSubentry" objectclass).</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInheritedCollectiveAttributeSubentry()">isInheritedCollectiveAttributeSubentry</a></span>()</code></th>
 <td class="colLast">
@@ -618,7 +626,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  the "inheritedCollectiveAttributeSubentry" objectclass).</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInheritedFromDNCollectiveAttributeSubentry()">isInheritedFromDNCollectiveAttributeSubentry</a></span>()</code></th>
 <td class="colLast">
@@ -627,7 +635,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  "inheritedFromDNCollectiveAttributeSubentry" objectclass).</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInheritedFromRDNCollectiveAttributeSubentry()">isInheritedFromRDNCollectiveAttributeSubentry</a></span>()</code></th>
 <td class="colLast">
@@ -637,7 +645,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  objectclass).</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLDAPSubentry()">isLDAPSubentry</a></span>()</code></th>
 <td class="colLast">
@@ -645,7 +653,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  LDAP subentry (i.e., it contains the "ldapSubentry" objectclass).</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPasswordPolicySubentry()">isPasswordPolicySubentry</a></span>()</code></th>
 <td class="colLast">
@@ -654,7 +662,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  objectclass of LDAP Password Policy Internet-Draft).</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReferral()">isReferral</a></span>()</code></th>
 <td class="colLast">
@@ -662,7 +670,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  (e.g., it contains the "referral" objectclass and a "ref" attribute).</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSubentry()">isSubentry</a></span>()</code></th>
 <td class="colLast">
@@ -671,7 +679,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  objectclass).</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#matchesBaseAndScope(org.forgerock.opendj.ldap.DN,org.forgerock.opendj.ldap.SearchScope)">matchesBaseAndScope</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                    <a href="../../../forgerock/opendj/ldap/SearchScope.html" title="class in org.forgerock.opendj.ldap">SearchScope</a>&nbsp;scope)</code></th>
@@ -680,14 +688,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  provided search base DN and scope.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code><a href="AttributeParser.html" title="class in org.opends.server.types">AttributeParser</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parseAttribute(java.lang.String)">parseAttribute</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;attributeDescription)</code></th>
 <td class="colLast">
 <div class="block">Returns a parser for the named attribute contained in this entry.</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processVirtualAttributes()">processVirtualAttributes</a></span>()</code></th>
 <td class="colLast">
@@ -695,7 +703,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  entry.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#putAttribute(org.forgerock.opendj.ldap.schema.AttributeType,java.util.List)">putAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&gt;&nbsp;attributeList)</code></th>
@@ -703,7 +711,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block">Puts the provided attribute in this entry.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeAttribute(org.forgerock.opendj.ldap.schema.AttributeType)">removeAttribute</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType)</code></th>
 <td class="colLast">
@@ -711,7 +719,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  entry, including any instances with options.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeAttribute(org.opends.server.types.Attribute,java.util.Collection)">removeAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute,
                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;? super <a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;missingValues)</code></th>
@@ -720,7 +728,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  values.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeAttribute(org.opends.server.types.Attribute,java.util.List)">removeAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute,
                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;missingValues)</code></th>
@@ -728,35 +736,35 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replaceAttribute(org.opends.server.types.Attribute)">replaceAttribute</a></span>&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute)</code></th>
 <td class="colLast">
 <div class="block">Puts the provided attribute into this entry.</div>
 </td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttachment(java.lang.Object)">setAttachment</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;attachment)</code></th>
 <td class="colLast">
 <div class="block">Specifies the attachment for this entry.</div>
 </td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDN(org.forgerock.opendj.ldap.DN)">setDN</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;dn)</code></th>
 <td class="colLast">
 <div class="block">Specifies the distinguished name for this entry.</div>
 </td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i68" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang" class="externalLink">StringBuilder</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toLDIF()">toLDIF</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a list of the lines for this entry in LDIF form.</div>
 </td>
 </tr>
-<tr id="i68" class="altColor">
+<tr id="i69" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toLDIF(org.opends.server.types.LDIFExportConfig)">toLDIF</a></span>&#8203;(<a href="LDIFExportConfig.html" title="class in org.opends.server.types">LDIFExportConfig</a>&nbsp;exportConfig)</code></th>
 <td class="colLast">
@@ -764,14 +772,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  configuration.</div>
 </td>
 </tr>
-<tr id="i69" class="rowColor">
+<tr id="i70" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toLDIFString()">toLDIFString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a string representation of this entry in LDIF form.</div>
 </td>
 </tr>
-<tr id="i70" class="altColor">
+<tr id="i71" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toSingleLineString(java.lang.StringBuilder)">toSingleLineString</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang" class="externalLink">StringBuilder</a>&nbsp;buffer)</code></th>
 <td class="colLast">
@@ -779,14 +787,14 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  provided buffer.</div>
 </td>
 </tr>
-<tr id="i71" class="rowColor">
+<tr id="i72" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a string representation of this protocol element.</div>
 </td>
 </tr>
-<tr id="i72" class="altColor">
+<tr id="i73" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString(java.lang.StringBuilder)">toString</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang" class="externalLink">StringBuilder</a>&nbsp;buffer)</code></th>
 <td class="colLast">
@@ -794,7 +802,7 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
  provided buffer.</div>
 </td>
 </tr>
-<tr id="i73" class="rowColor">
+<tr id="i74" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString(java.lang.StringBuilder,int)">toString</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang" class="externalLink">StringBuilder</a>&nbsp;buffer,
         int&nbsp;indent)</code></th>
@@ -1381,6 +1389,23 @@ implements <a href="../api/ProtocolElement.html" title="interface in org.opends.
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>attribute</code> - The attribute to add or merge with this entry.</dd>
 <dd><code>duplicateValues</code> - A list to which any duplicate values will be added.</dd>
+</dl>
+</li>
+</ul>
+<a id="addAttribute(org.opends.server.types.Attribute)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addAttribute</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;addAttribute&#8203;(<a href="Attribute.html" title="interface in org.opends.server.types">Attribute</a>&nbsp;attribute)</pre>
+<div class="block">Ensures that this entry contains the provided attribute and its
+ values, ignoring any duplicate value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>attribute</code> - The attribute to add or merge with this entry.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#addAttribute(org.opends.server.types.Attribute,java.util.Collection)"><code>addAttribute(Attribute, Collection)</code></a></dd>
 </dl>
 </li>
 </ul>

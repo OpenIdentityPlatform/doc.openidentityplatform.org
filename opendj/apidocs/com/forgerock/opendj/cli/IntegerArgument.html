@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":10};
+var data = {"i0":9,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -199,6 +199,13 @@ extends <a href="Argument.html" title="class in com.forgerock.opendj.cli">Argume
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDefaultIntValue(int)">getDefaultIntValue</a></span>&#8203;(int&nbsp;fallbackValue)</code></th>
+<td class="colLast">
+<div class="block">Returns the default value of this argument as an int.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#valueIsAcceptable(java.lang.String,org.forgerock.i18n.LocalizableMessageBuilder)">valueIsAcceptable</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;valueString,
                  org.forgerock.i18n.LocalizableMessageBuilder&nbsp;invalidReason)</code></th>
@@ -252,6 +259,26 @@ extends <a href="Argument.html" title="class in com.forgerock.opendj.cli">Argume
 <dd><code>name</code> - The generic name that will be used to refer to this argument.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A builder to continue building the <a href="IntegerArgument.html" title="class in com.forgerock.opendj.cli"><code>IntegerArgument</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a id="getDefaultIntValue(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultIntValue</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getDefaultIntValue&#8203;(int&nbsp;fallbackValue)</pre>
+<div class="block">Returns the default value of this argument as an int.
+ <p>
+ The default value of an integer argument is always built from an <code>int</code>, so the only
+ reason for this method to return the fallback value is that this argument has no default
+ value at all.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>fallbackValue</code> - The value to return if this argument does not have a default value.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The default value of this argument, or <code>fallbackValue</code> if it does not have one.</dd>
 </dl>
 </li>
 </ul>

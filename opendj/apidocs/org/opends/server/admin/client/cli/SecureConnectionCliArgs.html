@@ -534,7 +534,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Initialize Global option.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a ArrayList with the options created.</dd>
+<dd>a new set holding the options created. Callers may add their own arguments to it:
+         the set is a copy, so doing so does not add them to the connection arguments this
+         object reports through <a href="#argumentsPresent()"><code>argumentsPresent()</code></a>.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../../com/forgerock/opendj/cli/ArgumentException.html" title="class in com.forgerock.opendj.cli">ArgumentException</a></code> - If there is a problem with any of the parameters used to create
            this argument.</dd>

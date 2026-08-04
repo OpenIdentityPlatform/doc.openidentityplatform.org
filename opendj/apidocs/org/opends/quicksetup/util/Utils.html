@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -418,6 +418,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i34" class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#parseIntOrDefault(java.lang.String,int)">parseIntOrDefault</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
+                 int&nbsp;defaultValue)</code></th>
+<td class="colLast">
+<div class="block">Returns the number held by the provided field value, or the provided default value if it does
+ not hold a number.</div>
+</td>
+</tr>
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMacOSXMenuBar(org.forgerock.i18n.LocalizableMessage)">setMacOSXMenuBar</a></span>&#8203;(org.forgerock.i18n.LocalizableMessage&nbsp;appName)</code></th>
 <td class="colLast">
@@ -426,7 +435,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  in the dock.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#supportsOption(java.lang.String,java.lang.String,java.lang.String)">supportsOption</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;option,
               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;javaHome,
@@ -1084,7 +1093,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="getDsConfigReplicationEnableEquivalentCommandLines(org.opends.quicksetup.UserData)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getDsConfigReplicationEnableEquivalentCommandLines</h4>
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;getDsConfigReplicationEnableEquivalentCommandLines&#8203;(<a href="../UserData.html" title="class in org.opends.quicksetup">UserData</a>&nbsp;userData)</pre>
@@ -1096,6 +1105,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the equivalent dsconfig command-line required to configure the
          first replicated server in the topology.</dd>
+</dl>
+</li>
+</ul>
+<a id="parseIntOrDefault(java.lang.String,int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>parseIntOrDefault</h4>
+<pre class="methodSignature">public static&nbsp;int&nbsp;parseIntOrDefault&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
+                                    int&nbsp;defaultValue)</pre>
+<div class="block">Returns the number held by the provided field value, or the provided default value if it does
+ not hold a number.
+ <p>
+ The panels validate their fields before using their values, so the default value is only
+ returned when a field has not been validated beforehand.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - the value to be parsed, which may be <code>null</code></dd>
+<dd><code>defaultValue</code> - the value to return when <code>value</code> does not hold a number</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number held by the provided value</dd>
 </dl>
 </li>
 </ul>

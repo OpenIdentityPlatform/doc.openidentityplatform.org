@@ -526,7 +526,10 @@ implements <a href="DocDescriptionSupplement.html" title="interface in com.forge
 <li class="blockList">
 <h4>getValues</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getValues()</pre>
-<div class="block">Retrieves the set of string values for this argument.</div>
+<div class="block">Retrieves the set of string values for this argument.
+ <p>
+ The returned list is the live one: <code>ListBackends</code> removes the backend identifiers it
+ could not resolve from it, and <code>InstallDS</code> adds the default base DN to it.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The set of string values for this argument.</dd>
