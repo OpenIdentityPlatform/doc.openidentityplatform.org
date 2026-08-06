@@ -151,7 +151,18 @@ extends <a href="../api/plugin/InternalDirectoryServerPlugin.html" title="class 
  <BR><BR>
  This class also provides a mechanism for detecting changes to authenticated
  user entries and notifying the corresponding client connections so that they
- can update their cached versions.</div>
+ can update their cached versions.
+ <BR><BR>
+ The user map is a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink"><code>ConcurrentHashMap</code></a>, so registering and deregistering
+ a connection (which happens on every bind and unbind) is lock-free at the map
+ level and only contends at the granularity of a single hash bin. Each value is
+ a concurrent set with O(1) add/remove, so many connections authenticating as
+ the same user (e.g. an application service account) do not degrade: a
+ copy-on-write set here would copy the whole connection array under the bin
+ lock on every bind. The subtree operations triggered by changes to
+ authenticated user entries (delete / modify / modify DN) are rare and scan
+ the key set, which the concurrent map supports with weakly-consistent
+ iteration.</div>
 </li>
 </ul>
 </div>
@@ -223,7 +234,7 @@ extends <a href="../api/plugin/InternalDirectoryServerPlugin.html" title="class 
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CopyOnWriteArraySet.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CopyOnWriteArraySet</a>&lt;<a href="../api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get(org.forgerock.opendj.ldap.DN)">get</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;userDN)</code></th>
 <td class="colLast">
 <div class="block">Retrieves the set of client connections authenticated as the specified
@@ -346,7 +357,7 @@ extends <a href="../api/plugin/InternalDirectoryServerPlugin.html" title="class 
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CopyOnWriteArraySet.html?is-external=true" title="class or interface in java.util.concurrent" class="externalLink">CopyOnWriteArraySet</a>&lt;<a href="../api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&gt;&nbsp;get&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;userDN)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&gt;&nbsp;get&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;userDN)</pre>
 <div class="block">Retrieves the set of client connections authenticated as the specified
  user.  This method is only intended for internal testing use and should not
  be called for any other purpose.</div>
