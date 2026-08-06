@@ -331,7 +331,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public&nbsp;void&nbsp;addDomain&#8203;(<a href="../../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                       <a href="../../../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a>&nbsp;startAfterState)</pre>
 <div class="block">Adds a replication domain for this cursor to iterate over. Added cursors
- will be created and iterated over on the next call to <a href="../api/DBCursor.html#next()"><code>DBCursor.next()</code></a>.</div>
+ will be created and iterated over on the next call to <a href="../api/DBCursor.html#next()"><code>DBCursor.next()</code></a>.
+ <p>
+ Announcing a domain this cursor already iterates over has no effect: the announcement is
+ discarded when cursors are incorporated, and new replica DBs of such a domain reach it
+ through <a href="DomainDBCursor.html#addReplicaDB(int,org.opends.server.replication.common.CSN)"><code>DomainDBCursor.addReplicaDB(int, org.opends.server.replication.common.CSN)</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>baseDN</code> - the replication domain's baseDN</dd>
