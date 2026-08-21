@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":6,"i4":10,"i5":10,"i6":10,"i7":6,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":6,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":6,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":6,"i5":10,"i6":10,"i7":10,"i8":6,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":6,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":6,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -299,6 +299,16 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#abortStalledInitializeFromRemote(long)">abortStalledInitializeFromRemote</a></span>&#8203;(long&nbsp;stalledTimeoutMs)</code></th>
+<td class="colLast">
+<div class="block">Fails the on-going initialization from a remote replica when the request
+ published by <a href="#initializeFromRemote(int,org.opends.server.backends.task.Task)"><code>initializeFromRemote(int, Task)</code></a> has received no
+ answer at all - neither the InitializeTargetMsg starting the import nor an
+ ErrorMsg - within the provided delay.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addAdditionalMonitoring(org.opends.server.api.MonitorData)">addAdditionalMonitoring</a></span>&#8203;(<a href="../../api/MonitorData.html" title="class in org.opends.server.api">MonitorData</a>&nbsp;monitorData)</code></th>
 <td class="colLast">
@@ -306,7 +316,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  in the ReplicationDomain.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeConfig(java.util.Set,java.util.Set)">changeConfig</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;includeAttributes,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;includeAttributesForDeletes)</code></th>
@@ -315,14 +325,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  in the ECL.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeConfig(org.forgerock.opendj.server.config.server.ReplicationDomainCfg)">changeConfig</a></span>&#8203;(<a href="../../../../forgerock/opendj/server/config/server/ReplicationDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ReplicationDomainCfg</a>&nbsp;config)</code></th>
 <td class="colLast">
 <div class="block">Change some ReplicationDomain parameters.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>abstract long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#countEntries()">countEntries</a></span>()</code></th>
 <td class="colLast">
@@ -330,7 +340,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  replicated domain.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#decodeTarget(java.lang.String)">decodeTarget</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetString)</code></th>
 <td class="colLast">
@@ -338,35 +348,35 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  from which this server can be initialized.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableService()">disableService</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Temporarily disable the Replication Service.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableService()">enableService</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Restart the Replication service after a <a href="#disableService()"><code>disableService()</code></a>.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#exportBackend(java.io.OutputStream)">exportBackend</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;output)</code></th>
 <td class="colLast">
 <div class="block">This method should trigger an export of the replicated data.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../common/AssuredMode.html" title="enum in org.opends.server.replication.common">AssuredMode</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredMode()">getAssuredMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gives the mode for the assured replication of the domain.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSdAcknowledgedUpdates()">getAssuredSdAcknowledgedUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -374,21 +384,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  acknowledged without errors.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSdLevel()">getAssuredSdLevel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gives the assured Safe Data level of the replication of the domain.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSdSentUpdates()">getAssuredSdSentUpdates</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the number of updates sent in assured safe data mode.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSdServerTimeoutUpdates()">getAssuredSdServerTimeoutUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -396,7 +406,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged due to timeout error per server.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSdTimeoutUpdates()">getAssuredSdTimeoutUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -404,7 +414,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged due to timeout error.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrAcknowledgedUpdates()">getAssuredSrAcknowledgedUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -412,7 +422,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  acknowledged without errors.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrNotAcknowledgedUpdates()">getAssuredSrNotAcknowledgedUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -420,14 +430,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrReceivedUpdates()">getAssuredSrReceivedUpdates</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the number of updates received in assured safe read mode request.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrReceivedUpdatesAcked()">getAssuredSrReceivedUpdatesAcked</a></span>()</code></th>
 <td class="colLast">
@@ -435,7 +445,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  without error (no replay error).</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrReceivedUpdatesNotAcked()">getAssuredSrReceivedUpdatesNotAcked</a></span>()</code></th>
 <td class="colLast">
@@ -443,7 +453,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  not ack due to error (replay error).</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrReplayErrorUpdates()">getAssuredSrReplayErrorUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -451,14 +461,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged due to replay error.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrSentUpdates()">getAssuredSrSentUpdates</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the number of updates sent in assured safe read mode.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrServerNotAcknowledgedUpdates()">getAssuredSrServerNotAcknowledgedUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -466,7 +476,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged per server.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrTimeoutUpdates()">getAssuredSrTimeoutUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -474,7 +484,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged due to timeout error.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredSrWrongStatusUpdates()">getAssuredSrWrongStatusUpdates</a></span>()</code></th>
 <td class="colLast">
@@ -482,35 +492,35 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  been acknowledged due to wrong status error.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAssuredTimeout()">getAssuredTimeout</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gives the assured timeout of the replication of the domain (in ms).</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBaseDN()">getBaseDN</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the base DN of this ReplicationDomain.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEclIncludes()">getEclIncludes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the attributes to include in each change for the ECL.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEclIncludesForDeletes()">getEclIncludesForDeletes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the attributes to include in each delete change for the ECL.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGenerationID()">getGenerationID</a></span>()</code></th>
 <td class="colLast">
@@ -518,7 +528,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  ReplicationDomain.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="../common/CSNGenerator.html" title="class in org.opends.server.replication.common">CSNGenerator</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGenerator()">getGenerator</a></span>()</code></th>
 <td class="colLast">
@@ -526,21 +536,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  generate <a href="../common/CSN.html" title="class in org.opends.server.replication.common"><code>CSN</code></a> for this domain.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGroupId()">getGroupId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the group id for this domain.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>protected <a href="ReplicationDomain.ImportExportContext.html" title="class in org.opends.server.replication.service">ReplicationDomain.ImportExportContext</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getImportExportContext()">getImportExportContext</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the Import/Export context associated to this ReplicationDomain.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLastLocalChange()">getLastLocalChange</a></span>()</code></th>
 <td class="colLast">
@@ -548,28 +558,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  ReplicationDomain.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLastStatusChangeDate()">getLastStatusChangeDate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the date of the last status change.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRefUrls()">getRefUrls</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the referrals URLs this domain publishes.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>,&#8203;<a href="../common/DSInfo.html" title="class in org.opends.server.replication.common">DSInfo</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicaInfos()">getReplicaInfos</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the info for Replicas in the topology (except us).</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>,&#8203;<a href="../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicaStates()">getReplicaStates</a></span>()</code></th>
 <td class="colLast">
@@ -577,7 +587,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  Topology.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code><a href="../../types/HostPort.html" title="class in org.opends.server.types">HostPort</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicationServer()">getReplicationServer</a></span>()</code></th>
 <td class="colLast">
@@ -585,7 +595,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  connected.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../common/RSInfo.html" title="class in org.opends.server.replication.common">RSInfo</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRsInfos()">getRsInfos</a></span>()</code></th>
 <td class="colLast">
@@ -593,7 +603,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  to).</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRsServerId()">getRsServerId</a></span>()</code></th>
 <td class="colLast">
@@ -601,35 +611,35 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  is currently connected.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getServerId()">getServerId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the server ID.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code><a href="../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getServerState()">getServerState</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the ServerState maintained by the Concrete class.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code><a href="../common/ServerStatus.html" title="enum in org.opends.server.replication.common">ServerStatus</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStatus()">getStatus</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the status for this domain.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasConnectionError()">hasConnectionError</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Check if the domain has a connection error.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ieRunning()">ieRunning</a></span>()</code></th>
 <td class="colLast">
@@ -637,14 +647,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  processed.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importBackend(java.io.InputStream)">importBackend</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;input)</code></th>
 <td class="colLast">
 <div class="block">This method should trigger an import of the replicated data.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeFromRemote(int,org.opends.server.backends.task.Task)">initializeFromRemote</a></span>&#8203;(int&nbsp;source,
                     <a href="../../backends/task/Task.html" title="class in org.opends.server.backends.task">Task</a>&nbsp;initTask)</code></th>
@@ -652,7 +662,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Initializes asynchronously this domain from a remote source server.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeRemote(int,int,org.opends.server.backends.task.Task,int)">initializeRemote</a></span>&#8203;(int&nbsp;serverToInitialize,
                 int&nbsp;serverRunningTheTask,
@@ -664,7 +674,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  server that requests the initialization.</div>
 </td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeRemote(int,org.opends.server.backends.task.Task)">initializeRemote</a></span>&#8203;(int&nbsp;target,
                 <a href="../../backends/task/Task.html" title="class in org.opends.server.backends.task">Task</a>&nbsp;initTask)</code></th>
@@ -672,21 +682,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Initializes a remote server from this server.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAssured()">isAssured</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Tells if assured replication is enabled for this domain.</div>
 </td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isConnected()">isConnected</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Check if the domain is connected to a ReplicationServer.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isListenerShuttingDown()">isListenerShuttingDown</a></span>()</code></th>
 <td class="colLast">
@@ -694,14 +704,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  shutdown.</div>
 </td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWaitForAckIfAssuredEnabled(org.opends.server.replication.protocol.UpdateMsg)">prepareWaitForAckIfAssuredEnabled</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg)</code></th>
 <td class="colLast">
 <div class="block">Prepare a message if it is to be sent in assured mode.</div>
 </td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processUpdate(org.opends.server.replication.protocol.UpdateMsg)">processUpdate</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg)</code></th>
 <td class="colLast">
@@ -709,7 +719,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  remote replication entities.</div>
 </td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processUpdateDone(org.opends.server.replication.protocol.UpdateMsg,java.lang.String)">processUpdateDone</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;replayErrorMsg)</code></th>
@@ -719,14 +729,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  update is completed.</div>
 </td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publish(org.opends.server.replication.protocol.UpdateMsg)">publish</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg)</code></th>
 <td class="colLast">
 <div class="block">Publish an <a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol"><code>UpdateMsg</code></a> to the Replication Service.</div>
 </td>
 </tr>
-<tr id="i56" class="altColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publishReplicaOfflineMsg()">publishReplicaOfflineMsg</a></span>()</code></th>
 <td class="colLast">
@@ -734,7 +744,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  replica have been sent out.</div>
 </td>
 </tr>
-<tr id="i57" class="rowColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#readAssuredConfig(org.forgerock.opendj.server.config.server.ReplicationDomainCfg,boolean)">readAssuredConfig</a></span>&#8203;(<a href="../../../../forgerock/opendj/server/config/server/ReplicationDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ReplicationDomainCfg</a>&nbsp;config,
                  boolean&nbsp;allowReconnection)</code></th>
@@ -742,7 +752,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Gets and stores the assured replication configuration parameters.</div>
 </td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>protected byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receiveEntryBytes()">receiveEntryBytes</a></span>()</code></th>
 <td class="colLast">
@@ -750,14 +760,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  initialize the domain (called by ReplLDIFInputStream).</div>
 </td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetGenerationId(java.lang.Long)">resetGenerationId</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html?is-external=true" title="class or interface in java.lang" class="externalLink">Long</a>&nbsp;generationIdNewValue)</code></th>
 <td class="colLast">
 <div class="block">Reset the generationId of this domain in the whole topology.</div>
 </td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sessionInitiated(org.opends.server.replication.common.ServerStatus,org.opends.server.replication.common.ServerState)">sessionInitiated</a></span>&#8203;(<a href="../common/ServerStatus.html" title="enum in org.opends.server.replication.common">ServerStatus</a>&nbsp;initStatus,
                 <a href="../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a>&nbsp;rsState)</code></th>
@@ -765,7 +775,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Set the initial status of the domain and perform necessary initializations.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEclIncludes(int,java.util.Set,java.util.Set)">setEclIncludes</a></span>&#8203;(int&nbsp;serverId,
               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;includeAttributes,
@@ -774,14 +784,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Set the attributes configured on a server to be included in the ECL.</div>
 </td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setGenerationID(long)">setGenerationID</a></span>&#8203;(long&nbsp;generationId)</code></th>
 <td class="colLast">
 <div class="block">Sets the generationId for this replication domain.</div>
 </td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#signalNewStatus(org.opends.server.replication.common.StatusMachineEvent)">signalNewStatus</a></span>&#8203;(<a href="../common/StatusMachineEvent.html" title="enum in org.opends.server.replication.common">StatusMachineEvent</a>&nbsp;event)</code></th>
 <td class="colLast">
@@ -789,26 +799,26 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  event.</div>
 </td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startListenService()">startListenService</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Starts the receiver side of the Replication Service.</div>
 </td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#startPublishService()">startPublishService</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Start the publish mechanism of the Replication Service.</div>
 </td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i68" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waitForAckIfAssuredEnabled(org.opends.server.replication.protocol.UpdateMsg)">waitForAckIfAssuredEnabled</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg)</code></th>
 <td class="colLast">
@@ -1304,6 +1314,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code><a href="../../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></code> - If it was not possible to publish the
                             Initialization message to the Topology.
                             The task state is updated.</dd>
+</dl>
+</li>
+</ul>
+<a id="abortStalledInitializeFromRemote(long)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>abortStalledInitializeFromRemote</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;abortStalledInitializeFromRemote&#8203;(long&nbsp;stalledTimeoutMs)</pre>
+<div class="block">Fails the on-going initialization from a remote replica when the request
+ published by <a href="#initializeFromRemote(int,org.opends.server.backends.task.Task)"><code>initializeFromRemote(int, Task)</code></a> has received no
+ answer at all - neither the InitializeTargetMsg starting the import nor an
+ ErrorMsg - within the provided delay. The request or its answer can be
+ lost with no error ever coming back (issue #861), and nothing else bounds
+ the wait: without this watchdog the initialize task hangs forever.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>stalledTimeoutMs</code> - delay in milliseconds after which the unanswered request is
+          considered lost</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether a stalled initialization was aborted by this call</dd>
 </dl>
 </li>
 </ul>

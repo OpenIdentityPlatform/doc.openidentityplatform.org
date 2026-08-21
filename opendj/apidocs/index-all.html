@@ -194,6 +194,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Attempts to abort this operation before processing has
  completed.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/spi/Importer.html#aborted()">aborted()</a></span> - Method in interface org.opends.server.backends.pluggable.spi.<a href="org/opends/server/backends/pluggable/spi/Importer.html" title="interface in org.opends.server.backends.pluggable.spi">Importer</a></dt>
+<dd>
+<div class="block">Notifies this importer that the import failed or was cancelled, before <a href="org/opends/server/backends/pluggable/spi/Importer.html#close()"><code>Importer.close()</code></a> runs: what the trees hold
+ is an incomplete import that is going to be run again.</div>
+</dd>
 <dt><a href="org/opends/server/replication/server/changelog/api/AbortedChangelogCursorException.html" title="class in org.opends.server.replication.server.changelog.api"><span class="typeNameLink">AbortedChangelogCursorException</span></a> - Exception in <a href="org/opends/server/replication/server/changelog/api/package-summary.html">org.opends.server.replication.server.changelog.api</a></dt>
 <dd>
 <div class="block">This exception is thrown when a cursor that has been aborted is used.</div>
@@ -212,6 +217,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><a href="com/forgerock/opendj/ldap/extensions/AbortedTransactionExtendedResult.html" title="class in com.forgerock.opendj.ldap.extensions"><span class="typeNameLink">AbortedTransactionExtendedResult</span></a> - Class in <a href="com/forgerock/opendj/ldap/extensions/package-summary.html">com.forgerock.opendj.ldap.extensions</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#abortStalledInitializeFromRemote(long)">abortStalledInitializeFromRemote(long)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Fails the on-going initialization from a remote replica when the request
+ published by <a href="org/opends/server/replication/service/ReplicationDomain.html#initializeFromRemote(int,org.opends.server.backends.task.Task)"><code>ReplicationDomain.initializeFromRemote(int, Task)</code></a> has received no
+ answer at all - neither the InitializeTargetMsg starting the import nor an
+ ErrorMsg - within the provided delay.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/server/ServerHandler.html#abortStart(org.forgerock.i18n.LocalizableMessage)">abortStart(LocalizableMessage)</a></span> - Method in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a></dt>
 <dd>
 <div class="block">Abort a start procedure currently establishing.</div>
@@ -125000,7 +125012,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/cassandra/CASStorage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">read(ReadOperation&lt;T&gt;)</a></span> - Method in class org.opends.server.backends.cassandra.<a href="org/opends/server/backends/cassandra/CASStorage.html" title="class in org.opends.server.backends.cassandra">CASStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jdbc/JDBCStorage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">read(ReadOperation&lt;T&gt;)</a></span> - Method in class org.opends.server.backends.jdbc.<a href="org/opends/server/backends/jdbc/JDBCStorage.html" title="class in org.opends.server.backends.jdbc">JDBCStorage</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Executes a read operation.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jeb/JEStorage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">read(ReadOperation&lt;T&gt;)</a></span> - Method in class org.opends.server.backends.jeb.<a href="org/opends/server/backends/jeb/JEStorage.html" title="class in org.opends.server.backends.jeb">JEStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pdb/PDBStorage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">read(ReadOperation&lt;T&gt;)</a></span> - Method in class org.opends.server.backends.pdb.<a href="org/opends/server/backends/pdb/PDBStorage.html" title="class in org.opends.server.backends.pdb">PDBStorage</a></dt>
@@ -156022,7 +156036,9 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/cassandra/CASStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.cassandra.<a href="org/opends/server/backends/cassandra/CASStorage.html" title="class in org.opends.server.backends.cassandra">CASStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jdbc/JDBCStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.jdbc.<a href="org/opends/server/backends/jdbc/JDBCStorage.html" title="class in org.opends.server.backends.jdbc">JDBCStorage</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Executes a write operation.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jeb/JEStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.jeb.<a href="org/opends/server/backends/jeb/JEStorage.html" title="class in org.opends.server.backends.jeb">JEStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pdb/PDBStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.pdb.<a href="org/opends/server/backends/pdb/PDBStorage.html" title="class in org.opends.server.backends.pdb">PDBStorage</a></dt>

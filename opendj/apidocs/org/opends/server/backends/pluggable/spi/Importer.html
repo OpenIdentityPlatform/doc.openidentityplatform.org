@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":18,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -148,32 +148,40 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#aborted()">aborted</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Notifies this importer that the import failed or was cancelled, before <a href="#close()"><code>close()</code></a> runs: what the trees hold
+ is an incomplete import that is going to be run again.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clearTree(org.opends.server.backends.pluggable.spi.TreeName)">clearTree</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
 <div class="block">Clear the tree whose name is provided.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#close()">close</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="SequentialCursor.html" title="interface in org.opends.server.backends.pluggable.spi">SequentialCursor</a>&lt;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openCursor(org.opends.server.backends.pluggable.spi.TreeName)">openCursor</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
 <div class="block">Opens a cursor on the tree whose name is provided.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#put(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence,org.forgerock.opendj.ldap.ByteSequence)">put</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
    <a href="../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key,
@@ -182,7 +190,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Creates a record with the provided key and value in the tree identified by the provided name.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence)">read</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
     <a href="../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key)</code></th>
@@ -276,6 +284,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a new cursor</dd>
 </dl>
+</li>
+</ul>
+<a id="aborted()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aborted</h4>
+<pre class="methodSignature">default&nbsp;void&nbsp;aborted()</pre>
+<div class="block">Notifies this importer that the import failed or was cancelled, before <a href="#close()"><code>close()</code></a> runs: what the trees hold
+ is an incomplete import that is going to be run again. Implementations doing work of their own in <a href="#close()"><code>close()</code></a>
+ on the assumption that the data is final - refreshing the optimizer statistics of a database, for instance - can
+ skip it. The default implementation does nothing.</div>
 </li>
 </ul>
 <a id="close()">

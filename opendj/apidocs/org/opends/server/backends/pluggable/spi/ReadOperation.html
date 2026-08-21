@@ -182,7 +182,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h4>run</h4>
 <pre class="methodSignature"><a href="ReadOperation.html" title="type parameter in ReadOperation">T</a>&nbsp;run&#8203;(<a href="ReadableTransaction.html" title="interface in org.opends.server.backends.pluggable.spi">ReadableTransaction</a>&nbsp;txn)
 throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
-<div class="block">Executes a read operation, and returns the read value.</div>
+<div class="block">Executes a read operation, and returns the read value.
+ <p>
+ Implementations need not be idempotent: unlike <a href="WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a>, a read operation is never replayed by
+ <a href="Storage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)"><code>Storage.read(ReadOperation)</code></a>, so it is free to print, to write to a stream, or to accumulate state
+ outside of the transaction.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>txn</code> - the read transaction where to execute the read operation</dd>

@@ -452,8 +452,10 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
 <pre class="methodSignature">public&nbsp;&lt;T&gt;&nbsp;T&nbsp;read&#8203;(<a href="../pluggable/spi/ReadOperation.html" title="interface in org.opends.server.backends.pluggable.spi">ReadOperation</a>&lt;T&gt;&nbsp;readOperation)
            throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../pluggable/spi/Storage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">Storage</a></code></span></div>
-<div class="block">Executes a read operation. In case of a read operation rollback, implementations must ensure
- the read operation is retried until it succeeds.</div>
+<div class="block">Executes a read operation. In case of a read operation rollback, implementations must propagate the failure
+ to the caller rather than replay the operation: unlike <a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a>, a <a href="../pluggable/spi/ReadOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>ReadOperation</code></a> is not
+ required to be idempotent, and several of them are not - they write to a stream, print, or accumulate state
+ that a second attempt would double.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>
