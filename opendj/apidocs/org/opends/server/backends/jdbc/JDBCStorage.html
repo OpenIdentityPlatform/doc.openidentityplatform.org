@@ -463,7 +463,12 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  replay appends the entries already written instead of truncating the file; <code>VerifyJob</code> accumulates its
  counters in instance fields that no attempt resets, so a replay reports twice the entry count of the backend.
  Both are reachable while the server is online, since an export holds no more than a shared backend lock.
- A conflict therefore fails the read here, exactly as it did before the retry of <a href="#write(org.opends.server.backends.pluggable.spi.WriteOperation)"><code>write(org.opends.server.backends.pluggable.spi.WriteOperation)</code></a> was added.</div>
+ A conflict therefore fails the read here, exactly as it did before the retry of <a href="#write(org.opends.server.backends.pluggable.spi.WriteOperation)"><code>write(org.opends.server.backends.pluggable.spi.WriteOperation)</code></a> was added.
+ <p>
+ A connection the database dropped is not replayed either, for the same reason - but it is reported to the
+ pool, which cannot notice one on its own: a borrow inside the alive window of
+ <code>CachedConnection.ALIVE_BYPASS_PROPERTY</code> asks the database nothing, so the statement that broke is the
+ only place the drop is ever seen.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#read(org.opends.server.backends.pluggable.spi.ReadOperation)">read</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>
@@ -502,7 +507,14 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  <p>
  Only the operation itself is replayed: a failure of <code>getConnection()</code> or of the implicit
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Connection.html?is-external=true#close()" title="class or interface in java.sql" class="externalLink"><code>Connection.close()</code></a> - which returns the connection to the pool after a rollback - leaves the loop, so
- that a completed write is never replayed because releasing its connection failed.</div>
+ that a completed write is never replayed because releasing its connection failed.
+ <p>
+ A connection the database dropped is replayed as well, on a connection the next attempt borrows of its own.
+ That is what makes the alive window of <code>CachedConnection.ALIVE_BYPASS_PROPERTY</code> safe to leave on: a
+ connection handed out unvalidated and found dead costs an attempt rather than the operation, and a write of
+ the replication replay - which records a failed operation as applied and advances the server state past it,
+ see #889 - never sees it. Only while nothing of the attempt may have been committed yet, though: see
+ <code>replayReason(Throwable, String, boolean, boolean, boolean)</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>
