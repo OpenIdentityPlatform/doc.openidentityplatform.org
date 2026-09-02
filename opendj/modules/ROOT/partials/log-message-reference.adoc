@@ -4841,6 +4841,13 @@ Severity: ERROR
 +
 Message: Registering Service Discovery Manager's listener failed : %s.
 
+[#log-ref-log-ref-ERR_COMPSCHEMA_CANNOT_MIGRATE_619]
+ID: 619::
+
+Severity: ERROR
++
+Message: The compressed schema definitions of backend '%s' could not be migrated from the shared tree '%s' to '%s': %s. The backend cannot be opened, because its entries were encoded against the definitions that were not migrated and would decode as the wrong attributes.
+
 --
 
 [#CONFIG]
@@ -9150,6 +9157,20 @@ ID: 755::
 Severity: ERROR
 +
 Message: Cannot complete initialization of server's backends because the root and administrative backends have not been initialized yet.
+
+[#log-ref-log-ref-ERR_COMPRESSEDSCHEMA_UNREADABLE_AD_TOKEN_757]
+ID: 757::
+
+Severity: ERROR
++
+Message: Unable to decode the provided attribute because its attribute description token could not be read from the record: %s.
+
+[#log-ref-log-ref-ERR_COMPRESSEDSCHEMA_UNREADABLE_OC_TOKEN_758]
+ID: 758::
+
+Severity: ERROR
++
+Message: Unable to decode the provided object class set because its token could not be read from the record: %s.
 
 --
 

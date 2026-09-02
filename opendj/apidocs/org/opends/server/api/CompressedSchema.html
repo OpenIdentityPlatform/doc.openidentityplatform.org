@@ -490,7 +490,18 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  do nothing. Calls to this method are synchronized, so implementations can
  assume that this method is not being called by other threads. Note that
  this method is not thread-safe with respect to
- <a href="#storeObjectClasses(byte%5B%5D,java.util.Collection)"><code>storeObjectClasses(byte[], Collection)</code></a>.</div>
+ <a href="#storeObjectClasses(byte%5B%5D,java.util.Collection)"><code>storeObjectClasses(byte[], Collection)</code></a>.
+ <p>
+ Called with the exclusive lock of this compressed schema held, and that lock is reentrant, so
+ an implementation must re-enter neither the encode, the load nor the decode path of the
+ compressed schema it belongs to. The registration being persisted has already been appended
+ to the decode map - so that an implementation persisting the whole content rather than the
+ element it is handed, as <code>DefaultCompressedSchema</code> does, has it - and is withdrawn from
+ there if this method throws. Encoding or loading appends to the same decode map, and the
+ withdrawal would take back whatever was appended last; decoding rebuilds the mappings when the
+ schema has changed, and the withdrawal would then have to take the element out of a map that
+ has already been replaced. Neither is withdrawn: the violation is reported and the
+ registration is left behind, holding an id no definition was persisted under.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>encodedAttribute</code> - The encoded attribute description.</dd>
@@ -514,7 +525,18 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  to do nothing. Calls to this method are synchronized, so implementations
  can assume that this method is not being called by other threads. Note that
  this method is not thread-safe with respect to
- <a href="#storeAttribute(byte%5B%5D,java.lang.String,java.lang.Iterable)"><code>storeAttribute(byte[], String, Iterable)</code></a>.</div>
+ <a href="#storeAttribute(byte%5B%5D,java.lang.String,java.lang.Iterable)"><code>storeAttribute(byte[], String, Iterable)</code></a>.
+ <p>
+ Called with the exclusive lock of this compressed schema held, and that lock is reentrant, so
+ an implementation must re-enter neither the encode, the load nor the decode path of the
+ compressed schema it belongs to. The registration being persisted has already been appended
+ to the decode map - so that an implementation persisting the whole content rather than the
+ element it is handed, as <code>DefaultCompressedSchema</code> does, has it - and is withdrawn from
+ there if this method throws. Encoding or loading appends to the same decode map, and the
+ withdrawal would take back whatever was appended last; decoding rebuilds the mappings when the
+ schema has changed, and the withdrawal would then have to take the element out of a map that
+ has already been replaced. Neither is withdrawn: the violation is reported and the
+ registration is left behind, holding an id no definition was persisted under.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>encodedObjectClasses</code> - The encoded object classes.</dd>

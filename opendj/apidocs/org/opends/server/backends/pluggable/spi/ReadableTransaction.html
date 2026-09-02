@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -172,6 +172,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Reads the record's value associated to the provided key, in the tree whose name is provided.</div>
 </td>
 </tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#treeExists(org.opends.server.backends.pluggable.spi.TreeName)">treeExists</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
+<td class="colLast">
+<div class="block">Returns whether the tree whose name is provided is present in the storage.</div>
+</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -226,7 +233,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <a id="getRecordCount(org.opends.server.backends.pluggable.spi.TreeName)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getRecordCount</h4>
 <pre class="methodSignature">long&nbsp;getRecordCount&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</pre>
@@ -236,6 +243,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>treeName</code> - the tree name</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the number of key/value pairs in the provided tree.</dd>
+</dl>
+</li>
+</ul>
+<a id="treeExists(org.opends.server.backends.pluggable.spi.TreeName)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>treeExists</h4>
+<pre class="methodSignature">boolean&nbsp;treeExists&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</pre>
+<div class="block">Returns whether the tree whose name is provided is present in the storage.
+ <p>
+ This is not the same question as whether the tree is empty, and it cannot be answered by
+ reading from the tree: a storage is free to materialize a tree on first access - the JE backend
+ opens its databases with <code>setAllowCreate(true)</code> - or to reject the access outright, as the
+ JDBC backend does when no table of that name exists. Callers that must distinguish "never
+ written" from "written and since emptied", such as the compressed schema deciding whether it
+ has anything to migrate, need this instead.
+ <p>
+ A storage whose trees have no existence of their own cannot keep that distinction: the
+ Cassandra backend holds every tree of a backend as a partition of the one table named after
+ the backend id, so it answers whether the partition holds a record and a tree that was emptied
+ reports itself absent. Nothing may be inferred from a <code>false</code> beyond "there is nothing
+ to read here".</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>treeName</code> - the tree name</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the tree exists, <code>false</code> otherwise</dd>
 </dl>
 </li>
 </ul>
