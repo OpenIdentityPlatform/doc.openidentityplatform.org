@@ -9172,6 +9172,13 @@ Severity: ERROR
 +
 Message: Unable to decode the provided object class set because its token could not be read from the record: %s.
 
+[#log-ref-log-ref-ERR_CRYPTOMGR_SSL_CERT_NICKNAME_NOT_FOUND_759]
+ID: 759::
+
+Severity: ERROR
++
+Message: The certificate nickname "%s" configured in the ssl-cert-nickname property of the crypto manager was not found in the trust store %s used for server to server communication, so the %s component cannot present that certificate to its peers. Where it is the only nickname configured, no certificate is presented at all and peers requiring client authentication, replication servers included, reject the connection. Import the key pair under that nickname into that trust store, or configure a nickname it holds.
+
 --
 
 [#EXTENSION]

@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":6,"i1":18,"i2":6,"i3":6,"i4":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -144,7 +144,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -158,13 +158,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>default <a href="Cursor.html" title="interface in org.opends.server.backends.pluggable.spi">Cursor</a>&lt;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openBulkCursor(org.opends.server.backends.pluggable.spi.TreeName)">openBulkCursor</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
+<td class="colLast">
+<div class="block">Opens a cursor on the tree whose name is provided, for a walk of that whole tree with no
+ client operation waiting on it: an export, a verify, a rebuild, or the load of a tree while
+ the backend opens.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="Cursor.html" title="interface in org.opends.server.backends.pluggable.spi">Cursor</a>&lt;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openCursor(org.opends.server.backends.pluggable.spi.TreeName)">openCursor</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
 <div class="block">Opens a cursor on the tree whose name is provided.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence)">read</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
     <a href="../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key)</code></th>
@@ -172,7 +181,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Reads the record's value associated to the provided key, in the tree whose name is provided.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#treeExists(org.opends.server.backends.pluggable.spi.TreeName)">treeExists</a></span>&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
@@ -222,6 +231,30 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h4>openCursor</h4>
 <pre class="methodSignature"><a href="Cursor.html" title="interface in org.opends.server.backends.pluggable.spi">Cursor</a>&lt;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;openCursor&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</pre>
 <div class="block">Opens a cursor on the tree whose name is provided.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>treeName</code> - the tree name</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new cursor</dd>
+</dl>
+</li>
+</ul>
+<a id="openBulkCursor(org.opends.server.backends.pluggable.spi.TreeName)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>openBulkCursor</h4>
+<pre class="methodSignature">default&nbsp;<a href="Cursor.html" title="interface in org.opends.server.backends.pluggable.spi">Cursor</a>&lt;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;&nbsp;openBulkCursor&#8203;(<a href="TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</pre>
+<div class="block">Opens a cursor on the tree whose name is provided, for a walk of that whole tree with no
+ client operation waiting on it: an export, a verify, a rebuild, or the load of a tree while
+ the backend opens.
+ <p>
+ A storage engine that bounds how long a statement may take must not bound such a walk as it
+ bounds the work of a client operation: what this legitimately takes follows the size of the
+ tree, and cutting it short fails an administrative task that would otherwise have run to the
+ end. An engine with no such bound - every one but the JDBC backend - answers this exactly as
+ <a href="#openCursor(org.opends.server.backends.pluggable.spi.TreeName)"><code>openCursor(TreeName)</code></a> does.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>treeName</code> - the tree name</dd>

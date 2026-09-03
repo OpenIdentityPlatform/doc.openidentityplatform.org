@@ -16948,6 +16948,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Verifies that an alias is defined in the scope of this Key Manager.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/backends/TrustStoreBackend.html#containsKeyWithAlias(java.lang.String)">containsKeyWithAlias(String)</a></span> - Method in class org.opends.server.backends.<a href="org/opends/server/backends/TrustStoreBackend.html" title="class in org.opends.server.backends">TrustStoreBackend</a></dt>
+<dd>
+<div class="block">Indicates whether this trust store holds a key entry, that is a private key
+ and its certificate, under the provided alias.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/FileBasedKeyManagerProvider.html#containsKeyWithAlias(java.lang.String)">containsKeyWithAlias(String)</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/FileBasedKeyManagerProvider.html" title="class in org.opends.server.extensions">FileBasedKeyManagerProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/LDAPKeyManagerProvider.html#containsKeyWithAlias(java.lang.String)">containsKeyWithAlias(String)</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/LDAPKeyManagerProvider.html" title="class in org.opends.server.extensions">LDAPKeyManagerProvider</a></dt>
@@ -33138,6 +33143,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_CRYPTOMGR_REWRAP_SYMMETRIC_KEY_ATTRIBUTE_NO_WRAPPER">ERR_CRYPTOMGR_REWRAP_SYMMETRIC_KEY_ATTRIBUTE_NO_WRAPPER</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>
 <div class="block">CryptoManager cannot find the public-key-certificate (identifier "%s") requested for symmetric key re-encoding</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_CRYPTOMGR_SSL_CERT_NICKNAME_NOT_FOUND">ERR_CRYPTOMGR_SSL_CERT_NICKNAME_NOT_FOUND</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The certificate nickname "%s" configured in the ssl-cert-nickname property of the crypto manager was not found in the trust store %s used for server to server communication, so the %s component cannot present that certificate to its peers.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_CRYPTOMGR_SSL_CONTEXT_CANNOT_INITIALIZE">ERR_CRYPTOMGR_SSL_CONTEXT_CANNOT_INITIALIZE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>
@@ -80556,6 +80565,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the "trust-store-file" property.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/backends/TrustStoreBackend.html#getTrustStoreFile()">getTrustStoreFile()</a></span> - Method in class org.opends.server.backends.<a href="org/opends/server/backends/TrustStoreBackend.html" title="class in org.opends.server.backends">TrustStoreBackend</a></dt>
+<dd>
+<div class="block">Retrieves the path to the file which holds this trust store.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/admin/client/cli/SecureConnectionCliArgs.html#getTruststoreFileFromConfig()">getTruststoreFileFromConfig()</a></span> - Method in class org.opends.server.admin.client.cli.<a href="org/opends/server/admin/client/cli/SecureConnectionCliArgs.html" title="class in org.opends.server.admin.client.cli">SecureConnectionCliArgs</a></dt>
 <dd>
 <div class="block">Returns the absolute path of the trust store file that appears on the
@@ -98529,10 +98542,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_SSL_PORT_TEXTFIELD_TOOLTIP">INFO_SSL_PORT_TEXTFIELD_TOOLTIP</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
 <dd>
 <div class="block">The LDAPS port.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#INFO_SSL_SERVER_CON_ATTEMPT_ERROR">INFO_SSL_SERVER_CON_ATTEMPT_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
-<dd>
-<div class="block">Replication server accepted a connection from %s to local address %s but the SSL handshake failed.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_STANDALONE_SERVER_LABEL">INFO_STANDALONE_SERVER_LABEL</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
 <dd>
@@ -118856,6 +118865,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/TrustStoreBackend.html#openBackend()">openBackend()</a></span> - Method in class org.opends.server.backends.<a href="org/opends/server/backends/TrustStoreBackend.html" title="class in org.opends.server.backends">TrustStoreBackend</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/spi/ReadableTransaction.html#openBulkCursor(org.opends.server.backends.pluggable.spi.TreeName)">openBulkCursor(TreeName)</a></span> - Method in interface org.opends.server.backends.pluggable.spi.<a href="org/opends/server/backends/pluggable/spi/ReadableTransaction.html" title="interface in org.opends.server.backends.pluggable.spi">ReadableTransaction</a></dt>
+<dd>
+<div class="block">Opens a cursor on the tree whose name is provided, for a walk of that whole tree with no
+ client operation waiting on it: an export, a verify, a rebuild, or the load of a tree while
+ the backend opens.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/spi/Importer.html#openCursor(org.opends.server.backends.pluggable.spi.TreeName)">openCursor(TreeName)</a></span> - Method in interface org.opends.server.backends.pluggable.spi.<a href="org/opends/server/backends/pluggable/spi/Importer.html" title="interface in org.opends.server.backends.pluggable.spi">Importer</a></dt>
 <dd>
 <div class="block">Opens a cursor on the tree whose name is provided.</div>
@@ -155470,6 +155485,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#WARN_SMTPALERTHANDLER_ERROR_SENDING_MESSAGE">WARN_SMTPALERTHANDLER_ERROR_SENDING_MESSAGE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>
 <div class="block">An error occurred when trying to send an e-mail message for administrative alert with type %s and message %s: %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_SSL_SERVER_CON_ATTEMPT_ERROR">WARN_SSL_SERVER_CON_ATTEMPT_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server accepted a connection from %s to local address %s but the SSL handshake failed.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#WARN_SUBENTRY_FILTER_NOT_INDEXED">WARN_SUBENTRY_FILTER_NOT_INDEXED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>

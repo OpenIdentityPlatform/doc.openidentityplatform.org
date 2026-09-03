@@ -310,20 +310,29 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>default <a href="../Cursor.html" title="interface in org.opends.server.backends.pluggable.spi">Cursor</a>&lt;<a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReadableTransaction.</span><code><span class="memberNameLink"><a href="../ReadableTransaction.html#openBulkCursor(org.opends.server.backends.pluggable.spi.TreeName)">openBulkCursor</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
+<td class="colLast">
+<div class="block">Opens a cursor on the tree whose name is provided, for a walk of that whole tree with no
+ client operation waiting on it: an export, a verify, a rebuild, or the load of a tree while
+ the backend opens.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../SequentialCursor.html" title="interface in org.opends.server.backends.pluggable.spi">SequentialCursor</a>&lt;<a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Importer.</span><code><span class="memberNameLink"><a href="../Importer.html#openCursor(org.opends.server.backends.pluggable.spi.TreeName)">openCursor</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
 <div class="block">Opens a cursor on the tree whose name is provided.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../Cursor.html" title="interface in org.opends.server.backends.pluggable.spi">Cursor</a>&lt;<a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>,&#8203;<a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a>&gt;</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReadableTransaction.</span><code><span class="memberNameLink"><a href="../ReadableTransaction.html#openCursor(org.opends.server.backends.pluggable.spi.TreeName)">openCursor</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
 <div class="block">Opens a cursor on the tree whose name is provided.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">WriteableTransaction.</span><code><span class="memberNameLink"><a href="../WriteableTransaction.html#openTree(org.opends.server.backends.pluggable.spi.TreeName,boolean)">openTree</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;name,
         boolean&nbsp;createOnDemand)</code></th>
@@ -331,7 +340,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Opens the tree identified by the provided name.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Importer.</span><code><span class="memberNameLink"><a href="../Importer.html#put(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence,org.forgerock.opendj.ldap.ByteSequence)">put</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
    <a href="../../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key,
@@ -340,7 +349,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Creates a record with the provided key and value in the tree identified by the provided name.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">WriteableTransaction.</span><code><span class="memberNameLink"><a href="../WriteableTransaction.html#put(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence,org.forgerock.opendj.ldap.ByteSequence)">put</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
    <a href="../../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key,
@@ -350,7 +359,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  key.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">Importer.</span><code><span class="memberNameLink"><a href="../Importer.html#read(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence)">read</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
     <a href="../../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key)</code></th>
@@ -358,7 +367,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Reads the record's value associated to the provided key, in the tree whose name is provided.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../forgerock/opendj/ldap/ByteString.html" title="class in org.forgerock.opendj.ldap">ByteString</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReadableTransaction.</span><code><span class="memberNameLink"><a href="../ReadableTransaction.html#read(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence)">read</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
     <a href="../../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key)</code></th>
@@ -366,14 +375,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Reads the record's value associated to the provided key, in the tree whose name is provided.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReadableTransaction.</span><code><span class="memberNameLink"><a href="../ReadableTransaction.html#treeExists(org.opends.server.backends.pluggable.spi.TreeName)">treeExists</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName)</code></th>
 <td class="colLast">
 <div class="block">Returns whether the tree whose name is provided is present in the storage.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">WriteableTransaction.</span><code><span class="memberNameLink"><a href="../WriteableTransaction.html#update(org.opends.server.backends.pluggable.spi.TreeName,org.forgerock.opendj.ldap.ByteSequence,org.opends.server.backends.pluggable.spi.UpdateFunction)">update</a></span>&#8203;(<a href="../TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&nbsp;treeName,
       <a href="../../../../../../forgerock/opendj/ldap/ByteSequence.html" title="interface in org.forgerock.opendj.ldap">ByteSequence</a>&nbsp;key,
