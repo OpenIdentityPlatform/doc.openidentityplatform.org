@@ -452,7 +452,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>attributeName</code> - The user provided attribute type name.</dd>
 <dd><code>attributeOptions</code> - The non-null but possibly empty set of attribute options.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The attribute type description.</dd>
+<dd>The attribute type description, or <code>null</code> if the definition was skipped because
+         the key it is stored under is not one a compressed schema hands out.</dd>
 </dl>
 </li>
 </ul>
@@ -472,7 +473,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>encodedObjectClasses</code> - The encoded object classes.</dd>
 <dd><code>objectClassNames</code> - The user provided set of object class names.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The object class set.</dd>
+<dd>The object class set, or <code>null</code> if the definition was skipped because the key it
+         is stored under is not one a compressed schema hands out.</dd>
 </dl>
 </li>
 </ul>

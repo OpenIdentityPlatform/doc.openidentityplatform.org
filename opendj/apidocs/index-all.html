@@ -11459,7 +11459,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><a href="org/opends/server/backends/jdbc/CachedConnection.html" title="class in org.opends.server.backends.jdbc"><span class="typeNameLink">CachedConnection</span></a> - Class in <a href="org/opends/server/backends/jdbc/package-summary.html">org.opends.server.backends.jdbc</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jdbc/CachedConnection.html#%3Cinit%3E(java.lang.String,java.sql.Connection)">CachedConnection(String, Connection)</a></span> - Constructor for class org.opends.server.backends.jdbc.<a href="org/opends/server/backends/jdbc/CachedConnection.html" title="class in org.opends.server.backends.jdbc">CachedConnection</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">A connection outside the accounting of its pool: it holds no permit and is never pooled - the
+ flag says so as well as the accounting does, since a connection holding no permit is closed
+ by <code>CachedConnection.Pool.give(org.opends.server.backends.jdbc.CachedConnection)</code> rather than kept whatever the flag says.</div>
+</dd>
 <dt><a href="org/opends/server/types/CacheEntry.html" title="class in org.opends.server.types"><span class="typeNameLink">CacheEntry</span></a> - Class in <a href="org/opends/server/types/package-summary.html">org.opends.server.types</a></dt>
 <dd>
 <div class="block">This class defines a Directory Server cache entry, which is simply
@@ -31618,6 +31622,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Unable to write the updated compressed schema token data: %s</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_COMPRESSEDSCHEMA_NO_TOKEN_LEFT">ERR_COMPRESSEDSCHEMA_NO_TOKEN_LEFT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The compressed schema cannot allocate a token for a new definition: the next one would be the id %s, and a definition is only ever loaded back under an id of at most %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_COMPRESSEDSCHEMA_UNKNOWN_OC_TOKEN">ERR_COMPRESSEDSCHEMA_UNKNOWN_OC_TOKEN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>
 <div class="block">Unable to decode the provided object class set because it used an undefined token %s</div>
@@ -31633,6 +31641,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_COMPRESSEDSCHEMA_UNRECOGNIZED_AD_TOKEN">ERR_COMPRESSEDSCHEMA_UNRECOGNIZED_AD_TOKEN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>
 <div class="block">Unable to decode the provided attribute because it used an undefined attribute description token %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_COMPRESSEDSCHEMA_UNUSABLE_AD_TOKEN">ERR_COMPRESSEDSCHEMA_UNUSABLE_AD_TOKEN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The stored compressed schema definition of the attribute type '%s' has been skipped because the token %s it is stored under is not one a compressed schema hands out.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_COMPRESSEDSCHEMA_UNUSABLE_OC_TOKEN">ERR_COMPRESSEDSCHEMA_UNUSABLE_OC_TOKEN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The stored compressed schema definition of the object classes %s has been skipped because the token %s it is stored under is not one a compressed schema hands out.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_COMPSCHEMA_CANNOT_DECODE_AD_TOKEN">ERR_COMPSCHEMA_CANNOT_DECODE_AD_TOKEN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
