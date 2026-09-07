@@ -10416,6 +10416,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colSecond" scope="row"><code><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#DS_SYNC_CONFLICT">DS_SYNC_CONFLICT</a></code></th>
 <td class="colLast"><code>"ds-sync-conflict"</code></td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><a id="org.opends.server.replication.plugin.LDAPReplicationDomain.IN_PLACE_REPLAY_ATTEMPTS">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
+<th class="colSecond" scope="row"><code><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#IN_PLACE_REPLAY_ATTEMPTS">IN_PLACE_REPLAY_ATTEMPTS</a></code></th>
+<td class="colLast"><code>10</code></td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -10582,6 +10589,27 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a><code>public&nbsp;static&nbsp;final&nbsp;int</code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/replication/protocol/RoutableMsg.html#UNKNOWN_SERVER">UNKNOWN_SERVER</a></code></th>
 <td class="colLast"><code>-1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="blockList">
+<li class="blockList">
+<table class="constantsSummary">
+<caption><span>org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Constant Field</th>
+<th class="colLast" scope="col">Value</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a id="org.opends.server.replication.service.DSRSShutdownSync.REPLICA_OFFLINE_GRACE_PERIOD">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;long</code></td>
+<th class="colSecond" scope="row"><code><a href="org/opends/server/replication/service/DSRSShutdownSync.html#REPLICA_OFFLINE_GRACE_PERIOD">REPLICA_OFFLINE_GRACE_PERIOD</a></code></th>
+<td class="colLast"><code>5000L</code></td>
 </tr>
 </tbody>
 </table>
@@ -13087,207 +13115,221 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast"><code>"This alert type will be used to notify administrators if the Directory Server detects that its configuration has been manually edited with the server online and those changes were overwritten by another change made through the server.  The manually-edited configuration could not be preserved due to an unexpected error."</code></td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_REPLICATION_UNREPLAYED_CHANGE">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_REPLICATION_UNREPLAYED_CHANGE">ALERT_DESCRIPTION_REPLICATION_UNREPLAYED_CHANGE</a></code></th>
+<td class="colLast"><code>"This alert type will be used to notify administrators when multimaster replication gives up on a change it could not replay, leaving this replica diverging from the rest of the topology."</code></td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_REPLICATION_UNRESOLVED_CONFLICT">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_REPLICATION_UNRESOLVED_CONFLICT">ALERT_DESCRIPTION_REPLICATION_UNRESOLVED_CONFLICT</a></code></th>
 <td class="colLast"><code>"This alert type will be used to notify administrators if multimaster replication cannot resolve a conflict automatically."</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_SERVER_SHUTDOWN">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_SERVER_SHUTDOWN">ALERT_DESCRIPTION_SERVER_SHUTDOWN</a></code></th>
 <td class="colLast"><code>"This alert type will be used to provide notification that the Directory Server has begun the process of shutting down."</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_SERVER_STARTED">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_SERVER_STARTED">ALERT_DESCRIPTION_SERVER_STARTED</a></code></th>
 <td class="colLast"><code>"This alert type will be used to provide notification that the Directory Server has completed its startup process."</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_UNCAUGHT_EXCEPTION">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_UNCAUGHT_EXCEPTION">ALERT_DESCRIPTION_UNCAUGHT_EXCEPTION</a></code></th>
 <td class="colLast"><code>"This alert type will be used if a Directory Server thread has encountered an uncaught exception that caused that thread to terminate abnormally.  The impact that this problem has on the server depends on which thread was impacted and the nature of the exception."</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_UNIQUE_ATTR_SYNC_CONFLICT">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_UNIQUE_ATTR_SYNC_CONFLICT">ALERT_DESCRIPTION_UNIQUE_ATTR_SYNC_CONFLICT</a></code></th>
 <td class="colLast"><code>"This alert type will be used to provide notification that a unique attribute conflict has been detected during synchronization processing."</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_DESCRIPTION_UNIQUE_ATTR_SYNC_ERROR">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_DESCRIPTION_UNIQUE_ATTR_SYNC_ERROR">ALERT_DESCRIPTION_UNIQUE_ATTR_SYNC_ERROR</a></code></th>
 <td class="colLast"><code>"This alert type will be used to provide notification that an error occurred while attempting to perform unique attribute conflict detection during synchronization processing."</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_ACCESS_CONTROL_DISABLED">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_ACCESS_CONTROL_DISABLED">ALERT_TYPE_ACCESS_CONTROL_DISABLED</a></code></th>
 <td class="colLast"><code>"org.opends.server.AccessControlDisabled"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_ACCESS_CONTROL_ENABLED">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_ACCESS_CONTROL_ENABLED">ALERT_TYPE_ACCESS_CONTROL_ENABLED</a></code></th>
 <td class="colLast"><code>"org.opends.server.AccessControlEnabled"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_ACCESS_CONTROL_PARSE_FAILED">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_ACCESS_CONTROL_PARSE_FAILED">ALERT_TYPE_ACCESS_CONTROL_PARSE_FAILED</a></code></th>
 <td class="colLast"><code>"org.opends.server.authentiation.dseecompat.ACIParseFailed"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_BACKEND_ENVIRONMENT_UNUSABLE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_BACKEND_ENVIRONMENT_UNUSABLE">ALERT_TYPE_BACKEND_ENVIRONMENT_UNUSABLE</a></code></th>
 <td class="colLast"><code>"org.opends.server.BackendRunRecovery"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_COPY_SCHEMA_FILES">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_COPY_SCHEMA_FILES">ALERT_TYPE_CANNOT_COPY_SCHEMA_FILES</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotCopySchemaFiles"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_RENAME_CURRENT_TASK_FILE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_RENAME_CURRENT_TASK_FILE">ALERT_TYPE_CANNOT_RENAME_CURRENT_TASK_FILE</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotRenameCurrentTaskFile"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_RENAME_NEW_TASK_FILE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_RENAME_NEW_TASK_FILE">ALERT_TYPE_CANNOT_RENAME_NEW_TASK_FILE</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotRenameNewTaskFile"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_SCHEDULE_RECURRING_ITERATION">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_SCHEDULE_RECURRING_ITERATION">ALERT_TYPE_CANNOT_SCHEDULE_RECURRING_ITERATION</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotScheduleRecurringIteration"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_WRITE_CONFIGURATION">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_WRITE_CONFIGURATION">ALERT_TYPE_CANNOT_WRITE_CONFIGURATION</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotWriteConfig"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_WRITE_NEW_SCHEMA_FILES">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_WRITE_NEW_SCHEMA_FILES">ALERT_TYPE_CANNOT_WRITE_NEW_SCHEMA_FILES</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotWriteNewSchemaFiles"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_CANNOT_WRITE_TASK_FILE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_CANNOT_WRITE_TASK_FILE">ALERT_TYPE_CANNOT_WRITE_TASK_FILE</a></code></th>
 <td class="colLast"><code>"org.opends.server.CannotWriteTaskFile"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_DISK_FULL">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_DISK_FULL">ALERT_TYPE_DISK_FULL</a></code></th>
 <td class="colLast"><code>"org.opends.server.DiskFull"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_DISK_SPACE_LOW">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_DISK_SPACE_LOW">ALERT_TYPE_DISK_SPACE_LOW</a></code></th>
 <td class="colLast"><code>"org.opends.server.DiskSpaceLow"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_ENTERING_LOCKDOWN_MODE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_ENTERING_LOCKDOWN_MODE">ALERT_TYPE_ENTERING_LOCKDOWN_MODE</a></code></th>
 <td class="colLast"><code>"org.opends.server.EnteringLockdownMode"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_HTTP_CONNECTION_HANDLER_CONSECUTIVE_FAILURES">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_HTTP_CONNECTION_HANDLER_CONSECUTIVE_FAILURES">ALERT_TYPE_HTTP_CONNECTION_HANDLER_CONSECUTIVE_FAILURES</a></code></th>
 <td class="colLast"><code>"org.opends.server.HTTPHandlerDisabledByConsecutiveFailures"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_LDAP_CONNECTION_HANDLER_CONSECUTIVE_FAILURES">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_LDAP_CONNECTION_HANDLER_CONSECUTIVE_FAILURES">ALERT_TYPE_LDAP_CONNECTION_HANDLER_CONSECUTIVE_FAILURES</a></code></th>
 <td class="colLast"><code>"org.opends.server.LDAPHandlerDisabledByConsecutiveFailures"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_LDAP_CONNECTION_HANDLER_UNCAUGHT_ERROR">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_LDAP_CONNECTION_HANDLER_UNCAUGHT_ERROR">ALERT_TYPE_LDAP_CONNECTION_HANDLER_UNCAUGHT_ERROR</a></code></th>
 <td class="colLast"><code>"org.opends.server.LDAPHandlerUncaughtError"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_LDIF_BACKEND_CANNOT_WRITE_UPDATE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_LDIF_BACKEND_CANNOT_WRITE_UPDATE">ALERT_TYPE_LDIF_BACKEND_CANNOT_WRITE_UPDATE</a></code></th>
 <td class="colLast"><code>"org.opends.server.LDIFBackendCannotWriteUpdate"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_LDIF_CONNHANDLER_IO_ERROR">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_LDIF_CONNHANDLER_IO_ERROR">ALERT_TYPE_LDIF_CONNHANDLER_IO_ERROR</a></code></th>
 <td class="colLast"><code>"org.opends.server.LDIFConnectionHandlerIOError"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_LDIF_CONNHANDLER_PARSE_ERROR">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_LDIF_CONNHANDLER_PARSE_ERROR">ALERT_TYPE_LDIF_CONNHANDLER_PARSE_ERROR</a></code></th>
 <td class="colLast"><code>"org.opends.server.LDIFConnectionHandlerParseError"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_LEAVING_LOCKDOWN_MODE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_LEAVING_LOCKDOWN_MODE">ALERT_TYPE_LEAVING_LOCKDOWN_MODE</a></code></th>
 <td class="colLast"><code>"org.opends.server.LeavingLockdownMode"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_MANUAL_CONFIG_EDIT_HANDLED">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_MANUAL_CONFIG_EDIT_HANDLED">ALERT_TYPE_MANUAL_CONFIG_EDIT_HANDLED</a></code></th>
 <td class="colLast"><code>"org.opends.server.ManualConfigEditHandled"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_MANUAL_CONFIG_EDIT_LOST">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_MANUAL_CONFIG_EDIT_LOST">ALERT_TYPE_MANUAL_CONFIG_EDIT_LOST</a></code></th>
 <td class="colLast"><code>"org.opends.server.ManualConfigEditLost"</code></td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_REPLICATION_UNREPLAYED_CHANGE">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><a href="org/opends/server/util/ServerConstants.html#ALERT_TYPE_REPLICATION_UNREPLAYED_CHANGE">ALERT_TYPE_REPLICATION_UNREPLAYED_CHANGE</a></code></th>
+<td class="colLast"><code>"org.opends.server.replication.UnreplayedChange"</code></td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><a id="org.opends.server.util.ServerConstants.ALERT_TYPE_REPLICATION_UNRESOLVED_CONFLICT">

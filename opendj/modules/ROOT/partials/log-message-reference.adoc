@@ -15333,6 +15333,13 @@ Severity: ERROR
 +
 Message: Nothing holds %s anymore : the port was released after the last attempt to bind it.
 
+[#log-ref-log-ref-ERR_REPLAY_SKIPPING_CHANGE_308]
+ID: 308::
+
+Severity: ERROR
++
+Message: Could not replay change %s in domain "%s": its replay has been failing for %d ms over %d deliveries, each attempted several times in place. The change is being skipped: this replica now diverges from the rest of the topology and must be reinitialized.
+
 --
 
 [#SCHEMA]

@@ -9307,22 +9307,43 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../../../opends/server/replication/service/DSRSShutdownSync.html#canShutdown(org.forgerock.opendj.ldap.DN)">canShutdown</a></span>&#8203;(<a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
 <td class="colLast">
-<div class="block">Whether a ReplicationServer ServerReader or ServerWriter can proceed with
- shutdown.</div>
+<div class="block">Whether the shutdown of a domain can proceed, i.e. its ReplicaOfflineMsg
+ has been forwarded or its grace period has expired.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../../../opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../../../opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                          <a href="../../../../opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN)</code></th>
 <td class="colLast">
 <div class="block">Message has been forwarded.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../../../opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN)">replicaOfflineMsgSent</a></span>&#8203;(<a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../../../opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgSent</a></span>&#8203;(<a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                     <a href="../../../../opends/server/replication/common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</code></th>
 <td class="colLast">
 <div class="block">Message has been sent.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
+<caption><span>Method parameters in <a href="../../../../opends/server/replication/service/package-summary.html">org.opends.server.replication.service</a> with type arguments of type <a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../../../opends/server/replication/service/DSRSShutdownSync.html#awaitReplicaOfflineMsgsForwarded(java.util.Collection,long)">awaitReplicaOfflineMsgsForwarded</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&nbsp;baseDNs,
+                                long&nbsp;deadline)</code></th>
+<td class="colLast">
+<div class="block">Waits for the ReplicaOfflineMsg of every provided domain to be forwarded, or for their grace
+ periods or the provided deadline to expire.</div>
 </td>
 </tr>
 </tbody>

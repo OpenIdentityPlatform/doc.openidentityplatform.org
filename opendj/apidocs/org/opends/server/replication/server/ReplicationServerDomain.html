@@ -710,7 +710,13 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <li class="blockList">
 <h4>shutdown</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;shutdown()</pre>
-<div class="block">Shutdown this ReplicationServerDomain.</div>
+<div class="block">Shutdown this ReplicationServerDomain.
+ <p>
+ A ReplicaOfflineMsg which a collocated DS sent and which is still to be forwarded must be
+ waited for before this runs: stopping the server handlers deactivates their consumer, clears
+ their message queue and closes their session, after which the message can no longer be sent
+ - see OPENDJ-1453. ReplicationServer.shutdown() waits for the messages of all of its domains
+ before it stops any of them.</div>
 </li>
 </ul>
 <a id="getLatestServerState()">

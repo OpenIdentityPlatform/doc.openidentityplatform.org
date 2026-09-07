@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -90,13 +90,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -139,7 +139,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <p>
  More specifically, it ensures a ReplicaOfflineMsg sent by the DS is
  relayed/forwarded by the collocated RS to the other RSs in the topology
- before the whole process shuts down.</div>
+ before the whole process shuts down.
+ <p>
+ The state is kept per domain and per instance: the collocated DS and RS
+ sides coordinate through the single instance MultimasterReplication hands
+ to both of them.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>OPENDJ-1453</dd>
@@ -150,6 +154,32 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#REPLICA_OFFLINE_GRACE_PERIOD">REPLICA_OFFLINE_GRACE_PERIOD</a></span></code></th>
+<td class="colLast">
+<div class="block">How long a ReplicaOfflineMsg may hold back the shutdown of the collocated
+ RS, in milliseconds, counted from the moment the message was sent.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <section>
 <ul class="blockList">
@@ -165,7 +195,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">DSRSShutdownSync</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Creates a synchronization object using the default grace period.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -186,23 +218,41 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#canShutdown(org.forgerock.opendj.ldap.DN)">canShutdown</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#awaitReplicaOfflineMsgsForwarded(java.util.Collection,long)">awaitReplicaOfflineMsgsForwarded</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&nbsp;baseDNs,
+                                long&nbsp;deadline)</code></th>
 <td class="colLast">
-<div class="block">Whether a ReplicationServer ServerReader or ServerWriter can proceed with
- shutdown.</div>
+<div class="block">Waits for the ReplicaOfflineMsg of every provided domain to be forwarded, or for their grace
+ periods or the provided deadline to expire.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#canShutdown(org.forgerock.opendj.ldap.DN)">canShutdown</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
+<td class="colLast">
+<div class="block">Whether the shutdown of a domain can proceed, i.e. its ReplicaOfflineMsg
+ has been forwarded or its grace period has expired.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newShutdownDeadline()">newShutdownDeadline</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the time by which every wait of one shutdown must be over.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                          <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN)</code></th>
 <td class="colLast">
 <div class="block">Message has been forwarded.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN)">replicaOfflineMsgSent</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgSent</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                     <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</code></th>
 <td class="colLast">
 <div class="block">Message has been sent.</div>
 </td>
@@ -224,6 +274,31 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="REPLICA_OFFLINE_GRACE_PERIOD">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>REPLICA_OFFLINE_GRACE_PERIOD</h4>
+<pre>public static final&nbsp;long REPLICA_OFFLINE_GRACE_PERIOD</pre>
+<div class="block">How long a ReplicaOfflineMsg may hold back the shutdown of the collocated
+ RS, in milliseconds, counted from the moment the message was sent.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#org.opends.server.replication.service.DSRSShutdownSync.REPLICA_OFFLINE_GRACE_PERIOD">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -238,6 +313,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>DSRSShutdownSync</h4>
 <pre>public&nbsp;DSRSShutdownSync()</pre>
+<div class="block">Creates a synchronization object using the default grace period.</div>
 </li>
 </ul>
 </li>
@@ -250,48 +326,104 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN)">
+<a id="replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>replicaOfflineMsgSent</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgSent&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgSent&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                                  <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</pre>
 <div class="block">Message has been sent.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>baseDN</code> - the domain for which the message has been sent</dd>
+<dd><code>offlineCSN</code> - the CSN of the message, which identifies both the replica which announced itself
+          offline and the announcement being waited for</dd>
 </dl>
 </li>
 </ul>
-<a id="replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN)">
+<a id="replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>replicaOfflineMsgForwarded</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgForwarded&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgForwarded&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                                       <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN)</pre>
 <div class="block">Message has been forwarded.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>baseDN</code> - the domain for which the message has been sent</dd>
+<dd><code>forwardedCSN</code> - the CSN of the forwarded message</dd>
 </dl>
 </li>
 </ul>
 <a id="canShutdown(org.forgerock.opendj.ldap.DN)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>canShutdown</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;canShutdown&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</pre>
-<div class="block">Whether a ReplicationServer ServerReader or ServerWriter can proceed with
- shutdown.</div>
+<div class="block">Whether the shutdown of a domain can proceed, i.e. its ReplicaOfflineMsg
+ has been forwarded or its grace period has expired.
+ <p>
+ The shutdown itself blocks on <a href="#awaitReplicaOfflineMsgsForwarded(java.util.Collection,long)"><code>awaitReplicaOfflineMsgsForwarded(Collection, long)</code></a>
+ rather than polling this; it is the same state, observable without waiting for it.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>baseDN</code> - the baseDN of the ServerReader or ServerWriter .</dd>
+<dd><code>baseDN</code> - the baseDN of the domain being shut down</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the caller can shutdown, false otherwise</dd>
+<dd>true if the shutdown of this domain need not wait any longer, i.e. its message was
+         forwarded or its grace period has expired, false otherwise</dd>
+</dl>
+</li>
+</ul>
+<a id="newShutdownDeadline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>newShutdownDeadline</h4>
+<pre class="methodSignature">public&nbsp;long&nbsp;newShutdownDeadline()</pre>
+<div class="block">Returns the time by which every wait of one shutdown must be over.
+ <p>
+ A process shuts its domains down one after the other and each of them may have a message
+ pending, so a deadline computed once and shared by all of them keeps the whole shutdown
+ bounded by one grace period instead of one per domain.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the point in time, on the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html?is-external=true#nanoTime()" title="class or interface in java.lang" class="externalLink"><code>System.nanoTime()</code></a> clock, by which the waits must
+         be over</dd>
+</dl>
+</li>
+</ul>
+<a id="awaitReplicaOfflineMsgsForwarded(java.util.Collection,long)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>awaitReplicaOfflineMsgsForwarded</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;awaitReplicaOfflineMsgsForwarded&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&nbsp;baseDNs,
+                                             long&nbsp;deadline)</pre>
+<div class="block">Waits for the ReplicaOfflineMsg of every provided domain to be forwarded, or for their grace
+ periods or the provided deadline to expire.
+ <p>
+ This must be called before the server handlers of those domains are stopped: stopping them
+ deactivates their consumer, clears their message queue and closes their session, after which
+ the message can no longer be forwarded.
+ <p>
+ All the domains of one shutdown wait together rather than one after the other, so that the
+ shutdown is bounded by one grace period without the wait of one domain spending the grace
+ period of the next.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>baseDNs</code> - the baseDNs of the domains whose messages must be forwarded</dd>
+<dd><code>deadline</code> - the point in time, on the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html?is-external=true#nanoTime()" title="class or interface in java.lang" class="externalLink"><code>System.nanoTime()</code></a> clock, by which this wait must
+          be over whatever the domains announce in the meantime - see
+          <a href="#newShutdownDeadline()"><code>newShutdownDeadline()</code></a>. A deadline which is not in the future returns
+          without waiting at all, for a caller which has nothing to wait for.</dd>
 </dl>
 </li>
 </ul>
@@ -348,13 +480,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
