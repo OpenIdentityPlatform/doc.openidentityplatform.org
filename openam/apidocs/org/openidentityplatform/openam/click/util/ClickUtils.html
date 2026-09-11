@@ -570,7 +570,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFormFields(org.openidentityplatform.openam.click.control.Form)">getFormFields</a></span>&#8203;(<a href="../control/Form.html" title="class in org.openidentityplatform.openam.click.control">Form</a>&nbsp;form)</code></th>
 <td class="colLast">
 <div class="block">Return the list of Fields for the given Form, including any Fields
- contained in FieldSets.</div>
+ contained in child containers.</div>
 </td>
 </tr>
 <tr id="i42" class="altColor">
@@ -1778,7 +1778,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 
    <li>if control.getName() is set do the following:
      <ol>
-       <li>if the control is of type <code>ActionLink</code>,
+       <li>if the control is of type <a href="../control/ActionLink.html" title="class in org.openidentityplatform.openam.click.control"><code>ActionLink</code></a>,
        it's "<code>class</code>" attribute selector will be returned. For example:
        <code>a[class=red]</code>. <b>Please note:</b> if the link class attribute is
        not set, the class attribute will be set to its name, prefixed with
@@ -2324,8 +2324,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>getFormFields</h4>
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../control/Field.html" title="class in org.openidentityplatform.openam.click.control">Field</a>&gt;&nbsp;getFormFields&#8203;(<a href="../control/Form.html" title="class in org.openidentityplatform.openam.click.control">Form</a>&nbsp;form)</pre>
 <div class="block">Return the list of Fields for the given Form, including any Fields
- contained in FieldSets. The list of returned fields will exclude any
- <code>Button</code>, <code>FieldSet</code> or <code>Label</code> fields.</div>
+ contained in child containers. The list of returned fields will exclude
+ any <code>Button</code> or <code>Label</code> fields.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>form</code> - the form to obtain the fields from</dd>
