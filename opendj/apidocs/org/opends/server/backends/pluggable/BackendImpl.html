@@ -1284,8 +1284,17 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 <li class="blockList">
 <h4>applyConfigurationChange</h4>
 <pre class="methodSignature">public&nbsp;<a href="../../../../forgerock/opendj/config/server/ConfigChangeResult.html" title="class in org.forgerock.opendj.config.server">ConfigChangeResult</a>&nbsp;applyConfigurationChange&#8203;(<a href="../../../../forgerock/opendj/server/config/server/PluggableBackendCfg.html" title="interface in org.forgerock.opendj.server.config.server">PluggableBackendCfg</a>&nbsp;newCfg)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../forgerock/opendj/config/server/ConfigurationChangeListener.html#applyConfigurationChange(T)">ConfigurationChangeListener</a></code></span></div>
-<div class="block">Applies the configuration changes to this change listener.</div>
+<div class="block">Applies the configuration changes to this change listener.
+ <p>
+ <a href="spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)"><code>Storage.write(WriteOperation)</code></a> replays its operation after a transaction conflict, so
+ the operation below is confined to work a rollback undoes: the trees are deleted and opened
+ there, while the registries, which no rollback reaches, are updated once the write has
+ committed. Getting this the wrong way round leaves the change half applied, and its replay
+ reports the missing half rather than the conflict that caused it.
+ <p>
+ What makes the operation replayable is that the base DNs to remove and to add are worked out
+ once, ahead of the write, so that no attempt can see different work to do than the attempt it
+ is replacing.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../forgerock/opendj/config/server/ConfigurationChangeListener.html#applyConfigurationChange(T)">applyConfigurationChange</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../forgerock/opendj/config/server/ConfigurationChangeListener.html" title="interface in org.forgerock.opendj.config.server">ConfigurationChangeListener</a>&lt;<a href="BackendImpl.html" title="type parameter in BackendImpl">C</a> extends <a href="../../../../forgerock/opendj/server/config/server/PluggableBackendCfg.html" title="interface in org.forgerock.opendj.server.config.server">PluggableBackendCfg</a>&gt;</code></dd>

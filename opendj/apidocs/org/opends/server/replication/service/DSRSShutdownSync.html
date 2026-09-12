@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -231,7 +231,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#canShutdown(org.forgerock.opendj.ldap.DN)">canShutdown</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
 <td class="colLast">
 <div class="block">Whether the shutdown of a domain can proceed, i.e. its ReplicaOfflineMsg
- has been forwarded or its grace period has expired.</div>
+ has been forwarded by every replication server it was queued for, or its
+ grace period has expired.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -243,13 +244,32 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
-                          <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgDispatched(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,java.util.Collection)">replicaOfflineMsgDispatched</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                           <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN,
+                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;&nbsp;replicationServerIds)</code></th>
 <td class="colLast">
-<div class="block">Message has been forwarded.</div>
+<div class="block">Message has been queued for the replication servers which must forward it.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,int)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                          <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN,
+                          int&nbsp;replicationServerId)</code></th>
+<td class="colLast">
+<div class="block">Message has been forwarded to one of the replication servers it was queued for.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgNotForwarded(org.forgerock.opendj.ldap.DN,int)">replicaOfflineMsgNotForwarded</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                             int&nbsp;replicationServerId)</code></th>
+<td class="colLast">
+<div class="block">A replication server the message may have been queued for will not forward it: it is gone,
+ or the message was dropped on its way out.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgSent</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                      <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</code></th>
@@ -343,19 +363,63 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
-<a id="replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">
+<a id="replicaOfflineMsgDispatched(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>replicaOfflineMsgDispatched</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgDispatched&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                                        <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN,
+                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;&nbsp;replicationServerIds)</pre>
+<div class="block">Message has been queued for the replication servers which must forward it.
+ <p>
+ This must be called before the message is queued for any of them: a replication server can
+ forward it as soon as it is in its queue, and a forward which finds no recipient recorded
+ ends the wait at once.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>baseDN</code> - the domain for which the message has been sent</dd>
+<dd><code>offlineCSN</code> - the CSN of the message which is being queued</dd>
+<dd><code>replicationServerIds</code> - the server ids of the replication servers the message is being queued for</dd>
+</dl>
+</li>
+</ul>
+<a id="replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>replicaOfflineMsgForwarded</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgForwarded&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
-                                       <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN)</pre>
-<div class="block">Message has been forwarded.</div>
+                                       <a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN,
+                                       int&nbsp;replicationServerId)</pre>
+<div class="block">Message has been forwarded to one of the replication servers it was queued for.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>baseDN</code> - the domain for which the message has been sent</dd>
 <dd><code>forwardedCSN</code> - the CSN of the forwarded message</dd>
+<dd><code>replicationServerId</code> - the server id of the replication server the message has been forwarded to</dd>
+</dl>
+</li>
+</ul>
+<a id="replicaOfflineMsgNotForwarded(org.forgerock.opendj.ldap.DN,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>replicaOfflineMsgNotForwarded</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;replicaOfflineMsgNotForwarded&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                                          int&nbsp;replicationServerId)</pre>
+<div class="block">A replication server the message may have been queued for will not forward it: it is gone,
+ or the message was dropped on its way out.
+ <p>
+ Whatever it was given can no longer reach it, so the shutdown must not spend the rest of its
+ grace period waiting for it.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>baseDN</code> - the domain the replication server is connected to</dd>
+<dd><code>replicationServerId</code> - the server id of the replication server which will not forward the message</dd>
 </dl>
 </li>
 </ul>
@@ -367,7 +431,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>canShutdown</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;canShutdown&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</pre>
 <div class="block">Whether the shutdown of a domain can proceed, i.e. its ReplicaOfflineMsg
- has been forwarded or its grace period has expired.
+ has been forwarded by every replication server it was queued for, or its
+ grace period has expired.
  <p>
  The shutdown itself blocks on <a href="#awaitReplicaOfflineMsgsForwarded(java.util.Collection,long)"><code>awaitReplicaOfflineMsgsForwarded(Collection, long)</code></a>
  rather than polling this; it is the same state, observable without waiting for it.</div>

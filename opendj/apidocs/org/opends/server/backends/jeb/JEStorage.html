@@ -445,15 +445,26 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
 <pre class="methodSignature">public&nbsp;void&nbsp;write&#8203;(<a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi">WriteOperation</a>&nbsp;operation)
            throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">Storage</a></code></span></div>
-<div class="block">Executes a write operation. In case of a write operation rollback, implementations must ensure
- the write operation is retried until it succeeds.</div>
+<div class="block">Executes a write operation. In case of a write operation rollback, implementations may replay the write
+ operation rather than propagate the failure: a <a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a> is required to be idempotent for
+ exactly that reason. A replay must be bounded - by a number of attempts, by a window of time, or by both -
+ so that a conflict which does not clear reaches the caller instead of being retried forever. The pluggable
+ backend holds locks across this method, up to the exclusive lock of an entry container, and every thread
+ waiting on one of those locks waits for as long as this method does.
+ <p>
+ A caller that mutates state around this method must handle that bound being spent. Removing an entry from an
+ in-memory map before the write so that a replay still finds the work to do, or reading configuration back out
+ of the operation once it returns, both assume the write is applied; when it is not, this method throws with
+ that state already changed and the transaction not applied, and the caller is the only place that can reconcile
+ the two.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>operation</code> - the write operation to execute</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if a problem occurs with the underlying storage engine</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if a problem occurs with the underlying storage engine, including a conflict that outlasted the
+           replays the implementation makes</dd>
 </dl>
 </li>
 </ul>

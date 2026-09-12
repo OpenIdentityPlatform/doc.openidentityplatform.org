@@ -491,8 +491,18 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
 <h4>write</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;write&#8203;(<a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi">WriteOperation</a>&nbsp;writeOperation)
            throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
-<div class="block">Executes a write operation. In case of a write operation rollback, implementations must ensure
- the write operation is retried until it succeeds.
+<div class="block">Executes a write operation. In case of a write operation rollback, implementations may replay the write
+ operation rather than propagate the failure: a <a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a> is required to be idempotent for
+ exactly that reason. A replay must be bounded - by a number of attempts, by a window of time, or by both -
+ so that a conflict which does not clear reaches the caller instead of being retried forever. The pluggable
+ backend holds locks across this method, up to the exclusive lock of an entry container, and every thread
+ waiting on one of those locks waits for as long as this method does.
+ <p>
+ A caller that mutates state around this method must handle that bound being spent. Removing an entry from an
+ in-memory map before the write so that a replay still finds the work to do, or reading configuration back out
+ of the operation once it returns, both assume the write is applied; when it is not, this method throws with
+ that state already changed and the transaction not applied, and the caller is the only place that can reconcile
+ the two.
  <p>
  <a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)"><code>Storage.write(WriteOperation)</code></a> requires an implementation to
  retry a rolled back operation until it succeeds, and <a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a> is documented as idempotent for
@@ -500,10 +510,15 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  on the conflict exception of its own engine. The loop is bounded here, unlike PDBStorage: the database may be
  shared with writers outside this server, so a conflict is not guaranteed to clear and failing the operation is
  better than never returning. It is bounded twice - by <code>MAX_RETRIES</code> attempts and by the
- <code>MAX_RETRY_WINDOW_NANOS</code> wall-clock window - because an attempt is not guaranteed to be short: a
- conflict an engine reports only after its own lock wait timeout would otherwise multiply that wait by the
- attempt count. A conflict that slow consumes the whole window in one attempt and is not replayed, which is
- what master did with it.
+ <code>RETRY_WINDOW_NANOS</code> wall-clock window - because an attempt is not guaranteed to be short: a conflict
+ an engine reports only after its own lock wait timeout would otherwise multiply that wait by the attempt
+ count. The window alone is not enough either, in the other direction: it is shorter than the wait that
+ precedes a conflict the engine reports promptly, so measured against such a conflict it does not bound that
+ wait but only leaves the operation with no replay at all, which is what master did with the deadlock of
+ issue #903. One replay is therefore granted to a prompt conflict whatever the clock says; see
+ <code>grantedPastTheWindow(int, long, org.opends.server.backends.jdbc.JDBCStorage.Conflict)</code>. The window is checked between attempts, so an attempt already running is
+ never interrupted: a conflicted operation holds its caller for the window plus one attempt, and a prompt
+ conflict for two attempts when that is longer.
  <p>
  Only the operation itself is replayed: a failure of <code>getConnection()</code> or of the implicit
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Connection.html?is-external=true#close()" title="class or interface in java.sql" class="externalLink"><code>Connection.close()</code></a> - which returns the connection to the pool after a rollback - leaves the loop, so
@@ -514,14 +529,15 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  connection handed out unvalidated and found dead costs an attempt rather than the operation, and a write of
  the replication replay - which records a failed operation as applied and advances the server state past it,
  see #889 - never sees it. Only while nothing of the attempt may have been committed yet, though: see
- <code>replayReason(Throwable, String, boolean, boolean, boolean)</code>.</div>
+ <code>replayReason(Conflict, Throwable, boolean, boolean, boolean)</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>writeOperation</code> - the write operation to execute</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if a problem occurs with the underlying storage engine</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></code> - if a problem occurs with the underlying storage engine, including a conflict that outlasted the
+           replays the implementation makes</dd>
 </dl>
 </li>
 </ul>
@@ -532,8 +548,20 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
 <li class="blockList">
 <h4>listTrees</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="../pluggable/spi/TreeName.html" title="class in org.opends.server.backends.pluggable.spi">TreeName</a>&gt;&nbsp;listTrees()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../pluggable/spi/Storage.html#listTrees()">Storage</a></code></span></div>
-<div class="block">Lists the trees that exist in this storage.</div>
+<div class="block">Lists the trees that exist in this storage.
+ <p>
+ Answered from the catalog of the backend rather than from the trees this process happens to
+ have touched: <a href="#removeStorageFiles()"><code>removeStorageFiles()</code></a> runs before anything has touched one (#888).
+ <p>
+ What a tool has to be shown is not what a clear may drop: the shared compressed schema trees
+ are deliberately not enrolled - a backend must not offer a tree another one may own for removal
+ - and would go unnamed by <code>dbtest</code> for it, so they are added here when their tables are
+ there. <code>catalogTables(Connection, TableScope)</code> is what the removal reads, and it
+ names them not.
+ <p>
+ The catalog itself is among the names, being a tree of this backend like any other: <code>
+ dbtest list-raw-dbs</code> counts it and <code>dump-raw-db</code> resolves its name, which is the one way
+ of seeing from outside the server what a clear of this backend would drop.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#listTrees()">listTrees</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>

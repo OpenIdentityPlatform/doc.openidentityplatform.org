@@ -547,15 +547,22 @@ extends <a href="LDAPUpdateMsg.html" title="class in org.opends.server.replicati
 <h4>addAttribute</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addAttribute&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)
-                  throws <a href="../../../../forgerock/opendj/ldap/DecodeException.html" title="class in org.forgerock.opendj.ldap">DecodeException</a></pre>
+                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
 <div class="block">Add the specified attribute/attribute value in the entry contained
- in this AddMsg.</div>
+ in this AddMsg.
+ <p>
+ A failure to encode the attribute is reported rather than swallowed: the caller adds
+ the attribute because the entry must carry it - addConflict() adds the
+ ds-sync-conflict marker which says why an entry was renamed - and an entry stored
+ without it is a conflict the repair tool has nothing to find it by. The attributes
+ this message already carries are left as they were, so a message which could not take
+ the new attribute still encodes the entry it did before.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - The name of the attribute to add.</dd>
 <dd><code>value</code> - The value of the attribute to add.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../forgerock/opendj/ldap/DecodeException.html" title="class in org.forgerock.opendj.ldap">DecodeException</a></code> - When this Msg is not valid.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - When the attribute could not be encoded.</dd>
 </dl>
 </li>
 </ul>

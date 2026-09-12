@@ -384,8 +384,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <h4>clear</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;clear()</pre>
 <div class="block">Empty the ServerState.
- After this call the Server State will be in the same state
- as if it was just created.</div>
+ After this call the Server State no longer holds any CSN. A state which
+ held one is marked as not saved: dropping it is a change like any other,
+ which persistent storage has yet to be told about. A state which held
+ nothing is left alone, the way an update which changes nothing is.</div>
 </li>
 </ul>
 <a id="update(org.opends.server.replication.common.CSN)">

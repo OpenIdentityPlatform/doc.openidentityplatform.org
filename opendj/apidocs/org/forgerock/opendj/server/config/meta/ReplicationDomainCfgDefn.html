@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":9,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":9,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -329,13 +329,20 @@ extends <a href="../../../config/ManagedObjectDefinition.html" title="class in o
 </td>
 </tr>
 <tr id="i18" class="altColor">
+<td class="colFirst"><code><a href="../../../config/DurationPropertyDefinition.html" title="class in org.forgerock.opendj.config">DurationPropertyDefinition</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplayGiveUpDelayPropertyDefinition()">getReplayGiveUpDelayPropertyDefinition</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get the "replay-give-up-delay" property definition.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../config/StringPropertyDefinition.html" title="class in org.forgerock.opendj.config">StringPropertyDefinition</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicationServerPropertyDefinition()">getReplicationServerPropertyDefinition</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the "replication-server" property definition.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;<a href="../server/ReplicationDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ReplicationDomainCfg</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getServerConfigurationClass()">getServerConfigurationClass</a></span>()</code></th>
 <td class="colLast">
@@ -343,28 +350,28 @@ extends <a href="../../../config/ManagedObjectDefinition.html" title="class in o
  object definition.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../config/IntegerPropertyDefinition.html" title="class in org.forgerock.opendj.config">IntegerPropertyDefinition</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getServerIdPropertyDefinition()">getServerIdPropertyDefinition</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the "server-id" property definition.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../config/BooleanPropertyDefinition.html" title="class in org.forgerock.opendj.config">BooleanPropertyDefinition</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSolveConflictsPropertyDefinition()">getSolveConflictsPropertyDefinition</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the "solve-conflicts" property definition.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="../../../config/IPAddressPropertyDefinition.html" title="class in org.forgerock.opendj.config">IPAddressPropertyDefinition</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSourceAddressPropertyDefinition()">getSourceAddressPropertyDefinition</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the "source-address" property definition.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="../../../config/IntegerPropertyDefinition.html" title="class in org.forgerock.opendj.config">IntegerPropertyDefinition</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWindowSizePropertyDefinition()">getWindowSizePropertyDefinition</a></span>()</code></th>
 <td class="colLast">
@@ -758,6 +765,48 @@ extends <a href="../../../config/ManagedObjectDefinition.html" title="class in o
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns the "referrals-url" property definition.</dd>
+</dl>
+</li>
+</ul>
+<a id="getReplayGiveUpDelayPropertyDefinition()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReplayGiveUpDelayPropertyDefinition</h4>
+<pre class="methodSignature">public&nbsp;<a href="../../../config/DurationPropertyDefinition.html" title="class in org.forgerock.opendj.config">DurationPropertyDefinition</a>&nbsp;getReplayGiveUpDelayPropertyDefinition()</pre>
+<div class="block">Get the "replay-give-up-delay" property definition.
+ <p>
+ Specifies how long this directory server retries the replay of a
+ change which its backend could not apply, before it gives up on
+ that change and moves on to the changes which follow it.
+ <p>
+ The change is asked for again and retried for as long as this
+ budget lasts, over as many deliveries as it takes. The budget is a
+ duration rather than a number of attempts because a backend which
+ is being imported into, rebuilt or restored serves nothing for as
+ long as that operation runs: raise this value before such a
+ maintenance operation when it is going to outlast the default.
+ Once the budget is spent, the change is recorded as replayed
+ although it never was - this replica then diverges from the rest
+ of the topology, raises the
+ org.opends.server.replication.UnreplayedChange alert and has to be
+ reinitialized. A value of "unlimited" has this server retry the
+ change for as long as it keeps failing, which holds the
+ replication of this domain back until an administrator intervenes:
+ a change which is retried on and on keeps one of the replay
+ threads this server shares between all of its domains busy waiting
+ for it, and has a warning logged for every delivery of it, so a
+ domain left like this is paid for by the healthy ones too. A value
+ of 0 has this server give up on a change as soon as one delivery
+ of it failed, the attempts made in place within that delivery
+ still being taken. The budget is measured from the first failure
+ of the change rather than from the moment it was set, so lowering
+ it gives up on the next failed delivery of a change which has been
+ failing for longer than the new value.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns the "replay-give-up-delay" property definition.</dd>
 </dl>
 </li>
 </ul>

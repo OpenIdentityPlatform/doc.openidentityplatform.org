@@ -5790,7 +5790,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/PlainSASLMechanismHandler.html#applyConfigurationChange(org.forgerock.opendj.server.config.server.PlainSASLMechanismHandlerCfg)">applyConfigurationChange(PlainSASLMechanismHandlerCfg)</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/PlainSASLMechanismHandler.html" title="class in org.opends.server.extensions">PlainSASLMechanismHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/BackendImpl.html#applyConfigurationChange(org.forgerock.opendj.server.config.server.PluggableBackendCfg)">applyConfigurationChange(PluggableBackendCfg)</a></span> - Method in class org.opends.server.backends.pluggable.<a href="org/opends/server/backends/pluggable/BackendImpl.html" title="class in org.opends.server.backends.pluggable">BackendImpl</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Applies the configuration changes to this change listener.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/EntryContainer.html#applyConfigurationChange(org.forgerock.opendj.server.config.server.PluggableBackendCfg)">applyConfigurationChange(PluggableBackendCfg)</a></span> - Method in class org.opends.server.backends.pluggable.<a href="org/opends/server/backends/pluggable/EntryContainer.html" title="class in org.opends.server.backends.pluggable">EntryContainer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/RootContainer.html#applyConfigurationChange(org.forgerock.opendj.server.config.server.PluggableBackendCfg)">applyConfigurationChange(PluggableBackendCfg)</a></span> - Method in class org.opends.server.backends.pluggable.<a href="org/opends/server/backends/pluggable/RootContainer.html" title="class in org.opends.server.backends.pluggable">RootContainer</a></dt>
@@ -11915,7 +11917,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#canShutdown(org.forgerock.opendj.ldap.DN)">canShutdown(DN)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
 <dd>
 <div class="block">Whether the shutdown of a domain can proceed, i.e. its ReplicaOfflineMsg
- has been forwarded or its grace period has expired.</div>
+ has been forwarded by every replication server it was queued for, or its
+ grace period has expired.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/util/Utils.html#canUseAsPort(int)">canUseAsPort(int)</a></span> - Static method in class org.opends.quicksetup.util.<a href="org/opends/quicksetup/util/Utils.html" title="class in org.opends.quicksetup.util">Utils</a></dt>
 <dd>
@@ -12367,6 +12370,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">The error type that will be used to indicate that the user's password must
  be changed because it has been administratively reset.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#changeConfig(java.util.Set,java.util.Set)">changeConfig(Set&lt;String&gt;, Set&lt;String&gt;)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Applies a configuration change to the attributes which should be included
+ in the ECL.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#changeConfig(java.util.Set,java.util.Set)">changeConfig(Set&lt;String&gt;, Set&lt;String&gt;)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
 <dd>
@@ -22372,6 +22380,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Default port number for the LDAPS port.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/types/LockManager.html#DEFAULT_LOCK_TIMEOUT">DEFAULT_LOCK_TIMEOUT</a></span> - Static variable in class org.opends.server.types.<a href="org/opends/server/types/LockManager.html" title="class in org.opends.server.types">LockManager</a></dt>
+<dd>
+<div class="block">How long a lock manager created with the default configuration - which is the one the
+ server runs with - waits for each of the locks an operation needs before it gives up
+ on the entry.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/types/LockManager.html#DEFAULT_LOCK_TIMEOUT_UNITS">DEFAULT_LOCK_TIMEOUT_UNITS</a></span> - Static variable in class org.opends.server.types.<a href="org/opends/server/types/LockManager.html" title="class in org.opends.server.types">LockManager</a></dt>
+<dd>
+<div class="block">The unit of <a href="org/opends/server/types/LockManager.html#DEFAULT_LOCK_TIMEOUT"><code>LockManager.DEFAULT_LOCK_TIMEOUT</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/config/ConfigConstants.html#DEFAULT_LOOKTHROUGH_LIMIT">DEFAULT_LOOKTHROUGH_LIMIT</a></span> - Static variable in class org.opends.server.config.<a href="org/opends/server/config/ConfigConstants.html" title="class in org.opends.server.config">ConfigConstants</a></dt>
 <dd>
 <div class="block">The default value that will be used for the server lookthrough limit if
@@ -30161,6 +30179,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Backup and restore operations are not supported in the "%s" backend</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_BASEDN_NO_LONGER_HELD">ERR_BACKEND_BASEDN_NO_LONGER_HELD</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
+<dd>
+<div class="block">The base DNs of backend %s could not be changed: base DN %s is no longer one this backend holds, which is what closing its root container leaves behind - an LDIF import, an index rebuild, an LDIF export and the backend being disabled all do that.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_CANNOT_CHANGE_BASEDNS">ERR_BACKEND_CANNOT_CHANGE_BASEDNS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
+<dd>
+<div class="block">The base DNs of backend %s could not be changed (to remove: %s, to add: %s):  %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_CANNOT_CHANGE_CONFIDENTIALITY">ERR_BACKEND_CANNOT_CHANGE_CONFIDENTIALITY</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
 <div class="block">Confidentiality cannot be disabled on suffix '%s' because the following indexes have confidentiality still enabled: %s</div>
@@ -30168,6 +30194,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_CANNOT_DECODE_BACKEND_ROOT_DN">ERR_BACKEND_CANNOT_DECODE_BACKEND_ROOT_DN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
 <div class="block">Unable to initialize the "%s" backend because an error occurred while attempting to decode the base DN for this backend:  %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_CANNOT_DEREGISTER_BASEDN">ERR_BACKEND_CANNOT_DEREGISTER_BASEDN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
+<dd>
+<div class="block">An error occurred while attempting to deregister base DN %s from the Directory Server:  %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_CANNOT_LIST_TREES_AFTER_BASEDN_CHANGE">ERR_BACKEND_CANNOT_LIST_TREES_AFTER_BASEDN_CHANGE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
+<dd>
+<div class="block">The base DN change of backend %s failed, and the trees which survived it could not be listed:  %s.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_CANNOT_LOCK_ENTRY">ERR_BACKEND_CANNOT_LOCK_ENTRY</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
@@ -41116,6 +41150,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Error disabling replication port on server %s.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_REPLICATION_DOMAIN_CONFIG_CHANGE_FAILED">ERR_REPLICATION_DOMAIN_CONFIG_CHANGE_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Could not apply a configuration change to the replication domain on "%s": %s</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/AdminToolMessages.html#ERR_REPLICATION_ENABLE_COMMON_DOMAIN_ID">ERR_REPLICATION_ENABLE_COMMON_DOMAIN_ID</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/AdminToolMessages.html" title="class in org.opends.messages">AdminToolMessages</a></dt>
 <dd>
 <div class="block">The following servers in the two topologies have the same domain ID%n%s%n%nThe replication topologies cannot be merged.</div>
@@ -45500,6 +45538,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/admin/client/cli/TaskScheduleArgs.html#failedDependencyActionArg">failedDependencyActionArg</a></span> - Variable in class org.opends.server.admin.client.cli.<a href="org/opends/server/admin/client/cli/TaskScheduleArgs.html" title="class in org.opends.server.admin.client.cli">TaskScheduleArgs</a></dt>
 <dd>
 <div class="block">Argument for specifying a failed dependency action.</div>
+</dd>
+<dt><a href="org/opends/server/util/FailureLogThrottle.html" title="class in org.opends.server.util"><span class="typeNameLink">FailureLogThrottle</span></a> - Class in <a href="org/opends/server/util/package-summary.html">org.opends.server.util</a></dt>
+<dd>
+<div class="block">Bounds how often a repeating failure is reported, so that a failure which a retry loop
+ or a stream of unwanted connections reproduces many times a second is still visible in
+ the error log without filling it.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/FailureLogThrottle.html#%3Cinit%3E(long,java.util.concurrent.TimeUnit)">FailureLogThrottle(long, TimeUnit)</a></span> - Constructor for class org.opends.server.util.<a href="org/opends/server/util/FailureLogThrottle.html" title="class in org.opends.server.util">FailureLogThrottle</a></dt>
+<dd>
+<div class="block">Creates a throttle logging at most one failure per provided interval.</div>
 </dd>
 <dt><a href="org/opends/server/replication/plugin/FakeAddOperation.html" title="class in org.opends.server.replication.plugin"><span class="typeNameLink">FakeAddOperation</span></a> - Class in <a href="org/opends/server/replication/plugin/package-summary.html">org.opends.server.replication.plugin</a></dt>
 <dd>
@@ -73765,10 +73813,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the "replace-pattern" property definition.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#getReplayGiveUpDelay()">getReplayGiveUpDelay()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#getReplayDrainTimeout()">getReplayDrainTimeout()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
 <dd>
-<div class="block">Returns how long the replay of a change is retried before this replica gives up on
- it.</div>
+<div class="block">Returns how long this domain waits for the replay threads which are applying one of
+ its changes before it saves its ServerState and goes down.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/ReplicationDomainCfgClient.html#getReplayGiveUpDelay()">getReplayGiveUpDelay()</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/ReplicationDomainCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">ReplicationDomainCfgClient</a></dt>
+<dd>
+<div class="block">Gets the "replay-give-up-delay" property.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/server/ReplicationDomainCfg.html#getReplayGiveUpDelay()">getReplayGiveUpDelay()</a></span> - Method in interface org.forgerock.opendj.server.config.server.<a href="org/forgerock/opendj/server/config/server/ReplicationDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ReplicationDomainCfg</a></dt>
+<dd>
+<div class="block">Gets the "replay-give-up-delay" property.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/meta/ReplicationDomainCfgDefn.html#getReplayGiveUpDelayPropertyDefinition()">getReplayGiveUpDelayPropertyDefinition()</a></span> - Method in class org.forgerock.opendj.server.config.meta.<a href="org/forgerock/opendj/server/config/meta/ReplicationDomainCfgDefn.html" title="class in org.forgerock.opendj.server.config.meta">ReplicationDomainCfgDefn</a></dt>
+<dd>
+<div class="block">Get the "replay-give-up-delay" property definition.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/server/changelog/file/ReplicaCursor.html#getReplicaId()">getReplicaId()</a></span> - Method in class org.opends.server.replication.server.changelog.file.<a href="org/opends/server/replication/server/changelog/file/ReplicaCursor.html" title="class in org.opends.server.replication.server.changelog.file">ReplicaCursor</a></dt>
 <dd>
@@ -85092,6 +85152,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallProgressStep.html#IMPORTING_LDIF">IMPORTING_LDIF</a></span> - org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallProgressStep.html" title="enum in org.opends.quicksetup.installer">InstallProgressStep</a></dt>
 <dd>
 <div class="block">Importing the contents of an LDIF file into the suffix.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#importInProgress()">importInProgress()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Returns a boolean indicating if a total update <em>into</em> this replica is currently
+ processed, that is an import which is replacing the data of this domain.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/embedded/EmbeddedDirectoryServer.html#importLDIF(org.forgerock.opendj.server.embedded.ImportParameters)">importLDIF(ImportParameters)</a></span> - Method in class org.forgerock.opendj.server.embedded.<a href="org/forgerock/opendj/server/embedded/EmbeddedDirectoryServer.html" title="class in org.forgerock.opendj.server.embedded">EmbeddedDirectoryServer</a></dt>
 <dd>
@@ -110457,7 +110522,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/cassandra/CASStorage.html#listTrees()">listTrees()</a></span> - Method in class org.opends.server.backends.cassandra.<a href="org/opends/server/backends/cassandra/CASStorage.html" title="class in org.opends.server.backends.cassandra">CASStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jdbc/JDBCStorage.html#listTrees()">listTrees()</a></span> - Method in class org.opends.server.backends.jdbc.<a href="org/opends/server/backends/jdbc/JDBCStorage.html" title="class in org.opends.server.backends.jdbc">JDBCStorage</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Lists the trees that exist in this storage.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jeb/JEStorage.html#listTrees()">listTrees()</a></span> - Method in class org.opends.server.backends.jeb.<a href="org/opends/server/backends/jeb/JEStorage.html" title="class in org.opends.server.backends.jeb">JEStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pdb/PDBStorage.html#listTrees()">listTrees()</a></span> - Method in class org.opends.server.backends.pdb.<a href="org/opends/server/backends/pdb/PDBStorage.html" title="class in org.opends.server.backends.pdb">PDBStorage</a></dt>
@@ -116416,6 +116483,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Could not replay change %s in domain "%s": the replay thread it was given to is stopping.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#NOTE_REPLICATION_DOMAIN_SESSION_NOT_RESTARTED">NOTE_REPLICATION_DOMAIN_SESSION_NOT_RESTARTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">The configuration change was applied to the replication domain on "%s", but the session to the replication server was not restarted for it: the domain is shutting down, or it is disabled for the length of a total update.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#NOTE_REPLICATION_SERVER_CONNECT_RESTORED">NOTE_REPLICATION_SERVER_CONNECT_RESTORED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) connected to replication server %s for domain "%s", which it had reported it had no replication session with</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#NOTE_REPLICATION_SERVER_LISTENING">NOTE_REPLICATION_SERVER_LISTENING</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Replication server RS(%d) started listening for new connections on address %s port %d</div>
@@ -118365,6 +118440,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/forgerock/reactive/Stream.html#onNext(com.forgerock.reactive.Consumer)">onNext(Consumer&lt;V&gt;)</a></span> - Method in interface com.forgerock.reactive.<a href="com/forgerock/reactive/Stream.html" title="interface in com.forgerock.reactive">Stream</a></dt>
 <dd>
 <div class="block">Invokes the on next <a href="com/forgerock/reactive/Consumer.html" title="interface in com.forgerock.reactive"><code>Consumer</code></a> when this stream emits a value.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#onSessionRestartSuppressed()">onSessionRestartSuppressed()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Called when what a change carries is negotiated as the session comes up, and the
+ session was not restarted for it.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#onSessionRestartSuppressed()">onSessionRestartSuppressed()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Called when what a change carries is negotiated as the session comes up, and the
+ session was not restarted for it.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/PasswordPolicyStateExtendedOperation.html#OP_ADD_AUTHENTICATION_FAILURE_TIME">OP_ADD_AUTHENTICATION_FAILURE_TIME</a></span> - Static variable in class org.opends.server.extensions.<a href="org/opends/server/extensions/PasswordPolicyStateExtendedOperation.html" title="class in org.opends.server.extensions">PasswordPolicyStateExtendedOperation</a></dt>
 <dd>
@@ -125782,6 +125867,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Process topology information received from a peer RS.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/FailureLogThrottle.html#record(long)">record(long)</a></span> - Method in class org.opends.server.util.<a href="org/opends/server/util/FailureLogThrottle.html" title="class in org.opends.server.util">FailureLogThrottle</a></dt>
+<dd>
+<div class="block">Records a failure which happened at the provided time and tells how it must be logged,
+ together with the number of failures suppressed since the previous one logged.</div>
+</dd>
 <dt><a href="org/opends/server/types/RecordingInputStream.html" title="class in org.opends.server.types"><span class="typeNameLink">RecordingInputStream</span></a> - Class in <a href="org/opends/server/types/package-summary.html">org.opends.server.types</a></dt>
 <dd>
 <div class="block">A wrapper InputStream that will record all reads from an underlying
@@ -129456,9 +129546,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Constructor of a replica offline message providing the offline timestamp in
  a CSN.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgForwarded(DN, CSN)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgDispatched(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,java.util.Collection)">replicaOfflineMsgDispatched(DN, CSN, Collection&lt;Integer&gt;)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
 <dd>
-<div class="block">Message has been forwarded.</div>
+<div class="block">Message has been queued for the replication servers which must forward it.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,int)">replicaOfflineMsgForwarded(DN, CSN, int)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
+<dd>
+<div class="block">Message has been forwarded to one of the replication servers it was queued for.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgNotForwarded(org.forgerock.opendj.ldap.DN,int)">replicaOfflineMsgNotForwarded(DN, int)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
+<dd>
+<div class="block">A replication server the message may have been queued for will not forward it: it is gone,
+ or the message was dropped on its way out.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgSent(DN, CSN)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
 <dd>
@@ -130546,6 +130645,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/task/RestartServerTask.html#%3Cinit%3E(org.opends.guitools.controlpanel.datamodel.ControlPanelInfo,org.opends.guitools.controlpanel.ui.ProgressDialog)">RestartServerTask(ControlPanelInfo, ProgressDialog)</a></span> - Constructor for class org.opends.guitools.controlpanel.task.<a href="org/opends/guitools/controlpanel/task/RestartServerTask.html" title="class in org.opends.guitools.controlpanel.task">RestartServerTask</a></dt>
 <dd>
 <div class="block">Constructor of the task.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#restartService()">restartService()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#restartService()">restartService()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Stops the session of this domain and starts it again, so that it comes up on the
+ configuration which has just changed.</div>
 </dd>
 <dt><a href="org/opends/server/tasks/RestartTaskThread.html" title="class in org.opends.server.tasks"><span class="typeNameLink">RestartTaskThread</span></a> - Class in <a href="org/opends/server/tasks/package-summary.html">org.opends.server.tasks</a></dt>
 <dd>
@@ -140082,9 +140188,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the "replace-pattern" property.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#setReplayGiveUpDelay(long)">setReplayGiveUpDelay(long)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#setReplayDrainTimeout(long)">setReplayDrainTimeout(long)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
 <dd>
-<div class="block">Sets how long the replay of a change is retried before this replica gives up on it.</div>
+<div class="block">Sets how long this domain waits for the replay threads which are applying one of its
+ changes before it saves its ServerState and goes down.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/ReplicationDomainCfgClient.html#setReplayGiveUpDelay(java.lang.Long)">setReplayGiveUpDelay(Long)</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/ReplicationDomainCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">ReplicationDomainCfgClient</a></dt>
+<dd>
+<div class="block">Sets the "replay-give-up-delay" property.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html#setReplicaID(int)">setReplicaID(int)</a></span> - Method in class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor</a></dt>
 <dd>
@@ -155513,17 +155624,41 @@ the order they are declared.</div>
 <dd>
 <div class="block">Backend %s already contains entry %s which has just been registered as the base DN for backend %s.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLAY_DRAIN_INTERRUPTED">WARN_REPLAY_DRAIN_INTERRUPTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Domain "%s" is going down and was interrupted while it waited for the replay of one of its changes to finish.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLAY_NOT_DRAINED">WARN_REPLAY_NOT_DRAINED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Domain "%s" is going down and gave up on waiting up to %d ms for the replay of one of its changes to finish.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLAY_RETRYING_CHANGE">WARN_REPLAY_RETRYING_CHANGE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Could not replay change %s in domain "%s" (delivery %d, each attempted several times in place).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_ACCEPT_ERROR">WARN_REPLICATION_SERVER_ACCEPT_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) could not accept a connection on %s: %s.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_BADLY_DISCONNECTED">WARN_REPLICATION_SERVER_BADLY_DISCONNECTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Directory server DS(%d) encountered an error while receiving changes for domain "%s" from replication server RS(%d) at %s.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_CONNECT_ERROR">WARN_REPLICATION_SERVER_CONNECT_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) could not connect to replication server %s for domain "%s": %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_PROPERLY_DISCONNECTED">WARN_REPLICATION_SERVER_PROPERLY_DISCONNECTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Replication server RS(%d) at %s has closed the connection to this directory server DS(%d).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_REACHABLE_NO_SESSION">WARN_REPLICATION_SERVER_REACHABLE_NO_SESSION</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) reached replication server %s for domain "%s", which it had reported it could not connect to, but the handshake with it did not complete: this attempt established no replication session.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_SESSION_SETUP_ERROR">WARN_REPLICATION_SERVER_SESSION_SETUP_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) accepted a connection from %s but could not start a replication session on it, and closed it: %s.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#WARN_RESTOREDB_CANNOT_UNLOCK_BACKEND">WARN_RESTOREDB_CANNOT_UNLOCK_BACKEND</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
@@ -156161,7 +156296,9 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jeb/JEStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.jeb.<a href="org/opends/server/backends/jeb/JEStorage.html" title="class in org.opends.server.backends.jeb">JEStorage</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pdb/PDBStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.pdb.<a href="org/opends/server/backends/pdb/PDBStorage.html" title="class in org.opends.server.backends.pdb">PDBStorage</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Executes a write operation.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in interface org.opends.server.backends.pluggable.spi.<a href="org/opends/server/backends/pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></dt>
 <dd>
 <div class="block">Executes a write operation.</div>

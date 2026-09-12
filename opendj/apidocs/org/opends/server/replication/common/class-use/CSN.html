@@ -1222,13 +1222,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../service/DSRSShutdownSync.html#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
-                          <a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../service/DSRSShutdownSync.html#replicaOfflineMsgDispatched(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,java.util.Collection)">replicaOfflineMsgDispatched</a></span>&#8203;(<a href="../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                           <a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN,
+                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;&nbsp;replicationServerIds)</code></th>
 <td class="colLast">
-<div class="block">Message has been forwarded.</div>
+<div class="block">Message has been queued for the replication servers which must forward it.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../service/DSRSShutdownSync.html#replicaOfflineMsgForwarded(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN,int)">replicaOfflineMsgForwarded</a></span>&#8203;(<a href="../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                          <a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;forwardedCSN,
+                          int&nbsp;replicationServerId)</code></th>
+<td class="colLast">
+<div class="block">Message has been forwarded to one of the replication servers it was queued for.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">DSRSShutdownSync.</span><code><span class="memberNameLink"><a href="../../service/DSRSShutdownSync.html#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgSent</a></span>&#8203;(<a href="../../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
                      <a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a>&nbsp;offlineCSN)</code></th>

@@ -247,7 +247,7 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#connect(org.forgerock.opendj.ldap.DN,boolean)">connect</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
        boolean&nbsp;sslEncryption)</code></th>
 <td class="colLast">
@@ -552,15 +552,25 @@ extends <a href="ServerHandler.html" title="class in org.opends.server.replicati
 <ul class="blockList">
 <li class="blockList">
 <h4>connect</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;connect&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
-                    boolean&nbsp;sslEncryption)
-             throws <a href="../../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;connect&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                       boolean&nbsp;sslEncryption)
+                throws <a href="../../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
 <div class="block">Connect the hosting RS to the RS represented by THIS handler
- on an outgoing connection.</div>
+ on an outgoing connection.
+ <p>
+ A handshake which does not complete is aborted rather than thrown out of here, and
+ three of its seven aborts carry no message at all: a peer which stops the handshake
+ answers with a <a href="../protocol/StopMsg.html" title="class in org.opends.server.replication.protocol"><code>StopMsg</code></a>, which <code>Session.close()</code> publishes for every
+ abort of its own, and <a href="ServerHandler.html#abortStart(org.forgerock.i18n.LocalizableMessage)"><code>ServerHandler.abortStart(org.forgerock.i18n.LocalizableMessage)</code></a> logs nothing when the reason is null. The
+ caller is what is left to tell a connection from an attempt which only reached the
+ replication port of a peer.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>baseDN</code> - The baseDN</dd>
 <dd><code>sslEncryption</code> - The sslEncryption requested to the remote RS.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> when the handshake completed and this handler is started,
+         <code>false</code> when it was aborted.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></code> - when an error occurs.</dd>
 </dl>
