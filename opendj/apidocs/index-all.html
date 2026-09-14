@@ -12371,11 +12371,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">The error type that will be used to indicate that the user's password must
  be changed because it has been administratively reset.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#changeConfig(java.util.Set,java.util.Set)">changeConfig(Set&lt;String&gt;, Set&lt;String&gt;)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
-<dd>
-<div class="block">Applies a configuration change to the attributes which should be included
- in the ECL.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#changeConfig(java.util.Set,java.util.Set)">changeConfig(Set&lt;String&gt;, Set&lt;String&gt;)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
 <dd>
 <div class="block">Applies a configuration change to the attributes which should be included
@@ -77569,6 +77564,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the "service-discovery-mechanisms" relation definition.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#getSessionGeneration()">getSessionGeneration()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Returns the generation of the session of this domain: bumped by
+ <a href="org/opends/server/replication/service/ReplicationDomain.html#disableService()"><code>ReplicationDomain.disableService()</code></a> and <a href="org/opends/server/replication/service/ReplicationDomain.html#enableService()"><code>ReplicationDomain.enableService()</code></a> under
+ <a href="org/opends/server/replication/service/ReplicationDomain.html#serviceStateLock"><code>ReplicationDomain.serviceStateLock</code></a>, not by the starts at domain startup (see
+ <code>sessionGeneration</code>).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/util/Utils.html#getSetupEquivalentCommandLine(org.opends.quicksetup.UserData)">getSetupEquivalentCommandLine(UserData)</a></span> - Static method in class org.opends.quicksetup.util.<a href="org/opends/quicksetup/util/Utils.html" title="class in org.opends.quicksetup.util">Utils</a></dt>
 <dd>
 <div class="block">Returns the equivalent setup CLI command-line.</div>
@@ -133707,6 +133709,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks if OpenDJ is enabled as a windows service.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#serviceStateLock">serviceStateLock</a></span> - Variable in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Serialises the stopping and the starting of the session of this domain, so that a
+ pair of them is atomic: a session stopped so that the configuration it reads can be
+ changed must not be brought back in the middle of that change by something else.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/server/ServerHandler.html#session">session</a></span> - Variable in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a></dt>
 <dd>
 <div class="block">The session opened with the remote server.</div>
@@ -154903,6 +154911,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_CHANGELOG_NOT_ENABLED_FOR_WRITE">WARN_CHANGELOG_NOT_ENABLED_FOR_WRITE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">The changelog '%s' has been opened in read-only mode, it is not enabled for write</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_CHANGELOG_READ_AGAIN_FOR_MISSING_CHANGES">WARN_CHANGELOG_READ_AGAIN_FOR_MISSING_CHANGES</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) holds changes for domain "%s" which never reached the message queue of %s: its state %s is behind the state %s of the domain although it is being served from that queue.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#WARN_CLASSES_DUPLICATED_NAME">WARN_CLASSES_DUPLICATED_NAME</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
 <dd>
