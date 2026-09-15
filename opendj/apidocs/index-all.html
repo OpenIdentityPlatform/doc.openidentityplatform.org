@@ -31414,6 +31414,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">An unexpected error occurred when testing existence or creating the replication backend : %s</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_CHECKPOINTING_STATE_FAILED">ERR_CHECKPOINTING_STATE_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Could not write the replication state of domain "%s" : %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/config/ConfigMessages.html#ERR_CLASS_LOADER_CANNOT_FIND_GET_INSTANCE_METHOD">ERR_CLASS_LOADER_CANNOT_FIND_GET_INSTANCE_METHOD</a></span> - Static variable in class com.forgerock.opendj.ldap.config.<a href="com/forgerock/opendj/ldap/config/ConfigMessages.html" title="class in com.forgerock.opendj.ldap.config">ConfigMessages</a></dt>
 <dd>
 <div class="block">Unable to to find the getInstance() method in the managed object definition class "%s": %s</div>
@@ -41117,6 +41121,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">The provided password contained too many instances of the same character appearing consecutively.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_REPLAY_ENTRYUUID_SEARCH_FAILED">ERR_REPLAY_ENTRYUUID_SEARCH_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Could not read the data to check change %s for a conflict in domain "%s": the search of the entry with entryUUID %s did not run (%s).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_REPLAY_GIVE_BACK_FAILED">ERR_REPLAY_GIVE_BACK_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Could not give change %s of domain "%s" back to the replication server after the replay which owned it was unwound: %s.</div>
@@ -42724,6 +42732,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#ERR_STARTUP_PLUGIN_ERROR">ERR_STARTUP_PLUGIN_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>
 <div class="block">A fatal error occurred when executing one of the Directory Server startup plugins: %s (error ID %d).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_STATE_CHECKPOINTER_NOT_STOPPED">ERR_STATE_CHECKPOINTER_NOT_STOPPED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">The state checkpointer of domain "%s" has not stopped within %d ms : the shutdown of the domain goes on without it</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_STATICGROUP_ADD_MEMBER_ALREADY_EXISTS">ERR_STATICGROUP_ADD_MEMBER_ALREADY_EXISTS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>
@@ -129515,7 +129527,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#REPLICA_OFFLINE_GRACE_PERIOD">REPLICA_OFFLINE_GRACE_PERIOD</a></span> - Static variable in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
 <dd>
 <div class="block">How long a ReplicaOfflineMsg may hold back the shutdown of the collocated
- RS, in milliseconds, counted from the moment the message was sent.</div>
+ RS, in milliseconds, counted from the moment the message was announced.</div>
 </dd>
 <dt><a href="org/opends/server/replication/server/changelog/file/ReplicaCursor.html" title="class in org.opends.server.replication.server.changelog.file"><span class="typeNameLink">ReplicaCursor</span></a> - Class in <a href="org/opends/server/replication/server/changelog/file/package-summary.html">org.opends.server.replication.server.changelog.file</a></dt>
 <dd>
@@ -129573,9 +129585,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">A replication server the message may have been queued for will not forward it: it is gone,
  or the message was dropped on its way out.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgNotSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgNotSent(DN, CSN)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
+<dd>
+<div class="block">The message which was announced was not sent after all: the broker had no session to write
+ it to, or was stopped before it could.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/DSRSShutdownSync.html#replicaOfflineMsgSent(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">replicaOfflineMsgSent(DN, CSN)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/DSRSShutdownSync.html" title="class in org.opends.server.replication.service">DSRSShutdownSync</a></dt>
 <dd>
-<div class="block">Message has been sent.</div>
+<div class="block">Message is about to be sent.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/SuffixesToReplicateOptions.Type.html#REPLICATE_WITH_EXISTING_SUFFIXES">REPLICATE_WITH_EXISTING_SUFFIXES</a></span> - org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/SuffixesToReplicateOptions.Type.html" title="enum in org.opends.quicksetup.installer">SuffixesToReplicateOptions.Type</a></dt>
 <dd>
@@ -155139,6 +155156,18 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_COULD_NOT_FIND_CHANGELOG">WARN_COULD_NOT_FIND_CHANGELOG</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Directory server DS(%d) was unable to connect to any of the following replication servers for domain "%s": %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#WARN_CRYPTOMGR_SSL_CERT_NICKNAME_LOOKUP_FAILED">WARN_CRYPTOMGR_SSL_CERT_NICKNAME_LOOKUP_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The certificate nicknames now configured in the ssl-cert-nickname property of the crypto manager could not be looked up in the trust store used for server to server communication: %s.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#WARN_CRYPTOMGR_SSL_CERT_NICKNAME_NOT_IN_TRUST_STORE">WARN_CRYPTOMGR_SSL_CERT_NICKNAME_NOT_IN_TRUST_STORE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The certificate nickname "%s" now configured in the ssl-cert-nickname property of the crypto manager is not held by the trust store %s used for server to server communication.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#WARN_CRYPTOMGR_SSL_PROPERTY_REQUIRES_RESTART">WARN_CRYPTOMGR_SSL_PROPERTY_REQUIRES_RESTART</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
+<dd>
+<div class="block">The new value of the %s property of the crypto manager has been stored in the configuration but is not in force.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#WARN_DCR_AMBIGUOUS">WARN_DCR_AMBIGUOUS</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
 <dd>
