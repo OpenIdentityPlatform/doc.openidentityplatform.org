@@ -6527,6 +6527,13 @@ Severity: ERROR
 +
 Message: Entry '%s' cannot be read because attribute '%s' contained an expression '%s' that could not be evaluated: %s.
 
+[#log-ref-log-ref-ERR_CONFIG_CORE_SERVER_ERROR_RESULT_CODE_NOT_A_FAILURE_768]
+ID: 768::
+
+Severity: ERROR
++
+Message: The value '%s' is not acceptable for attribute ds-cfg-server-error-result-code because result code '%s' does not report a failure. This server puts that code on the operations an internal error prevents it from processing, so a code which reports a success leaves a failed operation indistinguishable from one which succeeded: a replication domain would record a change it never applied as replayed, or publish an operation which failed to the whole topology.
+
 --
 
 [#CORE]
