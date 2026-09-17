@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -280,47 +280,55 @@ extends <a href="LogicalSubject.html" title="class in com.sun.identity.entitleme
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasRejectedMemberInSubtree()">hasRejectedMemberInSubtree</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns whether this wrapper, or any logical subject nested below it, had a member class name
+ refused by <a href="LogicalSubject.html#setState(java.lang.String)"><code>LogicalSubject.setState(String)</code></a>.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIdentity()">isIdentity</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>true</code> is this subject is an identity object.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setESubject(com.sun.identity.entitlement.EntitlementSubject)">setESubject</a></span>&#8203;(<a href="EntitlementSubject.html" title="interface in com.sun.identity.entitlement">EntitlementSubject</a>&nbsp;eSubject)</code></th>
 <td class="colLast">
 <div class="block">Sets nested EntitlementSubject.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setESubjects(java.util.Set)">setESubjects</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="EntitlementSubject.html" title="interface in com.sun.identity.entitlement">EntitlementSubject</a>&gt;&nbsp;eSubjects)</code></th>
 <td class="colLast">
 <div class="block">Sets the nested EntitlementSubject(s)</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPSubjectName(java.lang.String)">setPSubjectName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pSubjectName)</code></th>
 <td class="colLast">
 <div class="block">Sets OpenAM policy Subject name</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setState(java.lang.String)">setState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;state)</code></th>
 <td class="colLast">
 <div class="block">Sets state of the object</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>org.json.JSONObject</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toJSONObject()">toJSONObject</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns JSONObject mapping of the object</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
@@ -328,6 +336,13 @@ extends <a href="LogicalSubject.html" title="class in com.sun.identity.entitleme
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.sun.identity.entitlement.LogicalSubject">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.sun.identity.entitlement.<a href="LogicalSubject.html" title="class in com.sun.identity.entitlement">LogicalSubject</a></h3>
+<code><a href="LogicalSubject.html#clearMemberRejection()">clearMemberRejection</a>, <a href="LogicalSubject.html#getRejectedMembers()">getRejectedMembers</a>, <a href="LogicalSubject.html#isMemberRejected()">isMemberRejected</a>, <a href="LogicalSubject.html#markMemberRejected(org.json.JSONObject)">markMemberRejected</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
@@ -524,6 +539,38 @@ extends <a href="LogicalSubject.html" title="class in com.sun.identity.entitleme
 <dd><code><a href="LogicalSubject.html#getESubjects()">getESubjects</a></code>&nbsp;in class&nbsp;<code><a href="LogicalSubject.html" title="class in com.sun.identity.entitlement">LogicalSubject</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the nested EntitlementSubject(s)</dd>
+</dl>
+</li>
+</ul>
+<a id="hasRejectedMemberInSubtree()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasRejectedMemberInSubtree</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasRejectedMemberInSubtree()</pre>
+<div class="block">Returns whether this wrapper, or any logical subject nested below it, had a member class name
+ refused by <a href="LogicalSubject.html#setState(java.lang.String)"><code>LogicalSubject.setState(String)</code></a>.
+ <p>
+ <a href="LogicalSubject.html#isMemberRejected()"><code>LogicalSubject.isMemberRejected()</code></a> deliberately reports this wrapper's own refusal only: for
+ <code>AndSubject</code>/<code>OrSubject</code> a refusal further down is already handled where it
+ happened, because the damaged member denies and a denying member can only make an AND or an
+ OR stricter. Negation is the exception - <code>NotSubject</code> turns its member's decision
+ around, so the damaged member's deny would come back out of the <code>NOT</code> as a match. It
+ has to look at the whole subtree.
+ <p>
+ A <code>NotSubject</code> with no member at all counts as damaged too, not only one whose
+ member <a href="#setState(java.lang.String)"><code>setState(String)</code></a> refused. Its own <a href="#evaluate(java.lang.String,com.sun.identity.entitlement.SubjectAttributesManager,javax.security.auth.Subject,java.lang.String,java.util.Map)"><code>evaluate(java.lang.String, com.sun.identity.entitlement.SubjectAttributesManager, javax.security.auth.Subject, java.lang.String, java.util.Map&lt;java.lang.String, java.util.Set&lt;java.lang.String&gt;&gt;)</code></a> already denies on the
+ missing member, but an enclosing <code>NotSubject</code> would negate that deny into a match
+ for everyone. The two are indistinguishable from the outside anyway: a policy stored by a
+ version that dropped the refused member instead of re-emitting it comes back with the member
+ simply absent, and a <code>NOT</code> without a member is not a policy statement to begin
+ with - it already denies on its own.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="LogicalSubject.html#hasRejectedMemberInSubtree()">hasRejectedMemberInSubtree</a></code>&nbsp;in class&nbsp;<code><a href="LogicalSubject.html" title="class in com.sun.identity.entitlement">LogicalSubject</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if a member was refused anywhere in this subtree.</dd>
 </dl>
 </li>
 </ul>

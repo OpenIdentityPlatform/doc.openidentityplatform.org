@@ -141,14 +141,16 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 implements org.forgerock.json.resource.CollectionResourceProvider</pre>
 <div class="block">Represents Sessions that can queried via a REST interface.
 
- Currently describe three different entrypoints for this Resource, useful when querying
+ Currently describes a single entrypoint for this Resource, useful when querying
  Session Information:
 
  <ul>
-     <li>All - All sessions across all servers known to OpenAM.</li>
      <li>Servers - Lists all servers that are known to OpenAM.</li>
-     <li>[server-id] - Lists the servers for that server instance.</li>
  </ul>
+
+ The session listing queries of this version, all and [server-id], are no longer supported:
+ they listed the sessions of every realm to any caller reaching this endpoint. Sessions are listed by version 2.0
+ of this resource, which authorizes the realm of the query filter against the caller.
 
  This resources acts as a read only resource for the most part, allowing only
  specific, whitelisted properties to be set through it.</div>
@@ -879,9 +881,15 @@ public&nbsp;SessionResource&#8203;(<a href="../../../../../../com/iplanet/sso/SS
                                                                                                                                                          org.forgerock.json.resource.QueryResourceHandler&nbsp;handler)</pre>
 <div class="block">Queries the session resources using one of the predefined query filters.
 
- all - (default) will query all Sessions across all servers.
- list - will list the available servers which is useful for the next query
- [server-id] - will list the available Sessions on the named server.</div>
+ list - will list the available servers.
+
+ <p>The session listing queries of this version, all and [server-id], are no longer
+ supported. They listed the sessions of a server, or of the whole deployment, through the session service
+ RPC under the administrative token of the server: neither the realm the sessions belong to nor the caller
+ took part in the query, so an administrator delegated a single realm was answered with the sessions of
+ every realm of the deployment. Sessions are listed by version 2.0 of this resource instead, whose query
+ filter names the realm to list, which is authorized against the caller. The RPC method these queries were
+ built on has been removed as well, so they have not returned a session since.</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>queryCollection</code>&nbsp;in interface&nbsp;<code>org.forgerock.json.resource.CollectionResourceProvider</code></dd>

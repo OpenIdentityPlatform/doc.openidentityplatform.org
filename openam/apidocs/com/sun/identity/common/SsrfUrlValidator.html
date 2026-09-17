@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9};
+var data = {"i0":9,"i1":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -90,13 +90,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -139,18 +139,85 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 
  <p>A URL is considered safe only when it uses the <code>http</code> or <code>https</code> scheme (which
  rules out <code>file://</code>, <code>ftp://</code>, <code>gopher://</code> and similar variants) and none of
- the host's resolved addresses point at a loopback, wildcard, link-local (incl. cloud metadata
- <code>169.254.0.0/16</code>), private/site-local, multicast or IPv6 unique-local address.
+ the host's resolved addresses point at a blocked target. Blocked targets are:
 
- <p>This class is intentionally free of any configuration/framework dependency so it can be
- reused from any module; callers that need a runtime "allow any URL" escape hatch should read
- their own system property and short-circuit before calling <a href="#isSafeRemoteUrl(java.lang.String)"><code>isSafeRemoteUrl(String)</code></a>.</div>
+ <ul>
+   <li>loopback (<code>127.0.0.0/8</code>, <code>::1</code>), wildcard (<code>0.0.0.0</code>, <code>::</code>),
+       link-local (incl. cloud metadata <code>169.254.0.0/16</code> and <code>fe80::/10</code>),
+       private/site-local (<code>10/8</code>, <code>172.16/12</code>, <code>192.168/16</code>) and multicast
+       addresses, as reported by <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>InetAddress</code></a>;</li>
+   <li>IPv6 unique-local addresses (<code>fc00::/7</code>), not reported by
+       <code>isSiteLocalAddress()</code>;</li>
+   <li>IPv4 special-purpose ranges that <code>InetAddress.is*Address()</code> does not flag:
+       <code>0.0.0.0/8</code> (RFC 1122), <code>100.64.0.0/10</code> shared address space (RFC 6598, incl.
+       the <code>100.100.100.200</code> cloud metadata endpoint), <code>192.0.0.0/24</code> (RFC 6890),
+       <code>192.88.99.0/24</code> (RFC 7526), <code>198.18.0.0/15</code> (RFC 2544) and <code>240.0.0.0/4</code>
+       reserved incl. the <code>255.255.255.255</code> broadcast;</li>
+   <li>the whole NAT64 local-use prefix <code>64:ff9b:1::/48</code> (RFC 8215). Unlike the Well-Known
+       Prefix, which RFC 6052 §3.1 forbids using for non-global IPv4, this prefix exists
+       precisely to translate non-global IPv4, and the operator picks the sub-prefix inside the
+       <code>/48</code> — so the embedding offset is not knowable from the literal. It is
+       translation-only space with no legitimate fetch target, so all of it is blocked rather
+       than only one sub-prefix;</li>
+   <li>the IPv4 address embedded in an IPv6 transition host literal — NAT64 Well-Known Prefix
+       (<code>64:ff9b::/96</code>, RFC 6052 §2.1), 6to4 (<code>2002::/16</code>), Teredo
+       (<code>2001:0000::/32</code>), ISATAP (interface identifier <code>0000:5efe</code> /
+       <code>0200:5efe</code>, RFC 5214) and IPv4-mapped/compatible (<code>::ffff:0:0/96</code>,
+       <code>::/96</code>) — which is extracted and re-checked against every rule above, so an
+       internal target cannot be smuggled in through a transition address. A literal may embed
+       more than one candidate (e.g. a 6to4 prefix with an ISATAP interface identifier); every
+       candidate is checked.</li>
+   <li>the IPv4 address embedded under an operator-configured NAT64 Network-Specific Prefix, see
+       <a href="#NAT64_PREFIXES_PROPERTY"><code>NAT64_PREFIXES_PROPERTY</code></a>.</li>
+ </ul>
+
+ <p>NAT64 Network-Specific Prefixes (RFC 6052 §2.2) are chosen by the operator out of the
+ operator's own address space and are bit-for-bit indistinguishable from an ordinary global
+ address, so they cannot be recognised from the literal alone. Deployments that run a NAT64 with
+ an NSP must declare it through <a href="#NAT64_PREFIXES_PROPERTY"><code>NAT64_PREFIXES_PROPERTY</code></a>; nothing is inferred.
+
+ <p>Note that the check is applied to the addresses the host resolves to at validation time. A
+ name that resolves to a different address when the URL is later fetched (DNS rebinding) is out
+ of scope here and has to be handled by the fetching code.
+
+ <p>Apart from <a href="#NAT64_PREFIXES_PROPERTY"><code>NAT64_PREFIXES_PROPERTY</code></a>, which can only ever add blocked ranges, this
+ class carries no configuration of its own: callers that need a runtime "allow any URL" escape
+ hatch read their own system property and short-circuit before calling
+ <a href="#isSafeRemoteUrl(java.lang.String)"><code>isSafeRemoteUrl(String)</code></a>.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#NAT64_PREFIXES_PROPERTY">NAT64_PREFIXES_PROPERTY</a></span></code></th>
+<td class="colLast">
+<div class="block">Comma-separated list of NAT64 Network-Specific Prefixes (RFC 6052 §2.2) in use by this
+ deployment, each written as <code>&lt;ipv6-prefix&gt;/&lt;length&gt;</code> with a length of 32, 40, 48, 56,
+ 64 or 96 bits — for example
+ <code>org.openidentityplatform.ssrf.nat64-prefixes=2001:db8:122:344::/64,2001:db8:1::/48</code>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ========== METHOD SUMMARY =========== -->
 <section>
 <ul class="blockList">
@@ -168,6 +235,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeRemoteUrl(java.lang.String)">isSafeRemoteUrl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</code></th>
+<td class="colLast">
+<div class="block">Equivalent to <a href="#isSafeRemoteUrl(java.lang.String,boolean)"><code>isSafeRemoteUrl(url, false)</code></a>:
+ both <code>http</code> and <code>https</code> URLs are accepted.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeRemoteUrl(java.lang.String,boolean)">isSafeRemoteUrl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+               boolean&nbsp;requireHttps)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -187,6 +263,41 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="NAT64_PREFIXES_PROPERTY">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>NAT64_PREFIXES_PROPERTY</h4>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> NAT64_PREFIXES_PROPERTY</pre>
+<div class="block">Comma-separated list of NAT64 Network-Specific Prefixes (RFC 6052 §2.2) in use by this
+ deployment, each written as <code>&lt;ipv6-prefix&gt;/&lt;length&gt;</code> with a length of 32, 40, 48, 56,
+ 64 or 96 bits — for example
+ <code>org.openidentityplatform.ssrf.nat64-prefixes=2001:db8:122:344::/64,2001:db8:1::/48</code>.
+
+ <p>The IPv4 address embedded under each declared prefix is extracted per RFC 6052 §2.2 and
+ re-checked, which closes the NAT64 bypass for deployments that do not use the Well-Known
+ Prefix. An NSP cannot be inferred from an address literal, so without this property such
+ prefixes are simply not recognised — the property can only ever block more, never less.
+
+ <p>Unparsable entries are skipped with a warning in the <code>amSSRF</code> debug log; the
+ remaining entries and all built-in rules still apply.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#com.sun.identity.common.SsrfUrlValidator.NAT64_PREFIXES_PROPERTY">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ============ METHOD DETAIL ========== -->
 <section>
 <ul class="blockList">
@@ -197,13 +308,33 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="isSafeRemoteUrl(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isSafeRemoteUrl</h4>
 <pre class="methodSignature">public static&nbsp;boolean&nbsp;isSafeRemoteUrl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</pre>
+<div class="block">Equivalent to <a href="#isSafeRemoteUrl(java.lang.String,boolean)"><code>isSafeRemoteUrl(url, false)</code></a>:
+ both <code>http</code> and <code>https</code> URLs are accepted.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>url</code> - the URL to check.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the URL is safe for the server to fetch, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="isSafeRemoteUrl(java.lang.String,boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isSafeRemoteUrl</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isSafeRemoteUrl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+                                      boolean&nbsp;requireHttps)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>url</code> - the URL to check.</dd>
+<dd><code>requireHttps</code> - when <code>true</code> only the <code>https</code> scheme is accepted; when
+                     <code>false</code> both <code>http</code> and <code>https</code> are accepted.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the URL is safe for the server to fetch, <code>false</code> otherwise.</dd>
 </dl>
@@ -262,13 +393,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

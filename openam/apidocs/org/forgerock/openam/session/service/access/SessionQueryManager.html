@@ -156,10 +156,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.sun.identity.shared.debug.Debug,org.forgerock.openam.session.service.access.persistence.SessionPersistenceStore,org.forgerock.openam.session.authorisation.SessionChangeAuthorizer,com.iplanet.dpro.session.service.SessionServiceConfig)">SessionQueryManager</a></span>&#8203;(<a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.sun.identity.shared.debug.Debug,org.forgerock.openam.session.service.access.persistence.SessionPersistenceStore,org.forgerock.openam.session.authorisation.SessionChangeAuthorizer,com.iplanet.dpro.session.service.SessionServiceConfig,org.forgerock.openam.core.DNWrapper)">SessionQueryManager</a></span>&#8203;(<a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
                    <a href="persistence/SessionPersistenceStore.html" title="class in org.forgerock.openam.session.service.access.persistence">SessionPersistenceStore</a>&nbsp;sessionPersistenceStore,
                    <a href="../../authorisation/SessionChangeAuthorizer.html" title="class in org.forgerock.openam.session.authorisation">SessionChangeAuthorizer</a>&nbsp;sessionChangeAuthorizer,
-                   <a href="../../../../../../com/iplanet/dpro/session/service/SessionServiceConfig.html" title="class in com.iplanet.dpro.session.service">SessionServiceConfig</a>&nbsp;serviceConfig)</code></th>
+                   <a href="../../../../../../com/iplanet/dpro/session/service/SessionServiceConfig.html" title="class in com.iplanet.dpro.session.service">SessionServiceConfig</a>&nbsp;serviceConfig,
+                   <a href="../../../core/DNWrapper.html" title="class in org.forgerock.openam.core">DNWrapper</a>&nbsp;dnWrapper)</code></th>
 <td class="colLast">
 <div class="block">Creates a session query manager.</div>
 </td>
@@ -192,7 +193,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMatchingValidSessions(org.forgerock.openam.utils.CrestQuery)">getMatchingValidSessions</a></span>&#8203;(<a href="../../../utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMatchingValidSessions(com.iplanet.dpro.session.Session,org.forgerock.openam.utils.CrestQuery)">getMatchingValidSessions</a></span>&#8203;(<a href="../../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;caller,
+                        <a href="../../../utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code></th>
 <td class="colLast">
 <div class="block">Return partial sessions matching the provided CREST query filter from the CTS servers.</div>
 </td>
@@ -230,7 +232,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(com.sun.identity.shared.debug.Debug,org.forgerock.openam.session.service.access.persistence.SessionPersistenceStore,org.forgerock.openam.session.authorisation.SessionChangeAuthorizer,com.iplanet.dpro.session.service.SessionServiceConfig)">
+<a id="&lt;init&gt;(com.sun.identity.shared.debug.Debug,org.forgerock.openam.session.service.access.persistence.SessionPersistenceStore,org.forgerock.openam.session.authorisation.SessionChangeAuthorizer,com.iplanet.dpro.session.service.SessionServiceConfig,org.forgerock.openam.core.DNWrapper)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -241,12 +243,16 @@ public&nbsp;SessionQueryManager&#8203;(@Named("amSession")
                            <a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
                            <a href="persistence/SessionPersistenceStore.html" title="class in org.forgerock.openam.session.service.access.persistence">SessionPersistenceStore</a>&nbsp;sessionPersistenceStore,
                            <a href="../../authorisation/SessionChangeAuthorizer.html" title="class in org.forgerock.openam.session.authorisation">SessionChangeAuthorizer</a>&nbsp;sessionChangeAuthorizer,
-                           <a href="../../../../../../com/iplanet/dpro/session/service/SessionServiceConfig.html" title="class in com.iplanet.dpro.session.service">SessionServiceConfig</a>&nbsp;serviceConfig)</pre>
+                           <a href="../../../../../../com/iplanet/dpro/session/service/SessionServiceConfig.html" title="class in com.iplanet.dpro.session.service">SessionServiceConfig</a>&nbsp;serviceConfig,
+                           <a href="../../../core/DNWrapper.html" title="class in org.forgerock.openam.core">DNWrapper</a>&nbsp;dnWrapper)</pre>
 <div class="block">Creates a session query manager.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>debug</code> - The debug object.</dd>
 <dd><code>sessionPersistenceStore</code> - The store which is being used for queries.</dd>
+<dd><code>sessionChangeAuthorizer</code> - The authorizer used to check what the caller may see.</dd>
+<dd><code>serviceConfig</code> - The session service configuration.</dd>
+<dd><code>dnWrapper</code> - Used to convert the realm DNs held by sessions and identities into realm paths.</dd>
 </dl>
 </li>
 </ul>
@@ -260,22 +266,32 @@ public&nbsp;SessionQueryManager&#8203;(@Named("amSession")
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="getMatchingValidSessions(org.forgerock.openam.utils.CrestQuery)">
+<a id="getMatchingValidSessions(com.iplanet.dpro.session.Session,org.forgerock.openam.utils.CrestQuery)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getMatchingValidSessions</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;&nbsp;getMatchingValidSessions&#8203;(<a href="../../../utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;&nbsp;getMatchingValidSessions&#8203;(<a href="../../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;caller,
+                                                           <a href="../../../utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)
                                                     throws <a href="../../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></pre>
-<div class="block">Return partial sessions matching the provided CREST query filter from the CTS servers.</div>
+<div class="block">Return partial sessions matching the provided CREST query filter from the CTS servers.
+
+ <p>The realm named in the query filter is authorized against the caller before the query is run: the
+ caller must either hold the top level admin role, or the realm must be the caller's own realm or one of
+ its sub realms, or the realm must be listed in the caller's
+ iplanet-am-session-get-valid-sessions attribute. The query filter is the only place the realm
+ is taken from, so without this check any caller reaching this method is able to list the sessions of
+ every realm of the deployment.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>caller</code> - The session that initiated the query request. May not be null.</dd>
 <dd><code>crestQuery</code> - The CREST query based on which we should look for matching sessions.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The collection of matching partial sessions.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If the request fails.</dd>
+<dd><code><a href="../../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If the request fails, or if the caller may not list the sessions of the realm
+         named in the query filter.</dd>
 </dl>
 </li>
 </ul>

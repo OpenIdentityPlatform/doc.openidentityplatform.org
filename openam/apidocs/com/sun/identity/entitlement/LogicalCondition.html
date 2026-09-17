@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var data = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -204,13 +204,20 @@ extends <a href="EntitlementConditionAdaptor.html" title="class in com.sun.ident
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clearMemberRejection()">clearMemberRejection</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Clears a recorded refusal.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;obj)</code></th>
 <td class="colLast">
 <div class="block">Returns <code>true</code> if the passed in object is equal to this object</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>abstract <a href="ConditionDecision.html" title="class in com.sun.identity.entitlement">ConditionDecision</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#evaluate(java.lang.String,javax.security.auth.Subject,java.lang.String,java.util.Map)">evaluate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/security/auth/Subject.html?is-external=true" title="class or interface in javax.security.auth" class="externalLink">Subject</a>&nbsp;subject,
@@ -221,70 +228,101 @@ extends <a href="EntitlementConditionAdaptor.html" title="class in com.sun.ident
  <code>EntitlementCondition</code> evaluation</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="EntitlementCondition.html" title="interface in com.sun.identity.entitlement">EntitlementCondition</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEConditions()">getEConditions</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the nested <code>EntitlementCondition</code>(s).</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPConditionName()">getPConditionName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns OpenAM policy Condition name</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>protected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.json.JSONObject&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRejectedMembers()">getRejectedMembers</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the refused members, kept verbatim for re-emission by <a href="#toJSONObject()"><code>toJSONObject()</code></a>.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getState()">getState</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns state of the object.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns hash code of the object</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasRejectedMemberInSubtree()">hasRejectedMemberInSubtree</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns whether this wrapper, or any logical condition nested below it, had a member class
+ name refused by <a href="#setState(java.lang.String)"><code>setState(String)</code></a>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isMemberRejected()">isMemberRejected</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns whether <a href="#setState(java.lang.String)"><code>setState(String)</code></a> refused a member class name, leaving this wrapper
+ with fewer members than the stored policy declares.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#markMemberRejected(org.json.JSONObject)">markMemberRejected</a></span>&#8203;(org.json.JSONObject&nbsp;rejectedMember)</code></th>
+<td class="colLast">
+<div class="block">Records that a member could not be rebuilt from the state being applied, keeping the member's
+ JSON so that <a href="#toJSONObject()"><code>toJSONObject()</code></a> can write it back out.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEConditions(java.util.Set)">setEConditions</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="EntitlementCondition.html" title="interface in com.sun.identity.entitlement">EntitlementCondition</a>&gt;&nbsp;eConditions)</code></th>
 <td class="colLast">
 <div class="block">Sets the nested <code>EntitlementCondition</code>(s).</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPConditionName(java.lang.String)">setPConditionName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pConditionName)</code></th>
 <td class="colLast">
 <div class="block">Sets OpenAM policy Condition name</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setState(java.lang.String)">setState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;state)</code></th>
 <td class="colLast">
 <div class="block">Sets state of the object</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>org.json.JSONObject</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toJSONObject()">toJSONObject</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns JSONObject mapping of the object</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns string representation of the object</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#validate()">validate</a></span>()</code></th>
 <td class="colLast">
@@ -440,6 +478,95 @@ extends <a href="EntitlementConditionAdaptor.html" title="class in com.sun.ident
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>eConditions</code> - the nested <code>EntitlementCondition</code>(s)</dd>
+</dl>
+</li>
+</ul>
+<a id="markMemberRejected(org.json.JSONObject)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>markMemberRejected</h4>
+<pre class="methodSignature">protected&nbsp;void&nbsp;markMemberRejected&#8203;(org.json.JSONObject&nbsp;rejectedMember)</pre>
+<div class="block">Records that a member could not be rebuilt from the state being applied, keeping the member's
+ JSON so that <a href="#toJSONObject()"><code>toJSONObject()</code></a> can write it back out. Subclasses that read the member
+ themselves - <code>NotCondition</code> keeps a single member of its own - have to call this, or a
+ refusal below them stays invisible to <a href="#hasRejectedMemberInSubtree()"><code>hasRejectedMemberInSubtree()</code></a> and an enclosing
+ <code>NOT</code> negates the resulting failure back into a grant.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rejectedMember</code> - the refused member as it appeared in the state, or <code>null</code>
+        when it was not even a JSON object; an empty object is then re-emitted in its place,
+        which the next load refuses again and so keeps the wrapper fail-closed across a save.</dd>
+</dl>
+</li>
+</ul>
+<a id="clearMemberRejection()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearMemberRejection</h4>
+<pre class="methodSignature">protected&nbsp;void&nbsp;clearMemberRejection()</pre>
+<div class="block">Clears a recorded refusal. Called whenever the members are redefined wholesale, so that
+ programmatic construction is unaffected by what a previous state string contained.</div>
+</li>
+</ul>
+<a id="getRejectedMembers()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRejectedMembers</h4>
+<pre class="methodSignature">protected&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.json.JSONObject&gt;&nbsp;getRejectedMembers()</pre>
+<div class="block">Returns the refused members, kept verbatim for re-emission by <a href="#toJSONObject()"><code>toJSONObject()</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the refused members; never <code>null</code>.</dd>
+</dl>
+</li>
+</ul>
+<a id="isMemberRejected()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isMemberRejected</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isMemberRejected()</pre>
+<div class="block">Returns whether <a href="#setState(java.lang.String)"><code>setState(String)</code></a> refused a member class name, leaving this wrapper
+ with fewer members than the stored policy declares.
+ <p>
+ Any subclass whose evaluation gets <em>weaker</em> as members are dropped must consult this
+ before evaluating: an empty member set is satisfied both in <code>AndCondition</code> and in
+ <code>OrCondition</code>, so the truncated wrapper would grant what the stored policy restricts.
+ <code>AndCondition</code> has to fail on any refusal, <code>OrCondition</code> only when nothing
+ survived - dropping a member from a non-empty OR can only make it stricter. A subclass that
+ <em>negates</em> its member must use <a href="#hasRejectedMemberInSubtree()"><code>hasRejectedMemberInSubtree()</code></a> instead.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if at least one member was rejected.</dd>
+</dl>
+</li>
+</ul>
+<a id="hasRejectedMemberInSubtree()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasRejectedMemberInSubtree</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasRejectedMemberInSubtree()</pre>
+<div class="block">Returns whether this wrapper, or any logical condition nested below it, had a member class
+ name refused by <a href="#setState(java.lang.String)"><code>setState(String)</code></a>.
+ <p>
+ <a href="#isMemberRejected()"><code>isMemberRejected()</code></a> deliberately reports this wrapper's own refusal only: for
+ <code>AndCondition</code>/<code>OrCondition</code> a refusal further down is already handled where it
+ happened, because the damaged member fails closed and a failing member can only make an AND
+ or an OR stricter. Negation is the exception - <code>NotCondition</code> turns its member's
+ decision around, so the damaged member's fail-closed decision would come back out of the
+ <code>NOT</code> as a grant. It has to look at the whole subtree.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if a member was refused anywhere in this subtree.</dd>
 </dl>
 </li>
 </ul>

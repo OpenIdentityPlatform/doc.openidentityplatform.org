@@ -197,7 +197,7 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
            jakarta.servlet.http.HttpServletResponse&nbsp;response,
            boolean&nbsp;isIDP)</code></th>
 <td class="colLast">
-<div class="block">Establishes whether or not the SAML2 cookie is set.</div>
+<div class="block">Establishes whether the load balancer cookie still has to be added to this request.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -215,7 +215,8 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
                     jakarta.servlet.http.HttpServletResponse&nbsp;response,
                     boolean&nbsp;isIDP)</code></th>
 <td class="colLast">
-<div class="block">Sets the cookie for the SAML2 Request and redirects the request.</div>
+<div class="block">A second copy of the bounce logic that <a href="../../../../com/sun/identity/federation/common/FSUtils.html#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)"><code>FSUtils.needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, boolean)</code></a> carries,
+ signalling through an exception rather than a boolean.</div>
 </td>
 </tr>
 </table>
@@ -271,7 +272,12 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
                            jakarta.servlet.http.HttpServletResponse&nbsp;response,
                            boolean&nbsp;isIDP)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#isCookieSet(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)">FederateCookieRedirector</a></code></span></div>
-<div class="block">Establishes whether or not the SAML2 cookie is set.</div>
+<div class="block">Establishes whether the load balancer cookie still has to be added to this request.
+ <p>
+ Note the sense: the only implementation returns <code>true</code> when the cookie is
+ <em>absent</em> and the request is on a multi server platform, matching
+ <a href="../../../../com/sun/identity/federation/common/FSUtils.html#requireAddCookie(jakarta.servlet.http.HttpServletRequest)"><code>FSUtils.requireAddCookie(jakarta.servlet.http.HttpServletRequest)</code></a>. The name reads the other
+ way round and is kept for compatibility.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#isCookieSet(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)">isCookieSet</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html" title="interface in com.sun.identity.saml2.profile">FederateCookieRedirector</a></code></dd>
@@ -280,7 +286,7 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
 <dd><code>response</code> - the saml2 Response</dd>
 <dd><code>isIDP</code> - whether this request was from an IDP</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the cookie is set.</dd>
+<dd>true if the request is on a multi server platform and carries no load balancer cookie</dd>
 </dl>
 </li>
 </ul>
@@ -294,8 +300,12 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
                                  jakarta.servlet.http.HttpServletResponse&nbsp;response,
                                  boolean&nbsp;isIDP)
                           throws <a href="../../../../com/sun/identity/saml2/profile/UnableToRedirectException.html" title="class in com.sun.identity.saml2.profile">UnableToRedirectException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#setCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)">FederateCookieRedirector</a></code></span></div>
-<div class="block">Sets the cookie for the SAML2 Request and redirects the request.</div>
+<div class="block">A second copy of the bounce logic that <a href="../../../../com/sun/identity/federation/common/FSUtils.html#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)"><code>FSUtils.needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, boolean)</code></a> carries,
+ signalling through an exception rather than a boolean. Nothing in this repository calls it -
+ the live path through this class is <a href="#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)"><code>needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, boolean)</code></a>, which delegates
+ straight back to <code>FSUtils</code> - so keeping it in step is parity maintenance, not a
+ second hardened path. It is kept in step anyway, because the two copies having drifted apart
+ is what produced GHSA-v796-mg6j-9c5m.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#setCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)">setCookieAndRedirect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html" title="interface in com.sun.identity.saml2.profile">FederateCookieRedirector</a></code></dd>
@@ -304,7 +314,10 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
 <dd><code>response</code> - the SAML2 Resposne object</dd>
 <dd><code>isIDP</code> - whether this request was from and idp</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../com/sun/identity/saml2/profile/UnableToRedirectException.html" title="class in com.sun.identity.saml2.profile">UnableToRedirectException</a></code> - if there was a problem preforming the redirect.</dd>
+<dd><code><a href="../../../../com/sun/identity/saml2/profile/UnableToRedirectException.html" title="class in com.sun.identity.saml2.profile">UnableToRedirectException</a></code> - if no redirect was performed and the caller still owns an
+     uncommitted, usable response. Not an untouched one - the load balancer cookie is added
+     before any of the throw paths, and a failed bounce leaves the sink's no-cache headers
+     behind.</dd>
 </dl>
 </li>
 </ul>
@@ -326,6 +339,9 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
 <dd><code>request</code> - the SAML2 Request object</dd>
 <dd><code>response</code> - the SAML2 Resposne object</dd>
 <dd><code>isIDP</code> - whether this request was from and idp</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the caller must return without writing anything further, see
+     <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)"><code>FederateCookieRedirector.needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, boolean)</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -340,7 +356,12 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
                                           boolean&nbsp;isIDP)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)">FederateCookieRedirector</a></code></span></div>
 <div class="block">Sets the cookie if required and then redirects the SAML2 request.  Returns a boolean to indicate whether the
- redirect action was taken.</div>
+ caller still owns the response.
+ <p>
+ <code>true</code> means the request has been answered and the caller must return without
+ writing anything further. That covers a redirect that was performed, and also a redirect that
+ failed after the response had already been committed - there is nothing the caller can do with
+ a spoiled response but stop.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)">needSetLBCookieAndRedirect</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/sun/identity/saml2/profile/FederateCookieRedirector.html" title="interface in com.sun.identity.saml2.profile">FederateCookieRedirector</a></code></dd>
@@ -349,7 +370,8 @@ implements <a href="../../../../com/sun/identity/saml2/profile/FederateCookieRed
 <dd><code>response</code> - the SAML2 Resposne object</dd>
 <dd><code>isIDP</code> - whether this request was from and idp</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the redirect action was performed</dd>
+<dd>true if the caller must return without writing anything further, false if no redirect
+     was needed and the caller still owns a usable response</dd>
 </dl>
 </li>
 </ul>

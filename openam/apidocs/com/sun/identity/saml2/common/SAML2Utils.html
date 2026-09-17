@@ -852,7 +852,10 @@ extends <a href="SAML2SDKUtils.html" title="class in com.sun.identity.saml2.comm
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateName,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateValue,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetURL)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Forwards to <code>autosubmitaccessrights.jsp</code> so that the browser re-posts the SAML
+ message to <code>targetURL</code>.</div>
+</td>
 </tr>
 <tr id="i76" class="altColor">
 <td class="colFirst"><code>static void</code></td>
@@ -2618,9 +2621,34 @@ extends <a href="SAML2SDKUtils.html" title="class in com.sun.identity.saml2.comm
                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateValue,
                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetURL)
                          throws <a href="SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
+<div class="block">Forwards to <code>autosubmitaccessrights.jsp</code> so that the browser re-posts the SAML
+ message to <code>targetURL</code>.
+ <p>
+ The JSP renders every attribute set here with JSP EL, which does not escape, and it renders
+ them inside <code>value</code> and <code>action</code> attributes - so they are encoded with
+ <code>encodeForHTMLAttribute</code>, the same encoder <code>SAMLPOSTProfileServlet</code> and
+ <code>SAML2Proxy</code> use when they hand build this very form. Encoding happens exactly once:
+ the browser HTML decodes the attribute before re-posting it, so a second layer of escaping
+ anywhere downstream would corrupt a Base64 SAML message ('+', '/' and '=' all sit outside the
+ ESAPI immune sets).
+ <p>
+ Encoding is the whole defence for <code>TARGET_URL</code>, and it does not constrain the
+ scheme. That is safe where the caller builds the target from
+ <code>request.getRequestURL()</code>, as the load balancer cookie bounce does. Callers that
+ pass an endpoint out of entity metadata instead - SLO, SSO and attribute query locations -
+ are trusting whoever administers that metadata not to put a <code>javascript:</code> URL in
+ the form action, since <code>encodeForHTMLAttribute</code> leaves the scheme intact.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - The HTTP request in question.</dd>
+<dd><code>response</code> - The response associated with the request.</dd>
+<dd><code>SAMLmessageName</code> - Name of the SAML message parameter.</dd>
+<dd><code>SAMLmessageValue</code> - Value of the SAML message parameter.</dd>
+<dd><code>relayStateName</code> - Name of the relay state parameter.</dd>
+<dd><code>relayStateValue</code> - Value of the relay state parameter, may be null.</dd>
+<dd><code>targetURL</code> - The URL the message is re-posted to.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code></dd>
+<dd><code><a href="SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the forward fails.</dd>
 </dl>
 </li>
 </ul>

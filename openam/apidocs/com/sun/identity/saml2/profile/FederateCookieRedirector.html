@@ -165,7 +165,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
            jakarta.servlet.http.HttpServletResponse&nbsp;response,
            boolean&nbsp;isIDP)</code></th>
 <td class="colLast">
-<div class="block">Establishes whether or not the SAML2 cookie is set.</div>
+<div class="block">Establishes whether the load balancer cookie still has to be added to this request.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -212,14 +212,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature">boolean&nbsp;isCookieSet&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
                     jakarta.servlet.http.HttpServletResponse&nbsp;response,
                     boolean&nbsp;isIDP)</pre>
-<div class="block">Establishes whether or not the SAML2 cookie is set.</div>
+<div class="block">Establishes whether the load balancer cookie still has to be added to this request.
+ <p>
+ Note the sense: the only implementation returns <code>true</code> when the cookie is
+ <em>absent</em> and the request is on a multi server platform, matching
+ <a href="../../federation/common/FSUtils.html#requireAddCookie(jakarta.servlet.http.HttpServletRequest)"><code>FSUtils.requireAddCookie(jakarta.servlet.http.HttpServletRequest)</code></a>. The name reads the other
+ way round and is kept for compatibility.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - the SAML2 request</dd>
 <dd><code>response</code> - the saml2 Response</dd>
 <dd><code>isIDP</code> - whether this request was from an IDP</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the cookie is set.</dd>
+<dd>true if the request is on a multi server platform and carries no load balancer cookie</dd>
 </dl>
 </li>
 </ul>
@@ -233,14 +238,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                           jakarta.servlet.http.HttpServletResponse&nbsp;response,
                           boolean&nbsp;isIDP)
                    throws <a href="UnableToRedirectException.html" title="class in com.sun.identity.saml2.profile">UnableToRedirectException</a></pre>
-<div class="block">Sets the cookie for the SAML2 Request and redirects the request.</div>
+<div class="block">Sets the cookie for the SAML2 Request and redirects the request.
+ <p>
+ A normal return means the caller must stop and write nothing further: either the redirect was
+ performed, or it failed after the response had already been committed, which leaves the caller
+ nothing it can safely do with the response. The exception is raised only while the response is
+ still usable, so that the caller can carry on with it.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - the SAML2 Request object</dd>
 <dd><code>response</code> - the SAML2 Resposne object</dd>
 <dd><code>isIDP</code> - whether this request was from and idp</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="UnableToRedirectException.html" title="class in com.sun.identity.saml2.profile">UnableToRedirectException</a></code> - if there was a problem preforming the redirect.</dd>
+<dd><code><a href="UnableToRedirectException.html" title="class in com.sun.identity.saml2.profile">UnableToRedirectException</a></code> - if no redirect was performed and the caller still owns an
+     uncommitted, usable response. Not an untouched one - the load balancer cookie is added
+     before any of the throw paths, and a failed bounce leaves the sink's no-cache headers
+     behind.</dd>
 </dl>
 </li>
 </ul>
@@ -259,6 +272,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>request</code> - the SAML2 Request object</dd>
 <dd><code>response</code> - the SAML2 Resposne object</dd>
 <dd><code>isIDP</code> - whether this request was from and idp</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the caller must return without writing anything further, see
+     <a href="#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)"><code>needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, boolean)</code></a>.</dd>
 </dl>
 </li>
 </ul>
@@ -272,14 +288,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                                    jakarta.servlet.http.HttpServletResponse&nbsp;response,
                                    boolean&nbsp;isIDP)</pre>
 <div class="block">Sets the cookie if required and then redirects the SAML2 request.  Returns a boolean to indicate whether the
- redirect action was taken.</div>
+ caller still owns the response.
+ <p>
+ <code>true</code> means the request has been answered and the caller must return without
+ writing anything further. That covers a redirect that was performed, and also a redirect that
+ failed after the response had already been committed - there is nothing the caller can do with
+ a spoiled response but stop.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - the SAML2 Request object</dd>
 <dd><code>response</code> - the SAML2 Resposne object</dd>
 <dd><code>isIDP</code> - whether this request was from and idp</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the redirect action was performed</dd>
+<dd>true if the caller must return without writing anything further, false if no redirect
+     was needed and the caller still owns a usable response</dd>
 </dl>
 </li>
 </ul>

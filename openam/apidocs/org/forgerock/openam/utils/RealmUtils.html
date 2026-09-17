@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -171,32 +171,48 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#containsParentPathSegment(java.lang.String)">containsParentPathSegment</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colLast">
+<div class="block">Determines whether a realm path contains a .. path segment, i.e. whether it has to be resolved
+ before it names a realm.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getChildRealm(java.lang.String)">getChildRealm</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Returns child realm from a given fully qualified realm.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParentRealm(java.lang.String)">getParentRealm</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Returns parent realm from a given fully qualified realm.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRealmNames(com.iplanet.sso.SSOToken)">getRealmNames</a></span>&#8203;(<a href="../../../../com/iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;adminToken)</code></th>
 <td class="colLast">
 <div class="block">Retrieve the names of all the realms starting with '/' and including '/'.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isParentRealm(java.lang.String,java.lang.String)">isParentRealm</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parentPath,
              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
 <div class="block">Returns parent realm from a given fully qualified realm.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSameOrSubRealm(java.lang.String,java.lang.String)">isSameOrSubRealm</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parentRealm,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
+<td class="colLast">
+<div class="block">Determines whether a realm is the same realm as, or a sub realm of, another realm.</div>
 </td>
 </tr>
 </table>
@@ -253,6 +269,47 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>path</code> - Fully qualified realm.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>parent realm.</dd>
+</dl>
+</li>
+</ul>
+<a id="isSameOrSubRealm(java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSameOrSubRealm</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isSameOrSubRealm&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;parentRealm,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</pre>
+<div class="block">Determines whether a realm is the same realm as, or a sub realm of, another realm.
+
+ <p>Neither realm may contain a .. path segment: this method compares realm paths literally,
+ so a path that has to be resolved before it names a realm cannot be decided here and is refused instead.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>parentRealm</code> - Fully qualified realm the realm is compared against.</dd>
+<dd><code>realm</code> - Fully qualified realm to test.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if realm is parentRealm itself or one of its sub realms,
+         <code>false</code> otherwise, including when either realm is null, blank, or contains a ..
+         path segment.</dd>
+</dl>
+</li>
+</ul>
+<a id="containsParentPathSegment(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>containsParentPathSegment</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;containsParentPathSegment&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</pre>
+<div class="block">Determines whether a realm path contains a .. path segment, i.e. whether it has to be resolved
+ before it names a realm. A realm named .. does not exist, while a realm name that merely
+ contains two dots, such as a..b, is a legitimate name and is not reported by this method.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>realm</code> - Realm path to test. May be <code>null</code>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if any path segment of realm is ...</dd>
 </dl>
 </li>
 </ul>

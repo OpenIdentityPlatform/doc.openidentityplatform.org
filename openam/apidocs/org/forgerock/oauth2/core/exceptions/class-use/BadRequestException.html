@@ -372,23 +372,32 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">OpenIDConnectEndSession.</span><code><span class="memberNameLink"><a href="../../../../openidconnect/OpenIDConnectEndSession.html#endSession(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">endSession</a></span>&#8203;(<a href="../../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;idToken)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">OpenIDConnectEndSession.</span><code><span class="memberNameLink"><a href="../../../../openidconnect/OpenIDConnectEndSession.html#endSession(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.json.jose.jws.SignedJwt)">endSession</a></span>&#8203;(<a href="../../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+          org.forgerock.json.jose.jws.SignedJwt&nbsp;idToken)</code></th>
 <td class="colLast">
 <div class="block">Ends an OpenId Connect session.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../../openidconnect/IdTokenHintValidator.VerifiedIdTokenHint.html" title="class in org.forgerock.openidconnect">IdTokenHintValidator.VerifiedIdTokenHint</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">IdTokenHintValidator.</span><code><span class="memberNameLink"><a href="../../../../openidconnect/IdTokenHintValidator.html#validate(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">validate</a></span>&#8203;(<a href="../../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;idTokenHint)</code></th>
+<td class="colLast">
+<div class="block">Parses the given <code>id_token_hint</code> and verifies that this provider issued it to the
+ client it names, in the realm the request is addressed to.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ClaimsParameterValidator.</span><code><span class="memberNameLink"><a href="../../../../openidconnect/ClaimsParameterValidator.html#validateRequest(org.forgerock.oauth2.core.OAuth2Request)">validateRequest</a></span>&#8203;(<a href="../../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CodeVerifierValidator.</span><code><span class="memberNameLink"><a href="../../../../openidconnect/CodeVerifierValidator.html#validateRequest(org.forgerock.oauth2.core.OAuth2Request)">validateRequest</a></span>&#8203;(<a href="../../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OpenIdConnectAuthorizeRequestValidator.</span><code><span class="memberNameLink"><a href="../../../../openidconnect/OpenIdConnectAuthorizeRequestValidator.html#validateRequest(org.forgerock.oauth2.core.OAuth2Request)">validateRequest</a></span>&#8203;(<a href="../../OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)</code></th>
 <td class="colLast">

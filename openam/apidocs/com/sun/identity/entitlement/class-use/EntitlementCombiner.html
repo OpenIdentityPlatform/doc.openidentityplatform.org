@@ -258,6 +258,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Attempts to retrieve the Java Class associated with the name of an entitlement combiner.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="../EntitlementCombiner.html" title="class in com.sun.identity.entitlement">EntitlementCombiner</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">EntitlementUtils.</span><code><span class="memberNameLink"><a href="../../../../../org/forgerock/openam/entitlement/utils/EntitlementUtils.html#resolveEntitlementCombiner(java.lang.String)">resolveEntitlementCombiner</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colLast">
+<div class="block">Strict variant of <a href="../../../../../org/forgerock/openam/entitlement/utils/EntitlementUtils.html#getEntitlementCombiner(java.lang.String)"><code>EntitlementUtils.getEntitlementCombiner(String)</code></a>: resolves a combiner short name via the
+ <a href="../../../../../org/forgerock/openam/entitlement/EntitlementRegistry.html" title="class in org.forgerock.openam.entitlement"><code>EntitlementRegistry</code></a>, or a canonical class name via
+ <a href="../../../../../org/forgerock/openam/entitlement/utils/EntitlementUtils.html#resolveExtensionClass(java.lang.String,java.lang.Class)"><code>EntitlementUtils.resolveExtensionClass(String, Class)</code></a>, and throws instead of falling back to
+ <a href="../DenyOverride.html" title="class in com.sun.identity.entitlement"><code>DenyOverride</code></a> when the name is rejected.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </section>

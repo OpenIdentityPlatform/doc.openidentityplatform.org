@@ -374,7 +374,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>MISSING_COOKIE</h4>
 <pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a> MISSING_COOKIE</pre>
-<div class="block">Constant to indicate the Proxy did not find the expected cookie.</div>
+<div class="block">Constant to indicate the Proxy did not find the expected cookie.
+ <p>
+ No longer produced. It was only ever reached when the load balancer cookie bounce fired -
+ which needs a multi server platform and
+ <code>com.sun.identity.federation.cookieHashRedirectEnabled=true</code>, off by default - and
+ that case now answers the request instead of failing it. Kept because it is part of the
+ published error vocabulary and an older server in the same site can still emit it.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../constant-values.html#org.forgerock.openam.authentication.modules.saml2.SAML2Proxy.MISSING_COOKIE">Constant Field Values</a></dd>

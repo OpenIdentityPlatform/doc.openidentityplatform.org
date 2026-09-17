@@ -566,7 +566,13 @@ public&nbsp;SessionResourceV2&#8203;(<a href="../../../../../../com/iplanet/sso/
      <li>realm eq "bar"</li>
  </ul>
 
- i.e. searching using only the username is not supported currently.</div>
+ i.e. searching using only the username is not supported currently.
+
+ <p>The realm the query runs against is taken from the query filter, therefore it is checked against the realm
+ of the request URI - the only realm the caller has been authorized for by the authorization modules of this
+ endpoint. A filter asking for any other realm is refused, so that an administrator delegated a single realm
+ cannot list the sessions of the other realms of the deployment. The caller is checked against the realm once
+ more by the session service itself.</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>queryCollection</code>&nbsp;in interface&nbsp;<code>org.forgerock.json.resource.CollectionResourceProvider</code></dd>

@@ -150,8 +150,12 @@ extends <a href="../../../../../com/sun/identity/shared/validation/ValidatorBase
  Connect specification already mandates for <code>sector_identifier_uri</code>, and which also
  rules out <code>file://</code>, <code>http://</code>, <code>ftp://</code>, <code>gopher://</code> SSRF variants)
  and none of the host's resolved addresses point at a loopback, wildcard, link-local
- (incl. cloud metadata <code>169.254.0.0/16</code>), private/site-local, multicast or IPv6
- unique-local address.
+ (incl. cloud metadata <code>169.254.0.0/16</code>), private/site-local, multicast, IPv6 unique-local
+ or otherwise special-purpose address — including one reachable only through the IPv4 address
+ embedded in an IPv6 transition literal (NAT64, 6to4, Teredo, ISATAP, IPv4-mapped). The scheme
+ and address checks are delegated to <a href="../../../../../com/sun/identity/common/SsrfUrlValidator.html" title="class in com.sun.identity.common"><code>SsrfUrlValidator</code></a>, the single
+ shared implementation, whose javadoc lists the blocked set in full; this class only adds the
+ <code>https</code>-only requirement and the runtime escape hatch below.
 
  <p>The check can be disabled at runtime, without a rebuild, by setting the system property
  <a href="#ALLOW_ANY_URL_PROPERTY"><code>ALLOW_ANY_URL_PROPERTY</code></a> to <code>true</code> (for the atypical case of a relying party

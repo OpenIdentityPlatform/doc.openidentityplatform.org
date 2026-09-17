@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -470,6 +470,25 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i23" class="rowColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="../../../../../com/sun/identity/entitlement/EntitlementCombiner.html" title="class in com.sun.identity.entitlement">EntitlementCombiner</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resolveEntitlementCombiner(java.lang.String)">resolveEntitlementCombiner</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colLast">
+<div class="block">Strict variant of <a href="#getEntitlementCombiner(java.lang.String)"><code>getEntitlementCombiner(String)</code></a>: resolves a combiner short name via the
+ <a href="../EntitlementRegistry.html" title="class in org.forgerock.openam.entitlement"><code>EntitlementRegistry</code></a>, or a canonical class name via
+ <a href="#resolveExtensionClass(java.lang.String,java.lang.Class)"><code>resolveExtensionClass(String, Class)</code></a>, and throws instead of falling back to
+ <a href="../../../../../com/sun/identity/entitlement/DenyOverride.html" title="class in com.sun.identity.entitlement"><code>DenyOverride</code></a> when the name is rejected.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends T&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resolveExtensionClass(java.lang.String,java.lang.Class)">resolveExtensionClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;className,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;expectedType)</code></th>
+<td class="colLast">
+<div class="block">Safely resolves an attacker- or config-supplied class name into a concrete implementation of an
+ expected entitlement extension interface (e.g.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static <a href="../ResourceType.html" title="class in org.forgerock.openam.entitlement">ResourceType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resourceTypeFromMap(java.lang.String,java.util.Map)">resourceTypeFromMap</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;uuid,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&gt;&nbsp;data)</code></th>
@@ -1135,12 +1154,73 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  This is so that older systems which used the canonical name to refer to the class to instantiate
  correctly find their class. This may also fail.
 
- If this fails, we simply return the default: <a href="../../../../../com/sun/identity/entitlement/DenyOverride.html" title="class in com.sun.identity.entitlement"><code>DenyOverride</code></a>.</div>
+ If this fails — the class cannot be loaded, or is not an instantiable <a href="../../../../../com/sun/identity/entitlement/EntitlementCombiner.html" title="class in com.sun.identity.entitlement"><code>EntitlementCombiner</code></a>
+ subtype — we simply return the default: <a href="../../../../../com/sun/identity/entitlement/DenyOverride.html" title="class in com.sun.identity.entitlement"><code>DenyOverride</code></a>. Callers that must surface an invalid
+ name to the caller instead of silently falling back should use
+ <a href="#resolveEntitlementCombiner(java.lang.String)"><code>resolveEntitlementCombiner(String)</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - the name used to reference the combiner. Must not be null.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the class represented by the name</dd>
+</dl>
+</li>
+</ul>
+<a id="resolveEntitlementCombiner(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resolveEntitlementCombiner</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends <a href="../../../../../com/sun/identity/entitlement/EntitlementCombiner.html" title="class in com.sun.identity.entitlement">EntitlementCombiner</a>&gt;&nbsp;resolveEntitlementCombiner&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)
+                                                                       throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ClassNotFoundException</a></pre>
+<div class="block">Strict variant of <a href="#getEntitlementCombiner(java.lang.String)"><code>getEntitlementCombiner(String)</code></a>: resolves a combiner short name via the
+ <a href="../EntitlementRegistry.html" title="class in org.forgerock.openam.entitlement"><code>EntitlementRegistry</code></a>, or a canonical class name via
+ <a href="#resolveExtensionClass(java.lang.String,java.lang.Class)"><code>resolveExtensionClass(String, Class)</code></a>, and throws instead of falling back to
+ <a href="../../../../../com/sun/identity/entitlement/DenyOverride.html" title="class in com.sun.identity.entitlement"><code>DenyOverride</code></a> when the name is rejected. Intended for request-supplied names (e.g. the
+ Applications REST endpoint), where an invalid name must produce an error rather than silently
+ configure a different combiner.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - the name used to reference the combiner. Must not be null.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the class represented by the name, guaranteed to be an instantiable
+         <a href="../../../../../com/sun/identity/entitlement/EntitlementCombiner.html" title="class in com.sun.identity.entitlement"><code>EntitlementCombiner</code></a> implementation</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ClassNotFoundException</a></code> - if the name matches no registered combiner and cannot be resolved
+         to an instantiable <a href="../../../../../com/sun/identity/entitlement/EntitlementCombiner.html" title="class in com.sun.identity.entitlement"><code>EntitlementCombiner</code></a> subtype</dd>
+</dl>
+</li>
+</ul>
+<a id="resolveExtensionClass(java.lang.String,java.lang.Class)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>resolveExtensionClass</h4>
+<pre class="methodSignature">public static&nbsp;&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;? extends T&gt;&nbsp;resolveExtensionClass&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;className,
+                                                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;expectedType)
+                                                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ClassNotFoundException</a></pre>
+<div class="block">Safely resolves an attacker- or config-supplied class name into a concrete implementation of an
+ expected entitlement extension interface (e.g. <code>ISearchIndex</code>, <code>ISaveIndex</code>,
+ <code>ResourceName</code>).
+ <p>
+ The class is loaded WITHOUT running its static initializer (the three-argument
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true#forName(java.lang.String,boolean,java.lang.ClassLoader)" title="class or interface in java.lang" class="externalLink"><code>Class.forName(String, boolean, ClassLoader)</code></a> form with <code>initialize == false</code>) and is
+ validated to be an instantiable subtype of <code>expectedType</code> <em>before</em> it is ever
+ instantiated by the caller. This prevents loading and instantiating arbitrary classpath classes
+ with dangerous static-initializer or no-arg-constructor side effects (unsafe reflection, CWE-470).</div>
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the expected interface type</dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>className</code> - the requested implementation class name</dd>
+<dd><code>expectedType</code> - the interface the class must implement</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the validated class, guaranteed to be an instantiable subtype of <code>expectedType</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang" class="externalLink">ClassNotFoundException</a></code> - if the class cannot be loaded, or is not an instantiable subtype of
+         <code>expectedType</code></dd>
 </dl>
 </li>
 </ul>

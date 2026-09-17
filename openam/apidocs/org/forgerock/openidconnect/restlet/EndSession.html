@@ -169,10 +169,10 @@ extends org.restlet.resource.ServerResource</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.openidconnect.OpenIDConnectEndSession,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.oauth2.core.ClientRegistrationStore)">EndSession</a></span>&#8203;(<a href="../../oauth2/core/OAuth2RequestFactory.html" title="class in org.forgerock.oauth2.core">OAuth2RequestFactory</a>&nbsp;requestFactory,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.openidconnect.OpenIDConnectEndSession,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.openidconnect.IdTokenHintValidator)">EndSession</a></span>&#8203;(<a href="../../oauth2/core/OAuth2RequestFactory.html" title="class in org.forgerock.oauth2.core">OAuth2RequestFactory</a>&nbsp;requestFactory,
           <a href="../OpenIDConnectEndSession.html" title="class in org.forgerock.openidconnect">OpenIDConnectEndSession</a>&nbsp;openIDConnectEndSession,
           <a href="../../oauth2/restlet/ExceptionHandler.html" title="class in org.forgerock.oauth2.restlet">ExceptionHandler</a>&nbsp;exceptionHandler,
-          <a href="../../oauth2/core/ClientRegistrationStore.html" title="interface in org.forgerock.oauth2.core">ClientRegistrationStore</a>&nbsp;clientRegistrationStore)</code></th>
+          <a href="../IdTokenHintValidator.html" title="class in org.forgerock.openidconnect">IdTokenHintValidator</a>&nbsp;idTokenHintValidator)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new EndSession.</div>
 </td>
@@ -247,7 +247,7 @@ extends org.restlet.resource.ServerResource</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.openidconnect.OpenIDConnectEndSession,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.oauth2.core.ClientRegistrationStore)">
+<a id="&lt;init&gt;(org.forgerock.oauth2.core.OAuth2RequestFactory,org.forgerock.openidconnect.OpenIDConnectEndSession,org.forgerock.oauth2.restlet.ExceptionHandler,org.forgerock.openidconnect.IdTokenHintValidator)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -257,13 +257,14 @@ extends org.restlet.resource.ServerResource</pre>
 public&nbsp;EndSession&#8203;(<a href="../../oauth2/core/OAuth2RequestFactory.html" title="class in org.forgerock.oauth2.core">OAuth2RequestFactory</a>&nbsp;requestFactory,
                   <a href="../OpenIDConnectEndSession.html" title="class in org.forgerock.openidconnect">OpenIDConnectEndSession</a>&nbsp;openIDConnectEndSession,
                   <a href="../../oauth2/restlet/ExceptionHandler.html" title="class in org.forgerock.oauth2.restlet">ExceptionHandler</a>&nbsp;exceptionHandler,
-                  <a href="../../oauth2/core/ClientRegistrationStore.html" title="interface in org.forgerock.oauth2.core">ClientRegistrationStore</a>&nbsp;clientRegistrationStore)</pre>
+                  <a href="../IdTokenHintValidator.html" title="class in org.forgerock.openidconnect">IdTokenHintValidator</a>&nbsp;idTokenHintValidator)</pre>
 <div class="block">Constructs a new EndSession.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>requestFactory</code> - An instance of the OAuth2RequestFactory.</dd>
 <dd><code>openIDConnectEndSession</code> - An instance of the OpenIDConnectEndSession.</dd>
 <dd><code>exceptionHandler</code> - An instance of the ExceptionHandler.</dd>
+<dd><code>idTokenHintValidator</code> - An instance of the IdTokenHintValidator.</dd>
 </dl>
 </li>
 </ul>

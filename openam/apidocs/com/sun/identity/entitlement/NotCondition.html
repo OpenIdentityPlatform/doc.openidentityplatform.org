@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -268,48 +268,56 @@ extends <a href="LogicalCondition.html" title="class in com.sun.identity.entitle
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasRejectedMemberInSubtree()">hasRejectedMemberInSubtree</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns whether this wrapper, or any logical condition nested below it, had a member class
+ name refused by <a href="LogicalCondition.html#setState(java.lang.String)"><code>LogicalCondition.setState(String)</code></a>.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setECondition(com.sun.identity.entitlement.EntitlementCondition)">setECondition</a></span>&#8203;(<a href="EntitlementCondition.html" title="interface in com.sun.identity.entitlement">EntitlementCondition</a>&nbsp;eCondition)</code></th>
 <td class="colLast">
 <div class="block">Sets the nested <code>EntitlementCondition</code>(s).</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setEConditions(java.util.Set)">setEConditions</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="EntitlementCondition.html" title="interface in com.sun.identity.entitlement">EntitlementCondition</a>&gt;&nbsp;eConditions)</code></th>
 <td class="colLast">
 <div class="block">Sets the nested <code>EntitlementCondition</code>(s).</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPConditionName(java.lang.String)">setPConditionName</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;pConditionName)</code></th>
 <td class="colLast">
 <div class="block">Sets OpenAM policy Condition name</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setState(java.lang.String)">setState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;state)</code></th>
 <td class="colLast">
 <div class="block">Sets state of the object</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>org.json.JSONObject</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toJSONObject()">toJSONObject</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns JSONObject mapping of the object</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns string representation of the object</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#validate()">validate</a></span>()</code></th>
 <td class="colLast">
@@ -317,6 +325,13 @@ extends <a href="LogicalCondition.html" title="class in com.sun.identity.entitle
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.sun.identity.entitlement.LogicalCondition">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.sun.identity.entitlement.<a href="LogicalCondition.html" title="class in com.sun.identity.entitlement">LogicalCondition</a></h3>
+<code><a href="LogicalCondition.html#clearMemberRejection()">clearMemberRejection</a>, <a href="LogicalCondition.html#getRejectedMembers()">getRejectedMembers</a>, <a href="LogicalCondition.html#isMemberRejected()">isMemberRejected</a>, <a href="LogicalCondition.html#markMemberRejected(org.json.JSONObject)">markMemberRejected</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.sun.identity.entitlement.EntitlementConditionAdaptor">
 <!--   -->
@@ -523,6 +538,38 @@ extends <a href="LogicalCondition.html" title="class in com.sun.identity.entitle
 <dd><code><a href="LogicalCondition.html#getEConditions()">getEConditions</a></code>&nbsp;in class&nbsp;<code><a href="LogicalCondition.html" title="class in com.sun.identity.entitlement">LogicalCondition</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the nested <code>EntitlementCondition</code>(s).</dd>
+</dl>
+</li>
+</ul>
+<a id="hasRejectedMemberInSubtree()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasRejectedMemberInSubtree</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasRejectedMemberInSubtree()</pre>
+<div class="block">Returns whether this wrapper, or any logical condition nested below it, had a member class
+ name refused by <a href="LogicalCondition.html#setState(java.lang.String)"><code>LogicalCondition.setState(String)</code></a>.
+ <p>
+ <a href="LogicalCondition.html#isMemberRejected()"><code>LogicalCondition.isMemberRejected()</code></a> deliberately reports this wrapper's own refusal only: for
+ <code>AndCondition</code>/<code>OrCondition</code> a refusal further down is already handled where it
+ happened, because the damaged member fails closed and a failing member can only make an AND
+ or an OR stricter. Negation is the exception - <code>NotCondition</code> turns its member's
+ decision around, so the damaged member's fail-closed decision would come back out of the
+ <code>NOT</code> as a grant. It has to look at the whole subtree.
+ <p>
+ A <code>NotCondition</code> with no member at all counts as damaged too, not only one whose
+ member <a href="#setState(java.lang.String)"><code>setState(String)</code></a> refused. Its own <a href="#evaluate(java.lang.String,javax.security.auth.Subject,java.lang.String,java.util.Map)"><code>evaluate(java.lang.String, javax.security.auth.Subject, java.lang.String, java.util.Map&lt;java.lang.String, java.util.Set&lt;java.lang.String&gt;&gt;)</code></a> already fails on the
+ missing member, but an enclosing <code>NotCondition</code> would negate that failure into a
+ grant. The two are indistinguishable from the outside anyway: a policy stored by a version
+ that dropped the refused member instead of re-emitting it comes back with the member simply
+ absent, and a <code>NOT</code> without a member is not a policy statement that
+ <a href="#validate()"><code>validate()</code></a> accepts in the first place.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="LogicalCondition.html#hasRejectedMemberInSubtree()">hasRejectedMemberInSubtree</a></code>&nbsp;in class&nbsp;<code><a href="LogicalCondition.html" title="class in com.sun.identity.entitlement">LogicalCondition</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if a member was refused anywhere in this subtree.</dd>
 </dl>
 </li>
 </ul>

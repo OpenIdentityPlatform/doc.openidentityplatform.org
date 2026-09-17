@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -311,7 +311,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateName,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateValue,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetURL)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Forwards to the auto submitting JSP so that the SAML message is re-posted to
+ <code>targetURL</code>.</div>
+</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
@@ -331,6 +334,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#requireStopAfterFailedBounce(jakarta.servlet.http.HttpServletResponse,java.lang.Exception)">requireStopAfterFailedBounce</a></span>&#8203;(jakarta.servlet.http.HttpServletResponse&nbsp;response,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a>&nbsp;cause)</code></th>
+<td class="colLast">
+<div class="block">Reports whether a failed load balancer cookie bounce has to stop the caller.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setlbCookie(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)">setlbCookie</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
            jakarta.servlet.http.HttpServletResponse&nbsp;response)</code></th>
@@ -338,14 +349,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Sets load balancer cookie.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setLocale(java.lang.String)">setLocale</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;localeName)</code></th>
 <td class="colLast">
 <div class="block">Sets the locale of the resource bundle</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stringToBase64(java.lang.String)">stringToBase64</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;succinctID)</code></th>
 <td class="colLast">
@@ -676,14 +687,64 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                                                  jakarta.servlet.http.HttpServletResponse&nbsp;response,
                                                  boolean&nbsp;isIDP)</pre>
 <div class="block">Detects if a request simply needs loadbalancer cookies adding and to be redirected to
- be handled elsewhere.</div>
+ be handled elsewhere.
+ <p>
+ Gated on <code>com.sun.identity.federation.cookieHashRedirectEnabled</code>, which is off by
+ default; see <a href="#requireAddCookie(jakarta.servlet.http.HttpServletRequest)"><code>requireAddCookie(jakarta.servlet.http.HttpServletRequest)</code></a> and <a href="#requireRedirect(jakarta.servlet.http.HttpServletRequest)"><code>requireRedirect(jakarta.servlet.http.HttpServletRequest)</code></a> for the rest of the gate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - The HTTP request in question.</dd>
 <dd><code>response</code> - The response associated with the request.</dd>
 <dd><code>isIDP</code> - Whether this entity is acting as an IDP.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>false if not, otherwise redirects.</dd>
+<dd><code>false</code> if the caller still owns the response and has to carry on,
+     <code>true</code> if the request has been bounced and the caller must return without
+     writing anything further. A bounce that failed after committing the response also
+     returns <code>true</code>, see <a href="#requireStopAfterFailedBounce(jakarta.servlet.http.HttpServletResponse,java.lang.Exception)"><code>requireStopAfterFailedBounce(jakarta.servlet.http.HttpServletResponse, java.lang.Exception)</code></a>.</dd>
+</dl>
+</li>
+</ul>
+<a id="requireStopAfterFailedBounce(jakarta.servlet.http.HttpServletResponse,java.lang.Exception)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>requireStopAfterFailedBounce</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;requireStopAfterFailedBounce&#8203;(jakarta.servlet.http.HttpServletResponse&nbsp;response,
+                                                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a>&nbsp;cause)</pre>
+<div class="block">Reports whether a failed load balancer cookie bounce has to stop the caller.
+ <p>
+ Every caller reads a <code>false</code> from <a href="#needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,boolean)"><code>needSetLBCookieAndRedirect(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, boolean)</code></a> as "no bounce
+ was needed, carry on", which is only safe while the response is still untouched. The forward
+ to the auto submit JSP can fail after the JSP has already written the SAML message and the
+ container has flushed it - a signed assertion larger than the response buffer plus a client
+ that aborts is enough. Carrying on from there would consume the one-time-use assertion, mint
+ a session, and then call <code>sendError</code> or <code>sendRedirect</code> on a committed
+ response. So once the response is committed the caller is told the request was handled.
+ <p>
+ A forward that failed while its output was still buffered leaves the caller in charge, but the
+ half rendered auto submit form has to go: appending the caller's own page to it would produce
+ one document carrying both, and the leftover
+ <code>&lt;body onload="document.forms[0].submit()"&gt;</code> would submit the stale SAML
+ message. So the buffer is dropped before handing the response back.
+ <p>
+ Only the buffer: <code>reset()</code> would also clear the headers, and by this point
+ <a href="#setlbCookie(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)"><code>setlbCookie(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse)</code></a> has already put the load balancer cookie on the response. Dropping that
+ would send the client away without the cookie the whole bounce exists to deliver, so the
+ no-cache headers the sink set are left in place as the lesser cost.
+ <p>
+ The same limit applies to the GET branch, where the failure came out of
+ <code>sendRedirect</code>: the status line and <code>Location</code> it had already set stay
+ on the response, and the servlet API offers no way to remove a header. A caller that carries
+ on there would have its page discarded by a client following the redirect. Reaching that
+ needs <code>sendRedirect</code> to throw without committing, which Tomcat does not do unless
+ the context is configured to send a redirect body.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>response</code> - The response associated with the request.</dd>
+<dd><code>cause</code> - The failure that came out of the forward.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the response is already committed and the caller must stop.</dd>
 </dl>
 </li>
 </ul>
@@ -750,9 +811,24 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateValue,
                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetURL)
                          throws <a href="../../saml2/common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
+<div class="block">Forwards to the auto submitting JSP so that the SAML message is re-posted to
+ <code>targetURL</code>.
+ <p>
+ IDFF and SAML2 re-post through the very same <code>autosubmitaccessrights.jsp</code>, so this
+ is a thin delegation to <a href="../../saml2/common/SAML2Utils.html#postToTarget(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>SAML2Utils.postToTarget(jakarta.servlet.http.HttpServletRequest, jakarta.servlet.http.HttpServletResponse, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)</code></a> rather than a second implementation:
+ that JSP renders the values with bare JSP EL, and one sink is what keeps the encoding it
+ needs from drifting away on one of the two paths.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - The HTTP request in question.</dd>
+<dd><code>response</code> - The response associated with the request.</dd>
+<dd><code>SAMLmessageName</code> - Name of the SAML message parameter.</dd>
+<dd><code>SAMLmessageValue</code> - Value of the SAML message parameter.</dd>
+<dd><code>relayStateName</code> - Name of the relay state parameter.</dd>
+<dd><code>relayStateValue</code> - Value of the relay state parameter, may be null.</dd>
+<dd><code>targetURL</code> - The URL the message is re-posted to.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../saml2/common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code></dd>
+<dd><code><a href="../../saml2/common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if the forward fails.</dd>
 </dl>
 </li>
 </ul>

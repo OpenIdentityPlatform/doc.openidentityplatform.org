@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -159,28 +159,44 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.SessionID)">checkPermissionToDestroySession</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
-                               <a href="../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;sessionId)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.service.InternalSession)">checkPermissionToDestroySession</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
+                               <a href="../../../../../com/iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a>&nbsp;sessionToDestroy)</code></th>
 <td class="colLast">
 <div class="block">Checks if the requester has the necessary permission to destroy the provided session.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.Session)">checkPermissionToDestroySession</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
+                               <a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;sessionToDestroy)</code></th>
+<td class="colLast">
+<div class="block">Checks if the requester has the necessary permission to destroy the provided session.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSessionSubjectOrganisations(com.iplanet.dpro.session.SessionID)">getSessionSubjectOrganisations</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;sessionID)</code></th>
 <td class="colLast">
 <div class="block">Gets the organisations assigned to the session subject</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.SessionID)">hasPermissionToDestroySession</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
-                             <a href="../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;sessionId)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.service.InternalSession)">hasPermissionToDestroySession</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
+                             <a href="../../../../../com/iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a>&nbsp;sessionToDestroy)</code></th>
 <td class="colLast">
 <div class="block">Checks if the requester has the necessary permission to destroy the provided session.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.Session)">hasPermissionToDestroySession</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
+                             <a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;sessionToDestroy)</code></th>
+<td class="colLast">
+<div class="block">Checks if the requester has the necessary permission to destroy the provided session.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasTopLevelAdminRole(com.iplanet.dpro.session.SessionID)">hasTopLevelAdminRole</a></span>&#8203;(<a href="../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;actorsSessionID)</code></th>
 <td class="colLast">
@@ -226,7 +242,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sessionID</code> - The id of the session</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The organisations the assigned to the session subject</dd>
+<dd>The organisations the assigned to the session subject, or an empty set when the subject's identity or
+ the attribute cannot be resolved. Never null.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/iplanet/sso/SSOException.html" title="class in com.iplanet.sso">SSOException</a></code></dd>
 <dd><code><a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code></dd>
@@ -253,14 +270,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
-<a id="checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.SessionID)">
+<a id="checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.Session)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>checkPermissionToDestroySession</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;checkPermissionToDestroySession&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
-                                            <a href="../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;sessionId)
+                                            <a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;sessionToDestroy)
                                      throws <a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></pre>
 <div class="block">Checks if the requester has the necessary permission to destroy the provided session. The user has the necessary
  privileges if one of these conditions is fulfilled:
@@ -274,21 +291,44 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>requester</code> - The requester's session.</dd>
-<dd><code>sessionId</code> - The session to destroy.</dd>
+<dd><code>sessionToDestroy</code> - The session to destroy. Both the session id and the realm the permission is evaluated
+ against are derived from it, so that the two can never refer to different sessions.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If none of the conditions above is fulfilled, i.e. when the requester does not have the
  necessary permissions to destroy the session.</dd>
 </dl>
 </li>
 </ul>
-<a id="hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.SessionID)">
+<a id="checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.service.InternalSession)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
+<li class="blockList">
+<h4>checkPermissionToDestroySession</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;checkPermissionToDestroySession&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
+                                            <a href="../../../../../com/iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a>&nbsp;sessionToDestroy)
+                                     throws <a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></pre>
+<div class="block">Checks if the requester has the necessary permission to destroy the provided session.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>requester</code> - The requester's session.</dd>
+<dd><code>sessionToDestroy</code> - The internal session to destroy. Both the session id and the realm the permission is
+ evaluated against are derived from it, so that the two can never refer to different sessions.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If the requester does not have the necessary permissions to destroy the session.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#checkPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.Session)"><code>checkPermissionToDestroySession(Session, Session)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.Session)">
+<!--   -->
+</a>
+<ul class="blockList">
 <li class="blockList">
 <h4>hasPermissionToDestroySession</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;hasPermissionToDestroySession&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
-                                             <a href="../../../../../com/iplanet/dpro/session/SessionID.html" title="class in com.iplanet.dpro.session">SessionID</a>&nbsp;sessionId)
+                                             <a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;sessionToDestroy)
                                       throws <a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></pre>
 <div class="block">Checks if the requester has the necessary permission to destroy the provided session. The user has the necessary
  privileges if one of these conditions is fulfilled:
@@ -302,10 +342,32 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>requester</code> - The requester's session.</dd>
-<dd><code>sessionId</code> - The session to destroy.</dd>
+<dd><code>sessionToDestroy</code> - The session to destroy. Both the session id and the realm the permission is evaluated
+ against are derived from it, so that the two can never refer to different sessions.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If none of the conditions above is fulfilled, i.e. when the requester does not have the
- necessary permissions to destroy the session.</dd>
+<dd><code><a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If the state of the requester's session cannot be established.</dd>
+</dl>
+</li>
+</ul>
+<a id="hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.service.InternalSession)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>hasPermissionToDestroySession</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasPermissionToDestroySession&#8203;(<a href="../../../../../com/iplanet/dpro/session/Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;requester,
+                                             <a href="../../../../../com/iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a>&nbsp;sessionToDestroy)
+                                      throws <a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></pre>
+<div class="block">Checks if the requester has the necessary permission to destroy the provided session.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>requester</code> - The requester's session.</dd>
+<dd><code>sessionToDestroy</code> - The internal session to destroy. Both the session id and the realm the permission is
+ evaluated against are derived from it, so that the two can never refer to different sessions.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../../com/iplanet/dpro/session/SessionException.html" title="class in com.iplanet.dpro.session">SessionException</a></code> - If the state of the requester's session cannot be established.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="#hasPermissionToDestroySession(com.iplanet.dpro.session.Session,com.iplanet.dpro.session.Session)"><code>hasPermissionToDestroySession(Session, Session)</code></a></dd>
 </dl>
 </li>
 </ul>

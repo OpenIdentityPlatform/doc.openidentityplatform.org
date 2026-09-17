@@ -184,8 +184,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#endSession(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">endSession</a></span>&#8203;(<a href="../oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;idToken)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#endSession(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.json.jose.jws.SignedJwt)">endSession</a></span>&#8203;(<a href="../oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
+          org.forgerock.json.jose.jws.SignedJwt&nbsp;idToken)</code></th>
 <td class="colLast">
 <div class="block">Ends an OpenId Connect session.</div>
 </td>
@@ -239,21 +239,21 @@ public&nbsp;OpenIDConnectEndSession&#8203;(<a href="OpenIDConnectProvider.html" 
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="endSession(org.forgerock.oauth2.core.OAuth2Request,java.lang.String)">
+<a id="endSession(org.forgerock.oauth2.core.OAuth2Request,org.forgerock.json.jose.jws.SignedJwt)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>endSession</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;endSession&#8203;(<a href="../oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request,
-                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;idToken)
+                       org.forgerock.json.jose.jws.SignedJwt&nbsp;idToken)
                 throws <a href="../oauth2/core/exceptions/BadRequestException.html" title="class in org.forgerock.oauth2.core.exceptions">BadRequestException</a>,
                        <a href="../oauth2/core/exceptions/ServerException.html" title="class in org.forgerock.oauth2.core.exceptions">ServerException</a></pre>
 <div class="block">Ends an OpenId Connect session.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - The request.</dd>
-<dd><code>idToken</code> - The OpenId Token.</dd>
+<dd><code>idToken</code> - The verified OpenId Token supplied as the id_token_hint.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../oauth2/core/exceptions/BadRequestException.html" title="class in org.forgerock.oauth2.core.exceptions">BadRequestException</a></code> - If the request is malformed.</dd>
 <dd><code><a href="../oauth2/core/exceptions/ServerException.html" title="class in org.forgerock.oauth2.core.exceptions">ServerException</a></code> - If any internal server error occurs.</dd>

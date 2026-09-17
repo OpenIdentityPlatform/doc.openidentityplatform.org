@@ -248,7 +248,8 @@ implements <a href="../SessionOperations.html" title="interface in com.iplanet.d
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../../../../org/forgerock/openam/dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMatchingSessions(org.forgerock.openam.utils.CrestQuery)">getMatchingSessions</a></span>&#8203;(<a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMatchingSessions(com.iplanet.dpro.session.Session,org.forgerock.openam.utils.CrestQuery)">getMatchingSessions</a></span>&#8203;(<a href="../../Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;caller,
+                   <a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</code></th>
 <td class="colLast">
 <div class="block">Returns partial sessions from the session service backend that matches the provided CREST query.</div>
 </td>
@@ -498,21 +499,27 @@ implements <a href="../SessionOperations.html" title="interface in com.iplanet.d
 </dl>
 </li>
 </ul>
-<a id="getMatchingSessions(org.forgerock.openam.utils.CrestQuery)">
+<a id="getMatchingSessions(com.iplanet.dpro.session.Session,org.forgerock.openam.utils.CrestQuery)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getMatchingSessions</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../../../../org/forgerock/openam/dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;&nbsp;getMatchingSessions&#8203;(<a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../SessionOperations.html#getMatchingSessions(org.forgerock.openam.utils.CrestQuery)">SessionOperations</a></code></span></div>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../../../../org/forgerock/openam/dpro/session/PartialSession.html" title="class in org.forgerock.openam.dpro.session">PartialSession</a>&gt;&nbsp;getMatchingSessions&#8203;(<a href="../../Session.html" title="class in com.iplanet.dpro.session">Session</a>&nbsp;caller,
+                                                      <a href="../../../../../../org/forgerock/openam/utils/CrestQuery.html" title="class in org.forgerock.openam.utils">CrestQuery</a>&nbsp;crestQuery)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../SessionOperations.html#getMatchingSessions(com.iplanet.dpro.session.Session,org.forgerock.openam.utils.CrestQuery)">SessionOperations</a></code></span></div>
 <div class="block">Returns partial sessions from the session service backend that matches the provided CREST query. The resultset
  size is limited by the session service's "iplanet-am-session-max-session-list-size" attribute. The returned
- sessions are only "partial" sessions, meaning that they do not represent the full session state.</div>
+ sessions are only "partial" sessions, meaning that they do not represent the full session state.
+
+ <p>The realm the query runs against is only present in the query filter, hence the caller is needed here to
+ authorize that realm: without it, any caller reaching this method is able to list the sessions of every
+ realm of the deployment.</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../SessionOperations.html#getMatchingSessions(org.forgerock.openam.utils.CrestQuery)">getMatchingSessions</a></code>&nbsp;in interface&nbsp;<code><a href="../SessionOperations.html" title="interface in com.iplanet.dpro.session.operations">SessionOperations</a></code></dd>
+<dd><code><a href="../SessionOperations.html#getMatchingSessions(com.iplanet.dpro.session.Session,org.forgerock.openam.utils.CrestQuery)">getMatchingSessions</a></code>&nbsp;in interface&nbsp;<code><a href="../SessionOperations.html" title="interface in com.iplanet.dpro.session.operations">SessionOperations</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>caller</code> - The session to use for authorization.</dd>
 <dd><code>crestQuery</code> - The CREST query based on which we should look for matching sessions.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The collection of matching partial sessions.</dd>

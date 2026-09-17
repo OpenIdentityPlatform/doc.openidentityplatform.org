@@ -812,8 +812,13 @@ implements <a href="SMSObjectIF.html" title="interface in com.sun.identity.sm.ja
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> of values are valid.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../SMSException.html" title="class in com.sun.identity.sm">SMSException</a></code> - if value is not valid.</dd>
-<dd><code><a href="../../../../iplanet/sso/SSOException.html" title="class in com.iplanet.sso">SSOException</a></code> - if single sign on token is in valid.</dd>
+<dd><code><a href="../SMSException.html" title="class in com.sun.identity.sm">SMSException</a></code> - if the values are not valid, if the token is not
+         usable, if the server failed to bootstrap, if the values are
+         larger than this server validates, if the validator class cannot
+         be used or if the validator itself fails on the values it was
+         given.</dd>
+<dd><code><a href="../../../../iplanet/sso/SSOException.html" title="class in com.iplanet.sso">SSOException</a></code> - declared by <code>SMSObjectIF</code>; this method
+         reports every failure as an <code>SMSException</code> instead.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.rmi/java/rmi/RemoteException.html?is-external=true" title="class or interface in java.rmi" class="externalLink">RemoteException</a></code> - if remote method cannot be invoked.</dd>
 </dl>
 </li>
