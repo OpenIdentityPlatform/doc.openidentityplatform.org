@@ -3935,6 +3935,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Register to be notified when this Triple DES Password Storage Scheme is changed.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/CertificateManager.html#addTrustedCertificate(java.lang.String,java.security.cert.Certificate)">addTrustedCertificate(String, Certificate)</a></span> - Method in class org.opends.server.util.<a href="org/opends/server/util/CertificateManager.html" title="class in org.opends.server.util">CertificateManager</a></dt>
+<dd>
+<div class="block">Adds the provided certificate to the key store as a trusted certificate entry.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/Platform.html#addTrustedCertificate(java.security.KeyStore,java.lang.String,java.lang.String,java.lang.String,char%5B%5D,java.security.cert.Certificate)">addTrustedCertificate(KeyStore, String, String, String, char[], Certificate)</a></span> - Static method in class org.opends.server.util.<a href="org/opends/server/util/Platform.html" title="class in org.opends.server.util">Platform</a></dt>
+<dd>
+<div class="block">Add the provided certificate to the provided keystore as a trusted certificate entry;
+ creating the keystore with the provided type and path if it doesn't exist.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/server/RootCfg.html#addTrustManagerProviderAddListener(org.forgerock.opendj.config.server.ConfigurationAddListener)">addTrustManagerProviderAddListener(ConfigurationAddListener&lt;TrustManagerProviderCfg&gt;)</a></span> - Method in interface org.forgerock.opendj.server.config.server.<a href="org/forgerock/opendj/server/config/server/RootCfg.html" title="interface in org.forgerock.opendj.server.config.server">RootCfg</a></dt>
 <dd>
 <div class="block">Registers to be notified when new Trust Manager Providers are added.</div>
@@ -4961,6 +4970,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/cli/SubCommand.html#allowsTrailingArguments()">allowsTrailingArguments()</a></span> - Method in class com.forgerock.opendj.cli.<a href="com/forgerock/opendj/cli/SubCommand.html" title="class in com.forgerock.opendj.cli">SubCommand</a></dt>
 <dd>
 <div class="block">Indicates whether this sub-command will allow unnamed trailing arguments.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/admin/ads/util/ConnectionUtils.html#allValuesAsStrings(org.forgerock.opendj.ldap.Entry,java.lang.String)">allValuesAsStrings(Entry, String)</a></span> - Static method in class org.opends.admin.ads.util.<a href="org/opends/admin/ads/util/ConnectionUtils.html" title="class in org.opends.admin.ads.util">ConnectionUtils</a></dt>
+<dd>
+<div class="block">Returns all the values of this attribute decoded as UTF-8 strings, in the order they were
+ returned by the server.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/admin/ads/ADSContextException.ErrorType.html#ALREADY_REGISTERED">ALREADY_REGISTERED</a></span> - org.opends.admin.ads.<a href="org/opends/admin/ads/ADSContextException.ErrorType.html" title="enum in org.opends.admin.ads">ADSContextException.ErrorType</a></dt>
 <dd>
@@ -31090,6 +31104,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">The following error occurred when generating a self-signed certificate using the alias %s: %s</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/UtilityMessages.html#ERR_CERTMGR_IMPORT_KEY_ENTRY">ERR_CERTMGR_IMPORT_KEY_ENTRY</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/UtilityMessages.html" title="class in org.opends.messages">UtilityMessages</a></dt>
+<dd>
+<div class="block">The key entry with alias %s could not be imported because of the following reason: %s</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/UtilityMessages.html#ERR_CERTMGR_INVALID_CERT_FILE">ERR_CERTMGR_INVALID_CERT_FILE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/UtilityMessages.html" title="class in org.opends.messages">UtilityMessages</a></dt>
 <dd>
 <div class="block">The certificate file %s is invalid because it does not exists, or exists, but is not a file</div>
@@ -31110,9 +31128,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Invalid key store type, it must be one of the following: %s, %s, %s, %s or %s</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/UtilityMessages.html#ERR_CERTMGR_KEY_PASSWORD_DIFFERS">ERR_CERTMGR_KEY_PASSWORD_DIFFERS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/UtilityMessages.html" title="class in org.opends.messages">UtilityMessages</a></dt>
+<dd>
+<div class="block">The private key with alias %s in the key store %s is protected by a password other than the password of the key store.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/UtilityMessages.html#ERR_CERTMGR_KEYSTORE_NONEXISTANT">ERR_CERTMGR_KEYSTORE_NONEXISTANT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/UtilityMessages.html" title="class in org.opends.messages">UtilityMessages</a></dt>
 <dd>
 <div class="block">Keystore does not exist, it must exist to retrieve an alias, delete an alias or generate a certificate request</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/UtilityMessages.html#ERR_CERTMGR_NO_KEY_ENTRY">ERR_CERTMGR_NO_KEY_ENTRY</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/UtilityMessages.html" title="class in org.opends.messages">UtilityMessages</a></dt>
+<dd>
+<div class="block">There is no key entry, that is a private key and its certificate chain, under the alias %s in the key store %s</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/UtilityMessages.html#ERR_CERTMGR_TRUSTED_CERT">ERR_CERTMGR_TRUSTED_CERT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/UtilityMessages.html" title="class in org.opends.messages">UtilityMessages</a></dt>
 <dd>
@@ -32805,6 +32831,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_CONFIGDS_CANNOT_UPDATE_CRYPTO_MANAGER">ERR_CONFIGDS_CANNOT_UPDATE_CRYPTO_MANAGER</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">An error occurred while attempting to update the crypto manager in the Directory Server: %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_CONFIGDS_CANNOT_UPDATE_CRYPTO_MANAGER_CERT_NICKNAME">ERR_CONFIGDS_CANNOT_UPDATE_CRYPTO_MANAGER_CERT_NICKNAME</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">An error occurred while attempting to update the nickname of the certificate that the crypto manager should present for server to server communication: %s</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_CONFIGDS_CANNOT_UPDATE_DIGEST_MD5_FQDN">ERR_CONFIGDS_CANNOT_UPDATE_DIGEST_MD5_FQDN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
@@ -36096,6 +36126,34 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Error initializing.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE">ERR_INSTALL_ADS_TRUSTSTORE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">An error occurred while provisioning the trust store %s, used for server to server communication.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE_CA_CERT_FILE_EMPTY">ERR_INSTALL_ADS_TRUSTSTORE_CA_CERT_FILE_EMPTY</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The certificate file %s holds no certificate.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE_CA_CERT_FILE_UNREADABLE">ERR_INSTALL_ADS_TRUSTSTORE_CA_CERT_FILE_UNREADABLE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The certificate file %s cannot be read as X.509 certificates, DER or PEM encoded: %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE_EXISTS">ERR_INSTALL_ADS_TRUSTSTORE_EXISTS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The trust store %s, used for server to server communication, already exists and is left as it is.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE_NO_KEY_PAIR">ERR_INSTALL_ADS_TRUSTSTORE_NO_KEY_PAIR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The key store %s holds no key pair, that is no private key with its certificate, under the alias %s.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE_NO_TRUST_ANCHOR">ERR_INSTALL_ADS_TRUSTSTORE_NO_TRUST_ANCHOR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The key store %s holds no issuing certificate for the key pair or pairs %s: the certificate chain stops at the certificate itself.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#ERR_INSTALL_ADS_TRUSTSTORE_RESERVED_ALIAS">ERR_INSTALL_ADS_TRUSTSTORE_RESERVED_ALIAS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The certificate nickname %s cannot be presented on the replication port: the trust store used for server to server communication reserves the alias %s for the instance key the server generates when it first starts, and the aliases starting with %s for the certificates it trusts.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_INSTALLDS_CANNOT_BIND_TO_PORT">ERR_INSTALLDS_CANNOT_BIND_TO_PORT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">ERROR:  Unable to bind to port %d.</div>
@@ -36171,6 +36229,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_INSTALLDS_PASSWORDS_DONT_MATCH">ERR_INSTALLDS_PASSWORDS_DONT_MATCH</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">ERROR:  The provided password values do not match</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_INSTALLDS_REPLICATION_CA_CERT_FILE_INVALID">ERR_INSTALLDS_REPLICATION_CA_CERT_FILE_INVALID</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">The certificate file %s does not exist or is not a file</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_INSTALLDS_REPLICATION_CA_CERT_FILE_REQUIRES">ERR_INSTALLDS_REPLICATION_CA_CERT_FILE_REQUIRES</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">The --%s argument can only be used together with --%s: certificates are trusted on the replication port for the key pair which is presented there</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_INSTALLDS_REPLICATION_KEYSTORE_REQUIRED">ERR_INSTALLDS_REPLICATION_KEYSTORE_REQUIRED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">The --%s argument requires an existing key store: use it together with --%s, --%s, --%s or --%s.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#ERR_INSTALLDS_SEVERAL_CERTIFICATE_TYPE_SPECIFIED">ERR_INSTALLDS_SEVERAL_CERTIFICATE_TYPE_SPECIFIED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
@@ -41133,6 +41203,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Could not give change %s of domain "%s" back to the replication server after the replay which owned it was unwound: %s.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_REPLAY_SESSION_RESTART_FAILED">ERR_REPLAY_SESSION_RESTART_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Could not restart the replication session of domain "%s" for the changes which could not be replayed: %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_REPLAY_SKIPPING_CHANGE">ERR_REPLAY_SKIPPING_CHANGE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Could not replay change %s in domain "%s": its replay has been failing for %d ms over %d deliveries, each attempted several times in place.</div>
@@ -45561,6 +45635,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/admin/client/cli/TaskScheduleArgs.html#failedDependencyActionArg">failedDependencyActionArg</a></span> - Variable in class org.opends.server.admin.client.cli.<a href="org/opends/server/admin/client/cli/TaskScheduleArgs.html" title="class in org.opends.server.admin.client.cli">TaskScheduleArgs</a></dt>
 <dd>
 <div class="block">Argument for specifying a failed dependency action.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#failNextSessionRestarts(int)">failNextSessionRestarts(int)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Has the next session restarts of this domain fail where they would start the session
+ again.</div>
 </dd>
 <dt><a href="org/opends/server/util/FailureLogThrottle.html" title="class in org.opends.server.util"><span class="typeNameLink">FailureLogThrottle</span></a> - Class in <a href="org/opends/server/util/package-summary.html">org.opends.server.util</a></dt>
 <dd>
@@ -52001,6 +52080,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/admin/ads/util/ApplicationKeyManager.html#getCertificateChain(java.lang.String)">getCertificateChain(String)</a></span> - Method in class org.opends.admin.ads.util.<a href="org/opends/admin/ads/util/ApplicationKeyManager.html" title="class in org.opends.admin.ads.util">ApplicationKeyManager</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/CertificateManager.html#getCertificateChain(java.lang.String)">getCertificateChain(String)</a></span> - Method in class org.opends.server.util.<a href="org/opends/server/util/CertificateManager.html" title="class in org.opends.server.util">CertificateManager</a></dt>
+<dd>
+<div class="block">Retrieves the certificate chain of the key entry with the specified alias from the
+ key store, the certificate the key belongs to first and its issuers next.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/util/SelectableCertificateKeyManager.html#getCertificateChain(java.lang.String)">getCertificateChain(String)</a></span> - Method in class org.opends.server.util.<a href="org/opends/server/util/SelectableCertificateKeyManager.html" title="class in org.opends.server.util">SelectableCertificateKeyManager</a></dt>
 <dd>
 <div class="block">Retrieves the certificate chain for the provided alias.</div>
@@ -53920,6 +54004,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Retrieves a string representation of the time that this
  connection was established.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#getConsecutiveSessionRestarts()">getConsecutiveSessionRestarts()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Returns how many times in a row the session was restarted without a change being
+ replayed in between: the count the backoff of the next restart is computed from.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/tools/makeldif/TemplateFile.html#getConstants()">getConstants()</a></span> - Method in class org.opends.server.tools.makeldif.<a href="org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a></dt>
 <dd>
@@ -64871,6 +64960,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the key store path.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/CertificateManager.html#getKeyStorePath()">getKeyStorePath()</a></span> - Method in class org.opends.server.util.<a href="org/opends/server/util/CertificateManager.html" title="class in org.opends.server.util">CertificateManager</a></dt>
+<dd>
+<div class="block">Retrieves the path of the key store this certificate manager works on.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/admin/client/cli/SecureConnectionCliArgs.html#getKeyStorePathArg()">getKeyStorePathArg()</a></span> - Method in class org.opends.server.admin.client.cli.<a href="org/opends/server/admin/client/cli/SecureConnectionCliArgs.html" title="class in org.opends.server.admin.client.cli">SecureConnectionCliArgs</a></dt>
 <dd>
 <div class="block">Return the 'keyStore' global argument.</div>
@@ -73699,6 +73792,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the relative location of the parent managed object.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#getRelevantLogMessage(java.util.List)">getRelevantLogMessage(List&lt;String&gt;)</a></span> - Static method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
+<dd>
+<div class="block">Returns the message that best describes the outcome of a task among the messages it logged.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/controls/AccountUsabilityResponseControl.html#getRemainingGraceLogins()">getRemainingGraceLogins()</a></span> - Method in class com.forgerock.opendj.ldap.controls.<a href="com/forgerock/opendj/ldap/controls/AccountUsabilityResponseControl.html" title="class in com.forgerock.opendj.ldap.controls">AccountUsabilityResponseControl</a></dt>
 <dd>
 <div class="block">Returns the number of remaining grace logins for the user.</div>
@@ -73890,6 +73987,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the States of all the Replicas currently in the
  Topology.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/SecurityOptions.html#getReplicationCaCertFiles()">getReplicationCaCertFiles()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/SecurityOptions.html" title="class in org.opends.quicksetup">SecurityOptions</a></dt>
+<dd>
+<div class="block">Returns the files holding certificates to trust on the replication port, on top of
+ the issuers found in the certificate chains of the key pairs to use.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/ReplicationServerCfgClient.html#getReplicationDBDirectory()">getReplicationDBDirectory()</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/ReplicationServerCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">ReplicationServerCfgClient</a></dt>
 <dd>
@@ -74105,6 +74207,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/admin/ads/SuffixDescriptor.html#getReplicationServers()">getReplicationServers()</a></span> - Method in class org.opends.admin.ads.<a href="org/opends/admin/ads/SuffixDescriptor.html" title="class in org.opends.admin.ads">SuffixDescriptor</a></dt>
 <dd>
 <div class="block">Returns the Set of Replication servers for the whole suffix topology.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/SecurityOptions.html#getReplicationUsesKeyStore()">getReplicationUsesKeyStore()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/SecurityOptions.html" title="class in org.opends.quicksetup">SecurityOptions</a></dt>
+<dd>
+<div class="block">Tells whether the key pairs of this key store are to secure replication as well.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/MonitorMsg.html#getReplServerDbState()">getReplServerDbState()</a></span> - Method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/MonitorMsg.html" title="class in org.opends.server.replication.protocol">MonitorMsg</a></dt>
 <dd>
@@ -77587,6 +77693,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <a href="org/opends/server/replication/service/ReplicationDomain.html#serviceStateLock"><code>ReplicationDomain.serviceStateLock</code></a>, not by the starts at domain startup (see
  <code>sessionGeneration</code>).</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#getSessionRestartFailuresLeft()">getSessionRestartFailuresLeft()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Returns how many of the session restart failures <a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#failNextSessionRestarts(int)"><code>LDAPReplicationDomain.failNextSessionRestarts(int)</code></a>
+ asked for have not been spent yet.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/util/Utils.html#getSetupEquivalentCommandLine(org.opends.quicksetup.UserData)">getSetupEquivalentCommandLine(UserData)</a></span> - Static method in class org.opends.quicksetup.util.<a href="org/opends/quicksetup/util/Utils.html" title="class in org.opends.quicksetup.util">Utils</a></dt>
 <dd>
 <div class="block">Returns the equivalent setup CLI command-line.</div>
@@ -79722,6 +79833,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the interrupt state for this task that was set as a
  result of a call to <a href="org/opends/server/backends/task/Task.html#interruptTask(org.opends.server.backends.task.TaskState,org.forgerock.i18n.LocalizableMessage)"><code>Task.interruptTask(TaskState, LocalizableMessage)</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#getTaskLogMessages(org.forgerock.opendj.ldap.Entry)">getTaskLogMessages(Entry)</a></span> - Static method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
+<dd>
+<div class="block">Returns the messages logged by the task described by the provided entry, in the order the
+ server logged them.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/tools/BackUpDB.html#getTaskObjectclass()">getTaskObjectclass()</a></span> - Method in class org.opends.server.tools.<a href="org/opends/server/tools/BackUpDB.html" title="class in org.opends.server.tools">BackUpDB</a></dt>
 <dd>&nbsp;</dd>
@@ -85188,6 +85304,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Returns a boolean indicating if a total update <em>into</em> this replica is currently
  processed, that is an import which is replacing the data of this domain.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/CertificateManager.html#importKeyEntry(java.lang.String,org.opends.server.util.CertificateManager,java.lang.String)">importKeyEntry(String, CertificateManager, String)</a></span> - Method in class org.opends.server.util.<a href="org/opends/server/util/CertificateManager.html" title="class in org.opends.server.util">CertificateManager</a></dt>
+<dd>
+<div class="block">Copies the key entry with the specified alias from the provided key store into this
+ one, with its whole certificate chain.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/util/Platform.html#importKeyEntry(java.security.KeyStore,java.lang.String,java.lang.String,java.lang.String,char%5B%5D,java.security.Key,java.security.cert.Certificate%5B%5D)">importKeyEntry(KeyStore, String, String, String, char[], Key, Certificate[])</a></span> - Static method in class org.opends.server.util.<a href="org/opends/server/util/Platform.html" title="class in org.opends.server.util">Platform</a></dt>
+<dd>
+<div class="block">Copy a key entry, that is a private key and its certificate chain, into the provided
+ keystore; creating the keystore with the provided type and path if it doesn't exist.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/embedded/EmbeddedDirectoryServer.html#importLDIF(org.forgerock.opendj.server.embedded.ImportParameters)">importLDIF(ImportParameters)</a></span> - Method in class org.forgerock.opendj.server.embedded.<a href="org/forgerock/opendj/server/embedded/EmbeddedDirectoryServer.html" title="class in org.forgerock.opendj.server.embedded">EmbeddedDirectoryServer</a></dt>
 <dd>
 <div class="block">Imports LDIF data to the directory server, overwriting existing data.</div>
@@ -86707,6 +86833,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/cli/CliMessages.html#INFO_CONFIGCLASS_PLACEHOLDER">INFO_CONFIGCLASS_PLACEHOLDER</a></span> - Static variable in class com.forgerock.opendj.cli.<a href="com/forgerock/opendj/cli/CliMessages.html" title="class in com.forgerock.opendj.cli">CliMessages</a></dt>
 <dd>
 <div class="block">{configClass}</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_CONFIGDS_DESCRIPTION_ADS_CERTNICKNAME">INFO_CONFIGDS_DESCRIPTION_ADS_CERTNICKNAME</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Nickname of the certificate that the crypto manager should present for server to server communication, that is on the replication port.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_CONFIGDS_DESCRIPTION_BASE_DN">INFO_CONFIGDS_DESCRIPTION_BASE_DN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
@@ -94160,6 +94290,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Write rejected entries to the specified file</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_INSTALLDS_DESCRIPTION_REPLICATION_CA_CERT_FILE">INFO_INSTALLDS_DESCRIPTION_REPLICATION_CA_CERT_FILE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Path of a file holding certificates to trust on the replication port, typically the certificate of your Certificate Authority or its chain; every certificate of the file is trusted.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_INSTALLDS_DESCRIPTION_ROOTDN">INFO_INSTALLDS_DESCRIPTION_ROOTDN</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">DN for the initial root user for the Directory Server</div>
@@ -94195,6 +94329,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_INSTALLDS_DESCRIPTION_USE_JCEKS">INFO_INSTALLDS_DESCRIPTION_USE_JCEKS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">Path of a JCEKS containing a certificate to be used as the server certificate</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_INSTALLDS_DESCRIPTION_USE_KEYSTORE_FOR_REPLICATION">INFO_INSTALLDS_DESCRIPTION_USE_KEYSTORE_FOR_REPLICATION</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Secure replication with the key pair given for SSL-based connections instead of a self-signed certificate generated by the server.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_INSTALLDS_DESCRIPTION_USE_PKCS11">INFO_INSTALLDS_DESCRIPTION_USE_PKCS11</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
@@ -96699,6 +96837,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_PROGRESS_UNCONFIGURING_REPLICATION_REMOTE">INFO_PROGRESS_UNCONFIGURING_REPLICATION_REMOTE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
 <dd>
 <div class="block">Unconfiguring Replication on %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_PROGRESS_UPDATING_ADS_TRUSTSTORE">INFO_PROGRESS_UPDATING_ADS_TRUSTSTORE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">Configuring Replication Certificates</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_PROGRESS_UPDATING_CERTIFICATES">INFO_PROGRESS_UPDATING_CERTIFICATES</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
 <dd>
@@ -106044,6 +106186,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Tells whether the provided log message corresponds to a peers not found
  error during the initialization of a replica or not.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#isPeersNotFoundError(java.util.Collection)">isPeersNotFoundError(Collection&lt;String&gt;)</a></span> - Method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
+<dd>
+<div class="block">Tells whether one of the provided log messages corresponds to a peers not found error during
+ the initialization of a replica or not.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/task/TaskState.html#isPending(org.opends.server.backends.task.TaskState)">isPending(TaskState)</a></span> - Static method in enum org.opends.server.backends.task.<a href="org/opends/server/backends/task/TaskState.html" title="enum in org.opends.server.backends.task">TaskState</a></dt>
 <dd>
@@ -130174,6 +130321,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns the seconds until required change time.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#requestSessionRestart()">requestSessionRestart()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Asks for a session restart the way a replay thread on its way out does, without
+ running it.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/dsml/protocol/ExtendedRequest.html#requestValue">requestValue</a></span> - Variable in class org.opends.dsml.protocol.<a href="org/opends/dsml/protocol/ExtendedRequest.html" title="class in org.opends.dsml.protocol">ExtendedRequest</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/core/DirectoryServer.InitializationBuilder.html#requireCryptoServices()">requireCryptoServices()</a></span> - Method in class org.opends.server.core.<a href="org/opends/server/core/DirectoryServer.InitializationBuilder.html" title="class in org.opends.server.core">DirectoryServer.InitializationBuilder</a></dt>
@@ -140250,6 +140402,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets whether to replicate schema or not.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/SecurityOptions.html#setReplicationCaCertFiles(java.util.Collection)">setReplicationCaCertFiles(Collection&lt;File&gt;)</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/SecurityOptions.html" title="class in org.opends.quicksetup">SecurityOptions</a></dt>
+<dd>
+<div class="block">Sets the files holding certificates to trust on the replication port.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/ReplicationServerCfgClient.html#setReplicationDBDirectory(java.lang.String)">setReplicationDBDirectory(String)</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/ReplicationServerCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">ReplicationServerCfgClient</a></dt>
 <dd>
 <div class="block">Sets the "replication-db-directory" property.</div>
@@ -140291,6 +140447,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the list of replication servers (in their String representation) that
  are defined in the replication domain for this replica.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/SecurityOptions.html#setReplicationUsesKeyStore(boolean)">setReplicationUsesKeyStore(boolean)</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/SecurityOptions.html" title="class in org.opends.quicksetup">SecurityOptions</a></dt>
+<dd>
+<div class="block">Sets whether the key pairs of this key store are to secure replication as well.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/MonitorMsg.html#setReplServerDbState(org.opends.server.replication.common.ServerState)">setReplServerDbState(ServerState)</a></span> - Method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/MonitorMsg.html" title="class in org.opends.server.replication.protocol">MonitorMsg</a></dt>
 <dd>

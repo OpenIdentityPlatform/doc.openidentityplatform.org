@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":9,"i9":9,"i10":10,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -254,27 +254,42 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRelevantLogMessage(java.util.List)">getRelevantLogMessage</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;logMsgs)</code></th>
+<td class="colLast">
+<div class="block">Returns the message that best describes the outcome of a task among the messages it logged.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicationId(java.util.Set)">getReplicationId</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&gt;&nbsp;usedIds)</code></th>
 <td class="colLast">
 <div class="block">Returns the ID to be used for a new replication server or domain.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStartedId()">getStartedId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the LocalizableMessage ID that corresponds to a successfully started server.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTaskLogMessages(org.forgerock.opendj.ldap.Entry)">getTaskLogMessages</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;taskEntry)</code></th>
+<td class="colLast">
+<div class="block">Returns the messages logged by the task described by the provided entry, in the order the
+ server logged them.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invokeConfigureServer(java.lang.String%5B%5D)">invokeConfigureServer</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
 <td class="colLast">
 <div class="block">Invokes the method ConfigureDS.configMain with the provided parameters.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invokeImportLDIF(org.opends.quicksetup.Application,java.lang.String%5B%5D)">invokeImportLDIF</a></span>&#8203;(<a href="../Application.html" title="class in org.opends.quicksetup">Application</a>&nbsp;application,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
@@ -282,7 +297,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Invokes the import-ldif command-line with the provided parameters.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPeersNotFoundError(java.lang.String)">isPeersNotFoundError</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;logMsg)</code></th>
 <td class="colLast">
@@ -290,7 +305,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  error during the initialization of a replica or not.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPeersNotFoundError(java.util.Collection)">isPeersNotFoundError</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;logMsgs)</code></th>
+<td class="colLast">
+<div class="block">Tells whether one of the provided log messages corresponds to a peers not found error during
+ the initialization of a replica or not.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#unconfigureReplication(org.opends.admin.ads.util.ConnectionWrapper,org.opends.quicksetup.installer.ConfiguredReplication)">unconfigureReplication</a></span>&#8203;(<a href="../../admin/ads/util/ConnectionWrapper.html" title="class in org.opends.admin.ads.util">ConnectionWrapper</a>&nbsp;conn,
                       org.opends.quicksetup.installer.ConfiguredReplication&nbsp;replConf)</code></th>
@@ -298,7 +321,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Configures the replication on a given server.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#writeSetOpenDSJavaHome(org.opends.quicksetup.UserData,java.lang.String)">writeSetOpenDSJavaHome</a></span>&#8203;(<a href="../UserData.html" title="class in org.opends.quicksetup">UserData</a>&nbsp;uData,
                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;installPath)</code></th>
@@ -554,6 +577,44 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
+<a id="getTaskLogMessages(org.forgerock.opendj.ldap.Entry)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTaskLogMessages</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getTaskLogMessages&#8203;(<a href="../../../forgerock/opendj/ldap/Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;taskEntry)</pre>
+<div class="block">Returns the messages logged by the task described by the provided entry, in the order the
+ server logged them.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>taskEntry</code> - the entry of the task.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the messages logged by the task, an empty list if it logged none.</dd>
+</dl>
+</li>
+</ul>
+<a id="getRelevantLogMessage(java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRelevantLogMessage</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getRelevantLogMessage&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;logMsgs)</pre>
+<div class="block">Returns the message that best describes the outcome of a task among the messages it logged.
+ <p>
+ This is the last message logged with the <a href="../../messages/Severity.html#ERROR"><code>Severity.ERROR</code></a> severity when there is one:
+ a task keeps logging after it failed - the task scheduler itself appends a completion notice
+ once the task is over - and those trailing messages hide the cause of the failure. It is the
+ last message logged otherwise.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>logMsgs</code> - the messages logged by the task, as returned by <a href="#getTaskLogMessages(org.forgerock.opendj.ldap.Entry)"><code>getTaskLogMessages(Entry)</code></a>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the most relevant message, <code>null</code> if the task logged none.</dd>
+</dl>
+</li>
+</ul>
 <a id="isPeersNotFoundError(java.lang.String)">
 <!--   -->
 </a>
@@ -562,12 +623,36 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>isPeersNotFoundError</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isPeersNotFoundError&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;logMsg)</pre>
 <div class="block">Tells whether the provided log message corresponds to a peers not found
- error during the initialization of a replica or not.</div>
+ error during the initialization of a replica or not.
+ <p>
+ The message is recognized by the id a task logs it with, which is made of the name of the
+ resource the message belongs to and of its ordinal within that resource.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>logMsg</code> - the log message.</dd>
+<dd><code>logMsg</code> - the log message, may be <code>null</code>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the log message corresponds to a peers not
+         found error during initialization, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="isPeersNotFoundError(java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPeersNotFoundError</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isPeersNotFoundError&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;logMsgs)</pre>
+<div class="block">Tells whether one of the provided log messages corresponds to a peers not found error during
+ the initialization of a replica or not.
+ <p>
+ All the messages must be tested: the message reporting the failure is neither the first one
+ logged by the task nor, since the task scheduler appends a completion notice, the last one.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>logMsgs</code> - the log messages of the task, as returned by <a href="#getTaskLogMessages(org.forgerock.opendj.ldap.Entry)"><code>getTaskLogMessages(Entry)</code></a>.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if one of the log messages corresponds to a peers not
          found error during initialization, <code>false</code> otherwise.</dd>
 </dl>
 </li>

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -346,10 +346,39 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicationCaCertFiles()">getReplicationCaCertFiles</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the files holding certificates to trust on the replication port, on top of
+ the issuers found in the certificate chains of the key pairs to use.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplicationUsesKeyStore()">getReplicationUsesKeyStore</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Tells whether the key pairs of this key store are to secure replication as well.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSslPort()">getSslPort</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the SSL port.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReplicationCaCertFiles(java.util.Collection)">setReplicationCaCertFiles</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a>&gt;&nbsp;replicationCaCertFiles)</code></th>
+<td class="colLast">
+<div class="block">Sets the files holding certificates to trust on the replication port.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReplicationUsesKeyStore(boolean)">setReplicationUsesKeyStore</a></span>&#8203;(boolean&nbsp;replicationUsesKeyStore)</code></th>
+<td class="colLast">
+<div class="block">Sets whether the key pairs of this key store are to secure replication as well.</div>
 </td>
 </tr>
 </table>
@@ -698,7 +727,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="getAliasesToUse()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getAliasesToUse</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;getAliasesToUse()</pre>
@@ -706,6 +735,66 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the alias of the certificate in the key store to be used.</dd>
+</dl>
+</li>
+</ul>
+<a id="getReplicationUsesKeyStore()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReplicationUsesKeyStore</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;getReplicationUsesKeyStore()</pre>
+<div class="block">Tells whether the key pairs of this key store are to secure replication as well.
+ Replication reads the key pair it presents, and the certificates it trusts, from the
+ trust store used for server to server communication and from nowhere else, so the key
+ pairs have to be copied there.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if replication is to present the key pairs of this key store.</dd>
+</dl>
+</li>
+</ul>
+<a id="setReplicationUsesKeyStore(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setReplicationUsesKeyStore</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setReplicationUsesKeyStore&#8203;(boolean&nbsp;replicationUsesKeyStore)</pre>
+<div class="block">Sets whether the key pairs of this key store are to secure replication as well.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>replicationUsesKeyStore</code> - whether replication is to present these key pairs.</dd>
+</dl>
+</li>
+</ul>
+<a id="getReplicationCaCertFiles()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getReplicationCaCertFiles</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a>&gt;&nbsp;getReplicationCaCertFiles()</pre>
+<div class="block">Returns the files holding certificates to trust on the replication port, on top of
+ the issuers found in the certificate chains of the key pairs to use.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the files holding certificates to trust, empty if there is none.</dd>
+</dl>
+</li>
+</ul>
+<a id="setReplicationCaCertFiles(java.util.Collection)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setReplicationCaCertFiles</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setReplicationCaCertFiles&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a>&gt;&nbsp;replicationCaCertFiles)</pre>
+<div class="block">Sets the files holding certificates to trust on the replication port.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>replicationCaCertFiles</code> - the files holding certificates to trust.</dd>
 </dl>
 </li>
 </ul>

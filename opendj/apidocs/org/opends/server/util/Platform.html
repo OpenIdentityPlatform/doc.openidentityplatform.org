@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -220,6 +220,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addTrustedCertificate(java.security.KeyStore,java.lang.String,java.lang.String,java.lang.String,char%5B%5D,java.security.cert.Certificate)">addTrustedCertificate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStore</a>&nbsp;ks,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksType,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksPath,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+                     char[]&nbsp;pwd,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/Certificate.html?is-external=true" title="class or interface in java.security.cert" class="externalLink">Certificate</a>&nbsp;certificate)</code></th>
+<td class="colLast">
+<div class="block">Add the provided certificate to the provided keystore as a trusted certificate entry;
+ creating the keystore with the provided type and path if it doesn't exist.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#computeNumberOfThreads(int,float)">computeNumberOfThreads</a></span>&#8203;(int&nbsp;minimumValue,
                       float&nbsp;cpuMultiplier)</code></th>
@@ -227,7 +240,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Computes the number of replay/worker/cleaner threads based on the number of cpus in the system.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteAlias(java.security.KeyStore,java.lang.String,java.lang.String,char%5B%5D)">deleteAlias</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStore</a>&nbsp;ks,
            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksPath,
@@ -237,7 +250,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Delete the specified alias from the provided keystore.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generateSelfSignedCertificate(java.security.KeyStore,java.lang.String,java.lang.String,org.opends.server.util.Platform.KeyType,java.lang.String,char%5B%5D,java.lang.String,int)">generateSelfSignedCertificate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStore</a>&nbsp;ks,
                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksType,
@@ -252,7 +265,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  validity period.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importKeyEntry(java.security.KeyStore,java.lang.String,java.lang.String,java.lang.String,char%5B%5D,java.security.Key,java.security.cert.Certificate%5B%5D)">importKeyEntry</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStore</a>&nbsp;ks,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksType,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksPath,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+              char[]&nbsp;pwd,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Key.html?is-external=true" title="class or interface in java.security" class="externalLink">Key</a>&nbsp;privateKey,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/Certificate.html?is-external=true" title="class or interface in java.security.cert" class="externalLink">Certificate</a>[]&nbsp;chain)</code></th>
+<td class="colLast">
+<div class="block">Copy a key entry, that is a private key and its certificate chain, into the provided
+ keystore; creating the keystore with the provided type and path if it doesn't exist.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isVendor(java.lang.String)">isVendor</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;vendor)</code></th>
 <td class="colLast">
@@ -334,6 +361,69 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>certPath</code> - The path to the file containing the certificate.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStoreException.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStoreException</a></code> - If an error occurred adding the certificate to the keystore.</dd>
+</dl>
+</li>
+</ul>
+<a id="importKeyEntry(java.security.KeyStore,java.lang.String,java.lang.String,java.lang.String,char[],java.security.Key,java.security.cert.Certificate[])">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importKeyEntry</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;importKeyEntry&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStore</a>&nbsp;ks,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksType,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksPath,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+                                  char[]&nbsp;pwd,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Key.html?is-external=true" title="class or interface in java.security" class="externalLink">Key</a>&nbsp;privateKey,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/Certificate.html?is-external=true" title="class or interface in java.security.cert" class="externalLink">Certificate</a>[]&nbsp;chain)
+                           throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStoreException.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStoreException</a></pre>
+<div class="block">Copy a key entry, that is a private key and its certificate chain, into the provided
+ keystore; creating the keystore with the provided type and path if it doesn't exist.
+ The private key is re-encrypted with the password of the destination keystore.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ks</code> - The keystore to add the key entry to, may be null if it doesn't exist.</dd>
+<dd><code>ksType</code> - The type to use if the keystore is created.</dd>
+<dd><code>ksPath</code> - The path to the keystore.</dd>
+<dd><code>alias</code> - The alias to store the key entry under.</dd>
+<dd><code>pwd</code> - The keystore password, used for the private key as well.</dd>
+<dd><code>privateKey</code> - The private key to store.</dd>
+<dd><code>chain</code> - The certificate chain of the private key, the certificate it belongs to first.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStoreException.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStoreException</a></code> - If the alias is already in use, or an error occurred adding the key entry to
+           the keystore.</dd>
+</dl>
+</li>
+</ul>
+<a id="addTrustedCertificate(java.security.KeyStore,java.lang.String,java.lang.String,java.lang.String,char[],java.security.cert.Certificate)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addTrustedCertificate</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;addTrustedCertificate&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStore.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStore</a>&nbsp;ks,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksType,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;ksPath,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;alias,
+                                         char[]&nbsp;pwd,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/Certificate.html?is-external=true" title="class or interface in java.security.cert" class="externalLink">Certificate</a>&nbsp;certificate)
+                                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStoreException.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStoreException</a></pre>
+<div class="block">Add the provided certificate to the provided keystore as a trusted certificate entry;
+ creating the keystore with the provided type and path if it doesn't exist. Only such
+ an entry is a trust anchor: the certificate chain of a key entry is not, the trust
+ managers take the certificate the key belongs to and none of its issuers.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ks</code> - The keystore to add the certificate to, may be null if it doesn't exist.</dd>
+<dd><code>ksType</code> - The type to use if the keystore is created.</dd>
+<dd><code>ksPath</code> - The path to the keystore.</dd>
+<dd><code>alias</code> - The alias to store the certificate under.</dd>
+<dd><code>pwd</code> - The keystore password.</dd>
+<dd><code>certificate</code> - The certificate to trust.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/KeyStoreException.html?is-external=true" title="class or interface in java.security" class="externalLink">KeyStoreException</a></code> - If the alias is already in use, or an error occurred adding the certificate
+           to the keystore.</dd>
 </dl>
 </li>
 </ul>

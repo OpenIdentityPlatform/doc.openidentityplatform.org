@@ -209,12 +209,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="#org.opends.quicksetup.installer">org.opends.quicksetup.installer</a></th>
+<td class="colLast">
+<div class="block">Defines the classes that are you used by the installer.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colFirst" scope="row"><a href="#org.opends.server.config">org.opends.server.config</a></th>
 <td class="colLast">
 <div class="block">Contains code used to interact with the Directory Server configuration.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="#org.openidentityplatform.opendj.ldif">org.openidentityplatform.opendj.ldif</a></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -1485,6 +1491,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ConnectionUtils.</span><code><span class="memberNameLink"><a href="../../../../opends/admin/ads/util/ConnectionUtils.html#allValuesAsStrings(org.forgerock.opendj.ldap.Entry,java.lang.String)">allValuesAsStrings</a></span>&#8203;(<a href="../Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;entry,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;attrDesc)</code></th>
+<td class="colLast">
+<div class="block">Returns all the values of this attribute decoded as UTF-8 strings, in the order they were
+ returned by the server.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ConnectionUtils.</span><code><span class="memberNameLink"><a href="../../../../opends/admin/ads/util/ConnectionUtils.html#firstValueAsString(org.forgerock.opendj.ldap.Entry,java.lang.String)">firstValueAsString</a></span>&#8203;(<a href="../Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;entry,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;attrDesc)</code></th>
@@ -1741,6 +1756,31 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">
 <div class="block">Returns the first value as a String for a given attribute in the provided
  entry.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
+<li class="blockList">
+<section><a id="org.opends.quicksetup.installer">
+<!--   -->
+</a>
+<h3>Uses of <a href="../Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a> in <a href="../../../../opends/quicksetup/installer/package-summary.html">org.opends.quicksetup.installer</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../../../opends/quicksetup/installer/package-summary.html">org.opends.quicksetup.installer</a> with parameters of type <a href="../Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">InstallerHelper.</span><code><span class="memberNameLink"><a href="../../../../opends/quicksetup/installer/InstallerHelper.html#getTaskLogMessages(org.forgerock.opendj.ldap.Entry)">getTaskLogMessages</a></span>&#8203;(<a href="../Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;taskEntry)</code></th>
+<td class="colLast">
+<div class="block">Returns the messages logged by the task described by the provided entry, in the order the
+ server logged them.</div>
 </td>
 </tr>
 </tbody>

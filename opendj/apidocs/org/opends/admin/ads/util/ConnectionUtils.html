@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9};
+var data = {"i0":9,"i1":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -157,6 +157,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#allValuesAsStrings(org.forgerock.opendj.ldap.Entry,java.lang.String)">allValuesAsStrings</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;entry,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;attrDesc)</code></th>
+<td class="colLast">
+<div class="block">Returns all the values of this attribute decoded as UTF-8 strings, in the order they were
+ returned by the server.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#firstValueAsString(org.forgerock.opendj.ldap.Entry,java.lang.String)">firstValueAsString</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;entry,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;attrDesc)</code></th>
@@ -191,7 +200,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="firstValueAsString(org.forgerock.opendj.ldap.Entry,java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>firstValueAsString</h4>
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;firstValueAsString&#8203;(<a href="../../../../forgerock/opendj/ldap/Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;entry,
@@ -203,6 +212,26 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>attrDesc</code> - the attribute description</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The first attribute value in this attribute decoded as a UTF-8 string.</dd>
+</dl>
+</li>
+</ul>
+<a id="allValuesAsStrings(org.forgerock.opendj.ldap.Entry,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>allValuesAsStrings</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;allValuesAsStrings&#8203;(<a href="../../../../forgerock/opendj/ldap/Entry.html" title="interface in org.forgerock.opendj.ldap">Entry</a>&nbsp;entry,
+                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;attrDesc)</pre>
+<div class="block">Returns all the values of this attribute decoded as UTF-8 strings, in the order they were
+ returned by the server.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>entry</code> - the entry</dd>
+<dd><code>attrDesc</code> - the attribute description</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>all the values of this attribute decoded as UTF-8 strings, an empty list if the
+         attribute is not present.</dd>
 </dl>
 </li>
 </ul>

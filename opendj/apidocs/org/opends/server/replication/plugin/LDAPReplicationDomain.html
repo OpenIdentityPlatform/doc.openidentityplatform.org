@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":9,"i28":10,"i29":10,"i30":10,"i31":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":9,"i32":10,"i33":10,"i34":10,"i35":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -284,6 +284,14 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#failNextSessionRestarts(int)">failNextSessionRestarts</a></span>&#8203;(int&nbsp;failures)</code></th>
+<td class="colLast">
+<div class="block">Has the next session restarts of this domain fail where they would start the session
+ again.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAlerts()">getAlerts</a></span>()</code></th>
 <td class="colLast">
@@ -291,7 +299,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  may produce.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getClassName()">getClassName</a></span>()</code></th>
 <td class="colLast">
@@ -299,7 +307,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  alert generator implementation.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getComponentEntryDN()">getComponentEntryDN</a></span>()</code></th>
 <td class="colLast">
@@ -307,7 +315,15 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  generator is associated.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConsecutiveSessionRestarts()">getConsecutiveSessionRestarts</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns how many times in a row the session was restarted without a change being
+ replayed in between: the count the backoff of the next restart is computed from.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReplayDrainTimeout()">getReplayDrainTimeout</a></span>()</code></th>
 <td class="colLast">
@@ -315,21 +331,29 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  its changes before it saves its ServerState and goes down.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSessionRestartFailuresLeft()">getSessionRestartFailuresLeft</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns how many of the session restart failures <a href="#failNextSessionRestarts(int)"><code>failNextSessionRestarts(int)</code></a>
+ asked for have not been spent yet.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getShutdownListenerName()">getShutdownListenerName</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the human-readable name for this shutdown listener.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importBackend(java.io.InputStream)">importBackend</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">InputStream</a>&nbsp;input)</code></th>
 <td class="colLast">
 <div class="block">This method triggers an import of the replicated data.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeRemote(int,int,org.opends.server.backends.task.Task,int)">initializeRemote</a></span>&#8203;(int&nbsp;target,
                 int&nbsp;requestorID,
@@ -342,7 +366,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  topology.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isConfigurationChangeAcceptable(org.forgerock.opendj.server.config.server.ReplicationDomainCfg,java.util.List)">isConfigurationChangeAcceptable</a></span>&#8203;(<a href="../../../../forgerock/opendj/server/config/server/ReplicationDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ReplicationDomainCfg</a>&nbsp;configuration,
                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;unacceptableReasons)</code></th>
@@ -351,7 +375,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  to this change listener.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onSessionRestartSuppressed()">onSessionRestartSuppressed</a></span>()</code></th>
 <td class="colLast">
@@ -359,7 +383,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  session was not restarted for it.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#performBackendPostFinalizationProcessing(org.opends.server.api.LocalBackend)">performBackendPostFinalizationProcessing</a></span>&#8203;(<a href="../../api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;?&gt;&nbsp;backend)</code></th>
 <td class="colLast">
@@ -367,7 +391,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  is finalized.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#performBackendPostInitializationProcessing(org.opends.server.api.LocalBackend)">performBackendPostInitializationProcessing</a></span>&#8203;(<a href="../../api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;?&gt;&nbsp;backend)</code></th>
 <td class="colLast">
@@ -377,7 +401,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  backend has been put into service,.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#performBackendPreFinalizationProcessing(org.opends.server.api.LocalBackend)">performBackendPreFinalizationProcessing</a></span>&#8203;(<a href="../../api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;?&gt;&nbsp;backend)</code></th>
 <td class="colLast">
@@ -386,7 +410,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  the Finalization event.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#performBackendPreInitializationProcessing(org.opends.server.api.LocalBackend)">performBackendPreInitializationProcessing</a></span>&#8203;(<a href="../../api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a>&lt;?&gt;&nbsp;backend)</code></th>
 <td class="colLast">
@@ -394,7 +418,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  is initialized for use in the Directory Server.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processServerShutdown(org.forgerock.i18n.LocalizableMessage)">processServerShutdown</a></span>&#8203;(org.forgerock.i18n.LocalizableMessage&nbsp;reason)</code></th>
 <td class="colLast">
@@ -403,7 +427,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  action necessary to prepare for it.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processUpdate(org.opends.server.replication.protocol.UpdateMsg)">processUpdate</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg)</code></th>
 <td class="colLast">
@@ -411,7 +435,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  remote replication entities.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publishReplicaOfflineMsg()">publishReplicaOfflineMsg</a></span>()</code></th>
 <td class="colLast">
@@ -419,7 +443,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  replica have been sent out.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#purgeConflictsHistorical(org.opends.server.tasks.PurgeConflictsHistoricalTask,long)">purgeConflictsHistorical</a></span>&#8203;(<a href="../../tasks/PurgeConflictsHistoricalTask.html" title="class in org.opends.server.tasks">PurgeConflictsHistoricalTask</a>&nbsp;task,
                         long&nbsp;endDate)</code></th>
@@ -427,7 +451,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 <div class="block">Check and purge the historical attribute on all eligible entries under this domain.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>protected byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receiveEntryBytes()">receiveEntryBytes</a></span>()</code></th>
 <td class="colLast">
@@ -436,14 +460,22 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  data set is not consistent with the local fractional configuration.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i28" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#requestSessionRestart()">requestSessionRestart</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Asks for a session restart the way a replay thread on its way out does, without
+ running it.</div>
+</td>
+</tr>
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetUnreplayedChangeAlertThrottle()">resetUnreplayedChangeAlertThrottle</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Lets the next change this replica gives up on raise its alert straight away.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#restartService()">restartService</a></span>()</code></th>
 <td class="colLast">
@@ -451,14 +483,14 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  configuration which has just changed.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static <a href="LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#retrievesReplicationDomain(org.forgerock.opendj.ldap.DN)">retrievesReplicationDomain</a></span>&#8203;(<a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN)</code></th>
 <td class="colLast">
 <div class="block">Retrieves a replication domain based on the baseDN.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sessionInitiated(org.opends.server.replication.common.ServerStatus,org.opends.server.replication.common.ServerState)">sessionInitiated</a></span>&#8203;(<a href="../common/ServerStatus.html" title="enum in org.opends.server.replication.common">ServerStatus</a>&nbsp;initStatus,
                 <a href="../common/ServerState.html" title="class in org.opends.server.replication.common">ServerState</a>&nbsp;rsState)</code></th>
@@ -466,7 +498,7 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
 <div class="block">Set the initial status of the domain and perform necessary initializations.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setReplayDrainTimeout(long)">setReplayDrainTimeout</a></span>&#8203;(long&nbsp;timeoutInMs)</code></th>
 <td class="colLast">
@@ -474,14 +506,14 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  changes before it saves its ServerState and goes down.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shutdown()">shutdown</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Shutdown this ReplicationDomain.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
 <td class="colLast">
@@ -773,6 +805,82 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  Only there for the tests which check the alert: they must not be at the mercy of the
  alert another test raised less than
  <code>UNREPLAYED_CHANGE_ALERT_INTERVAL_IN_MS</code> ago.</div>
+</li>
+</ul>
+<a id="failNextSessionRestarts(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>failNextSessionRestarts</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;failNextSessionRestarts&#8203;(int&nbsp;failures)</pre>
+<div class="block">Has the next session restarts of this domain fail where they would start the session
+ again.
+ <p>
+ Only there for the tests: nothing asks a restart to fail in production, and what this
+ stands in for - anything thrown out of <a href="../service/ReplicationDomain.html#enableService()"><code>ReplicationDomain.enableService()</code></a>, which stops at no
+ failure the callers of <a href="../service/ReplicationBroker.html#start()"><code>ReplicationBroker.start()</code></a> report - can not be provoked
+ from the outside.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>failures</code> - how many session restarts must fail before one is allowed to run</dd>
+</dl>
+</li>
+</ul>
+<a id="getSessionRestartFailuresLeft()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSessionRestartFailuresLeft</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getSessionRestartFailuresLeft()</pre>
+<div class="block">Returns how many of the session restart failures <a href="#failNextSessionRestarts(int)"><code>failNextSessionRestarts(int)</code></a>
+ asked for have not been spent yet.
+ <p>
+ Only there for the tests, which read it to tell a restart which failed from one which
+ was never run.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>how many session restarts are still to fail</dd>
+</dl>
+</li>
+</ul>
+<a id="requestSessionRestart()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>requestSessionRestart</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;requestSessionRestart()</pre>
+<div class="block">Asks for a session restart the way a replay thread on its way out does, without
+ running it.
+ <p>
+ Only there for the tests, which have no other way to leave a request standing at a
+ time of their choosing: the one a replay thread makes is made and run in one go, and
+ the requests which stand across a span nothing runs them in - the domain disabled, or
+ being imported into - are made in a window between a thread's read of the flag and the
+ flag being set, which no test can hit on purpose.</div>
+</li>
+</ul>
+<a id="getConsecutiveSessionRestarts()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getConsecutiveSessionRestarts</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getConsecutiveSessionRestarts()</pre>
+<div class="block">Returns how many times in a row the session was restarted without a change being
+ replayed in between: the count the backoff of the next restart is computed from.
+ <p>
+ Only there for the tests, which read it to see a restart reach its backoff rather than
+ wait a delay out and hope it began: the count is bumped on the way into the wait, so
+ the restart of <code>n</code> restarts in a row is at its backoff, or a few instructions
+ short of it, once this returns <code>n</code> - and a wake given in those instructions is
+ counted, so the wait sees it all the same.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>how many session restarts in a row the domain has run</dd>
+</dl>
 </li>
 </ul>
 <a id="disable()">
