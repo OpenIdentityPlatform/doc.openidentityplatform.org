@@ -54007,8 +54007,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#getConsecutiveSessionRestarts()">getConsecutiveSessionRestarts()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
 <dd>
-<div class="block">Returns how many times in a row the session was restarted without a change being
- replayed in between: the count the backoff of the next restart is computed from.</div>
+<div class="block">Returns how many times in a row the session was restarted while this replica kept
+ failing - see <code>LDAPReplicationDomain.consecutiveSessionRestarts</code> for what does and does not reset it:
+ the count the backoff of the next restart is computed from.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/tools/makeldif/TemplateFile.html#getConstants()">getConstants()</a></span> - Method in class org.opends.server.tools.makeldif.<a href="org/opends/server/tools/makeldif/TemplateFile.html" title="class in org.opends.server.tools.makeldif">TemplateFile</a></dt>
 <dd>
@@ -73949,6 +73950,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/meta/ReplicationDomainCfgDefn.html#getReplayGiveUpDelayPropertyDefinition()">getReplayGiveUpDelayPropertyDefinition()</a></span> - Method in class org.forgerock.opendj.server.config.meta.<a href="org/forgerock/opendj/server/config/meta/ReplicationDomainCfgDefn.html" title="class in org.forgerock.opendj.server.config.meta">ReplicationDomainCfgDefn</a></dt>
 <dd>
 <div class="block">Get the "replay-give-up-delay" property definition.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#getReplayRetryWarningInterval()">getReplayRetryWarningInterval()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Returns how long this domain does not warn again about a change it asks for again.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/server/changelog/file/ReplicaCursor.html#getReplicaId()">getReplicaId()</a></span> - Method in class org.opends.server.replication.server.changelog.file.<a href="org/opends/server/replication/server/changelog/file/ReplicaCursor.html" title="class in org.opends.server.replication.server.changelog.file">ReplicaCursor</a></dt>
 <dd>
@@ -130522,6 +130527,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Resets the contents of the 'Details' section of the dialog.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#resetReplayRetryWarningThrottle()">resetReplayRetryWarningThrottle()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Lets the next change whose replay fails be warned about straight away.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#resetUnreplayedChangeAlertThrottle()">resetUnreplayedChangeAlertThrottle()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
 <dd>
 <div class="block">Lets the next change this replica gives up on raise its alert straight away.</div>
@@ -140389,6 +140398,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/ReplicationDomainCfgClient.html#setReplayGiveUpDelay(java.lang.Long)">setReplayGiveUpDelay(Long)</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/ReplicationDomainCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">ReplicationDomainCfgClient</a></dt>
 <dd>
 <div class="block">Sets the "replay-give-up-delay" property.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#setReplayRetryWarningInterval(long)">setReplayRetryWarningInterval(long)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Sets how long this domain does not warn again about a change it asks for again.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html#setReplicaID(int)">setReplicaID(int)</a></span> - Method in class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor</a></dt>
 <dd>
@@ -155855,7 +155868,7 @@ the order they are declared.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLAY_RETRYING_CHANGE">WARN_REPLAY_RETRYING_CHANGE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
-<div class="block">Could not replay change %s in domain "%s" (delivery %d, each attempted several times in place).</div>
+<div class="block">Could not replay change %s in domain "%s" (delivery %d, each attempted several times in place, failing for %d ms).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_ACCEPT_ERROR">WARN_REPLICATION_SERVER_ACCEPT_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
