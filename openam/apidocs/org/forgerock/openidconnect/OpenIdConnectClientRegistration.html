@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -245,6 +245,15 @@ extends <a href="../oauth2/core/ClientRegistration.html" title="interface in org
 <div class="block">Determines if ID token encryption is enabled.</div>
 </td>
 </tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verifyIdTokenIdentity(org.forgerock.oauth2.core.OAuth2Jwt)">verifyIdTokenIdentity</a></span>&#8203;(<a href="../oauth2/core/OAuth2Jwt.html" title="class in org.forgerock.oauth2.core">OAuth2Jwt</a>&nbsp;idToken)</code></th>
+<td class="colLast">
+<div class="block">Verifies that the supplied JWT is an ID token this server issued for this client: signed with
+ the client's <a href="#getIDTokenSignedResponseAlgorithm()"><code>id_token_signed_response_alg</code></a> and
+ verifiable with the key that algorithm implies.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.forgerock.oauth2.core.ClientRegistration">
@@ -280,6 +289,25 @@ extends <a href="../oauth2/core/ClientRegistration.html" title="interface in org
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The OpenId token signed response algorithm.</dd>
+</dl>
+</li>
+</ul>
+<a id="verifyIdTokenIdentity(org.forgerock.oauth2.core.OAuth2Jwt)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>verifyIdTokenIdentity</h4>
+<pre class="methodSignature">boolean&nbsp;verifyIdTokenIdentity&#8203;(<a href="../oauth2/core/OAuth2Jwt.html" title="class in org.forgerock.oauth2.core">OAuth2Jwt</a>&nbsp;idToken)</pre>
+<div class="block">Verifies that the supplied JWT is an ID token this server issued for this client: signed with
+ the client's <a href="#getIDTokenSignedResponseAlgorithm()"><code>id_token_signed_response_alg</code></a> and
+ verifiable with the key that algorithm implies. Unlike <a href="../oauth2/core/ClientRegistration.html#verifyJwtIdentity(org.forgerock.oauth2.core.OAuth2Jwt)"><code>ClientRegistration.verifyJwtIdentity(OAuth2Jwt)</code></a>,
+ which checks a JWT the client signed, the algorithm is not the sender's to choose.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>idToken</code> - The ID token.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the ID token was issued for this client.</dd>
 </dl>
 </li>
 </ul>

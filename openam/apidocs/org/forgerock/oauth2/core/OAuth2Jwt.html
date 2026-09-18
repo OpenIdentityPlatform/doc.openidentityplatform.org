@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -175,13 +175,20 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>org.forgerock.json.jose.jws.JwsAlgorithm</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSigningAlgorithm()">getSigningAlgorithm</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Gets the signing algorithm named in the JWS header.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSubject()">getSubject</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the JWT subject.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isContentValid()">isContentValid</a></span>()</code></th>
 <td class="colLast">
@@ -195,21 +202,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  </div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isExpired()">isExpired</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Checks that the JWT has not expired.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIntendedForAudience(java.lang.String)">isIntendedForAudience</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;audience)</code></th>
 <td class="colLast">
 <div class="block">Checks that the JWT is intended for the provided audience.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isValid(org.forgerock.json.jose.jws.handlers.SigningHandler)">isValid</a></span>&#8203;(org.forgerock.json.jose.jws.handlers.SigningHandler&nbsp;signingHandler)</code></th>
 <td class="colLast">
@@ -356,11 +363,27 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="getSignedJwt()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getSignedJwt</h4>
 <pre class="methodSignature">public&nbsp;org.forgerock.json.jose.jws.SignedJwt&nbsp;getSignedJwt()</pre>
 <div class="block">Gets the Signed JWT.</div>
+</li>
+</ul>
+<a id="getSigningAlgorithm()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getSigningAlgorithm</h4>
+<pre class="methodSignature">public&nbsp;org.forgerock.json.jose.jws.JwsAlgorithm&nbsp;getSigningAlgorithm()</pre>
+<div class="block">Gets the signing algorithm named in the JWS header.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The signing algorithm, or <code>null</code> if the header names one this server does not
+ know, which includes the RFC 7518 spelling <code>"none"</code>: <code>JwsHeader.getAlgorithm()</code>
+ is <code>JwsAlgorithm.valueOf(alg)</code> and only maps the enum's own upper-case names.</dd>
+</dl>
 </li>
 </ul>
 </li>
