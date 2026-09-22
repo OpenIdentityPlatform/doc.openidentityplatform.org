@@ -1110,8 +1110,9 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  back between the stop and the start, and both halves are counted by the session
  generation. A subclass may leave it alone: a domain which is shutting
  down, or which was disabled for a total update, owns its session and is not given one
- back by a configuration change. One which does reports it through
- <a href="../service/ReplicationDomain.html#onSessionRestartSuppressed()"><code>ReplicationDomain.onSessionRestartSuppressed()</code></a>.</div>
+ back by a configuration change, and a total update into this replica reads its
+ entries over the session and starts the next one itself. One which does reports it
+ through <a href="../service/ReplicationDomain.html#onSessionRestartSuppressed()"><code>ReplicationDomain.onSessionRestartSuppressed()</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../service/ReplicationDomain.html#restartService()">restartService</a></code>&nbsp;in class&nbsp;<code><a href="../service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></code></dd>
@@ -1130,9 +1131,10 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  <p>
  The configuration is stored either way, and the session started next reads it - so
  this says that the change is not live yet rather than that it was lost. A domain
- which restarts its session for every change never reaches this; one which owns its
- session while it is shutting down or disabled for a total update overrides it to tell
- the administrator what is waiting for that session.
+ which restarts its session for every change never reaches this; one whose session has
+ an owner - itself while it is shutting down or disabled for a total update, or a total
+ update into this replica reading it - overrides it to tell the administrator what is
+ waiting for that session.
  <p>
  Every restart this domain leaves alone comes through here, whichever step of the
  change asked for it: the broker properties which are renegotiated, the assured

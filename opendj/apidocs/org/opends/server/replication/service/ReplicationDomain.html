@@ -1938,8 +1938,9 @@ protected final&nbsp;long&nbsp;getSessionGeneration()</pre>
  back between the stop and the start, and both halves are counted by the session
  generation. A subclass may leave it alone: a domain which is shutting
  down, or which was disabled for a total update, owns its session and is not given one
- back by a configuration change. One which does reports it through
- <a href="#onSessionRestartSuppressed()"><code>onSessionRestartSuppressed()</code></a>.</div>
+ back by a configuration change, and a total update into this replica reads its
+ entries over the session and starts the next one itself. One which does reports it
+ through <a href="#onSessionRestartSuppressed()"><code>onSessionRestartSuppressed()</code></a>.</div>
 </li>
 </ul>
 <a id="onSessionRestartSuppressed()">
@@ -1954,9 +1955,10 @@ protected final&nbsp;long&nbsp;getSessionGeneration()</pre>
  <p>
  The configuration is stored either way, and the session started next reads it - so
  this says that the change is not live yet rather than that it was lost. A domain
- which restarts its session for every change never reaches this; one which owns its
- session while it is shutting down or disabled for a total update overrides it to tell
- the administrator what is waiting for that session.</div>
+ which restarts its session for every change never reaches this; one whose session has
+ an owner - itself while it is shutting down or disabled for a total update, or a total
+ update into this replica reading it - overrides it to tell the administrator what is
+ waiting for that session.</div>
 </li>
 </ul>
 <a id="exportBackend(java.io.OutputStream)">

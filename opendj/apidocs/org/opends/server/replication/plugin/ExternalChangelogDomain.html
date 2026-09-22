@@ -351,7 +351,14 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationAddL
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isConfigurationChangeAcceptable&#8203;(<a href="../../../../forgerock/opendj/server/config/server/ExternalChangelogDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ExternalChangelogDomainCfg</a>&nbsp;configuration,
                                                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;unacceptableReasons)</pre>
 <div class="block">Indicates whether the proposed change to the configuration is acceptable
- to this change listener.</div>
+ to this change listener.
+ <p>
+ Refused while a total update runs, as a change of the domain entry is: the attributes
+ this entry carries are published as the session of the domain comes up, so applying
+ them restarts that session, and an import into this replica reads its entries over
+ it. Through the server configuration such a restart would wait for the listener
+ thread the import runs on, which waits in turn for the lock of the configuration the
+ change holds, to enable the backend back once the stream it was reading ends.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../forgerock/opendj/config/server/ConfigurationChangeListener.html#isConfigurationChangeAcceptable(T,java.util.List)">isConfigurationChangeAcceptable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../forgerock/opendj/config/server/ConfigurationChangeListener.html" title="interface in org.forgerock.opendj.config.server">ConfigurationChangeListener</a>&lt;<a href="../../../../forgerock/opendj/server/config/server/ExternalChangelogDomainCfg.html" title="interface in org.forgerock.opendj.server.config.server">ExternalChangelogDomainCfg</a>&gt;</code></dd>
