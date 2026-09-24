@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -319,34 +319,52 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 </td>
 </tr>
 <tr id="i16" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasPeerWhichCanReceiveReplicaOfflineMsgs()">hasPeerWhichCanReceiveReplicaOfflineMsgs</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Whether any connected peer replication server can be forwarded a
+ <a href="../protocol/ReplicaOfflineMsg.html" title="class in org.opends.server.replication.protocol"><code>ReplicaOfflineMsg</code></a>: the message has no encoding below replication protocol version 8,
+ so a peer which negotiated an older one is nobody to wait for - the writer serving it drops
+ the message instead of publishing it.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initGenerationID(long)">initGenerationID</a></span>&#8203;(long&nbsp;generationId)</code></th>
 <td class="colLast">
 <div class="block">Initialize the value of the generationID for this ReplicationServerDomain.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeMonitorProvider(org.forgerock.opendj.server.config.server.MonitorProviderCfg)">initializeMonitorProvider</a></span>&#8203;(<a href="../../../../forgerock/opendj/server/config/server/MonitorProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">MonitorProviderCfg</a>&nbsp;configuraiton)</code></th>
 <td class="colLast">
 <div class="block">Initializes this monitor provider based on the information in the provided configuration entry.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAlreadyConnectedToDS(org.opends.server.replication.server.DataServerHandler)">isAlreadyConnectedToDS</a></span>&#8203;(<a href="DataServerHandler.html" title="class in org.opends.server.replication.server">DataServerHandler</a>&nbsp;dsHandler)</code></th>
 <td class="colLast">
 <div class="block">Checks whether it is already connected to a DS with same id.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAlreadyConnectedToRS(org.opends.server.replication.server.ReplicationServerHandler)">isAlreadyConnectedToRS</a></span>&#8203;(<a href="ReplicationServerHandler.html" title="class in org.opends.server.replication.server">ReplicationServerHandler</a>&nbsp;rsHandler)</code></th>
 <td class="colLast">
 <div class="block">Checks whether a remote RS is already connected to this hosting RS.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isConnectedToServerAt(org.opends.server.types.HostPort)">isConnectedToServerAt</a></span>&#8203;(<a href="../../types/HostPort.html" title="class in org.opends.server.types">HostPort</a>&nbsp;address)</code></th>
+<td class="colLast">
+<div class="block">Returns whether this domain already holds a session with the replication
+ server configured at the provided address.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDegradedDueToGenerationId(int)">isDegradedDueToGenerationId</a></span>&#8203;(int&nbsp;serverId)</code></th>
 <td class="colLast">
@@ -355,7 +373,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  generationId for this domain.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lock()">lock</a></span>()</code></th>
 <td class="colLast">
@@ -363,7 +381,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  calling thread is interrupted.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processNewStatus(org.opends.server.replication.server.DataServerHandler,org.opends.server.replication.protocol.ChangeStatusMsg)">processNewStatus</a></span>&#8203;(<a href="DataServerHandler.html" title="class in org.opends.server.replication.server">DataServerHandler</a>&nbsp;senderHandler,
                 <a href="../protocol/ChangeStatusMsg.html" title="class in org.opends.server.replication.protocol">ChangeStatusMsg</a>&nbsp;csMsg)</code></th>
@@ -371,7 +389,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Process message of a remote server changing his status.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#put(org.opends.server.replication.protocol.UpdateMsg,org.opends.server.replication.server.ServerHandler)">put</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg,
    <a href="ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a>&nbsp;sourceHandler)</code></th>
@@ -380,7 +398,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  updates that must be forwarded to all other servers.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receiveTopoInfoFromRS(org.opends.server.replication.protocol.TopologyMsg,org.opends.server.replication.server.ReplicationServerHandler,boolean)">receiveTopoInfoFromRS</a></span>&#8203;(<a href="../protocol/TopologyMsg.html" title="class in org.opends.server.replication.protocol">TopologyMsg</a>&nbsp;topoMsg,
                      <a href="ReplicationServerHandler.html" title="class in org.opends.server.replication.server">ReplicationServerHandler</a>&nbsp;rsHandler,
@@ -389,7 +407,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Process topology information received from a peer RS.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#register(org.opends.server.replication.server.DataServerHandler)">register</a></span>&#8203;(<a href="DataServerHandler.html" title="class in org.opends.server.replication.server">DataServerHandler</a>&nbsp;dsHandler)</code></th>
 <td class="colLast">
@@ -397,21 +415,21 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  new DS.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#register(org.opends.server.replication.server.ReplicationServerHandler)">register</a></span>&#8203;(<a href="ReplicationServerHandler.html" title="class in org.opends.server.replication.server">ReplicationServerHandler</a>&nbsp;rsHandler)</code></th>
 <td class="colLast">
 <div class="block">Registers the RS handler into this domain and notifies the domain.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#release()">release</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Releases the lock on this domain.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetGenerationId(org.opends.server.replication.server.ServerHandler,org.opends.server.replication.protocol.ResetGenerationIdMsg)">resetGenerationId</a></span>&#8203;(<a href="ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a>&nbsp;senderHandler,
                  <a href="../protocol/ResetGenerationIdMsg.html" title="class in org.opends.server.replication.protocol">ResetGenerationIdMsg</a>&nbsp;genIdMsg)</code></th>
@@ -419,7 +437,7 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Resets the generationID.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rollbackGenerationIdIfUnchanged(long,long)">rollbackGenerationIdIfUnchanged</a></span>&#8203;(long&nbsp;expectedGenerationId,
                                long&nbsp;oldGenerationId)</code></th>
@@ -428,35 +446,35 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
  still has the <code>expectedGenerationId</code> value the caller previously set.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendTopoInfoToAll()">sendTopoInfoToAll</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Update every peers (RS/DS) with topology changes.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shutdown()">shutdown</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Shutdown this ReplicationServerDomain.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopAllServers(boolean)">stopAllServers</a></span>&#8203;(boolean&nbsp;shutdown)</code></th>
 <td class="colLast">
 <div class="block">Stop operations with all servers this domain is connected with (RS and DS).</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopReplicationServers(java.util.Collection)">stopReplicationServers</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../types/HostPort.html" title="class in org.opends.server.types">HostPort</a>&gt;&nbsp;serversToDisconnect)</code></th>
 <td class="colLast">
 <div class="block">Stop operations with a list of replication servers.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopServer(org.opends.server.replication.server.ServerHandler,boolean)">stopServer</a></span>&#8203;(<a href="ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a>&nbsp;sHandler,
           boolean&nbsp;shutdown)</code></th>
@@ -464,12 +482,12 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <div class="block">Stop operations with a given server.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tryLock(long)">tryLock</a></span>&#8203;(long&nbsp;timeout)</code></th>
 <td class="colLast">
@@ -552,6 +570,37 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - When an IO exception happens during the update
          processing.</dd>
+</dl>
+</li>
+</ul>
+<a id="isConnectedToServerAt(org.opends.server.types.HostPort)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isConnectedToServerAt</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isConnectedToServerAt&#8203;(<a href="../../types/HostPort.html" title="class in org.opends.server.types">HostPort</a>&nbsp;address)</pre>
+<div class="block">Returns whether this domain already holds a session with the replication
+ server configured at the provided address.
+ <p>
+ A connected server answers to the address its session came from and to the address it
+ named in its start message, and the second of the two is what that server says of
+ itself: a peer which names an address this configuration gives to another replication
+ server hides that one from the connect thread, which then dials nothing for it and
+ reports it connected while it is down. A replication server names itself from its own
+ configuration, or, when none of the addresses it is configured with is local to it,
+ from the host name of its machine (<code>ReplicationServer.setServerURL()</code>), so what
+ it takes is a named address which resolves here to one this configuration gives to
+ another replication server: two of them configured at one address -- a configuration
+ copied whole, or two sites whose private ranges overlap -- or that fall back host name
+ mapped there by the resolver of this server, which a clone host name, split DNS or a
+ stale hosts file gives. The peer it hides is still the one which dials this server.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>address</code> - the configured address of a replication server</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if a connected replication server answers to that
+         address, <code>false</code> otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -976,6 +1025,24 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The map of connected DSs</dd>
+</dl>
+</li>
+</ul>
+<a id="hasPeerWhichCanReceiveReplicaOfflineMsgs()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasPeerWhichCanReceiveReplicaOfflineMsgs</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasPeerWhichCanReceiveReplicaOfflineMsgs()</pre>
+<div class="block">Whether any connected peer replication server can be forwarded a
+ <a href="../protocol/ReplicaOfflineMsg.html" title="class in org.opends.server.replication.protocol"><code>ReplicaOfflineMsg</code></a>: the message has no encoding below replication protocol version 8,
+ so a peer which negotiated an older one is nobody to wait for - the writer serving it drops
+ the message instead of publishing it.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if at least one connected replication server can receive a
+         <a href="../protocol/ReplicaOfflineMsg.html" title="class in org.opends.server.replication.protocol"><code>ReplicaOfflineMsg</code></a>, <code>false</code> otherwise</dd>
 </dl>
 </li>
 </ul>

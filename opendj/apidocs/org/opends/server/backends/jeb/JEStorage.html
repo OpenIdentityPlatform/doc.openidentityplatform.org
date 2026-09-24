@@ -497,7 +497,6 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
 <h4>write</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;write&#8203;(<a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi">WriteOperation</a>&nbsp;operation)
            throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">Storage</a></code></span></div>
 <div class="block">Executes a write operation. In case of a write operation rollback, implementations may replay the write
  operation rather than propagate the failure: a <a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a> is required to be idempotent for
  exactly that reason. A replay must be bounded - by a number of attempts, by a window of time, or by both -
@@ -509,7 +508,44 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  in-memory map before the write so that a replay still finds the work to do, or reading configuration back out
  of the operation once it returns, both assume the write is applied; when it is not, this method throws with
  that state already changed and the transaction not applied, and the caller is the only place that can reconcile
- the two.</div>
+ the two.
+ <p>
+ A transaction JE ends with a <code>LockConflictException</code> is replayed, bounded twice: by <code>MAX_RETRIES</code>
+ attempts and by the <code>MAX_RETRY_WINDOW_NANOS</code> wall-clock window, whichever is spent first - except that
+ the window alone never ends the replays before one has been made. It is bounded for the reason
+ <code>PDBStorage</code> bounds its loop: the configuration change paths of the pluggable backend hold an entry
+ container's exclusive lock across this method, and every reader of that suffix then waits - untimed and
+ uninterruptibly - until it returns, so a conflict that never clears would park every worker thread of that
+ suffix rather than fail one operation.
+ <p>
+ JE raises the conflict from inside the operation - a record read or write, never the commit, which takes no
+ lock - and the transaction wraps it in a <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a>, which is unwrapped below before it is
+ matched. The operation may catch it there; the transaction is then abort-only and <code>commit()</code> raises the
+ conflict again, bare, so an attempt which swallowed its conflict commits nothing and is replayed all the same.
+ With the shipped configuration the only conflict is the deadlock: <code>je.lock.timeout</code> is 0, so a writer
+ waits for a lock rather than times out, and JE ends one transaction of a cycle - chosen at random - as soon as
+ a wait would close it. A lock timeout set through <code>ds-cfg-je-property</code> makes a wait that long a conflict
+ as well.
+ <p>
+ The replay backs off first, though JE would make it wait for the locks it lost anyway: JE locks a record by
+ the LSN of its current version, and the abort of the victim, which hands the waiting survivor the lock it
+ asked for, undoes the version that lock belongs to - the survivor then has to lock the version the undo put
+ back, and a replay which comes back at once wins that race, holds the record when the survivor asks again,
+ and the same deadlock forms with the roles drawn afresh. JE's own retry example sleeps before retrying for
+ this reason; without the sleep the deadlock of two writers was seen to form three times in a row.
+ <p>
+ An interrupt reaches the loop only in that sleep, and the loop does not restore the flag the sleep cleared:
+ JE invalidates the whole environment when a thread carrying the interrupt flag touches it - the transaction
+ registry's latch is acquired interruptibly - and the caller's own failure road makes such a call
+ (<code>EntryContainer.writeTrustState</code>). The interrupt is reported instead, with the conflict being replayed,
+ as the suppressed exceptions of the <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a> thrown.
+ <p>
+ Once the bound is spent the conflict is reported as a <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a> naming the backend, the
+ attempts spent, the time they took and which of the two bounds ran out. It carries the conflict as a
+ suppressed exception rather than as its cause: a cause is unwrapped below and thrown in its place, and
+ <code>EntryContainer.throwAllowedExceptionTypes</code> likewise passes a <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a> through
+ untouched only while it has no cause. Given a cause, both hand the caller the bare conflict instead, whose
+ message is JE's account of its lock table - all an LDAP client used to be told after the single attempt.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>

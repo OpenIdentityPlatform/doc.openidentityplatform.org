@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -218,7 +218,7 @@ extends <a href="UpdateMsg.html" title="class in org.opends.server.replication.p
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -240,13 +240,29 @@ extends <a href="UpdateMsg.html" title="class in org.opends.server.replication.p
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEncodableFor(short)">isEncodableFor</a></span>&#8203;(short&nbsp;protocolVersion)</code></th>
+<td class="colLast">
+<div class="block">Whether this message has an encoding for a peer which negotiated the
+ provided replication protocol version.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSupportedBy(short)">isSupportedBy</a></span>&#8203;(short&nbsp;protocolVersion)</code></th>
+<td class="colLast">
+<div class="block">Whether a peer which negotiated the provided replication protocol version
+ can be sent this message at all.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Return the number of bytes used by this message.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 </tr>
@@ -353,6 +369,55 @@ extends <a href="UpdateMsg.html" title="class in org.opends.server.replication.p
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The encoded PDU, or <code>null</code> if the message isn't supported
           in that protocol version.</dd>
+</dl>
+</li>
+</ul>
+<a id="isEncodableFor(short)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEncodableFor</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isEncodableFor&#8203;(short&nbsp;protocolVersion)</pre>
+<div class="block">Whether this message has an encoding for a peer which negotiated the
+ provided replication protocol version.
+ <p>
+ A message which has none is dropped by <a href="Session.html#publish(org.opends.server.replication.protocol.ReplicationMsg)"><code>Session.publish(ReplicationMsg)</code></a>
+ - its <a href="ReplicationMsg.html#getBytes(short)"><code>ReplicationMsg.getBytes(short)</code></a> returns <code>null</code> - with nothing on
+ the wire and nothing in the log, so a caller which goes on to report what
+ the peer was told must ask this before it publishes.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="ReplicationMsg.html#isEncodableFor(short)">isEncodableFor</a></code>&nbsp;in class&nbsp;<code><a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>protocolVersion</code> - The protocol version negotiated with the peer.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if this message can be encoded for that version,
+         <code>false</code> if it has no encoding for it at all.</dd>
+</dl>
+</li>
+</ul>
+<a id="isSupportedBy(short)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSupportedBy</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isSupportedBy&#8203;(short&nbsp;protocolVersion)</pre>
+<div class="block">Whether a peer which negotiated the provided replication protocol version
+ can be sent this message at all.
+ <p>
+ The message was introduced by
+ <a href="ProtocolVersion.html#REPLICATION_PROTOCOL_V8"><code>ProtocolVersion.REPLICATION_PROTOCOL_V8</code></a> and has no encoding below
+ it: an older peer is not told that the replica went offline, and cannot be.
+ This answers for the message type, for a caller which has no instance at
+ hand - see <a href="#isEncodableFor(short)"><code>isEncodableFor(short)</code></a> for the one which has.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>protocolVersion</code> - The protocol version negotiated with the peer.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if that version carries this message,
+         <code>false</code> otherwise.</dd>
 </dl>
 </li>
 </ul>

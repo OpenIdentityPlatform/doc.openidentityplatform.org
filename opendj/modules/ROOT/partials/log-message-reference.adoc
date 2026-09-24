@@ -15515,6 +15515,13 @@ Severity: ERROR
 +
 Message: Domain %s (server id: %s) : the session to the replication server was stopped before the initialization from server %s completed. The entries which had arrived are imported, and the generation id of the data is computed over them rather than taken from the exporter.
 
+[#log-ref-log-ref-ERR_INIT_REJECTED_SESSION_STOPPING_330]
+ID: 330::
+
+Severity: ERROR
++
+Message: The total update of domain "%s" was refused by directory server %d: its session to the replication server is being stopped, and the entries would have been streamed over that session. Ask for the total update again once the session is back.
+
 --
 
 [#SCHEMA]

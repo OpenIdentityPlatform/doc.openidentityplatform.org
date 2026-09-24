@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -234,6 +234,17 @@ extends <a href="../../../../com/forgerock/opendj/cli/ConsoleApplication.html" t
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>static int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mainCLI(java.lang.String%5B%5D,java.io.OutputStream,java.io.OutputStream,java.util.function.Supplier)">mainCLI</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;outStream,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;errStream,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="../../quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile)</code></th>
+<td class="colLast">
+<div class="block">Parses the provided command-line arguments and uses that information to run
+ the setup tool.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mainCLI(java.lang.String%5B%5D,java.io.OutputStream,java.io.OutputStream,org.opends.quicksetup.TempLogFile)">mainCLI</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;outStream,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;errStream,
@@ -243,10 +254,10 @@ extends <a href="../../../../com/forgerock/opendj/cli/ConsoleApplication.html" t
  the setup tool.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mainCLI(java.lang.String%5B%5D,org.opends.quicksetup.TempLogFile)">mainCLI</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
-       <a href="../../quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;tempLogFile)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mainCLI(java.lang.String%5B%5D,java.util.function.Supplier)">mainCLI</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="../../quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile)</code></th>
 <td class="colLast">
 <div class="block">Parses the provided command-line arguments and uses that information to run
  the setup tool.</div>
@@ -283,20 +294,22 @@ extends <a href="../../../../com/forgerock/opendj/cli/ConsoleApplication.html" t
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="mainCLI(java.lang.String[],org.opends.quicksetup.TempLogFile)">
+<a id="mainCLI(java.lang.String[],java.util.function.Supplier)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>mainCLI</h4>
 <pre class="methodSignature">public static&nbsp;int&nbsp;mainCLI&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
-                          <a href="../../quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;tempLogFile)</pre>
+                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="../../quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile)</pre>
 <div class="block">Parses the provided command-line arguments and uses that information to run
  the setup tool.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - the command-line arguments provided to this program.</dd>
-<dd><code>tempLogFile</code> - the temporary log file where messages will be logged.</dd>
+<dd><code>tempLogFile</code> - supplies the temporary log file where messages will be logged. It is called on
+          the road that runs the install and not on the roads which return before it, so
+          that a run which installs nothing creates no log.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The error code.</dd>
 </dl>
@@ -322,6 +335,32 @@ extends <a href="../../../../com/forgerock/opendj/cli/ConsoleApplication.html" t
 <dd><code>errStream</code> - The output stream to use for standard error, or <CODE>null</CODE>
           if standard error is not needed.</dd>
 <dd><code>tempLogFile</code> - the temporary log file where messages will be logged.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The error code.</dd>
+</dl>
+</li>
+</ul>
+<a id="mainCLI(java.lang.String[],java.io.OutputStream,java.io.OutputStream,java.util.function.Supplier)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>mainCLI</h4>
+<pre class="methodSignature">public static&nbsp;int&nbsp;mainCLI&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;outStream,
+                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;errStream,
+                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="../../quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile)</pre>
+<div class="block">Parses the provided command-line arguments and uses that information to run
+ the setup tool.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - The command-line arguments provided to this program.</dd>
+<dd><code>outStream</code> - The output stream to use for standard output, or <CODE>null</CODE>
+          if standard output is not needed.</dd>
+<dd><code>errStream</code> - The output stream to use for standard error, or <CODE>null</CODE>
+          if standard error is not needed.</dd>
+<dd><code>tempLogFile</code> - supplies the temporary log file where messages will be logged, see
+          <a href="#mainCLI(java.lang.String%5B%5D,java.util.function.Supplier)"><code>mainCLI(String[], Supplier)</code></a>.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The error code.</dd>
 </dl>

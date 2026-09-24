@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":9,"i5":10,"i6":10,"i7":10,"i8":6,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":6,"i23":6,"i24":10,"i25":10,"i26":10,"i27":6,"i28":10,"i29":6,"i30":10,"i31":10,"i32":10,"i33":6,"i34":6,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10};
+var data = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":9,"i5":10,"i6":10,"i7":10,"i8":6,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":6,"i23":6,"i24":10,"i25":10,"i26":10,"i27":6,"i28":10,"i29":6,"i30":10,"i31":10,"i32":10,"i33":6,"i34":6,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -224,7 +224,8 @@ implements <a href="event/ProgressNotifier.html" title="interface in org.opends.
 <td class="colFirst"><code>protected <a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tempLogFile">tempLogFile</a></span></code></th>
 <td class="colLast">
-<div class="block">Temporary log file where messages will be logged.</div>
+<div class="block">Temporary log file where messages will be logged, once <a href="#openTempLogFile()"><code>openTempLogFile()</code></a> has
+ asked for it.</div>
 </td>
 </tr>
 </table>
@@ -590,27 +591,34 @@ implements <a href="event/ProgressNotifier.html" title="interface in org.opends.
 </td>
 </tr>
 <tr id="i41" class="rowColor">
+<td class="colFirst"><code>protected <a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openTempLogFile()">openTempLogFile</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Creates the temporary log file of this application, unless it has one already.</div>
+</td>
+</tr>
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeProgressUpdateListener(org.opends.quicksetup.event.ProgressUpdateListener)">removeProgressUpdateListener</a></span>&#8203;(<a href="event/ProgressUpdateListener.html" title="interface in org.opends.quicksetup.event">ProgressUpdateListener</a>&nbsp;l)</code></th>
 <td class="colLast">
 <div class="block">Removes a ProgressUpdateListener.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setCurrentInstallStatus(org.opends.quicksetup.CurrentInstallStatus)">setCurrentInstallStatus</a></span>&#8203;(<a href="CurrentInstallStatus.html" title="class in org.opends.quicksetup">CurrentInstallStatus</a>&nbsp;installStatus)</code></th>
 <td class="colLast">
 <div class="block">Sets the current install status for this application.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setInstallation(org.opends.quicksetup.Installation)">setInstallation</a></span>&#8203;(<a href="Installation.html" title="class in org.opends.quicksetup">Installation</a>&nbsp;installation)</code></th>
 <td class="colLast">
 <div class="block">Sets the application's installation.</div>
 </td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNotifyListeners(boolean)">setNotifyListeners</a></span>&#8203;(boolean&nbsp;notifyListeners)</code></th>
 <td class="colLast">
@@ -618,7 +626,7 @@ implements <a href="event/ProgressNotifier.html" title="interface in org.opends.
  received.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProgressMessageFormatter(org.opends.quicksetup.util.ProgressMessageFormatter)">setProgressMessageFormatter</a></span>&#8203;(<a href="util/ProgressMessageFormatter.html" title="interface in org.opends.quicksetup.util">ProgressMessageFormatter</a>&nbsp;formatter)</code></th>
 <td class="colLast">
@@ -626,14 +634,14 @@ implements <a href="event/ProgressNotifier.html" title="interface in org.opends.
  to format progress messages.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTempLogFile(org.opends.quicksetup.TempLogFile)">setTempLogFile</a></span>&#8203;(<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;tempLogFile)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTempLogFile(java.util.function.Supplier)">setTempLogFile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile)</code></th>
 <td class="colLast">
-<div class="block">Sets the temporary log file where messages will be logged.</div>
+<div class="block">Sets where the temporary log file of this application comes from, without creating it.</div>
 </td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setUserData(org.opends.quicksetup.UserData)">setUserData</a></span>&#8203;(<a href="UserData.html" title="class in org.opends.quicksetup">UserData</a>&nbsp;userData)</code></th>
 <td class="colLast">
@@ -698,7 +706,10 @@ implements <a href="event/ProgressNotifier.html" title="interface in org.opends.
 <li class="blockList">
 <h4>tempLogFile</h4>
 <pre>protected&nbsp;<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a> tempLogFile</pre>
-<div class="block">Temporary log file where messages will be logged.</div>
+<div class="block">Temporary log file where messages will be logged, once <a href="#openTempLogFile()"><code>openTempLogFile()</code></a> has
+ asked for it. It stays <code>null</code> until then: creating it costs a file - and the
+ directory it lives in - that nothing removes unless the operation succeeds, so the roads
+ which attempt nothing must not create one (issue #1030).</div>
 </li>
 </ul>
 </li>
@@ -1523,17 +1534,46 @@ implements <a href="event/ProgressNotifier.html" title="interface in org.opends.
 </dl>
 </li>
 </ul>
-<a id="setTempLogFile(org.opends.quicksetup.TempLogFile)">
+<a id="setTempLogFile(java.util.function.Supplier)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTempLogFile</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setTempLogFile&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile)</pre>
+<div class="block">Sets where the temporary log file of this application comes from, without creating it.
+ <p>
+ The wizard and the CLI hand the supplier over as they start: the file itself is created by
+ <a href="#openTempLogFile()"><code>openTempLogFile()</code></a>, on the road that runs the operation, so that a run which does
+ nothing - a quit at any step of the wizard, a server which turns out to be installed
+ already - leaves no log behind (issue #1030).
+ <p>
+ There is deliberately no setter taking the file itself: a caller holding a supplier could
+ then resolve it on the spot, and the log would be created before anything is attempted
+ again.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tempLogFile</code> - supplies the temporary log file where messages will be logged.</dd>
+</dl>
+</li>
+</ul>
+<a id="openTempLogFile()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setTempLogFile</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setTempLogFile&#8203;(<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;tempLogFile)</pre>
-<div class="block">Sets the temporary log file where messages will be logged.</div>
+<h4>openTempLogFile</h4>
+<pre class="methodSignature">protected&nbsp;<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;openTempLogFile()</pre>
+<div class="block">Creates the temporary log file of this application, unless it has one already.
+ <p>
+ Called where the operation begins and not before: from that point on the log is worth
+ keeping, because there is something which can fail and be reported.
+ <p>
+ An application nobody handed a supplier to has no log of its own: the command line
+ uninstaller is built that way, and its launcher creates the log before running it.</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tempLogFile</code> - temporary log file where messages will be logged.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the temporary log file of this application, or <code>null</code> if it was given none.</dd>
 </dl>
 </li>
 </ul>

@@ -250,7 +250,7 @@ implements <a href="../event/ButtonActionListener.html" title="interface in org.
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initialize(org.opends.quicksetup.TempLogFile,java.lang.String%5B%5D)">initialize</a></span>&#8203;(<a href="../TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;tempLogFile,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initialize(java.util.function.Supplier,java.lang.String%5B%5D)">initialize</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="../TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile,
           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
 <td class="colLast">
 <div class="block">This method creates the install/uninstall dialogs and to check the current
@@ -330,13 +330,13 @@ implements <a href="../event/ButtonActionListener.html" title="interface in org.
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="initialize(org.opends.quicksetup.TempLogFile,java.lang.String[])">
+<a id="initialize(java.util.function.Supplier,java.lang.String[])">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>initialize</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;initialize&#8203;(<a href="../TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;tempLogFile,
+<pre class="methodSignature">public&nbsp;void&nbsp;initialize&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;<a href="../TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&gt;&nbsp;tempLogFile,
                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</pre>
 <div class="block">This method creates the install/uninstall dialogs and to check the current
  install status. This method must be called outside the event thread because
@@ -344,7 +344,9 @@ implements <a href="../event/ButtonActionListener.html" title="interface in org.
  blocked.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tempLogFile</code> - temporary log file where messages will be logged.</dd>
+<dd><code>tempLogFile</code> - supplies the temporary log file where messages will be logged. The wizard does
+          not create it: the application does, when it starts the operation, so that a
+          wizard the user quits leaves no log behind (issue #1030).</dd>
 <dd><code>args</code> - for the moment this parameter is not used but we keep it in order
           to (in case of need) pass parameters through the command line.</dd>
 </dl>

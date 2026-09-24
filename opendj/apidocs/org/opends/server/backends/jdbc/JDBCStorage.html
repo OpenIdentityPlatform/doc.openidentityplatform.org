@@ -512,13 +512,18 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  better than never returning. It is bounded twice - by <code>MAX_RETRIES</code> attempts and by the
  <code>RETRY_WINDOW_NANOS</code> wall-clock window - because an attempt is not guaranteed to be short: a conflict
  an engine reports only after its own lock wait timeout would otherwise multiply that wait by the attempt
- count. The window alone is not enough either, in the other direction: it is shorter than the wait that
- precedes a conflict the engine reports promptly, so measured against such a conflict it does not bound that
- wait but only leaves the operation with no replay at all, which is what master did with the deadlock of
- issue #903. One replay is therefore granted to a prompt conflict whatever the clock says; see
- <code>grantedPastTheWindow(int, long, org.opends.server.backends.jdbc.JDBCStorage.Conflict)</code>. The window is checked between attempts, so an attempt already running is
- never interrupted: a conflicted operation holds its caller for the window plus one attempt, and a prompt
- conflict for two attempts when that is longer.
+ count. The window is checked between attempts, so an attempt already running is never interrupted: a
+ conflicted operation holds its caller for the window plus one attempt.
+ <p>
+ What makes those two bounds enough is that the attempt itself is bounded: the transaction runs under
+ <code>ROW_LOCK_TIMEOUT_PROPERTY</code>, armed on the session here and taken off again before the connection is
+ released, so the wait ahead of a conflict ends inside the window rather than outlasting it (#915). Where
+ nothing bounds the attempt - oracle, which has no such setting, and a deployment that turns the property off
+ - the window is shorter than the wait that precedes a conflict the engine reports promptly, so measured
+ against such a conflict it does not bound that wait but only leaves the operation with no replay at all,
+ which is what master did with the deadlock of issue #903. One replay is therefore granted to a prompt
+ conflict whatever the clock says; see <code>grantedPastTheWindow(int, long, org.opends.server.backends.jdbc.JDBCStorage.Conflict)</code>. Such a conflict holds its caller for
+ two attempts when that is longer than the window plus one.
  <p>
  Only the operation itself is replayed: a failure of <code>getConnection()</code> or of the implicit
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Connection.html?is-external=true#close()" title="class or interface in java.sql" class="externalLink"><code>Connection.close()</code></a> - which returns the connection to the pool after a rollback - leaves the loop, so
@@ -529,7 +534,7 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  connection handed out unvalidated and found dead costs an attempt rather than the operation, and a write of
  the replication replay - which records a failed operation as applied and advances the server state past it,
  see #889 - never sees it. Only while nothing of the attempt may have been committed yet, though: see
- <code>replayReason(Conflict, Throwable, boolean, boolean, boolean)</code>.</div>
+ <code>replayReason(org.opends.server.backends.jdbc.JDBCStorage.Conflict, java.lang.Throwable, boolean, boolean, boolean, org.opends.server.backends.jdbc.JDBCStorage.Dialect, org.opends.server.backends.jdbc.JDBCStorage.ArmedLockBound)</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../pluggable/spi/Storage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write</a></code>&nbsp;in interface&nbsp;<code><a href="../pluggable/spi/Storage.html" title="interface in org.opends.server.backends.pluggable.spi">Storage</a></code></dd>

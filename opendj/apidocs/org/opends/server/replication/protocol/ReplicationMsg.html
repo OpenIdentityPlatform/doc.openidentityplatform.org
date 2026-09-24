@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":6};
+var data = {"i0":9,"i1":6,"i2":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -228,6 +228,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Serializes the PDU using the provided replication protocol version.</div>
 </td>
 </tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEncodableFor(short)">isEncodableFor</a></span>&#8203;(short&nbsp;protocolVersion)</code></th>
+<td class="colLast">
+<div class="block">Whether this message has an encoding for a peer which negotiated the
+ provided replication protocol version.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -313,6 +321,29 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The encoded PDU, or <code>null</code> if the message isn't supported
           in that protocol version.</dd>
+</dl>
+</li>
+</ul>
+<a id="isEncodableFor(short)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isEncodableFor</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isEncodableFor&#8203;(short&nbsp;protocolVersion)</pre>
+<div class="block">Whether this message has an encoding for a peer which negotiated the
+ provided replication protocol version.
+ <p>
+ A message which has none is dropped by <a href="Session.html#publish(org.opends.server.replication.protocol.ReplicationMsg)"><code>Session.publish(ReplicationMsg)</code></a>
+ - its <a href="#getBytes(short)"><code>getBytes(short)</code></a> returns <code>null</code> - with nothing on
+ the wire and nothing in the log, so a caller which goes on to report what
+ the peer was told must ask this before it publishes.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>protocolVersion</code> - The protocol version negotiated with the peer.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if this message can be encoded for that version,
+         <code>false</code> if it has no encoding for it at all.</dd>
 </dl>
 </li>
 </ul>

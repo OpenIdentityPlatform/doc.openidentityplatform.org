@@ -24962,6 +24962,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Disables OpenDJ to run as a windows service.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#disableServiceUnlessImportInProgress()">disableServiceUnlessImportInProgress()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Stops the Replication Service the way <a href="org/opends/server/replication/service/ReplicationDomain.html#disableService()"><code>ReplicationDomain.disableService()</code></a> does, unless a total
+ update into this replica owns the session.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/types/DirectoryEnvironmentConfig.html#disableSynchronization()">disableSynchronization()</a></span> - Method in class org.opends.server.types.<a href="org/opends/server/types/DirectoryEnvironmentConfig.html" title="class in org.opends.server.types">DirectoryEnvironmentConfig</a></dt>
 <dd>
 <div class="block">Indicates whether the Directory Server startup process should
@@ -36109,6 +36114,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_NO_SUCCESS_START_FROM_SERVERS">ERR_INIT_NO_SUCCESS_START_FROM_SERVERS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">The following servers did not acknowledge initialization in the expected time for domain %s.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_REJECTED_SESSION_STOPPING">ERR_INIT_REJECTED_SESSION_STOPPING</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">The total update of domain "%s" was refused by directory server %d: its session to the replication server is being stopped, and the entries would have been streamed over that session.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_RS_DISCONNECTION_DURING_EXPORT">ERR_INIT_RS_DISCONNECTION_DURING_EXPORT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
@@ -80008,6 +80017,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Retrieves the set of templates defined in this template file.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Launcher.html#getTempLogFile()">getTempLogFile()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/Launcher.html" title="class in org.opends.quicksetup">Launcher</a></dt>
+<dd>
+<div class="block">The temporary log file of this launcher, created the first time it is asked for.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/Installation.html#getTemporaryDirectory()">getTemporaryDirectory()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/Installation.html" title="class in org.opends.quicksetup">Installation</a></dt>
 <dd>
 <div class="block">Gets the directory used to store files temporarily.</div>
@@ -84131,6 +84144,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns whether the provided attribute has password syntax.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/server/ReplicationServerDomain.html#hasPeerWhichCanReceiveReplicaOfflineMsgs()">hasPeerWhichCanReceiveReplicaOfflineMsgs()</a></span> - Method in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/ReplicationServerDomain.html" title="class in org.opends.server.replication.server">ReplicationServerDomain</a></dt>
+<dd>
+<div class="block">Whether any connected peer replication server can be forwarded a
+ <a href="org/opends/server/replication/protocol/ReplicaOfflineMsg.html" title="class in org.opends.server.replication.protocol"><code>ReplicaOfflineMsg</code></a>: the message has no encoding below replication protocol version 8,
+ so a peer which negotiated an older one is nobody to wait for - the writer serving it drops
+ the message instead of publishing it.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/api/ClientConnection.html#hasPersistentSearch(int)">hasPersistentSearch(int)</a></span> - Method in class org.opends.server.api.<a href="org/opends/server/api/ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a></dt>
 <dd>
 <div class="block">Indicates whether a persistent search is registered on this connection for the provided message
@@ -84314,6 +84334,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns <code>true</code> if this control is using a target offset, or
  <code>false</code> if this control is using a target assertion.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Launcher.html#hasTempLogFile()">hasTempLogFile()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/Launcher.html" title="class in org.opends.quicksetup">Launcher</a></dt>
+<dd>
+<div class="block">Whether there is a log to name, without creating one to answer.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/AckMsg.html#hasTimeout()">hasTimeout()</a></span> - Method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/AckMsg.html" title="class in org.opends.server.replication.protocol">AckMsg</a></dt>
 <dd>
@@ -93807,6 +93831,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Loading...</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_GENERAL_LOG_IN_ERROR_MISSING">INFO_GENERAL_LOG_IN_ERROR_MISSING</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The log file %s of the failed operation is no longer there, so it cannot be provided with the error report.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_GENERAL_LOG_IN_ERROR_UNREADABLE">INFO_GENERAL_LOG_IN_ERROR_UNREADABLE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
+<dd>
+<div class="block">The log file %s of the failed operation could not be read: %s</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/cli/CliMessages.html#INFO_GENERAL_NO">INFO_GENERAL_NO</a></span> - Static variable in class com.forgerock.opendj.cli.<a href="com/forgerock/opendj/cli/CliMessages.html" title="class in com.forgerock.opendj.cli">CliMessages</a></dt>
 <dd>
 <div class="block">no</div>
@@ -98747,10 +98779,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">%n%nThe graphical Setup launch failed.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_SETUP_LAUNCHER_GUI_LAUNCHED_FAILED_DETAILS">INFO_SETUP_LAUNCHER_GUI_LAUNCHED_FAILED_DETAILS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
-<dd>
-<div class="block">%n%nThe graphical Setup launch failed.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/QuickSetupMessages.html#INFO_SETUP_LAUNCHER_LAUNCHING_GUI">INFO_SETUP_LAUNCHER_LAUNCHING_GUI</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/QuickSetupMessages.html" title="class in org.opends.messages">QuickSetupMessages</a></dt>
 <dd>
 <div class="block">Launching graphical setup...</div>
@@ -100632,6 +100660,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Initializes the configuration framework using the provided parent class
  loader and install and instance paths.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/ui/QuickSetup.html#initialize(java.util.function.Supplier,java.lang.String%5B%5D)">initialize(Supplier&lt;TempLogFile&gt;, String[])</a></span> - Method in class org.opends.quicksetup.ui.<a href="org/opends/quicksetup/ui/QuickSetup.html" title="class in org.opends.quicksetup.ui">QuickSetup</a></dt>
+<dd>
+<div class="block">This method creates the install/uninstall dialogs and to check the current
+ install status.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/config/conditions/Condition.html#initialize(org.forgerock.opendj.config.AbstractManagedObjectDefinition)">initialize(AbstractManagedObjectDefinition&lt;?, ?&gt;)</a></span> - Method in interface org.forgerock.opendj.config.conditions.<a href="org/forgerock/opendj/config/conditions/Condition.html" title="interface in org.forgerock.opendj.config.conditions">Condition</a></dt>
 <dd>
 <div class="block">Initializes this condition.</div>
@@ -100644,11 +100677,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/config/conditions/ORCondition.html#initialize(org.forgerock.opendj.config.AbstractManagedObjectDefinition)">initialize(AbstractManagedObjectDefinition&lt;?, ?&gt;)</a></span> - Method in class org.forgerock.opendj.config.conditions.<a href="org/forgerock/opendj/config/conditions/ORCondition.html" title="class in org.forgerock.opendj.config.conditions">ORCondition</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/opends/quicksetup/ui/QuickSetup.html#initialize(org.opends.quicksetup.TempLogFile,java.lang.String%5B%5D)">initialize(TempLogFile, String[])</a></span> - Method in class org.opends.quicksetup.ui.<a href="org/opends/quicksetup/ui/QuickSetup.html" title="class in org.opends.quicksetup.ui">QuickSetup</a></dt>
-<dd>
-<div class="block">This method creates the install/uninstall dialogs and to check the current
- install status.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/schema/SchemaHandler.html#initialize(org.opends.server.core.ServerContext)">initialize(ServerContext)</a></span> - Method in class org.opends.server.schema.<a href="org/opends/server/schema/SchemaHandler.html" title="class in org.opends.server.schema">SchemaHandler</a></dt>
 <dd>
 <div class="block">Initializes this schema handler.</div>
@@ -104224,6 +104252,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Check if the domain is connected to a ReplicationServer.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/server/ReplicationServerDomain.html#isConnectedToServerAt(org.opends.server.types.HostPort)">isConnectedToServerAt(HostPort)</a></span> - Method in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/ReplicationServerDomain.html" title="class in org.opends.server.replication.server">ReplicationServerDomain</a></dt>
+<dd>
+<div class="block">Returns whether this domain already holds a session with the replication
+ server configured at the provided address.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/browser/LDAPConnectionPool.html#isConnectionRegistered(org.opends.admin.ads.util.ConnectionWrapper)">isConnectionRegistered(ConnectionWrapper)</a></span> - Method in class org.opends.guitools.controlpanel.browser.<a href="org/opends/guitools/controlpanel/browser/LDAPConnectionPool.html" title="class in org.opends.guitools.controlpanel.browser">LDAPConnectionPool</a></dt>
 <dd>
 <div class="block">Returns whether the connection passed is registered in the connection pool.</div>
@@ -104947,6 +104980,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns whether the user provided subcommand is the enable replication
  or not.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/ReplicaOfflineMsg.html#isEncodableFor(short)">isEncodableFor(short)</a></span> - Method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/ReplicaOfflineMsg.html" title="class in org.opends.server.replication.protocol">ReplicaOfflineMsg</a></dt>
+<dd>
+<div class="block">Whether this message has an encoding for a peer which negotiated the
+ provided replication protocol version.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/ReplicationMsg.html#isEncodableFor(short)">isEncodableFor(short)</a></span> - Method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a></dt>
+<dd>
+<div class="block">Whether this message has an encoding for a peer which negotiated the
+ provided replication protocol version.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/schema/AuthPasswordSyntax.html#isEncoded(org.forgerock.opendj.ldap.ByteSequence)">isEncoded(ByteSequence)</a></span> - Static method in class org.opends.server.schema.<a href="org/opends/server/schema/AuthPasswordSyntax.html" title="class in org.opends.server.schema">AuthPasswordSyntax</a></dt>
 <dd>
@@ -106379,6 +106422,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Returns <code>true</code> if this item's value should be surrounded by quotes
  during serialization.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/TempLogFile.html#isReadable()">isReadable()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></dt>
+<dd>
+<div class="block">Return <code>true</code> if the temp log file is still on disk and can be read.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/snmp/DsApplIfOpsEntryMeta.html#isReadable(long)">isReadable(long)</a></span> - Method in class org.opends.server.snmp.<a href="org/opends/server/snmp/DsApplIfOpsEntryMeta.html" title="class in org.opends.server.snmp">DsApplIfOpsEntryMeta</a></dt>
 <dd>
 <div class="block">Returns true if "arc" identifies a readable scalar object.</div>
@@ -107362,6 +107409,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Indicates whether this attribute type is a super-type of the
  provided attribute type.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/ReplicaOfflineMsg.html#isSupportedBy(short)">isSupportedBy(short)</a></span> - Static method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/ReplicaOfflineMsg.html" title="class in org.opends.server.replication.protocol">ReplicaOfflineMsg</a></dt>
+<dd>
+<div class="block">Whether a peer which negotiated the provided replication protocol version
+ can be sent this message at all.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/core/DirectoryServer.html#isSupportedControl(java.lang.String)">isSupportedControl(String)</a></span> - Static method in class org.opends.server.core.<a href="org/opends/server/core/DirectoryServer.html" title="class in org.opends.server.core">DirectoryServer</a></dt>
 <dd>
@@ -108812,6 +108864,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/Launcher.html#%3Cinit%3E(java.lang.String%5B%5D,java.lang.String)">Launcher(String[], String)</a></span> - Constructor for class org.opends.quicksetup.<a href="org/opends/quicksetup/Launcher.html" title="class in org.opends.quicksetup">Launcher</a></dt>
 <dd>
 <div class="block">Creates a Launcher.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Launcher.html#%3Cinit%3E(java.lang.String%5B%5D,java.lang.String,java.io.File)">Launcher(String[], String, File)</a></span> - Constructor for class org.opends.quicksetup.<a href="org/opends/quicksetup/Launcher.html" title="class in org.opends.quicksetup">Launcher</a></dt>
+<dd>
+<div class="block">Creates a Launcher whose temporary log file lives in the given directory.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/tools/ConfigureWindowsService.html#LAUNCHER_OPTION">LAUNCHER_OPTION</a></span> - Static variable in class org.opends.server.tools.<a href="org/opends/server/tools/ConfigureWindowsService.html" title="class in org.opends.server.tools">ConfigureWindowsService</a></dt>
 <dd>
@@ -111496,6 +111552,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Creates this log rotation policy manager.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Installation.html#LOGS_PATH_RELATIVE">LOGS_PATH_RELATIVE</a></span> - Static variable in class org.opends.quicksetup.<a href="org/opends/quicksetup/Installation.html" title="class in org.opends.quicksetup">Installation</a></dt>
+<dd>
+<div class="block">The relative path where the log files are.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/loggers/AccessLogger.html#logSearchRequest(org.opends.server.core.SearchOperation)">logSearchRequest(SearchOperation)</a></span> - Static method in class org.opends.server.loggers.<a href="org/opends/server/loggers/AccessLogger.html" title="class in org.opends.server.loggers">AccessLogger</a></dt>
 <dd>
 <div class="block">Writes a message to the access logger with information about the search
@@ -112004,7 +112064,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Parses the command-line arguments, connects to the server, and performs the
  appropriate processing.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/quicksetup/SplashScreen.html#main(org.opends.quicksetup.TempLogFile,java.lang.String%5B%5D)">main(TempLogFile, String[])</a></span> - Static method in class org.opends.quicksetup.<a href="org/opends/quicksetup/SplashScreen.html" title="class in org.opends.quicksetup">SplashScreen</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/SplashScreen.html#main(java.util.function.Supplier,java.lang.String%5B%5D)">main(Supplier&lt;TempLogFile&gt;, String[])</a></span> - Static method in class org.opends.quicksetup.<a href="org/opends/quicksetup/SplashScreen.html" title="class in org.opends.quicksetup">SplashScreen</a></dt>
 <dd>
 <div class="block">The main method for this class.</div>
 </dd>
@@ -112040,12 +112100,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Parses the provided command-line arguments and uses that information to run
  the status tool.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/tools/InstallDS.html#mainCLI(java.lang.String%5B%5D,java.io.OutputStream,java.io.OutputStream,java.util.function.Supplier)">mainCLI(String[], OutputStream, OutputStream, Supplier&lt;TempLogFile&gt;)</a></span> - Static method in class org.opends.server.tools.<a href="org/opends/server/tools/InstallDS.html" title="class in org.opends.server.tools">InstallDS</a></dt>
+<dd>
+<div class="block">Parses the provided command-line arguments and uses that information to run
+ the setup tool.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/tools/InstallDS.html#mainCLI(java.lang.String%5B%5D,java.io.OutputStream,java.io.OutputStream,org.opends.quicksetup.TempLogFile)">mainCLI(String[], OutputStream, OutputStream, TempLogFile)</a></span> - Static method in class org.opends.server.tools.<a href="org/opends/server/tools/InstallDS.html" title="class in org.opends.server.tools">InstallDS</a></dt>
 <dd>
 <div class="block">Parses the provided command-line arguments and uses that information to run
  the setup tool.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/tools/InstallDS.html#mainCLI(java.lang.String%5B%5D,org.opends.quicksetup.TempLogFile)">mainCLI(String[], TempLogFile)</a></span> - Static method in class org.opends.server.tools.<a href="org/opends/server/tools/InstallDS.html" title="class in org.opends.server.tools">InstallDS</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/server/tools/InstallDS.html#mainCLI(java.lang.String%5B%5D,java.util.function.Supplier)">mainCLI(String[], Supplier&lt;TempLogFile&gt;)</a></span> - Static method in class org.opends.server.tools.<a href="org/opends/server/tools/InstallDS.html" title="class in org.opends.server.tools">InstallDS</a></dt>
 <dd>
 <div class="block">Parses the provided command-line arguments and uses that information to run
  the setup tool.</div>
@@ -115553,6 +115618,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/TempLogFile.html#newTempLogFile(java.lang.String)">newTempLogFile(String)</a></span> - Static method in class org.opends.quicksetup.<a href="org/opends/quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></dt>
 <dd>
 <div class="block">Creates a new temporary log file.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/TempLogFile.html#newTempLogFile(java.lang.String,java.io.File)">newTempLogFile(String, File)</a></span> - Static method in class org.opends.quicksetup.<a href="org/opends/quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></dt>
+<dd>
+<div class="block">Creates a new temporary log file in the given directory.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/api/DirectoryThread.Factory.html#newThread(java.lang.Runnable)">newThread(Runnable)</a></span> - Method in class org.opends.server.api.<a href="org/opends/server/api/DirectoryThread.Factory.html" title="class in org.opends.server.api">DirectoryThread.Factory</a></dt>
 <dd>&nbsp;</dd>
@@ -119419,6 +119488,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">This file contains localizable message descriptors having the resource
  name <code>org.forgerock.openidm.accountchange.openidm-account-status-notification-handler</code>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Application.html#openTempLogFile()">openTempLogFile()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/Application.html" title="class in org.opends.quicksetup">Application</a></dt>
+<dd>
+<div class="block">Creates the temporary log file of this application, unless it has one already.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pluggable/spi/WriteableTransaction.html#openTree(org.opends.server.backends.pluggable.spi.TreeName,boolean)">openTree(TreeName, boolean)</a></span> - Method in interface org.opends.server.backends.pluggable.spi.<a href="org/opends/server/backends/pluggable/spi/WriteableTransaction.html" title="interface in org.opends.server.backends.pluggable.spi">WriteableTransaction</a></dt>
 <dd>
@@ -125577,6 +125650,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Reads configuration and monitoring information using the provided
  connection.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/TempLogFile.html#readContents()">readContents()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></dt>
+<dd>
+<div class="block">Reads the whole temp log file.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/protocols/ldap/LDAPReader.html#readControl(org.forgerock.opendj.io.ASN1Reader)">readControl(ASN1Reader)</a></span> - Static method in class org.opends.server.protocols.ldap.<a href="org/opends/server/protocols/ldap/LDAPReader.html" title="class in org.opends.server.protocols.ldap">LDAPReader</a></dt>
 <dd>
@@ -136976,6 +137053,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the "ignore-white-space" property.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#setImportClaimHook(java.lang.Runnable)">setImportClaimHook(Runnable)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Sets what the listener thread runs between the <code>InitializeTargetMsg</code> it took off
+ the session and its claim of the import context - or, for a total update this replica
+ asked for, its read of the context the request claimed.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/PluggableBackendCfgClient.html#setImportOffheapMemorySize(java.lang.Long)">setImportOffheapMemorySize(Long)</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/PluggableBackendCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">PluggableBackendCfgClient</a></dt>
 <dd>
 <div class="block">Sets the "import-offheap-memory-size" property.</div>
@@ -141249,6 +141332,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the information of an LDAP server.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#setServiceStopHook(java.lang.Runnable)">setServiceStopHook(Runnable)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Sets what <a href="org/opends/server/replication/service/ReplicationDomain.html#disableService()"><code>ReplicationDomain.disableService()</code></a> runs, under its locks, before it stops the broker.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/cli/ArgumentParser.html#setShortToolDescription(org.forgerock.i18n.LocalizableMessage)">setShortToolDescription(LocalizableMessage)</a></span> - Method in class com.forgerock.opendj.cli.<a href="com/forgerock/opendj/cli/ArgumentParser.html" title="class in com.forgerock.opendj.cli">ArgumentParser</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/cli/ToolRefDocContainer.html#setShortToolDescription(org.forgerock.i18n.LocalizableMessage)">setShortToolDescription(LocalizableMessage)</a></span> - Method in interface com.forgerock.opendj.cli.<a href="com/forgerock/opendj/cli/ToolRefDocContainer.html" title="interface in com.forgerock.opendj.cli">ToolRefDocContainer</a></dt>
@@ -141736,9 +141823,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the object describing the schedule of the task.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Application.html#setTempLogFile(org.opends.quicksetup.TempLogFile)">setTempLogFile(TempLogFile)</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/Application.html" title="class in org.opends.quicksetup">Application</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Application.html#setTempLogFile(java.util.function.Supplier)">setTempLogFile(Supplier&lt;TempLogFile&gt;)</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/Application.html" title="class in org.opends.quicksetup">Application</a></dt>
 <dd>
-<div class="block">Sets the temporary log file where messages will be logged.</div>
+<div class="block">Sets where the temporary log file of this application comes from, without creating it.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/AttributeValuePasswordValidatorCfgClient.html#setTestReversedPassword(boolean)">setTestReversedPassword(boolean)</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/AttributeValuePasswordValidatorCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">AttributeValuePasswordValidatorCfgClient</a></dt>
 <dd>
@@ -146856,11 +146943,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/Application.html#tempLogFile">tempLogFile</a></span> - Variable in class org.opends.quicksetup.<a href="org/opends/quicksetup/Application.html" title="class in org.opends.quicksetup">Application</a></dt>
 <dd>
-<div class="block">Temporary log file where messages will be logged.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/opends/quicksetup/Launcher.html#tempLogFile">tempLogFile</a></span> - Variable in class org.opends.quicksetup.<a href="org/opends/quicksetup/Launcher.html" title="class in org.opends.quicksetup">Launcher</a></dt>
-<dd>
-<div class="block">The temporary log file which will be kept if an error occurs.</div>
+<div class="block">Temporary log file where messages will be logged, once <a href="org/opends/quicksetup/Application.html#openTempLogFile()"><code>Application.openTempLogFile()</code></a> has
+ asked for it.</div>
 </dd>
 <dt><a href="org/opends/quicksetup/TempLogFile.html" title="class in org.opends.quicksetup"><span class="typeNameLink">TempLogFile</span></a> - Class in <a href="org/opends/quicksetup/package-summary.html">org.opends.quicksetup</a></dt>
 <dd>
@@ -155578,6 +155662,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Replication server RS(%d) not sending update %s for domain "%s" to replication server RS(%d) at %s because its generation ID %d is different to the local generation ID %d</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_IGNORING_UPDATE_UNSUPPORTED_BY_PEER">WARN_IGNORING_UPDATE_UNSUPPORTED_BY_PEER</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server RS(%d) not sending update %s for domain "%s" to server %d at %s because the replication protocol version %d negotiated with it has no encoding for this message</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#WARN_INDEX_ADD_DISCARDED_LEFTOVER_TREES">WARN_INDEX_ADD_DISCARDED_LEFTOVER_TREES</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
 <div class="block">Index %s of backend base DN '%s' was created over the trees an index of the same name left behind, which no configuration named while this backend went on taking writes.</div>
@@ -156564,7 +156652,9 @@ the order they are declared.</div>
 <div class="block">Executes a write operation.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/jeb/JEStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.jeb.<a href="org/opends/server/backends/jeb/JEStorage.html" title="class in org.opends.server.backends.jeb">JEStorage</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Executes a write operation.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/backends/pdb/PDBStorage.html#write(org.opends.server.backends.pluggable.spi.WriteOperation)">write(WriteOperation)</a></span> - Method in class org.opends.server.backends.pdb.<a href="org/opends/server/backends/pdb/PDBStorage.html" title="class in org.opends.server.backends.pdb">PDBStorage</a></dt>
 <dd>
 <div class="block">Executes a write operation.</div>

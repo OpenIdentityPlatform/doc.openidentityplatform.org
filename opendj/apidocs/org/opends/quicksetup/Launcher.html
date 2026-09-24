@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":10,"i3":6,"i4":6,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":6};
+var data = {"i0":6,"i1":6,"i2":10,"i3":6,"i4":10,"i5":6,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -167,13 +167,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Arguments with which this launcher was invoked.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected <a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#tempLogFile">tempLogFile</a></span></code></th>
-<td class="colLast">
-<div class="block">The temporary log file which will be kept if an error occurs.</div>
-</td>
-</tr>
 </table>
 </li>
 </ul>
@@ -196,6 +189,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tempLogFilePrefix)</code></th>
 <td class="colLast">
 <div class="block">Creates a Launcher.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String%5B%5D,java.lang.String,java.io.File)">Launcher</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tempLogFilePrefix,
+        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a>&nbsp;tempLogFileDirectory)</code></th>
+<td class="colLast">
+<div class="block">Creates a Launcher whose temporary log file lives in the given directory.</div>
 </td>
 </tr>
 </table>
@@ -247,13 +248,27 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>protected <a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTempLogFile()">getTempLogFile</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The temporary log file of this launcher, created the first time it is asked for.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#guiLaunchFailed()">guiLaunchFailed</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Called if launching of the GUI failed.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasTempLogFile()">hasTempLogFile</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Whether there is a log to name, without creating one to answer.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isCli()">isCli</a></span>()</code></th>
 <td class="colLast">
@@ -262,7 +277,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  passed into the constructor.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isQuiet()">isQuiet</a></span>()</code></th>
 <td class="colLast">
@@ -270,21 +285,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  based on the content of the arguments passed into the constructor.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#launch()">launch</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The main method which is called by the command lines.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>protected int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#launchGui(java.lang.String%5B%5D)">launchGui</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
 <td class="colLast">
 <div class="block">Launches the graphical uninstall.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldPrintUsage()">shouldPrintUsage</a></span>()</code></th>
 <td class="colLast">
@@ -292,7 +307,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  based on the content of the arguments passed into the constructor.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldPrintVersion()">shouldPrintVersion</a></span>()</code></th>
 <td class="colLast">
@@ -300,7 +315,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  based on the content of the arguments passed into the constructor.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#willLaunchGui()">willLaunchGui</a></span>()</code></th>
 <td class="colLast">
@@ -334,21 +349,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="args">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>args</h4>
 <pre>protected final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[] args</pre>
 <div class="block">Arguments with which this launcher was invoked.</div>
-</li>
-</ul>
-<a id="tempLogFile">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>tempLogFile</h4>
-<pre>protected final&nbsp;<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a> tempLogFile</pre>
-<div class="block">The temporary log file which will be kept if an error occurs.</div>
 </li>
 </ul>
 </li>
@@ -364,7 +369,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="&lt;init&gt;(java.lang.String[],java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>Launcher</h4>
 <pre>public&nbsp;Launcher&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
@@ -374,6 +379,25 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - String[] of argument passes from the command line</dd>
 <dd><code>tempLogFilePrefix</code> - temporary log file path where messages will be logged</dd>
+</dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(java.lang.String[],java.lang.String,java.io.File)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>Launcher</h4>
+<pre>public&nbsp;Launcher&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;tempLogFilePrefix,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink">File</a>&nbsp;tempLogFileDirectory)</pre>
+<div class="block">Creates a Launcher whose temporary log file lives in the given directory.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - String[] of argument passes from the command line</dd>
+<dd><code>tempLogFilePrefix</code> - temporary log file path where messages will be logged</dd>
+<dd><code>tempLogFileDirectory</code> - the directory to create the temporary log file in, or <code>null</code> for the OS
+          temporary directory</dd>
 </dl>
 </li>
 </ul>
@@ -387,6 +411,41 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="getTempLogFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTempLogFile</h4>
+<pre class="methodSignature">protected&nbsp;<a href="TempLogFile.html" title="class in org.opends.quicksetup">TempLogFile</a>&nbsp;getTempLogFile()</pre>
+<div class="block">The temporary log file of this launcher, created the first time it is asked for.
+ <p>
+ Creating it costs a file - and, with a directory of the caller's choosing, the directory
+ as well - that nothing removes afterwards unless the operation succeeds. So it is created
+ on the first road that can fail an operation and not before: <code>--help</code>,
+ <code>--version</code>, a usage error and the other roads that attempt nothing leave no log
+ behind (issue #1030).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the temporary log file, creating it if this is the first call.</dd>
+</dl>
+</li>
+</ul>
+<a id="hasTempLogFile()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasTempLogFile</h4>
+<pre class="methodSignature">protected&nbsp;boolean&nbsp;hasTempLogFile()</pre>
+<div class="block">Whether there is a log to name, without creating one to answer.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if a temporary log file has been created and can be used to log
+         messages.</dd>
+</dl>
+</li>
+</ul>
 <a id="getArguments()">
 <!--   -->
 </a>
