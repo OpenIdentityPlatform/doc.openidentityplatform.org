@@ -925,10 +925,10 @@ implements <a href="../../../../forgerock/opendj/config/server/ConfigurationChan
  running it.
  <p>
  Only there for the tests, which have no other way to leave a request standing at a
- time of their choosing: the one a replay thread makes is made and run in one go, and
- the requests which stand across a span nothing runs them in - the domain disabled, or
- being imported into - are made in a window between a thread's read of the flag and the
- flag being set, which no test can hit on purpose.</div>
+ time of their choosing without a change released for it: the one a replay thread makes
+ on a domain whose session has no owner is made and run in one go, and one made under
+ an owner stands for a change which is listed, and which the owner forgets or the
+ checkpointer has delivered again.</div>
 </li>
 </ul>
 <a id="getConsecutiveSessionRestarts()">
