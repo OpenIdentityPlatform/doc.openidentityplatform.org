@@ -434,7 +434,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <h4>close</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;close()</pre>
 <div class="block">This method is called when the session with the remote must be closed.
- This object won't be used anymore after this method is called.</div>
+ This object won't be used anymore after this method is called.
+ <p>
+ A message which was published on this session but which its publisher thread had not sent yet
+ is sent here rather than dropped, within the budget of <code>DRAIN_BUDGET_MS</code>. See <code>sendWhatThePublisherLeftQueued()</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true#close()" title="class or interface in java.lang" class="externalLink">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang" class="externalLink">AutoCloseable</a></code></dd>

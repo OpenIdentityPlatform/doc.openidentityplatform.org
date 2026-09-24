@@ -9270,6 +9270,13 @@ Severity: ERROR
 +
 Message: The compressed schema cannot allocate a token for a new definition: the next one would be the id %s, and a definition is only ever loaded back under an id of at most %s. A token this high is only ever reached where a stored definition named an id no compressed schema hands out, so the storage holding it should be exported and imported again.
 
+[#log-ref-log-ref-ERR_CRYPTOMGR_KEY_WRAPPING_TRANSFORMATION_UNSUPPORTED_766]
+ID: 766::
+
+Severity: ERROR
++
+Message: This Java runtime does not provide the key wrapping transformation %s: %s. The key-wrapping-transformation property of the crypto manager must name a transformation which the runtime supports.
+
 --
 
 [#EXTENSION]
