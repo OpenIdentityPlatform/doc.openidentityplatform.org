@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -316,20 +316,29 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publish(org.opends.server.replication.protocol.ReplicationMsg,java.lang.Runnable)">publish</a></span>&#8203;(<a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;whenWritten)</code></th>
+<td class="colLast">
+<div class="block">Sends a replication message to the remote peer, and runs the provided callback once the
+ message has been written to the socket.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receive()">receive</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Attempt to receive a ReplicationMsg.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#run()">run</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Run method for the Session.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProtocolVersion(short)">setProtocolVersion</a></span>&#8203;(short&nbsp;version)</code></th>
 <td class="colLast">
@@ -337,21 +346,21 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  be used to record the version of the protocol that is currently used.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSoTimeout(int)">setSoTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Set a timeout value.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopEncryption()">stopEncryption</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Stop using the security layer, if there is any.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waitForStartup()">waitForStartup</a></span>()</code></th>
 <td class="colLast">
@@ -437,7 +446,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  This object won't be used anymore after this method is called.
  <p>
  A message which was published on this session but which its publisher thread had not sent yet
- is sent here rather than dropped, within the budget of <code>DRAIN_BUDGET_MS</code>. See <code>sendWhatThePublisherLeftQueued()</code>.</div>
+ is sent here rather than dropped, within the budget of <code>DRAIN_BUDGET_MS</code>, and its
+ callback runs here once it is written. See <code>sendWhatThePublisherLeftQueued()</code>. What the
+ close gives up on is not written, and the callbacks of those messages never run - see
+ <a href="#publish(org.opends.server.replication.protocol.ReplicationMsg,java.lang.Runnable)"><code>publish(ReplicationMsg, Runnable)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true#close()" title="class or interface in java.lang" class="externalLink">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang" class="externalLink">AutoCloseable</a></code></dd>
@@ -560,6 +572,40 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>msg</code> - The message to be sent.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - If an IO error occurred.</dd>
+</dl>
+</li>
+</ul>
+<a id="publish(org.opends.server.replication.protocol.ReplicationMsg,java.lang.Runnable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>publish</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;publish&#8203;(<a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg,
+                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;whenWritten)
+                throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
+<div class="block">Sends a replication message to the remote peer, and runs the provided callback once the
+ message has been written to the socket.
+ <p>
+ While the thread of this session runs, a message published is queued for it and written
+ later, so the return of this method says only that the message is queued. The callback is
+ the only word that the message has left this server: it runs once, on the thread which wrote
+ the message, after the write returned - the thread of the session, or the one closing it for
+ a message the close sends out of the queue - and never for a message which was not written,
+ which is what becomes of a message the write of which fails, and of what a close gives up on
+ (see <a href="#close()"><code>close()</code></a>). It must be short and must not block: the session writes nothing else
+ until it returns.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>msg</code> - The message to be sent.</dd>
+<dd><code>whenWritten</code> - What to run once the message has been written, or null.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether the message was written or queued to be written; false when it was neither,
+         because it has no encoding for the protocol version of the peer or because the
+         session is being closed - the callback then never runs. A message queued after a
+         close drained the queue is taken back, and counts as neither.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - If an IO error occurred.</dd>
 </dl>

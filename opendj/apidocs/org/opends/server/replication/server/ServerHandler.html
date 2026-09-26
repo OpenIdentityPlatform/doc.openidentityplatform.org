@@ -1682,7 +1682,14 @@ extends <a href="../../api/MonitorProvider.html" title="class in org.opends.serv
 <pre class="methodSignature">public&nbsp;<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;take()
                throws <a href="changelog/api/ChangelogException.html" title="class in org.opends.server.replication.server.changelog.api">ChangelogException</a></pre>
 <div class="block">Select the next update that must be sent to the server managed by this
- ServerHandler.</div>
+ ServerHandler.
+ <p>
+ The update comes with a permit of the send window of the session, taken
+ before the writer decides whether it is sent at all. The peer gives the
+ permit back for an update it receives, so the writer gives it back itself
+ for one it drops - see <code>releasePermitInSendWindow()</code> - and counts
+ an update as sent only once it publishes it - see
+ <code>countSentUpdate(UpdateMsg)</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the next update that must be sent to the server managed by this
