@@ -11649,6 +11649,27 @@ Severity: ERROR
 +
 Message: File %s specified in attribute ds-cfg-trust-store-pin-file of configuration entry %s should contain the PIN needed to access the LDAP trust manager, but this file is empty.
 
+[#log-ref-log-ref-ERR_FILE_KEYMANAGER_CANNOT_RELOAD_653]
+ID: 653::
+
+Severity: ERROR
++
+Message: The keystore file %s used by key manager provider %s has changed but could not be loaded again: %s. The provider keeps using what it last loaded from it.
+
+[#log-ref-log-ref-ERR_FILE_TRUSTMANAGER_CANNOT_RELOAD_655]
+ID: 655::
+
+Severity: ERROR
++
+Message: The trust store file %s used by trust manager provider %s has changed but could not be loaded again: %s. The provider keeps using what it last loaded from it.
+
+[#log-ref-log-ref-ERR_FILE_KEYMANAGER_NO_KNOWN_KEY_ALIAS_656]
+ID: 656::
+
+Severity: ERROR
++
+Message: The keystore file %s holds no private key under any of the aliases %s it held private keys under before.
+
 --
 
 [#LOGGER]

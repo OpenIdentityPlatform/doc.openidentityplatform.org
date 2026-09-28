@@ -2246,26 +2246,33 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg1&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART">WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART</a></span></code></th>
+<td class="colLast">
+<div class="block">The configuration applied to '%s' leaves it without a key it can present.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg1&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WARN_LDAP_CLIENT_CANNOT_ENQUEUE">WARN_LDAP_CLIENT_CANNOT_ENQUEUE</a></span></code></th>
 <td class="colLast">
 <div class="block">The Directory Server encountered an unexpected error while attempting to add the client request to the work queue: %s</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg1&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Number.html?is-external=true" title="class or interface in java.lang" class="externalLink">Number</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WARN_LDAP_CLIENT_DUPLICATE_MESSAGE_ID">WARN_LDAP_CLIENT_DUPLICATE_MESSAGE_ID</a></span></code></th>
 <td class="colLast">
 <div class="block">The Directory Server is already processing another request on the same client connection with the same message ID of %d</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg2&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WARN_LDIF_CONNHANDLER_LDIF_DIRECTORY_MISSING">WARN_LDIF_CONNHANDLER_LDIF_DIRECTORY_MISSING</a></span></code></th>
 <td class="colLast">
 <div class="block">The directory %s referenced by the LDIF connection handler defined in configuration entry %s does not exist.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg2&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WARN_LDIF_CONNHANDLER_LDIF_DIRECTORY_NOT_DIRECTORY">WARN_LDIF_CONNHANDLER_LDIF_DIRECTORY_NOT_DIRECTORY</a></span></code></th>
 <td class="colLast">
@@ -5335,11 +5342,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="ERR_CONNHANDLER_TIMEOUT_WAITING_FOR_LISTENER">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>ERR_CONNHANDLER_TIMEOUT_WAITING_FOR_LISTENER</h4>
 <pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg2&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Number.html?is-external=true" title="class or interface in java.lang" class="externalLink">Number</a>&gt; ERR_CONNHANDLER_TIMEOUT_WAITING_FOR_LISTENER</pre>
 <div class="block">The %s did not attempt to open its listen port within %d seconds. The Directory Server will stop waiting for it and continue, but that connection handler may never accept connections</div>
+</li>
+</ul>
+<a id="WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART</h4>
+<pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg1&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt; WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART</pre>
+<div class="block">The configuration applied to '%s' leaves it without a key it can present. Its SSL settings take effect only when it restarts, and it will not start with this configuration. Fix the keystore or the configuration before it is restarted</div>
 </li>
 </ul>
 </li>

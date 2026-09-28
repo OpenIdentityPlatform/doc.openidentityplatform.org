@@ -338,9 +338,12 @@ implements <a href="../../../forgerock/opendj/config/server/ConfigurationChangeL
 <h4>getTrustManagers</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/net/ssl/TrustManager.html?is-external=true" title="class or interface in javax.net.ssl" class="externalLink">TrustManager</a>[]&nbsp;getTrustManagers()
                                 throws <a href="../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../api/TrustManagerProvider.html#getTrustManagers()">TrustManagerProvider</a></code></span></div>
 <div class="block">Retrieves a set of <code>TrustManager</code> objects that may be used
- for interactions requiring access to a trust manager.</div>
+ for interactions requiring access to a trust manager.
+ <p>
+ The trust manager returned reads the trust store file again when a certificate is checked
+ after the file, or the PIN file, has changed, so that a renewed trust store is used without
+ restarting the server or the component using it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../api/TrustManagerProvider.html#getTrustManagers()">getTrustManagers</a></code>&nbsp;in class&nbsp;<code><a href="../api/TrustManagerProvider.html" title="class in org.opends.server.api">TrustManagerProvider</a>&lt;<a href="../../../forgerock/opendj/server/config/server/FileBasedTrustManagerProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">FileBasedTrustManagerProviderCfg</a>&gt;</code></dd>

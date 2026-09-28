@@ -35691,9 +35691,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">An error occurred while trying to load the keystore contents from file %s: %s</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_KEYMANAGER_CANNOT_RELOAD">ERR_FILE_KEYMANAGER_CANNOT_RELOAD</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
+<dd>
+<div class="block">The keystore file %s used by key manager provider %s has changed but could not be loaded again: %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_KEYMANAGER_INVALID_TYPE">ERR_FILE_KEYMANAGER_INVALID_TYPE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>
 <div class="block">The keystore type %s specified in attribute ds-cfg-key-store-type of configuration entry %s is not valid: %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_KEYMANAGER_NO_KNOWN_KEY_ALIAS">ERR_FILE_KEYMANAGER_NO_KNOWN_KEY_ALIAS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
+<dd>
+<div class="block">The keystore file %s holds no private key under any of the aliases %s it held private keys under before</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_KEYMANAGER_NO_SUCH_FILE">ERR_FILE_KEYMANAGER_NO_SUCH_FILE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>
@@ -35734,6 +35742,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_TRUSTMANAGER_CANNOT_LOAD">ERR_FILE_TRUSTMANAGER_CANNOT_LOAD</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>
 <div class="block">An error occurred while trying to load the trust store contents from file %s: %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_TRUSTMANAGER_CANNOT_RELOAD">ERR_FILE_TRUSTMANAGER_CANNOT_RELOAD</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
+<dd>
+<div class="block">The trust store file %s used by trust manager provider %s has changed but could not be loaded again: %s.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#ERR_FILE_TRUSTMANAGER_INVALID_TYPE">ERR_FILE_TRUSTMANAGER_INVALID_TYPE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>
@@ -64923,7 +64935,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  interactions requiring access to a key manager.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/FileBasedKeyManagerProvider.html#getKeyManagers()">getKeyManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/FileBasedKeyManagerProvider.html" title="class in org.opends.server.extensions">FileBasedKeyManagerProvider</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retrieves a set of <code>KeyManager</code> objects that may be used
+ for interactions requiring access to a key manager.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/LDAPKeyManagerProvider.html#getKeyManagers()">getKeyManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/LDAPKeyManagerProvider.html" title="class in org.opends.server.extensions">LDAPKeyManagerProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/NullKeyManagerProvider.html#getKeyManagers()">getKeyManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/NullKeyManagerProvider.html" title="class in org.opends.server.extensions">NullKeyManagerProvider</a></dt>
@@ -80834,7 +80849,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/BlindTrustManagerProvider.html#getTrustManagers()">getTrustManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/BlindTrustManagerProvider.html" title="class in org.opends.server.extensions">BlindTrustManagerProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/FileBasedTrustManagerProvider.html#getTrustManagers()">getTrustManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/FileBasedTrustManagerProvider.html" title="class in org.opends.server.extensions">FileBasedTrustManagerProvider</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retrieves a set of <code>TrustManager</code> objects that may be used
+ for interactions requiring access to a trust manager.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/LDAPTrustManagerProvider.html#getTrustManagers()">getTrustManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/LDAPTrustManagerProvider.html" title="class in org.opends.server.extensions">LDAPTrustManagerProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/extensions/PKCS11TrustManagerProvider.html#getTrustManagers()">getTrustManagers()</a></span> - Method in class org.opends.server.extensions.<a href="org/opends/server/extensions/PKCS11TrustManagerProvider.html" title="class in org.opends.server.extensions">PKCS11TrustManagerProvider</a></dt>
@@ -116529,6 +116547,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#NOTE_EXPORT_PROGRESS_REPORT">NOTE_EXPORT_PROGRESS_REPORT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
 <div class="block">Exported %d records and skipped %d (recent rate %.1f/sec)</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#NOTE_FILE_KEYMANAGER_RELOADED">NOTE_FILE_KEYMANAGER_RELOADED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
+<dd>
+<div class="block">The keystore file %s used by key manager provider %s has changed and was loaded again</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#NOTE_FILE_TRUSTMANAGER_RELOADED">NOTE_FILE_TRUSTMANAGER_RELOADED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
+<dd>
+<div class="block">The trust store file %s used by trust manager provider %s has changed and was loaded again</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#NOTE_FRACTIONAL_BAD_DATA_SET_NEED_RESYNC">NOTE_FRACTIONAL_BAD_DATA_SET_NEED_RESYNC</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
@@ -155476,6 +155502,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_CONNECTED_TO_SERVER_WITH_WRONG_GROUP_ID">WARN_CONNECTED_TO_SERVER_WITH_WRONG_GROUP_ID</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Connected to a replication server with wrong group id.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ProtocolMessages.html#WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART">WARN_CONNHANDLER_NO_KEY_UNTIL_RESTART</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ProtocolMessages.html" title="class in org.opends.messages">ProtocolMessages</a></dt>
+<dd>
+<div class="block">The configuration applied to '%s' leaves it without a key it can present.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_COULD_NOT_FIND_CHANGELOG">WARN_COULD_NOT_FIND_CHANGELOG</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>

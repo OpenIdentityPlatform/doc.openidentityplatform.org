@@ -369,9 +369,12 @@ implements <a href="../../../forgerock/opendj/config/server/ConfigurationChangeL
 <h4>getKeyManagers</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/net/ssl/KeyManager.html?is-external=true" title="class or interface in javax.net.ssl" class="externalLink">KeyManager</a>[]&nbsp;getKeyManagers()
                             throws <a href="../types/DirectoryException.html" title="class in org.opends.server.types">DirectoryException</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../api/KeyManagerProvider.html#getKeyManagers()">KeyManagerProvider</a></code></span></div>
 <div class="block">Retrieves a set of <code>KeyManager</code> objects that may be used
- for interactions requiring access to a key manager.</div>
+ for interactions requiring access to a key manager.
+ <p>
+ The key manager returned reads the key store file again when a handshake starts after the
+ file, or the PIN file, has changed, so that a renewed certificate is presented without
+ restarting the server or the component using it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../api/KeyManagerProvider.html#getKeyManagers()">getKeyManagers</a></code>&nbsp;in class&nbsp;<code><a href="../api/KeyManagerProvider.html" title="class in org.opends.server.api">KeyManagerProvider</a>&lt;<a href="../../../forgerock/opendj/server/config/server/FileBasedKeyManagerProviderCfg.html" title="interface in org.forgerock.opendj.server.config.server">FileBasedKeyManagerProviderCfg</a>&gt;</code></dd>
