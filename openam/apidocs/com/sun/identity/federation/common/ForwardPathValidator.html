@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9};
+var data = {"i0":9,"i1":9,"i2":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -172,6 +172,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#forwardTarget(java.lang.String)">forwardTarget</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
+<td class="colLast">
+<div class="block">The path to hand to a <code>RequestDispatcher</code> for <code>path</code>, or <code>null</code> when
+ <code>path</code> must not be dispatched to.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeForwardPath(java.lang.String)">isSafeForwardPath</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</code></th>
 <td class="colLast">
@@ -181,7 +189,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  delimiter escapes, and not under a reserved directory once collapsed.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeMetaAlias(java.lang.String)">isSafeMetaAlias</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias)</code></th>
 <td class="colLast">
@@ -229,6 +237,31 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>path</code> - a context-relative path, optionally with a query string</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the path is safe to pass to a request dispatcher</dd>
+</dl>
+</li>
+</ul>
+<a id="forwardTarget(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>forwardTarget</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;forwardTarget&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;path)</pre>
+<div class="block">The path to hand to a <code>RequestDispatcher</code> for <code>path</code>, or <code>null</code> when
+ <code>path</code> must not be dispatched to. The result is the form the container maps -
+ path parameters stripped and percent-escapes decoded once, <code>+</code> kept literal - with
+ the query string as it was given.
+ <p>
+ Beyond <a href="#isSafeForwardPath(java.lang.String)"><code>isSafeForwardPath(java.lang.String)</code></a> the dispatcher form is refused when it carries a
+ <code>WEB-INF</code> segment anywhere, not only at the root: no in-app path of the product
+ does. The decoded form is derived and re-checked here in the shape static analysis
+ recognises as a sanitised forward target, so the checks read as a repetition of what
+ <code>isSafeForwardPath</code> established.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path</code> - a context-relative path, optionally with a query string</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the path to dispatch to, or <code>null</code> if it is not a plain in-app path</dd>
 </dl>
 </li>
 </ul>
