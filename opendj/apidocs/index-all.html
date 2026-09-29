@@ -24755,7 +24755,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">A <code>DirectoryRMIServerSocketFactory</code> instance is used by the RMI
  runtime in order to obtain server sockets for RMI calls via SSL.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/protocols/jmx/DirectoryRMIServerSocketFactory.html#%3Cinit%3E(javax.net.ssl.SSLSocketFactory,boolean)">DirectoryRMIServerSocketFactory(SSLSocketFactory, boolean)</a></span> - Constructor for class org.opends.server.protocols.jmx.<a href="org/opends/server/protocols/jmx/DirectoryRMIServerSocketFactory.html" title="class in org.opends.server.protocols.jmx">DirectoryRMIServerSocketFactory</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/server/protocols/jmx/DirectoryRMIServerSocketFactory.html#%3Cinit%3E(javax.net.ssl.SSLSocketFactory,boolean,java.net.InetAddress)">DirectoryRMIServerSocketFactory(SSLSocketFactory, boolean, InetAddress)</a></span> - Constructor for class org.opends.server.protocols.jmx.<a href="org/opends/server/protocols/jmx/DirectoryRMIServerSocketFactory.html" title="class in org.opends.server.protocols.jmx">DirectoryRMIServerSocketFactory</a></dt>
 <dd>
 <div class="block">Constructs a new <code>DirectoryRMIServerSocketFactory</code> with the
  specified SSL socket configuration.</div>
@@ -65634,7 +65634,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/protocols/jmx/JmxConnectionHandler.html#getListenAddress()">getListenAddress()</a></span> - Method in class org.opends.server.protocols.jmx.<a href="org/opends/server/protocols/jmx/JmxConnectionHandler.html" title="class in org.opends.server.protocols.jmx">JmxConnectionHandler</a></dt>
 <dd>
-<div class="block">Get the JMX connection handler's listen address.</div>
+<div class="block">Get the JMX connection handler's listen address: the one it was
+ initialized with, until it restarts.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/meta/AdministrationConnectorCfgDefn.html#getListenAddressPropertyDefinition()">getListenAddressPropertyDefinition()</a></span> - Method in class org.forgerock.opendj.server.config.meta.<a href="org/forgerock/opendj/server/config/meta/AdministrationConnectorCfgDefn.html" title="class in org.forgerock.opendj.server.config.meta">AdministrationConnectorCfgDefn</a></dt>
 <dd>

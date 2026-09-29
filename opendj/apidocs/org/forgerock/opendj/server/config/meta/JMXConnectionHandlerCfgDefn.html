@@ -486,7 +486,15 @@ extends <a href="../../../config/ManagedObjectDefinition.html" title="class in o
  listen for connections from JMX clients.
  <p>
  If no value is provided, then the JMX Connection Handler listens
- on all interfaces.</div>
+ on all interfaces. The RMI stubs that JMX clients receive name the
+ host to connect to: with a specific address, the server sets the
+ java.rmi.server.hostname system property to that address, unless
+ the property is already set, for instance with
+ -Djava.rmi.server.hostname in the Java arguments of the server.
+ The property applies to every RMI object that the Java virtual
+ machine exports, including those of the platform JMX agent. With
+ several JMX connection handlers on different specific addresses,
+ the last one started sets it.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns the "listen-address" property definition.</dd>

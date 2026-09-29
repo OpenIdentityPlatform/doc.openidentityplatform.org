@@ -165,8 +165,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.rmi/
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(javax.net.ssl.SSLSocketFactory,boolean)">DirectoryRMIServerSocketFactory</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/net/ssl/SSLSocketFactory.html?is-external=true" title="class or interface in javax.net.ssl" class="externalLink">SSLSocketFactory</a>&nbsp;sslSocketFactory,
-                               boolean&nbsp;needClientCertificate)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(javax.net.ssl.SSLSocketFactory,boolean,java.net.InetAddress)">DirectoryRMIServerSocketFactory</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/net/ssl/SSLSocketFactory.html?is-external=true" title="class or interface in javax.net.ssl" class="externalLink">SSLSocketFactory</a>&nbsp;sslSocketFactory,
+                               boolean&nbsp;needClientCertificate,
+                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink">InetAddress</a>&nbsp;listenAddress)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new <code>DirectoryRMIServerSocketFactory</code> with the
  specified SSL socket configuration.</div>
@@ -247,14 +248,15 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.rmi/
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(javax.net.ssl.SSLSocketFactory,boolean)">
+<a id="&lt;init&gt;(javax.net.ssl.SSLSocketFactory,boolean,java.net.InetAddress)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DirectoryRMIServerSocketFactory</h4>
 <pre>public&nbsp;DirectoryRMIServerSocketFactory&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/net/ssl/SSLSocketFactory.html?is-external=true" title="class or interface in javax.net.ssl" class="externalLink">SSLSocketFactory</a>&nbsp;sslSocketFactory,
-                                       boolean&nbsp;needClientCertificate)</pre>
+                                       boolean&nbsp;needClientCertificate,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink">InetAddress</a>&nbsp;listenAddress)</pre>
 <div class="block">Constructs a new <code>DirectoryRMIServerSocketFactory</code> with the
  specified SSL socket configuration.</div>
 <dl>
@@ -264,6 +266,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.rmi/
             connections accepted by server sockets created by this
             factory; <code>false</code> to not require client
             authentication.</dd>
+<dd><code>listenAddress</code> - the address the server sockets created by this factory
+            listen on</dd>
 </dl>
 </li>
 </ul>
