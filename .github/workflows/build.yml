@@ -12,9 +12,10 @@
 #
 # Copyright 2026 3A Systems, LLC.
 
-# Builds the site for a pull request and reports Antora errors and broken links in the job summary.
-# Both are only reported for now: the content still has known errors, fixed in the product
-# repositories, so failing on them would fail every pull request (#25).
+# Builds the site for a pull request, reports Antora messages and broken links in the job summary,
+# and fails on an Antora error or a broken link that is not in the known lists of
+# .github/build-baseline: the content has known problems, fixed in the product repositories, which
+# would otherwise fail every pull request (#25).
 name: Build
 on:
   pull_request:
@@ -75,17 +76,26 @@ jobs:
         } >> "$GITHUB_STEP_SUMMARY"
     - name: Check links
       run: |
-        printf "## Links\n\n" >> "$GITHUB_STEP_SUMMARY"
         rc=0
         docker run --rm -v "$PWD/build/site:/site:ro" lycheeverse/lychee:0.24.2 \
-          --offline --no-progress --format markdown \
+          --offline --no-progress --format json \
           --root-dir /site --fallback-extensions html --index-files index.html \
           --exclude-path '/site/(openam|opendj|openidm|openig)/apidocs' \
           --exclude-path '/site/(openicf|commons)' \
-          '/site/**/*.html' >> "$GITHUB_STEP_SUMMARY" || rc=$?
+          '/site/**/*.html' > build/lychee.json || rc=$?
         # 2 means broken links were found; anything else non-zero is a failure of the check itself
-        if [ "$rc" -eq 2 ]; then
-          echo "::warning title=Broken links::lychee found broken links, see the job summary"
-        elif [ "$rc" -ne 0 ]; then
+        if [ "$rc" -ne 0 ] && [ "$rc" -ne 2 ]; then
           exit "$rc"
         fi
+        {
+          echo "## Links"
+          echo
+          jq -r '"\(.total) checked, \(.errors) broken."' build/lychee.json
+          echo
+          echo "| Page | Link |"
+          echo "|---|---|"
+          jq -r '.error_map // {} | to_entries[] | .key as $page | .value[]
+            | "| \($page | ltrimstr("/site/")) | \(.url | ltrimstr("file:///site/")) |"' build/lychee.json
+        } >> "$GITHUB_STEP_SUMMARY"
+    - name: Compare with the known problems
+      run: .github/build-baseline/check.sh
