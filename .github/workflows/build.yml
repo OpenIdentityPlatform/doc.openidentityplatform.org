@@ -1,0 +1,91 @@
+# The contents of this file are subject to the terms of the Common Development and
+# Distribution License (the License). You may not use this file except in compliance with the
+# License.
+#
+# You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+# specific language governing permission and limitations under the License.
+#
+# When distributing Covered Software, include this CDDL Header Notice in each file and include
+# the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+# Header, with the fields enclosed by brackets [] replaced by your own identifying
+# information: "Portions copyright [year] [name of copyright owner]".
+#
+# Copyright 2026 3A Systems, LLC.
+
+# Builds the site for a pull request and reports Antora errors and broken links in the job summary.
+# Both are only reported for now: the content still has known errors, fixed in the product
+# repositories, so failing on them would fail every pull request (#25).
+name: Build
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        cache: npm
+    - name: Install Antora
+      run: npm ci
+    - name: Generate Site
+      run: |
+        mkdir -p build
+        npx antora antora-playbook.yml --log-format=json --log-file=build/antora.log
+        npm run copyApiDocs
+    - name: Report Antora messages
+      run: |
+        log=build/antora.log
+        # annotate the errors on the pull request
+        jq -r --arg ws "$GITHUB_WORKSPACE/" 'select(.level == "error" or .level == "fatal")
+          | "::warning file=\(.file.path // "" | ltrimstr($ws)),line=\(.file.line // 1),title=Antora \(.level)::\(.msg)"' "$log"
+        {
+          echo "## Antora"
+          echo
+          echo "| Level | Messages |"
+          echo "|---|---|"
+          jq -rs 'group_by(.level)[] | "| \(.[0].level) | \(length) |"' "$log"
+          echo
+          echo "### Errors and warnings"
+          echo
+          echo "Without \`skipping reference to missing attribute\`, which are counted below."
+          echo
+          echo "| Level | Message | File | Line |"
+          echo "|---|---|---|---|"
+          jq -r --arg ws "$GITHUB_WORKSPACE/" 'select(.level != "info" and .level != "debug")
+            | select(.msg | startswith("skipping reference to missing attribute") | not)
+            | "| \(.level) | \(.msg | gsub("\\|"; "\\\\|")) | \(.file.path // "" | ltrimstr($ws)) | \(.file.line // "") |"' "$log"
+          echo
+          echo "### Missing attribute references"
+          echo
+          echo "| File | Count |"
+          echo "|---|---|"
+          jq -rs --arg ws "$GITHUB_WORKSPACE/" 'map(select(.msg | startswith("skipping reference to missing attribute")))
+            | group_by(.file.path)[] | "| \(.[0].file.path // "" | ltrimstr($ws)) | \(length) |"' "$log"
+        } >> "$GITHUB_STEP_SUMMARY"
+    - name: Check links
+      run: |
+        printf "## Links\n\n" >> "$GITHUB_STEP_SUMMARY"
+        rc=0
+        docker run --rm -v "$PWD/build/site:/site:ro" lycheeverse/lychee:0.24.2 \
+          --offline --no-progress --format markdown \
+          --root-dir /site --fallback-extensions html --index-files index.html \
+          --exclude-path '/site/(openam|opendj|openidm|openig)/apidocs' \
+          --exclude-path '/site/(openicf|commons)' \
+          '/site/**/*.html' >> "$GITHUB_STEP_SUMMARY" || rc=$?
+        # 2 means broken links were found; anything else non-zero is a failure of the check itself
+        if [ "$rc" -eq 2 ]; then
+          echo "::warning title=Broken links::lychee found broken links, see the job summary"
+        elif [ "$rc" -ne 0 ]; then
+          exit "$rc"
+        fi

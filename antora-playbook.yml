@@ -43,8 +43,11 @@ content:
     edit_url: https://github.com/OpenIdentityPlatform/OpenIDM/edit/master/openidm-doc/src/main/asciidoc
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
-    snapshot: true
+    # Antora default UI, kept in the repository so that a UI change is reviewed like any other.
+    # Taken from https://gitlab.com/antora/antora-ui-default/-/jobs/15385706035 (bundle-stable, 2026-09-30),
+    # sha256 e0ac81aad26961a9cd3cf9bce692a598eff4a1bd2822ce73c9cdc13a15a1e70d.
+    # To update, download .../-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ./ui/ui-bundle.zip
   supplemental_files: ./supplemental-ui
 
 output:
