@@ -13,8 +13,21 @@
  * information: "Portions copyright [year] [name of copyright owner]".
  *
  * Copyright 2017 ForgeRock AS.
- * Portions copyright 2024 3A Systems LLC.
+ * Portions copyright 2024-2026 3A Systems LLC.
 -->
 {{#with site.keys.googleSiteVerification}}
 <meta name="google-site-verification" content="{{this}}" />
 {{/with}}
+{{!-- The UI emits <meta name="description"> only for a page that sets :description:; fall back to a generated one --}}
+{{#unless page.description}}
+<meta name="description" content="{{> meta-description}}">
+{{/unless}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{site.title}}">
+<meta property="og:title" content="{{{detag (or page.title site.title) attribute=true}}}">
+<meta property="og:description" content="{{#if page.description}}{{{detag page.description attribute=true}}}{{else}}{{> meta-description}}{{/if}}">
+{{#with page.canonicalUrl}}
+<meta property="og:url" content="{{{this}}}">
+{{/with}}
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/30845478?s=280&amp;v=4">
+<meta name="twitter:card" content="summary">
