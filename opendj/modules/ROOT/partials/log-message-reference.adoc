@@ -12487,6 +12487,13 @@ Severity: ERROR
 +
 Message: The Referential Integrity plugin update log file %s could not be deleted and created again after its records were processed. Those records will be processed again the next time the log file is read.
 
+[#log-ref-log-ref-ERR_PLUGIN_REFERENT_CHECK_REFERENCES_WITHOUT_PLUGIN_TYPE_131]
+ID: 131::
+
+Severity: ERROR
++
+Message: The property 'check-references' is set to true, but the property 'plugin-type' does not list '%s', so the references added by that operation would not be checked. Add '%s' to 'plugin-type', then disable and re-enable the plugin, or set 'check-references' to false.
+
 --
 
 [#PROTOCOL]
