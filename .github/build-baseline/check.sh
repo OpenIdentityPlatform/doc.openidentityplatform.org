@@ -33,7 +33,7 @@ update=false
 # file <TAB> message, the file relative to the repository root
 antora_errors() {
   jq -r --arg root "$root/" 'select(.level == "error" or .level == "fatal")
-    | "\(.file.path // "" | ltrimstr($root))\t\(.msg)"' "$root/build/antora.log" | LC_ALL=C sort -u
+    | "\(.file.path // "" | ltrimstr($root))\t\(.msg)"' "$root/build/antora.log" | LC_ALL=C sort
 }
 
 # page <TAB> link, both relative to the site root
@@ -56,7 +56,7 @@ compare() {
     return
   fi
   local known
-  known=$({ grep -v '^#' "$file" || true; } | LC_ALL=C sort -u)
+  known=$({ grep -v '^#' "$file" || true; } | LC_ALL=C sort)
   new=$(LC_ALL=C comm -23 <(printf '%s\n' "$current" | sed '/^$/d') <(printf '%s\n' "$known" | sed '/^$/d'))
   fixed=$(LC_ALL=C comm -13 <(printf '%s\n' "$current" | sed '/^$/d') <(printf '%s\n' "$known" | sed '/^$/d'))
   {
@@ -67,21 +67,27 @@ compare() {
   } >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
   while IFS= read -r line; do
     [ -n "$line" ] || continue
-    echo "::error title=New $title::${line//$'\t'/ — }"
+    msg=${line//%/%25}
+    echo "::error title=New $title::${msg//$'\t'/ — }"
     echo "- new: \`${line//$'\t'/\` — \`}\`" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
     failed=true
   done <<< "$new"
   while IFS= read -r line; do
     [ -n "$line" ] || continue
-    echo "::notice title=No longer found; remove from .github/build-baseline/$2::${line//$'\t'/ — }"
+    msg=${line//%/%25}
+    echo "::notice title=No longer found; remove from .github/build-baseline/$2::${msg//$'\t'/ — }"
     echo "- no longer found (remove from \`$2\`): \`${line//$'\t'/\` — \`}\`" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
   done <<< "$fixed"
   echo >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
 }
 
+# assigned first, so that a missing or malformed input stops the script (set -e) instead of
+# reading as an empty build
+errors=$(antora_errors)
+links=$(broken_links)
 $update || echo "## Compared with the known problems" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
-compare "Antora errors" antora-errors.txt "$(antora_errors)" "file <TAB> message"
-compare "broken links" broken-links.txt "$(broken_links)" "page <TAB> link"
+compare "Antora errors" antora-errors.txt "$errors" "file <TAB> message"
+compare "broken links" broken-links.txt "$links" "page <TAB> link"
 
 if $failed; then
   echo "The build has new Antora errors or broken links, see above. Fix them; if they come from a" \

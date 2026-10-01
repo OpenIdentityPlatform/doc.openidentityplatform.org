@@ -42,14 +42,18 @@ jobs:
     - name: Generate Site
       run: |
         mkdir -p build
+        # Antora appends to an existing log file
+        rm -f build/antora.log
         npx antora antora-playbook.yml --log-format=json --log-file=build/antora.log
         npm run copyApiDocs
     - name: Report Antora messages
+      # also when Antora fails: with --log-file its fatal error goes only to the log
+      if: ${{ !cancelled() && hashFiles('build/antora.log') != '' }}
       run: |
         log=build/antora.log
         # annotate the errors on the pull request
         jq -r --arg ws "$GITHUB_WORKSPACE/" 'select(.level == "error" or .level == "fatal")
-          | "::warning file=\(.file.path // "" | ltrimstr($ws)),line=\(.file.line // 1),title=Antora \(.level)::\(.msg)"' "$log"
+          | "::warning file=\(.file.path // "" | ltrimstr($ws)),line=\(.file.line // 1),title=Antora \(.level)::\(.msg | gsub("%"; "%25") | gsub("\r"; "%0D") | gsub("\n"; "%0A"))"' "$log"
         {
           echo "## Antora"
           echo
@@ -97,5 +101,17 @@ jobs:
           jq -r '.error_map // {} | to_entries[] | .key as $page | .value[]
             | "| \($page | ltrimstr("/site/")) | \(.url | ltrimstr("file:///site/")) |"' build/lychee.json
         } >> "$GITHUB_STEP_SUMMARY"
+    - name: Self-test the baseline check
+      run: |
+        # check.sh must fail on an Antora error that is not in the known list
+        t=$(mktemp -d)
+        mkdir -p "$t/.github" "$t/build"
+        cp -r .github/build-baseline "$t/.github/"
+        echo '{"level":"error","msg":"self-test","file":{"path":"'"$t"'/x.adoc"}}' > "$t/build/antora.log"
+        echo '{"error_map":{}}' > "$t/build/lychee.json"
+        if GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null; then
+          echo "check.sh passed a new Antora error" >&2
+          exit 1
+        fi
     - name: Compare with the known problems
       run: .github/build-baseline/check.sh
