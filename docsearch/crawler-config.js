@@ -25,7 +25,7 @@
 
 new Crawler({
   appId: 'X0ME9NKL6F',
-  // set by the Crawler dashboard; never put a write key in this repository
+  // keep the key the Crawler dashboard generated; never put a write key in this repository
   apiKey: '<crawler API key>',
   rateLimit: 8,
   maxDepth: 10,

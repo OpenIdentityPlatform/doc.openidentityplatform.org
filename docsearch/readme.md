@@ -11,7 +11,7 @@ the License file at legal/CDDLv1.0.txt. If applicable, add the following below t
 Header, with the fields enclosed by brackets [] replaced by your own identifying
 information: "Portions copyright [year] [name of copyright owner]".
 
-Portions Copyright 2026 3A Systems, LLC.
+Copyright 2025-2026 3A Systems, LLC.
 -->
 # Search
 
@@ -33,9 +33,9 @@ which replaces the legacy scraper. It has not been run yet: it needs Crawler acc
 which an open-source documentation site gets through the [DocSearch program](https://docsearch.algolia.com/apply).
 
 1. Get Crawler access for the application `X0ME9NKL6F` (or the DocSearch program).
-2. Create a crawler in the Crawler dashboard and paste `crawler-config.js`; the dashboard sets `apiKey`.
-   Check with its URL tester that a product start page (e.g. `/openam/`) gives records and the site home page
-   does not.
+2. Create a crawler in the Crawler dashboard and paste `crawler-config.js` over the generated configuration,
+   keeping the `apiKey` line the dashboard generated. Check with its URL tester that a product start page
+   (e.g. `/openam/`) gives records and the site home page does not.
 3. Run it. It writes the new index `doc_openidentityplatform_v3`, so the live search keeps using the old one.
 4. Check the results, e.g. by building the site with `indexName: 'doc_openidentityplatform_v3'` in
    `footer-scripts.hbs`, and schedule the crawler (or trigger it after each deployment).

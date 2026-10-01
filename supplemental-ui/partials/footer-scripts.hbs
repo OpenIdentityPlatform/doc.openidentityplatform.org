@@ -10,10 +10,11 @@ docsearch({
   apiKey: '{{env.ALGOLIA_SEARCH_API_KEY}}',
   indexName: 'doc_openidentityplatform',
   placeholder: 'Search the docs',
-  // the legacy scraper gives page titles the id of the header navigation as anchor
+  // the legacy scraper anchors page titles, and the text before the first section, to the first id
+  // on the page, the cookie notice of head-scripts.hbs
   transformItems: function (items) {
     return items.map(function (item) {
-      return Object.assign({}, item, { url: item.url.replace(/#topbar-nav$/, '') })
+      return Object.assign({}, item, { url: item.url.replace(/#cookie-notice$/, '') })
     })
   }
 })
