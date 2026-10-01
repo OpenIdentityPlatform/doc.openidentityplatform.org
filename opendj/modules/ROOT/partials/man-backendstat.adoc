@@ -27,7 +27,7 @@
 backendstat - gather OpenDJ backend debugging information
 
 == Synopsis
-`backendstat` `{subcommand} {options}`
+`backendstat` `\{subcommand} \{options}`
 
 [#backendstat-description]
 == Description
@@ -85,19 +85,19 @@ Dump records from an index, decoding keys and values. Depending on index size, t
 
 --
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 The backend ID of the backend.
 +
 
 +
 
-`-b | --baseDN {baseDN}`::
+`-b | --baseDN \{baseDN}`::
 The base DN within the backend.
 +
 
 +
 
-`-i | --indexName {indexName}`::
+`-i | --indexName \{indexName}`::
 The name of the index.
 +
 
@@ -111,31 +111,31 @@ Do not display backend data, just statistics.
 Default: false
 +
 
-`-K | --maxKeyValue {maxKeyValue}`::
+`-K | --maxKeyValue \{maxKeyValue}`::
 Only show records with keys that should be ordered before the provided value using the comparator for the database container.
 +
 
 +
 
-`-k | --minKeyValue {minKeyValue}`::
+`-k | --minKeyValue \{minKeyValue}`::
 Only show records with keys that should be ordered after the provided value using the comparator for the database container.
 +
 
 +
 
-`-X | --maxHexKeyValue {maxKeyValue}`::
+`-X | --maxHexKeyValue \{maxKeyValue}`::
 Only show records with keys that should be ordered before the provided value using the comparator for the database container.
 +
 
 +
 
-`-x | --minHexKeyValue {minKeyValue}`::
+`-x | --minHexKeyValue \{minKeyValue}`::
 Only show records with keys that should be ordered after the provided value using the comparator for the database container.
 +
 
 +
 
-`-S | --maxDataSize {maxDataSize}`::
+`-S | --maxDataSize \{maxDataSize}`::
 Only show records whose data is no larger than the provided value.
 +
 
@@ -143,7 +143,7 @@ Only show records whose data is no larger than the provided value.
 Default: -1
 +
 
-`-s | --minDataSize {minDataSize}`::
+`-s | --minDataSize \{minDataSize}`::
 Only show records whose data is no smaller than the provided value.
 +
 
@@ -177,13 +177,13 @@ Dump the raw records in hexadecimal format for a low-level database within the p
 
 --
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 The backend ID of the backend.
 +
 
 +
 
-`-d | --dbName {databaseName}`::
+`-d | --dbName \{databaseName}`::
 The raw database name.
 +
 
@@ -197,31 +197,31 @@ Do not display backend data, just statistics.
 Default: false
 +
 
-`-K | --maxKeyValue {maxKeyValue}`::
+`-K | --maxKeyValue \{maxKeyValue}`::
 Only show records with keys that should be ordered before the provided value using the comparator for the database container.
 +
 
 +
 
-`-k | --minKeyValue {minKeyValue}`::
+`-k | --minKeyValue \{minKeyValue}`::
 Only show records with keys that should be ordered after the provided value using the comparator for the database container.
 +
 
 +
 
-`-X | --maxHexKeyValue {maxKeyValue}`::
+`-X | --maxHexKeyValue \{maxKeyValue}`::
 Only show records with keys that should be ordered before the provided value using the comparator for the database container.
 +
 
 +
 
-`-x | --minHexKeyValue {minKeyValue}`::
+`-x | --minHexKeyValue \{minKeyValue}`::
 Only show records with keys that should be ordered after the provided value using the comparator for the database container.
 +
 
 +
 
-`-S | --maxDataSize {maxDataSize}`::
+`-S | --maxDataSize \{maxDataSize}`::
 Only show records whose data is no larger than the provided value.
 +
 
@@ -229,7 +229,7 @@ Only show records whose data is no larger than the provided value.
 Default: -1
 +
 
-`-s | --minDataSize {minDataSize}`::
+`-s | --minDataSize \{minDataSize}`::
 Only show records whose data is no smaller than the provided value.
 +
 
@@ -273,7 +273,7 @@ List the base DNs in a backend.
 
 --
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 The backend ID of the backend.
 +
 
@@ -297,13 +297,13 @@ List the indexes associated with a pluggable backend. This subcommand may take a
 
 --
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 The backend ID of the backend.
 +
 
 +
 
-`-b | --baseDN {baseDN}`::
+`-b | --baseDN \{baseDN}`::
 The base DN within the backend.
 +
 
@@ -327,7 +327,7 @@ List the low-level databases within a pluggable backend's storage engine. This s
 
 --
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 The backend ID of the backend.
 +
 
@@ -352,20 +352,20 @@ Default: false
 
 Shows the status of indexes for a backend base DN. This subcommand can take a long time to complete, as it reads all indexes for all backends.
 
-<xinclude:include href="variablelist-backendstat-index-status.xml" />
+include::./_variablelist-backendstat-index-status.adoc[]
 
 [#backendstat-show-index-status-options]
 ==== Options
 
 --
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 The backend ID of the backend.
 +
 
 +
 
-`-b | --baseDN {baseDN}`::
+`-b | --baseDN \{baseDN}`::
 The base DN within the backend.
 +
 

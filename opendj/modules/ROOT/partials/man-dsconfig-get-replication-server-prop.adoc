@@ -26,7 +26,7 @@ dsconfig get-replication-server-prop - Shows Replication Server properties
 
 == Synopsis
 
-`dsconfig get-replication-server-prop` {options}
+`dsconfig get-replication-server-prop` \{options}
 
 [#dsconfig-get-replication-server-prop-description]
 == Description
@@ -41,40 +41,40 @@ Shows Replication Server properties.
 The `dsconfig get-replication-server-prop` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the Replication Synchronization Provider.
 +
 
 [open]
 ====
-Replication Server properties depend on the Replication Server type, which depends on the {name} you provide.
+Replication Server properties depend on the Replication Server type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Replication Server types:
 
 `replication-server`::
 +
-Default {name}: Replication Server
+Default \{name}: Replication Server
 +
 Enabled by default: false
 +
 See  <<dsconfig-get-replication-server-prop-replication-server>> for the properties of this Replication Server type.
 ====
 
-`--property {property}`::
+`--property \{property}`::
 
 The name of a property to be displayed.
 +
 
 [open]
 ====
-Replication Server properties depend on the Replication Server type, which depends on the {property} you provide.
+Replication Server properties depend on the Replication Server type, which depends on the \{property} you provide.
 
 By default, OpenDJ directory server supports the following Replication Server types:
 
 `replication-server`::
 +
-Default {property}: Replication Server
+Default \{property}: Replication Server
 +
 Enabled by default: false
 +
@@ -101,40 +101,40 @@ Enabled by default: false
 See  <<dsconfig-get-replication-server-prop-replication-server>> for the properties of this Replication Server type.
 ====
 
-`-z | --unit-size {unit}`::
+`-z | --unit-size \{unit}`::
 
 Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
 +
 
 [open]
 ====
-Replication Server properties depend on the Replication Server type, which depends on the {unit} you provide.
+Replication Server properties depend on the Replication Server type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Replication Server types:
 
 `replication-server`::
 +
-Default {unit}: Replication Server
+Default \{unit}: Replication Server
 +
 Enabled by default: false
 +
 See  <<dsconfig-get-replication-server-prop-replication-server>> for the properties of this Replication Server type.
 ====
 
-`-m | --unit-time {unit}`::
+`-m | --unit-time \{unit}`::
 
 Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
 +
 
 [open]
 ====
-Replication Server properties depend on the Replication Server type, which depends on the {unit} you provide.
+Replication Server properties depend on the Replication Server type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Replication Server types:
 
 `replication-server`::
 +
-Default {unit}: Replication Server
+Default \{unit}: Replication Server
 +
 Enabled by default: false
 +
@@ -163,7 +163,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -397,7 +397,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -530,7 +530,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 seconds.
 
 

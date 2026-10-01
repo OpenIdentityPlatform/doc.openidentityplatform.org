@@ -27,7 +27,7 @@
 dsconfig - manage OpenDJ directory server configuration
 
 == Synopsis
-`dsconfig` `{subcommand} {options}`
+`dsconfig` `\{subcommand} \{options}`
 
 [#dsconfig-description]
 == Description
@@ -51,11 +51,11 @@ Reads from standard input a set of commands to be executed.
 Default: false
 +
 
-`--commandFilePath {path}`::
+`--commandFilePath \{path}`::
 The full path to the file where the equivalent non-interactive commands will be written when this command is run in interactive mode.
 +
 
-`--connectTimeout {timeout}`::
+`--connectTimeout \{timeout}`::
 Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
 +
 Default: 30000
@@ -131,7 +131,7 @@ Default: false
 .LDAP connection options:
 
 --
-`-D | --bindDN {bindDN}`::
+`-D | --bindDN \{bindDN}`::
 DN to use to bind to the server.
 +
 Default: cn=Directory Manager
@@ -143,21 +143,21 @@ Use the authorization identity control.
 Default: false
 +
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 Default: localhost.localdomain
 +
 
-`-j | --bindPasswordFile {bindPasswordFile}`::
+`-j | --bindPasswordFile \{bindPasswordFile}`::
 Bind password file.
 +
 
-`-K | --keyStorePath {keyStorePath}`::
+`-K | --keyStorePath \{keyStorePath}`::
 Certificate key store path.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
@@ -165,25 +165,25 @@ Nickname of the certificate that the server should use when accepting SSL-based 
 SASL bind options.
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 Default: 4444
 +
 
-`-P | --trustStorePath {trustStorePath}`::
+`-P | --trustStorePath \{trustStorePath}`::
 Certificate trust store path.
 +
 
-`-T | --trustStorePassword {trustStorePassword}`::
+`-T | --trustStorePassword \{trustStorePassword}`::
 Certificate trust store PIN.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
-`-U | --trustStorePasswordFile {path}`::
+`-U | --trustStorePasswordFile \{path}`::
 Certificate trust store PIN file.
 +
 
@@ -193,11 +193,11 @@ Use the password policy request control.
 Default: false
 +
 
-`-w | --bindPassword {bindPassword}`::
+`-w | --bindPassword \{bindPassword}`::
 Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
@@ -212,7 +212,7 @@ Default: false
 .Utility input/output options:
 
 --
-`-F | --batchFilePath {batchFilePath}`::
+`-F | --batchFilePath \{batchFilePath}`::
 Path to a batch file containing a set of commands to be executed.
 +
 
@@ -228,7 +228,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 

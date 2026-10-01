@@ -26,7 +26,7 @@ dsconfig delete-backend-index - Deletes Backend Indexes
 
 == Synopsis
 
-`dsconfig delete-backend-index` {options}
+`dsconfig delete-backend-index` \{options}
 
 [#dsconfig-delete-backend-index-description]
 == Description
@@ -41,40 +41,40 @@ Deletes Backend Indexes.
 The `dsconfig delete-backend-index` command takes the following options:
 
 --
-`--backend-name {name}`::
+`--backend-name \{name}`::
 
 The name of the Pluggable Backend.
 +
 
 [open]
 ====
-Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+Backend Index properties depend on the Backend Index type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend Index types:
 
 `backend-index`::
 +
-Default {name}: Backend Index
+Default \{name}: Backend Index
 +
 Enabled by default: false
 +
 See  <<dsconfig-delete-backend-index-backend-index>> for the properties of this Backend Index type.
 ====
 
-`--index-name {name}`::
+`--index-name \{name}`::
 
 The name of the Backend Index.
 +
 
 [open]
 ====
-Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+Backend Index properties depend on the Backend Index type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend Index types:
 
 `backend-index`::
 +
-Default {name}: Backend Index
+Default \{name}: Backend Index
 +
 Enabled by default: false
 +
@@ -148,7 +148,7 @@ confidentiality-enabled::
 [open]
 ====
 Description::
-Specifies whether contents of the index should be confidential. Setting the flag to true will hash keys for equality type indexes using SHA-1 and encrypt the list of entries matching a substring key for substring indexes.
+Specifies whether contents of the index should be confidential. Setting the flag to true will encrypt the list of entries matching each key, for every index type of the attribute, and hash the keys of the equality index using SHA-1. The keys of the other index types are stored as they are.
 
 
 Default Value::

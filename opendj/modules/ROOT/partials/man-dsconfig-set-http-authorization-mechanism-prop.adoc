@@ -26,7 +26,7 @@ dsconfig set-http-authorization-mechanism-prop - Modifies HTTP Authorization Mec
 
 == Synopsis
 
-`dsconfig set-http-authorization-mechanism-prop` {options}
+`dsconfig set-http-authorization-mechanism-prop` \{options}
 
 [#dsconfig-set-http-authorization-mechanism-prop-description]
 == Description
@@ -41,55 +41,55 @@ Modifies HTTP Authorization Mechanism properties.
 The `dsconfig set-http-authorization-mechanism-prop` command takes the following options:
 
 --
-`--mechanism-name {name}`::
+`--mechanism-name \{name}`::
 
 The name of the HTTP Authorization Mechanism.
 +
 
 [open]
 ====
-HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the {name} you provide.
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following HTTP Authorization Mechanism types:
 
 `http-anonymous-authorization-mechanism`::
 +
-Default {name}: HTTP Anonymous Authorization Mechanism
+Default \{name}: HTTP Anonymous Authorization Mechanism
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-http-authorization-mechanism-prop-http-anonymous-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
 `http-basic-authorization-mechanism`::
 +
-Default {name}: HTTP Basic Authorization Mechanism
+Default \{name}: HTTP Basic Authorization Mechanism
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-http-authorization-mechanism-prop-http-basic-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
 `http-oauth2-cts-authorization-mechanism`::
 +
-Default {name}: HTTP Oauth2 Cts Authorization Mechanism
+Default \{name}: HTTP Oauth2 Cts Authorization Mechanism
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-cts-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
 `http-oauth2-file-authorization-mechanism`::
 +
-Default {name}: HTTP Oauth2 File Authorization Mechanism
+Default \{name}: HTTP Oauth2 File Authorization Mechanism
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-file-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
 `http-oauth2-openam-authorization-mechanism`::
 +
-Default {name}: HTTP Oauth2 Openam Authorization Mechanism
+Default \{name}: HTTP Oauth2 Openam Authorization Mechanism
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-openam-authorization-mechanism>> for the properties of this HTTP Authorization Mechanism type.
 `http-oauth2-token-introspection-authorization-mechanism`::
 +
-Default {name}: HTTP Oauth2 Token Introspection Authorization Mechanism
+Default \{name}: HTTP Oauth2 Token Introspection Authorization Mechanism
 +
 Enabled by default: true
 +
@@ -100,25 +100,25 @@ See  <<dsconfig-set-http-authorization-mechanism-prop-http-oauth2-token-introspe
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name {name}` option.
+HTTP Authorization Mechanism properties depend on the HTTP Authorization Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
 --
 
@@ -500,8 +500,8 @@ None
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 seconds. Upper limit is 2147483647 seconds.
 
 
 Multi-valued::
@@ -779,8 +779,8 @@ None
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 seconds. Upper limit is 2147483647 seconds.
 
 
 Multi-valued::
@@ -1058,8 +1058,8 @@ None
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 seconds. Upper limit is 2147483647 seconds.
 
 
 Multi-valued::
@@ -1403,8 +1403,8 @@ None
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 seconds.Upper limit is 2147483647 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 seconds. Upper limit is 2147483647 seconds.
 
 
 Multi-valued::

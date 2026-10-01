@@ -26,7 +26,7 @@ dsconfig create-debug-target - Creates Debug Targets
 
 == Synopsis
 
-`dsconfig create-debug-target` {options}
+`dsconfig create-debug-target` \{options}
 
 [#dsconfig-create-debug-target-description]
 == Description
@@ -41,40 +41,40 @@ Creates Debug Targets.
 The `dsconfig create-debug-target` command takes the following options:
 
 --
-`--publisher-name {name}`::
+`--publisher-name \{name}`::
 
 The name of the Debug Log Publisher.
 +
 
 [open]
 ====
-Debug Target properties depend on the Debug Target type, which depends on the {name} you provide.
+Debug Target properties depend on the Debug Target type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Debug Target types:
 
 `debug-target`::
 +
-Default {name}: Debug Target
+Default \{name}: Debug Target
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-debug-target-debug-target>> for the properties of this Debug Target type.
 ====
 
-`--target-name {STRING}`::
+`--target-name \{STRING}`::
 
 The name of the new Debug Target which will also be used as the value of the "debug-scope" property: Specifies the fully-qualified OpenDJ Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, org.opends.server.core.DirectoryServer#startUp).
 +
 
 [open]
 ====
-Debug Target properties depend on the Debug Target type, which depends on the {STRING} you provide.
+Debug Target properties depend on the Debug Target type, which depends on the \{STRING} you provide.
 
 By default, OpenDJ directory server supports the following Debug Target types:
 
 `debug-target`::
 +
-Default {STRING}: Debug Target
+Default \{STRING}: Debug Target
 +
 Enabled by default: true
 +
@@ -85,7 +85,7 @@ See  <<dsconfig-create-debug-target-debug-target>> for the properties of this De
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Debug Target properties depend on the Debug Target type, which depends on the `--target-name {STRING}` option.
+Debug Target properties depend on the Debug Target type, which depends on the `--target-name \{STRING}` option.
 
 --
 

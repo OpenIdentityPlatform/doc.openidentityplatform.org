@@ -26,7 +26,7 @@ dsconfig set-backend-index-prop - Modifies Backend Index properties
 
 == Synopsis
 
-`dsconfig set-backend-index-prop` {options}
+`dsconfig set-backend-index-prop` \{options}
 
 [#dsconfig-set-backend-index-prop-description]
 == Description
@@ -41,40 +41,40 @@ Modifies Backend Index properties.
 The `dsconfig set-backend-index-prop` command takes the following options:
 
 --
-`--backend-name {name}`::
+`--backend-name \{name}`::
 
 The name of the Pluggable Backend.
 +
 
 [open]
 ====
-Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+Backend Index properties depend on the Backend Index type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend Index types:
 
 `backend-index`::
 +
-Default {name}: Backend Index
+Default \{name}: Backend Index
 +
 Enabled by default: false
 +
 See  <<dsconfig-set-backend-index-prop-backend-index>> for the properties of this Backend Index type.
 ====
 
-`--index-name {name}`::
+`--index-name \{name}`::
 
 The name of the Backend Index.
 +
 
 [open]
 ====
-Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+Backend Index properties depend on the Backend Index type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend Index types:
 
 `backend-index`::
 +
-Default {name}: Backend Index
+Default \{name}: Backend Index
 +
 Enabled by default: false
 +
@@ -85,25 +85,25 @@ See  <<dsconfig-set-backend-index-prop-backend-index>> for the properties of thi
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Backend Index properties depend on the Backend Index type, which depends on the `--index-name {name}` option.
+Backend Index properties depend on the Backend Index type, which depends on the `--index-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Backend Index properties depend on the Backend Index type, which depends on the `--index-name {name}` option.
+Backend Index properties depend on the Backend Index type, which depends on the `--index-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Backend Index properties depend on the Backend Index type, which depends on the `--index-name {name}` option.
+Backend Index properties depend on the Backend Index type, which depends on the `--index-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Backend Index properties depend on the Backend Index type, which depends on the `--index-name {name}` option.
+Backend Index properties depend on the Backend Index type, which depends on the `--index-name \{name}` option.
 
 --
 
@@ -152,7 +152,7 @@ confidentiality-enabled::
 [open]
 ====
 Description::
-Specifies whether contents of the index should be confidential. Setting the flag to true will hash keys for equality type indexes using SHA-1 and encrypt the list of entries matching a substring key for substring indexes.
+Specifies whether contents of the index should be confidential. Setting the flag to true will encrypt the list of entries matching each key, for every index type of the attribute, and hash the keys of the equality index using SHA-1. The keys of the other index types are stored as they are.
 
 
 Default Value::

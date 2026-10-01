@@ -8670,7 +8670,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg1&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
+<td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg2&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#INFO_UPGRADE_OPTION_FORCE">INFO_UPGRADE_OPTION_FORCE</a></span></code></th>
 <td class="colLast">
 <div class="block">Forces a non-interactive upgrade to continue even if it requires user interaction.</div>
@@ -9779,28 +9779,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg0</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SUPPLEMENT_DESCRIPTION_BACKEND_TOOL_SUBCMD_LIST_INDEX_STATUS">SUPPLEMENT_DESCRIPTION_BACKEND_TOOL_SUBCMD_LIST_INDEX_STATUS</a></span></code></th>
 <td class="colLast">
-<div class="block">&lt;xinclude:include href="variablelist-backendstat-index-status.xml" /&gt;</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg0</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SUPPLEMENT_DESCRIPTION_CONTROLS">SUPPLEMENT_DESCRIPTION_CONTROLS</a></span></code></th>
-<td class="colLast">
-<div class="block">&lt;xinclude:include href="variablelist-ldap-controls.xml" /&gt;</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg0</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SUPPLEMENT_DESCRIPTION_PSEARCH_INFO">SUPPLEMENT_DESCRIPTION_PSEARCH_INFO</a></span></code></th>
-<td class="colLast">
-<div class="block">&lt;xinclude:include href="description-psearch-info.xml" /&gt;</div>
+<div class="block">include::.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessageDescriptor.Arg0</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SUPPLEMENT_DESCRIPTION_UPGRADE_CLI">SUPPLEMENT_DESCRIPTION_UPGRADE_CLI</a></span></code></th>
 <td class="colLast">
-<div class="block">&lt;xinclude:include href="description-upgrade.xml" /&gt;</div>
+<div class="block">include::.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -21930,8 +21916,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>INFO_UPGRADE_OPTION_FORCE</h4>
-<pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg1&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt; INFO_UPGRADE_OPTION_FORCE</pre>
-<div class="block">Forces a non-interactive upgrade to continue even if it requires user interaction. In particular, long running or critical upgrade tasks, such as re-indexing, which require user confirmation will be skipped. This option may only be used with the '%s' option</div>
+<pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg2&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt; INFO_UPGRADE_OPTION_FORCE</pre>
+<div class="block">Forces a non-interactive upgrade to continue even if it requires user interaction. In particular, long running or critical upgrade tasks, such as re-indexing, which require user confirmation will be performed. This option does not accept the license: if the upgrade requires accepting a license, use the '%s' option. This option may only be used with the '%s' option</div>
 </li>
 </ul>
 <a id="INFO_UPGRADE_DESCRIPTION_CLI">
@@ -24008,26 +23994,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">gather OpenDJ backend debugging information</div>
 </li>
 </ul>
-<a id="SUPPLEMENT_DESCRIPTION_PSEARCH_INFO">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>SUPPLEMENT_DESCRIPTION_PSEARCH_INFO</h4>
-<pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg0 SUPPLEMENT_DESCRIPTION_PSEARCH_INFO</pre>
-<div class="block">&lt;xinclude:include href="description-psearch-info.xml" /&gt;</div>
-</li>
-</ul>
-<a id="SUPPLEMENT_DESCRIPTION_CONTROLS">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>SUPPLEMENT_DESCRIPTION_CONTROLS</h4>
-<pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg0 SUPPLEMENT_DESCRIPTION_CONTROLS</pre>
-<div class="block">&lt;xinclude:include href="variablelist-ldap-controls.xml" /&gt;</div>
-</li>
-</ul>
 <a id="SUPPLEMENT_DESCRIPTION_UPGRADE_CLI">
 <!--   -->
 </a>
@@ -24035,7 +24001,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>SUPPLEMENT_DESCRIPTION_UPGRADE_CLI</h4>
 <pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg0 SUPPLEMENT_DESCRIPTION_UPGRADE_CLI</pre>
-<div class="block">&lt;xinclude:include href="description-upgrade.xml" /&gt;</div>
+<div class="block">include::./_description-upgrade.adoc[]</div>
 </li>
 </ul>
 <a id="INFO_ARGUMENT_DESCRIPTION_TESTONLY">
@@ -24145,7 +24111,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>SUPPLEMENT_DESCRIPTION_BACKEND_TOOL_SUBCMD_LIST_INDEX_STATUS</h4>
 <pre>public static final&nbsp;org.forgerock.i18n.LocalizableMessageDescriptor.Arg0 SUPPLEMENT_DESCRIPTION_BACKEND_TOOL_SUBCMD_LIST_INDEX_STATUS</pre>
-<div class="block">&lt;xinclude:include href="variablelist-backendstat-index-status.xml" /&gt;</div>
+<div class="block">include::./_variablelist-backendstat-index-status.adoc[]</div>
 </li>
 </ul>
 <a id="INFO_DESCRIPTION_DEFAULT_ADD">

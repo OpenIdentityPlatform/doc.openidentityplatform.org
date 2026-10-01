@@ -26,7 +26,7 @@ dsconfig create-synchronization-provider - Creates Synchronization Providers
 
 == Synopsis
 
-`dsconfig create-synchronization-provider` {options}
+`dsconfig create-synchronization-provider` \{options}
 
 [#dsconfig-create-synchronization-provider-description]
 == Description
@@ -41,20 +41,20 @@ Creates Synchronization Providers.
 The `dsconfig create-synchronization-provider` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the new Synchronization Provider.
 +
 
 [open]
 ====
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {name} you provide.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Synchronization Provider types:
 
 `replication-synchronization-provider`::
 +
-Default {name}: Replication Synchronization Provider
+Default \{name}: Replication Synchronization Provider
 +
 Enabled by default: true
 +
@@ -65,22 +65,22 @@ See  <<dsconfig-create-synchronization-provider-replication-synchronization-prov
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the `--provider-name {name}` option.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the `--provider-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Synchronization Provider which should be created. The value for TYPE can be one of: custom | replication.
 +
 
 [open]
 ====
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {type} you provide.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Synchronization Provider types:
 
 `replication-synchronization-provider`::
 +
-Default {type}: Replication Synchronization Provider
+Default \{type}: Replication Synchronization Provider
 +
 Enabled by default: true
 +
@@ -109,7 +109,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 

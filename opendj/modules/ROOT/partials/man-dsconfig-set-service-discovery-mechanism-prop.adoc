@@ -26,7 +26,7 @@ dsconfig set-service-discovery-mechanism-prop - Modifies Service Discovery Mecha
 
 == Synopsis
 
-`dsconfig set-service-discovery-mechanism-prop` {options}
+`dsconfig set-service-discovery-mechanism-prop` \{options}
 
 [#dsconfig-set-service-discovery-mechanism-prop-description]
 == Description
@@ -41,27 +41,27 @@ Modifies Service Discovery Mechanism properties.
 The `dsconfig set-service-discovery-mechanism-prop` command takes the following options:
 
 --
-`--mechanism-name {name}`::
+`--mechanism-name \{name}`::
 
 The name of the Service Discovery Mechanism.
 +
 
 [open]
 ====
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the {name} you provide.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Service Discovery Mechanism types:
 
 `replication-service-discovery-mechanism`::
 +
-Default {name}: Replication Service Discovery Mechanism
+Default \{name}: Replication Service Discovery Mechanism
 +
 Enabled by default: false
 +
 See  <<dsconfig-set-service-discovery-mechanism-prop-replication-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
 `static-service-discovery-mechanism`::
 +
-Default {name}: Static Service Discovery Mechanism
+Default \{name}: Static Service Discovery Mechanism
 +
 Enabled by default: false
 +
@@ -72,25 +72,25 @@ See  <<dsconfig-set-service-discovery-mechanism-prop-static-service-discovery-me
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name {name}` option.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name {name}` option.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name {name}` option.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name {name}` option.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
 --
 
@@ -180,7 +180,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 seconds.
 
 
@@ -492,7 +492,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 seconds.
 
 

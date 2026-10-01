@@ -26,7 +26,7 @@ dsconfig delete-synchronization-provider - Deletes Synchronization Providers
 
 == Synopsis
 
-`dsconfig delete-synchronization-provider` {options}
+`dsconfig delete-synchronization-provider` \{options}
 
 [#dsconfig-delete-synchronization-provider-description]
 == Description
@@ -41,20 +41,20 @@ Deletes Synchronization Providers.
 The `dsconfig delete-synchronization-provider` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the Synchronization Provider.
 +
 
 [open]
 ====
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {name} you provide.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Synchronization Provider types:
 
 `replication-synchronization-provider`::
 +
-Default {name}: Replication Synchronization Provider
+Default \{name}: Replication Synchronization Provider
 +
 Enabled by default: true
 +
@@ -103,7 +103,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 

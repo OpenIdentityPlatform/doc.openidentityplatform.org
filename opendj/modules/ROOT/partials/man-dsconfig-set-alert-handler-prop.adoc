@@ -26,7 +26,7 @@ dsconfig set-alert-handler-prop - Modifies Alert Handler properties
 
 == Synopsis
 
-`dsconfig set-alert-handler-prop` {options}
+`dsconfig set-alert-handler-prop` \{options}
 
 [#dsconfig-set-alert-handler-prop-description]
 == Description
@@ -41,27 +41,27 @@ Modifies Alert Handler properties.
 The `dsconfig set-alert-handler-prop` command takes the following options:
 
 --
-`--handler-name {name}`::
+`--handler-name \{name}`::
 
 The name of the Alert Handler.
 +
 
 [open]
 ====
-Alert Handler properties depend on the Alert Handler type, which depends on the {name} you provide.
+Alert Handler properties depend on the Alert Handler type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Alert Handler types:
 
 `jmx-alert-handler`::
 +
-Default {name}: JMX Alert Handler
+Default \{name}: JMX Alert Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-alert-handler-prop-jmx-alert-handler>> for the properties of this Alert Handler type.
 `smtp-alert-handler`::
 +
-Default {name}: SMTP Alert Handler
+Default \{name}: SMTP Alert Handler
 +
 Enabled by default: true
 +
@@ -72,25 +72,25 @@ See  <<dsconfig-set-alert-handler-prop-smtp-alert-handler>> for the properties o
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name {name}` option.
+Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name {name}` option.
+Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name {name}` option.
+Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name {name}` option.
+Alert Handler properties depend on the Alert Handler type, which depends on the `--handler-name \{name}` option.
 
 --
 

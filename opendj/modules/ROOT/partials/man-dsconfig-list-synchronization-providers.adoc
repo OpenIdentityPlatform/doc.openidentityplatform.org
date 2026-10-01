@@ -26,7 +26,7 @@ dsconfig list-synchronization-providers - Lists existing Synchronization Provide
 
 == Synopsis
 
-`dsconfig list-synchronization-providers` {options}
+`dsconfig list-synchronization-providers` \{options}
 
 [#dsconfig-list-synchronization-providers-description]
 == Description
@@ -41,60 +41,60 @@ Lists existing Synchronization Providers.
 The `dsconfig list-synchronization-providers` command takes the following options:
 
 --
-`--property {property}`::
+`--property \{property}`::
 
 The name of a property to be displayed.
 +
 
 [open]
 ====
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {property} you provide.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the \{property} you provide.
 
 By default, OpenDJ directory server supports the following Synchronization Provider types:
 
 `replication-synchronization-provider`::
 +
-Default {property}: Replication Synchronization Provider
+Default \{property}: Replication Synchronization Provider
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-synchronization-providers-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
 ====
 
-`-z | --unit-size {unit}`::
+`-z | --unit-size \{unit}`::
 
 Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
 +
 
 [open]
 ====
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {unit} you provide.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Synchronization Provider types:
 
 `replication-synchronization-provider`::
 +
-Default {unit}: Replication Synchronization Provider
+Default \{unit}: Replication Synchronization Provider
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-synchronization-providers-replication-synchronization-provider>> for the properties of this Synchronization Provider type.
 ====
 
-`-m | --unit-time {unit}`::
+`-m | --unit-time \{unit}`::
 
 Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
 +
 
 [open]
 ====
-Synchronization Provider properties depend on the Synchronization Provider type, which depends on the {unit} you provide.
+Synchronization Provider properties depend on the Synchronization Provider type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Synchronization Provider types:
 
 `replication-synchronization-provider`::
 +
-Default {unit}: Replication Synchronization Provider
+Default \{unit}: Replication Synchronization Provider
 +
 Enabled by default: true
 +
@@ -123,7 +123,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 

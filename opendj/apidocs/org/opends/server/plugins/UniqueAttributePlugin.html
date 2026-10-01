@@ -424,7 +424,11 @@ implements <a href="../../../forgerock/opendj/config/server/ConfigurationChangeL
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../api/plugin/DirectoryServerPlugin.html#finalizePlugin()">DirectoryServerPlugin</a></code></span></div>
 <div class="block">Performs any necessary finalization for this plugin.  This will
  be called just after the plugin has been deregistered with the
- server but before it has been unloaded.</div>
+ server but before it has been unloaded.  It is also called when
+ <a href="../api/plugin/DirectoryServerPlugin.html#initializePlugin(java.util.Set,T)"><code>DirectoryServerPlugin.initializePlugin(java.util.Set&lt;org.opends.server.api.plugin.PluginType&gt;, T)</code></a> throws, on an instance that was never
+ registered: it must then release whatever
+ <code>initializePlugin</code> acquired before it failed, and must not
+ assume that it completed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../api/plugin/DirectoryServerPlugin.html#finalizePlugin()">finalizePlugin</a></code>&nbsp;in class&nbsp;<code><a href="../api/plugin/DirectoryServerPlugin.html" title="class in org.opends.server.api.plugin">DirectoryServerPlugin</a>&lt;<a href="../../../forgerock/opendj/server/config/server/UniqueAttributePluginCfg.html" title="interface in org.forgerock.opendj.server.config.server">UniqueAttributePluginCfg</a>&gt;</code></dd>

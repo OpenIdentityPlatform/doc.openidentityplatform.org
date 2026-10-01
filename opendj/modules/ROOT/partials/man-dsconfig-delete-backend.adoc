@@ -26,7 +26,7 @@ dsconfig delete-backend - Deletes Backends
 
 == Synopsis
 
-`dsconfig delete-backend` {options}
+`dsconfig delete-backend` \{options}
 
 [#dsconfig-delete-backend-description]
 == Description
@@ -41,97 +41,97 @@ Deletes Backends.
 The `dsconfig delete-backend` command takes the following options:
 
 --
-`--backend-name {name}`::
+`--backend-name \{name}`::
 
 The name of the Backend.
 +
 
 [open]
 ====
-Backend properties depend on the Backend type, which depends on the {name} you provide.
+Backend properties depend on the Backend type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend types:
 
 `backup-backend`::
 +
-Default {name}: Backup Backend
+Default \{name}: Backup Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-backup-backend>> for the properties of this Backend type.
 `cas-backend`::
 +
-Default {name}: CAS Backend
+Default \{name}: CAS Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-cas-backend>> for the properties of this Backend type.
 `jdbc-backend`::
 +
-Default {name}: JDBC Backend
+Default \{name}: JDBC Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
-Default {name}: JE Backend
+Default \{name}: JE Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-je-backend>> for the properties of this Backend type.
 `ldif-backend`::
 +
-Default {name}: LDIF Backend
+Default \{name}: LDIF Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-ldif-backend>> for the properties of this Backend type.
 `memory-backend`::
 +
-Default {name}: Memory Backend
+Default \{name}: Memory Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-memory-backend>> for the properties of this Backend type.
 `monitor-backend`::
 +
-Default {name}: Monitor Backend
+Default \{name}: Monitor Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-monitor-backend>> for the properties of this Backend type.
 `null-backend`::
 +
-Default {name}: Null Backend
+Default \{name}: Null Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-null-backend>> for the properties of this Backend type.
 `pdb-backend`::
 +
-Default {name}: PDB Backend
+Default \{name}: PDB Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-pdb-backend>> for the properties of this Backend type.
 `schema-backend`::
 +
-Default {name}: Schema Backend
+Default \{name}: Schema Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-schema-backend>> for the properties of this Backend type.
 `task-backend`::
 +
-Default {name}: Task Backend
+Default \{name}: Task Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-delete-backend-task-backend>> for the properties of this Backend type.
 `trust-store-backend`::
 +
-Default {name}: Trust Store Backend
+Default \{name}: Trust Store Backend
 +
 Enabled by default: true
 +
@@ -945,8 +945,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -1501,8 +1501,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -1889,8 +1889,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 seconds.Upper limit is 4294 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 seconds. Upper limit is 4294 seconds.
 
 
 Multi-valued::
@@ -2055,8 +2055,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 seconds.Upper limit is 86400 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 seconds. Upper limit is 86400 seconds.
 
 
 Multi-valued::
@@ -2189,7 +2189,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1000000.Upper value is 4294967296.
+Lower value is 1000000. Upper value is 4294967296.
 
 
 Multi-valued::
@@ -2823,8 +2823,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -3997,8 +3997,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 10 seconds.Upper limit is 3600 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 10 seconds. Upper limit is 3600 seconds.
 
 
 Multi-valued::
@@ -4431,8 +4431,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -4974,7 +4974,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 seconds.
 
 

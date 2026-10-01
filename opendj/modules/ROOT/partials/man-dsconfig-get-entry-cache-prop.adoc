@@ -26,7 +26,7 @@ dsconfig get-entry-cache-prop - Shows Entry Cache properties
 
 == Synopsis
 
-`dsconfig get-entry-cache-prop` {options}
+`dsconfig get-entry-cache-prop` \{options}
 
 [#dsconfig-get-entry-cache-prop-description]
 == Description
@@ -41,54 +41,54 @@ Shows Entry Cache properties.
 The `dsconfig get-entry-cache-prop` command takes the following options:
 
 --
-`--cache-name {name}`::
+`--cache-name \{name}`::
 
 The name of the Entry Cache.
 +
 
 [open]
 ====
-Entry Cache properties depend on the Entry Cache type, which depends on the {name} you provide.
+Entry Cache properties depend on the Entry Cache type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Entry Cache types:
 
 `fifo-entry-cache`::
 +
-Default {name}: FIFO Entry Cache
+Default \{name}: FIFO Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-get-entry-cache-prop-fifo-entry-cache>> for the properties of this Entry Cache type.
 `soft-reference-entry-cache`::
 +
-Default {name}: Soft Reference Entry Cache
+Default \{name}: Soft Reference Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-get-entry-cache-prop-soft-reference-entry-cache>> for the properties of this Entry Cache type.
 ====
 
-`--property {property}`::
+`--property \{property}`::
 
 The name of a property to be displayed.
 +
 
 [open]
 ====
-Entry Cache properties depend on the Entry Cache type, which depends on the {property} you provide.
+Entry Cache properties depend on the Entry Cache type, which depends on the \{property} you provide.
 
 By default, OpenDJ directory server supports the following Entry Cache types:
 
 `fifo-entry-cache`::
 +
-Default {property}: FIFO Entry Cache
+Default \{property}: FIFO Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-get-entry-cache-prop-fifo-entry-cache>> for the properties of this Entry Cache type.
 `soft-reference-entry-cache`::
 +
-Default {property}: Soft Reference Entry Cache
+Default \{property}: Soft Reference Entry Cache
 +
 Enabled by default: true
 +
@@ -122,54 +122,54 @@ Enabled by default: true
 See  <<dsconfig-get-entry-cache-prop-soft-reference-entry-cache>> for the properties of this Entry Cache type.
 ====
 
-`-z | --unit-size {unit}`::
+`-z | --unit-size \{unit}`::
 
 Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
 +
 
 [open]
 ====
-Entry Cache properties depend on the Entry Cache type, which depends on the {unit} you provide.
+Entry Cache properties depend on the Entry Cache type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Entry Cache types:
 
 `fifo-entry-cache`::
 +
-Default {unit}: FIFO Entry Cache
+Default \{unit}: FIFO Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-get-entry-cache-prop-fifo-entry-cache>> for the properties of this Entry Cache type.
 `soft-reference-entry-cache`::
 +
-Default {unit}: Soft Reference Entry Cache
+Default \{unit}: Soft Reference Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-get-entry-cache-prop-soft-reference-entry-cache>> for the properties of this Entry Cache type.
 ====
 
-`-m | --unit-time {unit}`::
+`-m | --unit-time \{unit}`::
 
 Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
 +
 
 [open]
 ====
-Entry Cache properties depend on the Entry Cache type, which depends on the {unit} you provide.
+Entry Cache properties depend on the Entry Cache type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Entry Cache types:
 
 `fifo-entry-cache`::
 +
-Default {unit}: FIFO Entry Cache
+Default \{unit}: FIFO Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-get-entry-cache-prop-fifo-entry-cache>> for the properties of this Entry Cache type.
 `soft-reference-entry-cache`::
 +
-Default {unit}: Soft Reference Entry Cache
+Default \{unit}: Soft Reference Entry Cache
 +
 Enabled by default: true
 +
@@ -364,7 +364,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
 
 
@@ -642,7 +642,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
 
 

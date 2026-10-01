@@ -26,7 +26,7 @@ dsconfig set-virtual-attribute-prop - Modifies Virtual Attribute properties
 
 == Synopsis
 
-`dsconfig set-virtual-attribute-prop` {options}
+`dsconfig set-virtual-attribute-prop` \{options}
 
 [#dsconfig-set-virtual-attribute-prop-description]
 == Description
@@ -41,111 +41,111 @@ Modifies Virtual Attribute properties.
 The `dsconfig set-virtual-attribute-prop` command takes the following options:
 
 --
-`--name {name}`::
+`--name \{name}`::
 
 The name of the Virtual Attribute.
 +
 
 [open]
 ====
-Virtual Attribute properties depend on the Virtual Attribute type, which depends on the {name} you provide.
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Virtual Attribute types:
 
 `collective-attribute-subentries-virtual-attribute`::
 +
-Default {name}: Collective Attribute Subentries Virtual Attribute
+Default \{name}: Collective Attribute Subentries Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-collective-attribute-subentries-virtual-attribute>> for the properties of this Virtual Attribute type.
 `entity-tag-virtual-attribute`::
 +
-Default {name}: Entity Tag Virtual Attribute
+Default \{name}: Entity Tag Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-entity-tag-virtual-attribute>> for the properties of this Virtual Attribute type.
 `entry-dn-virtual-attribute`::
 +
-Default {name}: Entry DN Virtual Attribute
+Default \{name}: Entry DN Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-entry-dn-virtual-attribute>> for the properties of this Virtual Attribute type.
 `entry-uuid-virtual-attribute`::
 +
-Default {name}: Entry UUID Virtual Attribute
+Default \{name}: Entry UUID Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-entry-uuid-virtual-attribute>> for the properties of this Virtual Attribute type.
 `governing-structure-rule-virtual-attribute`::
 +
-Default {name}: Governing Structure Rule Virtual Attribute
+Default \{name}: Governing Structure Rule Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-governing-structure-rule-virtual-attribute>> for the properties of this Virtual Attribute type.
 `has-subordinates-virtual-attribute`::
 +
-Default {name}: Has Subordinates Virtual Attribute
+Default \{name}: Has Subordinates Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-has-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
 `is-member-of-virtual-attribute`::
 +
-Default {name}: Is Member Of Virtual Attribute
+Default \{name}: Is Member Of Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-is-member-of-virtual-attribute>> for the properties of this Virtual Attribute type.
 `member-virtual-attribute`::
 +
-Default {name}: Member Virtual Attribute
+Default \{name}: Member Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-member-virtual-attribute>> for the properties of this Virtual Attribute type.
 `num-subordinates-virtual-attribute`::
 +
-Default {name}: Num Subordinates Virtual Attribute
+Default \{name}: Num Subordinates Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-num-subordinates-virtual-attribute>> for the properties of this Virtual Attribute type.
 `password-expiration-time-virtual-attribute`::
 +
-Default {name}: Password Expiration Time Virtual Attribute
+Default \{name}: Password Expiration Time Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-password-expiration-time-virtual-attribute>> for the properties of this Virtual Attribute type.
 `password-policy-subentry-virtual-attribute`::
 +
-Default {name}: Password Policy Subentry Virtual Attribute
+Default \{name}: Password Policy Subentry Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-password-policy-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
 `structural-object-class-virtual-attribute`::
 +
-Default {name}: Structural Object Class Virtual Attribute
+Default \{name}: Structural Object Class Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-structural-object-class-virtual-attribute>> for the properties of this Virtual Attribute type.
 `subschema-subentry-virtual-attribute`::
 +
-Default {name}: Subschema Subentry Virtual Attribute
+Default \{name}: Subschema Subentry Virtual Attribute
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-virtual-attribute-prop-subschema-subentry-virtual-attribute>> for the properties of this Virtual Attribute type.
 `user-defined-virtual-attribute`::
 +
-Default {name}: User Defined Virtual Attribute
+Default \{name}: User Defined Virtual Attribute
 +
 Enabled by default: true
 +
@@ -156,25 +156,25 @@ See  <<dsconfig-set-virtual-attribute-prop-user-defined-virtual-attribute>> for 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name {name}` option.
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name {name}` option.
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name {name}` option.
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name {name}` option.
+Virtual Attribute properties depend on the Virtual Attribute type, which depends on the `--name \{name}` option.
 
 --
 

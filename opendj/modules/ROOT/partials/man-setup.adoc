@@ -57,29 +57,29 @@ Automatically accepts the product license (if present).
 Default: false
 +
 
-`--adminConnectorPort {port}`::
+`--adminConnectorPort \{port}`::
 Port on which the Administration Connector should listen for communication.
 +
 Default: 4444
 +
 
-`-b | --baseDN {baseDN}`::
+`-b | --baseDN \{baseDN}`::
 Base DN for user information in the Directory Server.  Multiple base DNs may be provided by using this option multiple times.
 +
 
-`--connectTimeout {timeout}`::
+`--connectTimeout \{timeout}`::
 Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
 +
 Default: 30000
 +
 
-`-d | --sampleData {numEntries}`::
+`-d | --sampleData \{numEntries}`::
 Specifies that the database should be populated with the specified number of sample entries.
 +
 Default: 0
 +
 
-`-D | --rootUserDN {rootUserDN}`::
+`-D | --rootUserDN \{rootUserDN}`::
 DN for the initial root user for the Directory Server.
 +
 Default: cn=Directory Manager
@@ -91,7 +91,7 @@ Generate a self-signed certificate that the server should use when accepting SSL
 Default: false
 +
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 Default: localhost.localdomain
@@ -103,15 +103,15 @@ Use the command line install. If not specified the graphical interface will be l
 Default: false
 +
 
-`-j | --rootUserPasswordFile {rootUserPasswordFile}`::
+`-j | --rootUserPasswordFile \{rootUserPasswordFile}`::
 Path to a file containing the password for the initial root user for the Directory Server.
 +
 
-`-l | --ldifFile {ldifFile}`::
+`-l | --ldifFile \{ldifFile}`::
 Path to an LDIF file containing data that should be added to the Directory Server database. Multiple LDIF files may be provided by using this option multiple times.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
@@ -121,7 +121,7 @@ Do not start the server when the configuration is completed.
 Default: false
 +
 
-`-p | --ldapPort {port}`::
+`-p | --ldapPort \{port}`::
 Port on which the Directory Server should listen for LDAP communication.
 +
 Default: 1389
@@ -133,11 +133,11 @@ Enable StartTLS to allow secure communication with the server using the LDAP por
 Default: false
 +
 
-`-R | --rejectFile {rejectFile}`::
+`-R | --rejectFile \{rejectFile}`::
 Write rejected entries to the specified file.
 +
 
-`--replicationCaCertFile {path}`::
+`--replicationCaCertFile \{path}`::
 Path of a file holding certificates to trust on the replication port, typically the certificate of your Certificate Authority or its chain; every certificate of the file is trusted.  Needed only when the key store does not hold the whole certificate chain of the key pair, as the issuing certificates found in that chain are trusted as well.  This argument can be used several times.
 +
 
@@ -147,29 +147,29 @@ Skip the check to determine whether the specified ports are usable.
 Default: false
 +
 
-`--skipFile {skipFile}`::
+`--skipFile \{skipFile}`::
 Write skipped entries to the specified file.
 +
 
-`-t | --backendType {backendType}`::
+`-t | --backendType \{backendType}`::
 The type of the userRoot backend.
 +
 Default: `je` for standard edition, `pdb` for OEM edition.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate (JKS, JCEKS, PKCS#12 or PKCS#11) as server certificate.
 +
 
-`--useBcfksKeystore {keyStorePath}`::
+`--useBcfksKeystore \{keyStorePath}`::
 Path of a BCFKS key store containing the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
-`--useJavaKeystore {keyStorePath}`::
+`--useJavaKeystore \{keyStorePath}`::
 Path of a Java Key Store (JKS) containing a certificate to be used as the server certificate. This does not apply to the administration connector, which uses its own key store and certificate (default: config/admin-keystore and admin-cert).
 +
 
-`--useJCEKS {keyStorePath}`::
+`--useJCEKS \{keyStorePath}`::
 Path of a JCEKS containing a certificate to be used as the server certificate.
 +
 
@@ -185,25 +185,25 @@ Use a certificate in a PKCS#11 token that the server should use when accepting S
 Default: false
 +
 
-`--usePkcs12keyStore {keyStorePath}`::
+`--usePkcs12keyStore \{keyStorePath}`::
 Path of a PKCS#12 key store containing the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
-`-w | --rootUserPassword {rootUserPassword}`::
+`-w | --rootUserPassword \{rootUserPassword}`::
 Password for the initial root user for the Directory Server.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.  A PIN is required when you specify to use an existing certificate (JKS, JCEKS, PKCS#12 or PKCS#11) as server certificate.
 +
 
-`-x | --jmxPort {jmxPort}`::
+`-x | --jmxPort \{jmxPort}`::
 Port on which the Directory Server should listen for JMX communication.
 +
 Default: 1689
 +
 
-`-Z | --ldapsPort {port}`::
+`-Z | --ldapsPort \{port}`::
 Port on which the Directory Server should listen for LDAPS communication.  The LDAPS port will be configured and SSL will be enabled only if this argument is explicitly specified.
 +
 Default: 1636
@@ -226,7 +226,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 

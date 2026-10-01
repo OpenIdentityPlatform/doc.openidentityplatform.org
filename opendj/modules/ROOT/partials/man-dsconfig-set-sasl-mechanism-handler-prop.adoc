@@ -26,7 +26,7 @@ dsconfig set-sasl-mechanism-handler-prop - Modifies SASL Mechanism Handler prope
 
 == Synopsis
 
-`dsconfig set-sasl-mechanism-handler-prop` {options}
+`dsconfig set-sasl-mechanism-handler-prop` \{options}
 
 [#dsconfig-set-sasl-mechanism-handler-prop-description]
 == Description
@@ -41,55 +41,55 @@ Modifies SASL Mechanism Handler properties.
 The `dsconfig set-sasl-mechanism-handler-prop` command takes the following options:
 
 --
-`--handler-name {name}`::
+`--handler-name \{name}`::
 
 The name of the SASL Mechanism Handler.
 +
 
 [open]
 ====
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the {name} you provide.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following SASL Mechanism Handler types:
 
 `anonymous-sasl-mechanism-handler`::
 +
-Default {name}: Anonymous SASL Mechanism Handler
+Default \{name}: Anonymous SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-sasl-mechanism-handler-prop-anonymous-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `cram-md5-sasl-mechanism-handler`::
 +
-Default {name}: Cram MD5 SASL Mechanism Handler
+Default \{name}: Cram MD5 SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-sasl-mechanism-handler-prop-cram-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `digest-md5-sasl-mechanism-handler`::
 +
-Default {name}: Digest MD5 SASL Mechanism Handler
+Default \{name}: Digest MD5 SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-sasl-mechanism-handler-prop-digest-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `external-sasl-mechanism-handler`::
 +
-Default {name}: External SASL Mechanism Handler
+Default \{name}: External SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-sasl-mechanism-handler-prop-external-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `gssapi-sasl-mechanism-handler`::
 +
-Default {name}: GSSAPI SASL Mechanism Handler
+Default \{name}: GSSAPI SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-sasl-mechanism-handler-prop-gssapi-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `plain-sasl-mechanism-handler`::
 +
-Default {name}: Plain SASL Mechanism Handler
+Default \{name}: Plain SASL Mechanism Handler
 +
 Enabled by default: true
 +
@@ -100,25 +100,25 @@ See  <<dsconfig-set-sasl-mechanism-handler-prop-plain-sasl-mechanism-handler>> f
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name \{name}` option.
 
 --
 

@@ -26,7 +26,7 @@ dsconfig create-account-status-notification-handler - Creates Account Status Not
 
 == Synopsis
 
-`dsconfig create-account-status-notification-handler` {options}
+`dsconfig create-account-status-notification-handler` \{options}
 
 [#dsconfig-create-account-status-notification-handler-description]
 == Description
@@ -41,27 +41,27 @@ Creates Account Status Notification Handlers.
 The `dsconfig create-account-status-notification-handler` command takes the following options:
 
 --
-`--handler-name {name}`::
+`--handler-name \{name}`::
 
 The name of the new Account Status Notification Handler.
 +
 
 [open]
 ====
-Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the {name} you provide.
+Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Account Status Notification Handler types:
 
 `error-log-account-status-notification-handler`::
 +
-Default {name}: Error Log Account Status Notification Handler
+Default \{name}: Error Log Account Status Notification Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-account-status-notification-handler-error-log-account-status-notification-handler>> for the properties of this Account Status Notification Handler type.
 `smtp-account-status-notification-handler`::
 +
-Default {name}: SMTP Account Status Notification Handler
+Default \{name}: SMTP Account Status Notification Handler
 +
 Enabled by default: true
 +
@@ -72,29 +72,29 @@ See  <<dsconfig-create-account-status-notification-handler-smtp-account-status-n
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the `--handler-name {name}` option.
+Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the `--handler-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Account Status Notification Handler which should be created. The value for TYPE can be one of: custom | error-log | smtp.
 +
 
 [open]
 ====
-Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the {type} you provide.
+Account Status Notification Handler properties depend on the Account Status Notification Handler type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Account Status Notification Handler types:
 
 `error-log-account-status-notification-handler`::
 +
-Default {type}: Error Log Account Status Notification Handler
+Default \{type}: Error Log Account Status Notification Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-account-status-notification-handler-error-log-account-status-notification-handler>> for the properties of this Account Status Notification Handler type.
 `smtp-account-status-notification-handler`::
 +
-Default {type}: SMTP Account Status Notification Handler
+Default \{type}: SMTP Account Status Notification Handler
 +
 Enabled by default: true
 +

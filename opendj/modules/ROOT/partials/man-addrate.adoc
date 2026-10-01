@@ -32,7 +32,7 @@ addrate - measure add and delete throughput and response time
 [#addrate-description]
 == Description
 
-This utility can be used to measure add and optionally delete throughput and response time of a directory server using user-defined entries. The {template-file-path} argument identifies a template file that has the same form as a template file for the makeldif command.
+This utility can be used to measure add and optionally delete throughput and response time of a directory server using user-defined entries. The \{template-file-path} argument identifies a template file that has the same form as a template file for the makeldif command.
 
 Examples:
    This example adds entries and randomly deletes them while the number of entries added is greater than 10,000: 
@@ -53,17 +53,17 @@ The `addrate` command takes the following options:
 .Command options:
 
 --
-`-a | --deleteAgeThreshold {seconds}`::
+`-a | --deleteAgeThreshold \{seconds}`::
 Specifies the age at which added entries will become candidates for deletion.
 +
 
-`-B | --warmUpDuration {warmUpDuration}`::
+`-B | --warmUpDuration \{warmUpDuration}`::
 Warm up duration in seconds.
 +
 Default: 0
 +
 
-`-c | --numConnections {numConnections}`::
+`-c | --numConnections \{numConnections}`::
 Number of connections.
 +
 Default: 1
@@ -75,19 +75,19 @@ The algorithm used for selecting entries to be deleted which must be one of "fif
 Default: FIFO
 +
 
-`--connectTimeout {timeout}`::
+`--connectTimeout \{timeout}`::
 Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
 +
 Default: 30000
 +
 
-`-d | --maxDuration {maxDuration}`::
+`-d | --maxDuration \{maxDuration}`::
 Maximum duration in seconds, 0 for unlimited.
 +
 Default: 0
 +
 
-`-e | --percentile {percentile}`::
+`-e | --percentile \{percentile}`::
 Calculate max response time for a percentile of operations.
 +
 
@@ -107,19 +107,19 @@ Default: false
 A constant that overrides the value set in the template file.
 +
 
-`-i | --statInterval {statInterval}`::
+`-i | --statInterval \{statInterval}`::
 Display results each specified number of seconds.
 +
 Default: 5
 +
 
-`-m | --maxIterations {maxIterations}`::
+`-m | --maxIterations \{maxIterations}`::
 Max iterations, 0 for unlimited.
 +
 Default: 0
 +
 
-`-M | --targetThroughput {targetThroughput}`::
+`-M | --targetThroughput \{targetThroughput}`::
 Target average throughput to achieve.
 +
 Default: 0
@@ -131,17 +131,17 @@ Disable the purge phase when the tool stops.
 Default: false
 +
 
-`-r | --resourcePath {path}`::
+`-r | --resourcePath \{path}`::
 Path to look for template resources (e.g. data files).
 +
 
-`-R | --randomSeed {seed}`::
+`-R | --randomSeed \{seed}`::
 The seed to use for initializing the random number generator.
 +
 Default: 0
 +
 
-`-s | --deleteSizeThreshold {count}`::
+`-s | --deleteSizeThreshold \{count}`::
 Specifies the number of entries to be added before deletion begins.
 +
 Default: 10000
@@ -153,7 +153,7 @@ Use script-friendly mode.
 Default: false
 +
 
-`-t | --numThreads {numThreads}`::
+`-t | --numThreads \{numThreads}`::
 Number of worker threads per connection.
 +
 Default: 1
@@ -164,7 +164,7 @@ Default: 1
 .LDAP connection options:
 
 --
-`-D | --bindDN {bindDN}`::
+`-D | --bindDN \{bindDN}`::
 DN to use to bind to the server.
 +
 Default: 
@@ -176,21 +176,21 @@ Use the authorization identity control.
 Default: false
 +
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 Default: localhost.localdomain
 +
 
-`-j | --bindPasswordFile {bindPasswordFile}`::
+`-j | --bindPasswordFile \{bindPasswordFile}`::
 Bind password file.
 +
 
-`-K | --keyStorePath {keyStorePath}`::
+`-K | --keyStorePath \{keyStorePath}`::
 Certificate key store path.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
@@ -198,13 +198,13 @@ Nickname of the certificate that the server should use when accepting SSL-based 
 SASL bind options.
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server port number.
 +
 Default: 389
 +
 
-`-P | --trustStorePath {trustStorePath}`::
+`-P | --trustStorePath \{trustStorePath}`::
 Certificate trust store path.
 +
 
@@ -214,15 +214,15 @@ Use StartTLS to secure communication with the server.
 Default: false
 +
 
-`-T | --trustStorePassword {trustStorePassword}`::
+`-T | --trustStorePassword \{trustStorePassword}`::
 Certificate trust store PIN.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
-`-U | --trustStorePasswordFile {path}`::
+`-U | --trustStorePasswordFile \{path}`::
 Certificate trust store PIN file.
 +
 
@@ -232,11 +232,11 @@ Use the password policy request control.
 Default: false
 +
 
-`-w | --bindPassword {bindPassword}`::
+`-w | --bindPassword \{bindPassword}`::
 Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
@@ -263,7 +263,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 

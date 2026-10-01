@@ -314,9 +314,10 @@ extends <a href="../../../config/Configuration.html" title="interface in org.for
  <p>
  Specifies whether contents of the index should be confidential.
  <p>
- Setting the flag to true will hash keys for equality type indexes
- using SHA-1 and encrypt the list of entries matching a substring
- key for substring indexes.</div>
+ Setting the flag to true will encrypt the list of entries
+ matching each key, for every index type of the attribute, and hash
+ the keys of the equality index using SHA-1. The keys of the other
+ index types are stored as they are.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns the value of the "confidentiality-enabled" property.</dd>

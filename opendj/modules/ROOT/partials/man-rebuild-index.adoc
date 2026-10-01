@@ -45,7 +45,7 @@ The `rebuild-index` command takes the following options:
 .Command options:
 
 --
-`-b | --baseDN {baseDN}`::
+`-b | --baseDN \{baseDN}`::
 Base DN of a backend supporting indexing. Rebuild is performed on indexes within the scope of the given base DN.
 +
 
@@ -55,7 +55,7 @@ Indicates that indexes do not need rebuilding because they are known to be empty
 Default: false
 +
 
-`-i | --index {index}`::
+`-i | --index \{index}`::
 Names of index(es) to rebuild. For an attribute index this is simply an attribute name.  At least one index must be specified for rebuild. Cannot be used with the "--rebuildAll" option.
 +
 
@@ -77,7 +77,7 @@ Rebuild all degraded indexes, including any DN2ID, DN2URI, VLV and extensible in
 Default: false
 +
 
-`--tmpdirectory {directory}`::
+`--tmpdirectory \{directory}`::
 Path to temporary directory for index scratch files during index rebuilding.
 +
 Default: import-tmp
@@ -88,33 +88,33 @@ Default: import-tmp
 .Task Backend Connection Options
 
 --
-`--connectTimeout {timeout}`::
+`--connectTimeout \{timeout}`::
 Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
 +
 Default: 30000
 +
 
-`-D | --bindDN {bindDN}`::
+`-D | --bindDN \{bindDN}`::
 DN to use to bind to the server.
 +
 Default: cn=Directory Manager
 +
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 Default: localhost.localdomain
 +
 
-`-j | --bindPasswordFile {bindPasswordFile}`::
+`-j | --bindPasswordFile \{bindPasswordFile}`::
 Bind password file.
 +
 
-`-K | --keyStorePath {keyStorePath}`::
+`-K | --keyStorePath \{keyStorePath}`::
 Certificate key store path.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
@@ -122,33 +122,33 @@ Nickname of the certificate that the server should use when accepting SSL-based 
 SASL bind options.
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 Default: 4444
 +
 
-`-P | --trustStorePath {trustStorePath}`::
+`-P | --trustStorePath \{trustStorePath}`::
 Certificate trust store path.
 +
 
-`-T | --trustStorePassword {trustStorePassword}`::
+`-T | --trustStorePassword \{trustStorePassword}`::
 Certificate trust store PIN.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
-`-U | --trustStorePasswordFile {path}`::
+`-U | --trustStorePasswordFile \{path}`::
 Certificate trust store PIN file.
 +
 
-`-w | --bindPassword {bindPassword}`::
+`-w | --bindPassword \{bindPassword}`::
 Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
@@ -163,27 +163,27 @@ Default: false
 .Task Scheduling Options
 
 --
-`--completionNotify {emailAddress}`::
+`--completionNotify \{emailAddress}`::
 Email address of a recipient to be notified when the task completes.  This option may be specified more than once.
 +
 
-`--dependency {taskID}`::
+`--dependency \{taskID}`::
 ID of a task upon which this task depends.  A task will not start execution until all its dependencies have completed execution.
 +
 
-`--errorNotify {emailAddress}`::
+`--errorNotify \{emailAddress}`::
 Email address of a recipient to be notified if an error occurs when this task executes.  This option may be specified more than once.
 +
 
-`--failedDependencyAction {action}`::
+`--failedDependencyAction \{action}`::
 Action this task will take should one if its dependent tasks fail.  The value must be one of PROCESS,CANCEL,DISABLE.  If not specified defaults to CANCEL.
 +
 
-`--recurringTask {schedulePattern}`::
+`--recurringTask \{schedulePattern}`::
 Indicates the task is recurring and will be scheduled according to the value argument expressed in crontab(5) compatible time/date pattern.
 +
 
-`-t | --start {startTime}`::
+`-t | --start \{startTime}`::
 Indicates the date/time at which this operation will start when scheduled as a server task expressed in YYYYMMDDhhmmssZ format for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the task to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
 +
 
@@ -198,7 +198,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 

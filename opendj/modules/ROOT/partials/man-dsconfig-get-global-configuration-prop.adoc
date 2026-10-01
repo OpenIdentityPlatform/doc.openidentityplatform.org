@@ -26,7 +26,7 @@ dsconfig get-global-configuration-prop - Shows Global Configuration properties
 
 == Synopsis
 
-`dsconfig get-global-configuration-prop` {options}
+`dsconfig get-global-configuration-prop` \{options}
 
 [#dsconfig-get-global-configuration-prop-description]
 == Description
@@ -41,20 +41,20 @@ Shows Global Configuration properties.
 The `dsconfig get-global-configuration-prop` command takes the following options:
 
 --
-`--property {property}`::
+`--property \{property}`::
 
 The name of a property to be displayed.
 +
 
 [open]
 ====
-Global Configuration properties depend on the Global Configuration type, which depends on the {property} you provide.
+Global Configuration properties depend on the Global Configuration type, which depends on the \{property} you provide.
 
 By default, OpenDJ directory server supports the following Global Configuration types:
 
 `global`::
 +
-Default {property}: Global Configuration
+Default \{property}: Global Configuration
 +
 Enabled by default: false
 +
@@ -81,40 +81,40 @@ Enabled by default: false
 See  <<dsconfig-get-global-configuration-prop-global>> for the properties of this Global Configuration type.
 ====
 
-`-z | --unit-size {unit}`::
+`-z | --unit-size \{unit}`::
 
 Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
 +
 
 [open]
 ====
-Global Configuration properties depend on the Global Configuration type, which depends on the {unit} you provide.
+Global Configuration properties depend on the Global Configuration type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Global Configuration types:
 
 `global`::
 +
-Default {unit}: Global Configuration
+Default \{unit}: Global Configuration
 +
 Enabled by default: false
 +
 See  <<dsconfig-get-global-configuration-prop-global>> for the properties of this Global Configuration type.
 ====
 
-`-m | --unit-time {unit}`::
+`-m | --unit-time \{unit}`::
 
 Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
 +
 
 [open]
 ====
-Global Configuration properties depend on the Global Configuration type, which depends on the {unit} you provide.
+Global Configuration properties depend on the Global Configuration type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Global Configuration types:
 
 `global`::
 +
-Default {unit}: Global Configuration
+Default \{unit}: Global Configuration
 +
 Enabled by default: false
 +
@@ -494,7 +494,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -637,7 +637,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 512.Upper value is 1000000000.
+Lower value is 512. Upper value is 1000000000.
 
 
 Multi-valued::
@@ -1047,7 +1047,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 seconds.
 
 

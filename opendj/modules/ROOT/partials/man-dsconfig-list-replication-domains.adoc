@@ -26,7 +26,7 @@ dsconfig list-replication-domains - Lists existing Replication Domains
 
 == Synopsis
 
-`dsconfig list-replication-domains` {options}
+`dsconfig list-replication-domains` \{options}
 
 [#dsconfig-list-replication-domains-description]
 == Description
@@ -41,80 +41,80 @@ Lists existing Replication Domains.
 The `dsconfig list-replication-domains` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the Replication Synchronization Provider.
 +
 
 [open]
 ====
-Replication Domain properties depend on the Replication Domain type, which depends on the {name} you provide.
+Replication Domain properties depend on the Replication Domain type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Replication Domain types:
 
 `replication-domain`::
 +
-Default {name}: Replication Domain
+Default \{name}: Replication Domain
 +
 Enabled by default: false
 +
 See  <<dsconfig-list-replication-domains-replication-domain>> for the properties of this Replication Domain type.
 ====
 
-`--property {property}`::
+`--property \{property}`::
 
 The name of a property to be displayed.
 +
 
 [open]
 ====
-Replication Domain properties depend on the Replication Domain type, which depends on the {property} you provide.
+Replication Domain properties depend on the Replication Domain type, which depends on the \{property} you provide.
 
 By default, OpenDJ directory server supports the following Replication Domain types:
 
 `replication-domain`::
 +
-Default {property}: Replication Domain
+Default \{property}: Replication Domain
 +
 Enabled by default: false
 +
 See  <<dsconfig-list-replication-domains-replication-domain>> for the properties of this Replication Domain type.
 ====
 
-`-z | --unit-size {unit}`::
+`-z | --unit-size \{unit}`::
 
 Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
 +
 
 [open]
 ====
-Replication Domain properties depend on the Replication Domain type, which depends on the {unit} you provide.
+Replication Domain properties depend on the Replication Domain type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Replication Domain types:
 
 `replication-domain`::
 +
-Default {unit}: Replication Domain
+Default \{unit}: Replication Domain
 +
 Enabled by default: false
 +
 See  <<dsconfig-list-replication-domains-replication-domain>> for the properties of this Replication Domain type.
 ====
 
-`-m | --unit-time {unit}`::
+`-m | --unit-time \{unit}`::
 
 Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
 +
 
 [open]
 ====
-Replication Domain properties depend on the Replication Domain type, which depends on the {unit} you provide.
+Replication Domain properties depend on the Replication Domain type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Replication Domain types:
 
 `replication-domain`::
 +
-Default {unit}: Replication Domain
+Default \{unit}: Replication Domain
 +
 Enabled by default: false
 +
@@ -176,7 +176,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -286,7 +286,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -320,7 +320,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 minutes.
 
 
@@ -453,7 +453,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 100 milliseconds.
 
 
@@ -627,7 +627,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
 
 

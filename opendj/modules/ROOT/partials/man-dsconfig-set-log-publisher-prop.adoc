@@ -26,7 +26,7 @@ dsconfig set-log-publisher-prop - Modifies Log Publisher properties
 
 == Synopsis
 
-`dsconfig set-log-publisher-prop` {options}
+`dsconfig set-log-publisher-prop` \{options}
 
 [#dsconfig-set-log-publisher-prop-description]
 == Description
@@ -41,90 +41,90 @@ Modifies Log Publisher properties.
 The `dsconfig set-log-publisher-prop` command takes the following options:
 
 --
-`--publisher-name {name}`::
+`--publisher-name \{name}`::
 
 The name of the Log Publisher.
 +
 
 [open]
 ====
-Log Publisher properties depend on the Log Publisher type, which depends on the {name} you provide.
+Log Publisher properties depend on the Log Publisher type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Log Publisher types:
 
 `csv-file-access-log-publisher`::
 +
-Default {name}: Csv File Access Log Publisher
+Default \{name}: Csv File Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-csv-file-access-log-publisher>> for the properties of this Log Publisher type.
 `csv-file-http-access-log-publisher`::
 +
-Default {name}: Csv File HTTP Access Log Publisher
+Default \{name}: Csv File HTTP Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-csv-file-http-access-log-publisher>> for the properties of this Log Publisher type.
 `external-access-log-publisher`::
 +
-Default {name}: External Access Log Publisher
+Default \{name}: External Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-external-access-log-publisher>> for the properties of this Log Publisher type.
 `external-http-access-log-publisher`::
 +
-Default {name}: External HTTP Access Log Publisher
+Default \{name}: External HTTP Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-external-http-access-log-publisher>> for the properties of this Log Publisher type.
 `file-based-access-log-publisher`::
 +
-Default {name}: File Based Access Log Publisher
+Default \{name}: File Based Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-file-based-access-log-publisher>> for the properties of this Log Publisher type.
 `file-based-audit-log-publisher`::
 +
-Default {name}: File Based Audit Log Publisher
+Default \{name}: File Based Audit Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-file-based-audit-log-publisher>> for the properties of this Log Publisher type.
 `file-based-debug-log-publisher`::
 +
-Default {name}: File Based Debug Log Publisher
+Default \{name}: File Based Debug Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-file-based-debug-log-publisher>> for the properties of this Log Publisher type.
 `file-based-error-log-publisher`::
 +
-Default {name}: File Based Error Log Publisher
+Default \{name}: File Based Error Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-file-based-error-log-publisher>> for the properties of this Log Publisher type.
 `file-based-http-access-log-publisher`::
 +
-Default {name}: File Based HTTP Access Log Publisher
+Default \{name}: File Based HTTP Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-file-based-http-access-log-publisher>> for the properties of this Log Publisher type.
 `json-file-access-log-publisher`::
 +
-Default {name}: Json File Access Log Publisher
+Default \{name}: Json File Access Log Publisher
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-log-publisher-prop-json-file-access-log-publisher>> for the properties of this Log Publisher type.
 `json-file-http-access-log-publisher`::
 +
-Default {name}: Json File HTTP Access Log Publisher
+Default \{name}: Json File HTTP Access Log Publisher
 +
 Enabled by default: true
 +
@@ -135,25 +135,25 @@ See  <<dsconfig-set-log-publisher-prop-json-file-http-access-log-publisher>> for
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name {name}` option.
+Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name {name}` option.
+Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name {name}` option.
+Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name {name}` option.
+Log Publisher properties depend on the Log Publisher type, which depends on the `--publisher-name \{name}` option.
 
 --
 
@@ -653,7 +653,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -1200,7 +1200,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -2234,7 +2234,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -2758,7 +2758,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -3340,7 +3340,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -3842,7 +3842,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -4321,7 +4321,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 

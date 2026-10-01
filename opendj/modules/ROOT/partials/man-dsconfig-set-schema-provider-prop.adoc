@@ -26,7 +26,7 @@ dsconfig set-schema-provider-prop - Modifies Schema Provider properties
 
 == Synopsis
 
-`dsconfig set-schema-provider-prop` {options}
+`dsconfig set-schema-provider-prop` \{options}
 
 [#dsconfig-set-schema-provider-prop-description]
 == Description
@@ -41,27 +41,27 @@ Modifies Schema Provider properties.
 The `dsconfig set-schema-provider-prop` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the Schema Provider.
 +
 
 [open]
 ====
-Schema Provider properties depend on the Schema Provider type, which depends on the {name} you provide.
+Schema Provider properties depend on the Schema Provider type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Schema Provider types:
 
 `core-schema`::
 +
-Default {name}: Core Schema
+Default \{name}: Core Schema
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-schema-provider-prop-core-schema>> for the properties of this Schema Provider type.
 `json-schema`::
 +
-Default {name}: Json Schema
+Default \{name}: Json Schema
 +
 Enabled by default: true
 +
@@ -72,25 +72,25 @@ See  <<dsconfig-set-schema-provider-prop-json-schema>> for the properties of thi
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name {name}` option.
+Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name {name}` option.
+Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name {name}` option.
+Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name {name}` option.
+Schema Provider properties depend on the Schema Provider type, which depends on the `--provider-name \{name}` option.
 
 --
 

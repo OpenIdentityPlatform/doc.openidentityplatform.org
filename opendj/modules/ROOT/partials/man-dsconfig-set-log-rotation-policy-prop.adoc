@@ -26,7 +26,7 @@ dsconfig set-log-rotation-policy-prop - Modifies Log Rotation Policy properties
 
 == Synopsis
 
-`dsconfig set-log-rotation-policy-prop` {options}
+`dsconfig set-log-rotation-policy-prop` \{options}
 
 [#dsconfig-set-log-rotation-policy-prop-description]
 == Description
@@ -41,34 +41,34 @@ Modifies Log Rotation Policy properties.
 The `dsconfig set-log-rotation-policy-prop` command takes the following options:
 
 --
-`--policy-name {name}`::
+`--policy-name \{name}`::
 
 The name of the Log Rotation Policy.
 +
 
 [open]
 ====
-Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the {name} you provide.
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Log Rotation Policy types:
 
 `fixed-time-log-rotation-policy`::
 +
-Default {name}: Fixed Time Log Rotation Policy
+Default \{name}: Fixed Time Log Rotation Policy
 +
 Enabled by default: false
 +
 See  <<dsconfig-set-log-rotation-policy-prop-fixed-time-log-rotation-policy>> for the properties of this Log Rotation Policy type.
 `size-limit-log-rotation-policy`::
 +
-Default {name}: Size Limit Log Rotation Policy
+Default \{name}: Size Limit Log Rotation Policy
 +
 Enabled by default: false
 +
 See  <<dsconfig-set-log-rotation-policy-prop-size-limit-log-rotation-policy>> for the properties of this Log Rotation Policy type.
 `time-limit-log-rotation-policy`::
 +
-Default {name}: Time Limit Log Rotation Policy
+Default \{name}: Time Limit Log Rotation Policy
 +
 Enabled by default: false
 +
@@ -79,25 +79,25 @@ See  <<dsconfig-set-log-rotation-policy-prop-time-limit-log-rotation-policy>> fo
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name {name}` option.
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name {name}` option.
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name {name}` option.
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name {name}` option.
+Log Rotation Policy properties depend on the Log Rotation Policy type, which depends on the `--policy-name \{name}` option.
 
 --
 
@@ -310,7 +310,7 @@ None
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 

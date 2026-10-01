@@ -26,7 +26,7 @@ dsconfig set-log-retention-policy-prop - Modifies Log Retention Policy propertie
 
 == Synopsis
 
-`dsconfig set-log-retention-policy-prop` {options}
+`dsconfig set-log-retention-policy-prop` \{options}
 
 [#dsconfig-set-log-retention-policy-prop-description]
 == Description
@@ -41,34 +41,34 @@ Modifies Log Retention Policy properties.
 The `dsconfig set-log-retention-policy-prop` command takes the following options:
 
 --
-`--policy-name {name}`::
+`--policy-name \{name}`::
 
 The name of the Log Retention Policy.
 +
 
 [open]
 ====
-Log Retention Policy properties depend on the Log Retention Policy type, which depends on the {name} you provide.
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Log Retention Policy types:
 
 `file-count-log-retention-policy`::
 +
-Default {name}: File Count Log Retention Policy
+Default \{name}: File Count Log Retention Policy
 +
 Enabled by default: false
 +
 See  <<dsconfig-set-log-retention-policy-prop-file-count-log-retention-policy>> for the properties of this Log Retention Policy type.
 `free-disk-space-log-retention-policy`::
 +
-Default {name}: Free Disk Space Log Retention Policy
+Default \{name}: Free Disk Space Log Retention Policy
 +
 Enabled by default: false
 +
 See  <<dsconfig-set-log-retention-policy-prop-free-disk-space-log-retention-policy>> for the properties of this Log Retention Policy type.
 `size-limit-log-retention-policy`::
 +
-Default {name}: Size Limit Log Retention Policy
+Default \{name}: Size Limit Log Retention Policy
 +
 Enabled by default: false
 +
@@ -79,25 +79,25 @@ See  <<dsconfig-set-log-retention-policy-prop-size-limit-log-retention-policy>> 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name {name}` option.
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name {name}` option.
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name {name}` option.
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name {name}` option.
+Log Retention Policy properties depend on the Log Retention Policy type, which depends on the `--policy-name \{name}` option.
 
 --
 

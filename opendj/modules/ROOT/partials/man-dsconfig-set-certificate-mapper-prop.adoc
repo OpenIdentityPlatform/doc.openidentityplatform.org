@@ -26,7 +26,7 @@ dsconfig set-certificate-mapper-prop - Modifies Certificate Mapper properties
 
 == Synopsis
 
-`dsconfig set-certificate-mapper-prop` {options}
+`dsconfig set-certificate-mapper-prop` \{options}
 
 [#dsconfig-set-certificate-mapper-prop-description]
 == Description
@@ -41,41 +41,41 @@ Modifies Certificate Mapper properties.
 The `dsconfig set-certificate-mapper-prop` command takes the following options:
 
 --
-`--mapper-name {name}`::
+`--mapper-name \{name}`::
 
 The name of the Certificate Mapper.
 +
 
 [open]
 ====
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {name} you provide.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Certificate Mapper types:
 
 `fingerprint-certificate-mapper`::
 +
-Default {name}: Fingerprint Certificate Mapper
+Default \{name}: Fingerprint Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-certificate-mapper-prop-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-attribute-to-user-attribute-certificate-mapper`::
 +
-Default {name}: Subject Attribute To User Attribute Certificate Mapper
+Default \{name}: Subject Attribute To User Attribute Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-certificate-mapper-prop-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-dn-to-user-attribute-certificate-mapper`::
 +
-Default {name}: Subject DN To User Attribute Certificate Mapper
+Default \{name}: Subject DN To User Attribute Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-certificate-mapper-prop-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-equals-dn-certificate-mapper`::
 +
-Default {name}: Subject Equals DN Certificate Mapper
+Default \{name}: Subject Equals DN Certificate Mapper
 +
 Enabled by default: true
 +
@@ -86,25 +86,25 @@ See  <<dsconfig-set-certificate-mapper-prop-subject-equals-dn-certificate-mapper
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name {name}` option.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name {name}` option.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name {name}` option.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name {name}` option.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name \{name}` option.
 
 --
 

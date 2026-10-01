@@ -45,7 +45,7 @@ The `stop-ds` command takes the following options:
 .Command options:
 
 --
-`-r | --stopReason {stopReason}`::
+`-r | --stopReason \{stopReason}`::
 Reason the server is being stopped or restarted.
 +
 
@@ -55,11 +55,11 @@ Attempt to automatically restart the server once it has stopped.
 Default: false
 +
 
-`-t | --stopTime {stopTime}`::
+`-t | --stopTime \{stopTime}`::
 Indicates the date/time at which the shutdown operation will begin as a server task expressed in format YYYYMMDDhhmmssZ for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the shutdown to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
 +
 
-`-Y | --proxyAs {authzID}`::
+`-Y | --proxyAs \{authzID}`::
 Use the proxied authorization control with the given authorization ID.
 +
 
@@ -68,25 +68,25 @@ Use the proxied authorization control with the given authorization ID.
 .LDAP connection options:
 
 --
-`-D | --bindDN {bindDN}`::
+`-D | --bindDN \{bindDN}`::
 DN to use to bind to the server.
 +
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 Directory server hostname or IP address.
 +
 Default: localhost.localdomain
 +
 
-`-j | --bindPasswordFile {bindPasswordFile}`::
+`-j | --bindPasswordFile \{bindPasswordFile}`::
 Bind password file.
 +
 
-`-K | --keyStorePath {keyStorePath}`::
+`-K | --keyStorePath \{keyStorePath}`::
 Certificate key store path.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of certificate for SSL client authentication.
 +
 
@@ -94,33 +94,33 @@ Nickname of certificate for SSL client authentication.
 SASL bind options.
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 Default: 4444
 +
 
-`-P | --trustStorePath {trustStorePath}`::
+`-P | --trustStorePath \{trustStorePath}`::
 Certificate trust store path.
 +
 
-`-T | --trustStorePassword {trustStorePassword}`::
+`-T | --trustStorePassword \{trustStorePassword}`::
 Certificate trust store PIN.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.
 +
 
-`-U | --trustStorePasswordFile {path}`::
+`-U | --trustStorePasswordFile \{path}`::
 Certificate trust store PIN file.
 +
 
-`-w | --bindPassword {bindPassword}`::
+`-w | --bindPassword \{bindPassword}`::
 Password to use to bind to the server.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.
 +
 
@@ -141,7 +141,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 

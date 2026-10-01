@@ -26,7 +26,7 @@ dsconfig set-connection-handler-prop - Modifies Connection Handler properties
 
 == Synopsis
 
-`dsconfig set-connection-handler-prop` {options}
+`dsconfig set-connection-handler-prop` \{options}
 
 [#dsconfig-set-connection-handler-prop-description]
 == Description
@@ -41,48 +41,48 @@ Modifies Connection Handler properties.
 The `dsconfig set-connection-handler-prop` command takes the following options:
 
 --
-`--handler-name {name}`::
+`--handler-name \{name}`::
 
 The name of the Connection Handler.
 +
 
 [open]
 ====
-Connection Handler properties depend on the Connection Handler type, which depends on the {name} you provide.
+Connection Handler properties depend on the Connection Handler type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Connection Handler types:
 
 `http-connection-handler`::
 +
-Default {name}: HTTP Connection Handler
+Default \{name}: HTTP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-connection-handler-prop-http-connection-handler>> for the properties of this Connection Handler type.
 `jmx-connection-handler`::
 +
-Default {name}: JMX Connection Handler
+Default \{name}: JMX Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-connection-handler-prop-jmx-connection-handler>> for the properties of this Connection Handler type.
 `ldap-connection-handler`::
 +
-Default {name}: LDAP Connection Handler
+Default \{name}: LDAP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-connection-handler-prop-ldap-connection-handler>> for the properties of this Connection Handler type.
 `ldif-connection-handler`::
 +
-Default {name}: LDIF Connection Handler
+Default \{name}: LDIF Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-connection-handler-prop-ldif-connection-handler>> for the properties of this Connection Handler type.
 `snmp-connection-handler`::
 +
-Default {name}: SNMP Connection Handler
+Default \{name}: SNMP Connection Handler
 +
 Enabled by default: true
 +
@@ -93,25 +93,25 @@ See  <<dsconfig-set-connection-handler-prop-snmp-connection-handler>> for the pr
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name {name}` option.
+Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name {name}` option.
+Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name {name}` option.
+Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name {name}` option.
+Connection Handler properties depend on the Connection Handler type, which depends on the `--handler-name \{name}` option.
 
 --
 
@@ -235,7 +235,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1.Upper value is 2147483647.
+Lower value is 1. Upper value is 2147483647.
 
 
 Multi-valued::
@@ -501,7 +501,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -1435,7 +1435,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1.Upper value is 2147483647.
+Lower value is 1. Upper value is 2147483647.
 
 
 Multi-valued::
@@ -1445,7 +1445,7 @@ Required::
 No
 
 Admin Action Required::
-None
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -1701,7 +1701,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -2055,7 +2055,7 @@ Required::
 No
 
 Admin Action Required::
-None
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2089,7 +2089,7 @@ Required::
 No
 
 Admin Action Required::
-None
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2290,7 +2290,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 

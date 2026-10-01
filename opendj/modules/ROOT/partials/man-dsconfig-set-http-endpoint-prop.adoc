@@ -26,7 +26,7 @@ dsconfig set-http-endpoint-prop - Modifies HTTP Endpoint properties
 
 == Synopsis
 
-`dsconfig set-http-endpoint-prop` {options}
+`dsconfig set-http-endpoint-prop` \{options}
 
 [#dsconfig-set-http-endpoint-prop-description]
 == Description
@@ -41,27 +41,27 @@ Modifies HTTP Endpoint properties.
 The `dsconfig set-http-endpoint-prop` command takes the following options:
 
 --
-`--endpoint-name {name}`::
+`--endpoint-name \{name}`::
 
 The name of the HTTP Endpoint.
 +
 
 [open]
 ====
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the {name} you provide.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following HTTP Endpoint types:
 
 `admin-endpoint`::
 +
-Default {name}: Admin Endpoint
+Default \{name}: Admin Endpoint
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-http-endpoint-prop-admin-endpoint>> for the properties of this HTTP Endpoint type.
 `rest2ldap-endpoint`::
 +
-Default {name}: Rest2ldap Endpoint
+Default \{name}: Rest2ldap Endpoint
 +
 Enabled by default: true
 +
@@ -72,25 +72,25 @@ See  <<dsconfig-set-http-endpoint-prop-rest2ldap-endpoint>> for the properties o
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {name}` option.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name \{name}` option.
 
 --
 

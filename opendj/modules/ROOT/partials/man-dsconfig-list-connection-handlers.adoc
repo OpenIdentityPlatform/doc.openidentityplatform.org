@@ -26,7 +26,7 @@ dsconfig list-connection-handlers - Lists existing Connection Handlers
 
 == Synopsis
 
-`dsconfig list-connection-handlers` {options}
+`dsconfig list-connection-handlers` \{options}
 
 [#dsconfig-list-connection-handlers-description]
 == Description
@@ -41,144 +41,144 @@ Lists existing Connection Handlers.
 The `dsconfig list-connection-handlers` command takes the following options:
 
 --
-`--property {property}`::
+`--property \{property}`::
 
 The name of a property to be displayed.
 +
 
 [open]
 ====
-Connection Handler properties depend on the Connection Handler type, which depends on the {property} you provide.
+Connection Handler properties depend on the Connection Handler type, which depends on the \{property} you provide.
 
 By default, OpenDJ directory server supports the following Connection Handler types:
 
 `http-connection-handler`::
 +
-Default {property}: HTTP Connection Handler
+Default \{property}: HTTP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-http-connection-handler>> for the properties of this Connection Handler type.
 `jmx-connection-handler`::
 +
-Default {property}: JMX Connection Handler
+Default \{property}: JMX Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-jmx-connection-handler>> for the properties of this Connection Handler type.
 `ldap-connection-handler`::
 +
-Default {property}: LDAP Connection Handler
+Default \{property}: LDAP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-ldap-connection-handler>> for the properties of this Connection Handler type.
 `ldif-connection-handler`::
 +
-Default {property}: LDIF Connection Handler
+Default \{property}: LDIF Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-ldif-connection-handler>> for the properties of this Connection Handler type.
 `snmp-connection-handler`::
 +
-Default {property}: SNMP Connection Handler
+Default \{property}: SNMP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-snmp-connection-handler>> for the properties of this Connection Handler type.
 ====
 
-`-z | --unit-size {unit}`::
+`-z | --unit-size \{unit}`::
 
 Display size data using the specified unit. The value for UNIT can be one of b, kb, mb, gb, or tb (bytes, kilobytes, megabytes, gigabytes, or terabytes).
 +
 
 [open]
 ====
-Connection Handler properties depend on the Connection Handler type, which depends on the {unit} you provide.
+Connection Handler properties depend on the Connection Handler type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Connection Handler types:
 
 `http-connection-handler`::
 +
-Default {unit}: HTTP Connection Handler
+Default \{unit}: HTTP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-http-connection-handler>> for the properties of this Connection Handler type.
 `jmx-connection-handler`::
 +
-Default {unit}: JMX Connection Handler
+Default \{unit}: JMX Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-jmx-connection-handler>> for the properties of this Connection Handler type.
 `ldap-connection-handler`::
 +
-Default {unit}: LDAP Connection Handler
+Default \{unit}: LDAP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-ldap-connection-handler>> for the properties of this Connection Handler type.
 `ldif-connection-handler`::
 +
-Default {unit}: LDIF Connection Handler
+Default \{unit}: LDIF Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-ldif-connection-handler>> for the properties of this Connection Handler type.
 `snmp-connection-handler`::
 +
-Default {unit}: SNMP Connection Handler
+Default \{unit}: SNMP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-snmp-connection-handler>> for the properties of this Connection Handler type.
 ====
 
-`-m | --unit-time {unit}`::
+`-m | --unit-time \{unit}`::
 
 Display time data using the specified unit. The value for UNIT can be one of ms, s, m, h, d, or w (milliseconds, seconds, minutes, hours, days, or weeks).
 +
 
 [open]
 ====
-Connection Handler properties depend on the Connection Handler type, which depends on the {unit} you provide.
+Connection Handler properties depend on the Connection Handler type, which depends on the \{unit} you provide.
 
 By default, OpenDJ directory server supports the following Connection Handler types:
 
 `http-connection-handler`::
 +
-Default {unit}: HTTP Connection Handler
+Default \{unit}: HTTP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-http-connection-handler>> for the properties of this Connection Handler type.
 `jmx-connection-handler`::
 +
-Default {unit}: JMX Connection Handler
+Default \{unit}: JMX Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-jmx-connection-handler>> for the properties of this Connection Handler type.
 `ldap-connection-handler`::
 +
-Default {unit}: LDAP Connection Handler
+Default \{unit}: LDAP Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-ldap-connection-handler>> for the properties of this Connection Handler type.
 `ldif-connection-handler`::
 +
-Default {unit}: LDIF Connection Handler
+Default \{unit}: LDIF Connection Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-list-connection-handlers-ldif-connection-handler>> for the properties of this Connection Handler type.
 `snmp-connection-handler`::
 +
-Default {unit}: SNMP Connection Handler
+Default \{unit}: SNMP Connection Handler
 +
 Enabled by default: true
 +
@@ -307,7 +307,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1.Upper value is 2147483647.
+Lower value is 1. Upper value is 2147483647.
 
 
 Multi-valued::
@@ -573,7 +573,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -1507,7 +1507,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1.Upper value is 2147483647.
+Lower value is 1. Upper value is 2147483647.
 
 
 Multi-valued::
@@ -1517,7 +1517,7 @@ Required::
 No
 
 Admin Action Required::
-None
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -1773,7 +1773,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -2127,7 +2127,7 @@ Required::
 No
 
 Admin Action Required::
-None
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2161,7 +2161,7 @@ Required::
 No
 
 Admin Action Required::
-None
+The Connection Handler must be disabled and re-enabled for changes to this setting to take effect
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2362,7 +2362,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 

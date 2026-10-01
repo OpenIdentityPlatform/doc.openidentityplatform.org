@@ -26,7 +26,7 @@ dsconfig create-sasl-mechanism-handler - Creates SASL Mechanism Handlers
 
 == Synopsis
 
-`dsconfig create-sasl-mechanism-handler` {options}
+`dsconfig create-sasl-mechanism-handler` \{options}
 
 [#dsconfig-create-sasl-mechanism-handler-description]
 == Description
@@ -41,55 +41,55 @@ Creates SASL Mechanism Handlers.
 The `dsconfig create-sasl-mechanism-handler` command takes the following options:
 
 --
-`--handler-name {name}`::
+`--handler-name \{name}`::
 
 The name of the new SASL Mechanism Handler.
 +
 
 [open]
 ====
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the {name} you provide.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following SASL Mechanism Handler types:
 
 `anonymous-sasl-mechanism-handler`::
 +
-Default {name}: Anonymous SASL Mechanism Handler
+Default \{name}: Anonymous SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-anonymous-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `cram-md5-sasl-mechanism-handler`::
 +
-Default {name}: Cram MD5 SASL Mechanism Handler
+Default \{name}: Cram MD5 SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-cram-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `digest-md5-sasl-mechanism-handler`::
 +
-Default {name}: Digest MD5 SASL Mechanism Handler
+Default \{name}: Digest MD5 SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-digest-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `external-sasl-mechanism-handler`::
 +
-Default {name}: External SASL Mechanism Handler
+Default \{name}: External SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-external-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `gssapi-sasl-mechanism-handler`::
 +
-Default {name}: GSSAPI SASL Mechanism Handler
+Default \{name}: GSSAPI SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-gssapi-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `plain-sasl-mechanism-handler`::
 +
-Default {name}: Plain SASL Mechanism Handler
+Default \{name}: Plain SASL Mechanism Handler
 +
 Enabled by default: true
 +
@@ -100,57 +100,57 @@ See  <<dsconfig-create-sasl-mechanism-handler-plain-sasl-mechanism-handler>> for
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name {name}` option.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the `--handler-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of SASL Mechanism Handler which should be created. The value for TYPE can be one of: anonymous | cram-md5 | custom | digest-md5 | external | gssapi | plain.
 +
 
 [open]
 ====
-SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the {type} you provide.
+SASL Mechanism Handler properties depend on the SASL Mechanism Handler type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following SASL Mechanism Handler types:
 
 `anonymous-sasl-mechanism-handler`::
 +
-Default {type}: Anonymous SASL Mechanism Handler
+Default \{type}: Anonymous SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-anonymous-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `cram-md5-sasl-mechanism-handler`::
 +
-Default {type}: Cram MD5 SASL Mechanism Handler
+Default \{type}: Cram MD5 SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-cram-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `digest-md5-sasl-mechanism-handler`::
 +
-Default {type}: Digest MD5 SASL Mechanism Handler
+Default \{type}: Digest MD5 SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-digest-md5-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `external-sasl-mechanism-handler`::
 +
-Default {type}: External SASL Mechanism Handler
+Default \{type}: External SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-external-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `gssapi-sasl-mechanism-handler`::
 +
-Default {type}: GSSAPI SASL Mechanism Handler
+Default \{type}: GSSAPI SASL Mechanism Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-sasl-mechanism-handler-gssapi-sasl-mechanism-handler>> for the properties of this SASL Mechanism Handler type.
 `plain-sasl-mechanism-handler`::
 +
-Default {type}: Plain SASL Mechanism Handler
+Default \{type}: Plain SASL Mechanism Handler
 +
 Enabled by default: true
 +

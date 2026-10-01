@@ -26,7 +26,7 @@ dsconfig set-group-implementation-prop - Modifies Group Implementation propertie
 
 == Synopsis
 
-`dsconfig set-group-implementation-prop` {options}
+`dsconfig set-group-implementation-prop` \{options}
 
 [#dsconfig-set-group-implementation-prop-description]
 == Description
@@ -41,34 +41,34 @@ Modifies Group Implementation properties.
 The `dsconfig set-group-implementation-prop` command takes the following options:
 
 --
-`--implementation-name {name}`::
+`--implementation-name \{name}`::
 
 The name of the Group Implementation.
 +
 
 [open]
 ====
-Group Implementation properties depend on the Group Implementation type, which depends on the {name} you provide.
+Group Implementation properties depend on the Group Implementation type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Group Implementation types:
 
 `dynamic-group-implementation`::
 +
-Default {name}: Dynamic Group Implementation
+Default \{name}: Dynamic Group Implementation
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-group-implementation-prop-dynamic-group-implementation>> for the properties of this Group Implementation type.
 `static-group-implementation`::
 +
-Default {name}: Static Group Implementation
+Default \{name}: Static Group Implementation
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-group-implementation-prop-static-group-implementation>> for the properties of this Group Implementation type.
 `virtual-static-group-implementation`::
 +
-Default {name}: Virtual Static Group Implementation
+Default \{name}: Virtual Static Group Implementation
 +
 Enabled by default: true
 +
@@ -79,25 +79,25 @@ See  <<dsconfig-set-group-implementation-prop-virtual-static-group-implementatio
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name {name}` option.
+Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name {name}` option.
+Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name {name}` option.
+Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name {name}` option.
+Group Implementation properties depend on the Group Implementation type, which depends on the `--implementation-name \{name}` option.
 
 --
 

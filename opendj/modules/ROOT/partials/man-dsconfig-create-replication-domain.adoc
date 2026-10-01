@@ -26,7 +26,7 @@ dsconfig create-replication-domain - Creates Replication Domains
 
 == Synopsis
 
-`dsconfig create-replication-domain` {options}
+`dsconfig create-replication-domain` \{options}
 
 [#dsconfig-create-replication-domain-description]
 == Description
@@ -41,40 +41,40 @@ Creates Replication Domains.
 The `dsconfig create-replication-domain` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the Replication Synchronization Provider.
 +
 
 [open]
 ====
-Replication Domain properties depend on the Replication Domain type, which depends on the {name} you provide.
+Replication Domain properties depend on the Replication Domain type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Replication Domain types:
 
 `replication-domain`::
 +
-Default {name}: Replication Domain
+Default \{name}: Replication Domain
 +
 Enabled by default: false
 +
 See  <<dsconfig-create-replication-domain-replication-domain>> for the properties of this Replication Domain type.
 ====
 
-`--domain-name {name}`::
+`--domain-name \{name}`::
 
 The name of the new Replication Domain.
 +
 
 [open]
 ====
-Replication Domain properties depend on the Replication Domain type, which depends on the {name} you provide.
+Replication Domain properties depend on the Replication Domain type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Replication Domain types:
 
 `replication-domain`::
 +
-Default {name}: Replication Domain
+Default \{name}: Replication Domain
 +
 Enabled by default: false
 +
@@ -85,7 +85,7 @@ See  <<dsconfig-create-replication-domain-replication-domain>> for the propertie
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Replication Domain properties depend on the Replication Domain type, which depends on the `--domain-name {name}` option.
+Replication Domain properties depend on the Replication Domain type, which depends on the `--domain-name \{name}` option.
 
 --
 
@@ -142,7 +142,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 milliseconds.
 
 
@@ -252,7 +252,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 milliseconds.
 
 
@@ -286,7 +286,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 minutes.
 
 
@@ -419,7 +419,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 100 milliseconds.
 
 
@@ -593,7 +593,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
 
 

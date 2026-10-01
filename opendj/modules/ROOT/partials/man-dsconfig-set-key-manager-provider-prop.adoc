@@ -26,7 +26,7 @@ dsconfig set-key-manager-provider-prop - Modifies Key Manager Provider propertie
 
 == Synopsis
 
-`dsconfig set-key-manager-provider-prop` {options}
+`dsconfig set-key-manager-provider-prop` \{options}
 
 [#dsconfig-set-key-manager-provider-prop-description]
 == Description
@@ -41,34 +41,34 @@ Modifies Key Manager Provider properties.
 The `dsconfig set-key-manager-provider-prop` command takes the following options:
 
 --
-`--provider-name {name}`::
+`--provider-name \{name}`::
 
 The name of the Key Manager Provider.
 +
 
 [open]
 ====
-Key Manager Provider properties depend on the Key Manager Provider type, which depends on the {name} you provide.
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Key Manager Provider types:
 
 `file-based-key-manager-provider`::
 +
-Default {name}: File Based Key Manager Provider
+Default \{name}: File Based Key Manager Provider
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-key-manager-provider-prop-file-based-key-manager-provider>> for the properties of this Key Manager Provider type.
 `ldap-key-manager-provider`::
 +
-Default {name}: LDAP Key Manager Provider
+Default \{name}: LDAP Key Manager Provider
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-key-manager-provider-prop-ldap-key-manager-provider>> for the properties of this Key Manager Provider type.
 `pkcs11-key-manager-provider`::
 +
-Default {name}: PKCS11 Key Manager Provider
+Default \{name}: PKCS11 Key Manager Provider
 +
 Enabled by default: true
 +
@@ -79,25 +79,25 @@ See  <<dsconfig-set-key-manager-provider-prop-pkcs11-key-manager-provider>> for 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name {name}` option.
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name {name}` option.
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name {name}` option.
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name {name}` option.
+Key Manager Provider properties depend on the Key Manager Provider type, which depends on the `--provider-name \{name}` option.
 
 --
 

@@ -26,7 +26,7 @@ dsconfig create-backend - Creates Backends
 
 == Synopsis
 
-`dsconfig create-backend` {options}
+`dsconfig create-backend` \{options}
 
 [#dsconfig-create-backend-description]
 == Description
@@ -41,97 +41,97 @@ Creates Backends.
 The `dsconfig create-backend` command takes the following options:
 
 --
-`--backend-name {STRING}`::
+`--backend-name \{STRING}`::
 
 The name of the new Backend which will also be used as the value of the "backend-id" property: Specifies a name to identify the associated backend.
 +
 
 [open]
 ====
-Backend properties depend on the Backend type, which depends on the {STRING} you provide.
+Backend properties depend on the Backend type, which depends on the \{STRING} you provide.
 
 By default, OpenDJ directory server supports the following Backend types:
 
 `backup-backend`::
 +
-Default {STRING}: Backup Backend
+Default \{STRING}: Backup Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-backup-backend>> for the properties of this Backend type.
 `cas-backend`::
 +
-Default {STRING}: CAS Backend
+Default \{STRING}: CAS Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-cas-backend>> for the properties of this Backend type.
 `jdbc-backend`::
 +
-Default {STRING}: JDBC Backend
+Default \{STRING}: JDBC Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
-Default {STRING}: JE Backend
+Default \{STRING}: JE Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-je-backend>> for the properties of this Backend type.
 `ldif-backend`::
 +
-Default {STRING}: LDIF Backend
+Default \{STRING}: LDIF Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-ldif-backend>> for the properties of this Backend type.
 `memory-backend`::
 +
-Default {STRING}: Memory Backend
+Default \{STRING}: Memory Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-memory-backend>> for the properties of this Backend type.
 `monitor-backend`::
 +
-Default {STRING}: Monitor Backend
+Default \{STRING}: Monitor Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-monitor-backend>> for the properties of this Backend type.
 `null-backend`::
 +
-Default {STRING}: Null Backend
+Default \{STRING}: Null Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-null-backend>> for the properties of this Backend type.
 `pdb-backend`::
 +
-Default {STRING}: PDB Backend
+Default \{STRING}: PDB Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-pdb-backend>> for the properties of this Backend type.
 `schema-backend`::
 +
-Default {STRING}: Schema Backend
+Default \{STRING}: Schema Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-schema-backend>> for the properties of this Backend type.
 `task-backend`::
 +
-Default {STRING}: Task Backend
+Default \{STRING}: Task Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-task-backend>> for the properties of this Backend type.
 `trust-store-backend`::
 +
-Default {STRING}: Trust Store Backend
+Default \{STRING}: Trust Store Backend
 +
 Enabled by default: true
 +
@@ -142,99 +142,99 @@ See  <<dsconfig-create-backend-trust-store-backend>> for the properties of this 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Backend properties depend on the Backend type, which depends on the `--backend-name {STRING}` option.
+Backend properties depend on the Backend type, which depends on the `--backend-name \{STRING}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Backend which should be created. The value for TYPE can be one of: backup | cas | custom | custom-local | jdbc | je | ldif | memory | monitor | null | pdb | schema | task | trust-store.
 +
 
 [open]
 ====
-Backend properties depend on the Backend type, which depends on the {type} you provide.
+Backend properties depend on the Backend type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Backend types:
 
 `backup-backend`::
 +
-Default {type}: Backup Backend
+Default \{type}: Backup Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-backup-backend>> for the properties of this Backend type.
 `cas-backend`::
 +
-Default {type}: CAS Backend
+Default \{type}: CAS Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-cas-backend>> for the properties of this Backend type.
 `jdbc-backend`::
 +
-Default {type}: JDBC Backend
+Default \{type}: JDBC Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
-Default {type}: JE Backend
+Default \{type}: JE Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-je-backend>> for the properties of this Backend type.
 `ldif-backend`::
 +
-Default {type}: LDIF Backend
+Default \{type}: LDIF Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-ldif-backend>> for the properties of this Backend type.
 `memory-backend`::
 +
-Default {type}: Memory Backend
+Default \{type}: Memory Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-memory-backend>> for the properties of this Backend type.
 `monitor-backend`::
 +
-Default {type}: Monitor Backend
+Default \{type}: Monitor Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-monitor-backend>> for the properties of this Backend type.
 `null-backend`::
 +
-Default {type}: Null Backend
+Default \{type}: Null Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-null-backend>> for the properties of this Backend type.
 `pdb-backend`::
 +
-Default {type}: PDB Backend
+Default \{type}: PDB Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-pdb-backend>> for the properties of this Backend type.
 `schema-backend`::
 +
-Default {type}: Schema Backend
+Default \{type}: Schema Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-schema-backend>> for the properties of this Backend type.
 `task-backend`::
 +
-Default {type}: Task Backend
+Default \{type}: Task Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-backend-task-backend>> for the properties of this Backend type.
 `trust-store-backend`::
 +
-Default {type}: Trust Store Backend
+Default \{type}: Trust Store Backend
 +
 Enabled by default: true
 +
@@ -951,8 +951,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -1507,8 +1507,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -1895,8 +1895,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 seconds.Upper limit is 4294 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 seconds. Upper limit is 4294 seconds.
 
 
 Multi-valued::
@@ -2061,8 +2061,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 seconds.Upper limit is 86400 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 seconds. Upper limit is 86400 seconds.
 
 
 Multi-valued::
@@ -2195,7 +2195,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1000000.Upper value is 4294967296.
+Lower value is 1000000. Upper value is 4294967296.
 
 
 Multi-valued::
@@ -2829,8 +2829,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -4003,8 +4003,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 10 seconds.Upper limit is 3600 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 10 seconds. Upper limit is 3600 seconds.
 
 
 Multi-valued::
@@ -4437,8 +4437,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -4980,7 +4980,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 seconds.
 
 

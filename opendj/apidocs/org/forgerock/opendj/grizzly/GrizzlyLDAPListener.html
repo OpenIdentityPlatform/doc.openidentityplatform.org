@@ -90,13 +90,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -146,6 +146,31 @@ implements <a href="../ldap/spi/LDAPListenerImpl.html" title="interface in org.f
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static org.forgerock.util.Option&lt;org.glassfish.grizzly.nio.transport.TCPNIOTransport&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GRIZZLY_TRANSPORT">GRIZZLY_TRANSPORT</a></span></code></th>
+<td class="colLast">
+<div class="block">Grizzly TCP Transport NIO implementation to bind the listener to and to serve its connections with.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <section>
 <ul class="blockList">
@@ -233,6 +258,28 @@ implements <a href="../ldap/spi/LDAPListenerImpl.html" title="interface in org.f
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="GRIZZLY_TRANSPORT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>GRIZZLY_TRANSPORT</h4>
+<pre>public static final&nbsp;org.forgerock.util.Option&lt;org.glassfish.grizzly.nio.transport.TCPNIOTransport&gt; GRIZZLY_TRANSPORT</pre>
+<div class="block">Grizzly TCP Transport NIO implementation to bind the listener to and to serve its connections with. If
+ <code>null</code>, the default server transport shared by every listener in the JVM will be used. A transport
+ provided here is not shut down when the listener is closed: its owner remains responsible for it.</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -255,7 +302,7 @@ implements <a href="../ldap/spi/LDAPListenerImpl.html" title="interface in org.f
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>addresses</code> - The addresses to listen on.</dd>
-<dd><code>options</code> - The LDAP listener options.</dd>
+<dd><code>options</code> - The LDAP listener options, including the optional <a href="#GRIZZLY_TRANSPORT"><code>GRIZZLY_TRANSPORT</code></a>.</dd>
 <dd><code>requestHandlerFactory</code> - The server connection factory which will be used to create server connections.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - If an error occurred while trying to listen on the provided address.</dd>
@@ -401,13 +448,13 @@ implements <a href="../ldap/spi/LDAPListenerImpl.html" title="interface in org.f
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

@@ -26,7 +26,7 @@ dsconfig create-extended-operation-handler - Creates Extended Operation Handlers
 
 == Synopsis
 
-`dsconfig create-extended-operation-handler` {options}
+`dsconfig create-extended-operation-handler` \{options}
 
 [#dsconfig-create-extended-operation-handler-description]
 == Description
@@ -41,76 +41,76 @@ Creates Extended Operation Handlers.
 The `dsconfig create-extended-operation-handler` command takes the following options:
 
 --
-`--handler-name {name}`::
+`--handler-name \{name}`::
 
 The name of the new Extended Operation Handler.
 +
 
 [open]
 ====
-Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the {name} you provide.
+Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Extended Operation Handler types:
 
 `cancel-extended-operation-handler`::
 +
-Default {name}: Cancel Extended Operation Handler
+Default \{name}: Cancel Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `end-transaction-extended-operation-handler`::
 +
-Default {name}: End Transaction Extended Operation Handler
+Default \{name}: End Transaction Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-end-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `get-connection-id-extended-operation-handler`::
 +
-Default {name}: Get Connection Id Extended Operation Handler
+Default \{name}: Get Connection Id Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-get-connection-id-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `get-symmetric-key-extended-operation-handler`::
 +
-Default {name}: Get Symmetric Key Extended Operation Handler
+Default \{name}: Get Symmetric Key Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-get-symmetric-key-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `password-modify-extended-operation-handler`::
 +
-Default {name}: Password Modify Extended Operation Handler
+Default \{name}: Password Modify Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-password-modify-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `password-policy-state-extended-operation-handler`::
 +
-Default {name}: Password Policy State Extended Operation Handler
+Default \{name}: Password Policy State Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-password-policy-state-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `start-tls-extended-operation-handler`::
 +
-Default {name}: Start TLS Extended Operation Handler
+Default \{name}: Start TLS Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `start-transaction-extended-operation-handler`::
 +
-Default {name}: Start Transaction Extended Operation Handler
+Default \{name}: Start Transaction Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-start-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `who-am-i-extended-operation-handler`::
 +
-Default {name}: Who Am I Extended Operation Handler
+Default \{name}: Who Am I Extended Operation Handler
 +
 Enabled by default: true
 +
@@ -121,78 +121,78 @@ See  <<dsconfig-create-extended-operation-handler-who-am-i-extended-operation-ha
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the `--handler-name {name}` option.
+Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the `--handler-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Extended Operation Handler which should be created. The value for TYPE can be one of: cancel | custom | end-transaction | get-connection-id | get-symmetric-key | password-modify | password-policy-state | start-tls | start-transaction | who-am-i.
 +
 
 [open]
 ====
-Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the {type} you provide.
+Extended Operation Handler properties depend on the Extended Operation Handler type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Extended Operation Handler types:
 
 `cancel-extended-operation-handler`::
 +
-Default {type}: Cancel Extended Operation Handler
+Default \{type}: Cancel Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-cancel-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `end-transaction-extended-operation-handler`::
 +
-Default {type}: End Transaction Extended Operation Handler
+Default \{type}: End Transaction Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-end-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `get-connection-id-extended-operation-handler`::
 +
-Default {type}: Get Connection Id Extended Operation Handler
+Default \{type}: Get Connection Id Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-get-connection-id-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `get-symmetric-key-extended-operation-handler`::
 +
-Default {type}: Get Symmetric Key Extended Operation Handler
+Default \{type}: Get Symmetric Key Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-get-symmetric-key-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `password-modify-extended-operation-handler`::
 +
-Default {type}: Password Modify Extended Operation Handler
+Default \{type}: Password Modify Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-password-modify-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `password-policy-state-extended-operation-handler`::
 +
-Default {type}: Password Policy State Extended Operation Handler
+Default \{type}: Password Policy State Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-password-policy-state-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `start-tls-extended-operation-handler`::
 +
-Default {type}: Start TLS Extended Operation Handler
+Default \{type}: Start TLS Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-start-tls-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `start-transaction-extended-operation-handler`::
 +
-Default {type}: Start Transaction Extended Operation Handler
+Default \{type}: Start Transaction Extended Operation Handler
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-extended-operation-handler-start-transaction-extended-operation-handler>> for the properties of this Extended Operation Handler type.
 `who-am-i-extended-operation-handler`::
 +
-Default {type}: Who Am I Extended Operation Handler
+Default \{type}: Who Am I Extended Operation Handler
 +
 Enabled by default: true
 +

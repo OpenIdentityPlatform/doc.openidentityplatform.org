@@ -26,7 +26,7 @@ dsconfig create-service-discovery-mechanism - Creates Service Discovery Mechanis
 
 == Synopsis
 
-`dsconfig create-service-discovery-mechanism` {options}
+`dsconfig create-service-discovery-mechanism` \{options}
 
 [#dsconfig-create-service-discovery-mechanism-description]
 == Description
@@ -41,27 +41,27 @@ Creates Service Discovery Mechanisms.
 The `dsconfig create-service-discovery-mechanism` command takes the following options:
 
 --
-`--mechanism-name {name}`::
+`--mechanism-name \{name}`::
 
 The name of the new Service Discovery Mechanism.
 +
 
 [open]
 ====
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the {name} you provide.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Service Discovery Mechanism types:
 
 `replication-service-discovery-mechanism`::
 +
-Default {name}: Replication Service Discovery Mechanism
+Default \{name}: Replication Service Discovery Mechanism
 +
 Enabled by default: false
 +
 See  <<dsconfig-create-service-discovery-mechanism-replication-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
 `static-service-discovery-mechanism`::
 +
-Default {name}: Static Service Discovery Mechanism
+Default \{name}: Static Service Discovery Mechanism
 +
 Enabled by default: false
 +
@@ -72,29 +72,29 @@ See  <<dsconfig-create-service-discovery-mechanism-static-service-discovery-mech
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name {name}` option.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the `--mechanism-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Service Discovery Mechanism which should be created (Default: generic). The value for TYPE can be one of: generic | replication | static.
 +
 
 [open]
 ====
-Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the {type} you provide.
+Service Discovery Mechanism properties depend on the Service Discovery Mechanism type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Service Discovery Mechanism types:
 
 `replication-service-discovery-mechanism`::
 +
-Default {type}: Replication Service Discovery Mechanism
+Default \{type}: Replication Service Discovery Mechanism
 +
 Enabled by default: false
 +
 See  <<dsconfig-create-service-discovery-mechanism-replication-service-discovery-mechanism>> for the properties of this Service Discovery Mechanism type.
 `static-service-discovery-mechanism`::
 +
-Default {type}: Static Service Discovery Mechanism
+Default \{type}: Static Service Discovery Mechanism
 +
 Enabled by default: false
 +
@@ -189,7 +189,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 seconds.
 
 
@@ -501,7 +501,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 1 seconds.
 
 

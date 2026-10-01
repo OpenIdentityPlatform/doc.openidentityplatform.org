@@ -27,7 +27,7 @@
 upgrade - upgrade OpenDJ configuration and application data
 
 == Synopsis
-`upgrade` `{options}`
+`upgrade` `\{options}`
 
 [#upgrade-description]
 == Description
@@ -38,7 +38,7 @@ This tool should be run immediately after upgrading the OpenDJ binaries and befo
 
 NOTE: this tool does not provide backup or restore capabilities. Therefore, it is the responsibility of the OpenDJ administrator to take necessary precautions before performing the upgrade.
 
-<xinclude:include href="description-upgrade.xml" />
+include::./_description-upgrade.adoc[]
 
 
 [#upgrade-options]
@@ -56,7 +56,7 @@ Default: false
 +
 
 `--force`::
-Forces a non-interactive upgrade to continue even if it requires user interaction. In particular, long running or critical upgrade tasks, such as re-indexing, which require user confirmation will be skipped. This option may only be used with the 'no-prompt' option.
+Forces a non-interactive upgrade to continue even if it requires user interaction. In particular, long running or critical upgrade tasks, such as re-indexing, which require user confirmation will be performed. This option does not accept the license: if the upgrade requires accepting a license, use the 'acceptLicense' option. This option may only be used with the 'no-prompt' option.
 +
 Default: false
 +

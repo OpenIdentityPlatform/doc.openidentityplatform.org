@@ -27,7 +27,7 @@
 dsreplication - manage OpenDJ directory data replication
 
 == Synopsis
-`dsreplication` `{subcommand} {options}`
+`dsreplication` `\{subcommand} \{options}`
 
 [#dsreplication-description]
 == Description
@@ -45,15 +45,15 @@ The `dsreplication` command takes the following options:
 .Command options:
 
 --
-`-b | --baseDN {baseDN}`::
+`-b | --baseDN \{baseDN}`::
 Base DN of the data to be replicated, initialized or for which we want to disable replication.  Multiple base DNs can be provided by using this option multiple times.
 +
 
-`--commandFilePath {path}`::
+`--commandFilePath \{path}`::
 The full path to the file where the equivalent non-interactive commands will be written when this command is run in interactive mode.
 +
 
-`--connectTimeout {timeout}`::
+`--connectTimeout \{timeout}`::
 Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
 +
 Default: 30000
@@ -65,11 +65,11 @@ Display the equivalent non-interactive argument in the standard output when this
 Default: false
 +
 
-`-j | --adminPasswordFile {bindPasswordFile}`::
+`-j | --adminPasswordFile \{bindPasswordFile}`::
 The file containing the password of the global administrator.
 +
 
-`-w | --adminPassword {bindPassword}`::
+`-w | --adminPassword \{bindPassword}`::
 The global administrator password.
 +
 
@@ -89,17 +89,17 @@ Default: false
 .LDAP connection options:
 
 --
-`-I | --adminUID {adminUID}`::
+`-I | --adminUID \{adminUID}`::
 User ID of the Global Administrator to use to bind to the server.  For the 'enable' subcommand if no Global Administrator was defined previously for none of the server the Global Administrator will be created using the provided data.
 +
 Default: admin
 +
 
-`-K | --keyStorePath {keyStorePath}`::
+`-K | --keyStorePath \{keyStorePath}`::
 Certificate key store path.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
@@ -107,23 +107,23 @@ Nickname of the certificate that the server should use when accepting SSL-based 
 SASL bind options.
 +
 
-`-P | --trustStorePath {trustStorePath}`::
+`-P | --trustStorePath \{trustStorePath}`::
 Certificate trust store path.
 +
 
-`-T | --trustStorePassword {trustStorePassword}`::
+`-T | --trustStorePassword \{trustStorePassword}`::
 Certificate trust store PIN.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
-`-U | --trustStorePasswordFile {path}`::
+`-U | --trustStorePasswordFile \{path}`::
 Certificate trust store PIN file.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
@@ -150,7 +150,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 
@@ -206,7 +206,7 @@ Disables replication on the specified server for the provided base DN and remove
 
 --
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 
@@ -214,7 +214,7 @@ The fully-qualified directory server host name that will be used when generating
 Default: localhost.localdomain
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 
@@ -222,7 +222,7 @@ Directory server administration port number.
 Default: 4444
 +
 
-`-D | --bindDN {bindDN}`::
+`-D | --bindDN \{bindDN}`::
 DN to use to bind to the server where we want to disable replication.  This option must be used when no Global Administrator has been defined on the server or if the user does not want to remove references in the other replicated servers.  The password provided for the Global Administrator will be used when specifying this option.
 +
 
@@ -264,7 +264,7 @@ Updates the configuration of the servers to replicate the data under the specifi
 
 --
 
-`-h | --host1 {host}`::
+`-h | --host1 \{host}`::
 Fully qualified host name or IP address of the first server whose contents will be replicated.
 +
 
@@ -272,7 +272,7 @@ Fully qualified host name or IP address of the first server whose contents will 
 Default: localhost.localdomain
 +
 
-`-p | --port1 {port}`::
+`-p | --port1 \{port}`::
 Directory server administration port number of the first server whose contents will be replicated.
 +
 
@@ -280,7 +280,7 @@ Directory server administration port number of the first server whose contents w
 Default: 4444
 +
 
-`-D | --bindDN1 {bindDN}`::
+`-D | --bindDN1 \{bindDN}`::
 DN to use to bind to the first server whose contents will be replicated.  If not specified the global administrator will be used to bind.
 +
 
@@ -288,19 +288,19 @@ DN to use to bind to the first server whose contents will be replicated.  If not
 Default: cn=Directory Manager
 +
 
-`--bindPassword1 {bindPassword}`::
+`--bindPassword1 \{bindPassword}`::
 Password to use to bind to the first server whose contents will be replicated.  If no bind DN was specified for the first server the password of the global administrator will be used to bind.
 +
 
 +
 
-`--bindPasswordFile1 {bindPasswordFile}`::
+`--bindPasswordFile1 \{bindPasswordFile}`::
 File containing the password to use to bind to the first server whose contents will be replicated.  If no bind DN was specified for the first server the password of the global administrator will be used to bind.
 +
 
 +
 
-`-r | --replicationPort1 {port}`::
+`-r | --replicationPort1 \{port}`::
 Port that will be used by the replication mechanism in the first server to communicate with the other servers.  You have to specify this option only if replication was not previously configured in the first server.
 +
 
@@ -332,7 +332,7 @@ Configure only a change log and replication port on the first server.  The first
 Default: false
 +
 
-`-O | --host2 {host}`::
+`-O | --host2 \{host}`::
 Fully qualified host name or IP address of the second server whose contents will be replicated.
 +
 
@@ -340,7 +340,7 @@ Fully qualified host name or IP address of the second server whose contents will
 Default: localhost.localdomain
 +
 
-`--port2 {port}`::
+`--port2 \{port}`::
 Directory server administration port number of the second server whose contents will be replicated.
 +
 
@@ -348,7 +348,7 @@ Directory server administration port number of the second server whose contents 
 Default: 4444
 +
 
-`--bindDN2 {bindDN}`::
+`--bindDN2 \{bindDN}`::
 DN to use to bind to the second server whose contents will be replicated.  If not specified the global administrator will be used to bind.
 +
 
@@ -356,19 +356,19 @@ DN to use to bind to the second server whose contents will be replicated.  If no
 Default: cn=Directory Manager
 +
 
-`--bindPassword2 {bindPassword}`::
+`--bindPassword2 \{bindPassword}`::
 Password to use to bind to the second server whose contents will be replicated.  If no bind DN was specified for the second server the password of the global administrator will be used to bind.
 +
 
 +
 
-`-F | --bindPasswordFile2 {bindPasswordFile}`::
+`-F | --bindPasswordFile2 \{bindPasswordFile}`::
 File containing the password to use to bind to the second server whose contents will be replicated.  If no bind DN was specified for the second server the password of the global administrator will be used to bind.
 +
 
 +
 
-`-R | --replicationPort2 {port}`::
+`-R | --replicationPort2 \{port}`::
 Port that will be used by the replication mechanism in the second server to communicate with the other servers.  You have to specify this option only if replication was not previously configured in the second server.
 +
 
@@ -442,7 +442,7 @@ Initialize the contents of the data under the specified base DN on the destinati
 
 --
 
-`-h | --hostSource {host}`::
+`-h | --hostSource \{host}`::
 Fully qualified host name or IP address of the source server whose contents will be used to initialize the destination server.
 +
 
@@ -450,7 +450,7 @@ Fully qualified host name or IP address of the source server whose contents will
 Default: localhost.localdomain
 +
 
-`-p | --portSource {port}`::
+`-p | --portSource \{port}`::
 Directory server administration port number of the source server whose contents will be used to initialize the destination server.
 +
 
@@ -458,7 +458,7 @@ Directory server administration port number of the source server whose contents 
 Default: 4444
 +
 
-`-O | --hostDestination {host}`::
+`-O | --hostDestination \{host}`::
 Fully qualified host name or IP address of the destination server whose contents will be initialized.
 +
 
@@ -466,7 +466,7 @@ Fully qualified host name or IP address of the destination server whose contents
 Default: localhost.localdomain
 +
 
-`--portDestination {port}`::
+`--portDestination \{port}`::
 Directory server administration port number of the destination server whose contents will be initialized.
 +
 
@@ -492,7 +492,7 @@ Initialize the contents of the data under the specified base DN on all the serve
 
 --
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 
@@ -500,7 +500,7 @@ The fully-qualified directory server host name that will be used when generating
 Default: localhost.localdomain
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 
@@ -526,7 +526,7 @@ This subcommand must be called after initializing the contents of all the replic
 
 --
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 
@@ -534,7 +534,7 @@ The fully-qualified directory server host name that will be used when generating
 Default: localhost.localdomain
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 
@@ -560,7 +560,7 @@ This subcommand must be called before initializing the contents of all the repli
 
 --
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 
@@ -568,7 +568,7 @@ The fully-qualified directory server host name that will be used when generating
 Default: localhost.localdomain
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 
@@ -594,7 +594,7 @@ Launches a purge processing of the historical informations stored in the user en
 
 --
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 
@@ -602,7 +602,7 @@ The fully-qualified directory server host name that will be used when generating
 Default: localhost.localdomain
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 
@@ -618,37 +618,37 @@ This argument specifies the maximum duration the purge processing must last expr
 Default: 3600
 +
 
-`-t | --start {startTime}`::
+`-t | --start \{startTime}`::
 Indicates the date/time at which this operation will start when scheduled as a server task expressed in YYYYMMDDhhmmssZ format for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the task to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
 +
 
 +
 
-`--recurringTask {schedulePattern}`::
+`--recurringTask \{schedulePattern}`::
 Indicates the task is recurring and will be scheduled according to the value argument expressed in crontab(5) compatible time/date pattern.
 +
 
 +
 
-`--completionNotify {emailAddress}`::
+`--completionNotify \{emailAddress}`::
 Email address of a recipient to be notified when the task completes.  This option may be specified more than once.
 +
 
 +
 
-`--errorNotify {emailAddress}`::
+`--errorNotify \{emailAddress}`::
 Email address of a recipient to be notified if an error occurs when this task executes.  This option may be specified more than once.
 +
 
 +
 
-`--dependency {taskID}`::
+`--dependency \{taskID}`::
 ID of a task upon which this task depends.  A task will not start execution until all its dependencies have completed execution.
 +
 
 +
 
-`--failedDependencyAction {action}`::
+`--failedDependencyAction \{action}`::
 Action this task will take should one if its dependent tasks fail.  The value must be one of PROCESS,CANCEL,DISABLE.  If not specified defaults to CANCEL.
 +
 
@@ -672,7 +672,7 @@ Re-synchronizes the change-log changenumber on one server with the change-log ch
 
 --
 
-`-h | --hostSource {host}`::
+`-h | --hostSource \{host}`::
 Fully qualified host name or IP address of the source server whose contents will be used to initialize the destination server.
 +
 
@@ -680,7 +680,7 @@ Fully qualified host name or IP address of the source server whose contents will
 Default: localhost.localdomain
 +
 
-`-p | --portSource {port}`::
+`-p | --portSource \{port}`::
 Directory server administration port number of the source server whose contents will be used to initialize the destination server.
 +
 
@@ -688,7 +688,7 @@ Directory server administration port number of the source server whose contents 
 Default: 4444
 +
 
-`-O | --hostDestination {host}`::
+`-O | --hostDestination \{host}`::
 Fully qualified host name or IP address of the destination server whose contents will be initialized.
 +
 
@@ -696,7 +696,7 @@ Fully qualified host name or IP address of the destination server whose contents
 Default: localhost.localdomain
 +
 
-`--portDestination {port}`::
+`--portDestination \{port}`::
 Directory server administration port number of the destination server whose contents will be initialized.
 +
 
@@ -728,7 +728,7 @@ Displays a list with the basic replication configuration of the base DNs of the 
 
 --
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 
@@ -736,7 +736,7 @@ The fully-qualified directory server host name that will be used when generating
 Default: localhost.localdomain
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 

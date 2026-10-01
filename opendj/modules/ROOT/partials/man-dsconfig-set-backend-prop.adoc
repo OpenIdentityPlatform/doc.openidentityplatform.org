@@ -26,7 +26,7 @@ dsconfig set-backend-prop - Modifies Backend properties
 
 == Synopsis
 
-`dsconfig set-backend-prop` {options}
+`dsconfig set-backend-prop` \{options}
 
 [#dsconfig-set-backend-prop-description]
 == Description
@@ -41,97 +41,97 @@ Modifies Backend properties.
 The `dsconfig set-backend-prop` command takes the following options:
 
 --
-`--backend-name {name}`::
+`--backend-name \{name}`::
 
 The name of the Backend.
 +
 
 [open]
 ====
-Backend properties depend on the Backend type, which depends on the {name} you provide.
+Backend properties depend on the Backend type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend types:
 
 `backup-backend`::
 +
-Default {name}: Backup Backend
+Default \{name}: Backup Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-backup-backend>> for the properties of this Backend type.
 `cas-backend`::
 +
-Default {name}: CAS Backend
+Default \{name}: CAS Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-cas-backend>> for the properties of this Backend type.
 `jdbc-backend`::
 +
-Default {name}: JDBC Backend
+Default \{name}: JDBC Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-jdbc-backend>> for the properties of this Backend type.
 `je-backend`::
 +
-Default {name}: JE Backend
+Default \{name}: JE Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-je-backend>> for the properties of this Backend type.
 `ldif-backend`::
 +
-Default {name}: LDIF Backend
+Default \{name}: LDIF Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-ldif-backend>> for the properties of this Backend type.
 `memory-backend`::
 +
-Default {name}: Memory Backend
+Default \{name}: Memory Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-memory-backend>> for the properties of this Backend type.
 `monitor-backend`::
 +
-Default {name}: Monitor Backend
+Default \{name}: Monitor Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-monitor-backend>> for the properties of this Backend type.
 `null-backend`::
 +
-Default {name}: Null Backend
+Default \{name}: Null Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-null-backend>> for the properties of this Backend type.
 `pdb-backend`::
 +
-Default {name}: PDB Backend
+Default \{name}: PDB Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-pdb-backend>> for the properties of this Backend type.
 `schema-backend`::
 +
-Default {name}: Schema Backend
+Default \{name}: Schema Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-schema-backend>> for the properties of this Backend type.
 `task-backend`::
 +
-Default {name}: Task Backend
+Default \{name}: Task Backend
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-backend-prop-task-backend>> for the properties of this Backend type.
 `trust-store-backend`::
 +
-Default {name}: Trust Store Backend
+Default \{name}: Trust Store Backend
 +
 Enabled by default: true
 +
@@ -142,25 +142,25 @@ See  <<dsconfig-set-backend-prop-trust-store-backend>> for the properties of thi
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Backend properties depend on the Backend type, which depends on the `--backend-name {name}` option.
+Backend properties depend on the Backend type, which depends on the `--backend-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Backend properties depend on the Backend type, which depends on the `--backend-name {name}` option.
+Backend properties depend on the Backend type, which depends on the `--backend-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Backend properties depend on the Backend type, which depends on the `--backend-name {name}` option.
+Backend properties depend on the Backend type, which depends on the `--backend-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Backend properties depend on the Backend type, which depends on the `--backend-name {name}` option.
+Backend properties depend on the Backend type, which depends on the `--backend-name \{name}` option.
 
 --
 
@@ -872,8 +872,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -1428,8 +1428,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -1816,8 +1816,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 seconds.Upper limit is 4294 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 seconds. Upper limit is 4294 seconds.
 
 
 Multi-valued::
@@ -1982,8 +1982,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 seconds.Upper limit is 86400 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 seconds. Upper limit is 86400 seconds.
 
 
 Multi-valued::
@@ -2116,7 +2116,7 @@ Default Value::
 
 
 Allowed Values::
-Lower value is 1000000.Upper value is 4294967296.
+Lower value is 1000000. Upper value is 4294967296.
 
 
 Multi-valued::
@@ -2750,8 +2750,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -3924,8 +3924,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 10 seconds.Upper limit is 3600 seconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 10 seconds. Upper limit is 3600 seconds.
 
 
 Multi-valued::
@@ -4358,8 +4358,8 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 0 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 0 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -4901,7 +4901,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 seconds.
 
 

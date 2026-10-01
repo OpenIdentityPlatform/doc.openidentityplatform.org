@@ -26,7 +26,7 @@ dsconfig set-identity-mapper-prop - Modifies Identity Mapper properties
 
 == Synopsis
 
-`dsconfig set-identity-mapper-prop` {options}
+`dsconfig set-identity-mapper-prop` \{options}
 
 [#dsconfig-set-identity-mapper-prop-description]
 == Description
@@ -41,27 +41,27 @@ Modifies Identity Mapper properties.
 The `dsconfig set-identity-mapper-prop` command takes the following options:
 
 --
-`--mapper-name {name}`::
+`--mapper-name \{name}`::
 
 The name of the Identity Mapper.
 +
 
 [open]
 ====
-Identity Mapper properties depend on the Identity Mapper type, which depends on the {name} you provide.
+Identity Mapper properties depend on the Identity Mapper type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Identity Mapper types:
 
 `exact-match-identity-mapper`::
 +
-Default {name}: Exact Match Identity Mapper
+Default \{name}: Exact Match Identity Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-identity-mapper-prop-exact-match-identity-mapper>> for the properties of this Identity Mapper type.
 `regular-expression-identity-mapper`::
 +
-Default {name}: Regular Expression Identity Mapper
+Default \{name}: Regular Expression Identity Mapper
 +
 Enabled by default: true
 +
@@ -72,25 +72,25 @@ See  <<dsconfig-set-identity-mapper-prop-regular-expression-identity-mapper>> fo
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name {name}` option.
+Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name {name}` option.
+Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name {name}` option.
+Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name {name}` option.
+Identity Mapper properties depend on the Identity Mapper type, which depends on the `--mapper-name \{name}` option.
 
 --
 

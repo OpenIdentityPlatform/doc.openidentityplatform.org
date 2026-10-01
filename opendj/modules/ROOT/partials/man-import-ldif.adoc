@@ -45,15 +45,15 @@ The `import-ldif` command takes the following options:
 .Command options:
 
 --
-`-A | --templateFile {templateFile}`::
+`-A | --templateFile \{templateFile}`::
 Path to a MakeLDIF template to use to generate the import data.
 +
 
-`-b | --includeBranch {branchDN}`::
+`-b | --includeBranch \{branchDN}`::
 Base DN of a branch to include in the LDIF import.
 +
 
-`-B | --excludeBranch {branchDN}`::
+`-B | --excludeBranch \{branchDN}`::
 Base DN of a branch to exclude from the LDIF import.
 +
 
@@ -69,11 +69,11 @@ Count the number of entries rejected by the server and return that value as the 
 Default: false
 +
 
-`-e | --excludeAttribute {attribute}`::
+`-e | --excludeAttribute \{attribute}`::
 Attribute to exclude from the LDIF import.
 +
 
-`-E | --excludeFilter {filter}`::
+`-E | --excludeFilter \{filter}`::
 Filter to identify entries to exclude from the LDIF import.
 +
 
@@ -83,19 +83,19 @@ Remove all entries for all base DNs in the backend before importing. Set to `tru
 Default: false
 +
 
-`-i | --includeAttribute {attribute}`::
+`-i | --includeAttribute \{attribute}`::
 Attribute to include in the LDIF import.
 +
 
-`-I | --includeFilter {filter}`::
+`-I | --includeFilter \{filter}`::
 Filter to identify entries to include in the LDIF import.
 +
 
-`-l | --ldifFile {ldifFile}`::
+`-l | --ldifFile \{ldifFile}`::
 Path to the LDIF file to be imported.
 +
 
-`-n | --backendID {backendName}`::
+`-n | --backendID \{backendName}`::
 Backend ID for the backend to import.
 +
 
@@ -111,11 +111,11 @@ Indicates that the command must be run in offline mode. Forces old data replacem
 Default: false
 +
 
-`-R | --rejectFile {rejectFile}`::
+`-R | --rejectFile \{rejectFile}`::
 Write rejected entries to the specified file.
 +
 
-`-s | --randomSeed {seed}`::
+`-s | --randomSeed \{seed}`::
 Seed for the MakeLDIF random number generator.
 +
 Default: 0
@@ -127,17 +127,17 @@ Skip schema validation during the LDIF import.
 Default: false
 +
 
-`--skipFile {skipFile}`::
+`--skipFile \{skipFile}`::
 Write skipped entries to the specified file.
 +
 
-`--threadCount {count}`::
+`--threadCount \{count}`::
 Number of threads used to read LDIF file during import. Default value (0) equals: 2 x (number of CPUs).
 +
 Default: 0
 +
 
-`--tmpdirectory {directory}`::
+`--tmpdirectory \{directory}`::
 Path to temporary directory for index scratch files during LDIF import.
 +
 Default: import-tmp
@@ -148,33 +148,33 @@ Default: import-tmp
 .Task Backend Connection Options
 
 --
-`--connectTimeout {timeout}`::
+`--connectTimeout \{timeout}`::
 Maximum length of time (in milliseconds) that can be taken to establish a connection.  Use '0' to specify no time out.
 +
 Default: 30000
 +
 
-`-D | --bindDN {bindDN}`::
+`-D | --bindDN \{bindDN}`::
 DN to use to bind to the server.
 +
 Default: cn=Directory Manager
 +
 
-`-h | --hostname {host}`::
+`-h | --hostname \{host}`::
 The fully-qualified directory server host name that will be used when generating self-signed certificates for LDAP SSL/StartTLS, the administration connector, and replication.
 +
 Default: localhost.localdomain
 +
 
-`-j | --bindPasswordFile {bindPasswordFile}`::
+`-j | --bindPasswordFile \{bindPasswordFile}`::
 Bind password file.
 +
 
-`-K | --keyStorePath {keyStorePath}`::
+`-K | --keyStorePath \{keyStorePath}`::
 Certificate key store path.
 +
 
-`-N | --certNickname {nickname}`::
+`-N | --certNickname \{nickname}`::
 Nickname of the certificate that the server should use when accepting SSL-based connections or performing StartTLS negotiation.
 +
 
@@ -182,33 +182,33 @@ Nickname of the certificate that the server should use when accepting SSL-based 
 SASL bind options.
 +
 
-`-p | --port {port}`::
+`-p | --port \{port}`::
 Directory server administration port number.
 +
 Default: 4444
 +
 
-`-P | --trustStorePath {trustStorePath}`::
+`-P | --trustStorePath \{trustStorePath}`::
 Certificate trust store path.
 +
 
-`-T | --trustStorePassword {trustStorePassword}`::
+`-T | --trustStorePassword \{trustStorePassword}`::
 Certificate trust store PIN.
 +
 
-`-u | --keyStorePasswordFile {keyStorePasswordFile}`::
+`-u | --keyStorePasswordFile \{keyStorePasswordFile}`::
 Certificate key store PIN file.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
-`-U | --trustStorePasswordFile {path}`::
+`-U | --trustStorePasswordFile \{path}`::
 Certificate trust store PIN file.
 +
 
-`-w | --bindPassword {bindPassword}`::
+`-w | --bindPassword \{bindPassword}`::
 Password to use to bind to the server. Use -w - to ensure that the command prompts for the password, rather than entering the password as a command argument.
 +
 
-`-W | --keyStorePassword {keyStorePassword}`::
+`-W | --keyStorePassword \{keyStorePassword}`::
 Certificate key store PIN.  A PIN is required when you specify to use an existing certificate as server certificate.
 +
 
@@ -223,27 +223,27 @@ Default: false
 .Task Scheduling Options
 
 --
-`--completionNotify {emailAddress}`::
+`--completionNotify \{emailAddress}`::
 Email address of a recipient to be notified when the task completes.  This option may be specified more than once.
 +
 
-`--dependency {taskID}`::
+`--dependency \{taskID}`::
 ID of a task upon which this task depends.  A task will not start execution until all its dependencies have completed execution.
 +
 
-`--errorNotify {emailAddress}`::
+`--errorNotify \{emailAddress}`::
 Email address of a recipient to be notified if an error occurs when this task executes.  This option may be specified more than once.
 +
 
-`--failedDependencyAction {action}`::
+`--failedDependencyAction \{action}`::
 Action this task will take should one if its dependent tasks fail.  The value must be one of PROCESS,CANCEL,DISABLE.  If not specified defaults to CANCEL.
 +
 
-`--recurringTask {schedulePattern}`::
+`--recurringTask \{schedulePattern}`::
 Indicates the task is recurring and will be scheduled according to the value argument expressed in crontab(5) compatible time/date pattern.
 +
 
-`-t | --start {startTime}`::
+`-t | --start \{startTime}`::
 Indicates the date/time at which this operation will start when scheduled as a server task expressed in YYYYMMDDhhmmssZ format for UTC time or YYYYMMDDhhmmss for local time.  A value of '0' will cause the task to be scheduled for immediate execution.  When this option is specified the operation will be scheduled to start at the specified time after which this utility will exit immediately.
 +
 
@@ -258,7 +258,7 @@ No properties file will be used to get default command line argument values.
 Default: false
 +
 
-`--propertiesFilePath {propertiesFilePath}`::
+`--propertiesFilePath \{propertiesFilePath}`::
 Path to the file containing default property values used for command line arguments.
 +
 

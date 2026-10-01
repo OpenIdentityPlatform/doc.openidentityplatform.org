@@ -890,7 +890,11 @@ public final&nbsp;void&nbsp;initializeInternal&#8203;(<a href="../../core/Server
 <pre class="methodSignature">public&nbsp;void&nbsp;finalizePlugin()</pre>
 <div class="block">Performs any necessary finalization for this plugin.  This will
  be called just after the plugin has been deregistered with the
- server but before it has been unloaded.</div>
+ server but before it has been unloaded.  It is also called when
+ <a href="#initializePlugin(java.util.Set,T)"><code>initializePlugin(java.util.Set&lt;org.opends.server.api.plugin.PluginType&gt;, T)</code></a> throws, on an instance that was never
+ registered: it must then release whatever
+ <code>initializePlugin</code> acquired before it failed, and must not
+ assume that it completed.</div>
 </li>
 </ul>
 <a id="getPluginEntryDN()">

@@ -26,7 +26,7 @@ dsconfig create-entry-cache - Creates Entry Caches
 
 == Synopsis
 
-`dsconfig create-entry-cache` {options}
+`dsconfig create-entry-cache` \{options}
 
 [#dsconfig-create-entry-cache-description]
 == Description
@@ -41,27 +41,27 @@ Creates Entry Caches.
 The `dsconfig create-entry-cache` command takes the following options:
 
 --
-`--cache-name {name}`::
+`--cache-name \{name}`::
 
 The name of the new Entry Cache.
 +
 
 [open]
 ====
-Entry Cache properties depend on the Entry Cache type, which depends on the {name} you provide.
+Entry Cache properties depend on the Entry Cache type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Entry Cache types:
 
 `fifo-entry-cache`::
 +
-Default {name}: FIFO Entry Cache
+Default \{name}: FIFO Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-entry-cache-fifo-entry-cache>> for the properties of this Entry Cache type.
 `soft-reference-entry-cache`::
 +
-Default {name}: Soft Reference Entry Cache
+Default \{name}: Soft Reference Entry Cache
 +
 Enabled by default: true
 +
@@ -72,29 +72,29 @@ See  <<dsconfig-create-entry-cache-soft-reference-entry-cache>> for the properti
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Entry Cache properties depend on the Entry Cache type, which depends on the `--cache-name {name}` option.
+Entry Cache properties depend on the Entry Cache type, which depends on the `--cache-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Entry Cache which should be created. The value for TYPE can be one of: custom | fifo | soft-reference.
 +
 
 [open]
 ====
-Entry Cache properties depend on the Entry Cache type, which depends on the {type} you provide.
+Entry Cache properties depend on the Entry Cache type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Entry Cache types:
 
 `fifo-entry-cache`::
 +
-Default {type}: FIFO Entry Cache
+Default \{type}: FIFO Entry Cache
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-entry-cache-fifo-entry-cache>> for the properties of this Entry Cache type.
 `soft-reference-entry-cache`::
 +
-Default {type}: Soft Reference Entry Cache
+Default \{type}: Soft Reference Entry Cache
 +
 Enabled by default: true
 +
@@ -289,7 +289,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
 
 
@@ -567,7 +567,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 A value of "-1" or "unlimited" for no limit. Lower limit is 0 milliseconds.
 
 

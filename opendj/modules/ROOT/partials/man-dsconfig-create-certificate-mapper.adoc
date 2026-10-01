@@ -26,7 +26,7 @@ dsconfig create-certificate-mapper - Creates Certificate Mappers
 
 == Synopsis
 
-`dsconfig create-certificate-mapper` {options}
+`dsconfig create-certificate-mapper` \{options}
 
 [#dsconfig-create-certificate-mapper-description]
 == Description
@@ -41,41 +41,41 @@ Creates Certificate Mappers.
 The `dsconfig create-certificate-mapper` command takes the following options:
 
 --
-`--mapper-name {name}`::
+`--mapper-name \{name}`::
 
 The name of the new Certificate Mapper.
 +
 
 [open]
 ====
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {name} you provide.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Certificate Mapper types:
 
 `fingerprint-certificate-mapper`::
 +
-Default {name}: Fingerprint Certificate Mapper
+Default \{name}: Fingerprint Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-certificate-mapper-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-attribute-to-user-attribute-certificate-mapper`::
 +
-Default {name}: Subject Attribute To User Attribute Certificate Mapper
+Default \{name}: Subject Attribute To User Attribute Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-certificate-mapper-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-dn-to-user-attribute-certificate-mapper`::
 +
-Default {name}: Subject DN To User Attribute Certificate Mapper
+Default \{name}: Subject DN To User Attribute Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-certificate-mapper-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-equals-dn-certificate-mapper`::
 +
-Default {name}: Subject Equals DN Certificate Mapper
+Default \{name}: Subject Equals DN Certificate Mapper
 +
 Enabled by default: true
 +
@@ -86,43 +86,43 @@ See  <<dsconfig-create-certificate-mapper-subject-equals-dn-certificate-mapper>>
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name {name}` option.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the `--mapper-name \{name}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of Certificate Mapper which should be created. The value for TYPE can be one of: custom | fingerprint | subject-attribute-to-user-attribute | subject-dn-to-user-attribute | subject-equals-dn.
 +
 
 [open]
 ====
-Certificate Mapper properties depend on the Certificate Mapper type, which depends on the {type} you provide.
+Certificate Mapper properties depend on the Certificate Mapper type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following Certificate Mapper types:
 
 `fingerprint-certificate-mapper`::
 +
-Default {type}: Fingerprint Certificate Mapper
+Default \{type}: Fingerprint Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-certificate-mapper-fingerprint-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-attribute-to-user-attribute-certificate-mapper`::
 +
-Default {type}: Subject Attribute To User Attribute Certificate Mapper
+Default \{type}: Subject Attribute To User Attribute Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-certificate-mapper-subject-attribute-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-dn-to-user-attribute-certificate-mapper`::
 +
-Default {type}: Subject DN To User Attribute Certificate Mapper
+Default \{type}: Subject DN To User Attribute Certificate Mapper
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-certificate-mapper-subject-dn-to-user-attribute-certificate-mapper>> for the properties of this Certificate Mapper type.
 `subject-equals-dn-certificate-mapper`::
 +
-Default {type}: Subject Equals DN Certificate Mapper
+Default \{type}: Subject Equals DN Certificate Mapper
 +
 Enabled by default: true
 +

@@ -26,7 +26,7 @@ dsconfig create-http-endpoint - Creates HTTP Endpoints
 
 == Synopsis
 
-`dsconfig create-http-endpoint` {options}
+`dsconfig create-http-endpoint` \{options}
 
 [#dsconfig-create-http-endpoint-description]
 == Description
@@ -41,27 +41,27 @@ Creates HTTP Endpoints.
 The `dsconfig create-http-endpoint` command takes the following options:
 
 --
-`--endpoint-name {STRING}`::
+`--endpoint-name \{STRING}`::
 
 The name of the new HTTP Endpoint which will also be used as the value of the "base-path" property: All HTTP requests matching the base path or subordinate to it will be routed to the HTTP endpoint unless a more specific HTTP endpoint is found.
 +
 
 [open]
 ====
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the {STRING} you provide.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the \{STRING} you provide.
 
 By default, OpenDJ directory server supports the following HTTP Endpoint types:
 
 `admin-endpoint`::
 +
-Default {STRING}: Admin Endpoint
+Default \{STRING}: Admin Endpoint
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-http-endpoint-admin-endpoint>> for the properties of this HTTP Endpoint type.
 `rest2ldap-endpoint`::
 +
-Default {STRING}: Rest2ldap Endpoint
+Default \{STRING}: Rest2ldap Endpoint
 +
 Enabled by default: true
 +
@@ -72,29 +72,29 @@ See  <<dsconfig-create-http-endpoint-rest2ldap-endpoint>> for the properties of 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name {STRING}` option.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the `--endpoint-name \{STRING}` option.
 
-`-t | --type {type}`::
+`-t | --type \{type}`::
 
 The type of HTTP Endpoint which should be created (Default: generic). The value for TYPE can be one of: admin-endpoint | generic | rest2ldap-endpoint.
 +
 
 [open]
 ====
-HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the {type} you provide.
+HTTP Endpoint properties depend on the HTTP Endpoint type, which depends on the \{type} you provide.
 
 By default, OpenDJ directory server supports the following HTTP Endpoint types:
 
 `admin-endpoint`::
 +
-Default {type}: Admin Endpoint
+Default \{type}: Admin Endpoint
 +
 Enabled by default: true
 +
 See  <<dsconfig-create-http-endpoint-admin-endpoint>> for the properties of this HTTP Endpoint type.
 `rest2ldap-endpoint`::
 +
-Default {type}: Rest2ldap Endpoint
+Default \{type}: Rest2ldap Endpoint
 +
 Enabled by default: true
 +

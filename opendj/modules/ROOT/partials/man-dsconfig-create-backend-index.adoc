@@ -26,7 +26,7 @@ dsconfig create-backend-index - Creates Backend Indexes
 
 == Synopsis
 
-`dsconfig create-backend-index` {options}
+`dsconfig create-backend-index` \{options}
 
 [#dsconfig-create-backend-index-description]
 == Description
@@ -41,40 +41,40 @@ Creates Backend Indexes.
 The `dsconfig create-backend-index` command takes the following options:
 
 --
-`--backend-name {name}`::
+`--backend-name \{name}`::
 
 The name of the Pluggable Backend.
 +
 
 [open]
 ====
-Backend Index properties depend on the Backend Index type, which depends on the {name} you provide.
+Backend Index properties depend on the Backend Index type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Backend Index types:
 
 `backend-index`::
 +
-Default {name}: Backend Index
+Default \{name}: Backend Index
 +
 Enabled by default: false
 +
 See  <<dsconfig-create-backend-index-backend-index>> for the properties of this Backend Index type.
 ====
 
-`--index-name {OID}`::
+`--index-name \{OID}`::
 
 The name of the new Backend Index which will also be used as the value of the "attribute" property: Specifies the name of the attribute for which the index is to be maintained.
 +
 
 [open]
 ====
-Backend Index properties depend on the Backend Index type, which depends on the {OID} you provide.
+Backend Index properties depend on the Backend Index type, which depends on the \{OID} you provide.
 
 By default, OpenDJ directory server supports the following Backend Index types:
 
 `backend-index`::
 +
-Default {OID}: Backend Index
+Default \{OID}: Backend Index
 +
 Enabled by default: false
 +
@@ -85,7 +85,7 @@ See  <<dsconfig-create-backend-index-backend-index>> for the properties of this 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Backend Index properties depend on the Backend Index type, which depends on the `--index-name {OID}` option.
+Backend Index properties depend on the Backend Index type, which depends on the `--index-name \{OID}` option.
 
 --
 
@@ -134,7 +134,7 @@ confidentiality-enabled::
 [open]
 ====
 Description::
-Specifies whether contents of the index should be confidential. Setting the flag to true will hash keys for equality type indexes using SHA-1 and encrypt the list of entries matching a substring key for substring indexes.
+Specifies whether contents of the index should be confidential. Setting the flag to true will encrypt the list of entries matching each key, for every index type of the attribute, and hash the keys of the equality index using SHA-1. The keys of the other index types are stored as they are.
 
 
 Default Value::

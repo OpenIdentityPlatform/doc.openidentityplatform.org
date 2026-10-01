@@ -26,7 +26,7 @@ dsconfig set-plugin-prop - Modifies Plugin properties
 
 == Synopsis
 
-`dsconfig set-plugin-prop` {options}
+`dsconfig set-plugin-prop` \{options}
 
 [#dsconfig-set-plugin-prop-description]
 == Description
@@ -41,97 +41,97 @@ Modifies Plugin properties.
 The `dsconfig set-plugin-prop` command takes the following options:
 
 --
-`--plugin-name {name}`::
+`--plugin-name \{name}`::
 
 The name of the Plugin.
 +
 
 [open]
 ====
-Plugin properties depend on the Plugin type, which depends on the {name} you provide.
+Plugin properties depend on the Plugin type, which depends on the \{name} you provide.
 
 By default, OpenDJ directory server supports the following Plugin types:
 
 `attribute-cleanup-plugin`::
 +
-Default {name}: Attribute Cleanup Plugin
+Default \{name}: Attribute Cleanup Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-attribute-cleanup-plugin>> for the properties of this Plugin type.
 `change-number-control-plugin`::
 +
-Default {name}: Change Number Control Plugin
+Default \{name}: Change Number Control Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-change-number-control-plugin>> for the properties of this Plugin type.
 `entry-uuid-plugin`::
 +
-Default {name}: Entry UUID Plugin
+Default \{name}: Entry UUID Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-entry-uuid-plugin>> for the properties of this Plugin type.
 `fractional-ldif-import-plugin`::
 +
-Default {name}: Fractional LDIF Import Plugin
+Default \{name}: Fractional LDIF Import Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-fractional-ldif-import-plugin>> for the properties of this Plugin type.
 `last-mod-plugin`::
 +
-Default {name}: Last Mod Plugin
+Default \{name}: Last Mod Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-last-mod-plugin>> for the properties of this Plugin type.
 `ldap-attribute-description-list-plugin`::
 +
-Default {name}: LDAP Attribute Description List Plugin
+Default \{name}: LDAP Attribute Description List Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-ldap-attribute-description-list-plugin>> for the properties of this Plugin type.
 `password-policy-import-plugin`::
 +
-Default {name}: Password Policy Import Plugin
+Default \{name}: Password Policy Import Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-password-policy-import-plugin>> for the properties of this Plugin type.
 `profiler-plugin`::
 +
-Default {name}: Profiler Plugin
+Default \{name}: Profiler Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-profiler-plugin>> for the properties of this Plugin type.
 `referential-integrity-plugin`::
 +
-Default {name}: Referential Integrity Plugin
+Default \{name}: Referential Integrity Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-referential-integrity-plugin>> for the properties of this Plugin type.
 `samba-password-plugin`::
 +
-Default {name}: Samba Password Plugin
+Default \{name}: Samba Password Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-samba-password-plugin>> for the properties of this Plugin type.
 `seven-bit-clean-plugin`::
 +
-Default {name}: Seven Bit Clean Plugin
+Default \{name}: Seven Bit Clean Plugin
 +
 Enabled by default: true
 +
 See  <<dsconfig-set-plugin-prop-seven-bit-clean-plugin>> for the properties of this Plugin type.
 `unique-attribute-plugin`::
 +
-Default {name}: Unique Attribute Plugin
+Default \{name}: Unique Attribute Plugin
 +
 Enabled by default: true
 +
@@ -142,25 +142,25 @@ See  <<dsconfig-set-plugin-prop-unique-attribute-plugin>> for the properties of 
 
 Assigns a value to a property where PROP is the name of the property and VALUE is the single value to be assigned. Specify the same property multiple times in order to assign more than one value to it.
 +
-Plugin properties depend on the Plugin type, which depends on the `--plugin-name {name}` option.
+Plugin properties depend on the Plugin type, which depends on the `--plugin-name \{name}` option.
 
-`--reset {property}`::
+`--reset \{property}`::
 
 Resets a property back to its default values where PROP is the name of the property to be reset.
 +
-Plugin properties depend on the Plugin type, which depends on the `--plugin-name {name}` option.
+Plugin properties depend on the Plugin type, which depends on the `--plugin-name \{name}` option.
 
 `--add {PROP:VALUE}`::
 
 Adds a single value to a property where PROP is the name of the property and VALUE is the single value to be added.
 +
-Plugin properties depend on the Plugin type, which depends on the `--plugin-name {name}` option.
+Plugin properties depend on the Plugin type, which depends on the `--plugin-name \{name}` option.
 
 `--remove {PROP:VALUE}`::
 
 Removes a single value from a property where PROP is the name of the property and VALUE is the single value to be removed.
 +
-Plugin properties depend on the Plugin type, which depends on the `--plugin-name {name}` option.
+Plugin properties depend on the Plugin type, which depends on the `--plugin-name \{name}` option.
 
 --
 
@@ -456,7 +456,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -831,7 +831,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -1138,7 +1138,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -1444,7 +1444,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 No
@@ -1752,7 +1752,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2058,7 +2058,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2430,7 +2430,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2770,7 +2770,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -2872,8 +2872,8 @@ None
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
-Lower limit is 1 milliseconds.Upper limit is 2147483647 milliseconds.
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
+Lower limit is 1 milliseconds. Upper limit is 2147483647 milliseconds.
 
 
 Multi-valued::
@@ -3400,7 +3400,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -3423,7 +3423,7 @@ Default Value::
 
 
 Allowed Values::
-<xinclude:include href="itemizedlist-duration.xml" />
+A duration: a number followed by a unit, one of `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), `d` (days) or `w` (weeks), for example `1 s` or `2 w`.
 Lower limit is 0 seconds.
 
 
@@ -3741,7 +3741,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -4191,7 +4191,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
@@ -4538,7 +4538,7 @@ Required::
 Yes
 
 Admin Action Required::
-The Plugin must be disabled and re-enabled for changes to this setting to take effect
+None
 
 Advanced Property::
 Yes (Use --advanced in interactive mode.)
