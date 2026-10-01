@@ -38,8 +38,7 @@ antora_errors() {
 
 # page <TAB> link, both relative to the site root
 broken_links() {
-  jq -r '.error_map // {} | to_entries[] | .key as $page | .value[]
-    | "\($page | ltrimstr("/site/"))\t\(.url | ltrimstr("file:///site/"))"' "$root/build/lychee.json" | LC_ALL=C sort -u
+  jq -r -f "$dir/broken-links.jq" "$root/build/lychee.json" | LC_ALL=C sort -u
 }
 
 failed=false

@@ -15,7 +15,8 @@
 # Builds the site for a pull request, reports Antora messages and broken links in the job summary,
 # and fails on an Antora error or a broken link that is not in the known lists of
 # .github/build-baseline: the content has known problems, fixed in the product repositories, which
-# would otherwise fail every pull request (#25).
+# would otherwise fail every pull request (#25). Link anchors are checked too (#36), and so are the
+# head meta tags of every page and the Sitemap line of robots.txt (#37).
 name: Build
 on:
   pull_request:
@@ -40,6 +41,7 @@ jobs:
     - name: Install Antora
       run: npm ci
     - name: Generate Site
+      id: site
       run: |
         mkdir -p build
         # Antora appends to an existing log file
@@ -82,7 +84,7 @@ jobs:
       run: |
         rc=0
         docker run --rm -v "$PWD/build/site:/site:ro" lycheeverse/lychee:0.24.2 \
-          --offline --no-progress --format json \
+          --offline --no-progress --format json --include-fragments \
           --root-dir /site --fallback-extensions html --index-files index.html \
           --exclude-path '/site/(openam|opendj|openidm|openig)/apidocs' \
           --exclude-path '/site/(openicf|commons)' \
@@ -91,22 +93,24 @@ jobs:
         if [ "$rc" -ne 0 ] && [ "$rc" -ne 2 ]; then
           exit "$rc"
         fi
+        # without the links to the id of their target page itself, see broken-links.jq
+        broken=$(jq -r -f .github/build-baseline/broken-links.jq build/lychee.json)
         {
           echo "## Links"
           echo
-          jq -r '"\(.total) checked, \(.errors) broken."' build/lychee.json
+          jq -r --argjson n "$(printf '%s' "$broken" | grep -c . || true)" \
+            '"\(.total) checked, \($n) broken (\(.errors - $n) more point to the top of their target page)."' build/lychee.json
           echo
           echo "| Page | Link |"
           echo "|---|---|"
-          jq -r '.error_map // {} | to_entries[] | .key as $page | .value[]
-            | "| \($page | ltrimstr("/site/")) | \(.url | ltrimstr("file:///site/")) |"' build/lychee.json
+          printf '%s\n' "$broken" | awk -F'\t' 'NF { print "| " $1 " | " $2 " |" }'
         } >> "$GITHUB_STEP_SUMMARY"
     - name: Self-test the baseline check
       run: |
         # check.sh must fail on a new Antora error and a new broken link, and pass once they are known
         t=$(mktemp -d)
         mkdir -p "$t/.github/build-baseline" "$t/build"
-        cp .github/build-baseline/check.sh "$t/.github/build-baseline/"
+        cp .github/build-baseline/check.sh .github/build-baseline/broken-links.jq "$t/.github/build-baseline/"
         : > "$t/.github/build-baseline/antora-errors.txt"
         : > "$t/.github/build-baseline/broken-links.txt"
         echo '{"level":"error","msg":"self-test","file":{"path":"'"$t"'/x.adoc"}}' > "$t/build/antora.log"
@@ -121,5 +125,61 @@ jobs:
         printf 'x.adoc\tself-test\n' > "$t/.github/build-baseline/antora-errors.txt"
         printf 'p.html\tq\n' > "$t/.github/build-baseline/broken-links.txt"
         GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null
+        # ... and on a broken anchor, but not on a link to the top of its target page
+        : > "$t/build/antora.log"
+        echo '{"error_map":{"/site/a.html":[{"url":"file:///site/b#b","status":{"text":"Cannot find fragment"}}]}}' \
+          > "$t/build/lychee.json"
+        if ! GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null; then
+          echo "check.sh failed on a link to the top of its target page" >&2
+          exit 1
+        fi
+        echo '{"error_map":{"/site/a.html":[{"url":"file:///site/b#c","status":{"text":"Cannot find fragment"}}]}}' \
+          > "$t/build/lychee.json"
+        if GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null; then
+          echo "check.sh passed a broken anchor" >&2
+          exit 1
+        fi
     - name: Compare with the known problems
       run: .github/build-baseline/check.sh
+    - name: Check head meta tags and robots.txt
+      # also when the comparison failed, so that one run reports both
+      if: ${{ !cancelled() && steps.site.outcome == 'success' }}
+      run: |
+        site=build/site
+        problems=()
+        # Antora writes site.robots verbatim, so nothing else ties the Sitemap host to site.url
+        url=$(node -p "require('js-yaml').load(require('fs').readFileSync('antora-playbook.yml', 'utf8')).site.url")
+        if ! grep -qxF "Sitemap: $url/sitemap.xml" "$site/robots.txt"; then
+          problems+=("robots.txt: no line \`Sitemap: $url/sitemap.xml\`")
+        fi
+        [ -f "$site/sitemap.xml" ] || problems+=("sitemap.xml: missing")
+        # every page, other than a redirect page, carries exactly one of each tag; the API docs are not ours
+        tags=('<meta name="description"' '<meta property="og:title"' '<meta property="og:description"'
+          '<meta property="og:image"' '<meta name="twitter:card"' '<meta property="og:url"')
+        pages=0
+        while IFS= read -r f; do
+          grep -q 'http-equiv="refresh"' "$f" && continue
+          pages=$((pages + 1))
+          for tag in "${tags[@]}"; do
+            # 404.html has no canonical URL
+            [ "$f" = "$site/404.html" ] && [ "$tag" = '<meta property="og:url"' ] && continue
+            n=$({ grep -oF "$tag" "$f" || true; } | wc -l | tr -d ' ')
+            [ "$n" -eq 1 ] || problems+=("${f#"$site/"}: $n x \`$tag\`")
+          done
+        done < <(find "$site" \( -path "$site/openam/apidocs" -o -path "$site/opendj/apidocs" \
+          -o -path "$site/openidm/apidocs" -o -path "$site/openig/apidocs" \
+          -o -path "$site/openicf" -o -path "$site/commons" \) -prune -o -name '*.html' -print | LC_ALL=C sort)
+        [ "$pages" -gt 0 ] || problems+=("no pages found in $site")
+        {
+          echo "## Head meta tags and robots.txt"
+          echo
+          echo "$pages pages checked, ${#problems[@]} problems."
+          echo
+          for p in "${problems[@]}"; do
+            echo "- $p"
+          done
+        } >> "$GITHUB_STEP_SUMMARY"
+        for p in "${problems[@]}"; do
+          echo "::error title=Head meta tags and robots.txt::${p//%/%25}"
+        done
+        [ "${#problems[@]}" -eq 0 ]
