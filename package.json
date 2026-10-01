@@ -2,6 +2,9 @@
   "devDependencies": {
     "antora": "3.1.15"
   },
+  "overrides": {
+    "js-yaml": "4.3.2"
+  },
   "scripts": {
     "build": "npx antora antora-playbook.yml",
     "copyApiDocs": "cp -R ./openig/apidocs build/site/openig && cp -R ./openam/apidocs build/site/openam && cp -R ./openicf build/site/openicf && cp -R ./commons build/site/commons && cp -R ./openidm/apidocs build/site/openidm && cp -R ./opendj/apidocs build/site/opendj",
