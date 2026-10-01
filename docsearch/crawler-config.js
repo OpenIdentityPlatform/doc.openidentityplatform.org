@@ -16,9 +16,12 @@
 
 // Algolia Crawler configuration for doc.openidentityplatform.org, to replace the legacy
 // docsearch-scraper run by .github/workflows/publish.yml (config.json). It is pasted into the
-// Crawler dashboard, which runs it; see README.md. It mirrors config.json: same pages, same
-// exclusions, same selectors. It writes a new index, so that it can be checked before the site
-// switches to it.
+// Crawler dashboard, which runs it; see readme.md. It mirrors config.json: records only from the
+// product pages (the site home page is crawled for links only), same exclusions, same selectors for
+// the hierarchy and the content. Not carried over, because none of it changes the results: the
+// version in lvl0 and the desc(version) ranking (every component has version ~), the component
+// attribute (nothing reads it) and min_indexed_level. It writes a new index, so that it can be
+// checked before the site switches to it.
 
 new Crawler({
   appId: 'X0ME9NKL6F',
@@ -44,7 +47,8 @@ new Crawler({
   actions: [
     {
       indexName: 'doc_openidentityplatform_v3',
-      pathsToMatch: ['https://doc.openidentityplatform.org/**'],
+      // the products only, as the start_urls of config.json
+      pathsToMatch: ['https://doc.openidentityplatform.org/{openam,opendj,openidm,openig}/**'],
       recordExtractor: ({ helpers }) =>
         helpers.docsearch({
           recordProps: {

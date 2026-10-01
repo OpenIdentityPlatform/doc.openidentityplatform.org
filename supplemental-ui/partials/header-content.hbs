@@ -16,7 +16,7 @@
       </button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
-      {{#if env.ALGOLIA_SEARCH_API_KEY}}
+      {{#if (and env.ALGOLIA_SEARCH_API_KEY env.ALGOLIA_APP_ID)}}
       <div class="navbar-end navbar-item search hide-for-print">
         <div id="docsearch"></div>
       </div>

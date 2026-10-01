@@ -20,7 +20,7 @@ The site search is [DocSearch](https://docsearch.algolia.com/) on the Algolia ap
 
 - **Front end**: `@docsearch/js` 3.9.0, vendored in `supplemental-ui/js/vendor/docsearch.min.js` and
   `supplemental-ui/css/vendor/docsearch.min.css`, set up in `supplemental-ui/partials/footer-scripts.hbs`.
-  It is rendered only when the build has `ALGOLIA_SEARCH_API_KEY` (and `ALGOLIA_APP_ID`) in the environment.
+  It is rendered only when the build has both `ALGOLIA_SEARCH_API_KEY` and `ALGOLIA_APP_ID` in the environment.
 - **Crawler**: the legacy [docsearch-scraper](https://github.com/algolia/docsearch-scraper)
   (`algolia/docsearch-scraper:v1.12.0`, no longer maintained), run with `config.json` by the "Reindex docs"
   step of `.github/workflows/publish.yml` after every deployment. How the index was set up for it:
@@ -34,6 +34,8 @@ which an open-source documentation site gets through the [DocSearch program](htt
 
 1. Get Crawler access for the application `X0ME9NKL6F` (or the DocSearch program).
 2. Create a crawler in the Crawler dashboard and paste `crawler-config.js`; the dashboard sets `apiKey`.
+   Check with its URL tester that a product start page (e.g. `/openam/`) gives records and the site home page
+   does not.
 3. Run it. It writes the new index `doc_openidentityplatform_v3`, so the live search keeps using the old one.
 4. Check the results, e.g. by building the site with `indexName: 'doc_openidentityplatform_v3'` in
    `footer-scripts.hbs`, and schedule the crawler (or trigger it after each deployment).
