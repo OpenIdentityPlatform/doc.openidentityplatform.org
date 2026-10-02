@@ -499,10 +499,12 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
            throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html?is-external=true" title="class or interface in java.lang" class="externalLink">Exception</a></pre>
 <div class="block">Executes a write operation. In case of a write operation rollback, implementations may replay the write
  operation rather than propagate the failure: a <a href="../pluggable/spi/WriteOperation.html" title="interface in org.opends.server.backends.pluggable.spi"><code>WriteOperation</code></a> is required to be idempotent for
- exactly that reason. A replay must be bounded - by a number of attempts, by a window of time, or by both -
- so that a conflict which does not clear reaches the caller instead of being retried forever. The pluggable
- backend holds locks across this method, up to the exclusive lock of an entry container, and every thread
- waiting on one of those locks waits for as long as this method does.
+ exactly that reason. A replay may be bounded - by a number of attempts, by a window of time, or by both - so
+ that a conflict which does not clear reaches the caller, or may go on for as long as the conflict lasts, the
+ way a writer of a lock based engine waits for a lock; an engine which resolves every conflict by a rollback
+ should bound it by time only, since a healthy write under concurrent load loses several in a row. The
+ pluggable backend holds locks across this method, up to the exclusive lock of an entry container, and every
+ thread waiting on one of those locks waits for as long as this method does.
  <p>
  A caller that mutates state around this method must handle that bound being spent. Removing an entry from an
  in-memory map before the write so that a replay still finds the work to do, or reading configuration back out
@@ -510,15 +512,17 @@ implements <a href="../pluggable/spi/Storage.html" title="interface in org.opend
  that state already changed and the transaction not applied, and the caller is the only place that can reconcile
  the two.
  <p>
- A transaction the engine rolled back is replayed, bounded twice: by <code>MAX_RETRIES</code> attempts and by the
- <code>MAX_RETRY_WINDOW_NANOS</code> wall-clock window, whichever is spent first - except that the window alone
- never ends the replays before one has been made. It is bounded because the
- configuration change paths of the pluggable backend hold an entry container's exclusive lock across this
- method, and every reader of that suffix then waits - untimed and uninterruptibly - until it returns, so a
- conflict that never clears would park every worker thread of that suffix rather than fail one operation.
+ A transaction the engine rolled back is replayed for as long as the <code>db-txn-retry-time-limit</code> of the
+ backend allows - without limit when it is 0, its default - except that the limit never ends the replays before
+ one has been made. A rollback is how persistit resolves two transactions writing the same key, so a healthy
+ write under concurrent load can lose several of them in a row: a count of attempts failed such writes (#1149),
+ and the replays are bounded by time alone. Without a limit a write waits for its conflict to clear the way a
+ JE writer waits for a lock. A limit is for the configuration change paths of the pluggable backend, which hold
+ an entry container's exclusive lock across this method: every reader of that suffix then waits - untimed and
+ uninterruptibly - until it returns.
  <p>
- Once the bound is spent the conflict is reported as a <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a> naming the backend, the
- attempts spent, the time they took and which of the two bounds ran out. It carries the conflict as a
+ Once the limit is spent the conflict is reported as a <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a> naming the backend, the
+ attempts spent, the time they took and the property whose value ran out. It carries the conflict as a
  suppressed exception rather than as its cause: a cause is unwrapped below and thrown in its place, and
  <code>EntryContainer.throwAllowedExceptionTypes</code> likewise passes a <a href="../pluggable/spi/StorageRuntimeException.html" title="class in org.opends.server.backends.pluggable.spi"><code>StorageRuntimeException</code></a> through
  untouched only while it has no cause. Given a cause, both hand the caller a bare RollbackException instead,

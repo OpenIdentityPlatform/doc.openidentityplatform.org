@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -204,33 +204,40 @@ extends <a href="PluggableBackendCfg.html" title="interface in org.forgerock.ope
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDBTxnRetryTimeLimit()">getDBTxnRetryTimeLimit</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Gets the "db-txn-retry-time-limit" property.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDiskFullThreshold()">getDiskFullThreshold</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the "disk-full-threshold" property.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDiskLowThreshold()">getDiskLowThreshold</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the "disk-low-threshold" property.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getJavaClass()">getJavaClass</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the "java-class" property.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDBTxnNoSync()">isDBTxnNoSync</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the "db-txn-no-sync" property.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removePDBChangeListener(org.forgerock.opendj.config.server.ConfigurationChangeListener)">removePDBChangeListener</a></span>&#8203;(<a href="../../../config/server/ConfigurationChangeListener.html" title="interface in org.forgerock.opendj.config.server">ConfigurationChangeListener</a>&lt;<a href="PDBBackendCfg.html" title="interface in org.forgerock.opendj.server.config.server">PDBBackendCfg</a>&gt;&nbsp;listener)</code></th>
 <td class="colLast">
@@ -471,6 +478,41 @@ extends <a href="PluggableBackendCfg.html" title="interface in org.forgerock.ope
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns the value of the "db-txn-no-sync" property.</dd>
+</dl>
+</li>
+</ul>
+<a id="getDBTxnRetryTimeLimit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDBTxnRetryTimeLimit</h4>
+<pre class="methodSignature">long&nbsp;getDBTxnRetryTimeLimit()</pre>
+<div class="block">Gets the "db-txn-retry-time-limit" property.
+ <p>
+ Specifies how long a write transaction which the database rolled
+ back is run again before the operation which issued it fails.
+ <p>
+ Persistit resolves two transactions which write the same record
+ by rolling one of them back once the other commits, and the
+ transaction rolled back is then run again. Under concurrent writes
+ this is routine rather than a failure: every entry added or
+ deleted rewrites the index keys it shares with other entries, such
+ as its object classes, for as long as those keys hold fewer
+ entries than the index entry limit. A value of 0 runs the
+ transaction again for as long as it keeps being rolled back, the
+ way a writer of a JE backend waits for a lock. A positive value
+ bounds that time: once it is spent, the operation fails with the
+ result code "other". The bound is checked between two runs of the
+ transaction, so a single run can outlast it, and a transaction
+ rolled back is always run once more. A bound matters to the
+ configuration changes of an index or of a base DN, which write
+ while they hold their suffix exclusively, so that every operation
+ on that suffix waits for them. Changes to this property take
+ effect with the next write transaction.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns the value of the "db-txn-retry-time-limit" property.</dd>
 </dl>
 </li>
 </ul>
