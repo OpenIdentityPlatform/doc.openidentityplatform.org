@@ -1,26 +1,27 @@
 <script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
-{{#if env.ALGOLIA_SEARCH_API_KEY}}
+{{#if (and env.ALGOLIA_SEARCH_API_KEY env.ALGOLIA_APP_ID)}}
 <script src="{{uiRootPath}}/js/vendor/docsearch.min.js"></script>
-<!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js -->
+<!-- @docsearch/js 3.9.0, fetched from https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js -->
 <script>
-var search = docsearch({
-  {{#with env.ALGOLIA_APP_ID}}
-  appId: '{{this}}',
-  {{/with}}
+docsearch({
+  container: '#docsearch',
+  appId: '{{env.ALGOLIA_APP_ID}}',
   apiKey: '{{env.ALGOLIA_SEARCH_API_KEY}}',
   indexName: 'doc_openidentityplatform',
-  inputSelector: '#search-input',
-  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
-  algoliaOptions: { hitsPerPage: 5 }
-}).autocomplete
-search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
+  placeholder: 'Search the docs',
+  // the legacy scraper anchors page titles, and the text before the first section, to the first id
+  // on the page, the cookie notice of head-scripts.hbs
+  transformItems: function (items) {
+    return items.map(function (item) {
+      return Object.assign({}, item, { url: item.url.replace(/#cookie-notice$/, '') })
+    })
+  }
+})
 </script>
 {{else if env.SITE_SEARCH_PROVIDER}}
 {{> search-scripts}}
-{{/if}}
 {{#if page.home}}
-{{#if (or env.ALGOLIA_SEARCH_API_KEY env.SITE_SEARCH_PROVIDER)}}
 <script>
 window.addEventListener('load', function focusSearchInput () {
   window.removeEventListener('load', focusSearchInput)
