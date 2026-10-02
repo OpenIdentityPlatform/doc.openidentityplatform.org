@@ -1,3 +1,17 @@
+# The contents of this file are subject to the terms of the Common Development and
+# Distribution License (the License). You may not use this file except in compliance with the
+# License.
+#
+# You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+# specific language governing permission and limitations under the License.
+#
+# When distributing Covered Software, include this CDDL Header Notice in each file and include
+# the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+# Header, with the fields enclosed by brackets [] replaced by your own identifying
+# information: "Portions copyright [year] [name of copyright owner]".
+#
+# Copyright 2024-2026 3A Systems, LLC.
+
 name: Publish to GitHub Pages
 on:
   push:
@@ -20,27 +34,27 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Configure Pages
-      uses: actions/configure-pages@v3
+      uses: actions/configure-pages@v6
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version: '24'
     - name: Install Antora
-      run: npm i antora
+      run: npm ci
     - name: Generate Site
       env:
         ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
         ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
       run: npm run buildAll
     - name: Upload Artifacts
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v5
       with:
         path: build/site
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v5
     - name: Reindex docs
       id: reindex
       working-directory: ./docsearch
