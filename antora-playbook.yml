@@ -41,6 +41,29 @@ content:
   - url: ./
     start_path: openidm
     edit_url: https://github.com/OpenIdentityPlatform/OpenIDM/edit/master/openidm-doc/src/main/asciidoc
+  # Older versions: the last release of each previous major line, from the tags the product release
+  # workflows put on this repository. One tag per source; lib/versions-from-tags.js reads the tag
+  # (fetching it from origin if missing) and turns it into the version: OpenAM-15.2.2 -> 15.2.
+  - url: ./
+    start_path: opendj
+    branches: ~
+    tags: OpenDJ-4.10.2
+    edit_url: false
+  - url: ./
+    start_path: openig
+    branches: ~
+    tags: OpenIG-5.3.2
+    edit_url: false
+  - url: ./
+    start_path: openam
+    branches: ~
+    tags: OpenAM-15.2.2
+    edit_url: false
+  - url: ./
+    start_path: openidm
+    branches: ~
+    tags: OpenIDM-6.3.0
+    edit_url: false
 ui:
   bundle:
     # Antora default UI, kept in the repository so that a UI change is reviewed like any other.
@@ -55,6 +78,7 @@ output:
 
 antora:
   extensions:
+  - ./lib/versions-from-tags.js
   - ./lib/add-pdf-link.js
 
 
