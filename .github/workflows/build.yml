@@ -69,7 +69,7 @@ jobs:
           echo "|---|---|---|---|"
           jq -r --arg ws "$GITHUB_WORKSPACE/" 'select(.level != "info" and .level != "debug")
             | select(.msg | startswith("skipping reference to missing attribute") | not)
-            | "| \(.level) | \(.msg | gsub("\\|"; "\\\\|")) | \(.file.path // "" | ltrimstr($ws)) | \(.file.line // "") |"' "$log"
+            | "| \(.level) | \(.msg | gsub("\\|"; "\\\\|") | gsub("\r?\n|\r"; "<br>")) | \(.file.path // "" | ltrimstr($ws)) | \(.file.line // "") |"' "$log"
           echo
           echo "### Missing attribute references"
           echo
@@ -103,15 +103,23 @@ jobs:
         } >> "$GITHUB_STEP_SUMMARY"
     - name: Self-test the baseline check
       run: |
-        # check.sh must fail on an Antora error that is not in the known list
+        # check.sh must fail on a new Antora error and a new broken link, and pass once they are known
         t=$(mktemp -d)
-        mkdir -p "$t/.github" "$t/build"
-        cp -r .github/build-baseline "$t/.github/"
+        mkdir -p "$t/.github/build-baseline" "$t/build"
+        cp .github/build-baseline/check.sh "$t/.github/build-baseline/"
+        : > "$t/.github/build-baseline/antora-errors.txt"
+        : > "$t/.github/build-baseline/broken-links.txt"
         echo '{"level":"error","msg":"self-test","file":{"path":"'"$t"'/x.adoc"}}' > "$t/build/antora.log"
-        echo '{"error_map":{}}' > "$t/build/lychee.json"
-        if GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null; then
-          echo "check.sh passed a new Antora error" >&2
+        echo '{"error_map":{"/site/p.html":[{"url":"file:///site/q"}]}}' > "$t/build/lychee.json"
+        out=$(GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" 2> /dev/null) && rc=0 || rc=$?
+        if [ "$rc" -ne 1 ] \
+          || ! grep -qxF '::error title=New Antora errors::x.adoc — self-test' <<< "$out" \
+          || ! grep -qxF '::error title=New broken links::p.html — q' <<< "$out"; then
+          echo "check.sh did not report the new Antora error and the new broken link (exit $rc): $out" >&2
           exit 1
         fi
+        printf 'x.adoc\tself-test\n' > "$t/.github/build-baseline/antora-errors.txt"
+        printf 'p.html\tq\n' > "$t/.github/build-baseline/broken-links.txt"
+        GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null
     - name: Compare with the known problems
       run: .github/build-baseline/check.sh

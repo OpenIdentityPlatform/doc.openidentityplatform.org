@@ -68,6 +68,7 @@ compare() {
   while IFS= read -r line; do
     [ -n "$line" ] || continue
     msg=${line//%/%25}
+    msg=${msg//$'\r'/%0D}
     echo "::error title=New $title::${msg//$'\t'/ — }"
     echo "- new: \`${line//$'\t'/\` — \`}\`" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
     failed=true
@@ -75,6 +76,7 @@ compare() {
   while IFS= read -r line; do
     [ -n "$line" ] || continue
     msg=${line//%/%25}
+    msg=${msg//$'\r'/%0D}
     echo "::notice title=No longer found; remove from .github/build-baseline/$2::${msg//$'\t'/ — }"
     echo "- no longer found (remove from \`$2\`): \`${line//$'\t'/\` — \`}\`" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
   done <<< "$fixed"
