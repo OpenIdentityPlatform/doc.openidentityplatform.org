@@ -93,13 +93,16 @@ jobs:
         if [ "$rc" -ne 0 ] && [ "$rc" -ne 2 ]; then
           exit "$rc"
         fi
-        # without the links to the id of their target page itself, see broken-links.jq
-        broken=$(jq -r -f .github/build-baseline/broken-links.jq build/lychee.json)
+        # without the links to the id of their target page itself, see broken-links.jq; lychee reports
+        # a link once per occurrence on the page, check.sh and this list count it once
+        all=$(jq -r -f .github/build-baseline/broken-links.jq build/lychee.json)
+        broken=$(printf '%s\n' "$all" | LC_ALL=C sort -u)
         {
           echo "## Links"
           echo
           jq -r --argjson n "$(printf '%s' "$broken" | grep -c . || true)" \
-            '"\(.total) checked, \($n) broken (\(.errors - $n) more point to the top of their target page)."' build/lychee.json
+            --argjson all "$(printf '%s' "$all" | grep -c . || true)" \
+            '"\(.total) checked, \($n) broken (\(.errors - $all) more point to the top of their target page)."' build/lychee.json
           echo
           echo "| Page | Link |"
           echo "|---|---|"
@@ -125,18 +128,47 @@ jobs:
         printf 'x.adoc\tself-test\n' > "$t/.github/build-baseline/antora-errors.txt"
         printf 'p.html\tq\n' > "$t/.github/build-baseline/broken-links.txt"
         GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null
-        # ... and on a broken anchor, but not on a link to the top of its target page
+        # a link to the top of its target page is not broken; a broken anchor is, and so is a missing
+        # page linked at its own id
         : > "$t/build/antora.log"
-        echo '{"error_map":{"/site/a.html":[{"url":"file:///site/b#b","status":{"text":"Cannot find fragment"}}]}}' \
-          > "$t/build/lychee.json"
+        : > "$t/.github/build-baseline/antora-errors.txt"
+        : > "$t/.github/build-baseline/broken-links.txt"
+        lychee_error() {
+          echo '{"error_map":{"/site/a.html":[{"url":"file:///site/'"$1"'","status":{"text":"'"$2"'"}}]}}' \
+            > "$t/build/lychee.json"
+        }
+        lychee_error 'd/b.html#b' 'Cannot find fragment'
         if ! GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null; then
           echo "check.sh failed on a link to the top of its target page" >&2
           exit 1
         fi
-        echo '{"error_map":{"/site/a.html":[{"url":"file:///site/b#c","status":{"text":"Cannot find fragment"}}]}}' \
-          > "$t/build/lychee.json"
-        if GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null; then
-          echo "check.sh passed a broken anchor" >&2
+        for e in 'd/b.html#c:Cannot find fragment' 'd/b.html#b:Cannot find file'; do
+          lychee_error "${e%%:*}" "${e#*:}"
+          out=$(GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" 2> /dev/null) && rc=0 || rc=$?
+          if [ "$rc" -ne 1 ] || ! grep -qxF "::error title=New broken links::a.html — ${e%%:*}" <<< "$out"; then
+            echo "check.sh did not report the broken link ${e%%:*}, ${e#*:} (exit $rc): $out" >&2
+            exit 1
+          fi
+        done
+    - name: Self-test the head meta check
+      run: |
+        # head-meta.sh must report a missing tag, a doubled tag, a robots.txt without the Sitemap line
+        # and a missing sitemap.xml; it skips a redirect page, but not a page that quotes one
+        t=$(mktemp -d)
+        : > "$t/robots.txt"
+        printf '%s\n' '<meta http-equiv="refresh" content="0; url=a.html">' > "$t/r.html"
+        printf '%s\n' '<meta name="description" content="a">' '<meta property="og:title" content="a">' \
+          '<meta property="og:description" content="a">' '<meta property="og:url" content="a">' \
+          '<meta name="twitter:card" content="a">' '<meta name="twitter:card" content="a">' \
+          '<pre>&lt;meta http-equiv="refresh" content="0; url=b.html"&gt;</pre>' > "$t/a.html"
+        out=$(GITHUB_STEP_SUMMARY=/dev/null .github/build-baseline/head-meta.sh "$t") && rc=0 || rc=$?
+        e='::error title=Head meta tags and robots.txt::'
+        if [ "$rc" -ne 1 ] || [ "$(grep -c '^::error' <<< "$out")" -ne 4 ] \
+          || ! grep -q "^${e}robots.txt: no line \`Sitemap: " <<< "$out" \
+          || ! grep -qxF "${e}sitemap.xml: missing" <<< "$out" \
+          || ! grep -qxF "${e}a.html: 0 x \`<meta property=\"og:image\"\`" <<< "$out" \
+          || ! grep -qxF "${e}a.html: 2 x \`<meta name=\"twitter:card\"\`" <<< "$out"; then
+          echo "head-meta.sh did not report the problems of the test site (exit $rc): $out" >&2
           exit 1
         fi
     - name: Compare with the known problems
@@ -144,42 +176,4 @@ jobs:
     - name: Check head meta tags and robots.txt
       # also when the comparison failed, so that one run reports both
       if: ${{ !cancelled() && steps.site.outcome == 'success' }}
-      run: |
-        site=build/site
-        problems=()
-        # Antora writes site.robots verbatim, so nothing else ties the Sitemap host to site.url
-        url=$(node -p "require('js-yaml').load(require('fs').readFileSync('antora-playbook.yml', 'utf8')).site.url")
-        if ! grep -qxF "Sitemap: $url/sitemap.xml" "$site/robots.txt"; then
-          problems+=("robots.txt: no line \`Sitemap: $url/sitemap.xml\`")
-        fi
-        [ -f "$site/sitemap.xml" ] || problems+=("sitemap.xml: missing")
-        # every page, other than a redirect page, carries exactly one of each tag; the API docs are not ours
-        tags=('<meta name="description"' '<meta property="og:title"' '<meta property="og:description"'
-          '<meta property="og:image"' '<meta name="twitter:card"' '<meta property="og:url"')
-        pages=0
-        while IFS= read -r f; do
-          grep -q 'http-equiv="refresh"' "$f" && continue
-          pages=$((pages + 1))
-          for tag in "${tags[@]}"; do
-            # 404.html has no canonical URL
-            [ "$f" = "$site/404.html" ] && [ "$tag" = '<meta property="og:url"' ] && continue
-            n=$({ grep -oF "$tag" "$f" || true; } | wc -l | tr -d ' ')
-            [ "$n" -eq 1 ] || problems+=("${f#"$site/"}: $n x \`$tag\`")
-          done
-        done < <(find "$site" \( -path "$site/openam/apidocs" -o -path "$site/opendj/apidocs" \
-          -o -path "$site/openidm/apidocs" -o -path "$site/openig/apidocs" \
-          -o -path "$site/openicf" -o -path "$site/commons" \) -prune -o -name '*.html' -print | LC_ALL=C sort)
-        [ "$pages" -gt 0 ] || problems+=("no pages found in $site")
-        {
-          echo "## Head meta tags and robots.txt"
-          echo
-          echo "$pages pages checked, ${#problems[@]} problems."
-          echo
-          for p in "${problems[@]}"; do
-            echo "- $p"
-          done
-        } >> "$GITHUB_STEP_SUMMARY"
-        for p in "${problems[@]}"; do
-          echo "::error title=Head meta tags and robots.txt::${p//%/%25}"
-        done
-        [ "${#problems[@]}" -eq 0 ]
+      run: .github/build-baseline/head-meta.sh build/site
