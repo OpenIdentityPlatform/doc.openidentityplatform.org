@@ -110,7 +110,9 @@ jobs:
         } >> "$GITHUB_STEP_SUMMARY"
     - name: Self-test the baseline check
       run: |
-        # check.sh must fail on a new Antora error and a new broken link, and pass once they are known
+        # check.sh must fail on a new Antora error and a new broken link, and pass once they are known.
+        # Its output is quoted with "> " on failure: the runner reads workflow commands on stderr too,
+        # and its ::error lines would become annotations of the pull request.
         t=$(mktemp -d)
         mkdir -p "$t/.github/build-baseline" "$t/build"
         cp .github/build-baseline/check.sh .github/build-baseline/broken-links.jq "$t/.github/build-baseline/"
@@ -122,12 +124,33 @@ jobs:
         if [ "$rc" -ne 1 ] \
           || ! grep -qxF '::error title=New Antora errors::x.adoc — self-test' <<< "$out" \
           || ! grep -qxF '::error title=New broken links::p.html — q' <<< "$out"; then
-          echo "check.sh did not report the new Antora error and the new broken link (exit $rc): $out" >&2
+          echo "check.sh did not report the new Antora error and the new broken link (exit $rc); its output:" >&2
+          sed 's/^/> /' <<< "$out" >&2
           exit 1
         fi
         printf 'x.adoc\tself-test\n' > "$t/.github/build-baseline/antora-errors.txt"
         printf 'p.html\tq\n' > "$t/.github/build-baseline/broken-links.txt"
         GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" > /dev/null
+        # a known entry that is gone is reported once, as a notice, and does not fail the check
+        printf 'x.adoc\tself-test\ny.adoc\tgone\n' > "$t/.github/build-baseline/antora-errors.txt"
+        out=$(GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" 2> /dev/null) && rc=0 || rc=$?
+        if [ "$rc" -ne 0 ] \
+          || [ "$out" != '::notice title=No longer found; remove from .github/build-baseline/antora-errors.txt::y.adoc — gone' ]; then
+          echo "check.sh did not report only the stale known error (exit $rc); its output:" >&2
+          sed 's/^/> /' <<< "$out" >&2
+          exit 1
+        fi
+        # % and CR are escaped in the annotation text, of a new entry and of a stale one
+        echo '{"level":"error","msg":"50%\r","file":{"path":"'"$t"'/c.adoc"}}' > "$t/build/antora.log"
+        printf 'y.adoc\tgone 50%%\r\n' > "$t/.github/build-baseline/antora-errors.txt"
+        out=$(GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" 2> /dev/null) && rc=0 || rc=$?
+        if [ "$rc" -ne 1 ] \
+          || ! grep -qxF '::error title=New Antora errors::c.adoc — 50%25%0D' <<< "$out" \
+          || ! grep -qxF '::notice title=No longer found; remove from .github/build-baseline/antora-errors.txt::y.adoc — gone 50%25%0D' <<< "$out"; then
+          echo "check.sh did not escape % and CR in the annotation text (exit $rc); its output:" >&2
+          sed 's/^/> /' <<< "$out" >&2
+          exit 1
+        fi
         # a link to the top of its target page is not broken; a broken anchor is, and so is a missing
         # page linked at its own id
         : > "$t/build/antora.log"
@@ -146,14 +169,16 @@ jobs:
           lychee_error "${e%%:*}" "${e#*:}"
           out=$(GITHUB_STEP_SUMMARY=/dev/null "$t/.github/build-baseline/check.sh" 2> /dev/null) && rc=0 || rc=$?
           if [ "$rc" -ne 1 ] || ! grep -qxF "::error title=New broken links::a.html — ${e%%:*}" <<< "$out"; then
-            echo "check.sh did not report the broken link ${e%%:*}, ${e#*:} (exit $rc): $out" >&2
+            echo "check.sh did not report the broken link ${e%%:*}, ${e#*:} (exit $rc); its output:" >&2
+            sed 's/^/> /' <<< "$out" >&2
             exit 1
           fi
         done
     - name: Self-test the head meta check
       run: |
         # head-meta.sh must report a missing tag, a doubled tag, a robots.txt without the Sitemap line
-        # and a missing sitemap.xml; it skips a redirect page, but not a page that quotes one
+        # and a missing sitemap.xml; it skips a redirect page, but not a page that quotes one. Its output
+        # is quoted on failure, as in the step above.
         t=$(mktemp -d)
         : > "$t/robots.txt"
         printf '%s\n' '<meta http-equiv="refresh" content="0; url=a.html">' > "$t/r.html"
@@ -168,7 +193,8 @@ jobs:
           || ! grep -qxF "${e}sitemap.xml: missing" <<< "$out" \
           || ! grep -qxF "${e}a.html: 0 x \`<meta property=\"og:image\"\`" <<< "$out" \
           || ! grep -qxF "${e}a.html: 2 x \`<meta name=\"twitter:card\"\`" <<< "$out"; then
-          echo "head-meta.sh did not report the problems of the test site (exit $rc): $out" >&2
+          echo "head-meta.sh did not report the problems of the test site (exit $rc); its output:" >&2
+          sed 's/^/> /' <<< "$out" >&2
           exit 1
         fi
     - name: Compare with the known problems
