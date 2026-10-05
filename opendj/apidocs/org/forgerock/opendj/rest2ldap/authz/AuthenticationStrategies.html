@@ -225,7 +225,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>connectionFactory</code> - <a href="../../ldap/ConnectionFactory.html" title="interface in org.forgerock.opendj.ldap"><code>ConnectionFactory</code></a> to the LDAP server used to perform the bind operation.</dd>
 <dd><code>bindDNTemplate</code> - Tempalte of the DN to use for the bind operation. The first %s will be replaced by the provided
-            authentication-id (i.e: uid=%s,dc=example,dc=com)</dd>
+            authentication-id (i.e: uid=%s,dc=example,dc=com). A template which is just %s takes the
+            authentication-id as the bind DN.</dd>
 <dd><code>schema</code> - <a href="../../ldap/schema/Schema.html" title="class in org.forgerock.opendj.ldap.schema"><code>Schema</code></a> used to validate the DN format.*</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a new simple bind <a href="AuthenticationStrategy.html" title="interface in org.forgerock.opendj.rest2ldap.authz"><code>AuthenticationStrategy</code></a></dd>
@@ -279,7 +280,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>connectionFactory</code> - <a href="../../ldap/ConnectionFactory.html" title="interface in org.forgerock.opendj.ldap"><code>ConnectionFactory</code></a> to the LDAP server to authenticate with.</dd>
 <dd><code>authcIdTemplate</code> - Authentication identity template containing a single %s which will be replaced by the authenticating
-            user's name. (i.e: (u:%s)</dd>
+            user's name. (i.e: (u:%s). After a "dn:" prefix the template is a bind DN template: just %s takes the
+            user name as the DN, otherwise the user name is escaped as an attribute value.</dd>
 <dd><code>schema</code> - Schema used to perform DN validation.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a new SASL plain bind <a href="AuthenticationStrategy.html" title="interface in org.forgerock.opendj.rest2ldap.authz"><code>AuthenticationStrategy</code></a></dd>
