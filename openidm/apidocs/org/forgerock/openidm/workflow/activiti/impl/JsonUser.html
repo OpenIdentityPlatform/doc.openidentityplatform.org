@@ -80,12 +80,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;org.forgerock.json.JsonValue&gt;</code>, <code>org.activiti.engine.identity.User</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link">Externalizable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Cloneable.html" title="class or interface in java.lang" class="external-link">Cloneable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;org.forgerock.json.JsonValue&gt;</code>, <code>org.activiti.engine.identity.User</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">JsonUser</span>
 <span class="extends-implements">extends org.forgerock.json.JsonValue
-implements org.activiti.engine.identity.User</span></div>
+implements org.activiti.engine.identity.User, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link">Externalizable</a></span></div>
 <dl class="notes">
 <dt>Version:</dt>
 <dd>$Revision$ $Date$</dd>
@@ -107,11 +107,15 @@ implements org.activiti.engine.identity.User</span></div>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.forgerock.json.JsonValue)" class="member-name-link">JsonUser</a><wbr>(org.forgerock.json.JsonValue&nbsp;value)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.forgerock.openidm.crypto.CryptoService,java.lang.String)" class="member-name-link">JsonUser</a><wbr>(<a href="../../../crypto/CryptoService.html" title="interface in org.forgerock.openidm.crypto">CryptoService</a>&nbsp;service,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">JsonUser</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Required by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link"><code>Externalizable</code></a>; the state is restored by <a href="#readExternal(java.io.ObjectInput)"><code>readExternal(java.io.ObjectInput)</code></a>.</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.forgerock.json.JsonValue)" class="member-name-link">JsonUser</a><wbr>(org.forgerock.json.JsonValue&nbsp;value)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.forgerock.openidm.crypto.CryptoService,java.lang.String)" class="member-name-link">JsonUser</a><wbr>(<a href="../../../crypto/CryptoService.html" title="interface in org.forgerock.openidm.crypto">CryptoService</a>&nbsp;service,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;userId)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Constructs a JsonUser value object with a given userId.</div>
 </div>
 </div>
@@ -128,20 +132,29 @@ implements org.activiti.engine.identity.User</span></div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEmail()" class="member-name-link">getEmail</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clone()" class="member-name-link">clone</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block"><code>JsonValue.clone()</code> returns a plain <code>JsonValue</code>; keep the user type and the
+ crypto service so the copy can still decrypt its password.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFirstName()" class="member-name-link">getFirstName</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEmail()" class="member-name-link">getEmail</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId()" class="member-name-link">getId</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFirstName()" class="member-name-link">getFirstName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastName()" class="member-name-link">getLastName</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId()" class="member-name-link">getId</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPassword()" class="member-name-link">getPassword</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastName()" class="member-name-link">getLastName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPassword()" class="member-name-link">getPassword</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readExternal(java.io.ObjectInput)" class="member-name-link">readExternal</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInput.html" title="class or interface in java.io" class="external-link">ObjectInput</a>&nbsp;in)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCryptoService(org.forgerock.openidm.crypto.CryptoService)" class="member-name-link">setCryptoService</a><wbr>(<a href="../../../crypto/CryptoService.html" title="interface in org.forgerock.openidm.crypto">CryptoService</a>&nbsp;cryptoService)</code></div>
@@ -161,12 +174,15 @@ implements org.activiti.engine.identity.User</span></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPassword(java.lang.String)" class="member-name-link">setPassword</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeExternal(java.io.ObjectOutput)" class="member-name-link">writeExternal</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutput.html" title="class or interface in java.io" class="external-link">ObjectOutput</a>&nbsp;out)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.forgerock.json.JsonValue">Methods inherited from class&nbsp;org.forgerock.json.JsonValue</h3>
-<code>add, add, add, add, addPermissive, array, as, asBigDecimal, asBoolean, asCollection, asCollection, asDouble, asEnum, asInteger, asList, asList, asLong, asMap, asMap, asMapOfList, asNumber, asSet, asSet, asString, asURI, clear, clone, contains, copy, defaultTo, diff, expect, field, fieldIfNotNull, get, get, get, getObject, getPointer, isBoolean, isCollection, isDefined, isEqualTo, isList, isMap, isNotNull, isNull, isNumber, isSet, isString, iterator, json, keys, object, object, patch, put, put, put, putPermissive, remove, remove, remove, required, set, setObject, size, toIndex, toString</code></div>
+<code>add, add, add, add, addPermissive, array, as, asBigDecimal, asBoolean, asCollection, asCollection, asDouble, asEnum, asInteger, asList, asList, asLong, asMap, asMap, asMapOfList, asNumber, asSet, asSet, asString, asURI, clear, contains, copy, defaultTo, diff, expect, field, fieldIfNotNull, get, get, get, getObject, getPointer, isBoolean, isCollection, isDefined, isEqualTo, isList, isMap, isNotNull, isNull, isNumber, isSet, isString, iterator, json, keys, object, object, patch, put, put, put, putPermissive, remove, remove, remove, required, set, setObject, size, toIndex, toString</code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -184,6 +200,13 @@ implements org.activiti.engine.identity.User</span></div>
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>JsonUser</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JsonUser</span>()</div>
+<div class="block">Required by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link"><code>Externalizable</code></a>; the state is restored by <a href="#readExternal(java.io.ObjectInput)"><code>readExternal(java.io.ObjectInput)</code></a>.</div>
+</section>
+</li>
 <li>
 <section class="detail" id="&lt;init&gt;(org.forgerock.openidm.crypto.CryptoService,java.lang.String)">
 <h3>JsonUser</h3>
@@ -215,6 +238,46 @@ implements org.activiti.engine.identity.User</span></div>
 <section class="detail" id="setCryptoService(org.forgerock.openidm.crypto.CryptoService)">
 <h3>setCryptoService</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCryptoService</span><wbr><span class="parameters">(<a href="../../../crypto/CryptoService.html" title="interface in org.forgerock.openidm.crypto">CryptoService</a>&nbsp;cryptoService)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="clone()">
+<h3>clone</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></span>&nbsp;<span class="element-name">clone</span>()</div>
+<div class="block"><code>JsonValue.clone()</code> returns a plain <code>JsonValue</code>; keep the user type and the
+ crypto service so the copy can still decrypt its password.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code>clone</code>&nbsp;in class&nbsp;<code>org.forgerock.json.JsonValue</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="writeExternal(java.io.ObjectOutput)">
+<h3>writeExternal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeExternal</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutput.html" title="class or interface in java.io" class="external-link">ObjectOutput</a>&nbsp;out)</span>
+                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html#writeExternal(java.io.ObjectOutput)" title="class or interface in java.io" class="external-link">writeExternal</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link">Externalizable</a></code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="readExternal(java.io.ObjectInput)">
+<h3>readExternal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readExternal</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInput.html" title="class or interface in java.io" class="external-link">ObjectInput</a>&nbsp;in)</span>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassNotFoundException.html" title="class or interface in java.lang" class="external-link">ClassNotFoundException</a></span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html#readExternal(java.io.ObjectInput)" title="class or interface in java.io" class="external-link">readExternal</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link">Externalizable</a></code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassNotFoundException.html" title="class or interface in java.lang" class="external-link">ClassNotFoundException</a></code></dd>
+</dl>
 </section>
 </li>
 <li>

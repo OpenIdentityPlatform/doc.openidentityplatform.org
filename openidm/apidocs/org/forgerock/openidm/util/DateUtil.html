@@ -505,9 +505,11 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>start</code> - Start date</dd>
 <dd><code>end</code> - End date</dd>
-<dd><code>includeDay</code> - include both Days (increase the result with one)</dd>
+<dd><code>includeDay</code> - include both Days (increase the result with one); <code>null</code> counts as <code>false</code></dd>
 <dt>Returns:</dt>
 <dd>number of days</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if <code>start</code> or <code>end</code> is <code>null</code></dd>
 </dl>
 </section>
 </li>

@@ -1328,6 +1328,16 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/forgerock/openidm/auth/modules/ClientCertAuthModule.html#%3Cinit%3E()" class="member-name-link">ClientCertAuthModule()</a> - Constructor for class org.forgerock.openidm.auth.modules.<a href="org/forgerock/openidm/auth/modules/ClientCertAuthModule.html" title="class in org.forgerock.openidm.auth.modules">ClientCertAuthModule</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/maintenance/upgrade/ChecksumFile.html#clone()" class="member-name-link">clone()</a> - Method in class org.forgerock.openidm.maintenance.upgrade.<a href="org/forgerock/openidm/maintenance/upgrade/ChecksumFile.html" title="class in org.forgerock.openidm.maintenance.upgrade">ChecksumFile</a></dt>
+<dd>
+<div class="block">Shallow copy: the entries are copied, the checksum file path and the <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/MessageDigest.html" title="class or interface in java.security" class="external-link"><code>MessageDigest</code></a>
+ are shared with the original (the digest resets itself after every <code>digest()</code> call).</div>
+</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#clone()" class="member-name-link">clone()</a> - Method in class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></dt>
+<dd>
+<div class="block"><code>JsonValue.clone()</code> returns a plain <code>JsonValue</code>; keep the user type and the
+ crypto service so the copy can still decrypt its password.</div>
+</dd>
 <dt><a href="org/forgerock/openidm/router/impl/JsonResourceRouterService.html#close()" class="member-name-link">close()</a> - Method in class org.forgerock.openidm.router.impl.<a href="org/forgerock/openidm/router/impl/JsonResourceRouterService.html" title="class in org.forgerock.openidm.router.impl">JsonResourceRouterService</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/servlet/internal/ServletConnectionFactory.html#close()" class="member-name-link">close()</a> - Method in class org.forgerock.openidm.servlet.internal.<a href="org/forgerock/openidm/servlet/internal/ServletConnectionFactory.html" title="class in org.forgerock.openidm.servlet.internal">ServletConnectionFactory</a></dt>
@@ -7135,6 +7145,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html" class="type-name-link" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonGroup</a> - Class in <a href="org/forgerock/openidm/workflow/activiti/impl/package-summary.html">org.forgerock.openidm.workflow.activiti.impl</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html#%3Cinit%3E()" class="member-name-link">JsonGroup()</a> - Constructor for class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonGroup</a></dt>
+<dd>
+<div class="block">Required by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link"><code>Externalizable</code></a>; the state is restored by <a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html#readExternal(java.io.ObjectInput)"><code>JsonGroup.readExternal(java.io.ObjectInput)</code></a>.</div>
+</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html#%3Cinit%3E(java.lang.String)" class="member-name-link">JsonGroup(String)</a> - Constructor for class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonGroup</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html#%3Cinit%3E(org.forgerock.json.JsonValue)" class="member-name-link">JsonGroup(JsonValue)</a> - Constructor for class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonGroup</a></dt>
@@ -7159,6 +7173,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" class="type-name-link" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a> - Class in <a href="org/forgerock/openidm/workflow/activiti/impl/package-summary.html">org.forgerock.openidm.workflow.activiti.impl</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#%3Cinit%3E()" class="member-name-link">JsonUser()</a> - Constructor for class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></dt>
+<dd>
+<div class="block">Required by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Externalizable.html" title="class or interface in java.io" class="external-link"><code>Externalizable</code></a>; the state is restored by <a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#readExternal(java.io.ObjectInput)"><code>JsonUser.readExternal(java.io.ObjectInput)</code></a>.</div>
+</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#%3Cinit%3E(org.forgerock.json.JsonValue)" class="member-name-link">JsonUser(JsonValue)</a> - Constructor for class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#%3Cinit%3E(org.forgerock.openidm.crypto.CryptoService,java.lang.String)" class="member-name-link">JsonUser(CryptoService, String)</a> - Constructor for class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></dt>
@@ -9529,6 +9547,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="org/forgerock/openidm/audit/impl/RepositoryAuditEventHandler.html#readEvent(org.forgerock.services.context.Context,java.lang.String,java.lang.String)" class="member-name-link">readEvent(Context, String, String)</a> - Method in class org.forgerock.openidm.audit.impl.<a href="org/forgerock/openidm/audit/impl/RepositoryAuditEventHandler.html" title="class in org.forgerock.openidm.audit.impl">RepositoryAuditEventHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/audit/impl/RouterAuditEventHandler.html#readEvent(org.forgerock.services.context.Context,java.lang.String,java.lang.String)" class="member-name-link">readEvent(Context, String, String)</a> - Method in class org.forgerock.openidm.audit.impl.<a href="org/forgerock/openidm/audit/impl/RouterAuditEventHandler.html" title="class in org.forgerock.openidm.audit.impl">RouterAuditEventHandler</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html#readExternal(java.io.ObjectInput)" class="member-name-link">readExternal(ObjectInput)</a> - Method in class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonGroup</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#readExternal(java.io.ObjectInput)" class="member-name-link">readExternal(ObjectInput)</a> - Method in class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/util/FileUtil.html#readFile(java.io.File)" class="member-name-link">readFile(File)</a> - Static method in class org.forgerock.openidm.util.<a href="org/forgerock/openidm/util/FileUtil.html" title="class in org.forgerock.openidm.util">FileUtil</a></dt>
 <dd>
@@ -13588,6 +13610,10 @@ the order they are declared.</div>
 <dt><a href="org/forgerock/openidm/router/RouteBuilder.html#withSingletonResourceProvider(org.forgerock.json.resource.SingletonResourceProvider)" class="member-name-link">withSingletonResourceProvider(SingletonResourceProvider)</a> - Method in class org.forgerock.openidm.router.<a href="org/forgerock/openidm/router/RouteBuilder.html" title="class in org.forgerock.openidm.router">RouteBuilder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/router/RouteBuilder.html#withTemplate(java.lang.String)" class="member-name-link">withTemplate(String)</a> - Method in class org.forgerock.openidm.router.<a href="org/forgerock/openidm/router/RouteBuilder.html" title="class in org.forgerock.openidm.router">RouteBuilder</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html#writeExternal(java.io.ObjectOutput)" class="member-name-link">writeExternal(ObjectOutput)</a> - Method in class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonGroup.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonGroup</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html#writeExternal(java.io.ObjectOutput)" class="member-name-link">writeExternal(ObjectOutput)</a> - Method in class org.forgerock.openidm.workflow.activiti.impl.<a href="org/forgerock/openidm/workflow/activiti/impl/JsonUser.html" title="class in org.forgerock.openidm.workflow.activiti.impl">JsonUser</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/forgerock/openidm/util/JsonUtil.html#writePrettyValueAsString(org.forgerock.json.JsonValue)" class="member-name-link">writePrettyValueAsString(JsonValue)</a> - Static method in class org.forgerock.openidm.util.<a href="org/forgerock/openidm/util/JsonUtil.html" title="class in org.forgerock.openidm.util">JsonUtil</a></dt>
 <dd>&nbsp;</dd>
