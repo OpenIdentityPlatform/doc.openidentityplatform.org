@@ -122,6 +122,16 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#CONFIG_MAIL_SMTP_STARTTLS_ENABLE" class="member-name-link">CONFIG_MAIL_SMTP_STARTTLS_ENABLE</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="#CONFIG_MAIL_SMTP_STARTTLS_TRUST_ALL" class="member-name-link">CONFIG_MAIL_SMTP_STARTTLS_TRUST_ALL</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Opt-in: accept any server certificate over STARTTLS.</div>
+</div>
+<div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#CONFIG_MAIL_SMTP_STARTTLS_TRUSTED_HOSTS" class="member-name-link">CONFIG_MAIL_SMTP_STARTTLS_TRUSTED_HOSTS</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Optional list of SMTP hosts whose certificate is accepted without validation.</div>
+</div>
 </div>
 </section>
 </li>
@@ -288,6 +298,37 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="see-list">
 <li><a href="../../../../../../constant-values.html#org.forgerock.openidm.external.email.impl.EmailClient.CONFIG_MAIL_SMTP_STARTTLS_ENABLE">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="CONFIG_MAIL_SMTP_STARTTLS_TRUST_ALL">
+<h3>CONFIG_MAIL_SMTP_STARTTLS_TRUST_ALL</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CONFIG_MAIL_SMTP_STARTTLS_TRUST_ALL</span></div>
+<div class="block">Opt-in: accept any server certificate over STARTTLS. Never use outside development.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../../../../constant-values.html#org.forgerock.openidm.external.email.impl.EmailClient.CONFIG_MAIL_SMTP_STARTTLS_TRUST_ALL">Constant Field Values</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="CONFIG_MAIL_SMTP_STARTTLS_TRUSTED_HOSTS">
+<h3>CONFIG_MAIL_SMTP_STARTTLS_TRUSTED_HOSTS</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CONFIG_MAIL_SMTP_STARTTLS_TRUSTED_HOSTS</span></div>
+<div class="block">Optional list of SMTP hosts whose certificate is accepted without validation. Once set, only
+ a <code>host</code> listed exactly as configured is accepted; any other host is rejected.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="../../../../../../constant-values.html#org.forgerock.openidm.external.email.impl.EmailClient.CONFIG_MAIL_SMTP_STARTTLS_TRUSTED_HOSTS">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
