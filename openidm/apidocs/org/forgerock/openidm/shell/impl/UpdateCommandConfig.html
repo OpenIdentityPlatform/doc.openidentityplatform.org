@@ -281,7 +281,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getMaxUpdateWaitTimeMs()">
 <h3>getMaxUpdateWaitTimeMs</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getMaxUpdateWaitTimeMs</span>()</div>
-<div class="block">Returns the Maximum time the update command should wait for the installation of the archive to take.</div>
+<div class="block">Returns the Maximum time the update command should wait for the installation of the archive to take. A value
+ of 0 or less waits until the installation reaches a terminal status. When the time is exceeded the command
+ stops waiting without running the recovery steps; the installation continues on the server.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the Maximum time the update command should wait for the installation of the archive to take.</dd>
@@ -292,11 +294,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setMaxUpdateWaitTimeMs(long)">
 <h3>setMaxUpdateWaitTimeMs</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="UpdateCommandConfig.html" title="class in org.forgerock.openidm.shell.impl">UpdateCommandConfig</a></span>&nbsp;<span class="element-name">setMaxUpdateWaitTimeMs</span><wbr><span class="parameters">(long&nbsp;maxUpdateWaitTimeMs)</span></div>
-<div class="block">Sets the Maximum time the update command should wait for the installation of the archive to take.</div>
+<div class="block">Sets the Maximum time the update command should wait for the installation of the archive to take. A value
+ of 0 or less waits until the installation reaches a terminal status.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>maxUpdateWaitTimeMs</code> - the Maximum time the update command should wait for the installation of the archive
- to take.</dd>
+ to take, or 0 or less to wait without a limit.</dd>
 <dt>Returns:</dt>
 <dd>this config instance</dd>
 </dl>
