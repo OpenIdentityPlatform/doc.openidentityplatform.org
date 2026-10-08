@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9};
+var data = {"i0":9,"i1":9,"i2":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -180,13 +180,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#countIndexErrors(java.lang.String%5B%5D,boolean,java.io.OutputStream)">countIndexErrors</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+                boolean&nbsp;initializeServer,
+                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;errStream)</code></th>
+<td class="colLast">
+<div class="block">Verifies the indexes as <a href="#mainVerifyIndex(java.lang.String%5B%5D,boolean,java.io.OutputStream)"><code>mainVerifyIndex(java.lang.String[], boolean, java.io.OutputStream)</code></a> does with <code>--countErrors</code>, but tells a verification that
+ could not be performed apart from one that found errors: the tool exits with 1 in both cases.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
 <td class="colLast">
 <div class="block">Processes the command-line arguments and invokes the verify process.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mainVerifyIndex(java.lang.String%5B%5D,boolean,java.io.OutputStream)">mainVerifyIndex</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
                boolean&nbsp;initializeServer,
@@ -255,7 +265,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="mainVerifyIndex(java.lang.String[],boolean,java.io.OutputStream)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>mainVerifyIndex</h4>
 <pre class="methodSignature">public static&nbsp;int&nbsp;mainVerifyIndex&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
@@ -271,6 +281,29 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                            <code>null</code> if standard error is not needed.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The error code.</dd>
+</dl>
+</li>
+</ul>
+<a id="countIndexErrors(java.lang.String[],boolean,java.io.OutputStream)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>countIndexErrors</h4>
+<pre class="methodSignature">public static&nbsp;long&nbsp;countIndexErrors&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args,
+                                    boolean&nbsp;initializeServer,
+                                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStream.html?is-external=true" title="class or interface in java.io" class="externalLink">OutputStream</a>&nbsp;errStream)</pre>
+<div class="block">Verifies the indexes as <a href="#mainVerifyIndex(java.lang.String%5B%5D,boolean,java.io.OutputStream)"><code>mainVerifyIndex(java.lang.String[], boolean, java.io.OutputStream)</code></a> does with <code>--countErrors</code>, but tells a verification that
+ could not be performed apart from one that found errors: the tool exits with 1 in both cases.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>args</code> - The command-line arguments provided to this
+                           program.</dd>
+<dd><code>initializeServer</code> - Indicates whether to initialize the server.</dd>
+<dd><code>errStream</code> - The output stream to use for standard error, or
+                           <code>null</code> if standard error is not needed.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The number of errors found in the indexes, or <code>-1</code> if they could not be verified.</dd>
 </dl>
 </li>
 </ul>

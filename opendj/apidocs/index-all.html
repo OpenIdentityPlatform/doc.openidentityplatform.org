@@ -17571,6 +17571,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Wrapper for SNMP Counter32.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/tools/VerifyIndex.html#countIndexErrors(java.lang.String%5B%5D,boolean,java.io.OutputStream)">countIndexErrors(String[], boolean, OutputStream)</a></span> - Static method in class org.opends.server.tools.<a href="org/opends/server/tools/VerifyIndex.html" title="class in org.opends.server.tools">VerifyIndex</a></dt>
+<dd>
+<div class="block">Verifies the indexes as <a href="org/opends/server/tools/VerifyIndex.html#mainVerifyIndex(java.lang.String%5B%5D,boolean,java.io.OutputStream)"><code>VerifyIndex.mainVerifyIndex(java.lang.String[], boolean, java.io.OutputStream)</code></a> does with <code>--countErrors</code>, but tells a verification that
+ could not be performed apart from one that found errors: the tool exits with 1 in both cases.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/common/MultiDomainServerState.html#cover(org.forgerock.opendj.ldap.DN,org.opends.server.replication.common.CSN)">cover(DN, CSN)</a></span> - Method in class org.opends.server.replication.common.<a href="org/opends/server/replication/common/MultiDomainServerState.html" title="class in org.opends.server.replication.common">MultiDomainServerState</a></dt>
 <dd>
 <div class="block">Test if this object covers the provided CSN for the provided baseDN.</div>
@@ -29369,6 +29374,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">The provided value "%s" could not be parsed as a valid distinguished name because the next non-space character after attribute name "%s" should have been an equal sign but instead was '%c'</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#ERR_ATTR_SYNTAX_DN_TRAILING_ESCAPE">ERR_ATTR_SYNTAX_DN_TRAILING_ESCAPE</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
+<dd>
+<div class="block">The provided value "%s" could not be parsed as a valid distinguished name because it ends with an escape character (\) that is not followed by the character it escapes</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#ERR_ATTR_SYNTAX_DN_UNMATCHED_QUOTE">ERR_ATTR_SYNTAX_DN_UNMATCHED_QUOTE</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
 <dd>
 <div class="block">The provided value "%s" could not be parsed as a valid distinguished name because one of the RDN components included a quoted value that did not have a corresponding closing quotation mark</div>
@@ -30184,6 +30193,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ProtocolMessages.html#ERR_AUTHZIDRESP_NO_CONTROL_VALUE">ERR_AUTHZIDRESP_NO_CONTROL_VALUE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ProtocolMessages.html" title="class in org.opends.messages">ProtocolMessages</a></dt>
 <dd>
 <div class="block">Cannot decode the provided authorization identity response control because it does not have a value</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#ERR_AVA_TRAILING_GARBAGE">ERR_AVA_TRAILING_GARBAGE</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
+<dd>
+<div class="block">The attribute value assertion "%s" could not be parsed because it contained trailing content after the attribute value: "%s"</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_BACKEND_ADD_NOT_SUPPORTED">ERR_BACKEND_ADD_NOT_SUPPORTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
@@ -34338,6 +34351,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/SchemaMessages.html#ERR_DIT_CONTENT_RULE_CANNOT_REGISTER">ERR_DIT_CONTENT_RULE_CANNOT_REGISTER</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/SchemaMessages.html" title="class in org.opends.messages">SchemaMessages</a></dt>
 <dd>
 <div class="block">DIT content rule could not be registered from definition: %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#ERR_DN_TRAILING_GARBAGE">ERR_DN_TRAILING_GARBAGE</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
+<dd>
+<div class="block">The DN "%s" could not be parsed because it contained trailing content after an RDN: "%s"</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#ERR_DN_TYPE_NOT_FOUND">ERR_DN_TYPE_NOT_FOUND</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
 <dd>
@@ -50398,6 +50415,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns a new <a href="org/opends/server/backends/ConfigurationBackend.ConfigurationBackendCfg.html" title="class in org.opends.server.backends"><code>ConfigurationBackend.ConfigurationBackendCfg</code></a> for this <a href="org/opends/server/backends/ConfigurationBackend.html" title="class in org.opends.server.backends"><code>ConfigurationBackend</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/util/Utilities.html#getBackendConfigDN(java.lang.String)">getBackendConfigDN(String)</a></span> - Static method in class org.opends.guitools.controlpanel.util.<a href="org/opends/guitools/controlpanel/util/Utilities.html" title="class in org.opends.guitools.controlpanel.util">Utilities</a></dt>
+<dd>
+<div class="block">Returns the DN of the configuration entry of a backend.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/tasks/TaskUtils.html#getBackendConfigEntries()">getBackendConfigEntries()</a></span> - Static method in class org.opends.server.tasks.<a href="org/opends/server/tasks/TaskUtils.html" title="class in org.opends.server.tasks">TaskUtils</a></dt>
 <dd>
 <div class="block">Get all the backend configuration entries defined in the server mapped
@@ -60824,6 +60845,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/AbstractIndexTableModel.html#getIndexAt(int)">getIndexAt(int)</a></span> - Method in class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/AbstractIndexTableModel.html" title="class in org.opends.guitools.controlpanel.datamodel">AbstractIndexTableModel</a></dt>
 <dd>
 <div class="block">Returns the index in the specified row.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/util/Utilities.html#getIndexConfigDN(java.lang.String,java.lang.String,boolean)">getIndexConfigDN(String, String, boolean)</a></span> - Static method in class org.opends.guitools.controlpanel.util.<a href="org/opends/guitools/controlpanel/util/Utilities.html" title="class in org.opends.guitools.controlpanel.util">Utilities</a></dt>
+<dd>
+<div class="block">Returns the DN of the configuration entry of an index.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/event/IndexModifiedEvent.html#getIndexDescriptor()">getIndexDescriptor()</a></span> - Method in class org.opends.guitools.controlpanel.event.<a href="org/opends/guitools/controlpanel/event/IndexModifiedEvent.html" title="class in org.opends.guitools.controlpanel.event">IndexModifiedEvent</a></dt>
 <dd>
@@ -100293,6 +100318,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_TITLE">INFO_UPGRADE_TITLE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">OpenDJ Upgrade Utility</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES">INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">OpenDJ 5.2.0 reads a DN up to its end.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_CONSISTENT">INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_CONSISTENT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Index(es) '%s' for base DN '%s' match the entries</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_DECLINED">INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_DECLINED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">You have to verify the equality indexes of the attributes holding DNs manually with verify-index, and rebuild them with rebuild-index where it reports errors, to get a fully functional server</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_INCONSISTENT">INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_INCONSISTENT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Index(es) '%s' for base DN '%s' do not match the entries and are rebuilt</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_STARTS">INFO_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_STARTS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Verifying index(es) '%s' for base DN '%s'</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_UPGRADE_VERSION_IS_NOT_SUPPORTED">INFO_UPGRADE_VERSION_IS_NOT_SUPPORTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
@@ -156201,6 +156246,14 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/CoreMessages.html#WARN_UNEXPECTED_WORKER_THREAD_EXIT">WARN_UNEXPECTED_WORKER_THREAD_EXIT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/CoreMessages.html" title="class in org.opends.messages">CoreMessages</a></dt>
 <dd>
 <div class="block">%s is unexpectedly exiting when the Directory Server is not in the process of shutting down.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#WARN_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_FAILED">WARN_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Index(es) '%s' for base DN '%s' could not be verified, see the upgrade log.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#WARN_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_SKIPPED">WARN_UPGRADE_VERIFY_DN_EQUALITY_INDEXES_SKIPPED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Index(es) '%s' for base DN '%s' were not verified, as the rebuild of other indexes failed.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#WARN_VERIFYINDEX_CANNOT_UNLOCK_BACKEND">WARN_VERIFYINDEX_CANNOT_UNLOCK_BACKEND</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
