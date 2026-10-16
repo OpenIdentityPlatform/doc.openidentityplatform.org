@@ -258,7 +258,7 @@ implements <a href="../DebugConfiguration.html" title="interface in com.sun.iden
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>debugFilePropertiesPath</code> - path to the debug configuration file</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="InvalidDebugConfigurationException.html" title="class in com.sun.identity.shared.debug.file.impl">InvalidDebugConfigurationException</a></code></dd>
+<dd><code><a href="InvalidDebugConfigurationException.html" title="class in com.sun.identity.shared.debug.file.impl">InvalidDebugConfigurationException</a></code> - if the file can't be found, can't be read or isn't valid</dd>
 </dl>
 </li>
 </ul>
@@ -285,7 +285,7 @@ implements <a href="../DebugConfiguration.html" title="interface in com.sun.iden
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../DebugConfiguration.html#getDebugPrefix()">getDebugPrefix</a></code>&nbsp;in interface&nbsp;<code><a href="../DebugConfiguration.html" title="interface in com.sun.identity.shared.debug.file">DebugConfiguration</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>prefix</dd>
+<dd>prefix, never <code>null</code>; an empty string if no prefix is configured</dd>
 </dl>
 </li>
 </ul>
@@ -304,7 +304,7 @@ implements <a href="../DebugConfiguration.html" title="interface in com.sun.iden
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../DebugConfiguration.html#getDebugSuffix()">getDebugSuffix</a></code>&nbsp;in interface&nbsp;<code><a href="../DebugConfiguration.html" title="interface in com.sun.identity.shared.debug.file">DebugConfiguration</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>suffix</dd>
+<dd>suffix, never <code>null</code>; an empty string if no suffix is configured</dd>
 </dl>
 </li>
 </ul>
