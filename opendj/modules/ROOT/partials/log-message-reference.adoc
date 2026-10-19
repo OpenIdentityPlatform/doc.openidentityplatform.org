@@ -15578,6 +15578,20 @@ Severity: ERROR
 +
 Message: The total update of domain "%s" was refused by directory server %d: its session to the replication server is being stopped, and the entries would have been streamed over that session. Ask for the total update again once the session is back.
 
+[#log-ref-log-ref-ERR_MISSING_CHANGES_NOT_PUBLISHED_333]
+ID: 333::
+
+Severity: ERROR
++
+Message: Domain "%s" could not publish the changes its replication server misses: %s. It tries again within %d ms - on the session which starts meanwhile, or on one it starts then - and the changes done meanwhile are left to that recovery as well.
+
+[#log-ref-log-ref-ERR_UNPUBLISHED_DELETE_DROPPED_334]
+ID: 334::
+
+Severity: ERROR
++
+Message: Domain "%s" dropped the delete of "%s" (%s), which no replication server has taken, from the %d deletes it keeps aside for its recoveries: no recovery publishes it anymore, and the replicas which miss it keep the entry.
+
 --
 
 [#SCHEMA]

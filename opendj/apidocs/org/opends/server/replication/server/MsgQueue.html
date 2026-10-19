@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -231,19 +231,29 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#holdsAChangeBefore(org.opends.server.replication.protocol.UpdateMsg,java.util.function.Predicate)">holdsAChangeBefore</a></span>&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Predicate</a>&lt;<a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&gt;&nbsp;condition)</code></th>
+<td class="colLast">
+<div class="block">Returns whether this queue holds, before the given UpdateMsg, an UpdateMsg which carries the
+ CSN of a change and matches the given condition: a replica offline message, for one, does not
+ carry the CSN of a change, and no state ever covers its CSN.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEmpty()">isEmpty</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>true</code> if this MsgQueue contains no UpdateMsg.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeFirst()">removeFirst</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get and remove the first UpdateMsg in this MessageQueue.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -393,6 +403,26 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
+<a id="holdsAChangeBefore(org.opends.server.replication.protocol.UpdateMsg,java.util.function.Predicate)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>holdsAChangeBefore</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;holdsAChangeBefore&#8203;(<a href="../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Predicate</a>&lt;<a href="../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&gt;&nbsp;condition)</pre>
+<div class="block">Returns whether this queue holds, before the given UpdateMsg, an UpdateMsg which carries the
+ CSN of a change and matches the given condition: a replica offline message, for one, does not
+ carry the CSN of a change, and no state ever covers its CSN.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>msg</code> - the UpdateMsg the ones to check come before</dd>
+<dd><code>condition</code> - the condition the CSN of a change must match</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if a change of this queue before the given UpdateMsg matches the condition</dd>
+</dl>
+</li>
+</ul>
 <a id="clear()">
 <!--   -->
 </a>
@@ -501,7 +531,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

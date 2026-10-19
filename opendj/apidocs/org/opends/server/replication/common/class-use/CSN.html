@@ -955,6 +955,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tbody>
 </table>
 <table class="useSummary">
+<caption><span>Method parameters in <a href="../../server/package-summary.html">org.opends.server.replication.server</a> with type arguments of type <a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MsgQueue.</span><code><span class="memberNameLink"><a href="../../server/MsgQueue.html#holdsAChangeBefore(org.opends.server.replication.protocol.UpdateMsg,java.util.function.Predicate)">holdsAChangeBefore</a></span>&#8203;(<a href="../../protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Predicate</a>&lt;<a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a>&gt;&nbsp;condition)</code></th>
+<td class="colLast">
+<div class="block">Returns whether this queue holds, before the given UpdateMsg, an UpdateMsg which carries the
+ CSN of a change and matches the given condition: a replica offline message, for one, does not
+ carry the CSN of a change, and no state ever covers its CSN.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
 <caption><span>Constructors in <a href="../../server/package-summary.html">org.opends.server.replication.server</a> with parameters of type <a href="../CSN.html" title="class in org.opends.server.replication.common">CSN</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Constructor</th>
@@ -1335,7 +1355,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

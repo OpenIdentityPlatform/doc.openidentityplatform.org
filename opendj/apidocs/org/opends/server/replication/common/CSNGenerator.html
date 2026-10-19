@@ -308,7 +308,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  received <a href="CSN.html" title="class in org.opends.server.replication.common"><code>CSN</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>number</code> - the <a href="CSN.html" title="class in org.opends.server.replication.common"><code>CSN</code></a> to adjust with</dd>
+<dd><code>number</code> - the <a href="CSN.html" title="class in org.opends.server.replication.common"><code>CSN</code></a> to adjust with, or <code>null</code> for none: the generator is then left
+          as it is. Moved back to the clock, it numbered the next CSNs as, or before, ones it had
+          generated or seen already - a domain reads back a ServerState which holds no change of
+          its own after a restore or a total update (issue #1223).</dd>
 </dl>
 </li>
 </ul>
@@ -395,7 +398,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

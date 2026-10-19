@@ -2993,6 +2993,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Adds this new managed object.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#addNewReplicationId(java.util.Set)">addNewReplicationId(Set&lt;Integer&gt;)</a></span> - Static method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
+<dd>
+<div class="block">Returns the ID to be used for a new replication server or domain, and adds it to the used ids,
+ so that the next new replication server or domain takes another one (issue #1207).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/browser/BrowserController.html#addNodeUnderRoot(org.forgerock.opendj.ldap.DN)">addNodeUnderRoot(DN)</a></span> - Method in class org.opends.guitools.controlpanel.browser.<a href="org/opends/guitools/controlpanel/browser/BrowserController.html" title="class in org.opends.guitools.controlpanel.browser">BrowserController</a></dt>
 <dd>
 <div class="block">Add an LDAP suffix to this controller.</div>
@@ -16329,7 +16334,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Configures replication between this directory server (first server) and another server
  (second server).</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#configureReplication(org.opends.admin.ads.util.ConnectionWrapper,java.util.Map,int,boolean,java.util.Set,java.util.Set)">configureReplication(ConnectionWrapper, Map&lt;DN, Set&lt;HostPort&gt;&gt;, int, boolean, Set&lt;Integer&gt;, Set&lt;Integer&gt;)</a></span> - Method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#configureReplication(org.opends.admin.ads.util.ConnectionWrapper,java.util.Map,int,boolean,java.util.Set)">configureReplication(ConnectionWrapper, Map&lt;DN, Set&lt;HostPort&gt;&gt;, int, boolean, Set&lt;Integer&gt;)</a></span> - Method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
 <dd>
 <div class="block">Configures the replication on a given server.</div>
 </dd>
@@ -38965,6 +38970,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Cannot complete initialization of server's backends because the root and administrative backends have not been initialized yet.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_MISSING_CHANGES_NOT_PUBLISHED">ERR_MISSING_CHANGES_NOT_PUBLISHED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Domain "%s" could not publish the changes its replication server misses: %s.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#ERR_MISSING_ID2ENTRY_RECORD">ERR_MISSING_ID2ENTRY_RECORD</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
 <div class="block">The entry database does not contain a record for ID %s</div>
@@ -43956,6 +43965,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_UNKNOWN_TYPE">ERR_UNKNOWN_TYPE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Unknown operation type : %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_UNPUBLISHED_DELETE_DROPPED">ERR_UNPUBLISHED_DELETE_DROPPED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Domain "%s" dropped the delete of "%s" (%s), which no replication server has taken, from the %d deletes it keeps aside for its recoveries: no recovery publishes it anymore, and the replicas which miss it keep the entry</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/rest2ldap/Rest2ldapMessages.html#ERR_UNRECOGNIZED_FIELD">ERR_UNRECOGNIZED_FIELD</a></span> - Static variable in class org.forgerock.opendj.rest2ldap.<a href="org/forgerock/opendj/rest2ldap/Rest2ldapMessages.html" title="class in org.forgerock.opendj.rest2ldap">Rest2ldapMessages</a></dt>
 <dd>
@@ -55609,7 +55622,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/openidentityplatform/opendj/embedded/Config.html#getDeleteTimeout()">getDeleteTimeout()</a></span> - Method in class org.openidentityplatform.opendj.embedded.<a href="org/openidentityplatform/opendj/embedded/Config.html" title="class in org.openidentityplatform.opendj.embedded">Config</a></dt>
 <dd>
-<div class="block">Returns how long <a href="org/openidentityplatform/opendj/embedded/EmbeddedOpenDJ.html#close()"><code>EmbeddedOpenDJ.close()</code></a> retries the deletion of the temporary
+<div class="block">Returns how long <a href="org/openidentityplatform/opendj/embedded/EmbeddedOpenDJ.html#close()"><code>close()</code></a> retries the deletion of the temporary
  directory of the instance, in milliseconds.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/ldap/schema/CoreSchema.html#getDeliveryMethodSyntax()">getDeliveryMethodSyntax()</a></span> - Static method in class org.forgerock.opendj.ldap.schema.<a href="org/forgerock/opendj/ldap/schema/CoreSchema.html" title="class in org.forgerock.opendj.ldap.schema">CoreSchema</a></dt>
@@ -74148,10 +74161,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the "replication-domains" relation definition.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#getReplicationId(java.util.Set)">getReplicationId(Set&lt;Integer&gt;)</a></span> - Static method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
-<dd>
-<div class="block">Returns the ID to be used for a new replication server or domain.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/UserData.html#getReplicationOptions()">getReplicationOptions()</a></span> - Method in class org.opends.quicksetup.<a href="org/opends/quicksetup/UserData.html" title="class in org.opends.quicksetup">UserData</a></dt>
 <dd>
 <div class="block">Returns the DataReplicationOptions object representing the data in the
@@ -77806,6 +77815,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/meta/RootCfgDefn.html#getServiceDiscoveryMechanismsRelationDefinition()">getServiceDiscoveryMechanismsRelationDefinition()</a></span> - Method in class org.forgerock.opendj.server.config.meta.<a href="org/forgerock/opendj/server/config/meta/RootCfgDefn.html" title="class in org.forgerock.opendj.server.config.meta">RootCfgDefn</a></dt>
 <dd>
 <div class="block">Get the "service-discovery-mechanisms" relation definition.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationBroker.html#getSession()">getSession()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationBroker.html" title="class in org.opends.server.replication.service">ReplicationBroker</a></dt>
+<dd>
+<div class="block">Returns the session this broker publishes on, which a recovery started for it publishes on:
+ see <a href="org/opends/server/replication/service/ReplicationBroker.html#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)"><code>ReplicationBroker.publishRecovery(ReplicationMsg, Session)</code></a>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#getSessionGeneration()">getSessionGeneration()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
 <dd>
@@ -81642,6 +81656,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Generates the usage information for the provided property definition.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/quicksetup/installer/InstallerHelper.html#getUsedServerIds(java.util.Collection)">getUsedServerIds(Collection&lt;ServerDescriptor&gt;)</a></span> - Static method in class org.opends.quicksetup.installer.<a href="org/opends/quicksetup/installer/InstallerHelper.html" title="class in org.opends.quicksetup.installer">InstallerHelper</a></dt>
+<dd>
+<div class="block">Returns the server IDs that the replication servers and the replication domains of the provided
+ servers use, in one set.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/meta/LDAPPassThroughAuthenticationPolicyCfgDefn.html#getUsePasswordCachingPropertyDefinition()">getUsePasswordCachingPropertyDefinition()</a></span> - Method in class org.forgerock.opendj.server.config.meta.<a href="org/forgerock/opendj/server/config/meta/LDAPPassThroughAuthenticationPolicyCfgDefn.html" title="class in org.forgerock.opendj.server.config.meta">LDAPPassThroughAuthenticationPolicyCfgDefn</a></dt>
 <dd>
 <div class="block">Get the "use-password-caching" property definition.</div>
@@ -84789,6 +84808,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/server/util/ServerConstants.html#HMAC_MD5_BLOCK_LENGTH">HMAC_MD5_BLOCK_LENGTH</a></span> - Static variable in class org.opends.server.util.<a href="org/opends/server/util/ServerConstants.html" title="class in org.opends.server.util">ServerConstants</a></dt>
 <dd>
 <div class="block">The block length in bytes used when generating an HMAC-MD5 digest.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/server/MsgQueue.html#holdsAChangeBefore(org.opends.server.replication.protocol.UpdateMsg,java.util.function.Predicate)">holdsAChangeBefore(UpdateMsg, Predicate&lt;CSN&gt;)</a></span> - Method in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/MsgQueue.html" title="class in org.opends.server.replication.server">MsgQueue</a></dt>
+<dd>
+<div class="block">Returns whether this queue holds, before the given UpdateMsg, an UpdateMsg which carries the
+ CSN of a change and matches the given condition: a replica offline message, for one, does not
+ carry the CSN of a change, and no state ever covers its CSN.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/quicksetup/ui/UIFactory.html#HORIZONTAL_INSET_BETWEEN_BUTTONS">HORIZONTAL_INSET_BETWEEN_BUTTONS</a></span> - Static variable in class org.opends.quicksetup.ui.<a href="org/opends/quicksetup/ui/UIFactory.html" title="class in org.opends.quicksetup.ui">UIFactory</a></dt>
 <dd>
@@ -125159,6 +125184,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Sends a replication message to the remote peer, and runs the provided callback once the
  message has been written to the socket.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#publish(org.opends.server.replication.protocol.UpdateMsg)">publish(UpdateMsg)</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
+<dd>
+<div class="block">Publish an <a href="org/opends/server/replication/protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol"><code>UpdateMsg</code></a> to the Replication Service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#publish(org.opends.server.replication.protocol.UpdateMsg)">publish(UpdateMsg)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
 <dd>
 <div class="block">Publish an <a href="org/opends/server/replication/protocol/UpdateMsg.html" title="class in org.opends.server.replication.protocol"><code>UpdateMsg</code></a> to the Replication Service.</div>
@@ -125167,9 +125196,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Ensures the medium consistency point is updated by heartbeats.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationBroker.html#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg)">publishRecovery(ReplicationMsg)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationBroker.html" title="class in org.opends.server.replication.service">ReplicationBroker</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationBroker.html#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)">publishRecovery(ReplicationMsg, Session)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationBroker.html" title="class in org.opends.server.replication.service">ReplicationBroker</a></dt>
 <dd>
-<div class="block">Publish a recovery message to the other servers.</div>
+<div class="block">Publish a recovery message to the other servers, on the provided session only.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html#publishReplicaOfflineMsg()">publishReplicaOfflineMsg()</a></span> - Method in class org.opends.server.replication.plugin.<a href="org/opends/server/replication/plugin/LDAPReplicationDomain.html" title="class in org.opends.server.replication.plugin">LDAPReplicationDomain</a></dt>
 <dd>&nbsp;</dd>
@@ -135964,7 +135993,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/openidentityplatform/opendj/embedded/Config.html#setDeleteTimeout(long)">setDeleteTimeout(long)</a></span> - Method in class org.openidentityplatform.opendj.embedded.<a href="org/openidentityplatform/opendj/embedded/Config.html" title="class in org.openidentityplatform.opendj.embedded">Config</a></dt>
 <dd>
-<div class="block">Sets how long <a href="org/openidentityplatform/opendj/embedded/EmbeddedOpenDJ.html#close()"><code>EmbeddedOpenDJ.close()</code></a> retries the deletion of the temporary
+<div class="block">Sets how long <a href="org/openidentityplatform/opendj/embedded/EmbeddedOpenDJ.html#close()"><code>close()</code></a> retries the deletion of the temporary
  directory of the instance.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/forgerock/opendj/server/config/client/ConnectionHandlerCfgClient.html#setDeniedClient(java.util.Collection)">setDeniedClient(Collection&lt;AddressMask&gt;)</a></span> - Method in interface org.forgerock.opendj.server.config.client.<a href="org/forgerock/opendj/server/config/client/ConnectionHandlerCfgClient.html" title="interface in org.forgerock.opendj.server.config.client">ConnectionHandlerCfgClient</a></dt>
@@ -139299,6 +139328,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/dsml/protocol/Filter.html#setNot(org.opends.dsml.protocol.Filter)">setNot(Filter)</a></span> - Method in class org.opends.dsml.protocol.<a href="org/opends/dsml/protocol/Filter.html" title="class in org.opends.dsml.protocol">Filter</a></dt>
 <dd>
 <div class="block">Sets the value of the not property.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/LDAPUpdateMsg.html#setNotAssured()">setNotAssured()</a></span> - Method in class org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/LDAPUpdateMsg.html" title="class in org.opends.server.replication.protocol">LDAPUpdateMsg</a></dt>
+<dd>
+<div class="block">Has this message published as one no acknowledgement is waited for: it is no longer assured,
+ and is encoded again.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/util/Utilities.html#setNotAvailable(org.opends.guitools.controlpanel.ui.components.LabelWithHelpIcon)">setNotAvailable(LabelWithHelpIcon)</a></span> - Static method in class org.opends.guitools.controlpanel.util.<a href="org/opends/guitools/controlpanel/util/Utilities.html" title="class in org.opends.guitools.controlpanel.util">Utilities</a></dt>
 <dd>
@@ -156143,6 +156177,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">Could not replay change %s in domain "%s" (delivery %d, each attempted several times in place, failing for %d ms).</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICA_HAS_THE_SERVER_ID_OF_A_REPLICATION_SERVER">WARN_REPLICA_HAS_THE_SERVER_ID_OF_A_REPLICATION_SERVER</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">In Replication server %s: directory server DS(%d) of domain "%s" has the server ID of replication server RS(%d).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_REPLICATION_SERVER_ACCEPT_ERROR">WARN_REPLICATION_SERVER_ACCEPT_ERROR</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Replication server RS(%d) could not accept a connection on %s: %s.</div>
@@ -157473,7 +157511,7 @@ the order they are declared.</div>
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

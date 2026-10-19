@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":9,"i5":10,"i6":6,"i7":6,"i8":6,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":6};
+var data = {"i0":10,"i1":6,"i2":10,"i3":10,"i4":9,"i5":10,"i6":6,"i7":6,"i8":6,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":6};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -368,6 +368,14 @@ extends <a href="UpdateMsg.html" title="class in org.opends.server.replication.p
 </td>
 </tr>
 <tr id="i15" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNotAssured()">setNotAssured</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Has this message published as one no acknowledgement is waited for: it is no longer assured,
+ and is encoded again.</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>abstract int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
 <td class="colLast">
@@ -603,6 +611,21 @@ extends <a href="UpdateMsg.html" title="class in org.opends.server.replication.p
  This method is not synchronized and therefore not MT safe.</div>
 </li>
 </ul>
+<a id="setNotAssured()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNotAssured</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setNotAssured()</pre>
+<div class="block">Has this message published as one no acknowledgement is waited for: it is no longer assured,
+ and is encoded again. A recovery publishes the local changes it kept so, as it publishes the
+ changes it rebuilds from the historical information: an operation which still waits for the
+ acknowledgement of one gets none, and times out.
+
+ This method is not synchronized and therefore not MT safe.</div>
+</li>
+</ul>
 <a id="encodeHeader(byte,short)">
 <!--   -->
 </a>
@@ -824,7 +847,7 @@ extends <a href="UpdateMsg.html" title="class in org.opends.server.replication.p
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

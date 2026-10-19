@@ -211,6 +211,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colSecond" scope="row"><span class="typeNameLabel">LDAPReplicationDomain.</span><code><span class="memberNameLink"><a href="../../plugin/LDAPReplicationDomain.html#processUpdate(org.opends.server.replication.protocol.UpdateMsg)">processUpdate</a></span>&#8203;(<a href="../UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">LDAPReplicationDomain.</span><code><span class="memberNameLink"><a href="../../plugin/LDAPReplicationDomain.html#publish(org.opends.server.replication.protocol.UpdateMsg)">publish</a></span>&#8203;(<a href="../UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg)</code></th>
+<td class="colLast">
+<div class="block">Publish an <a href="../UpdateMsg.html" title="class in org.opends.server.replication.protocol"><code>UpdateMsg</code></a> to the Replication Service.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -384,6 +391,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">MsgQueue.</span><code><span class="memberNameLink"><a href="../../server/MsgQueue.html#holdsAChangeBefore(org.opends.server.replication.protocol.UpdateMsg,java.util.function.Predicate)">holdsAChangeBefore</a></span>&#8203;(<a href="../UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;msg,
+                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Predicate</a>&lt;<a href="../../common/CSN.html" title="class in org.opends.server.replication.common">CSN</a>&gt;&nbsp;condition)</code></th>
+<td class="colLast">
+<div class="block">Returns whether this queue holds, before the given UpdateMsg, an UpdateMsg which carries the
+ CSN of a change and matches the given condition: a replica offline message, for one, does not
+ carry the CSN of a change, and no state ever covers its CSN.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationServerDomain.</span><code><span class="memberNameLink"><a href="../../server/ReplicationServerDomain.html#put(org.opends.server.replication.protocol.UpdateMsg,org.opends.server.replication.server.ServerHandler)">put</a></span>&#8203;(<a href="../UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;updateMsg,
    <a href="../../server/ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a>&nbsp;sourceHandler)</code></th>
@@ -392,7 +409,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  updates that must be forwarded to all other servers.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ServerHandler.</span><code><span class="memberNameLink"><a href="../../server/ServerHandler.html#put(org.opends.server.replication.protocol.UpdateMsg)">put</a></span>&#8203;(<a href="../UpdateMsg.html" title="class in org.opends.server.replication.protocol">UpdateMsg</a>&nbsp;update)</code></th>
 <td class="colLast">
@@ -677,7 +694,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

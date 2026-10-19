@@ -120,6 +120,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  of the Multimaster replication feature.</div>
 </td>
 </tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="#org.opends.server.replication.service">org.opends.server.replication.service</a></th>
+<td class="colLast">
+<div class="block">This package contains the generic of the Multi-Master
+ replication code that works on the Directory Server side.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -251,6 +258,49 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </table>
 </section>
 </li>
+<li class="blockList">
+<section><a id="org.opends.server.replication.service">
+<!--   -->
+</a>
+<h3>Uses of <a href="../Session.html" title="class in org.opends.server.replication.protocol">Session</a> in <a href="../../service/package-summary.html">org.opends.server.replication.service</a></h3>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../service/package-summary.html">org.opends.server.replication.service</a> that return <a href="../Session.html" title="class in org.opends.server.replication.protocol">Session</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../Session.html" title="class in org.opends.server.replication.protocol">Session</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationBroker.</span><code><span class="memberNameLink"><a href="../../service/ReplicationBroker.html#getSession()">getSession</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the session this broker publishes on, which a recovery started for it publishes on:
+ see <a href="../../service/ReplicationBroker.html#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)"><code>ReplicationBroker.publishRecovery(ReplicationMsg, Session)</code></a>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="useSummary">
+<caption><span>Methods in <a href="../../service/package-summary.html">org.opends.server.replication.service</a> with parameters of type <a href="../Session.html" title="class in org.opends.server.replication.protocol">Session</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ReplicationBroker.</span><code><span class="memberNameLink"><a href="../../service/ReplicationBroker.html#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)">publishRecovery</a></span>&#8203;(<a href="../ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg,
+               <a href="../Session.html" title="class in org.opends.server.replication.protocol">Session</a>&nbsp;session)</code></th>
+<td class="colLast">
+<div class="block">Publish a recovery message to the other servers, on the provided session only.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</li>
 </ul>
 </li>
 </ul>
@@ -301,7 +351,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>

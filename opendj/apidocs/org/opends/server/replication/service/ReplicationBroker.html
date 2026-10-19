@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -274,6 +274,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../protocol/Session.html" title="class in org.opends.server.replication.protocol">Session</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSession()">getSession</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the session this broker publishes on, which a recovery started for it publishes on:
+ see <a href="#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)"><code>publishRecovery(ReplicationMsg, Session)</code></a>.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isConnected()">isConnected</a></span>()</code></th>
 <td class="colLast">
@@ -281,89 +289,90 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  ready to received and send Replication Messages.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSessionEncrypted()">isSessionEncrypted</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Determine whether the connection to the replication server is encrypted.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publish(org.opends.server.replication.protocol.ReplicationMsg)">publish</a></span>&#8203;(<a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg)</code></th>
 <td class="colLast">
 <div class="block">Publish a message to the other servers.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg)">publishRecovery</a></span>&#8203;(<a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg)</code></th>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)">publishRecovery</a></span>&#8203;(<a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg,
+               <a href="../protocol/Session.html" title="class in org.opends.server.replication.protocol">Session</a>&nbsp;session)</code></th>
 <td class="colLast">
-<div class="block">Publish a recovery message to the other servers.</div>
+<div class="block">Publish a recovery message to the other servers, on the provided session only.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receive()">receive</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Receive a message.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reStart(boolean)">reStart</a></span>&#8203;(boolean&nbsp;infiniteTry)</code></th>
 <td class="colLast">
 <div class="block">Restart the ReplicationBroker.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setGenerationID(long)">setGenerationID</a></span>&#8203;(long&nbsp;generationID)</code></th>
 <td class="colLast">
 <div class="block">Set the generation id - for test purpose.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setRecoveryRequired(boolean)">setRecoveryRequired</a></span>&#8203;(boolean&nbsp;b)</code></th>
 <td class="colLast">
 <div class="block">Set the connectRequiresRecovery to the provided value.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSoTimeout(int)">setSoTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Set a timeout value.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#signalStatusChange(org.opends.server.replication.common.ServerStatus)">signalStatusChange</a></span>&#8203;(<a href="../common/ServerStatus.html" title="enum in org.opends.server.replication.common">ServerStatus</a>&nbsp;newStatus)</code></th>
 <td class="colLast">
 <div class="block">Signals the RS we just entered a new status.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Start the ReplicationBroker.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stop()">stop</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Stop the server.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateWindowAfterReplay()">updateWindowAfterReplay</a></span>()</code></th>
 <td class="colLast">
@@ -520,17 +529,46 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
-<a id="publishRecovery(org.opends.server.replication.protocol.ReplicationMsg)">
+<a id="getSession()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSession</h4>
+<pre class="methodSignature">public&nbsp;<a href="../protocol/Session.html" title="class in org.opends.server.replication.protocol">Session</a>&nbsp;getSession()</pre>
+<div class="block">Returns the session this broker publishes on, which a recovery started for it publishes on:
+ see <a href="#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)"><code>publishRecovery(ReplicationMsg, Session)</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the session this broker publishes on, or <code>null</code> if it has none</dd>
+</dl>
+</li>
+</ul>
+<a id="publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>publishRecovery</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;publishRecovery&#8203;(<a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg)</pre>
-<div class="block">Publish a recovery message to the other servers.</div>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;publishRecovery&#8203;(<a href="../protocol/ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg,
+                               <a href="../protocol/Session.html" title="class in org.opends.server.replication.protocol">Session</a>&nbsp;session)</pre>
+<div class="block">Publish a recovery message to the other servers, on the provided session only.
+ <p>
+ A recovery publishes what the replication server of its session misses, and that one only: the
+ replication server of a session which replaced it may miss older changes, and would take none
+ of them once it had a newer one. The message is refused rather than published on another
+ session.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>msg</code> - the message to publish</dd>
+<dd><code>session</code> - the session the recovery publishes on, as <a href="#getSession()"><code>getSession()</code></a> returned it
+        when the recovery was started for it</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>false</code> if the broker refused the message: no replication
+         server was reachable, the session is not the one the broker publishes
+         on anymore, or the broker was stopped; <code>true</code> once the session
+         took it - which still drops it if it is closing, as it does any
+         message the broker publishes.</dd>
 </dl>
 </li>
 </ul>
@@ -892,7 +930,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;1980. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2011&#x2013;2026. All rights reserved.</small></p>
 </footer>
 </body>
 </html>
