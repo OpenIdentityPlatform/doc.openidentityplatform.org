@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -244,12 +244,21 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#abort(java.io.IOException)">abort</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>&nbsp;cause)</code></th>
+<td class="colLast">
+<div class="block">Closes this session at once, as a session which failed with the error provided: nothing more
+ is written to it - neither what its publisher thread left queued nor the StopMsg - and a write
+ blocked in its socket, because the peer reads nothing, fails rather than holds the close.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#close()">close</a></span>()</code></th>
 <td class="colLast">
 <div class="block">This method is called when the session with the remote must be closed.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#closeInitiated()">closeInitiated</a></span>()</code></th>
 <td class="colLast">
@@ -257,7 +266,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  on this Session.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLastPublishTime()">getLastPublishTime</a></span>()</code></th>
 <td class="colLast">
@@ -265,7 +274,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  session.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLastReceiveTime()">getLastReceiveTime</a></span>()</code></th>
 <td class="colLast">
@@ -273,49 +282,49 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  session.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../types/HostPort.html" title="class in org.opends.server.types">HostPort</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLocalUrl()">getLocalUrl</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieve the local URL in the form host:port.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProtocolVersion()">getProtocolVersion</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the version of the protocol that is currently used.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReadableRemoteAddress()">getReadableRemoteAddress</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieve the human readable address of the remote server.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../types/HostPort.html" title="class in org.opends.server.types">HostPort</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRemoteAddress()">getRemoteAddress</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieve the IP address and port of the remote server.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isEncrypted()">isEncrypted</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Determine whether the session is using a security layer.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publish(org.opends.server.replication.protocol.ReplicationMsg)">publish</a></span>&#8203;(<a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg)</code></th>
 <td class="colLast">
 <div class="block">Sends a replication message to the remote peer.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#publish(org.opends.server.replication.protocol.ReplicationMsg,java.lang.Runnable)">publish</a></span>&#8203;(<a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a>&nbsp;msg,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink">Runnable</a>&nbsp;whenWritten)</code></th>
@@ -324,21 +333,21 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  message has been written to the socket.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="ReplicationMsg.html" title="class in org.opends.server.replication.protocol">ReplicationMsg</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#receive()">receive</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Attempt to receive a ReplicationMsg.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#run()">run</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Run method for the Session.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProtocolVersion(short)">setProtocolVersion</a></span>&#8203;(short&nbsp;version)</code></th>
 <td class="colLast">
@@ -346,21 +355,21 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  be used to record the version of the protocol that is currently used.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSoTimeout(int)">setSoTimeout</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Set a timeout value.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopEncryption()">stopEncryption</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Stop using the security layer, if there is any.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waitForStartup()">waitForStartup</a></span>()</code></th>
 <td class="colLast">
@@ -455,6 +464,32 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true#close()" title="class or interface in java.lang" class="externalLink">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang" class="externalLink">AutoCloseable</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true#close()" title="class or interface in java.io" class="externalLink">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html?is-external=true" title="class or interface in java.io" class="externalLink">Closeable</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="abort(java.io.IOException)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>abort</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;abort&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a>&nbsp;cause)</pre>
+<div class="block">Closes this session at once, as a session which failed with the error provided: nothing more
+ is written to it - neither what its publisher thread left queued nor the StopMsg - and a write
+ blocked in its socket, because the peer reads nothing, fails rather than holds the close.
+ <p>
+ <a href="#close()"><code>close()</code></a> of a session with no error takes <code>publishLock</code> before it closes the
+ sockets, and a write blocked in the socket holds that lock for as long as the peer does not
+ read, which TCP does not bound; and any close first joins the publisher thread, which may be
+ the writer. So the error is recorded first, and the close is marked begun, so that a reader
+ whose read the close of the sockets ends finds it begun - see <a href="#closeInitiated()"><code>closeInitiated()</code></a>. Then
+ the sockets are closed, before the join: that ends the write, whichever thread makes it, and
+ releases a close which had begun before, with no error, and waits for the lock - the call here
+ then returns at once. The close itself takes the branch of a session which failed, and writes
+ nothing.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>cause</code> - why the session is given up, which it then reports as its error</dd>
 </dl>
 </li>
 </ul>
