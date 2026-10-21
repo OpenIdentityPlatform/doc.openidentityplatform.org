@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":41,"i6":41,"i7":9,"i8":9,"i9":9,"i10":41};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -191,7 +191,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -247,7 +247,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isWReplyURLValid(jakarta.servlet.http.HttpServletRequest,java.lang.String)">isWReplyURLValid</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayState)</code></th>
 <td class="colLast">
-<div class="block">Convenience method to validate a WSFederation wreply URL, often called from a JSP.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="WReplyValidator.html#isValidForRequest(jakarta.servlet.http.HttpServletRequest,java.lang.String)"><code>WReplyValidator.isValidForRequest(HttpServletRequest, String)</code></a>, which does not accept every URL while
+ the hosted entity has no <code>wreplyList</code>.</div>
+</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -256,7 +260,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role)</code></th>
 <td class="colLast">
-<div class="block">Convenience method to validate a WSFederation wreply URL, often called from a JSP.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="WReplyValidator.html#isValidForMetaAlias(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)"><code>WReplyValidator.isValidForMetaAlias(HttpServletRequest, String, String)</code></a>, which does not accept every
+ URL while the hosted entity has no <code>wreplyList</code>.</div>
+</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -289,8 +297,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role)</code></th>
 <td class="colLast">
-<div class="block">Validates the Wreply URL against a list of wreply State
- URLs created on the hosted service provider.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="WReplyValidator.html#isValidForEntity(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>WReplyValidator.isValidForEntity(jakarta.servlet.http.HttpServletRequest, String, String, String,
+ String)</code></a>,
+ which does not accept every URL while the hosted entity has no <code>wreplyList</code>.</div>
+</div>
 </td>
 </tr>
 </table>
@@ -497,8 +509,16 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>isWReplyURLValid</h4>
-<pre class="methodSignature">public static&nbsp;boolean&nbsp;isWReplyURLValid&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>
+public static&nbsp;boolean&nbsp;isWReplyURLValid&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayState)</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="WReplyValidator.html#isValidForRequest(jakarta.servlet.http.HttpServletRequest,java.lang.String)"><code>WReplyValidator.isValidForRequest(HttpServletRequest, String)</code></a>, which does not accept every URL while
+ the hosted entity has no <code>wreplyList</code>. A wreply that is absent or empty is also answered
+ differently: this method used to return <code>true</code> for one and now returns <code>false</code>, so a
+ caller using it as a guard for an optional wreply has to test for the value being there itself.</div>
+</div>
 <div class="block">Convenience method to validate a WSFederation wreply URL, often called from a JSP.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -515,15 +535,27 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>isWReplyURLValid</h4>
-<pre class="methodSignature">public static&nbsp;boolean&nbsp;isWReplyURLValid&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>
+public static&nbsp;boolean&nbsp;isWReplyURLValid&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;metaAlias,
                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply,
                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role)</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="WReplyValidator.html#isValidForMetaAlias(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)"><code>WReplyValidator.isValidForMetaAlias(HttpServletRequest, String, String)</code></a>, which does not accept every
+ URL while the hosted entity has no <code>wreplyList</code>. Two of the arguments are dropped on the way, so
+ prefer the replacement over this method: the role is re-derived from the metaAlias, which names exactly one,
+ and there is no request to hand over, which leaves the origin the servlet container reports out of the
+ comparison a URL falls back to when no <code>wreplyList</code> is configured. A wreply that is absent or
+ empty is also answered differently: this method used to return <code>true</code> for one, since the
+ validation it delegated to skipped an empty URL, and it now returns <code>false</code>. A caller using it
+ as a guard for an optional wreply therefore has to test for the value being there itself.</div>
+</div>
 <div class="block">Convenience method to validate a WSFederation wreply URL, often called from a JSP.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>metaAlias</code> - The metaAlias of the hosted entity.</dd>
 <dd><code>wreply</code> - The URL to validate.</dd>
-<dd><code>role</code> - The role of the caller.</dd>
+<dd><code>role</code> - The role of the caller, ignored: see below.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the wreply is valid.</dd>
 </dl>
@@ -535,11 +567,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>validateWReplyURL</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;validateWReplyURL&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgName,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>
+public static&nbsp;void&nbsp;validateWReplyURL&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgName,
                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId,
                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply,
                                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role)
                               throws <a href="WSFederationException.html" title="class in com.sun.identity.wsfederation.common">WSFederationException</a></pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="WReplyValidator.html#isValidForEntity(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>WReplyValidator.isValidForEntity(jakarta.servlet.http.HttpServletRequest, String, String, String,
+ String)</code></a>,
+ which does not accept every URL while the hosted entity has no <code>wreplyList</code>. This method has no
+ request to offer it, so it can only measure such a URL against the configured origin of this server; on an
+ installation that never set <code>com.iplanet.am.server.*</code> there is no origin left to measure against
+ and every absolute URL is refused. Callers holding a request should move to the replacement.</div>
+</div>
 <div class="block">Validates the Wreply URL against a list of wreply State
  URLs created on the hosted service provider.</div>
 <dl>

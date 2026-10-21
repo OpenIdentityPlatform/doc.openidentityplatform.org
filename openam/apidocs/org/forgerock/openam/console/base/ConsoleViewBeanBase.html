@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
+var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -272,6 +272,14 @@ extends com.iplanet.jato.view.ViewBeanBase</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deserializePageAttributes()">deserializePageAttributes</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPageSessionCollectionDepth()">getPageSessionCollectionDepth</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The collection-nesting depth this bean's page session may legitimately reach, passed to
+ <a href="../../utils/IOUtils.html#deserialise(byte%5B%5D,boolean,java.lang.ClassLoader,long)"><code>IOUtils.deserialise(byte[], boolean, ClassLoader, long)</code></a>.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.iplanet.jato.view.ViewBeanBase">
@@ -390,7 +398,7 @@ extends com.iplanet.jato.view.ViewBeanBase</pre>
 <a id="deserializePageAttributes()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>deserializePageAttributes</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;deserializePageAttributes()</pre>
@@ -398,6 +406,20 @@ extends com.iplanet.jato.view.ViewBeanBase</pre>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>deserializePageAttributes</code>&nbsp;in class&nbsp;<code>com.iplanet.jato.view.ViewBeanBase</code></dd>
 </dl>
+</li>
+</ul>
+<a id="getPageSessionCollectionDepth()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getPageSessionCollectionDepth</h4>
+<pre class="methodSignature">protected&nbsp;long&nbsp;getPageSessionCollectionDepth()</pre>
+<div class="block">The collection-nesting depth this bean's page session may legitimately reach, passed to
+ <a href="../../utils/IOUtils.html#deserialise(byte%5B%5D,boolean,java.lang.ClassLoader,long)"><code>IOUtils.deserialise(byte[], boolean, ClassLoader, long)</code></a>. This base class also serves the
+ unauthenticated authentication UI (<code>AuthViewBeanBase</code>), whose page session stores no nested
+ collections, so it keeps the default limit; the admin-console base class overrides this with its
+ known deeper shape.</div>
 </li>
 </ul>
 </li>

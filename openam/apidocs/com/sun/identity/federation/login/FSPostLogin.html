@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":9,"i1":9,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -171,20 +171,39 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#allowedRelayState(jakarta.servlet.http.HttpServletRequest,java.lang.String)">allowedRelayState</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayState)</code></th>
+<td class="colLast">
+<div class="block">Checks a RelayState a caller supplied for an AuthnRequest.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#allowedRelayState(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">allowedRelayState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityID,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayState)</code></th>
+<td class="colLast">
+<div class="block">Checks a RelayState a caller supplied against the allow-list of a hosted provider already
+ resolved, for the callers that resolved it themselves.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doConsentToIntro(jakarta.servlet.http.HttpServletRequest)">doConsentToIntro</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request)</code></th>
 <td class="colLast">
 <div class="block">Returns the introduction URL.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doFederation(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)">doFederation</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
             jakarta.servlet.http.HttpServletResponse&nbsp;response)</code></th>
@@ -193,7 +212,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  for federation.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doPostLogin(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)">doPostLogin</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
            jakarta.servlet.http.HttpServletResponse&nbsp;response)</code></th>
@@ -244,6 +263,51 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="allowedRelayState(jakarta.servlet.http.HttpServletRequest,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>allowedRelayState</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;allowedRelayState&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayState)</pre>
+<div class="block">Checks a RelayState a caller supplied for an AuthnRequest. The AuthnRequest carries it to
+ the IdP and back, and the assertion consumer redirects to it a request later without
+ checking it again, so it is checked here, before it is stored.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - the request carrying the metaAlias.</dd>
+<dd><code>relayState</code> - the request supplied RelayState.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>relayState</code> when the provider's allow-list permits it, otherwise
+  <code>null</code>: a refused RelayState is treated as one the caller did not send.</dd>
+</dl>
+</li>
+</ul>
+<a id="allowedRelayState(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>allowedRelayState</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;allowedRelayState&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;entityID,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role,
+                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayState)</pre>
+<div class="block">Checks a RelayState a caller supplied against the allow-list of a hosted provider already
+ resolved, for the callers that resolved it themselves.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>realm</code> - the realm of the hosted provider.</dd>
+<dd><code>entityID</code> - the hosted provider's entity ID, <code>null</code> if it did not resolve.</dd>
+<dd><code>role</code> - the hosted provider's role, <code>null</code> if it did not resolve.</dd>
+<dd><code>relayState</code> - the request supplied RelayState.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>relayState</code> when the provider's allow-list permits it, otherwise
+  <code>null</code>: a refused RelayState is treated as one the caller did not send.</dd>
+</dl>
+</li>
+</ul>
 <a id="doPostLogin(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)">
 <!--   -->
 </a>

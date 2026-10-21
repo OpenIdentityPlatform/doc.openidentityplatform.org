@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":9,"i16":10,"i17":9,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":9,"i26":9,"i27":10,"i28":10,"i29":10,"i30":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":9,"i16":10,"i17":9,"i18":10,"i19":10,"i20":42,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":9,"i27":9,"i28":10,"i29":10,"i30":10,"i31":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -196,7 +196,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -342,13 +342,27 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 </tr>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isGotoUrlValid(java.lang.String,java.lang.String)">isGotoUrlValid</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isGotoUrlValid(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)">isGotoUrlValid</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgDN)</code></th>
 <td class="colLast">
-<div class="block">Checks whether an input URL is valid in an organization.</div>
+<div class="block">Checks whether the URL is a valid goto URL, refusing to leave this server when the realm has no
+ <code>Valid goto URL Resources</code> configured.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isGotoUrlValid(java.lang.String,java.lang.String)">isGotoUrlValid</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgDN)</code></th>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">This overload accepts <em>any</em> URL when the realm has no
+ <code>Valid goto URL Resources</code> configured, which is the state of a fresh installation, so on its own it
+ is an open redirect.</div>
+</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSpecialUser(java.lang.String)">isSpecialUser</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dn)</code></th>
 <td class="colLast">
@@ -356,7 +370,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
  DN.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSuperAdmin(java.lang.String)">isSuperAdmin</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dn)</code></th>
 <td class="colLast">
@@ -364,7 +378,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
  administrator DN.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSuperUser(java.lang.String)">isSuperUser</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;dn)</code></th>
 <td class="colLast">
@@ -372,7 +386,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
  super user</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logIt(java.lang.String%5B%5D,int,java.lang.String,java.util.Hashtable)">logIt</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;s,
      int&nbsp;type,
@@ -382,14 +396,14 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 <div class="block">Writes a log record.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#logLogout(com.iplanet.sso.SSOToken)">logLogout</a></span>&#8203;(<a href="../../../../iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;ssot)</code></th>
 <td class="colLast">
 <div class="block">Log Logout status</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newSession(java.lang.String,boolean)">newSession</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;domain,
           boolean&nbsp;stateless)</code></th>
@@ -397,7 +411,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 <div class="block">Creates a new session.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../iplanet/dpro/session/service/InternalSession.html" title="class in com.iplanet.dpro.session.service">InternalSession</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newSession(java.lang.String,boolean,boolean)">newSession</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;domain,
           boolean&nbsp;stateless,
@@ -406,14 +420,14 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 <div class="block">Creates a new session.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#notifyChanges()">notifyChanges</a></span>()</code></th>
 <td class="colLast">
 <div class="block">This method will be call if configuration changed.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processURL(java.lang.String,jakarta.servlet.http.HttpServletRequest)">processURL</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;URL,
           jakarta.servlet.http.HttpServletRequest&nbsp;servletRequest)</code></th>
@@ -422,7 +436,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
  URLs.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setOrgServiceAttributes(java.lang.String,java.lang.String,java.util.Map)">setOrgServiceAttributes</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgDN,
                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;serviceName,
@@ -431,7 +445,7 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 <div class="block">Sets the provided attribute map on the specified service in the specified organization.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setServletContext(jakarta.servlet.ServletContext)">setServletContext</a></span>&#8203;(jakarta.servlet.ServletContext&nbsp;servletContext)</code></th>
 <td class="colLast">
@@ -1011,18 +1025,52 @@ implements <a href="../../common/configuration/ConfigurationListener.html" title
 <a id="isGotoUrlValid(java.lang.String,java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isGotoUrlValid</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;isGotoUrlValid&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink">@Deprecated</a>
+public&nbsp;boolean&nbsp;isGotoUrlValid&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgDN)</pre>
-<div class="block">Checks whether an input URL is valid in an organization.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">This overload accepts <em>any</em> URL when the realm has no
+ <code>Valid goto URL Resources</code> configured, which is the state of a fresh installation, so on its own it
+ is an open redirect. Use <a href="#isGotoUrlValid(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)"><code>isGotoUrlValid(HttpServletRequest, String, String)</code></a>, which falls back to the
+ origin of the request instead of to accepting everything.</div>
+</div>
+<div class="block">Checks whether an input URL is valid in an organization.
+
+ <p>This overload fails open: with no <code>Valid goto URL Resources</code> configured, which is the default,
+ every URL is valid, including one leaving this server. Redirect endpoints should call
+ <a href="#isGotoUrlValid(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)"><code>isGotoUrlValid(HttpServletRequest, String, String)</code></a> instead, which falls back to the URLs of this
+ deployment rather than to everything. It is kept for <code>LoginState</code>, whose use of it is a separate
+ change.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>url</code> - The URL to be validated.</dd>
 <dd><code>orgDN</code> - The organization DN.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if input URL is valid, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="isGotoUrlValid(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isGotoUrlValid</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isGotoUrlValid&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgDN)</pre>
+<div class="block">Checks whether the URL is a valid goto URL, refusing to leave this server when the realm has no
+ <code>Valid goto URL Resources</code> configured.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - The request being processed, used to establish the origin of this server.</dd>
+<dd><code>url</code> - The URL to validate.</dd>
+<dd><code>orgDN</code> - The realm the goto URL list is read from.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the URL may be used in a redirect.</dd>
 </dl>
 </li>
 </ul>

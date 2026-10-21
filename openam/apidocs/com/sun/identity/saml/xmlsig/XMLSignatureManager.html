@@ -1471,7 +1471,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>element</code> - XML dom document whose signature to be verified</dd>
 <dd><code>certAlias</code> - alias for Signer's certificate, this is used to search
         signer's public certificate if it is not presented in
-        <code>ds:KeyInfo</code></dd>
+        <code>ds:KeyInfo</code>; if it is presented, it must be this certificate</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the XML signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1495,8 +1495,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>element</code> - XML dom document whose signature to be verified</dd>
 <dd><code>idAttrName</code> - Attribute name for the id attribute</dd>
 <dd><code>certAlias</code> - alias for Signer's certificate, this is used to search
-        signer's public certificate if it is not presented in 
-        <code>ds:KeyInfo</code>.</dd>
+        signer's public certificate if it is not presented in
+        <code>ds:KeyInfo</code>; if it is presented, it must be this certificate.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the XML signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1538,7 +1538,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>XML</code> - XML string whose signature to be verified</dd>
 <dd><code>certAlias</code> - alias for Signer's certificate, this is used to search 
         signer's public certificate if it is not presented in
-        <code>ds:KeyInfo</code>/</dd>
+        <code>ds:KeyInfo</code>; if it is presented, it must be this certificate.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the XML signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1563,7 +1563,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>idAttrName</code> - Attribute name for the id attribute</dd>
 <dd><code>certAlias</code> - <code>certAlias</code> for Signer's certificate,
         this is used to search signer's public certificate if it is not
-        presented in <code>ds:KeyInfo</code>.</dd>
+        presented in <code>ds:KeyInfo</code>; if it is presented, it must be
+        this certificate.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the XML signature is verified, false otherwise.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -171,6 +171,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
        <a href="#NAT64_PREFIXES_PROPERTY"><code>NAT64_PREFIXES_PROPERTY</code></a>.</li>
  </ul>
 
+ <p>The private/site-local and unique-local clauses are the only part of the policy a caller may
+ relax, through <a href="#isSafeRemoteAddresses(java.net.InetAddress%5B%5D,boolean)"><code>isSafeRemoteAddresses(InetAddress[], boolean)</code></a>: an internal PKI publishing
+ its CRLs on an RFC1918 address is a legitimate target, the shared address space and the cloud
+ metadata endpoints are not. The metadata endpoints that sit inside <code>fc00::/7</code> — AWS
+ <code>fd00:ec2::254</code>, Google Cloud <code>fd20:ce::254</code> and Oracle Cloud
+ <code>fd00:c1::a9fe:a9fe</code> — therefore stay blocked when the unique-local clause is relaxed.
+
  <p>NAT64 Network-Specific Prefixes (RFC 6052 §2.2) are chosen by the operator out of the
  operator's own address space and are bit-for-bit indistinguishable from an ordinary global
  address, so they cannot be recognised from the literal alone. Deployments that run a NAT64 with
@@ -234,13 +241,31 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isBlockedAddress(java.net.InetAddress)">isBlockedAddress</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink">InetAddress</a>&nbsp;address)</code></th>
+<td class="colLast">
+<div class="block">Applies the address rules of <a href="#isSafeRemoteUrl(java.lang.String,boolean)"><code>isSafeRemoteUrl(String, boolean)</code></a> to one address that
+ has already been resolved.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeRemoteAddresses(java.net.InetAddress%5B%5D,boolean)">isSafeRemoteAddresses</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink">InetAddress</a>[]&nbsp;addresses,
+                     boolean&nbsp;allowSiteLocal)</code></th>
+<td class="colLast">
+<div class="block">Judges addresses the caller has already resolved: for a sink whose scheme is not http(s) —
+ an <code>ldap://</code> URL, say — or one that must not pay for a second lookup, which would also
+ widen the window in which a short-TTL DNS rebind can change the answer between the two.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeRemoteUrl(java.lang.String)">isSafeRemoteUrl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</code></th>
 <td class="colLast">
 <div class="block">Equivalent to <a href="#isSafeRemoteUrl(java.lang.String,boolean)"><code>isSafeRemoteUrl(url, false)</code></a>:
  both <code>http</code> and <code>https</code> URLs are accepted.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSafeRemoteUrl(java.lang.String,boolean)">isSafeRemoteUrl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
                boolean&nbsp;requireHttps)</code></th>
@@ -325,7 +350,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="isSafeRemoteUrl(java.lang.String,boolean)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isSafeRemoteUrl</h4>
 <pre class="methodSignature">public static&nbsp;boolean&nbsp;isSafeRemoteUrl&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
@@ -337,6 +362,50 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                      <code>false</code> both <code>http</code> and <code>https</code> are accepted.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><code>true</code> if the URL is safe for the server to fetch, <code>false</code> otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="isSafeRemoteAddresses(java.net.InetAddress[],boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isSafeRemoteAddresses</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isSafeRemoteAddresses&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink">InetAddress</a>[]&nbsp;addresses,
+                                            boolean&nbsp;allowSiteLocal)</pre>
+<div class="block">Judges addresses the caller has already resolved: for a sink whose scheme is not http(s) —
+ an <code>ldap://</code> URL, say — or one that must not pay for a second lookup, which would also
+ widen the window in which a short-TTL DNS rebind can change the answer between the two.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>addresses</code> - every address the host resolved to. An empty array is refused: there is
+     nothing to judge.</dd>
+<dd><code>allowSiteLocal</code> - <code>true</code> to accept private/site-local (<code>10/8</code>,
+     <code>172.16/12</code>, <code>192.168/16</code>, <code>fec0::/10</code>) and unique-local
+     (<code>fc00::/7</code>) addresses, also when a transition address embeds one. Every other rule
+     of this class, <code>100.64.0.0/10</code>, <code>64:ff9b:1::/48</code> and the cloud metadata
+     endpoints inside <code>fc00::/7</code> included, still applies.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the server may connect to all of them.</dd>
+</dl>
+</li>
+</ul>
+<a id="isBlockedAddress(java.net.InetAddress)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isBlockedAddress</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isBlockedAddress&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/InetAddress.html?is-external=true" title="class or interface in java.net" class="externalLink">InetAddress</a>&nbsp;address)</pre>
+<div class="block">Applies the address rules of <a href="#isSafeRemoteUrl(java.lang.String,boolean)"><code>isSafeRemoteUrl(String, boolean)</code></a> to one address that
+ has already been resolved. Fetching code that resolves the host itself — for example in the
+ DNS resolver of its HTTP client, so that the validated address is the one connected to —
+ checks every address of the host with this method.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>address</code> - a resolved address.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> if the server must not connect to the address.</dd>
 </dl>
 </li>
 </ul>

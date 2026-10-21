@@ -161,6 +161,29 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <code>SPSSOConfig</code>.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SAML2Utils.</span><code><span class="memberNameLink"><a href="../../../common/SAML2Utils.html#isAssertionSignatureRequired(boolean,java.lang.String,com.sun.identity.saml2.jaxb.entityconfig.SPSSOConfigElement,java.lang.String,java.lang.String)">isAssertionSignatureRequired</a></span>&#8203;(boolean&nbsp;wantAssertionsSigned,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;profileBinding,
+                            <a href="../SPSSOConfigElement.html" title="interface in com.sun.identity.saml2.jaxb.entityconfig">SPSSOConfigElement</a>&nbsp;spConfig,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId)</code></th>
+<td class="colLast">
+<div class="block">Tells whether the response or every one of its assertions has to be signed, resolving the
+ HTTP-Artifact relaxation from the hosted SP's configuration.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SAML2Utils.</span><code><span class="memberNameLink"><a href="../../../common/SAML2Utils.html#isUnsignedArtifactAssertionAllowed(com.sun.identity.saml2.jaxb.entityconfig.SPSSOConfigElement,java.lang.String,java.lang.String)">isUnsignedArtifactAssertionAllowed</a></span>&#8203;(<a href="../SPSSOConfigElement.html" title="interface in com.sun.identity.saml2.jaxb.entityconfig">SPSSOConfigElement</a>&nbsp;spConfig,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
+                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId)</code></th>
+<td class="colLast">
+<div class="block">Tells whether this hosted SP accepts unsigned assertions delivered over HTTP-Artifact, from
+ its <a href="../../../common/SAML2Constants.html#SP_ALLOW_UNSIGNED_ARTIFACT_ASSERTIONS"><code>SAML2Constants.SP_ALLOW_UNSIGNED_ARTIFACT_ASSERTIONS</code></a> attribute and, failing that,
+ from <a href="../../../common/SAML2Constants.html#SP_ALLOW_UNSIGNED_ARTIFACT_ASSERTIONS_PROPERTY"><code>SAML2Constants.SP_ALLOW_UNSIGNED_ARTIFACT_ASSERTIONS_PROPERTY</code></a>.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </section>

@@ -1387,7 +1387,8 @@ implements <a href="SignatureProvider.html" title="interface in com.sun.identity
 <dd><code>element</code> - XML Element whose signature to be verified</dd>
 <dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used
                         to search signer's public certificate if it is not
-                        presented in ds:KeyInfo</dd>
+                        presented in ds:KeyInfo; if it is presented, it must
+                        be this certificate</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the xml signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1412,9 +1413,10 @@ implements <a href="SignatureProvider.html" title="interface in com.sun.identity
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>element</code> - XML Element whose signature to be verified</dd>
 <dd><code>idAttrName</code> - Attribute name for the id attribute</dd>
-<dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used 
-                        to search signer's public certificate if it is not 
-                        presented in ds:KeyInfo</dd>
+<dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used
+                        to search signer's public certificate if it is not
+                        presented in ds:KeyInfo; if it is presented, it must
+                        be this certificate</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the xml signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1482,9 +1484,10 @@ implements <a href="SignatureProvider.html" title="interface in com.sun.identity
 <dd><code><a href="SignatureProvider.html#verifyXMLSignature(java.lang.String,java.lang.String)">verifyXMLSignature</a></code>&nbsp;in interface&nbsp;<code><a href="SignatureProvider.html" title="interface in com.sun.identity.saml.xmlsig">SignatureProvider</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>xmlString</code> - XML string whose signature to be verified</dd>
-<dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used 
-                        to search signer's public certificate if it is not 
-                        presented in ds:KeyInfo</dd>
+<dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used
+                        to search signer's public certificate if it is not
+                        presented in ds:KeyInfo; if it is presented, it must
+                        be this certificate</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the xml signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1511,7 +1514,8 @@ implements <a href="SignatureProvider.html" title="interface in com.sun.identity
 <dd><code>idAttrName</code> - Attribute name for the id attribute</dd>
 <dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used
                         to search signer's public certificate if it is not
-                        presented in ds:KeyInfo</dd>
+                        presented in ds:KeyInfo; if it is presented, it must
+                        be this certificate</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the xml signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1536,7 +1540,8 @@ implements <a href="SignatureProvider.html" title="interface in com.sun.identity
 <dd><code>idAttrName</code> - Attribute name for the id attribute</dd>
 <dd><code>certAlias</code> - certAlias alias for Signer's certificate, this is used
                         to search signer's public certificate if it is not
-                        presented in ds:KeyInfo</dd>
+                        presented in ds:KeyInfo; if it is presented, it must
+                        be this certificate</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the xml signature is verified, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

@@ -141,11 +141,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
      {
          "id": "some-id-here", # this is optional
          "action": "subscribe",
-         "topic": "/some/topic/string"
+         "topic": "/agent/session"
      }
  </pre>
  <p>
- When the <code>id</code> is present in the request, it shall be echoed back with any response messages.</div>
+ When the <code>id</code> is present in the request, it shall be echoed back with any response messages.
+ <p>
+ Only <code>/agent/*</code> topics may be subscribed to; all other topics are internal.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>14.0.0</dd>

@@ -240,8 +240,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;wreply,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;role)</code></th>
 <td class="colLast">
-<div class="block">Validates the Wreply URL against a list of wreply State
- URLs created on the hosted service provider.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">as of OpenAM 15.2.0, replaced by
+ <a href="../WReplyValidator.html#isValidForEntity(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"><code>WReplyValidator.isValidForEntity(jakarta.servlet.http.HttpServletRequest, String, String, String,
+ String)</code></a>,
+ which does not accept every URL while the hosted entity has no <code>wreplyList</code>.</div>
+</div>
 </td>
 </tr>
 </tbody>

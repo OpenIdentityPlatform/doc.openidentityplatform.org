@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":9,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -199,90 +199,106 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBodyParameter(java.lang.String)">getBodyParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colLast">
+<div class="block">Gets the specified parameter from the request's body only, ignoring any request attribute or query string
+ parameter carrying the same name.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getClientRegistration()">getClientRegistration</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the OAuth2 client registration of the request.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../openam/oauth2/OAuth2Constants.EndpointType.html" title="enum in org.forgerock.openam.oauth2">OAuth2Constants.EndpointType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEndpointType()">getEndpointType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get EndpointType.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html?is-external=true" title="class or interface in java.util" class="externalLink">Locale</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLocale()">getLocale</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the request locale.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParameter(java.lang.String)">getParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Gets the specified parameter from the request.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParameterCount(java.lang.String)">getParameterCount</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
 <td class="colLast">
 <div class="block">Gets the count of the parameter present in the request with the given name</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getParameterNames()">getParameterNames</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the name of the parameters in the current request</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getQueryParameter(java.lang.String)">getQueryParameter</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</code></th>
+<td class="colLast">
+<div class="block">Gets the specified parameter from the request's query string only, ignoring any request attribute or
+ request body carrying the same name.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>org.restlet.Request</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRequest()">getRequest</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the actual underlying request.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSession()">getSession</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the user's session for this request.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="Token.html" title="interface in org.forgerock.oauth2.core">Token</a>&gt;<br>T</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getToken(java.lang.Class)">getToken</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;tokenClass)</code></th>
 <td class="colLast">
 <div class="block">Get a Token that is in play for this request.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="Token.html" title="interface in org.forgerock.oauth2.core">Token</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTokens()">getTokens</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get all the tokens that have been used in this request.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setClientRegistration(org.forgerock.oauth2.core.ClientRegistration)">setClientRegistration</a></span>&#8203;(<a href="ClientRegistration.html" title="interface in org.forgerock.oauth2.core">ClientRegistration</a>&nbsp;clientRegistration)</code></th>
 <td class="colLast">
 <div class="block">Set the OAuth2 client registration.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSession(java.lang.String)">setSession</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sessionId)</code></th>
 <td class="colLast">
 <div class="block">Sets the user's session for this request.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="Token.html" title="interface in org.forgerock.oauth2.core">Token</a>&gt;<br>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setToken(java.lang.Class,T)">setToken</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;tokenClass,
         T&nbsp;token)</code></th>
@@ -373,6 +389,45 @@ public&nbsp;OAuth2Request&#8203;(<a href="../../openam/rest/representations/Jack
 <dd><code>name</code> - The name of the parameter.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The parameter value.</dd>
+</dl>
+</li>
+</ul>
+<a id="getQueryParameter(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getQueryParameter</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getQueryParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<div class="block">Gets the specified parameter from the request's query string only, ignoring any request attribute or
+ request body carrying the same name.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - The name of the parameter.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The query string value, or <code>null</code> if the query string does not carry the parameter.</dd>
+</dl>
+</li>
+</ul>
+<a id="getBodyParameter(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBodyParameter</h4>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getBodyParameter&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name)</pre>
+<div class="block">Gets the specified parameter from the request's body only, ignoring any request attribute or query string
+ parameter carrying the same name. Both body encodings <a href="#getParameter(java.lang.String)"><code>getParameter(String)</code></a> understands are read,
+ so that a caller cannot be told one thing by a form encoded body and another by a JSON one.
+
+ <p><a href="#getParameter(java.lang.String)"><code>getParameter(String)</code></a> gives the query string priority over the body and so cannot tell the two
+ apart. A caller that has to - because the same name arriving from both places means something different
+ from it arriving from one - reads each side with this method and <a href="#getQueryParameter(java.lang.String)"><code>getQueryParameter(String)</code></a>.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - The name of the parameter.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The body value, or <code>null</code> if the request carries no body with that parameter.</dd>
 </dl>
 </li>
 </ul>

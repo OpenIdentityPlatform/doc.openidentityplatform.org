@@ -135,10 +135,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public final class <span class="typeNameLabel">RealmGotoUrlValidator</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
 <div class="block">Whether a URL supplied with a request may be redirected to once single sign-on has completed,
- for protocols whose own configuration carries no allow-list (SAML 1.x <code>TARGET</code>, WS-Federation
- <code>wreply</code>). The realm's <em>Valid goto URL</em> list decides, exactly as it does for the
- login <code>goto</code> parameter: a relative URL always passes, a scheme other than http(s) never
- does, and a realm that configures no list restricts nothing.</div>
+ for protocols whose own configuration carries no allow-list (SAML 1.x <code>TARGET</code>, the
+ WS-Federation relying party sign-in <code>wreply</code>). The realm's <em>Valid goto URL</em> list
+ decides, exactly as it does for the login <code>goto</code> parameter: a relative URL always passes,
+ a scheme other than http(s) never does, a populated list must match, and a realm that
+ configures no list accepts only the origins this server answers on - the origin of the request
+ and the URL OpenAM was installed under.
+ <p>
+ <a href="../../../../../com/sun/identity/shared/Constants.html#GOTO_ALLOW_ANY_URL_WITHOUT_WHITELIST"><code>Constants.GOTO_ALLOW_ANY_URL_WITHOUT_WHITELIST</code></a>, the escape hatch of the login
+ <code>goto</code>, decides what an empty list means here too, since it is the same list. A list that
+ could not be read is never taken for an empty one, whatever the property says.
+ <p>
+ Unlike the login <code>goto</code>, a base URL pinned through the realm's Base URL Source service is
+ not counted as an origin of this server: that service lives in <code>openam-core</code>, which the
+ federation library cannot reach.</div>
 </li>
 </ul>
 </div>
@@ -161,7 +171,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isValid(java.lang.String,java.lang.String)">isValid</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isValid(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)">isValid</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -189,20 +200,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="isValid(java.lang.String,java.lang.String)">
+<a id="isValid(jakarta.servlet.http.HttpServletRequest,java.lang.String,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isValid</h4>
-<pre class="methodSignature">public static&nbsp;boolean&nbsp;isValid&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isValid&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
+                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
                               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - the request being processed, used to establish the origins of this server</dd>
 <dd><code>url</code> - the URL taken from the request; <code>null</code> or empty is refused</dd>
 <dd><code>realm</code> - the realm the session was created in; <code>null</code> or empty reads as the root realm</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>true</code> if the realm's list admits <code>url</code></dd>
+<dd><code>true</code> if the realm's list admits <code>url</code>, or it has none and <code>url</code>
+         points back at this server</dd>
 </dl>
 </li>
 </ul>

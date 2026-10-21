@@ -361,7 +361,9 @@ implements <a href="ITask.html" title="interface in com.sun.identity.workflow">I
 <pre class="methodSignature">protected static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getWebContent&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url,
                                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html?is-external=true" title="class or interface in java.util" class="externalLink">Locale</a>&nbsp;locale)
                                throws <a href="WorkflowException.html" title="class in com.sun.identity.workflow">WorkflowException</a></pre>
-<div class="block">Reads the content in from a URL and returns as a String.</div>
+<div class="block">Reads the content in from a URL and returns as a String.
+ The URL, and every URL it redirects to, must not resolve to an internal address — see
+ <code>WebContentFetcher</code> (GHSA-rmw3-j353-w9f7).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>url</code> - The URL to fetch content from.</dd>
@@ -369,7 +371,8 @@ implements <a href="ITask.html" title="interface in com.sun.identity.workflow">I
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A string of the contents fetched from the URL.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="WorkflowException.html" title="class in com.sun.identity.workflow">WorkflowException</a></code> - Thrown if the URL is malformed, or there is an error fetching content.</dd>
+<dd><code><a href="WorkflowException.html" title="class in com.sun.identity.workflow">WorkflowException</a></code> - Thrown if the URL is malformed or not safe to fetch, or there is an error fetching
+ content.</dd>
 </dl>
 </li>
 </ul>

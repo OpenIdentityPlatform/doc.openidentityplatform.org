@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -167,6 +167,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDefaultRelayState(java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager)">getDefaultRelayState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgName,
+                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId,
+                    <a href="../meta/SAML2MetaManager.html" title="class in com.sun.identity.saml2.meta">SAML2MetaManager</a>&nbsp;sm)</code></th>
+<td class="colLast">
+<div class="block">Retrieves the default relay state from <code>SPSSOConfig</code>.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIntermediateURL(java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager)">getIntermediateURL</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgName,
                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId,
                   <a href="../meta/SAML2MetaManager.html" title="class in com.sun.identity.saml2.meta">SAML2MetaManager</a>&nbsp;sm)</code></th>
@@ -174,13 +183,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Retrieves intermediate redirect url from SP sso config.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNeedAttributeEncrypted(boolean,com.sun.identity.saml2.jaxb.entityconfig.SPSSOConfigElement)">getNeedAttributeEncrypted</a></span>&#8203;(boolean&nbsp;needAssertionEncrypted,
                          <a href="../jaxb/entityconfig/SPSSOConfigElement.html" title="interface in com.sun.identity.saml2.jaxb.entityconfig">SPSSOConfigElement</a>&nbsp;spssoconfig)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPrincipalWithoutLogin(com.sun.identity.saml2.assertion.Subject,com.sun.identity.saml2.assertion.Assertion,java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager,java.lang.String,java.lang.String)">getPrincipalWithoutLogin</a></span>&#8203;(<a href="../assertion/Subject.html" title="interface in com.sun.identity.saml2.assertion">Subject</a>&nbsp;assertionSubject,
                         <a href="../assertion/Assertion.html" title="interface in com.sun.identity.saml2.assertion">Assertion</a>&nbsp;authnAssertion,
@@ -193,7 +202,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the username if there was one from the Assertion we were able to map into a local user account.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getRelayState(java.lang.String,java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager)">getRelayState</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relayStateID,
              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgName,
@@ -203,7 +212,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Obtains relay state.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="ResponseInfo.html" title="class in com.sun.identity.saml2.profile">ResponseInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getResponse(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager)">getResponse</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
            jakarta.servlet.http.HttpServletResponse&nbsp;response,
@@ -214,7 +223,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Retrieves <code>SAML</code> <code>Response</code> from http request.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="../assertion/Attribute.html" title="interface in com.sun.identity.saml2.assertion">Attribute</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSAMLAttributes(com.sun.identity.saml2.assertion.Assertion,boolean,java.util.Set)">getSAMLAttributes</a></span>&#8203;(<a href="../assertion/Assertion.html" title="interface in com.sun.identity.saml2.assertion">Assertion</a>&nbsp;assertion,
                  boolean&nbsp;needAttributeEncrypted,
@@ -223,7 +232,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Gets the attributes from an assert's AttributeStates.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#markAssertionAsConsumed(java.util.Map)">markAssertionAsConsumed</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;smap)</code></th>
+<td class="colLast">
+<div class="block">Records the bearer assertions of a verified response as used up, so that a second submission
+ of any of them is turned away by the one-time check in <code>SAML2Utils.verifyResponse</code>.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareForLocalLogin(java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager,com.sun.identity.saml2.profile.ResponseInfo,java.lang.String)">prepareForLocalLogin</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;realm,
                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId,
@@ -234,7 +251,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Saves response for later retrieval and retrieves local auth url from <code>SPSSOConfig</code>.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processResponse(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,java.io.PrintWriter,java.lang.String,java.lang.Object,com.sun.identity.saml2.profile.ResponseInfo,java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager,org.forgerock.openam.saml2.audit.SAML2EventLogger)">processResponse</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
                jakarta.servlet.http.HttpServletResponse&nbsp;response,
@@ -250,7 +267,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Authenticates user with <code>Response</code>.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processResponseForFedlet(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,java.io.PrintWriter)">processResponseForFedlet</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
                         jakarta.servlet.http.HttpServletResponse&nbsp;response,
@@ -259,7 +276,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Processes response from Identity Provider to Fedlet (SP).</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#saveInfoInMemory(com.sun.identity.plugin.session.SessionProvider,java.lang.Object,java.lang.String,java.lang.String,com.sun.identity.saml2.common.NameIDInfo,boolean,boolean)">saveInfoInMemory</a></span>&#8203;(<a href="../../plugin/session/SessionProvider.html" title="interface in com.sun.identity.plugin.session">SessionProvider</a>&nbsp;sessionProvider,
                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;session,
@@ -270,7 +287,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                 boolean&nbsp;isTransient)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAttrMapInSession(com.sun.identity.plugin.session.SessionProvider,java.util.Map,java.lang.Object)">setAttrMapInSession</a></span>&#8203;(<a href="../../plugin/session/SessionProvider.html" title="interface in com.sun.identity.plugin.session">SessionProvider</a>&nbsp;sessionProvider,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;attrMap,
@@ -383,6 +400,71 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
+<a id="markAssertionAsConsumed(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>markAssertionAsConsumed</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;markAssertionAsConsumed&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a>&nbsp;smap)
+                                    throws <a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></pre>
+<div class="block">Records the bearer assertions of a verified response as used up, so that a second submission
+ of any of them is turned away by the one-time check in <code>SAML2Utils.verifyResponse</code>.
+
+ <p>Every bearer assertion the response carries is claimed, not only the one the session is
+ built from. <code>verifyResponse</code> checks all of them against the one-time cache on the way
+ in, and claiming just one left the rest replayable: an unsolicited response carrying two
+ individually signed assertions could be submitted a second time with the spent one dropped.
+
+ <p>The claim on the in-memory cache is atomic: <code>put</code> reports the previous value under
+ the key, so a request that finds one there has lost a race with a concurrent submission of the
+ same assertion and is rejected. That holds within one JVM. Nothing compares and sets across
+ the cluster - a node reads the SAML2 failover repository before accepting and writes to it
+ afterwards, so two nodes handed the same response at the same time can both read nothing and
+ both accept. The repository write is best effort; it closes the replay window across a
+ restart, another node or a later request, not against a simultaneous one.
+
+ <p>Call this on every binding, as soon as the caller has committed to the response - before
+ the session is created and before the service provider adapter runs, so that nothing done
+ with the assertion happens while it is still replayable. The assertion is therefore spent even
+ if the SSO that follows fails on something transient; recovery is to start SSO again, not to
+ resubmit the response.
+
+ <p>"Committed to the response" is later than "verified it": <code>SPACSUtils.processResponse</code>
+ hands a response it cannot map to a user back to the caller, which sends the user through a
+ local login and then re-presents the same response - the same <code>ResponseInfo</code>, out of
+ <code>SPCache.responseHash</code> - to <code>processResponse</code> again. An assertion claimed on the
+ first of those passes would be refused on the second, so the claim goes after that decision.
+ <code>SAML2Proxy</code>, which has no such re-entry, claims once the verified response has been
+ stored and before the key that leads to it is handed out - late enough that an outage of the
+ SAML2 token repository does not spend the assertion on a failure unrelated to it, early
+ enough that nothing can redeem the key in the meantime.
+
+ <p>One gap remains with SAML2 failover switched off. <code>SPCache.assertionByIDCache</code> expires
+ an entry on a fixed schedule - <code>SAML2Constants.CACHE_CLEANUP_INTERVAL</code>, 600s by default -
+ while an assertion stays acceptable until its <code>NotOnOrAfter</code> plus
+ <code>assertionTimeSkew</code>. An IdP that issues long-lived bearer assertions can outlast the
+ marker. Enable SAML2 failover, which stores the marker for exactly as long - until
+ <code>NotOnOrAfter</code> plus <code>assertionTimeSkew</code> - or keep the assertion lifetime inside
+ the cleanup interval.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>smap</code> - the map returned by <code>SAML2Utils.verifyResponse</code>. It has to carry
+             <a href="../common/SAML2Constants.html#BEARER_ASSERTION_IDS"><code>SAML2Constants.BEARER_ASSERTION_IDS</code></a>, the bearer assertions of the response
+             as assertion id to the instant in milliseconds until which it is accepted, which
+             is how long its marker is stored. <code>verifyResponse</code> never reports a
+             <code>null</code> there - it rejects a bearer subject confirmation that carries no
+             <code>NotOnOrAfter</code> - but a map from anywhere else might, and such an id is
+             claimed in this JVM and not
+             written to the SAML2 token repository, there being no expiry to store it under.
+             A map without that key is refused rather than partly claimed - see
+             <code>bearerAssertionsOf(Map)</code>.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../common/SAML2Exception.html" title="class in com.sun.identity.saml2.common">SAML2Exception</a></code> - if any of the assertions had already been consumed, or if the map does
+                        not report any.</dd>
+</dl>
+</li>
+</ul>
 <a id="getNeedAttributeEncrypted(boolean,com.sun.identity.saml2.jaxb.entityconfig.SPSSOConfigElement)">
 <!--   -->
 </a>
@@ -455,6 +537,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>final relay state. Or <code>null</code> if the input 
          relayStateID is null and no default relay state is configured.</dd>
+</dl>
+</li>
+</ul>
+<a id="getDefaultRelayState(java.lang.String,java.lang.String,com.sun.identity.saml2.meta.SAML2MetaManager)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultRelayState</h4>
+<pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getDefaultRelayState&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;orgName,
+                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostEntityId,
+                                          <a href="../meta/SAML2MetaManager.html" title="class in com.sun.identity.saml2.meta">SAML2MetaManager</a>&nbsp;sm)</pre>
+<div class="block">Retrieves the default relay state from <code>SPSSOConfig</code>. This URL is administrator configured, so it
+ needs no validation against the RelayState whitelist of the hosted entity.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>orgName</code> - realm or organization name the service provider resides in</dd>
+<dd><code>hostEntityId</code> - Entity ID of the hosted service provider</dd>
+<dd><code>sm</code> - <code>SAML2MetaManager</code> instance.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the default relay state; or <code>null</code> if it is not configured or an error occurred during the
+                retrieval process.</dd>
 </dl>
 </li>
 </ul>

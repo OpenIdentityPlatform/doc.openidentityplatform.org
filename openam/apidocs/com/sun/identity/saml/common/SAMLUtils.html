@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -385,20 +385,37 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 </td>
 </tr>
 <tr id="i23" class="rowColor">
+<td class="colFirst"><code>static <a href="SAMLServiceManager.SiteEntry.html" title="class in com.sun.identity.saml.common">SAMLServiceManager.SiteEntry</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTrustedSite(java.util.Set,java.lang.String)">getTrustedSite</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;trustedSites,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;target)</code></th>
+<td class="colLast">
+<div class="block">Returns the trusted partner site that a target URL belongs to.</div>
+</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>static <a href="SAMLServiceManager.SiteEntry.html" title="class in com.sun.identity.saml.common">SAMLServiceManager.SiteEntry</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTrustedSite(java.util.Set,java.lang.String,int)">getTrustedSite</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;trustedSites,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetHost,
+              int&nbsp;targetPort)</code></th>
+<td class="colLast">
+<div class="block">Returns the trusted partner site that a target belongs to.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hexStringToBase64(java.lang.String)">hexStringToBase64</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hexString)</code></th>
 <td class="colLast">
 <div class="block">Converts HEX encoded string to Base64 encoded string.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hexStringToByteArray(java.lang.String)">hexStringToByteArray</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hexString)</code></th>
 <td class="colLast">
 <div class="block">Converts a HEX encoded string to a byte array.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#HTMLEncode(java.lang.String,char)">HTMLEncode</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;srcStr,
           char&nbsp;ch)</code></th>
@@ -407,7 +424,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
  <code>"&amp;#&lt;ascii code of ch&gt;;"</code></div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAuthNAssertion(com.sun.identity.saml.assertion.Assertion)">isAuthNAssertion</a></span>&#8203;(<a href="../assertion/Assertion.html" title="class in com.sun.identity.saml.assertion">Assertion</a>&nbsp;assertion)</code></th>
 <td class="colLast">
@@ -415,21 +432,29 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
  signature wise, and contains at least one AuthenticationStatement.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isCorrectConfirmationMethod(com.sun.identity.saml.assertion.SubjectConfirmation)">isCorrectConfirmationMethod</a></span>&#8203;(<a href="../assertion/SubjectConfirmation.html" title="class in com.sun.identity.saml.assertion">SubjectConfirmation</a>&nbsp;sc)</code></th>
 <td class="colLast">
 <div class="block">Checks if a <code>SubjectConfirmation</code> is correct.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHostInDomain(java.lang.String,java.lang.String)">isHostInDomain</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;host,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;domain)</code></th>
+<td class="colLast">
+<div class="block">Checks whether a host is a domain or one of its subdomains.</div>
+</td>
+</tr>
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;args)</code></th>
 <td class="colLast">
 <div class="block">Returns site ID based on the host name.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#postToTarget(jakarta.servlet.http.HttpServletResponse,java.io.PrintWriter,java.util.List,java.lang.String,java.util.Map)">postToTarget</a></span>&#8203;(jakarta.servlet.http.HttpServletResponse&nbsp;response,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintWriter.html?is-external=true" title="class or interface in java.io" class="externalLink">PrintWriter</a>&nbsp;out,
@@ -440,7 +465,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 <div class="block">Post assertions and attributes to the target url.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#postYN(java.lang.String)">postYN</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetIn)</code></th>
 <td class="colLast">
@@ -448,7 +473,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
  accepts form POST.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processArtifact(java.lang.String%5B%5D,java.lang.String)">processArtifact</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>[]&nbsp;artifact,
                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;target)</code></th>
@@ -456,7 +481,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 <div class="block">Processes SAML Artifact</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processResponse(com.sun.identity.saml.protocol.Response,java.lang.String)">processResponse</a></span>&#8203;(<a href="../protocol/Response.html" title="class in com.sun.identity.saml.protocol">Response</a>&nbsp;samlResponse,
                <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;target)</code></th>
@@ -464,7 +489,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 <div class="block">Processes SAML Response</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendError(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse,int,java.lang.String,java.lang.String)">sendError</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
          jakarta.servlet.http.HttpServletResponse&nbsp;response,
@@ -475,7 +500,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 <div class="block">Sends to error page URL for SAML protocols.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMimeHeaders(jakarta.xml.soap.MimeHeaders,jakarta.servlet.http.HttpServletResponse)">setMimeHeaders</a></span>&#8203;(jakarta.xml.soap.MimeHeaders&nbsp;headers,
               jakarta.servlet.http.HttpServletResponse&nbsp;response)</code></th>
@@ -484,14 +509,14 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
  headers in the given <code>MimeHeaders</code> object.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>static byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stringToByteArray(java.lang.String)">stringToByteArray</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;input)</code></th>
 <td class="colLast">
 <div class="block">Converts a string to a byte array.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html?is-external=true" title="class or interface in java.util" class="externalLink">Map</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verifyAssertionAndGetSSMap(com.sun.identity.saml.protocol.Response)">verifyAssertionAndGetSSMap</a></span>&#8203;(<a href="../protocol/Response.html" title="class in com.sun.identity.saml.protocol">Response</a>&nbsp;response)</code></th>
 <td class="colLast">
@@ -499,7 +524,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
  Subject, SOAPEntry for the partner and the List of Assertions.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verifyResponse(com.sun.identity.saml.protocol.Response,java.lang.String,jakarta.servlet.http.HttpServletRequest)">verifyResponse</a></span>&#8203;(<a href="../protocol/Response.html" title="class in com.sun.identity.saml.protocol">Response</a>&nbsp;response,
               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;requestUrl,
@@ -508,7 +533,7 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 <div class="block">Verifies a <code>Response</code>.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verifySignature(com.sun.identity.saml.protocol.Response)">verifySignature</a></span>&#8203;(<a href="../protocol/Response.html" title="class in com.sun.identity.saml.protocol">Response</a>&nbsp;samlResponse)</code></th>
 <td class="colLast">
@@ -932,6 +957,86 @@ extends <a href="SAMLUtilsCommon.html" title="class in com.sun.identity.saml.com
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if it should post assertion to the target passed in; false
    otherwise.</dd>
+</dl>
+</li>
+</ul>
+<a id="getTrustedSite(java.util.Set,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustedSite</h4>
+<pre class="methodSignature">public static&nbsp;<a href="SAMLServiceManager.SiteEntry.html" title="class in com.sun.identity.saml.common">SAMLServiceManager.SiteEntry</a>&nbsp;getTrustedSite&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;trustedSites,
+                                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;target)
+                                                   throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/MalformedURLException.html?is-external=true" title="class or interface in java.net" class="externalLink">MalformedURLException</a></pre>
+<div class="block">Returns the trusted partner site that a target URL belongs to.
+ <p>
+ A target whose authority carries user info or a backslash belongs to
+ no site: browsers read a backslash in an http(s) authority as a slash,
+ so <code>http://attacker.com\@sp.example.com/</code> leads to
+ <code>attacker.com</code>, while <code>java.net.URL</code> before JDK 20 reports
+ host <code>sp.example.com</code>. Otherwise the target's host and port are
+ matched as in <a href="#getTrustedSite(java.util.Set,java.lang.String,int)"><code>getTrustedSite(Set, String, int)</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>trustedSites</code> - the configured <code>SiteEntry</code> set, may be null.</dd>
+<dd><code>target</code> - the target URL.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the matching site, or null if the target belongs to none.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/MalformedURLException.html?is-external=true" title="class or interface in java.net" class="externalLink">MalformedURLException</a></code> - if the target is not a valid URL.</dd>
+</dl>
+</li>
+</ul>
+<a id="getTrustedSite(java.util.Set,java.lang.String,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTrustedSite</h4>
+<pre class="methodSignature">public static&nbsp;<a href="SAMLServiceManager.SiteEntry.html" title="class in com.sun.identity.saml.common">SAMLServiceManager.SiteEntry</a>&nbsp;getTrustedSite&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&nbsp;trustedSites,
+                                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetHost,
+                                                          int&nbsp;targetPort)</pre>
+<div class="block">Returns the trusted partner site that a target belongs to.
+ <p>
+ A site's configured target is the domain of the partner site, so the
+ target host must be that domain or one of its subdomains (see
+ <a href="#isHostInDomain(java.lang.String,java.lang.String)"><code>isHostInDomain(String, String)</code></a>). If the site also names a port,
+ the target must carry that same port. When several sites match, the one
+ with the longest domain wins, and among equal domains the one naming a
+ port. Leading and trailing dots of the domain do not count.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>trustedSites</code> - the configured <code>SiteEntry</code> set, may be null.</dd>
+<dd><code>targetHost</code> - host of the target URL.</dd>
+<dd><code>targetPort</code> - port of the target URL, or -1 if it has none.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the matching site, or null if the target belongs to none.</dd>
+</dl>
+</li>
+</ul>
+<a id="isHostInDomain(java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isHostInDomain</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isHostInDomain&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;host,
+                                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;domain)</pre>
+<div class="block">Checks whether a host is a domain or one of its subdomains. The match
+ is on whole labels: <code>sp.example.com</code> is in <code>example.com</code>,
+ but neither <code>evilsp.example.com</code> nor
+ <code>sp.example.com.attacker.com</code> is in <code>sp.example.com</code>.
+ The comparison ignores case, a trailing dot on either name and a
+ leading dot on the domain. The host may hold only letters, digits,
+ <code>'-'</code>, <code>'_'</code> and <code>'.'</code>; anything else, including an
+ IPv6 literal, is in no domain.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>host</code> - the host to check.</dd>
+<dd><code>domain</code> - the domain it must belong to.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the host is the domain or a subdomain of it.</dd>
 </dl>
 </li>
 </ul>

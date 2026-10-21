@@ -245,7 +245,7 @@ extends <a href="ConsentRequiredResource.html" title="class in org.forgerock.oau
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#userCodeForm()">userCodeForm</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Handles GET requests to the OAuth2 device/user endpoint, returning a form to allow the user to submit their
- user code</div>
+ user code.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -360,7 +360,9 @@ public&nbsp;org.restlet.representation.Representation&nbsp;verify&#8203;(org.res
                                                         <a href="../core/exceptions/NotFoundException.html" title="class in org.forgerock.oauth2.core.exceptions">NotFoundException</a>,
                                                         <a href="../core/exceptions/InvalidGrantException.html" title="class in org.forgerock.oauth2.core.exceptions">InvalidGrantException</a>,
                                                         <a href="OAuth2RestletException.html" title="class in org.forgerock.oauth2.restlet">OAuth2RestletException</a></pre>
-<div class="block">Handles POST requests to the OAuth2 device/user endpoint.</div>
+<div class="block">Handles POST requests to the OAuth2 device/user endpoint. Only a submitted form reaches this method: a
+ bare navigation to the endpoint arrives as a GET, which any foreign origin can trigger with a plain link
+ and which therefore never authorizes anything.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../core/exceptions/ServerException.html" title="class in org.forgerock.oauth2.core.exceptions">ServerException</a></code></dd>
@@ -377,21 +379,23 @@ public&nbsp;org.restlet.representation.Representation&nbsp;verify&#8203;(org.res
 <li class="blockList">
 <h4>userCodeForm</h4>
 <pre class="methodSignature">@Get
-public&nbsp;org.restlet.representation.Representation&nbsp;userCodeForm()
-                                                       throws <a href="OAuth2RestletException.html" title="class in org.forgerock.oauth2.restlet">OAuth2RestletException</a>,
-                                                              <a href="../core/exceptions/InvalidGrantException.html" title="class in org.forgerock.oauth2.core.exceptions">InvalidGrantException</a>,
-                                                              <a href="../core/exceptions/NotFoundException.html" title="class in org.forgerock.oauth2.core.exceptions">NotFoundException</a>,
-                                                              <a href="../core/exceptions/ServerException.html" title="class in org.forgerock.oauth2.core.exceptions">ServerException</a></pre>
+public&nbsp;org.restlet.representation.Representation&nbsp;userCodeForm()</pre>
 <div class="block">Handles GET requests to the OAuth2 device/user endpoint, returning a form to allow the user to submit their
- user code</div>
+ user code.
+
+ <p>A GET never acts on a user code, whatever the request carries. It is the one request a foreign origin
+ can make the resource owner's browser send with its session cookie attached - <code>SameSite=Lax</code> blocks
+ a cross-site POST but not a top-level navigation - so it may only render this form.</p>
+
+ <p>A user code in the query string is not merely ignored, it is redirected away. The form has no action
+ of its own, so it posts back to the address it was served from, and a code left in that address would be
+ submitted alongside the one the user typed - which <code>getSubmittedUserCode(org.forgerock.oauth2.core.OAuth2Request)</code> then refuses, leaving
+ whoever followed such a link with a bare 400 and no form to retry on. Serving the form only from an
+ address that carries no code makes the query string that reaches the POST the user's own.</p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The form to allow the user to submit their user code</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="OAuth2RestletException.html" title="class in org.forgerock.oauth2.restlet">OAuth2RestletException</a></code></dd>
-<dd><code><a href="../core/exceptions/InvalidGrantException.html" title="class in org.forgerock.oauth2.core.exceptions">InvalidGrantException</a></code></dd>
-<dd><code><a href="../core/exceptions/NotFoundException.html" title="class in org.forgerock.oauth2.core.exceptions">NotFoundException</a></code></dd>
-<dd><code><a href="../core/exceptions/ServerException.html" title="class in org.forgerock.oauth2.core.exceptions">ServerException</a></code></dd>
+<dd>The form to allow the user to submit their user code, or <code>null</code> if the request is being
+ redirected to the same address without its user code.</dd>
 </dl>
 </li>
 </ul>
