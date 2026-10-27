@@ -490,7 +490,7 @@ Specifies the maximum length of time that a client connection may remain establi
 
 
 Default Value::
-0 seconds
+600 seconds
 
 
 Allowed Values::
@@ -596,11 +596,11 @@ max-allowed-client-connections::
 [open]
 ====
 Description::
-Specifies the maximum number of client connections that may be established at any given time A value of 0 indicates that unlimited client connection is allowed.
+Specifies the maximum number of client connections that may be established at any given time A value of 0 indicates that unlimited client connection is allowed. Connections to the administration connector are counted but never rejected by this limit, so that the server can still be administered once the other connections have reached it.
 
 
 Default Value::
-0
+4096
 
 
 Allowed Values::
