@@ -147,7 +147,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  (virtual) host name.
 
  The list of valid FQDNs are maintained by
- <code>NamingService.updateFqdnMappings(Set)</code>.</div>
+ <code>NamingService.updateFqdnMappings(Set)</code>. The DNS aliases of the realms are
+ valid as well, see <a href="../../../../org/forgerock/openam/core/realms/RealmDnsAliases.html" title="class in org.forgerock.openam.core.realms"><code>RealmDnsAliases</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -346,7 +347,8 @@ not permitted.)</div>
 <h4>isHostnameValid</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isHostnameValid&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;hostname)</pre>
 <div class="block">Returns <code>true</code> if a host name is valid. <code>hostname</code> is valid if it is contained in the list
- of fully qualified host names. Or, it is the default host name where OpenAM is installed.</div>
+ of fully qualified host names, or it is the default host name where OpenAM is installed, or it is a DNS alias
+ of a realm that the fully qualified domain name map does not map to another host name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>hostname</code> - host name.</dd>

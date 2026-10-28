@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -309,6 +309,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code>protected static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeOrganizationAlias(com.iplanet.sso.SSOToken,java.lang.String)">removeOrganizationAlias</a></span>&#8203;(<a href="../../../../iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;ssoToken,
+                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</code></th>
+<td class="colLast">
+<div class="block">Removes the host name of a server or site URL that is no longer in use from the DNS aliases of the top-level
+ realm, unless the URL of a remaining server or site has the same host name.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>protected static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateOrganizationAlias(com.iplanet.sso.SSOToken,java.lang.String,boolean)">updateOrganizationAlias</a></span>&#8203;(<a href="../../../../iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;ssoToken,
                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;instanceName,
@@ -613,6 +622,24 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../sm/SMSException.html" title="class in com.sun.identity.sm">SMSException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="removeOrganizationAlias(com.iplanet.sso.SSOToken,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeOrganizationAlias</h4>
+<pre class="methodSignature">protected static&nbsp;void&nbsp;removeOrganizationAlias&#8203;(<a href="../../../../iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&nbsp;ssoToken,
+                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;url)</pre>
+<div class="block">Removes the host name of a server or site URL that is no longer in use from the DNS aliases of the top-level
+ realm, unless the URL of a remaining server or site has the same host name. The server, site or URL is already
+ gone when this is called, so a failure is only logged and leaves the host name in the aliases.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ssoToken</code> - Single Sign-On Token which is used to access to the service management datastore.</dd>
+<dd><code>url</code> - The URL of the deleted server or site, or the replaced URL of a site.</dd>
 </dl>
 </li>
 </ul>
