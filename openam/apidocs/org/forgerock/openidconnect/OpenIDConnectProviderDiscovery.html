@@ -159,10 +159,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.forgerock.openidconnect.OpenIDConnectProvider)">OpenIDConnectProviderDiscovery</a></span>&#8203;(<a href="OpenIDConnectProvider.html" title="class in org.forgerock.openidconnect">OpenIDConnectProvider</a>&nbsp;openIDConnectProvider)</code></th>
-<td class="colLast">
-<div class="block">Constructs a new OpenIDConnectProviderDiscovery.</div>
-</td>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">OpenIDConnectProviderDiscovery</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -216,19 +214,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(org.forgerock.openidconnect.OpenIDConnectProvider)">
+<a id="&lt;init&gt;()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OpenIDConnectProviderDiscovery</h4>
-<pre>@Inject
-public&nbsp;OpenIDConnectProviderDiscovery&#8203;(<a href="OpenIDConnectProvider.html" title="class in org.forgerock.openidconnect">OpenIDConnectProvider</a>&nbsp;openIDConnectProvider)</pre>
-<div class="block">Constructs a new OpenIDConnectProviderDiscovery.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>openIDConnectProvider</code> - An instance of the OpenIDConnectProvider.</dd>
-</dl>
+<pre>public&nbsp;OpenIDConnectProviderDiscovery()</pre>
 </li>
 </ul>
 </li>
@@ -251,20 +243,22 @@ public&nbsp;OpenIDConnectProviderDiscovery&#8203;(<a href="OpenIDConnectProvider
                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;rel,
                                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;deploymentUrl,
                                          <a href="../oauth2/core/OAuth2Request.html" title="class in org.forgerock.oauth2.core">OAuth2Request</a>&nbsp;request)
-                                  throws <a href="../oauth2/core/exceptions/BadRequestException.html" title="class in org.forgerock.oauth2.core.exceptions">BadRequestException</a>,
-                                         <a href="../oauth2/core/exceptions/NotFoundException.html" title="class in org.forgerock.oauth2.core.exceptions">NotFoundException</a></pre>
-<div class="block">Returns the response to a request to discover the OpenId Connect provider.</div>
+                                  throws <a href="../oauth2/core/exceptions/BadRequestException.html" title="class in org.forgerock.oauth2.core.exceptions">BadRequestException</a></pre>
+<div class="block">Returns the response to a request to discover the OpenId Connect provider.
+ <p>
+ The account that the resource names is not looked up. The request is anonymous and the issuer is the same
+ for every account, so an answer that differed for an account that does not exist would only tell the
+ caller which accounts exist.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>resource</code> - The resource.</dd>
 <dd><code>rel</code> - The rel.</dd>
 <dd><code>deploymentUrl</code> - The deployment url of the OpenId Connect provider.</dd>
-<dd><code>request</code> - The OAuth2 request.</dd>
+<dd><code>request</code> - The OAuth2 request. Not used; kept so that the signature does not change.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A <code>Map</code> of the OpenId Connect provider urls.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../oauth2/core/exceptions/BadRequestException.html" title="class in org.forgerock.oauth2.core.exceptions">BadRequestException</a></code> - If the request is malformed.</dd>
-<dd><code><a href="../oauth2/core/exceptions/NotFoundException.html" title="class in org.forgerock.oauth2.core.exceptions">NotFoundException</a></code> - If the user cannot be found.</dd>
 </dl>
 </li>
 </ul>
