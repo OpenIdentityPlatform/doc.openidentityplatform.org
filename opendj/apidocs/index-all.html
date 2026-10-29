@@ -232,7 +232,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/server/ServerHandler.html#abortStart(org.forgerock.i18n.LocalizableMessage)">abortStart(LocalizableMessage)</a></span> - Method in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a></dt>
 <dd>
-<div class="block">Abort a start procedure currently establishing.</div>
+<div class="block">Abort a start procedure currently establishing, logging the reason as an error.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/server/ServerHandler.html#abortStartWithWarning(org.forgerock.i18n.LocalizableMessage)">abortStartWithWarning(LocalizableMessage)</a></span> - Method in class org.opends.server.replication.server.<a href="org/opends/server/replication/server/ServerHandler.html" title="class in org.opends.server.replication.server">ServerHandler</a></dt>
+<dd>
+<div class="block">Abort a start procedure currently establishing, logging the reason as a warning.</div>
 </dd>
 <dt><a href="org/forgerock/opendj/config/AbsoluteInheritedDefaultBehaviorProvider.html" title="class in org.forgerock.opendj.config"><span class="typeNameLink">AbsoluteInheritedDefaultBehaviorProvider</span></a>&lt;<a href="org/forgerock/opendj/config/AbsoluteInheritedDefaultBehaviorProvider.html" title="type parameter in AbsoluteInheritedDefaultBehaviorProvider">T</a>&gt; - Class in <a href="org/forgerock/opendj/config/package-summary.html">org.forgerock.opendj.config</a></dt>
 <dd>
@@ -34383,10 +34387,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Could not compute new status in DS replication domain %s with server id %s.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_DS_DISCONNECTED_DURING_HANDSHAKE">ERR_DS_DISCONNECTED_DURING_HANDSHAKE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
-<dd>
-<div class="block">Directory server %s was attempting to connect to replication server %s but has disconnected in handshake phase</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_DS_DN_DOES_NOT_MATCH">ERR_DS_DN_DOES_NOT_MATCH</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">DN sent by replication server: %s does not match local directory server one: %s</div>
@@ -41583,10 +41583,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_RS_CANNOT_CHANGE_STATUS">ERR_RS_CANNOT_CHANGE_STATUS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Could not compute new status in RS replication domain %s for server id %s.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_RS_DISCONNECTED_DURING_HANDSHAKE">ERR_RS_DISCONNECTED_DURING_HANDSHAKE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
-<dd>
-<div class="block">Replication server %s was attempting to connect to replication server %s but has disconnected in handshake phase</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_RS_DN_DOES_NOT_MATCH">ERR_RS_DN_DOES_NOT_MATCH</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
@@ -121244,6 +121240,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Provides static methods to manipulate compact long representation.</div>
 </dd>
+<dt><a href="org/opends/server/replication/protocol/PacketTooLargeException.html" title="class in org.opends.server.replication.protocol"><span class="typeNameLink">PacketTooLargeException</span></a> - Exception in <a href="org/opends/server/replication/protocol/package-summary.html">org.opends.server.replication.protocol</a></dt>
+<dd>
+<div class="block">Raised by <a href="org/opends/server/replication/protocol/Session.html#receive()"><code>Session.receive()</code></a> when this server runs out of heap for a frame: most
+ likely one whose length header announces more bytes than it can allocate, though an
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/OutOfMemoryError.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>OutOfMemoryError</code></a> reading or decoding a frame of an ordinary size is raised as this too.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/protocol/PacketTooLargeException.html#%3Cinit%3E(int)">PacketTooLargeException(int)</a></span> - Constructor for exception org.opends.server.replication.protocol.<a href="org/opends/server/replication/protocol/PacketTooLargeException.html" title="class in org.opends.server.replication.protocol">PacketTooLargeException</a></dt>
+<dd>
+<div class="block">Creates the exception for a frame of the provided length.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/ui/StatusGenericPanel.html#packParentDialog()">packParentDialog()</a></span> - Method in class org.opends.guitools.controlpanel.ui.<a href="org/opends/guitools/controlpanel/ui/StatusGenericPanel.html" title="class in org.opends.guitools.controlpanel.ui">StatusGenericPanel</a></dt>
 <dd>
 <div class="block">Packs the parent dialog.</div>
@@ -155759,6 +155765,10 @@ the order they are declared.</div>
 <dd>
 <div class="block">No DIT structure rule with name "%s" exists in the schema</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_DS_DISCONNECTED_DURING_HANDSHAKE">WARN_DS_DISCONNECTED_DURING_HANDSHAKE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Directory server %s was attempting to connect to replication server %s but has disconnected in handshake phase</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/forgerock/opendj/ldap/CoreMessages.html#WARN_DSR_UNKNOWN">WARN_DSR_UNKNOWN</a></span> - Static variable in class com.forgerock.opendj.ldap.<a href="com/forgerock/opendj/ldap/CoreMessages.html" title="class in com.forgerock.opendj.ldap">CoreMessages</a></dt>
 <dd>
 <div class="block">No DIT structure rule with ID "%s" exists in the schema</div>
@@ -156274,6 +156284,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/BackendMessages.html#WARN_ROOTDSE_SUBORDINATE_BASE_EXCEPTION">WARN_ROOTDSE_SUBORDINATE_BASE_EXCEPTION</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/BackendMessages.html" title="class in org.opends.messages">BackendMessages</a></dt>
 <dd>
 <div class="block">An unexpected problem occurred while trying to determine the set of subordinate base DNs to use for searches below the root DSE:  %s</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_RS_DISCONNECTED_DURING_HANDSHAKE">WARN_RS_DISCONNECTED_DURING_HANDSHAKE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication server %s was attempting to connect to replication server %s but has disconnected in handshake phase</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ExtensionMessages.html#WARN_SATUACM_ATTR_UNINDEXED">WARN_SATUACM_ATTR_UNINDEXED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ExtensionMessages.html" title="class in org.opends.messages">ExtensionMessages</a></dt>
 <dd>

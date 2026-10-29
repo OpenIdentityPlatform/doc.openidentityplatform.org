@@ -666,7 +666,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The ReplicationMsg that was received.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - When error happened during IO process.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - When error happened during IO process, a
+         <a href="PacketTooLargeException.html" title="class in org.opends.server.replication.protocol"><code>PacketTooLargeException</code></a> when this server runs out of heap
+         for the frame received.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/zip/DataFormatException.html?is-external=true" title="class or interface in java.util.zip" class="externalLink">DataFormatException</a></code> - When the data received is not formatted as a
          ReplicationMsg.</dd>
 <dd><code><a href="NotSupportedOldVersionPDUException.html" title="class in org.opends.server.replication.protocol">NotSupportedOldVersionPDUException</a></code> - If the received PDU is part of

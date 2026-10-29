@@ -456,6 +456,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  the current protocol version (if it exists).</div>
 </td>
 </tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="PacketTooLargeException.html" title="class in org.opends.server.replication.protocol">PacketTooLargeException</a></th>
+<td class="colLast">
+<div class="block">Raised by <a href="Session.html#receive()"><code>Session.receive()</code></a> when this server runs out of heap for a frame: most
+ likely one whose length header announces more bytes than it can allocate, though an
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/OutOfMemoryError.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>OutOfMemoryError</code></a> reading or decoding a frame of an ordinary size is raised as this too.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </li>
