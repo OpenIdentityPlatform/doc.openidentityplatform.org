@@ -36139,6 +36139,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Initialization cannot be done because the following error occurred while locking the backend %s : %s</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_DOMAIN_AWAITING_BACKEND">ERR_INIT_DOMAIN_AWAITING_BACKEND</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication for domain "%s" is stopped because backend "%s" could not be enabled after preparing a total update.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_DOMAIN_RESTORE_FAILED">ERR_INIT_DOMAIN_RESTORE_FAILED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Automatic restoration of replication for domain "%s" after an aborted total update failed for backend "%s": %s.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_DOMAIN_STOPPED">ERR_INIT_DOMAIN_STOPPED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Replication and writes for domain "%s" are stopped because the total update could not restore a trustworthy backend state.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_EXPORT_NOT_SUPPORTED">ERR_INIT_EXPORT_NOT_SUPPORTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">Initialization cannot be done because export is not supported by the backend %s</div>
@@ -36166,6 +36178,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_NO_SUCCESS_START_FROM_SERVERS">ERR_INIT_NO_SUCCESS_START_FROM_SERVERS</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
 <div class="block">The following servers did not acknowledge initialization in the expected time for domain %s.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_OPERATIONS_NOT_DRAINED">ERR_INIT_OPERATIONS_NOT_DRAINED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">The total update of domain "%s" was abandoned before replacing its data because replay or a server-state write did not finish.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_PREPARATION_INTERRUPTED">ERR_INIT_PREPARATION_INTERRUPTED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">The total update of domain "%s" was abandoned before replacing its data because the wait for replay or a server-state write was interrupted</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#ERR_INIT_REJECTED_SESSION_STOPPING">ERR_INIT_REJECTED_SESSION_STOPPING</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
 <dd>
@@ -82853,6 +82873,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get the "writability-mode" property definition.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/api/LocalBackend.html#getWriteFailure(org.forgerock.opendj.ldap.DN)">getWriteFailure(DN)</a></span> - Static method in class org.opends.server.api.<a href="org/opends/server/api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a></dt>
+<dd>
+<div class="block">Returns the reason writes overlapping a suffix are forbidden, or null if none are forbidden.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/types/LDIFExportConfig.html#getWriter()">getWriter()</a></span> - Method in class org.opends.server.types.<a href="org/opends/server/types/LDIFExportConfig.html" title="class in org.opends.server.types">LDIFExportConfig</a></dt>
 <dd>
 <div class="block">Retrieves the writer that should be used to write the LDIF data.</div>
@@ -107270,6 +107294,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Returns whether the server located in the provided path is running.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#isServicePermanentlyStopped()">isServicePermanentlyStopped()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Returns whether a failed import has permanently stopped this service.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationBroker.html#isSessionEncrypted()">isSessionEncrypted()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationBroker.html" title="class in org.opends.server.replication.service">ReplicationBroker</a></dt>
 <dd>
 <div class="block">Determine whether the connection to the replication server is encrypted.</div>
@@ -125409,6 +125437,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Indicates that the client will accept authentication with connection
  integrity protection.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/api/LocalBackend.html#quarantineWrites(org.forgerock.opendj.ldap.DN,org.forgerock.i18n.LocalizableMessage)">quarantineWrites(DN, LocalizableMessage)</a></span> - Static method in class org.opends.server.api.<a href="org/opends/server/api/LocalBackend.html" title="class in org.opends.server.api">LocalBackend</a></dt>
+<dd>
+<div class="block">Prevents writes overlapping a failed data replacement until the server process is restarted.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/browser/NodeRefresher.State.html#QUEUED">QUEUED</a></span> - org.opends.guitools.controlpanel.browser.<a href="org/opends/guitools/controlpanel/browser/NodeRefresher.State.html" title="enum in org.opends.guitools.controlpanel.browser">NodeRefresher.State</a></dt>
 <dd>
@@ -144912,6 +144944,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Constructor of the task.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#stopServiceAfterAbortedImport()">stopServiceAfterAbortedImport()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Stops an import's session reversibly when preparation left its backend unavailable.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationDomain.html#stopServicePermanently()">stopServicePermanently()</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationDomain.html" title="class in org.opends.server.replication.service">ReplicationDomain</a></dt>
+<dd>
+<div class="block">Stops the broker without joining the listener which may be running this import.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/api/plugin/PluginResult.Startup.html#stopStartup(org.forgerock.i18n.LocalizableMessage)">stopStartup(LocalizableMessage)</a></span> - Static method in class org.opends.server.api.plugin.<a href="org/opends/server/api/plugin/PluginResult.Startup.html" title="class in org.opends.server.api.plugin">PluginResult.Startup</a></dt>
 <dd>
 <div class="block">Defines a new stop processing startup plugin result.</div>
@@ -155984,6 +156024,10 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#WARN_LDIFSEARCH_TIME_LIMIT_EXCEEDED">WARN_LDIFSEARCH_TIME_LIMIT_EXCEEDED</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">The specified time limit has been exceeded during search processing</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ReplicationMessages.html#WARN_LOCAL_CHANGES_REBUILT_FROM_HISTORICAL_INFORMATION">WARN_LOCAL_CHANGES_REBUILT_FROM_HISTORICAL_INFORMATION</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ReplicationMessages.html" title="class in org.opends.messages">ReplicationMessages</a></dt>
+<dd>
+<div class="block">Domain "%s" keeps no message of its local changes after %s up to %s, which its replication server misses: it publishes what it can rebuild from historical information and the deletes kept aside.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/LoggerMessages.html#WARN_LOGGER_ERROR_DELETING_FILE">WARN_LOGGER_ERROR_DELETING_FILE</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/LoggerMessages.html" title="class in org.opends.messages">LoggerMessages</a></dt>
 <dd>

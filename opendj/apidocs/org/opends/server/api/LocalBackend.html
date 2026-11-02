@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":10,"i2":6,"i3":6,"i4":10,"i5":6,"i6":10,"i7":10,"i8":6,"i9":6,"i10":6,"i11":6,"i12":10,"i13":10,"i14":10,"i15":9,"i16":6,"i17":6,"i18":10,"i19":6,"i20":10,"i21":10,"i22":6,"i23":10,"i24":10,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":10,"i31":10,"i32":10,"i33":6,"i34":10,"i35":10};
+var data = {"i0":6,"i1":10,"i2":6,"i3":6,"i4":10,"i5":6,"i6":10,"i7":10,"i8":6,"i9":6,"i10":6,"i11":6,"i12":10,"i13":10,"i14":9,"i15":10,"i16":9,"i17":6,"i18":6,"i19":10,"i20":6,"i21":10,"i22":10,"i23":6,"i24":9,"i25":10,"i26":10,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":10,"i33":10,"i34":10,"i35":6,"i36":10,"i37":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -327,6 +327,13 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
 </td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code>static org.forgerock.i18n.LocalizableMessage</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWriteFailure(org.forgerock.opendj.ldap.DN)">getWriteFailure</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;dn)</code></th>
+<td class="colLast">
+<div class="block">Returns the reason writes overlapping a suffix are forbidden, or null if none are forbidden.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handlesEntry(org.forgerock.opendj.ldap.DN)">handlesEntry</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code></th>
 <td class="colLast">
@@ -334,7 +341,7 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  operations for the provided entry.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handlesEntry(org.forgerock.opendj.ldap.DN,java.util.Collection,java.util.Collection)">handlesEntry</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&gt;&nbsp;baseDNs,
@@ -344,14 +351,14 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  for the provided entry given the set of base DNs and exclude DNs.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../forgerock/opendj/ldap/ConditionResult.html" title="enum in org.forgerock.opendj.ldap">ConditionResult</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasSubordinates(org.forgerock.opendj.ldap.DN)">hasSubordinates</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;entryDN)</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the requested entry has any subordinates.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>abstract <a href="../types/LDIFImportResult.html" title="class in org.opends.server.types">LDIFImportResult</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importLDIF(org.opends.server.types.LDIFImportConfig,org.opends.server.core.ServerContext)">importLDIF</a></span>&#8203;(<a href="../types/LDIFImportConfig.html" title="class in org.opends.server.types">LDIFImportConfig</a>&nbsp;importConfig,
           <a href="../core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext)</code></th>
@@ -359,14 +366,14 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
 <div class="block">Imports information from an LDIF file into this backend.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDefaultRoute()">isDefaultRoute</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether this backend should be considered a default (wild-card) route.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexed(org.forgerock.opendj.ldap.schema.AttributeType,org.opends.server.types.IndexType)">isIndexed</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/schema/AttributeType.html" title="class in org.forgerock.opendj.ldap.schema">AttributeType</a>&nbsp;attributeType,
          <a href="../types/IndexType.html" title="enum in org.opends.server.types">IndexType</a>&nbsp;indexType)</code></th>
@@ -376,7 +383,7 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  in this backend.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexed(org.opends.server.types.SearchFilter)">isIndexed</a></span>&#8203;(<a href="../types/SearchFilter.html" title="class in org.opends.server.types">SearchFilter</a>&nbsp;filter)</code></th>
 <td class="colLast">
@@ -384,21 +391,29 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  would be indexed in this backend.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPrivateBackend()">isPrivateBackend</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether this backend holds private data or user data.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openBackend()">openBackend</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Opens this backend based on the information provided when the backend was configured.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#quarantineWrites(org.forgerock.opendj.ldap.DN,org.forgerock.i18n.LocalizableMessage)">quarantineWrites</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                org.forgerock.i18n.LocalizableMessage&nbsp;reason)</code></th>
+<td class="colLast">
+<div class="block">Prevents writes overlapping a failed data replacement until the server process is restarted.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rebuildBackend(org.opends.server.backends.RebuildConfig,org.opends.server.core.ServerContext)">rebuildBackend</a></span>&#8203;(<a href="../backends/RebuildConfig.html" title="class in org.opends.server.backends">RebuildConfig</a>&nbsp;rebuildConfig,
               <a href="../core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext)</code></th>
@@ -406,7 +421,7 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
 <div class="block">Rebuild indexes in the backend instance.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#registerPersistentSearch(org.opends.server.core.PersistentSearch)">registerPersistentSearch</a></span>&#8203;(<a href="../core/PersistentSearch.html" title="class in org.opends.server.core">PersistentSearch</a>&nbsp;persistentSearch)</code></th>
 <td class="colLast">
@@ -415,7 +430,7 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  operations that are performed.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeBackup(org.opends.server.types.BackupDirectory,java.lang.String)">removeBackup</a></span>&#8203;(<a href="../types/BackupDirectory.html" title="class in org.opends.server.types">BackupDirectory</a>&nbsp;backupDirectory,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;backupID)</code></th>
@@ -423,7 +438,7 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
 <div class="block">Removes the specified backup if it is possible to do so.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#renameEntry(org.forgerock.opendj.ldap.DN,org.opends.server.types.Entry,org.opends.server.core.ModifyDNOperation)">renameEntry</a></span>&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;currentDN,
            <a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;entry,
@@ -433,7 +448,7 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  any subordinate entries as necessary.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replaceEntry(org.opends.server.types.Entry,org.opends.server.types.Entry,org.opends.server.core.ModifyOperation)">replaceEntry</a></span>&#8203;(<a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;oldEntry,
             <a href="../types/Entry.html" title="class in org.opends.server.types">Entry</a>&nbsp;newEntry,
@@ -443,56 +458,56 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
  backend.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#restoreBackup(org.opends.server.types.RestoreConfig)">restoreBackup</a></span>&#8203;(<a href="../types/RestoreConfig.html" title="class in org.opends.server.types">RestoreConfig</a>&nbsp;restoreConfig)</code></th>
 <td class="colLast">
 <div class="block">Restores a backup of the contents of this backend.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#search(org.opends.server.core.SearchOperation)">search</a></span>&#8203;(<a href="../core/SearchOperation.html" title="interface in org.opends.server.core">SearchOperation</a>&nbsp;searchOperation)</code></th>
 <td class="colLast">
 <div class="block">Processes the specified search in this backend.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBackendMonitor(org.opends.server.monitors.LocalBackendMonitor)">setBackendMonitor</a></span>&#8203;(<a href="../monitors/LocalBackendMonitor.html" title="class in org.opends.server.monitors">LocalBackendMonitor</a>&nbsp;backendMonitor)</code></th>
 <td class="colLast">
 <div class="block">Sets the backend monitor for this backend.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPrivateBackend(boolean)">setPrivateBackend</a></span>&#8203;(boolean&nbsp;isPrivateBackend)</code></th>
 <td class="colLast">
 <div class="block">Specifies whether this backend holds private data or user data.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setWritabilityMode(org.opends.server.types.WritabilityMode)">setWritabilityMode</a></span>&#8203;(<a href="../types/WritabilityMode.html" title="enum in org.opends.server.types">WritabilityMode</a>&nbsp;writabilityMode)</code></th>
 <td class="colLast">
 <div class="block">Specifies the writability mode for this backend.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#supports(org.opends.server.api.LocalBackend.BackendOperation)">supports</a></span>&#8203;(<a href="LocalBackend.BackendOperation.html" title="enum in org.opends.server.api">LocalBackend.BackendOperation</a>&nbsp;backendOperation)</code></th>
 <td class="colLast">
 <div class="block">Indicates whether this backend supports the provided backend operation.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#supportsControl(java.lang.String)">supportsControl</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;controlOID)</code></th>
 <td class="colLast">
 <div class="block">Indicates whether this backend supports the specified control.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verifyBackend(org.opends.server.backends.VerifyConfig)">verifyBackend</a></span>&#8203;(<a href="../backends/VerifyConfig.html" title="class in org.opends.server.backends">VerifyConfig</a>&nbsp;verifyConfig)</code></th>
 <td class="colLast">
@@ -549,6 +564,41 @@ extends <a href="Backend.html" title="class in org.opends.server.api">Backend</a
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="quarantineWrites(org.forgerock.opendj.ldap.DN,org.forgerock.i18n.LocalizableMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>quarantineWrites</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;quarantineWrites&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDN,
+                                    org.forgerock.i18n.LocalizableMessage&nbsp;reason)</pre>
+<div class="block">Prevents writes overlapping a failed data replacement until the server process is restarted.
+ An in-core restart keeps the barrier, as it keeps the JVM running.
+ The barrier survives backend and synchronization-provider reconfiguration.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>baseDN</code> - the suffix whose data cannot safely be written</dd>
+<dd><code>reason</code> - the reason to report to the operator and to rejected updates</dd>
+</dl>
+</li>
+</ul>
+<a id="getWriteFailure(org.forgerock.opendj.ldap.DN)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWriteFailure</h4>
+<pre class="methodSignature">public static&nbsp;org.forgerock.i18n.LocalizableMessage&nbsp;getWriteFailure&#8203;(<a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;dn)</pre>
+<div class="block">Returns the reason writes overlapping a suffix are forbidden, or null if none are forbidden.
+ Ancestors are included because deleting or moving a subtree affects the suffix below it.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dn</code> - the DN of the entry or subtree an operation changes</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the recorded failure, or null</dd>
+</dl>
+</li>
+</ul>
 <a id="openBackend()">
 <!--   -->
 </a>
