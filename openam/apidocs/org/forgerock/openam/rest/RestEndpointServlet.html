@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -148,8 +148,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">RestEndpointServlet</span>
 extends jakarta.servlet.http.HttpServlet</pre>
-<div class="block">Root Servlet for all REST endpoint requests, which are then passed onto the correct underlying servlet, either
- CREST for Resource endpoints or Restlet for Service endpoints.</div>
+<div class="block">Root servlet for the Restlet service endpoints that are not yet on CHF (/oauth2 and /uma).</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>12.0.0</dd>
@@ -203,23 +202,15 @@ extends jakarta.servlet.http.HttpServlet</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#destroy()">destroy</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Destroys the CREST and Restlet servlets.</div>
+<div class="block">Destroys the Restlet servlets.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#init()">init</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Initialises the CREST and Restlet Servlets.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#service(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)">service</a></span>&#8203;(jakarta.servlet.http.HttpServletRequest&nbsp;request,
        jakarta.servlet.http.HttpServletResponse&nbsp;response)</code></th>
 <td class="colLast">
-<div class="block">Delegates the request to either the CREST or Restlet servlet based on whether the request is for a resource
- or service REST endpoint.</div>
+<div class="block">Delegates the request to the Restlet servlet for the requested service endpoint.</div>
 </td>
 </tr>
 </table>
@@ -235,7 +226,7 @@ extends jakarta.servlet.http.HttpServlet</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;jakarta.servlet.GenericServlet</h3>
-<code>getInitParameter, getInitParameterNames, getServletConfig, getServletContext, getServletInfo, getServletName, init, log, log</code></li>
+<code>getInitParameter, getInitParameterNames, getServletConfig, getServletContext, getServletInfo, getServletName, init, init, log, log</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -280,23 +271,6 @@ extends jakarta.servlet.http.HttpServlet</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="init()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>init</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;init()
-          throws jakarta.servlet.ServletException</pre>
-<div class="block">Initialises the CREST and Restlet Servlets.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>init</code>&nbsp;in class&nbsp;<code>jakarta.servlet.GenericServlet</code></dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>jakarta.servlet.ServletException</code> - If the CREST Servlet init() call fails.</dd>
-</dl>
-</li>
-</ul>
 <a id="service(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)">
 <!--   -->
 </a>
@@ -307,8 +281,8 @@ extends jakarta.servlet.http.HttpServlet</pre>
                        jakarta.servlet.http.HttpServletResponse&nbsp;response)
                 throws jakarta.servlet.ServletException,
                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
-<div class="block">Delegates the request to either the CREST or Restlet servlet based on whether the request is for a resource
- or service REST endpoint.</div>
+<div class="block">Delegates the request to the Restlet servlet for the requested service endpoint. Any other servlet path is
+ answered with a 404.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>service</code>&nbsp;in class&nbsp;<code>jakarta.servlet.http.HttpServlet</code></dd>
@@ -316,8 +290,8 @@ extends jakarta.servlet.http.HttpServlet</pre>
 <dd><code>request</code> - The HttpServletRequest.</dd>
 <dd><code>response</code> - The HttpServletResponse.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>jakarta.servlet.ServletException</code> - If the CREST or Restlet Servlet service() calls fail.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - If the CREST or Restlet Servlet service() calls fail.</dd>
+<dd><code>jakarta.servlet.ServletException</code> - If the Restlet Servlet service() call fails.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code> - If the Restlet Servlet service() call fails.</dd>
 </dl>
 </li>
 </ul>
@@ -328,7 +302,7 @@ extends jakarta.servlet.http.HttpServlet</pre>
 <li class="blockList">
 <h4>destroy</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;destroy()</pre>
-<div class="block">Destroys the CREST and Restlet servlets.</div>
+<div class="block">Destroys the Restlet servlets.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>destroy</code>&nbsp;in interface&nbsp;<code>jakarta.servlet.Servlet</code></dd>

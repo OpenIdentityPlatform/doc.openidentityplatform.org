@@ -124,17 +124,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li>org.restlet.resource.Resource</li>
-<li>
-<ul class="inheritance">
-<li>org.restlet.resource.ServerResource</li>
-<li>
-<ul class="inheritance">
 <li>org.forgerock.openam.xacml.v3.rest.XacmlService</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -143,8 +133,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">XacmlService</span>
-extends org.restlet.resource.ServerResource</pre>
-<div class="block">Provides XACML based services</div>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">Serves XACML 3.0 export and import of the policies of a realm, as a CHF annotated endpoint.</div>
 </li>
 </ul>
 </div>
@@ -188,12 +178,12 @@ extends org.restlet.resource.ServerResource</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.sun.identity.entitlement.xacml3.XACMLExportImport,java.security.PrivilegedAction,com.sun.identity.shared.debug.Debug,org.forgerock.openam.forgerockrest.utils.RestLog,com.sun.identity.delegation.DelegationEvaluator,org.forgerock.openam.rest.representations.JacksonRepresentationFactory)">XacmlService</a></span>&#8203;(<a href="../../../../../../com/sun/identity/entitlement/xacml3/XACMLExportImport.html" title="class in com.sun.identity.entitlement.xacml3">XACMLExportImport</a>&nbsp;importExport,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.sun.identity.entitlement.xacml3.XACMLExportImport,java.security.PrivilegedAction,com.sun.identity.shared.debug.Debug,org.forgerock.openam.forgerockrest.utils.RestLog,com.sun.identity.delegation.DelegationEvaluator,com.sun.identity.delegation.DelegationPermissionFactory)">XacmlService</a></span>&#8203;(<a href="../../../../../../com/sun/identity/entitlement/xacml3/XACMLExportImport.html" title="class in com.sun.identity.entitlement.xacml3">XACMLExportImport</a>&nbsp;importExport,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivilegedAction.html?is-external=true" title="class or interface in java.security" class="externalLink">PrivilegedAction</a>&lt;<a href="../../../../../../com/iplanet/sso/SSOToken.html" title="interface in com.iplanet.sso">SSOToken</a>&gt;&nbsp;adminTokenAction,
             <a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
             <a href="../../../forgerockrest/utils/RestLog.html" title="class in org.forgerock.openam.forgerockrest.utils">RestLog</a>&nbsp;restLog,
             <a href="../../../../../../com/sun/identity/delegation/DelegationEvaluator.html" title="interface in com.sun.identity.delegation">DelegationEvaluator</a>&nbsp;evaluator,
-            <a href="../../../rest/representations/JacksonRepresentationFactory.html" title="class in org.forgerock.openam.rest.representations">JacksonRepresentationFactory</a>&nbsp;jacksonRepresentationFactory)</code></th>
+            <a href="../../../../../../com/sun/identity/delegation/DelegationPermissionFactory.html" title="class in com.sun.identity.delegation">DelegationPermissionFactory</a>&nbsp;permissionFactory)</code></th>
 <td class="colLast">
 <div class="block">Constructor with dependencies exposed for unit testing.</div>
 </td>
@@ -217,40 +207,28 @@ extends org.restlet.resource.ServerResource</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>org.restlet.representation.Representation</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#exportXACML()">exportXACML</a></span>()</code></th>
+<td class="colFirst"><code>org.forgerock.http.protocol.Response</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#exportXACML(org.forgerock.services.context.Context,org.forgerock.http.protocol.Request)">exportXACML</a></span>&#8203;(org.forgerock.services.context.Context&nbsp;context,
+           org.forgerock.http.protocol.Request&nbsp;request)</code></th>
 <td class="colLast">
 <div class="block">Export all Policies defined within the Realm used to access this end point.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>org.restlet.representation.Representation</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importXACML(org.restlet.representation.Representation)">importXACML</a></span>&#8203;(org.restlet.representation.Representation&nbsp;entity)</code></th>
+<td class="colFirst"><code>org.forgerock.http.protocol.Response</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#importXACML(org.forgerock.services.context.Context,org.forgerock.http.protocol.Request)">importXACML</a></span>&#8203;(org.forgerock.services.context.Context&nbsp;context,
+           org.forgerock.http.protocol.Request&nbsp;request)</code></th>
 <td class="colLast">
 <div class="block">Expects to receive XACML formatted XML which will be read and imported.</div>
 </td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.org.restlet.resource.ServerResource">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.restlet.resource.ServerResource</h3>
-<code>abort, commit, delete, delete, describeVariants, doCatch, doConditionalHandle, doError, doHandle, doHandle, doHandle, doNegotiatedHandle, get, get, getAnnotation, getAnnotation, getAnnotations, getAttribute, getDescription, getInfo, getInfo, getName, getOnSent, getPreferredVariant, getRole, getVariants, getVariants, handle, hasAnnotations, head, head, isAnnotated, isAutoCommitting, isCommitted, isConditional, isExisting, isInRole, isNegotiated, options, options, patch, patch, post, post, put, put, redirectPermanent, redirectPermanent, redirectSeeOther, redirectSeeOther, redirectTemporary, redirectTemporary, setAllowedMethods, setAnnotated, setAttribute, setAutoCommitting, setChallengeRequests, setCommitted, setConditional, setCookieSettings, setDescription, setDimensions, setExisting, setLocationRef, setLocationRef, setName, setNegotiated, setOnSent, setProxyChallengeRequests, setServerInfo, setStatus, setStatus, setStatus, setStatus, updateAllowedMethods, updateDimensions</code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.org.restlet.resource.Resource">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;org.restlet.resource.Resource</h3>
-<code>doError, doInit, doRelease, getAllowedMethods, getApplication, getChallengeRequests, getChallengeResponse, getClientInfo, getConditions, getConnegService, getContext, getConverterService, getCookies, getCookieSettings, getDimensions, getHostRef, getLocationRef, getLogger, getMatrix, getMatrixValue, getMaxForwards, getMetadataService, getMethod, getOriginalRef, getProtocol, getProxyChallengeRequests, getProxyChallengeResponse, getQuery, getQueryValue, getRanges, getReference, getReferrerRef, getRequest, getRequestAttributes, getRequestCacheDirectives, getRequestEntity, getResponse, getResponseAttributes, getResponseCacheDirectives, getResponseEntity, getRootRef, getServerInfo, getStatus, getStatusService, init, isConfidential, isLoggable, release, setApplication, setQueryValue, setRequest, setResponse, toBoolean, toByte, toDouble, toFloat, toInteger, toLong, toObject, toRepresentation, toRepresentation, toRepresentation, toShort, toString</code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -291,7 +269,7 @@ extends org.restlet.resource.ServerResource</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(com.sun.identity.entitlement.xacml3.XACMLExportImport,java.security.PrivilegedAction,com.sun.identity.shared.debug.Debug,org.forgerock.openam.forgerockrest.utils.RestLog,com.sun.identity.delegation.DelegationEvaluator,org.forgerock.openam.rest.representations.JacksonRepresentationFactory)">
+<a id="&lt;init&gt;(com.sun.identity.entitlement.xacml3.XACMLExportImport,java.security.PrivilegedAction,com.sun.identity.shared.debug.Debug,org.forgerock.openam.forgerockrest.utils.RestLog,com.sun.identity.delegation.DelegationEvaluator,com.sun.identity.delegation.DelegationPermissionFactory)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -304,14 +282,16 @@ public&nbsp;XacmlService&#8203;(<a href="../../../../../../com/sun/identity/enti
                     <a href="../../../../../../com/sun/identity/shared/debug/Debug.html" title="class in com.sun.identity.shared.debug">Debug</a>&nbsp;debug,
                     <a href="../../../forgerockrest/utils/RestLog.html" title="class in org.forgerock.openam.forgerockrest.utils">RestLog</a>&nbsp;restLog,
                     <a href="../../../../../../com/sun/identity/delegation/DelegationEvaluator.html" title="interface in com.sun.identity.delegation">DelegationEvaluator</a>&nbsp;evaluator,
-                    <a href="../../../rest/representations/JacksonRepresentationFactory.html" title="class in org.forgerock.openam.rest.representations">JacksonRepresentationFactory</a>&nbsp;jacksonRepresentationFactory)</pre>
+                    <a href="../../../../../../com/sun/identity/delegation/DelegationPermissionFactory.html" title="class in com.sun.identity.delegation">DelegationPermissionFactory</a>&nbsp;permissionFactory)</pre>
 <div class="block">Constructor with dependencies exposed for unit testing.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>importExport</code> - Non null utility functions.</dd>
 <dd><code>adminTokenAction</code> - Non null admin action function.</dd>
 <dd><code>debug</code> - The debug instance for logging.</dd>
-<dd><code>jacksonRepresentationFactory</code> - The factory for <code>JacksonRepresentation</code> instances.</dd>
+<dd><code>restLog</code> - The REST audit logger.</dd>
+<dd><code>evaluator</code> - The delegation evaluator.</dd>
+<dd><code>permissionFactory</code> - The factory of the delegation permissions that are checked.</dd>
 </dl>
 </li>
 </ul>
@@ -325,25 +305,32 @@ public&nbsp;XacmlService&#8203;(<a href="../../../../../../com/sun/identity/enti
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="importXACML(org.restlet.representation.Representation)">
+<a id="importXACML(org.forgerock.services.context.Context,org.forgerock.http.protocol.Request)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>importXACML</h4>
-<pre class="methodSignature">@Post
-public&nbsp;org.restlet.representation.Representation&nbsp;importXACML&#8203;(org.restlet.representation.Representation&nbsp;entity)</pre>
+<pre class="methodSignature">public&nbsp;org.forgerock.http.protocol.Response&nbsp;importXACML&#8203;(org.forgerock.services.context.Context&nbsp;context,
+                                                        org.forgerock.http.protocol.Request&nbsp;request)</pre>
 <div class="block">Expects to receive XACML formatted XML which will be read and imported.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>context</code> - The request context.</dd>
+<dd><code>request</code> - The request, whose entity is the XACML document.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A JSON array of the import steps, or an XML error.</dd>
+</dl>
 </li>
 </ul>
-<a id="exportXACML()">
+<a id="exportXACML(org.forgerock.services.context.Context,org.forgerock.http.protocol.Request)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>exportXACML</h4>
-<pre class="methodSignature">@Get
-public&nbsp;org.restlet.representation.Representation&nbsp;exportXACML()</pre>
+<pre class="methodSignature">public&nbsp;org.forgerock.http.protocol.Response&nbsp;exportXACML&#8203;(org.forgerock.services.context.Context&nbsp;context,
+                                                        org.forgerock.http.protocol.Request&nbsp;request)</pre>
 <div class="block">Export all Policies defined within the Realm used to access this end point.
 
  The end point supports the query parameter "filter" which can be used multiple
@@ -353,8 +340,11 @@ public&nbsp;org.restlet.representation.Representation&nbsp;exportXACML()</pre>
  See <a href="../../../../../../com/sun/identity/entitlement/xacml3/SearchFilterFactory.html" title="class in com.sun.identity.entitlement.xacml3"><code>SearchFilterFactory</code></a> for more details on the format of these
  Search Filters.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>context</code> - The request context.</dd>
+<dd><code>request</code> - The request.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>XACML of the matching Privileges.</dd>
+<dd>XACML of the matching Privileges, or an XML error.</dd>
 </dl>
 </li>
 </ul>

@@ -216,7 +216,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;org.forgerock.http.Handler&nbsp;from&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&nbsp;obj)</pre>
 <div class="block">Produce a <code>Handler</code> from the annotated methods on the provided object.
  <p>
- This method currently only distinguishes requests by their method type. In future this
+ This method currently only distinguishes requests by their method type. A <code>HEAD</code>
+ request is served by the <code>GET</code> method, and every <code>405 Method Not Allowed</code>
+ response leaves with an <code>Allow</code> header listing the supported methods. In future this
  should be extended to support selection by request and response media types, and request
  path.</div>
 <dl>
