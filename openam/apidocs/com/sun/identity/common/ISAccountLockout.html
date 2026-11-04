@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -197,11 +197,27 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAcInfo(java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">getAcInfo</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
+         <a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity,
+         <a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;cachedInfo)</code></th>
+<td class="colLast">
+<div class="block">Returns current fallback state in preference to a request's cached directory snapshot.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStoreInvalidAttemptsInDS()">getStoreInvalidAttemptsInDS</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasMemoryLockouts()">hasMemoryLockouts</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns whether any identity on this server has switched to fallback counters.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invalidPasswd(com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">invalidPasswd</a></span>&#8203;(<a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity,
              <a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;acInfo)</code></th>
@@ -211,7 +227,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  failed authentication attempts.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invalidPasswd(java.lang.String,java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">invalidPasswd</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userName,
@@ -223,7 +239,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  failed authentication attempts.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#invalidPasswd(java.lang.String,java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo,java.lang.String)">invalidPasswd</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userName,
+             <a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity,
+             <a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;acInfo,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;loginRealm)</code></th>
+<td class="colLast">
+<div class="block">Records a failed authentication, using the login realm for notifications when configured
+ memory counters do not require an identity lookup.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAccountLocked(com.sun.identity.idm.AMIdentity)">isAccountLocked</a></span>&#8203;(<a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity)</code></th>
 <td class="colLast">
@@ -231,28 +259,35 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  for accounts which are physically locked.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLockedOut(com.sun.identity.common.AccountLockoutInfo)">isLockedOut</a></span>&#8203;(<a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;acInfo)</code></th>
 <td class="colLast">
 <div class="block">Returns <code>true</code> if account is locked.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLockoutEnabled()">isLockoutEnabled</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns true if account lockout mode is enabled otherwise false.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isMemoryLocking()">isMemoryLocking</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns <code>true</code> if memory locking mode is enabled.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isMemoryLocking(java.lang.String)">isMemoryLocking</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN)</code></th>
+<td class="colLast">
+<div class="block">Returns whether this identity uses timed locking, including a failed counter write.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetLockoutAttempts(java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo,boolean)">resetLockoutAttempts</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
                     <a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity,
@@ -263,7 +298,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  authenticated.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendLockOutNotice(java.lang.String)">sendLockOutNotice</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN)</code></th>
 <td class="colLast">
@@ -273,7 +308,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  locked.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStoreInvalidAttemptsInDS(boolean)">setStoreInvalidAttemptsInDS</a></span>&#8203;(boolean&nbsp;aStoreInvalidAttemptsInDS)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -406,6 +441,36 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
+<a id="isMemoryLocking(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isMemoryLocking</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isMemoryLocking&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN)</pre>
+<div class="block">Returns whether this identity uses timed locking, including a failed counter write.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userDN</code> - the normalized identity identifier used for the counter</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether the identity uses memory locking</dd>
+</dl>
+</li>
+</ul>
+<a id="hasMemoryLockouts()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasMemoryLockouts</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasMemoryLockouts()</pre>
+<div class="block">Returns whether any identity on this server has switched to fallback counters.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether a physical-mode lock check may need to resolve a fallback identity</dd>
+</dl>
+</li>
+</ul>
 <a id="invalidPasswd(java.lang.String,java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">
 <!--   -->
 </a>
@@ -430,6 +495,31 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
+<a id="invalidPasswd(java.lang.String,java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>invalidPasswd</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;invalidPasswd&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userName,
+                         <a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity,
+                         <a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;acInfo,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;loginRealm)</pre>
+<div class="block">Records a failed authentication, using the login realm for notifications when configured
+ memory counters do not require an identity lookup.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userDN</code> - the normalized counter key</dd>
+<dd><code>userName</code> - the user name</dd>
+<dd><code>amIdentity</code> - the resolved identity, or null for configured memory counters</dd>
+<dd><code>acInfo</code> - the current counter state</dd>
+<dd><code>loginRealm</code> - the login realm used when no identity has been resolved</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the warning count</dd>
+</dl>
+</li>
+</ul>
 <a id="getAcInfo(java.lang.String,com.sun.identity.idm.AMIdentity)">
 <!--   -->
 </a>
@@ -438,6 +528,26 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>getAcInfo</h4>
 <pre class="methodSignature">public&nbsp;<a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;getAcInfo&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
                                     <a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity)</pre>
+</li>
+</ul>
+<a id="getAcInfo(java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAcInfo</h4>
+<pre class="methodSignature">public&nbsp;<a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;getAcInfo&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;userDN,
+                                    <a href="../idm/AMIdentity.html" title="class in com.sun.identity.idm">AMIdentity</a>&nbsp;amIdentity,
+                                    <a href="AccountLockoutInfo.html" title="class in com.sun.identity.common">AccountLockoutInfo</a>&nbsp;cachedInfo)</pre>
+<div class="block">Returns current fallback state in preference to a request's cached directory snapshot.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>userDN</code> - the normalized identity identifier used for the counter</dd>
+<dd><code>amIdentity</code> - the identity to read when neither fallback nor cached state is available</dd>
+<dd><code>cachedInfo</code> - the request's previously read state, or null</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>account lockout state, or null when unavailable</dd>
+</dl>
 </li>
 </ul>
 <a id="invalidPasswd(com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">

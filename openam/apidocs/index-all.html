@@ -66121,6 +66121,10 @@ reference or by value.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/sun/identity/common/ISAccountLockout.html#getAcInfo(java.lang.String,com.sun.identity.idm.AMIdentity)">getAcInfo(String, AMIdentity)</a></span> - Method in class com.sun.identity.common.<a href="com/sun/identity/common/ISAccountLockout.html" title="class in com.sun.identity.common">ISAccountLockout</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="com/sun/identity/common/ISAccountLockout.html#getAcInfo(java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo)">getAcInfo(String, AMIdentity, AccountLockoutInfo)</a></span> - Method in class com.sun.identity.common.<a href="com/sun/identity/common/ISAccountLockout.html" title="class in com.sun.identity.common">ISAccountLockout</a></dt>
+<dd>
+<div class="block">Returns current fallback state in preference to a request's cached directory snapshot.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/iplanet/services/ldap/aci/ACI.html#getACIText()">getACIText()</a></span> - Method in class com.iplanet.services.ldap.aci.<a href="com/iplanet/services/ldap/aci/ACI.html" title="class in com.iplanet.services.ldap.aci">ACI</a></dt>
 <dd>
 <div class="block">Get the ACI text.</div>
@@ -123426,6 +123430,10 @@ objects in the <code>Evidence</code></div>
 <dd>
 <div class="block">Evaluates whether an object is member of this IRole.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/sun/identity/common/ISAccountLockout.html#hasMemoryLockouts()">hasMemoryLockouts()</a></span> - Method in class com.sun.identity.common.<a href="com/sun/identity/common/ISAccountLockout.html" title="class in com.sun.identity.common">ISAccountLockout</a></dt>
+<dd>
+<div class="block">Returns whether any identity on this server has switched to fallback counters.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/iplanet/ums/SearchResults.html#hasMoreElements()">hasMoreElements()</a></span> - Method in class com.iplanet.ums.<a href="com/iplanet/ums/SearchResults.html" title="class in com.iplanet.ums">SearchResults</a></dt>
 <dd>
 <div class="block">Checks whether there are entries available.</div>
@@ -132098,6 +132106,11 @@ objects in the <code>Evidence</code></div>
  updates the accountInfo object with the user information and count of
  failed authentication attempts.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/sun/identity/common/ISAccountLockout.html#invalidPasswd(java.lang.String,java.lang.String,com.sun.identity.idm.AMIdentity,com.sun.identity.common.AccountLockoutInfo,java.lang.String)">invalidPasswd(String, String, AMIdentity, AccountLockoutInfo, String)</a></span> - Method in class com.sun.identity.common.<a href="com/sun/identity/common/ISAccountLockout.html" title="class in com.sun.identity.common">ISAccountLockout</a></dt>
+<dd>
+<div class="block">Records a failed authentication, using the login realm for notifications when configured
+ memory counters do not require an identity lookup.</div>
+</dd>
 <dt><a href="com/sun/identity/authentication/spi/InvalidPasswordException.html" title="class in com.sun.identity.authentication.spi"><span class="typeNameLink">InvalidPasswordException</span></a> - Exception in <a href="com/sun/identity/authentication/spi/package-summary.html">com.sun.identity.authentication.spi</a></dt>
 <dd>
 <div class="block">Exception that is thrown when the user-entered password token causes the
@@ -135305,6 +135318,10 @@ objects in the <code>Evidence</code></div>
 <dt><span class="memberNameLink"><a href="com/sun/identity/common/ISAccountLockout.html#isMemoryLocking()">isMemoryLocking()</a></span> - Method in class com.sun.identity.common.<a href="com/sun/identity/common/ISAccountLockout.html" title="class in com.sun.identity.common">ISAccountLockout</a></dt>
 <dd>
 <div class="block">Returns <code>true</code> if memory locking mode is enabled.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/sun/identity/common/ISAccountLockout.html#isMemoryLocking(java.lang.String)">isMemoryLocking(String)</a></span> - Method in class com.sun.identity.common.<a href="com/sun/identity/common/ISAccountLockout.html" title="class in com.sun.identity.common">ISAccountLockout</a></dt>
+<dd>
+<div class="block">Returns whether this identity uses timed locking, including a failed counter write.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/sun/identity/wss/provider/ProviderConfig.html#isMessageReplayDetectionEnabled()">isMessageReplayDetectionEnabled()</a></span> - Method in class com.sun.identity.wss.provider.<a href="com/sun/identity/wss/provider/ProviderConfig.html" title="class in com.sun.identity.wss.provider">ProviderConfig</a></dt>
 <dd>
