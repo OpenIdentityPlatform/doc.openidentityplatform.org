@@ -134,10 +134,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">UpdateToReplay</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
-<div class="block">This is a bag class to hold an update to replay in the queue of updates to
- be replayed by the replay threads.
- It associates an update message to replay with the matching
- ReplicationDomain.</div>
+<div class="block">A delivery in the shared replay queue, associating an update with its domain.
+ Cancellation belongs to this delivery, so an enqueue or claim failure can release
+ it without acquiring the pending-changes lock or cancelling a newer retry.</div>
 </li>
 </ul>
 </div>
