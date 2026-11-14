@@ -441,7 +441,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
             performed by a client. When <code>true</code> the TLS filter will be installed atomically after the first
             message sent to prevent race-condition.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>true</code> if the TLS filter has been enabled, <code>false</code> if it was already enabled.</dd>
+<dd><code>true</code> if the TLS filter has been enabled, or <code>false</code> if it was already enabled, an upgrade
+         is pending, or the connection is closed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if sslEngine is null</dd>
 </dl>
