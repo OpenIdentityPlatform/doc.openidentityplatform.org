@@ -912,7 +912,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;newPassword)
                     throws <a href="IdRepoException.html" title="class in com.sun.identity.idm">IdRepoException</a>,
                            <a href="../../../iplanet/sso/SSOException.html" title="class in com.iplanet.sso">SSOException</a></pre>
-<div class="block">Changes password for the identity.</div>
+<div class="block">Changes password for the identity.
+
+ <p>For a server-side user changing their own password, other stateful sessions are revoked while the current
+ master session is preserved. Revocation failures are logged without failing the password change. This does not
+ cover an administrator changing another user's password or Remote SDK requests handled directly by IdServices.</p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>oldPassword</code> - old password</dd>
