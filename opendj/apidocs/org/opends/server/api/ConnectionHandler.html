@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":10,"i4":6,"i5":10,"i6":10,"i7":6,"i8":10,"i9":6,"i10":6,"i11":10,"i12":10,"i13":6,"i14":10,"i15":10,"i16":10,"i17":6};
+var data = {"i0":6,"i1":10,"i2":6,"i3":6,"i4":10,"i5":6,"i6":10,"i7":10,"i8":6,"i9":10,"i10":6,"i11":6,"i12":10,"i13":10,"i14":6,"i15":10,"i16":10,"i17":10,"i18":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -281,6 +281,13 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#finalizeConnectionHandlerForConfigurationChange(org.forgerock.i18n.LocalizableMessage)">finalizeConnectionHandlerForConfigurationChange</a></span>&#8203;(org.forgerock.i18n.LocalizableMessage&nbsp;finalizeReason)</code></th>
+<td class="colLast">
+<div class="block">Stops this handler after its configuration is disabled or deleted.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="ClientConnection.html" title="class in org.opends.server.api">ClientConnection</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getClientConnections()">getClientConnections</a></span>()</code></th>
 <td class="colLast">
@@ -288,7 +295,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  established through this connection handler.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getComponentEntryDN()">getComponentEntryDN</a></span>()</code></th>
 <td class="colLast">
@@ -296,14 +303,14 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  generator is associated.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../monitors/ConnectionHandlerMonitor.html" title="class in org.opends.server.monitors">ConnectionHandlerMonitor</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConnectionHandlerMonitor()">getConnectionHandlerMonitor</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the monitor instance for this connection handler.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getConnectionHandlerName()">getConnectionHandlerName</a></span>()</code></th>
 <td class="colLast">
@@ -311,7 +318,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  handler.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEnabledSSLCipherSuites()">getEnabledSSLCipherSuites</a></span>()</code></th>
 <td class="colLast">
@@ -319,7 +326,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  this connection handler, if applicable.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEnabledSSLProtocols()">getEnabledSSLProtocols</a></span>()</code></th>
 <td class="colLast">
@@ -327,7 +334,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  handler.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true" title="class or interface in java.util" class="externalLink">Collection</a>&lt;<a href="../types/HostPort.html" title="class in org.opends.server.types">HostPort</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getListeners()">getListeners</a></span>()</code></th>
 <td class="colLast">
@@ -335,7 +342,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  accept client connections.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumRequestHandlers(java.lang.Integer,java.lang.String)">getNumRequestHandlers</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;numRequestHandlers,
                      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;friendlyName)</code></th>
@@ -343,7 +350,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
 <div class="block">Determine the number of request handlers.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>abstract <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProtocol()">getProtocol</a></span>()</code></th>
 <td class="colLast">
@@ -351,7 +358,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  clients.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#initializeConnectionHandler(org.opends.server.core.ServerContext,T)">initializeConnectionHandler</a></span>&#8203;(<a href="../core/ServerContext.html" title="interface in org.opends.server.core">ServerContext</a>&nbsp;serverContext,
                            <a href="ConnectionHandler.html" title="type parameter in ConnectionHandler">T</a>&nbsp;configuration)</code></th>
@@ -360,7 +367,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  information in the provided connection handler configuration.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAdminConnectionHandler()">isAdminConnectionHandler</a></span>()</code></th>
 <td class="colLast">
@@ -368,7 +375,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  connection handler.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isConfigurationAcceptable(org.forgerock.opendj.server.config.server.ConnectionHandlerCfg,java.util.List)">isConfigurationAcceptable</a></span>&#8203;(<a href="../../../forgerock/opendj/server/config/server/ConnectionHandlerCfg.html" title="interface in org.forgerock.opendj.server.config.server">ConnectionHandlerCfg</a>&nbsp;configuration,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;org.forgerock.i18n.LocalizableMessage&gt;&nbsp;unacceptableReasons)</code></th>
@@ -377,7 +384,7 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  this connection handler.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#run()">run</a></span>()</code></th>
 <td class="colLast">
@@ -385,28 +392,28 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
  requests on those connections are handled properly.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setAdminConnectionHandler()">setAdminConnectionHandler</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Sets this connection handler as the admin connection handler.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setConnectionHandlerMonitor(org.opends.server.monitors.ConnectionHandlerMonitor)">setConnectionHandlerMonitor</a></span>&#8203;(<a href="../monitors/ConnectionHandlerMonitor.html" title="class in org.opends.server.monitors">ConnectionHandlerMonitor</a>&nbsp;monitor)</code></th>
 <td class="colLast">
 <div class="block">Sets the monitor instance for this connection handler.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a string representation of this connection handler.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString(java.lang.StringBuilder)">toString</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html?is-external=true" title="class or interface in java.lang" class="externalLink">StringBuilder</a>&nbsp;buffer)</code></th>
 <td class="colLast">
@@ -522,6 +529,22 @@ extends <a href="DirectoryThread.html" title="class in org.opends.server.api">Di
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>finalizeReason</code> - The reason that this connection handler should be
           finalized.</dd>
+</dl>
+</li>
+</ul>
+<a id="finalizeConnectionHandlerForConfigurationChange(org.forgerock.i18n.LocalizableMessage)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>finalizeConnectionHandlerForConfigurationChange</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;finalizeConnectionHandlerForConfigurationChange&#8203;(org.forgerock.i18n.LocalizableMessage&nbsp;finalizeReason)</pre>
+<div class="block">Stops this handler after its configuration is disabled or deleted.
+ This can run on a work queue worker. Handlers whose listeners depend on
+ the work queue can initiate closure asynchronously.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>finalizeReason</code> - The reason that this connection handler should be finalized.</dd>
 </dl>
 </li>
 </ul>

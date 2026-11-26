@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":10};
+var data = {"i0":10,"i1":6,"i2":6,"i3":6,"i4":6,"i5":10,"i6":6,"i7":6,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -238,13 +238,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopAcceptingOperations()">stopAcceptingOperations</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Allows a queue to reject new submissions and release submitters waiting for capacity
+ before the server shuts down its connection handlers.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#submitOperation(org.opends.server.types.Operation)">submitOperation</a></span>&#8203;(<a href="../types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code></th>
 <td class="colLast">
 <div class="block">Submits an operation to be processed in the server.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#trySubmitOperation(org.opends.server.types.Operation)">trySubmitOperation</a></span>&#8203;(<a href="../types/Operation.html" title="interface in org.opends.server.types">Operation</a>&nbsp;operation)</code></th>
 <td class="colLast">
@@ -252,7 +260,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  blocking.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#waitUntilIdle(long)">waitUntilIdle</a></span>&#8203;(long&nbsp;timeLimit)</code></th>
 <td class="colLast">
@@ -328,6 +336,18 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                                    related to the server
                                    configuration.</dd>
 </dl>
+</li>
+</ul>
+<a id="stopAcceptingOperations()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>stopAcceptingOperations</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;stopAcceptingOperations()</pre>
+<div class="block">Allows a queue to reject new submissions and release submitters waiting for capacity
+ before the server shuts down its connection handlers. Queued and active operations
+ can continue until <a href="#finalizeWorkQueue(org.forgerock.i18n.LocalizableMessage)"><code>finalizeWorkQueue(LocalizableMessage)</code></a>.</div>
 </li>
 </ul>
 <a id="finalizeWorkQueue(org.forgerock.i18n.LocalizableMessage)">
