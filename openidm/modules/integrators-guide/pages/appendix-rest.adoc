@@ -22,8 +22,9 @@
 
 
 [appendix]
-[#appendix-rest]
 == REST API Reference
+
+anchor:appendix-rest[]
 
 Representational State Transfer (REST) is a software architecture style for exposing resources, using the technologies and protocols of the World Wide Web. REST describes how distributed data objects, or resources, can be defined and addressed. OpenIDM provides a RESTful API for accessing managed objects, system objects, workflows, and some elements of the system configuration.
 
@@ -89,6 +90,22 @@ The `/openidm` context path shown in all URI examples throughout this guide is t
 ====
 
 
+[#rest-api-discovery]
+=== Discovering REST Operations
+
+Append `?_api` to an endpoint that publishes an API descriptor. The response is a Swagger JSON document for the requested resource. Use the effective REST context path and the authentication configured for your instance. The managed resource supports discovery, as shown below.
+
+[source, console]
+----
+$ curl --fail-with-body --cacert self-signed.crt \
+    --header "X-OpenIDM-Username: openidm-admin" \
+    --header "X-OpenIDM-Password: $OPENIDM_PASSWORD" \
+    --header "Accept: application/json" \
+    "https://localhost:8443/openidm/managed?_api"
+----
+
+Use the descriptor alongside the request examples and default authorization rules in this guide. Coverage depends on which resources expose descriptor metadata.
+
 [#rest-object-identifier]
 === Object Identifiers
 
@@ -143,7 +160,7 @@ For example, you can use `GET` to read specific attributes for a user as follows
 $ curl \
  --header "X-OpenIDM-Username: openidm-admin" \
  --header "X-OpenIDM-Password: openidm-admin" \
- --request GET
+ --request GET \
  "http://localhost:8080/openidm/managed/user/james?_fields=userName,mail"
  {
   "mail": "james@example.com",
@@ -207,7 +224,7 @@ $ curl \
     "mail": "mike@example.com",
     "telephoneNumber": "082082082",
     "password":"Passw0rd"
- }'
+ }' \
  "http://localhost:8080/openidm/managed/user?_action=create"
 {
   "userName": "mike",
@@ -308,7 +325,7 @@ A PATCH request can add, remove, replace, or increment an attribute value. A `re
 
 When you update a managed or system object with a PATCH request, you can include the optional `If-Match` conditional header. If no conditional header is specified, a default of `If-Match: "*"` is applied.
 
-The following example shows a patch request that updates a multi-valued attribute by adding a new value. Note the dash `-` character appended to the field name, which specifies that the value provided should be added to the existing values. If the dash character is omitted, the provided value replaces the existing values of that field.
+The following example grants an existing provisioning role whose ID is `ldap` to the managed user whose ID is `bjensen`. The `roles` relationship contains objects with a `_ref` property. Note the dash `-` character appended to the field name, which specifies that the value provided should be added to the existing values. If the dash character is omitted, the provided value replaces the existing values of that field.
 
 [source, console]
 ----
@@ -322,7 +339,7 @@ $ curl \
     {
         "operation": "add",
         "field": "/roles/-",
-        "value": "managed/role/ldap"
+        "value": { "_ref": "managed/role/ldap" }
 
     }
 ]' \
@@ -358,7 +375,7 @@ For queries on managed objects:
 
 * `_queryFilter` for arbitrary filters, in common filter notation
 
-* `_queryExpression` for client-supplied queries, in native query format
+The default REST authorization policy denies `_queryExpression` on managed-object endpoints. See xref:chap-data.adoc#native-queries[Native Queries] for guidance on internal use.
 
 For queries on system objects:
 
@@ -407,7 +424,6 @@ Vary: Accept-Encoding, User-Agent
 Set-Cookie: session-jwt=2sadf... afd5;Path=/
 Expires: Thu, 01 Jan 2015 00:00:00 GMT
 Content-Length: 1230
-Server: Jetty(8.y.z-SNAPSHOT)
 ...
 
 [JSON representation of the managed object]
@@ -1466,11 +1482,19 @@ You can interact with the reconciliation engine over REST, as shown in the follo
 
 a|/openidm/recon
 a|GET
-a|Lists all completed reconciliation runs
+a|Lists active and retained completed runs on the node that receives the request
 
 a|/openidm/recon?_action=recon&mapping=*__mapping-name__*
 a|POST
 a|Launches a reconciliation run with the specified mapping
+
+a|/openidm/recon/*_id_*
+a|GET
+a|Returns the run summary from memory or the reconciliation audit log, if available
+
+a|/openidm/recon?_action=reconById&mapping=*__mapping-name__*&ids=*__source-id__*
+a|POST
+a|Launches a reconciliation run for a single source ID
 
 a|/openidm/recon/*_id_*?_action=cancel
 a|POST
@@ -1507,7 +1531,7 @@ a|Lists the keys and certificate in the keystore
 
 a|/openidm/security/keystore/privatekey/*_alias_*
 a|PUT
-a|Imports a signed certificate into the keystore
+a|Stores signed certificate chains. For standard PEM files, use xref:chap-security.adoc#import-signed-cert[the local keystore procedure].
 
 a|/openidm/security/keystore?_action=generateCert
 a|POST
@@ -1515,7 +1539,7 @@ a|Generates a self-signed certificate and imports it into the keystore
 
 a|/openidm/security/keystore?_action=generateCSR
 a|POST
-a|Generates a certificate signing request, for submission to a certificate authority
+a|Generates a certificate signing request and saves its key in the repository. For server certificate installation, see xref:chap-security.adoc#csr-with-keytool[Requesting a Signed Certificate With keytool].
 
 a|/openidm/security/truststore
 a|GET
@@ -1561,7 +1585,7 @@ For examples of queries on the `repo/` endpoint, see xref:chap-repo.adoc#repo-ov
 [#update-REST]
 ==== Managing Updates Over REST
 
-You can interact with the updates engine over REST, as shown in the following table.
+The REST update service requires the optional maintenance module. For the standard distribution, follow xref:install-guide:chap-update.adoc#chap-update[Updating OpenIDM].
 
 [cols="50%,10%,40%",stripes=even]
 |===
@@ -1569,15 +1593,11 @@ You can interact with the updates engine over REST, as shown in the following ta
 
 a|/openidm/maintenance/update?_action=available
 a|POST
-a|Lists update archives in the `*_project-dir_*/openidm/bin/update/` directory
+a|Lists update archives available to the maintenance service
 
 a|/openidm/maintenance/update?_action=preview&archive=*__patch__*.zip
 a|POST
 a|Lists file states of the current installation, relative to the *_patch_*.zip archive, using checksums
-
-a|openidm/maintenance/update?_action=listMigrations&archive=*__patch__*.zip
-a|POST
-a|Gets a list of repository migrations for a given update type
 
 a|/openidm/maintenance/update?_action=getLicense&archive=*__patch__*.zip
 a|POST
@@ -1587,8 +1607,8 @@ a|/openidm/maintenance/update?_action=listRepoUpdates&archive=*__patch__*.zip
 a|POST
 a|Get a list of repository update archives; use the _path_ in the output for the endpoint with repo files
 
-a|/openidm/maintenance/update/archives/*_patch_*.zip/*_path_*?_field=contents&_mimeType=text/plain
-a|POST
+a|/openidm/maintenance/update/archives/*_patch_*.zip/*_path_*?_fields=/contents&_mimeType=text/plain
+a|GET
 a|Get files for the specific repository update, defined in the *_path_*.
 
 a|/openidm/maintenance?_action=enable
@@ -1617,7 +1637,7 @@ a|Restart OpenIDM
 
 a|/openidm/maintenance/update?_action=lastUpdateId
 a|POST
-a|Returns the `_id` value of the last successful update
+a|Returns the ID of the last successful update in the `lastUpdateId` field
 
 a|/openidm/maintenance/update?_action=markComplete&updateId=*__id_string__*
 a|POST
@@ -1637,13 +1657,13 @@ a|Get information about all past updates, by repository
 .Update Status Message
 [cols="40%,60%",stripes=even]
 |===
-|Status |Description 
+|Status |Description
 
 a|IN_PROGRESS
 a|Update has started, not yet complete
 
 a|PENDING_REPO_UPDATES
-a|OpenIDM update is complete, updates to the repository are pending
+a|File updates are complete and repository updates are pending
 
 a|COMPLETE
 a|Update is complete

@@ -22,8 +22,9 @@
 
 
 [appendix]
-[#appendix-pooling]
 == Connection Pooling Configuration
+
+anchor:appendix-pooling[]
 
 Certain connectors support the ability to be pooled. For a pooled connector, OpenICF maintains a pool of connector instances and reuses these instances for multiple provisioning and reconciliation operations. When an operation must be executed, an existing connector instance is taken from the connector pool. If no connector instance exists, a new instance is initialized. When the operation has been executed, the connector instance is released back into the connector pool, ready to be used for a subsequent operation.
 
