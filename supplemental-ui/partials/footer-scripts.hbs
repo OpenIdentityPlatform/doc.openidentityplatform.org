@@ -1,32 +1,4 @@
 <script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
-{{#if (and env.ALGOLIA_SEARCH_API_KEY env.ALGOLIA_APP_ID)}}
-<script src="{{uiRootPath}}/js/vendor/docsearch.min.js"></script>
-<!-- @docsearch/js 3.9.0, fetched from https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js -->
-<script>
-docsearch({
-  container: '#docsearch',
-  appId: '{{env.ALGOLIA_APP_ID}}',
-  apiKey: '{{env.ALGOLIA_SEARCH_API_KEY}}',
-  indexName: 'doc_openidentityplatform',
-  placeholder: 'Search the docs',
-  // the legacy scraper anchors page titles, and the text before the first section, to the first id
-  // on the page, the cookie notice of head-scripts.hbs
-  transformItems: function (items) {
-    return items.map(function (item) {
-      return Object.assign({}, item, { url: item.url.replace(/#cookie-notice$/, '') })
-    })
-  }
-})
-</script>
-{{else if env.SITE_SEARCH_PROVIDER}}
-{{> search-scripts}}
-{{#if page.home}}
-<script>
-window.addEventListener('load', function focusSearchInput () {
-  window.removeEventListener('load', focusSearchInput)
-  document.querySelector('#search-input').focus()
-})
-</script>
-{{/if}}
-{{/if}}
+<script type="module" src="{{{siteRootPath}}}/pagefind/pagefind-component-ui.js"></script>
+<pagefind-modal></pagefind-modal>
