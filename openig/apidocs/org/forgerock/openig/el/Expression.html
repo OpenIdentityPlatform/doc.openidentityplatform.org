@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":9};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -151,6 +151,45 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Class</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Expression.DeferredBindingException.html" title="class in org.forgerock.openig.el">Expression.DeferredBindingException</a></span></code></th>
+<td class="colLast">
+<div class="block">Indicates that evaluation needs a binding reserved for later.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Expression.ReadPolicy.html" title="interface in org.forgerock.openig.el">Expression.ReadPolicy</a></span></code></th>
+<td class="colLast">
+<div class="block">Controls which values are available in an evaluation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="Expression.ReadUse.html" title="enum in org.forgerock.openig.el">Expression.ReadUse</a></span></code></th>
+<td class="colLast">
+<div class="block">The role of a read in the evaluated expression.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- =========== FIELD SUMMARY =========== -->
 <section>
 <ul class="blockList">
@@ -233,13 +272,37 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="Expression.html" title="type parameter in Expression">T</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#eval(org.forgerock.openig.el.Bindings,java.util.Set)">eval</a></span>&#8203;(<a href="Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings,
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;deferredBindings)</code></th>
+<td class="colLast">
+<div class="block">Evaluates the expression until it reads a binding reserved for a later evaluation.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="Expression.html" title="type parameter in Expression">T</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#eval(org.forgerock.openig.el.Bindings,java.util.Set,org.forgerock.openig.el.Expression.ReadPolicy)">eval</a></span>&#8203;(<a href="Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings,
+    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;deferredBindings,
+    <a href="Expression.ReadPolicy.html" title="interface in org.forgerock.openig.el">Expression.ReadPolicy</a>&nbsp;readPolicy)</code></th>
+<td class="colLast">
+<div class="block">Evaluates the expression with a policy for reading resolved values.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isLiteralText()">isLiteralText</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns whether this expression consists entirely of literal text.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the original string used to create this expression, unmodified.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="Expression.html" title="class in org.forgerock.openig.el">Expression</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#valueOf(java.lang.String,java.lang.Class)">valueOf</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;expression,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;expectedType)</code></th>
@@ -247,7 +310,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Factory method to create an Expression.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="Expression.html" title="class in org.forgerock.openig.el">Expression</a>&lt;T&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#valueOf(java.lang.String,java.lang.Class,org.forgerock.openig.el.Bindings)">valueOf</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;expression,
        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true" title="class or interface in java.lang" class="externalLink">Class</a>&lt;T&gt;&nbsp;expectedType,
@@ -396,6 +459,48 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
+<a id="eval(org.forgerock.openig.el.Bindings,java.util.Set)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eval</h4>
+<pre class="methodSignature">public&nbsp;<a href="Expression.html" title="type parameter in Expression">T</a>&nbsp;eval&#8203;(<a href="Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;deferredBindings)</pre>
+<div class="block">Evaluates the expression until it reads a binding reserved for a later evaluation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bindings</code> - the bindings to evaluate the expression within</dd>
+<dd><code>deferredBindings</code> - the names of top-level bindings reserved for later evaluation</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the result of the expression evaluation, or <code>null</code> if it does not resolve or match the type</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="Expression.DeferredBindingException.html" title="class in org.forgerock.openig.el">Expression.DeferredBindingException</a></code> - if evaluation reads a deferred binding</dd>
+</dl>
+</li>
+</ul>
+<a id="eval(org.forgerock.openig.el.Bindings,java.util.Set,org.forgerock.openig.el.Expression.ReadPolicy)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>eval</h4>
+<pre class="methodSignature">public&nbsp;<a href="Expression.html" title="type parameter in Expression">T</a>&nbsp;eval&#8203;(<a href="Bindings.html" title="class in org.forgerock.openig.el">Bindings</a>&nbsp;bindings,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&gt;&nbsp;deferredBindings,
+              <a href="Expression.ReadPolicy.html" title="interface in org.forgerock.openig.el">Expression.ReadPolicy</a>&nbsp;readPolicy)</pre>
+<div class="block">Evaluates the expression with a policy for reading resolved values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bindings</code> - the bindings to evaluate the expression within</dd>
+<dd><code>deferredBindings</code> - the names of top-level bindings reserved for later evaluation</dd>
+<dd><code>readPolicy</code> - the policy for each property or method read</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the result of the expression evaluation, or <code>null</code> if it does not resolve or match the type</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="Expression.DeferredBindingException.html" title="class in org.forgerock.openig.el">Expression.DeferredBindingException</a></code> - if evaluation reads a deferred binding or the policy defers a read</dd>
+</dl>
+</li>
+</ul>
 <a id="eval()">
 <!--   -->
 </a>
@@ -407,6 +512,20 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the result of the expression evaluation, or <code>null</code> if it does not resolve or match the type.</dd>
+</dl>
+</li>
+</ul>
+<a id="isLiteralText()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isLiteralText</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isLiteralText()</pre>
+<div class="block">Returns whether this expression consists entirely of literal text.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>true</code> for literal text</dd>
 </dl>
 </li>
 </ul>
@@ -483,7 +602,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
