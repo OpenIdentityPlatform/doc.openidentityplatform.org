@@ -10172,7 +10172,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">This class is used to represent a Base DN / Replica and is aimed to be
  used by the classes in the BackendTableModel class.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html#%3Cinit%3E(org.opends.guitools.controlpanel.datamodel.BaseDNDescriptor.Type,org.forgerock.opendj.ldap.DN,org.opends.guitools.controlpanel.datamodel.BackendDescriptor,int,long,int)">BaseDNDescriptor(BaseDNDescriptor.Type, DN, BackendDescriptor, int, long, int)</a></span> - Constructor for class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html#%3Cinit%3E(org.opends.guitools.controlpanel.datamodel.BaseDNDescriptor.Type,org.forgerock.opendj.ldap.DN,org.opends.guitools.controlpanel.datamodel.BackendDescriptor,int,long,long)">BaseDNDescriptor(BaseDNDescriptor.Type, DN, BackendDescriptor, int, long, long)</a></span> - Constructor for class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor</a></dt>
 <dd>
 <div class="block">Constructor for this class.</div>
 </dd>
@@ -21143,7 +21143,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/crypto/CryptoManagerSync.html#%3Cinit%3E()">CryptoManagerSync()</a></span> - Constructor for class org.opends.server.crypto.<a href="org/opends/server/crypto/CryptoManagerSync.html" title="class in org.opends.server.crypto">CryptoManagerSync</a></dt>
 <dd>
-<div class="block">Creates a new instance of this trust store synchronization thread.</div>
+<div class="block">Initializes the local instance certificate and loads certificates and secret keys from ADS.</div>
 </dd>
 <dt><a href="org/opends/server/crypto/CryptoSuite.html" title="class in org.opends.server.crypto"><span class="typeNameLink">CryptoSuite</span></a> - Class in <a href="org/opends/server/crypto/package-summary.html">org.opends.server.crypto</a></dt>
 <dd>
@@ -95326,6 +95326,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Truststore path:</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_LDAP_CONN_PROMPT_SECURITY_TRUSTSTORE_PATH_DEFAULT">INFO_LDAP_CONN_PROMPT_SECURITY_TRUSTSTORE_PATH_DEFAULT</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
+<dd>
+<div class="block">Truststore path [%s]:</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/messages/ToolMessages.html#INFO_LDAP_CONN_PROMPT_SECURITY_USE_SECURE_CTX">INFO_LDAP_CONN_PROMPT_SECURITY_USE_SECURE_CTX</a></span> - Static variable in class org.opends.messages.<a href="org/opends/messages/ToolMessages.html" title="class in org.opends.messages">ToolMessages</a></dt>
 <dd>
 <div class="block">How do you want to connect?</div>
@@ -125298,6 +125302,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Ensures the medium consistency point is updated by heartbeats.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/opends/server/crypto/CryptoManagerSync.html#publishInstanceKeyEntryInADS(boolean)">publishInstanceKeyEntryInADS(boolean)</a></span> - Static method in class org.opends.server.crypto.<a href="org/opends/server/crypto/CryptoManagerSync.html" title="class in org.opends.server.crypto">CryptoManagerSync</a></dt>
+<dd>
+<div class="block">Publishes the local instance certificate in ADS if its entry is missing.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/opends/server/replication/service/ReplicationBroker.html#publishRecovery(org.opends.server.replication.protocol.ReplicationMsg,org.opends.server.replication.protocol.Session)">publishRecovery(ReplicationMsg, Session)</a></span> - Method in class org.opends.server.replication.service.<a href="org/opends/server/replication/service/ReplicationBroker.html" title="class in org.opends.server.replication.service">ReplicationBroker</a></dt>
 <dd>
 <div class="block">Publish a recovery message to the other servers, on the provided session only.</div>
@@ -139189,11 +139197,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the "min-unique-characters" property.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/admin/ads/ReplicaDescriptor.html#setMissingChanges(int)">setMissingChanges(int)</a></span> - Method in class org.opends.admin.ads.<a href="org/opends/admin/ads/ReplicaDescriptor.html" title="class in org.opends.admin.ads">ReplicaDescriptor</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/admin/ads/ReplicaDescriptor.html#setMissingChanges(long)">setMissingChanges(long)</a></span> - Method in class org.opends.admin.ads.<a href="org/opends/admin/ads/ReplicaDescriptor.html" title="class in org.opends.admin.ads">ReplicaDescriptor</a></dt>
 <dd>
 <div class="block">Sets the number of missing changes.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html#setMissingChanges(int)">setMissingChanges(int)</a></span> - Method in class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor</a></dt>
+<dt><span class="memberNameLink"><a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html#setMissingChanges(long)">setMissingChanges(long)</a></span> - Method in class org.opends.guitools.controlpanel.datamodel.<a href="org/opends/guitools/controlpanel/datamodel/BaseDNDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor</a></dt>
 <dd>
 <div class="block">Sets the number of missing changes in the replication topology for
  this base DN.</div>

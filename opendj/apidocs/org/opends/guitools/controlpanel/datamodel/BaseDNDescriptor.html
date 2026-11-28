@@ -186,12 +186,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.opends.guitools.controlpanel.datamodel.BaseDNDescriptor.Type,org.forgerock.opendj.ldap.DN,org.opends.guitools.controlpanel.datamodel.BackendDescriptor,int,long,int)">BaseDNDescriptor</a></span>&#8203;(<a href="BaseDNDescriptor.Type.html" title="enum in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor.Type</a>&nbsp;type,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(org.opends.guitools.controlpanel.datamodel.BaseDNDescriptor.Type,org.forgerock.opendj.ldap.DN,org.opends.guitools.controlpanel.datamodel.BackendDescriptor,int,long,long)">BaseDNDescriptor</a></span>&#8203;(<a href="BaseDNDescriptor.Type.html" title="enum in org.opends.guitools.controlpanel.datamodel">BaseDNDescriptor.Type</a>&nbsp;type,
                 <a href="../../../../forgerock/opendj/ldap/DN.html" title="class in org.forgerock.opendj.ldap">DN</a>&nbsp;baseDn,
                 <a href="BackendDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BackendDescriptor</a>&nbsp;backend,
                 int&nbsp;nEntries,
                 long&nbsp;ageOfOldestMissingChange,
-                int&nbsp;missingChanges)</code></th>
+                long&nbsp;missingChanges)</code></th>
 <td class="colLast">
 <div class="block">Constructor for this class.</div>
 </td>
@@ -254,7 +254,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>int</code></td>
+<td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMissingChanges()">getMissingChanges</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the number of missing changes in the replication topology for
@@ -305,7 +305,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMissingChanges(int)">setMissingChanges</a></span>&#8203;(int&nbsp;missingChanges)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMissingChanges(long)">setMissingChanges</a></span>&#8203;(long&nbsp;missingChanges)</code></th>
 <td class="colLast">
 <div class="block">Sets the number of missing changes in the replication topology for
  this base DN.</div>
@@ -354,7 +354,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(org.opends.guitools.controlpanel.datamodel.BaseDNDescriptor.Type,org.forgerock.opendj.ldap.DN,org.opends.guitools.controlpanel.datamodel.BackendDescriptor,int,long,int)">
+<a id="&lt;init&gt;(org.opends.guitools.controlpanel.datamodel.BaseDNDescriptor.Type,org.forgerock.opendj.ldap.DN,org.opends.guitools.controlpanel.datamodel.BackendDescriptor,int,long,long)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -365,7 +365,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
                         <a href="BackendDescriptor.html" title="class in org.opends.guitools.controlpanel.datamodel">BackendDescriptor</a>&nbsp;backend,
                         int&nbsp;nEntries,
                         long&nbsp;ageOfOldestMissingChange,
-                        int&nbsp;missingChanges)</pre>
+                        long&nbsp;missingChanges)</pre>
 <div class="block">Constructor for this class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -461,7 +461,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <ul class="blockList">
 <li class="blockList">
 <h4>getMissingChanges</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;getMissingChanges()</pre>
+<pre class="methodSignature">public&nbsp;long&nbsp;getMissingChanges()</pre>
 <div class="block">Returns the number of missing changes in the replication topology for
  this base DN.</div>
 <dl>
@@ -471,13 +471,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </dl>
 </li>
 </ul>
-<a id="setMissingChanges(int)">
+<a id="setMissingChanges(long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setMissingChanges</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setMissingChanges&#8203;(int&nbsp;missingChanges)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;setMissingChanges&#8203;(long&nbsp;missingChanges)</pre>
 <div class="block">Sets the number of missing changes in the replication topology for
  this base DN.</div>
 <dl>
